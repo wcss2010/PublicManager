@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
+using DevExpress.XtraNavBar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,16 @@ namespace PublicManager
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void nbcLeftTree_ActiveGroupChanged(object sender, DevExpress.XtraNavBar.NavBarGroupEventArgs e)
+        {
+
+        }
+
+        private void nbcLeftTree_NavPaneStateChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
