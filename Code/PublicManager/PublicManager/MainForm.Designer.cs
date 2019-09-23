@@ -54,6 +54,7 @@
             this.nbcTestB = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbcTestC = new DevExpress.XtraNavBar.NavBarGroup();
             this.plRightContent = new DevExpress.XtraEditors.PanelControl();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bvcMenus)).BeginInit();
             this.bvcMenus.SuspendLayout();
@@ -71,9 +72,10 @@
             this.rcTopBar.ExpandCollapseItem.Id = 0;
             this.rcTopBar.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.rcTopBar.ExpandCollapseItem,
-            this.barCheckItem1});
+            this.barCheckItem1,
+            this.skinRibbonGalleryBarItem1});
             this.rcTopBar.Location = new System.Drawing.Point(0, 0);
-            this.rcTopBar.MaxItemId = 3;
+            this.rcTopBar.MaxItemId = 4;
             this.rcTopBar.Name = "rcTopBar";
             this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpPageA,
@@ -158,7 +160,7 @@
             // 
             // rpgGroupA
             // 
-            this.rpgGroupA.ItemLinks.Add(this.barCheckItem1);
+            this.rpgGroupA.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
             this.rpgGroupA.Name = "rpgGroupA";
             this.rpgGroupA.Text = "演示组1";
             // 
@@ -333,6 +335,12 @@
             this.plRightContent.Size = new System.Drawing.Size(1108, 523);
             this.plRightContent.TabIndex = 3;
             // 
+            // skinRibbonGalleryBarItem1
+            // 
+            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.Id = 3;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -388,6 +396,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgGroup3;
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn col1;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
 
     }
 }
