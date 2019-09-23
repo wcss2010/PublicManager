@@ -1,0 +1,8 @@
+C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\bin\Debug\PublicManager.exe
+C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\bin\Debug\PublicManager.pdb
+C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\obj\Debug\PublicManager.csprojResolveAssemblyReference.cache
+C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\obj\Debug\PublicManager.MainForm.resources
+C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\obj\Debug\PublicManager.Properties.Resources.resources
+C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\obj\Debug\PublicManager.csproj.GenerateResource.Cache
+C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\obj\Debug\PublicManager.exe
+C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\obj\Debug\PublicManager.pdb
