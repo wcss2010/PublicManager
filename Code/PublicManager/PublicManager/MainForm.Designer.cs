@@ -73,7 +73,7 @@
             this.rcTopBar.ExpandCollapseItem,
             this.barCheckItem1});
             this.rcTopBar.Location = new System.Drawing.Point(0, 0);
-            this.rcTopBar.MaxItemId = 2;
+            this.rcTopBar.MaxItemId = 3;
             this.rcTopBar.Name = "rcTopBar";
             this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpPageA,
@@ -235,6 +235,7 @@
             // 
             // tlTestA
             // 
+            this.tlTestA.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.tlTestA.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.treeListColumn1});
             this.tlTestA.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -267,11 +268,9 @@
             "999"}, 8);
             this.tlTestA.EndUnboundLoad();
             this.tlTestA.OptionsBehavior.Editable = false;
-            this.tlTestA.OptionsBehavior.ReadOnly = true;
-            this.tlTestA.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.True;
-            this.tlTestA.OptionsClipboard.CopyNodeHierarchy = DevExpress.Utils.DefaultBoolean.True;
             this.tlTestA.OptionsView.ShowColumns = false;
             this.tlTestA.OptionsView.ShowHorzLines = false;
+            this.tlTestA.OptionsView.ShowIndentAsRowStyle = true;
             this.tlTestA.OptionsView.ShowIndicator = false;
             this.tlTestA.OptionsView.ShowVertLines = false;
             this.tlTestA.Size = new System.Drawing.Size(243, 260);
@@ -317,6 +316,7 @@
             // 
             this.treeListColumn1.MinWidth = 52;
             this.treeListColumn1.Name = "treeListColumn1";
+            this.treeListColumn1.OptionsColumn.AllowFocus = false;
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
             this.treeListColumn1.Width = 93;
@@ -333,7 +333,7 @@
             this.Name = "MainForm";
             this.Ribbon = this.rcTopBar;
             this.StatusBar = this.rsbStatusBar;
-            this.Text = "Form1";
+            this.Text = "Mail Client";
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbcLeftTree)).EndInit();
             this.nbcLeftTree.ResumeLayout(false);
