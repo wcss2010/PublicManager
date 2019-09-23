@@ -48,7 +48,7 @@
             this.nbcTestA = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.tlTestA = new DevExpress.XtraTreeList.TreeList();
-            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.col1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.navBarGroupControlContainer2 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.navBarGroupControlContainer3 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.nbcTestB = new DevExpress.XtraNavBar.NavBarGroup();
@@ -80,7 +80,7 @@
             this.rpPageB,
             this.rpPageC});
             this.rcTopBar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.rcTopBar.Size = new System.Drawing.Size(943, 147);
+            this.rcTopBar.Size = new System.Drawing.Size(1359, 147);
             this.rcTopBar.StatusBar = this.rsbStatusBar;
             // 
             // bvcMenus
@@ -188,10 +188,10 @@
             // 
             // rsbStatusBar
             // 
-            this.rsbStatusBar.Location = new System.Drawing.Point(0, 580);
+            this.rsbStatusBar.Location = new System.Drawing.Point(0, 670);
             this.rsbStatusBar.Name = "rsbStatusBar";
             this.rsbStatusBar.Ribbon = this.rcTopBar;
-            this.rsbStatusBar.Size = new System.Drawing.Size(943, 31);
+            this.rsbStatusBar.Size = new System.Drawing.Size(1359, 31);
             // 
             // nbcLeftTree
             // 
@@ -207,7 +207,7 @@
             this.nbcLeftTree.Location = new System.Drawing.Point(0, 147);
             this.nbcLeftTree.Name = "nbcLeftTree";
             this.nbcLeftTree.OptionsNavPane.ExpandedWidth = 251;
-            this.nbcLeftTree.Size = new System.Drawing.Size(251, 433);
+            this.nbcLeftTree.Size = new System.Drawing.Size(251, 523);
             this.nbcLeftTree.TabIndex = 2;
             this.nbcLeftTree.Text = "navBarControl1";
             this.nbcLeftTree.View = new DevExpress.XtraNavBar.ViewInfo.SkinNavigationPaneViewInfoRegistrator();
@@ -231,14 +231,14 @@
             this.navBarGroupControlContainer1.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer1.Controls.Add(this.tlTestA);
             this.navBarGroupControlContainer1.Name = "navBarGroupControlContainer1";
-            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(251, 271);
+            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(251, 361);
             this.navBarGroupControlContainer1.TabIndex = 0;
             // 
             // tlTestA
             // 
             this.tlTestA.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.tlTestA.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.treeListColumn1});
+            this.col1});
             this.tlTestA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlTestA.Location = new System.Drawing.Point(0, 0);
             this.tlTestA.Name = "tlTestA";
@@ -274,17 +274,19 @@
             this.tlTestA.OptionsView.ShowIndentAsRowStyle = true;
             this.tlTestA.OptionsView.ShowIndicator = false;
             this.tlTestA.OptionsView.ShowVertLines = false;
-            this.tlTestA.Size = new System.Drawing.Size(251, 271);
+            this.tlTestA.Size = new System.Drawing.Size(251, 361);
             this.tlTestA.TabIndex = 0;
+            this.tlTestA.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestA_AfterFocusNode);
+            this.tlTestA.AfterCheckNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestA_AfterCheckNode);
             // 
-            // treeListColumn1
+            // col1
             // 
-            this.treeListColumn1.MinWidth = 52;
-            this.treeListColumn1.Name = "treeListColumn1";
-            this.treeListColumn1.OptionsColumn.AllowFocus = false;
-            this.treeListColumn1.Visible = true;
-            this.treeListColumn1.VisibleIndex = 0;
-            this.treeListColumn1.Width = 93;
+            this.col1.MinWidth = 52;
+            this.col1.Name = "col1";
+            this.col1.OptionsColumn.AllowFocus = false;
+            this.col1.Visible = true;
+            this.col1.VisibleIndex = 0;
+            this.col1.Width = 93;
             // 
             // navBarGroupControlContainer2
             // 
@@ -328,14 +330,14 @@
             this.plRightContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plRightContent.Location = new System.Drawing.Point(251, 147);
             this.plRightContent.Name = "plRightContent";
-            this.plRightContent.Size = new System.Drawing.Size(692, 433);
+            this.plRightContent.Size = new System.Drawing.Size(1108, 523);
             this.plRightContent.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 611);
+            this.ClientSize = new System.Drawing.Size(1359, 701);
             this.Controls.Add(this.plRightContent);
             this.Controls.Add(this.nbcLeftTree);
             this.Controls.Add(this.rsbStatusBar);
@@ -385,7 +387,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage rpPageC;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgGroup3;
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn col1;
 
     }
 }

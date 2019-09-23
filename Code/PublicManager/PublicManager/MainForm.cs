@@ -27,5 +27,18 @@ namespace PublicManager
         {
 
         }
+
+        private void tlTestA_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
+        {
+            if (e.Node.GetDisplayText(0) == "111")
+            {
+               
+            }
+        }
+
+        private void tlTestA_AfterCheckNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
+        {
+
+        }
     }
 }
