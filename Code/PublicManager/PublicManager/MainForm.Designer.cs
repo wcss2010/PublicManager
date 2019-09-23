@@ -118,7 +118,7 @@
             this.nbcTestA.Caption = "演示1";
             this.nbcTestA.ControlContainer = this.navBarGroupControlContainer1;
             this.nbcTestA.Expanded = true;
-            this.nbcTestA.GroupClientHeight = 379;
+            this.nbcTestA.GroupClientHeight = 264;
             this.nbcTestA.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.nbcTestA.Name = "nbcTestA";
             // 
@@ -135,7 +135,7 @@
             // 
             this.nbcTestB.Caption = "演示2";
             this.nbcTestB.ControlContainer = this.navBarGroupControlContainer2;
-            this.nbcTestB.GroupClientHeight = 358;
+            this.nbcTestB.GroupClientHeight = 212;
             this.nbcTestB.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.nbcTestB.Name = "nbcTestB";
             // 
@@ -143,8 +143,7 @@
             // 
             this.nbcTestC.Caption = "演示3";
             this.nbcTestC.ControlContainer = this.navBarGroupControlContainer3;
-            this.nbcTestC.Expanded = true;
-            this.nbcTestC.GroupClientHeight = 338;
+            this.nbcTestC.GroupClientHeight = 177;
             this.nbcTestC.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.nbcTestC.Name = "nbcTestC";
             // 
@@ -154,7 +153,7 @@
             this.navBarGroupControlContainer1.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer1.Controls.Add(this.tlTestA);
             this.navBarGroupControlContainer1.Name = "navBarGroupControlContainer1";
-            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(243, 375);
+            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(243, 260);
             this.navBarGroupControlContainer1.TabIndex = 0;
             // 
             // navBarGroupControlContainer2
@@ -162,7 +161,7 @@
             this.navBarGroupControlContainer2.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.navBarGroupControlContainer2.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer2.Name = "navBarGroupControlContainer2";
-            this.navBarGroupControlContainer2.Size = new System.Drawing.Size(243, 354);
+            this.navBarGroupControlContainer2.Size = new System.Drawing.Size(243, 208);
             this.navBarGroupControlContainer2.TabIndex = 1;
             // 
             // navBarGroupControlContainer3
@@ -170,7 +169,7 @@
             this.navBarGroupControlContainer3.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.navBarGroupControlContainer3.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer3.Name = "navBarGroupControlContainer3";
-            this.navBarGroupControlContainer3.Size = new System.Drawing.Size(243, 334);
+            this.navBarGroupControlContainer3.Size = new System.Drawing.Size(243, 173);
             this.navBarGroupControlContainer3.TabIndex = 2;
             // 
             // bvcMenus
@@ -240,7 +239,7 @@
             this.tlTestA.Name = "tlTestA";
             this.tlTestA.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.True;
             this.tlTestA.OptionsClipboard.CopyNodeHierarchy = DevExpress.Utils.DefaultBoolean.True;
-            this.tlTestA.Size = new System.Drawing.Size(243, 375);
+            this.tlTestA.Size = new System.Drawing.Size(243, 260);
             this.tlTestA.TabIndex = 0;
             // 
             // rpPageB
