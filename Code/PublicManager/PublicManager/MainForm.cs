@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraBars.Ribbon;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Windows.Forms;
 
 namespace PublicManager
 {
-    public partial class MainForm : Form
+    public partial class MainForm : RibbonForm
     {
         public MainForm()
         {
