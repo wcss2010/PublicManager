@@ -52,6 +52,7 @@
             this.rpgGroupA = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbcLeftTree)).BeginInit();
             this.nbcLeftTree.SuspendLayout();
@@ -68,9 +69,10 @@
             this.rcTopBar.ApplicationButtonDropDownControl = this.bvcMenus;
             this.rcTopBar.ExpandCollapseItem.Id = 0;
             this.rcTopBar.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.rcTopBar.ExpandCollapseItem});
+            this.rcTopBar.ExpandCollapseItem,
+            this.barCheckItem1});
             this.rcTopBar.Location = new System.Drawing.Point(0, 0);
-            this.rcTopBar.MaxItemId = 1;
+            this.rcTopBar.MaxItemId = 2;
             this.rcTopBar.Name = "rcTopBar";
             this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpPageA,
@@ -257,6 +259,7 @@
             // 
             // rpgGroupA
             // 
+            this.rpgGroupA.ItemLinks.Add(this.barCheckItem1);
             this.rpgGroupA.Name = "rpgGroupA";
             this.rpgGroupA.Text = "演示组1";
             // 
@@ -269,6 +272,12 @@
             // 
             this.rpgGroup3.Name = "rpgGroup3";
             this.rpgGroup3.Text = "演示组3";
+            // 
+            // barCheckItem1
+            // 
+            this.barCheckItem1.Caption = "演示选择";
+            this.barCheckItem1.Id = 1;
+            this.barCheckItem1.Name = "barCheckItem1";
             // 
             // MainForm
             // 
@@ -323,6 +332,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPage rpPageC;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgGroup3;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem1;
 
     }
 }
