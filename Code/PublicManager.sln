@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicManager", "PublicManager\PublicManager.csproj", "{013C65DA-90C0-4052-A892-37B9955CBA3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicManager", "PublicManager\PublicManager\PublicManager.csproj", "{013C65DA-90C0-4052-A892-37B9955CBA3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
