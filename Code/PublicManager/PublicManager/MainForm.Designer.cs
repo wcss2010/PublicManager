@@ -53,6 +53,7 @@
             this.rpgGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
+            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbcLeftTree)).BeginInit();
             this.nbcLeftTree.SuspendLayout();
@@ -234,11 +235,45 @@
             // 
             // tlTestA
             // 
+            this.tlTestA.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.treeListColumn1});
             this.tlTestA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlTestA.Location = new System.Drawing.Point(0, 0);
             this.tlTestA.Name = "tlTestA";
+            this.tlTestA.BeginUnboundLoad();
+            this.tlTestA.AppendNode(new object[] {
+            "AAA"}, -1);
+            this.tlTestA.AppendNode(new object[] {
+            "111"}, 0);
+            this.tlTestA.AppendNode(new object[] {
+            "222"}, 0);
+            this.tlTestA.AppendNode(new object[] {
+            "333"}, 0);
+            this.tlTestA.AppendNode(new object[] {
+            "BBB"}, -1);
+            this.tlTestA.AppendNode(new object[] {
+            "444"}, 4);
+            this.tlTestA.AppendNode(new object[] {
+            "555"}, 4);
+            this.tlTestA.AppendNode(new object[] {
+            "666"}, 4);
+            this.tlTestA.AppendNode(new object[] {
+            "CCC"}, -1);
+            this.tlTestA.AppendNode(new object[] {
+            "777"}, 8);
+            this.tlTestA.AppendNode(new object[] {
+            "888"}, 8);
+            this.tlTestA.AppendNode(new object[] {
+            "999"}, 8);
+            this.tlTestA.EndUnboundLoad();
+            this.tlTestA.OptionsBehavior.Editable = false;
+            this.tlTestA.OptionsBehavior.ReadOnly = true;
             this.tlTestA.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.True;
             this.tlTestA.OptionsClipboard.CopyNodeHierarchy = DevExpress.Utils.DefaultBoolean.True;
+            this.tlTestA.OptionsView.ShowColumns = false;
+            this.tlTestA.OptionsView.ShowHorzLines = false;
+            this.tlTestA.OptionsView.ShowIndicator = false;
+            this.tlTestA.OptionsView.ShowVertLines = false;
             this.tlTestA.Size = new System.Drawing.Size(243, 260);
             this.tlTestA.TabIndex = 0;
             // 
@@ -277,6 +312,14 @@
             this.barCheckItem1.Caption = "演示选择";
             this.barCheckItem1.Id = 1;
             this.barCheckItem1.Name = "barCheckItem1";
+            // 
+            // treeListColumn1
+            // 
+            this.treeListColumn1.MinWidth = 52;
+            this.treeListColumn1.Name = "treeListColumn1";
+            this.treeListColumn1.Visible = true;
+            this.treeListColumn1.VisibleIndex = 0;
+            this.treeListColumn1.Width = 93;
             // 
             // MainForm
             // 
@@ -332,6 +375,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage rpPageC;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgGroup3;
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
 
     }
 }
