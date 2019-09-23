@@ -1,7 +1,0 @@
-C:\Users\wcss\Desktop\PublicManager\Release\PublicManager.exe
-C:\Users\wcss\Desktop\PublicManager\Release\PublicManager.pdb
-C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\obj\x86\Debug\PublicManager.MainForm.resources
-C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\obj\x86\Debug\PublicManager.Properties.Resources.resources
-C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\obj\x86\Debug\PublicManager.csproj.GenerateResource.Cache
-C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\obj\x86\Debug\PublicManager.exe
-C:\Users\wcss\Desktop\PublicManager\Code\PublicManager\PublicManager\obj\x86\Debug\PublicManager.pdb
