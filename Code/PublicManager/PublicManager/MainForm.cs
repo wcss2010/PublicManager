@@ -106,6 +106,9 @@ namespace PublicManager
                     }
                 }
 
+                //显示第一页
+                rcTopBar.SelectedPage = rcTopBar.Pages[0];
+
                 //启动
                 CurrentModule.start();
             }
