@@ -30,7 +30,7 @@ namespace PublicManager
 
         private void tlTestA_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
         {
-            if (e.Node.GetDisplayText(0) == "AAA")
+            if (e.Node.GetDisplayText(0) == "演示节点2")
             {
                 TestControl tc = new TestControl();
                 plRightContent.Controls.Clear();

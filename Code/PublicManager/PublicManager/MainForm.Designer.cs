@@ -55,6 +55,7 @@
             this.nbcTestB = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbcTestC = new DevExpress.XtraNavBar.NavBarGroup();
             this.plRightContent = new DevExpress.XtraEditors.PanelControl();
+            this.nbcTestD = new DevExpress.XtraNavBar.NavBarGroup();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bvcMenus)).BeginInit();
             this.bvcMenus.SuspendLayout();
@@ -211,7 +212,8 @@
             this.nbcLeftTree.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.nbcTestA,
             this.nbcTestB,
-            this.nbcTestC});
+            this.nbcTestC,
+            this.nbcTestD});
             this.nbcLeftTree.Location = new System.Drawing.Point(0, 147);
             this.nbcLeftTree.Name = "nbcLeftTree";
             this.nbcLeftTree.OptionsNavPane.ExpandedWidth = 251;
@@ -231,6 +233,7 @@
             this.nbcTestA.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
             this.nbcTestA.GroupClientHeight = 264;
             this.nbcTestA.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
+            this.nbcTestA.LargeImage = global::PublicManager.Properties.Resources.Mail_32x32;
             this.nbcTestA.Name = "nbcTestA";
             // 
             // navBarGroupControlContainer1
@@ -239,7 +242,7 @@
             this.navBarGroupControlContainer1.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer1.Controls.Add(this.tlTestA);
             this.navBarGroupControlContainer1.Name = "navBarGroupControlContainer1";
-            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(251, 361);
+            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(251, 264);
             this.navBarGroupControlContainer1.TabIndex = 0;
             // 
             // tlTestA
@@ -252,11 +255,11 @@
             this.tlTestA.Name = "tlTestA";
             this.tlTestA.BeginUnboundLoad();
             this.tlTestA.AppendNode(new object[] {
-            "AAA"}, -1);
+            "演示节点1"}, -1);
             this.tlTestA.AppendNode(new object[] {
-            "BBB"}, -1);
+            "演示节点2"}, -1);
             this.tlTestA.AppendNode(new object[] {
-            "CCC"}, -1);
+            "演示节点3"}, -1);
             this.tlTestA.EndUnboundLoad();
             this.tlTestA.OptionsBehavior.Editable = false;
             this.tlTestA.OptionsView.ShowColumns = false;
@@ -264,7 +267,7 @@
             this.tlTestA.OptionsView.ShowIndentAsRowStyle = true;
             this.tlTestA.OptionsView.ShowIndicator = false;
             this.tlTestA.OptionsView.ShowVertLines = false;
-            this.tlTestA.Size = new System.Drawing.Size(251, 361);
+            this.tlTestA.Size = new System.Drawing.Size(251, 264);
             this.tlTestA.TabIndex = 0;
             this.tlTestA.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestA_AfterFocusNode);
             this.tlTestA.AfterCheckNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestA_AfterCheckNode);
@@ -302,6 +305,7 @@
             this.nbcTestB.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
             this.nbcTestB.GroupClientHeight = 212;
             this.nbcTestB.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
+            this.nbcTestB.LargeImage = global::PublicManager.Properties.Resources.BO_Task_Large;
             this.nbcTestB.Name = "nbcTestB";
             // 
             // nbcTestC
@@ -312,6 +316,7 @@
             this.nbcTestC.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
             this.nbcTestC.GroupClientHeight = 177;
             this.nbcTestC.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
+            this.nbcTestC.LargeImage = global::PublicManager.Properties.Resources.Today_32x32;
             this.nbcTestC.Name = "nbcTestC";
             // 
             // plRightContent
@@ -322,6 +327,12 @@
             this.plRightContent.Name = "plRightContent";
             this.plRightContent.Size = new System.Drawing.Size(1108, 523);
             this.plRightContent.TabIndex = 3;
+            // 
+            // nbcTestD
+            // 
+            this.nbcTestD.Caption = "演示4";
+            this.nbcTestD.LargeImage = global::PublicManager.Properties.Resources.Contact_32x32;
+            this.nbcTestD.Name = "nbcTestD";
             // 
             // MainForm
             // 
@@ -379,6 +390,7 @@
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn col1;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
+        private DevExpress.XtraNavBar.NavBarGroup nbcTestD;
 
     }
 }
