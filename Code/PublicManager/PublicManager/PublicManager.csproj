@@ -128,6 +128,24 @@
     <Compile Include="Modules\BaseModuleController.Designer.cs">
       <DependentUpon>BaseModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Contract\ContractModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Contract\ContractModuleController.Designer.cs">
+      <DependentUpon>ContractModuleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MainMenuController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\MainMenuController.Designer.cs">
+      <DependentUpon>MainMenuController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reporter\ReporterModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Reporter\ReporterModuleController.Designer.cs">
+      <DependentUpon>ReporterModuleController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestControl.cs">
@@ -141,6 +159,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\BaseModuleController.resx">
       <DependentUpon>BaseModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Contract\ContractModuleController.resx">
+      <DependentUpon>ContractModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\MainMenuController.resx">
+      <DependentUpon>MainMenuController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reporter\ReporterModuleController.resx">
+      <DependentUpon>ReporterModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

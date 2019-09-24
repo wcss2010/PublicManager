@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.bvcMenus = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
-            this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.backstageViewClientControl2 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.backstageViewClientControl3 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.bvtiItemA = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
-            this.bvtiItemB = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
-            this.bvtiItemC = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
@@ -63,21 +56,17 @@
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.bsiBottomText = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bvcMenus)).BeginInit();
-            this.bvcMenus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbcLeftTree)).BeginInit();
             this.nbcLeftTree.SuspendLayout();
             this.navBarGroupControlContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tlTestA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plRightContent)).BeginInit();
-            this.plRightContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rcTopBar
             // 
-            this.rcTopBar.ApplicationButtonDropDownControl = this.bvcMenus;
             this.rcTopBar.ExpandCollapseItem.Id = 0;
             this.rcTopBar.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.rcTopBar.ExpandCollapseItem,
@@ -100,66 +89,6 @@
             this.rcTopBar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.rcTopBar.Size = new System.Drawing.Size(1359, 147);
             this.rcTopBar.StatusBar = this.rsbStatusBar;
-            // 
-            // bvcMenus
-            // 
-            this.bvcMenus.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Yellow;
-            this.bvcMenus.Controls.Add(this.backstageViewClientControl1);
-            this.bvcMenus.Controls.Add(this.backstageViewClientControl2);
-            this.bvcMenus.Controls.Add(this.backstageViewClientControl3);
-            this.bvcMenus.Items.Add(this.bvtiItemA);
-            this.bvcMenus.Items.Add(this.bvtiItemB);
-            this.bvcMenus.Items.Add(this.bvtiItemC);
-            this.bvcMenus.Location = new System.Drawing.Point(0, 0);
-            this.bvcMenus.Name = "bvcMenus";
-            this.bvcMenus.Ribbon = this.rcTopBar;
-            this.bvcMenus.SelectedTab = this.bvtiItemA;
-            this.bvcMenus.SelectedTabIndex = 0;
-            this.bvcMenus.Size = new System.Drawing.Size(1010, 388);
-            this.bvcMenus.TabIndex = 0;
-            this.bvcMenus.Text = "backstageViewControl1";
-            // 
-            // backstageViewClientControl1
-            // 
-            this.backstageViewClientControl1.Location = new System.Drawing.Point(133, 63);
-            this.backstageViewClientControl1.Name = "backstageViewClientControl1";
-            this.backstageViewClientControl1.Size = new System.Drawing.Size(876, 324);
-            this.backstageViewClientControl1.TabIndex = 1;
-            // 
-            // backstageViewClientControl2
-            // 
-            this.backstageViewClientControl2.Location = new System.Drawing.Point(133, 63);
-            this.backstageViewClientControl2.Name = "backstageViewClientControl2";
-            this.backstageViewClientControl2.Size = new System.Drawing.Size(876, 324);
-            this.backstageViewClientControl2.TabIndex = 2;
-            // 
-            // backstageViewClientControl3
-            // 
-            this.backstageViewClientControl3.Location = new System.Drawing.Point(133, 63);
-            this.backstageViewClientControl3.Name = "backstageViewClientControl3";
-            this.backstageViewClientControl3.Size = new System.Drawing.Size(876, 324);
-            this.backstageViewClientControl3.TabIndex = 3;
-            // 
-            // bvtiItemA
-            // 
-            this.bvtiItemA.Caption = "演示菜单项1";
-            this.bvtiItemA.ContentControl = this.backstageViewClientControl1;
-            this.bvtiItemA.Name = "bvtiItemA";
-            this.bvtiItemA.Selected = true;
-            // 
-            // bvtiItemB
-            // 
-            this.bvtiItemB.Caption = "演示菜单项2";
-            this.bvtiItemB.ContentControl = this.backstageViewClientControl2;
-            this.bvtiItemB.Name = "bvtiItemB";
-            this.bvtiItemB.Selected = false;
-            // 
-            // bvtiItemC
-            // 
-            this.bvtiItemC.Caption = "演示菜单项3";
-            this.bvtiItemC.ContentControl = this.backstageViewClientControl3;
-            this.bvtiItemC.Name = "bvtiItemC";
-            this.bvtiItemC.Selected = false;
             // 
             // barCheckItem1
             // 
@@ -367,7 +296,6 @@
             // 
             // plRightContent
             // 
-            this.plRightContent.Controls.Add(this.bvcMenus);
             this.plRightContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plRightContent.Location = new System.Drawing.Point(0, 0);
             this.plRightContent.Name = "plRightContent";
@@ -408,14 +336,11 @@
             this.StatusBar = this.rsbStatusBar;
             this.Text = "数据汇总系统";
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bvcMenus)).EndInit();
-            this.bvcMenus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nbcLeftTree)).EndInit();
             this.nbcLeftTree.ResumeLayout(false);
             this.navBarGroupControlContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tlTestA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plRightContent)).EndInit();
-            this.plRightContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -436,13 +361,6 @@
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer1;
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer2;
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer3;
-        private DevExpress.XtraBars.Ribbon.BackstageViewControl bvcMenus;
-        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl1;
-        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl2;
-        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl3;
-        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem bvtiItemA;
-        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem bvtiItemB;
-        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem bvtiItemC;
         private DevExpress.XtraTreeList.TreeList tlTestA;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgGroupA;
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;

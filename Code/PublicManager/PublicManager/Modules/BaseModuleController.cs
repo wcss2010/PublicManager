@@ -13,7 +13,7 @@ namespace PublicManager.Modules
     /// <summary>
     /// 模块控制器
     /// </summary>
-    public abstract partial class BaseModuleController : UserControl
+    public partial class BaseModuleController : UserControl
     {
         /// <summary>
         /// 构造器
@@ -27,7 +27,7 @@ namespace PublicManager.Modules
         /// 获得用于显示在顶部工具栏的RibbonPage
         /// </summary>
         /// <returns></returns>
-        public abstract RibbonPage[] getTopBarPages();
+        public virtual RibbonPage[] getTopBarPages() { return null; }
 
         /// <summary>
         /// 设置/获得用于显示内容的控件
@@ -42,11 +42,11 @@ namespace PublicManager.Modules
         /// <summary>
         /// 开始
         /// </summary>
-        public abstract void start();
+        public virtual void start() { }
 
         /// <summary>
         /// 停止
         /// </summary>
-        public abstract void stop();
+        public virtual void stop() { }
     }
 }

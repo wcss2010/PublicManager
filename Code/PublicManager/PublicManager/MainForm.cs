@@ -4,6 +4,8 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.ColorWheel;
 using DevExpress.XtraNavBar;
 using PublicManager.Modules;
+using PublicManager.Modules.Contract;
+using PublicManager.Modules.Reporter;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,9 +32,20 @@ namespace PublicManager
             get { return MainForm.moduleDict; }
         }
 
+        /// <summary>
+        /// 菜单控制器
+        /// </summary>
+        private MainMenuController menuController = new MainMenuController();
+
         public MainForm()
         {
             InitializeComponent();
+
+            //加载菜单
+            menuController.MenuControl.Width = 0;
+            menuController.MenuControl.Height = 0;
+            Controls.Add(menuController.MenuControl);
+            rcTopBar.ApplicationButtonDropDownControl = menuController.MenuControl;
 
             //加载所有模块
             loadModules();
@@ -43,7 +56,8 @@ namespace PublicManager
         /// </summary>
         private void loadModules()
         {
-            
+            ModuleDict["合同书汇总"] = new ContractModuleController();
+            ModuleDict["建议书汇总"] = new ReporterModuleController();
         }
 
         /// <summary>
@@ -109,13 +123,7 @@ namespace PublicManager
 
         private void tlTestA_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
         {
-            if (e.Node.GetDisplayText(0) == "演示节点2")
-            {
-                TestControl tc = new TestControl();
-                tc.Dock = DockStyle.Fill;
-                plRightContent.Controls.Clear();
-                plRightContent.Controls.Add(tc);
-            }
+            showModule(e.Node.GetDisplayText(0));
         }
 
         private void btnSkinColorModify_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
