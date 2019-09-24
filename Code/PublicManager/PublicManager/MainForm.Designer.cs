@@ -56,6 +56,7 @@
             this.nbcTestC = new DevExpress.XtraNavBar.NavBarGroup();
             this.plRightContent = new DevExpress.XtraEditors.PanelControl();
             this.nbcTestD = new DevExpress.XtraNavBar.NavBarGroup();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bvcMenus)).BeginInit();
             this.bvcMenus.SuspendLayout();
@@ -65,6 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tlTestA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plRightContent)).BeginInit();
             this.plRightContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rcTopBar
@@ -208,16 +211,16 @@
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer1);
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer2);
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer3);
-            this.nbcLeftTree.Dock = System.Windows.Forms.DockStyle.Left;
+            this.nbcLeftTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nbcLeftTree.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.nbcTestA,
             this.nbcTestB,
             this.nbcTestC,
             this.nbcTestD});
-            this.nbcLeftTree.Location = new System.Drawing.Point(0, 147);
+            this.nbcLeftTree.Location = new System.Drawing.Point(0, 0);
             this.nbcLeftTree.Name = "nbcLeftTree";
-            this.nbcLeftTree.OptionsNavPane.ExpandedWidth = 251;
-            this.nbcLeftTree.Size = new System.Drawing.Size(251, 523);
+            this.nbcLeftTree.OptionsNavPane.ExpandedWidth = 176;
+            this.nbcLeftTree.Size = new System.Drawing.Size(176, 523);
             this.nbcLeftTree.TabIndex = 2;
             this.nbcLeftTree.Text = "navBarControl1";
             this.nbcLeftTree.View = new DevExpress.XtraNavBar.ViewInfo.SkinNavigationPaneViewInfoRegistrator();
@@ -242,7 +245,7 @@
             this.navBarGroupControlContainer1.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer1.Controls.Add(this.tlTestA);
             this.navBarGroupControlContainer1.Name = "navBarGroupControlContainer1";
-            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(251, 264);
+            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(176, 264);
             this.navBarGroupControlContainer1.TabIndex = 0;
             // 
             // tlTestA
@@ -267,7 +270,7 @@
             this.tlTestA.OptionsView.ShowIndentAsRowStyle = true;
             this.tlTestA.OptionsView.ShowIndicator = false;
             this.tlTestA.OptionsView.ShowVertLines = false;
-            this.tlTestA.Size = new System.Drawing.Size(251, 264);
+            this.tlTestA.Size = new System.Drawing.Size(176, 264);
             this.tlTestA.TabIndex = 0;
             this.tlTestA.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestA_AfterFocusNode);
             this.tlTestA.AfterCheckNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestA_AfterCheckNode);
@@ -323,9 +326,9 @@
             // 
             this.plRightContent.Controls.Add(this.bvcMenus);
             this.plRightContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plRightContent.Location = new System.Drawing.Point(251, 147);
+            this.plRightContent.Location = new System.Drawing.Point(0, 0);
             this.plRightContent.Name = "plRightContent";
-            this.plRightContent.Size = new System.Drawing.Size(1108, 523);
+            this.plRightContent.Size = new System.Drawing.Size(1178, 523);
             this.plRightContent.TabIndex = 3;
             // 
             // nbcTestD
@@ -334,13 +337,26 @@
             this.nbcTestD.LargeImage = global::PublicManager.Properties.Resources.Contact_32x32;
             this.nbcTestD.Name = "nbcTestD";
             // 
+            // splitContainerControl1
+            // 
+            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 147);
+            this.splitContainerControl1.Name = "splitContainerControl1";
+            this.splitContainerControl1.Panel1.Controls.Add(this.nbcLeftTree);
+            this.splitContainerControl1.Panel1.Text = "Panel1";
+            this.splitContainerControl1.Panel2.Controls.Add(this.plRightContent);
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(1359, 523);
+            this.splitContainerControl1.SplitterPosition = 176;
+            this.splitContainerControl1.TabIndex = 6;
+            this.splitContainerControl1.Text = "splitContainerControl1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1359, 701);
-            this.Controls.Add(this.plRightContent);
-            this.Controls.Add(this.nbcLeftTree);
+            this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.rsbStatusBar);
             this.Controls.Add(this.rcTopBar);
             this.Name = "MainForm";
@@ -356,6 +372,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tlTestA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plRightContent)).EndInit();
             this.plRightContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,6 +409,7 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn col1;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraNavBar.NavBarGroup nbcTestD;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
 
     }
 }
