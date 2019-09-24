@@ -46,8 +46,6 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.rpPageA = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpPageB = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgGroupA = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rsbStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -96,7 +94,6 @@
             this.rcTopBar.MaxItemId = 12;
             this.rcTopBar.Name = "rcTopBar";
             this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.rpPageA,
             this.rpPageB});
             this.rcTopBar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.rcTopBar.Size = new System.Drawing.Size(1359, 147);
@@ -223,18 +220,6 @@
             this.barButtonItem6.Caption = "barButtonItem6";
             this.barButtonItem6.Id = 11;
             this.barButtonItem6.Name = "barButtonItem6";
-            // 
-            // rpPageA
-            // 
-            this.rpPageA.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
-            this.rpPageA.Name = "rpPageA";
-            this.rpPageA.Text = "基本";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // rpPageB
             // 
@@ -457,14 +442,12 @@
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
         private DevExpress.XtraBars.BarButtonItem btnSkinColorModify;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rpPageA;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
 
     }
 }
