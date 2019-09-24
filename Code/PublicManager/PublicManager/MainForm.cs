@@ -30,9 +30,11 @@ namespace PublicManager
 
         private void tlTestA_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
         {
-            if (e.Node.GetDisplayText(0) == "111")
+            if (e.Node.GetDisplayText(0) == "AAA")
             {
-               
+                TestControl tc = new TestControl();
+                plRightContent.Controls.Clear();
+                plRightContent.Controls.Add(tc);
             }
         }
 

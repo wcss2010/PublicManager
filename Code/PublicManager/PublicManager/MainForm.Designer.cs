@@ -37,6 +37,7 @@
             this.bvtiItemB = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.bvtiItemC = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.rpPageA = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgGroupA = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpPageB = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -54,7 +55,6 @@
             this.nbcTestB = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbcTestC = new DevExpress.XtraNavBar.NavBarGroup();
             this.plRightContent = new DevExpress.XtraEditors.PanelControl();
-            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bvcMenus)).BeginInit();
             this.bvcMenus.SuspendLayout();
@@ -150,6 +150,12 @@
             this.barCheckItem1.Caption = "演示选择";
             this.barCheckItem1.Id = 1;
             this.barCheckItem1.Name = "barCheckItem1";
+            // 
+            // skinRibbonGalleryBarItem1
+            // 
+            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.Id = 3;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
             // rpPageA
             // 
@@ -248,27 +254,9 @@
             this.tlTestA.AppendNode(new object[] {
             "AAA"}, -1);
             this.tlTestA.AppendNode(new object[] {
-            "111"}, 0);
-            this.tlTestA.AppendNode(new object[] {
-            "222"}, 0);
-            this.tlTestA.AppendNode(new object[] {
-            "333"}, 0);
-            this.tlTestA.AppendNode(new object[] {
             "BBB"}, -1);
             this.tlTestA.AppendNode(new object[] {
-            "444"}, 4);
-            this.tlTestA.AppendNode(new object[] {
-            "555"}, 4);
-            this.tlTestA.AppendNode(new object[] {
-            "666"}, 4);
-            this.tlTestA.AppendNode(new object[] {
             "CCC"}, -1);
-            this.tlTestA.AppendNode(new object[] {
-            "777"}, 8);
-            this.tlTestA.AppendNode(new object[] {
-            "888"}, 8);
-            this.tlTestA.AppendNode(new object[] {
-            "999"}, 8);
             this.tlTestA.EndUnboundLoad();
             this.tlTestA.OptionsBehavior.Editable = false;
             this.tlTestA.OptionsView.ShowColumns = false;
@@ -334,12 +322,6 @@
             this.plRightContent.Name = "plRightContent";
             this.plRightContent.Size = new System.Drawing.Size(1108, 523);
             this.plRightContent.TabIndex = 3;
-            // 
-            // skinRibbonGalleryBarItem1
-            // 
-            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
-            this.skinRibbonGalleryBarItem1.Id = 3;
-            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
             // MainForm
             // 
