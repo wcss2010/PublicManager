@@ -79,6 +79,9 @@ namespace PublicManager
                 //设置内容显示控件
                 CurrentModule.DisplayControl = plRightContent;
 
+                //设置底部提示文本控件
+                CurrentModule.StatusLabelControl = bsiBottomText;
+
                 //插入顶部工具条
                 RibbonPage[] pages = CurrentModule.getTopBarPages();
                 if (pages != null)

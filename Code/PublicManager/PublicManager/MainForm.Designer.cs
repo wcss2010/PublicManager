@@ -61,6 +61,7 @@
             this.nbcTestD = new DevExpress.XtraNavBar.NavBarGroup();
             this.plRightContent = new DevExpress.XtraEditors.PanelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.bsiBottomText = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bvcMenus)).BeginInit();
             this.bvcMenus.SuspendLayout();
@@ -89,9 +90,10 @@
             this.barButtonItem3,
             this.barButtonItem4,
             this.barButtonItem5,
-            this.barButtonItem6});
+            this.barButtonItem6,
+            this.bsiBottomText});
             this.rcTopBar.Location = new System.Drawing.Point(0, 0);
-            this.rcTopBar.MaxItemId = 12;
+            this.rcTopBar.MaxItemId = 13;
             this.rcTopBar.Name = "rcTopBar";
             this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpPageB});
@@ -237,6 +239,7 @@
             // 
             // rsbStatusBar
             // 
+            this.rsbStatusBar.ItemLinks.Add(this.bsiBottomText);
             this.rsbStatusBar.Location = new System.Drawing.Point(0, 670);
             this.rsbStatusBar.Name = "rsbStatusBar";
             this.rsbStatusBar.Ribbon = this.rcTopBar;
@@ -385,6 +388,13 @@
             this.splitContainerControl1.TabIndex = 6;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
+            // bsiBottomText
+            // 
+            this.bsiBottomText.Caption = "...";
+            this.bsiBottomText.Id = 12;
+            this.bsiBottomText.Name = "bsiBottomText";
+            this.bsiBottomText.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -448,6 +458,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarStaticItem bsiBottomText;
 
     }
 }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraBars;
 
 namespace PublicManager.Modules
 {
@@ -32,6 +33,11 @@ namespace PublicManager.Modules
         /// 设置/获得用于显示内容的控件
         /// </summary>
         public virtual ScrollableControl DisplayControl { get; set; }
+
+        /// <summary>
+        /// 状态提示文本控件
+        /// </summary>
+        public virtual BarStaticItem StatusLabelControl { get; set; }
 
         /// <summary>
         /// 开始
