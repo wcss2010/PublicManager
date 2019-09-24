@@ -122,6 +122,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\BaseModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\BaseModuleController.Designer.cs">
+      <DependentUpon>BaseModuleController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestControl.cs">
@@ -130,14 +136,11 @@
     <Compile Include="TestControl.Designer.cs">
       <DependentUpon>TestControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestTopBar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TestTopBar.Designer.cs">
-      <DependentUpon>TestTopBar.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BaseModuleController.resx">
+      <DependentUpon>BaseModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -152,9 +155,6 @@
     </Compile>
     <EmbeddedResource Include="TestControl.resx">
       <DependentUpon>TestControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TestTopBar.resx">
-      <DependentUpon>TestTopBar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
