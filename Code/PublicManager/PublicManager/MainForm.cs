@@ -41,11 +41,6 @@ namespace PublicManager
             }
         }
 
-        private void tlTestA_AfterCheckNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
-        {
-
-        }
-
         private void btnSkinColorModify_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ColorWheelForm form = new ColorWheelForm();

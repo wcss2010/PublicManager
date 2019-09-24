@@ -40,7 +40,15 @@
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.btnSkinColorModify = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.rpPageA = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpPageB = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgGroupA = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rsbStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.nbcLeftTree = new DevExpress.XtraNavBar.NavBarControl();
@@ -77,12 +85,19 @@
             this.barCheckItem1,
             this.skinRibbonGalleryBarItem1,
             this.ribbonGalleryBarItem1,
-            this.btnSkinColorModify});
+            this.btnSkinColorModify,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6});
             this.rcTopBar.Location = new System.Drawing.Point(0, 0);
-            this.rcTopBar.MaxItemId = 6;
+            this.rcTopBar.MaxItemId = 12;
             this.rcTopBar.Name = "rcTopBar";
             this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.rpPageA});
+            this.rpPageA,
+            this.rpPageB});
             this.rcTopBar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.rcTopBar.Size = new System.Drawing.Size(1359, 147);
             this.rcTopBar.StatusBar = this.rsbStatusBar;
@@ -96,12 +111,12 @@
             this.bvcMenus.Items.Add(this.bvtiItemA);
             this.bvcMenus.Items.Add(this.bvtiItemB);
             this.bvcMenus.Items.Add(this.bvtiItemC);
-            this.bvcMenus.Location = new System.Drawing.Point(40, 16);
+            this.bvcMenus.Location = new System.Drawing.Point(0, 0);
             this.bvcMenus.Name = "bvcMenus";
             this.bvcMenus.Ribbon = this.rcTopBar;
             this.bvcMenus.SelectedTab = this.bvtiItemA;
             this.bvcMenus.SelectedTabIndex = 0;
-            this.bvcMenus.Size = new System.Drawing.Size(640, 411);
+            this.bvcMenus.Size = new System.Drawing.Size(1010, 388);
             this.bvcMenus.TabIndex = 0;
             this.bvcMenus.Text = "backstageViewControl1";
             // 
@@ -109,21 +124,21 @@
             // 
             this.backstageViewClientControl1.Location = new System.Drawing.Point(133, 63);
             this.backstageViewClientControl1.Name = "backstageViewClientControl1";
-            this.backstageViewClientControl1.Size = new System.Drawing.Size(506, 347);
+            this.backstageViewClientControl1.Size = new System.Drawing.Size(876, 324);
             this.backstageViewClientControl1.TabIndex = 1;
             // 
             // backstageViewClientControl2
             // 
             this.backstageViewClientControl2.Location = new System.Drawing.Point(133, 63);
             this.backstageViewClientControl2.Name = "backstageViewClientControl2";
-            this.backstageViewClientControl2.Size = new System.Drawing.Size(506, 347);
+            this.backstageViewClientControl2.Size = new System.Drawing.Size(876, 324);
             this.backstageViewClientControl2.TabIndex = 2;
             // 
             // backstageViewClientControl3
             // 
             this.backstageViewClientControl3.Location = new System.Drawing.Point(133, 63);
             this.backstageViewClientControl3.Name = "backstageViewClientControl3";
-            this.backstageViewClientControl3.Size = new System.Drawing.Size(506, 347);
+            this.backstageViewClientControl3.Size = new System.Drawing.Size(876, 324);
             this.backstageViewClientControl3.TabIndex = 3;
             // 
             // bvtiItemA
@@ -173,12 +188,60 @@
             this.btnSkinColorModify.Name = "btnSkinColorModify";
             this.btnSkinColorModify.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSkinColorModify_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 6;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 7;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 8;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 9;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "barButtonItem5";
+            this.barButtonItem5.Id = 10;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "barButtonItem6";
+            this.barButtonItem6.Id = 11;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
             // rpPageA
             // 
             this.rpPageA.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgGroupA});
+            this.ribbonPageGroup1});
             this.rpPageA.Name = "rpPageA";
-            this.rpPageA.Text = "演示页1";
+            this.rpPageA.Text = "基本";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            // 
+            // rpPageB
+            // 
+            this.rpPageB.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rpgGroupA});
+            this.rpPageB.Name = "rpPageB";
+            this.rpPageB.Text = "皮肤";
             // 
             // rpgGroupA
             // 
@@ -218,7 +281,7 @@
             // 
             // nbcTestA
             // 
-            this.nbcTestA.Caption = "演示1";
+            this.nbcTestA.Caption = "数据汇总";
             this.nbcTestA.ControlContainer = this.navBarGroupControlContainer1;
             this.nbcTestA.DragDropFlags = DevExpress.XtraNavBar.NavBarDragDrop.None;
             this.nbcTestA.Expanded = true;
@@ -247,11 +310,9 @@
             this.tlTestA.Name = "tlTestA";
             this.tlTestA.BeginUnboundLoad();
             this.tlTestA.AppendNode(new object[] {
-            "演示节点1"}, -1);
+            "合同书汇总"}, -1);
             this.tlTestA.AppendNode(new object[] {
-            "演示节点2"}, -1);
-            this.tlTestA.AppendNode(new object[] {
-            "演示节点3"}, -1);
+            "建议书汇总"}, -1);
             this.tlTestA.EndUnboundLoad();
             this.tlTestA.OptionsBehavior.Editable = false;
             this.tlTestA.OptionsView.ShowColumns = false;
@@ -262,7 +323,6 @@
             this.tlTestA.Size = new System.Drawing.Size(176, 264);
             this.tlTestA.TabIndex = 0;
             this.tlTestA.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestA_AfterFocusNode);
-            this.tlTestA.AfterCheckNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestA_AfterCheckNode);
             // 
             // col1
             // 
@@ -351,7 +411,7 @@
             this.Name = "MainForm";
             this.Ribbon = this.rcTopBar;
             this.StatusBar = this.rsbStatusBar;
-            this.Text = "Mail Client";
+            this.Text = "数据汇总系统";
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bvcMenus)).EndInit();
             this.bvcMenus.ResumeLayout(false);
@@ -371,7 +431,7 @@
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl rcTopBar;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rpPageA;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rpPageB;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar rsbStatusBar;
         private DevExpress.XtraNavBar.NavBarControl nbcLeftTree;
         private DevExpress.XtraNavBar.NavBarGroup nbcTestA;
@@ -397,6 +457,14 @@
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
         private DevExpress.XtraBars.BarButtonItem btnSkinColorModify;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rpPageA;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
 
     }
 }

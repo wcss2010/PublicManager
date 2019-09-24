@@ -130,6 +130,12 @@
     <Compile Include="TestControl.Designer.cs">
       <DependentUpon>TestControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestTopBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestTopBar.Designer.cs">
+      <DependentUpon>TestTopBar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +152,9 @@
     </Compile>
     <EmbeddedResource Include="TestControl.resx">
       <DependentUpon>TestControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestTopBar.resx">
+      <DependentUpon>TestTopBar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
