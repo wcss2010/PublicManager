@@ -167,7 +167,7 @@
             // 
             // btnSkinColorModify
             // 
-            this.btnSkinColorModify.Caption = "自定义皮肤";
+            this.btnSkinColorModify.Caption = "自定义";
             this.btnSkinColorModify.Id = 5;
             this.btnSkinColorModify.LargeGlyph = global::PublicManager.Properties.Resources.ColorMixer_32x32;
             this.btnSkinColorModify.Name = "btnSkinColorModify";
