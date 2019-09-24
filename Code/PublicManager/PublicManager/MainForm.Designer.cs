@@ -38,12 +38,10 @@
             this.bvtiItemC = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.btnSkinColorModify = new DevExpress.XtraBars.BarButtonItem();
             this.rpPageA = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgGroupA = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.rpPageB = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.rpPageC = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rsbStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.nbcLeftTree = new DevExpress.XtraNavBar.NavBarControl();
             this.nbcTestA = new DevExpress.XtraNavBar.NavBarGroup();
@@ -54,8 +52,8 @@
             this.navBarGroupControlContainer3 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.nbcTestB = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbcTestC = new DevExpress.XtraNavBar.NavBarGroup();
-            this.plRightContent = new DevExpress.XtraEditors.PanelControl();
             this.nbcTestD = new DevExpress.XtraNavBar.NavBarGroup();
+            this.plRightContent = new DevExpress.XtraEditors.PanelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bvcMenus)).BeginInit();
@@ -77,14 +75,14 @@
             this.rcTopBar.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.rcTopBar.ExpandCollapseItem,
             this.barCheckItem1,
-            this.skinRibbonGalleryBarItem1});
+            this.skinRibbonGalleryBarItem1,
+            this.ribbonGalleryBarItem1,
+            this.btnSkinColorModify});
             this.rcTopBar.Location = new System.Drawing.Point(0, 0);
-            this.rcTopBar.MaxItemId = 4;
+            this.rcTopBar.MaxItemId = 6;
             this.rcTopBar.Name = "rcTopBar";
             this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.rpPageA,
-            this.rpPageB,
-            this.rpPageC});
+            this.rpPageA});
             this.rcTopBar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.rcTopBar.Size = new System.Drawing.Size(1359, 147);
             this.rcTopBar.StatusBar = this.rsbStatusBar;
@@ -161,6 +159,20 @@
             this.skinRibbonGalleryBarItem1.Id = 3;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
+            // ribbonGalleryBarItem1
+            // 
+            this.ribbonGalleryBarItem1.Caption = "ribbonGalleryBarItem1";
+            this.ribbonGalleryBarItem1.Id = 4;
+            this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
+            // 
+            // btnSkinColorModify
+            // 
+            this.btnSkinColorModify.Caption = "自定义皮肤";
+            this.btnSkinColorModify.Id = 5;
+            this.btnSkinColorModify.LargeGlyph = global::PublicManager.Properties.Resources.ColorMixer_32x32;
+            this.btnSkinColorModify.Name = "btnSkinColorModify";
+            this.btnSkinColorModify.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSkinColorModify_ItemClick);
+            // 
             // rpPageA
             // 
             this.rpPageA.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -171,32 +183,9 @@
             // rpgGroupA
             // 
             this.rpgGroupA.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
+            this.rpgGroupA.ItemLinks.Add(this.btnSkinColorModify);
             this.rpgGroupA.Name = "rpgGroupA";
-            this.rpgGroupA.Text = "演示组1";
-            // 
-            // rpPageB
-            // 
-            this.rpPageB.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgGroup2});
-            this.rpPageB.Name = "rpPageB";
-            this.rpPageB.Text = "演示页2";
-            // 
-            // rpgGroup2
-            // 
-            this.rpgGroup2.Name = "rpgGroup2";
-            this.rpgGroup2.Text = "演示组2";
-            // 
-            // rpPageC
-            // 
-            this.rpPageC.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgGroup3});
-            this.rpPageC.Name = "rpPageC";
-            this.rpPageC.Text = "演示页3";
-            // 
-            // rpgGroup3
-            // 
-            this.rpgGroup3.Name = "rpgGroup3";
-            this.rpgGroup3.Text = "演示组3";
+            this.rpgGroupA.Text = "皮肤";
             // 
             // rsbStatusBar
             // 
@@ -322,6 +311,12 @@
             this.nbcTestC.LargeImage = global::PublicManager.Properties.Resources.Today_32x32;
             this.nbcTestC.Name = "nbcTestC";
             // 
+            // nbcTestD
+            // 
+            this.nbcTestD.Caption = "演示4";
+            this.nbcTestD.LargeImage = global::PublicManager.Properties.Resources.Contact_32x32;
+            this.nbcTestD.Name = "nbcTestD";
+            // 
             // plRightContent
             // 
             this.plRightContent.Controls.Add(this.bvcMenus);
@@ -330,12 +325,6 @@
             this.plRightContent.Name = "plRightContent";
             this.plRightContent.Size = new System.Drawing.Size(1178, 523);
             this.plRightContent.TabIndex = 3;
-            // 
-            // nbcTestD
-            // 
-            this.nbcTestD.Caption = "演示4";
-            this.nbcTestD.LargeImage = global::PublicManager.Properties.Resources.Contact_32x32;
-            this.nbcTestD.Name = "nbcTestD";
             // 
             // splitContainerControl1
             // 
@@ -401,15 +390,13 @@
         private DevExpress.XtraBars.Ribbon.BackstageViewTabItem bvtiItemC;
         private DevExpress.XtraTreeList.TreeList tlTestA;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgGroupA;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rpPageB;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rpPageC;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgGroup3;
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn col1;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraNavBar.NavBarGroup nbcTestD;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
+        private DevExpress.XtraBars.BarButtonItem btnSkinColorModify;
 
     }
 }

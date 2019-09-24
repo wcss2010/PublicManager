@@ -1,5 +1,7 @@
-﻿using DevExpress.XtraBars.Ribbon;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.ColorWheel;
 using DevExpress.XtraNavBar;
 using System;
 using System.Collections.Generic;
@@ -41,6 +43,15 @@ namespace PublicManager
         private void tlTestA_AfterCheckNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
         {
 
+        }
+
+        private void btnSkinColorModify_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ColorWheelForm form = new ColorWheelForm();
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.SkinMaskColor = UserLookAndFeel.Default.SkinMaskColor;
+            form.SkinMaskColor2 = UserLookAndFeel.Default.SkinMaskColor2;
+            form.ShowDialog(this);
         }
     }
 }
