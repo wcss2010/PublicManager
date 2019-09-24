@@ -35,6 +35,7 @@ namespace PublicManager
             if (e.Node.GetDisplayText(0) == "演示节点2")
             {
                 TestControl tc = new TestControl();
+                tc.Dock = DockStyle.Fill;
                 plRightContent.Controls.Clear();
                 plRightContent.Controls.Add(tc);
             }
