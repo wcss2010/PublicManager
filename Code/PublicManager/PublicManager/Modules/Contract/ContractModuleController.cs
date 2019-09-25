@@ -47,7 +47,7 @@ namespace PublicManager.Modules.Contract
         private void showDetailPage()
         {
             DisplayControl.Controls.Clear();
-            TestControl tc = new TestControl();
+            MainView tc = new MainView();
             tc.Dock = DockStyle.Fill;
             DisplayControl.Controls.Add(tc);
         }

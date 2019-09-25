@@ -134,11 +134,35 @@
     <Compile Include="Modules\Contract\ContractModuleController.Designer.cs">
       <DependentUpon>ContractModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Contract\Forms\ImporterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Contract\Forms\ImporterForm.Designer.cs">
+      <DependentUpon>ImporterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Contract\MainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Contract\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\MainMenuController.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Modules\MainMenuController.Designer.cs">
       <DependentUpon>MainMenuController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reporter\Forms\ImporterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Reporter\Forms\ImporterForm.Designer.cs">
+      <DependentUpon>ImporterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reporter\MainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Reporter\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Reporter\ReporterModuleController.cs">
       <SubType>UserControl</SubType>
@@ -163,8 +187,20 @@
     <EmbeddedResource Include="Modules\Contract\ContractModuleController.resx">
       <DependentUpon>ContractModuleController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Contract\Forms\ImporterForm.resx">
+      <DependentUpon>ImporterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Contract\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\MainMenuController.resx">
       <DependentUpon>MainMenuController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reporter\Forms\ImporterForm.resx">
+      <DependentUpon>ImporterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reporter\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Reporter\ReporterModuleController.resx">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
@@ -223,6 +259,7 @@
   <ItemGroup>
     <None Include="Resources\printtoexcel.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
