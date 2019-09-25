@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.btnImport = new DevExpress.XtraBars.BarButtonItem();
             this.rpBase = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpbGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.btnImport = new DevExpress.XtraBars.BarButtonItem();
             this.tlTestA = new DevExpress.XtraTreeList.TreeList();
             this.col1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.gcIgnoreList = new DevExpress.XtraEditors.GroupControl();
@@ -63,6 +63,13 @@
             this.rpBase});
             this.ribbonControl1.Size = new System.Drawing.Size(996, 147);
             // 
+            // btnImport
+            // 
+            this.btnImport.Caption = "导入";
+            this.btnImport.Id = 1;
+            this.btnImport.LargeGlyph = global::PublicManager.Properties.Resources.importA;
+            this.btnImport.Name = "btnImport";
+            // 
             // rpBase
             // 
             this.rpBase.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -88,13 +95,6 @@
             this.splitContainerControl1.SplitterPosition = 295;
             this.splitContainerControl1.TabIndex = 1;
             this.splitContainerControl1.Text = "splitContainerControl1";
-            // 
-            // btnImport
-            // 
-            this.btnImport.Caption = "导入";
-            this.btnImport.Id = 1;
-            this.btnImport.LargeGlyph = global::PublicManager.Properties.Resources.importA;
-            this.btnImport.Name = "btnImport";
             // 
             // tlTestA
             // 
