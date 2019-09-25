@@ -18,11 +18,6 @@ namespace PublicManager
 {
     public partial class MainForm : RibbonForm
     {
-        /// <summary>
-        /// 当前模块
-        /// </summary>
-        public static BaseModuleController CurrentModule { get; set; }
-
         private static Dictionary<string, BaseModuleController> moduleDict = new Dictionary<string, BaseModuleController>();
         /// <summary>
         /// 模块字典(Key=名称,Value=模块控制器)
@@ -63,13 +58,18 @@ namespace PublicManager
         /// <summary>
         /// 显示模块
         /// </summary>
-        /// <param name="name"></param>
-        public void showModule(string name)
+        /// <param name="name">模块名称</param>
+        /// <param name="isDisableAllModules">是否屏蔽其它模块</param>
+        public void showModule(string name, bool isDisableAllModules)
         {
-            if (CurrentModule != null)
+            //检查是否需要屏蔽其它的模块
+            if (isDisableAllModules)
             {
-                //停止
-                CurrentModule.stop();
+                foreach (BaseModuleController bmc in ModuleDict.Values)
+                {
+                    //停止
+                    bmc.stop();
+                }
 
                 //清除顶部工具条
                 int clearCount = rcTopBar.Pages.Count - 1;
@@ -80,37 +80,44 @@ namespace PublicManager
                         rcTopBar.Pages.RemoveAt(0);
                     }
                 }
-
-                //清除引用
-                CurrentModule = null;
             }
 
+            //按名称搜索并显示模块
+            BaseModuleController currentModule = null;
             if (ModuleDict.ContainsKey(name))
             {
                 //设置当前模块引用
-                CurrentModule = ModuleDict[name];
+                currentModule = ModuleDict[name];
 
                 //设置内容显示控件
-                CurrentModule.DisplayControl = plRightContent;
+                currentModule.DisplayControl = plRightContent;
 
                 //设置底部提示文本控件
-                CurrentModule.StatusLabelControl = bsiBottomText;
+                currentModule.StatusLabelControl = bsiBottomText;
 
                 //插入顶部工具条
-                RibbonPage[] pages = CurrentModule.getTopBarPages();
-                if (pages != null)
+                RibbonPage[] pages = currentModule.getTopBarPages();
+                if (pages != null && pages.Length >= 1)
                 {
+                    //显示顶部工具条
                     foreach (RibbonPage rp in pages) 
                     {
-                        rcTopBar.Pages.Insert(rcTopBar.Pages.Count - 1, rp);
+                        if (rcTopBar.Pages.Contains(rp))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            rcTopBar.Pages.Insert(rcTopBar.Pages.Count - 1, rp);
+                        }
                     }
+                    
+                    //显示新添加的页面
+                    rcTopBar.SelectedPage = pages[0];
                 }
 
-                //显示第一页
-                rcTopBar.SelectedPage = rcTopBar.Pages[0];
-
                 //启动
-                CurrentModule.start();
+                currentModule.start();
             }
         }
 
@@ -126,7 +133,7 @@ namespace PublicManager
 
         private void tlTestA_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
         {
-            showModule(e.Node.GetDisplayText(0));
+            showModule(e.Node.GetDisplayText(0), true);
         }
 
         private void btnSkinColorModify_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
