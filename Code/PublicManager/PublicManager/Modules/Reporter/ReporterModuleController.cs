@@ -79,12 +79,14 @@ namespace PublicManager.Modules.Reporter
 
         private void btnImportAll_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Forms.ImporterForm ifm = new Forms.ImporterForm();
+            ifm.ShowDialog();
         }
 
         private void btnImportWithSelected_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Forms.ImporterForm ifm = new Forms.ImporterForm();
+            ifm.ShowDialog();
         }
 
         private void btnExportToExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
