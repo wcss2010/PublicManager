@@ -33,8 +33,7 @@
             this.rpBase = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpbGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.tlTestA = new DevExpress.XtraTreeList.TreeList();
-            this.col1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.tlTestA = new System.Windows.Forms.TreeView();
             this.gcIgnoreList = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -43,7 +42,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tlTestA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcIgnoreList)).BeginInit();
             this.gcIgnoreList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -69,6 +67,7 @@
             this.btnImport.Id = 1;
             this.btnImport.LargeGlyph = global::PublicManager.Properties.Resources.importA;
             this.btnImport.Name = "btnImport";
+            this.btnImport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImport_ItemClick);
             // 
             // rpBase
             // 
@@ -98,35 +97,12 @@
             // 
             // tlTestA
             // 
-            this.tlTestA.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.tlTestA.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.col1});
+            this.tlTestA.CheckBoxes = true;
             this.tlTestA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlTestA.Location = new System.Drawing.Point(0, 0);
             this.tlTestA.Name = "tlTestA";
-            this.tlTestA.BeginUnboundLoad();
-            this.tlTestA.AppendNode(new object[] {
-            "2019-XXXX-01-XXXXX"}, -1);
-            this.tlTestA.AppendNode(new object[] {
-            "2019-XXXX-02-XXXXX"}, -1);
-            this.tlTestA.EndUnboundLoad();
-            this.tlTestA.OptionsBehavior.Editable = false;
-            this.tlTestA.OptionsView.ShowColumns = false;
-            this.tlTestA.OptionsView.ShowHorzLines = false;
-            this.tlTestA.OptionsView.ShowIndentAsRowStyle = true;
-            this.tlTestA.OptionsView.ShowIndicator = false;
-            this.tlTestA.OptionsView.ShowVertLines = false;
             this.tlTestA.Size = new System.Drawing.Size(295, 438);
-            this.tlTestA.TabIndex = 1;
-            // 
-            // col1
-            // 
-            this.col1.MinWidth = 52;
-            this.col1.Name = "col1";
-            this.col1.OptionsColumn.AllowFocus = false;
-            this.col1.Visible = true;
-            this.col1.VisibleIndex = 0;
-            this.col1.Width = 93;
+            this.tlTestA.TabIndex = 0;
             // 
             // gcIgnoreList
             // 
@@ -193,7 +169,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tlTestA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcIgnoreList)).EndInit();
             this.gcIgnoreList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -210,12 +185,11 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpbGroup1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraBars.BarButtonItem btnImport;
-        private DevExpress.XtraTreeList.TreeList tlTestA;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn col1;
         private DevExpress.XtraEditors.GroupControl gcIgnoreList;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn col11;
         private DevExpress.XtraGrid.Columns.GridColumn col22;
+        private System.Windows.Forms.TreeView tlTestA;
     }
 }

@@ -79,13 +79,13 @@ namespace PublicManager.Modules.Contract
 
         private void btnImportAll_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.ImporterForm ifm = new Forms.ImporterForm();
+            Forms.ImporterForm ifm = new Forms.ImporterForm(true, totalDir, decompressDir);
             ifm.ShowDialog();
         }
 
         private void btnImportWithSelected_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.ImporterForm ifm = new Forms.ImporterForm();
+            Forms.ImporterForm ifm = new Forms.ImporterForm(true, totalDir, decompressDir);
             ifm.ShowDialog();
         }
 

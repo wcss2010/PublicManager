@@ -54,6 +54,11 @@ namespace PublicManager.Modules
             {
                 return importDB(catalogNumber, sourceFile, context);
             }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.ToString());
+                return string.Empty;
+            }
             finally
             {
                 factory.Dispose();

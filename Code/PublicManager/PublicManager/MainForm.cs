@@ -144,5 +144,10 @@ namespace PublicManager
             form.SkinMaskColor2 = UserLookAndFeel.Default.SkinMaskColor2;
             form.ShowDialog(this);
         }
+
+        internal static void writeLog(string p)
+        {
+            
+        }
     }
 }
