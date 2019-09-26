@@ -54,5 +54,33 @@ namespace PublicManager.Modules.Reporter
                 dgvCatalogs.Rows.Add(cells.ToArray());
             }
         }
+
+        private void dgvCatalogs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //检查是否点击的是删除的那一列
+            if (e.ColumnIndex == dgvCatalogs.Columns.Count - 1)
+            {
+                //获得要删除的项目ID,项目编号
+                string projectId = ((Catalog)dgvCatalogs.Rows[e.RowIndex].Tag).CatalogID;
+                string projectNumber = ((Catalog)dgvCatalogs.Rows[e.RowIndex].Tag).CatalogNumber;
+
+                //显示删除提示框
+                if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    //删除项目数据
+                    new DBImporter().deleteProject(projectId);
+
+                    //删除申报包缓存
+                    //try
+                    //{
+                    //    System.IO.Directory.Delete(System.IO.Path.Combine(PackageDir, projectNumber), true);
+                    //}
+                    //catch (Exception ex) { MainForm.writeLog(ex.ToString()); }
+
+                    //刷新GridView
+                    updateCatalogs();
+                }
+            }
+        }
     }
 }

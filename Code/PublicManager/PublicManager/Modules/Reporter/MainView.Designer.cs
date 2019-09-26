@@ -60,6 +60,7 @@
             this.dgvCatalogs.RowTemplate.Height = 23;
             this.dgvCatalogs.Size = new System.Drawing.Size(1028, 684);
             this.dgvCatalogs.TabIndex = 1;
+            this.dgvCatalogs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogs_CellContentClick);
             // 
             // colIndex
             // 
