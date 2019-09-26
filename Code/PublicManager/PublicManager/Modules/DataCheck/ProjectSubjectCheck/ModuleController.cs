@@ -27,6 +27,7 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
                foreach (Subject sub in subList)
                {
                    List<object> cells = new List<object>();
+                   cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
                    cells.Add(proj.ProjectName);
                    cells.Add(sub.SubjectName);
                    cells.Add(sub.TotalMoney);
@@ -37,6 +38,15 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
                    dataGridView1.Rows.Add(cells.ToArray());
                }
             }
+        }
+
+        public override void start()
+        {
+            base.start();
+
+            this.DisplayControl.Controls.Clear();
+            this.Dock = DockStyle.Fill;
+            this.DisplayControl.Controls.Add(this);
         }
     }
 }

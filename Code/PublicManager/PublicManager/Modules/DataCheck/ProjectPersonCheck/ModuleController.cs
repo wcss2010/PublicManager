@@ -14,5 +14,19 @@ namespace PublicManager.Modules.DataCheck.ProjectPersonCheck
         {
             InitializeComponent();
         }
+
+        public override void start()
+        {
+            base.start();
+
+            this.DisplayControl.Controls.Clear();
+            this.Dock = DockStyle.Fill;
+            this.DisplayControl.Controls.Add(this);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
