@@ -67,20 +67,31 @@ namespace PublicManager.Modules.Contract
                     obj.CatalogID = proj.CatalogID;
                     obj.ProjectID = proj.ProjectID;
                     obj.SubjectID = di.getString("KeTiBiaoHao");
-                    obj.PersonName = di.getString("");
-                    obj.PersonIDCard = di.getString("");
-                    obj.PersonSex = di.getString("");
-                    obj.PersonJob = di.getString("");
-                    obj.PersonSpecialty = di.getString("");
-                    obj.TotalTime = di.getInt("");
-                    obj.TaskContent = di.getString("");
-                    obj.WorkUnit = di.getString("");
-                    obj.JobInProject = ibEdit11.Text;
-                    obj.IsProjectMaster = ibEdit12.Text;                    
+                    obj.PersonName = di.getString("XingMing");
+                    obj.PersonIDCard = di.getString("ShenFenZhengHao");
+                    obj.PersonSex = di.getString("XingBie");
+                    obj.PersonJob = di.getString("ZhiCheng");
+                    obj.PersonSpecialty = di.getString("ZhuanYe");
+                    obj.TotalTime = di.getInt("MeiNianTouRuShiJian");
+                    obj.TaskContent = di.getString("RenWuFenGong");
+                    obj.WorkUnit = di.getString("GongZuoDanWei");
 
+                    //设置项目中职务
+                    obj.JobInProject = di.getString("ZhiWu");
+
+                    //是否为项目负责人
+                    obj.IsProjectMaster = (di.getString("ShiXiangMuFuZeRen") == "rbIsOnlyProject" || di.getString("ShiXiangMuFuZeRen") == "rbIsProjectAndSubject") ? "true" : "false";
+
+                    //插入数据
+                    obj.copyTo(ConnectionManager.Context.table("Person")).insert();
                 }
+
+                return catalog.CatalogID;
             }
-            return null;
+            else
+            {
+                return string.Empty;
+            }
         }
     }
 }
