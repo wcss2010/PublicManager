@@ -51,9 +51,11 @@ namespace PublicManager.Modules.Contract
 
                 cells.Add("");
 
-                dgvCatalogs.Rows.Add(cells.ToArray());
+                int rowIndex = dgvCatalogs.Rows.Add(cells.ToArray());
+                dgvCatalogs.Rows[rowIndex].Tag = catalog;
             }
         }
+
 
         private void dgvCatalogs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
