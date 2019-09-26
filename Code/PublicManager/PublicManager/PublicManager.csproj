@@ -128,6 +128,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\BaseDBImporter.cs" />
     <Compile Include="Modules\BaseModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,6 +141,7 @@
     <Compile Include="Modules\Contract\ContractModuleController.Designer.cs">
       <DependentUpon>ContractModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Contract\DBImporter.cs" />
     <Compile Include="Modules\Contract\Forms\ImporterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +160,7 @@
     <Compile Include="Modules\MainMenuController.Designer.cs">
       <DependentUpon>MainMenuController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Reporter\DBImporter.cs" />
     <Compile Include="Modules\Reporter\Forms\ImporterForm.cs">
       <SubType>Form</SubType>
     </Compile>
