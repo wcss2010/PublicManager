@@ -13,6 +13,9 @@ namespace PublicManager
         [STAThread]
         static void Main()
         {
+            //初始化数据库
+            PublicManager.DB.ConnectionManager.Open("main", "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "static.db"));
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
