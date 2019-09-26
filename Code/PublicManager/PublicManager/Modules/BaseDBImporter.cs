@@ -1,4 +1,5 @@
 ﻿using PublicManager.DB;
+using PublicManager.DB.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -68,5 +69,34 @@ namespace PublicManager.Modules
         /// <param name="localContext"></param>
         /// <returns>CatalogID</returns>
         protected abstract string importDB(string catalogNumber, string sourceFile, Noear.Weed.DbContext localContext);
+
+        /// <summary>
+        /// 更新并且清理Catalog
+        /// </summary>
+        /// <param name="catalogNumber"></param>
+        /// <param name="catalogName"></param>
+        /// <param name="catalogType"></param>
+        /// <param name="catalogVersion"></param>
+        /// <returns></returns>
+        protected Catalog updateAndClearCatalog(string catalogNumber,string catalogName,string catalogType,string catalogVersion)
+        {
+            //删除旧的Catalog
+            string catalogID = ConnectionManager.Context.table("Catalog").where("CatalogNumber='" + catalogNumber + "'").select("CatalogID").getValue<string>(string.Empty);
+            if (!string.IsNullOrEmpty(catalogID))
+            {
+                deleteProject(catalogID);
+            }
+
+            //添加Catalog
+            Catalog catalog = new Catalog();
+            catalog.CatalogID = Guid.NewGuid().ToString();
+            catalog.CatalogNumber = catalogNumber;
+            catalog.CatalogName = catalogName;
+            catalog.CatalogType = catalogType;
+            catalog.CatalogVersion = catalogVersion;
+            catalog.copyTo(ConnectionManager.Context.table("Catalog")).insert();
+
+            return catalog;
+        }
     }
 }
