@@ -49,8 +49,6 @@ namespace PublicManager.Modules.Reporter
                     cells.Add(p.WorkUnit);
                 }
 
-                cells.Add("");
-
                 int rowIndex = dgvCatalogs.Rows.Add(cells.ToArray());
                 dgvCatalogs.Rows[rowIndex].Tag = catalog;
             }

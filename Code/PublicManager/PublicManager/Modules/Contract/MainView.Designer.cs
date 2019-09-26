@@ -34,7 +34,6 @@
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCreater = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCreaterUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRealUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogs)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +48,6 @@
             this.colName,
             this.colCreater,
             this.colCreaterUnit,
-            this.colRealUnit,
             this.colDel});
             this.dgvCatalogs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCatalogs.Location = new System.Drawing.Point(0, 0);
@@ -95,13 +93,6 @@
             this.colCreaterUnit.Name = "colCreaterUnit";
             this.colCreaterUnit.ReadOnly = true;
             // 
-            // colRealUnit
-            // 
-            this.colRealUnit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRealUnit.HeaderText = "申请单位名称(标准库)";
-            this.colRealUnit.Name = "colRealUnit";
-            this.colRealUnit.ReadOnly = true;
-            // 
             // colDel
             // 
             this.colDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -132,7 +123,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCreater;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCreaterUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRealUnit;
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
 
 

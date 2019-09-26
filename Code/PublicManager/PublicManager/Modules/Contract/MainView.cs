@@ -49,14 +49,11 @@ namespace PublicManager.Modules.Contract
                     cells.Add(p.WorkUnit);
                 }
 
-                cells.Add("");
-
                 int rowIndex = dgvCatalogs.Rows.Add(cells.ToArray());
                 dgvCatalogs.Rows[rowIndex].Tag = catalog;
             }
         }
-
-
+        
         private void dgvCatalogs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //检查是否点击的是删除的那一列
