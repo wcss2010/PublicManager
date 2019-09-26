@@ -13,6 +13,7 @@ namespace PublicManager.Modules.Reporter
         private string totalDir = "(未设置)";
 
         private string decompressDir = "(未设置)";
+        private MainView tc;
 
         public ReporterModuleController()
         {
@@ -47,7 +48,8 @@ namespace PublicManager.Modules.Reporter
         private void showDetailPage()
         {
             DisplayControl.Controls.Clear();
-            MainView tc = new MainView();
+            tc = new MainView();
+            tc.updateCatalogs();
             tc.Dock = DockStyle.Fill;
             DisplayControl.Controls.Add(tc);
         }
@@ -79,13 +81,13 @@ namespace PublicManager.Modules.Reporter
 
         private void btnImportAll_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.ImporterForm ifm = new Forms.ImporterForm(true, totalDir, decompressDir);
+            Forms.ImporterForm ifm = new Forms.ImporterForm(tc, true, totalDir, decompressDir);
             ifm.ShowDialog();
         }
 
         private void btnImportWithSelected_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.ImporterForm ifm = new Forms.ImporterForm(true, totalDir, decompressDir);
+            Forms.ImporterForm ifm = new Forms.ImporterForm(tc, false, totalDir, decompressDir);
             ifm.ShowDialog();
         }
 

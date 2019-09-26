@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars.Ribbon;
+using PublicManager.DB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,13 +25,15 @@ namespace PublicManager.Modules.Contract.Forms
         private Dictionary<string, bool> replaceDict = new Dictionary<string, bool>();
         private string decompressDir;
         private string totalDir;
+        private MainView mainView;
 
-        public ImporterForm(bool isImportAll, string sourceDir, string destDir)
+        public ImporterForm(MainView mv, bool isImportAll, string sourceDir, string destDir)
         {
             InitializeComponent();
 
             totalDir = sourceDir;
             decompressDir = destDir;
+            mainView = mv;
 
             //刷新子目录列表
             getFileTree(sourceDir);
@@ -48,27 +51,31 @@ namespace PublicManager.Modules.Contract.Forms
 
         public void getFileTree(string path)
         {
-            string[] dirs = System.IO.Directory.GetDirectories(path);
-            foreach (string s in dirs)
+            try
             {
-                //目录信息
-                System.IO.DirectoryInfo fi = new System.IO.DirectoryInfo(s);
-                Regex rege = new Regex("-", RegexOptions.Compiled);
-                int count = rege.Matches(fi.Name).Count;
-                if (fi.Name.StartsWith(DateTime.Now.Year.ToString()) && count == 3)
+                string[] dirs = System.IO.Directory.GetDirectories(path);
+                foreach (string s in dirs)
                 {
-                    //添加目录名称
-                    TreeNode tn = new TreeNode();
-                    tn.Text = fi.Name;
-                    tn.Name = fi.FullName;
-                    tlTestA.Nodes.Add(tn);
-                }
-                else
-                {
-                    string newPath = path + "/" + fi.Name;
-                    getFileTree(newPath);
+                    //目录信息
+                    System.IO.DirectoryInfo fi = new System.IO.DirectoryInfo(s);
+                    Regex rege = new Regex("-", RegexOptions.Compiled);
+                    int count = rege.Matches(fi.Name).Count;
+                    if (fi.Name.StartsWith(DateTime.Now.Year.ToString()) && count == 3)
+                    {
+                        //添加目录名称
+                        TreeNode tn = new TreeNode();
+                        tn.Text = fi.Name;
+                        tn.Name = fi.FullName;
+                        tlTestA.Nodes.Add(tn);
+                    }
+                    else
+                    {
+                        string newPath = path + "/" + fi.Name;
+                        getFileTree(newPath);
+                    }
                 }
             }
+            catch (Exception ex) { }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -164,7 +171,7 @@ namespace PublicManager.Modules.Contract.Forms
                                 try
                                 {
                                     //刷新Catalog列表
-                                    //MainForm.Instance.reloadCatalogList();
+                                    mainView.updateCatalogs();
 
                                     //关闭进度窗口
                                     pf.Close();
@@ -255,6 +262,72 @@ namespace PublicManager.Modules.Contract.Forms
                 return true;
             else
                 return false;
+        }
+
+        /// <summary>
+        /// 刷新替换列表
+        /// </summary>
+        private void reloadReplaceList()
+        {
+            //锁定替换列表点击CheckBox时更新替换字典的功能
+            isNeedUpdateDict = false;
+
+            //清空替换列表
+            lvErrorList.Items.Clear();
+            //显示替换列表数
+            foreach (KeyValuePair<string, bool> kvp in replaceDict)
+            {
+                //列表项
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = kvp.Key;
+                lvi.Checked = kvp.Value;
+
+                //向替换列表添加
+                lvErrorList.Items.Add(lvi);
+            }
+
+            //解锁替换列表点击CheckBox时更新替换字典的功能
+            isNeedUpdateDict = true;
+        }
+
+        private void tlTestA_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            //读取目录名称中的项目编号
+            string catalogNumber = e.Node.Text;
+
+            //判断当前项目是否需要导入
+            if (e.Node.Checked)
+            {
+                //需要导入
+
+                //根据项目编号查询项目数量
+                long projectCount = ConnectionManager.Context.table("Catalog").where("catalognumber='" + catalogNumber + "'").select("count(*)").getValue<long>(0);
+                //判断这个项目是否被导入过
+                if (projectCount >= 1)
+                {
+                    replaceDict[catalogNumber] = true;
+                }
+            }
+            else
+            {
+                //不需要导入
+                replaceDict.Remove(catalogNumber);
+            }
+
+            //刷新替换列表
+            reloadReplaceList();
+        }
+
+        private void lvErrorList_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            //改变选择状态
+            if (isNeedUpdateDict)
+            {
+                if (replaceDict.ContainsKey(e.Item.Text))
+                {
+                    replaceDict[e.Item.Text] = e.Item.Checked;
+                }
+            }
         }
     }
 }

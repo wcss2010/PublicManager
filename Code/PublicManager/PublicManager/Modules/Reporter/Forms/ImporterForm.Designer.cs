@@ -31,18 +31,14 @@
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.tlTestA = new System.Windows.Forms.TreeView();
             this.gcIgnoreList = new DevExpress.XtraEditors.GroupControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.col11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
+            this.lvErrorList = new System.Windows.Forms.ListView();
+            this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcIgnoreList)).BeginInit();
             this.gcIgnoreList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             this.SuspendLayout();
@@ -67,59 +63,19 @@
             this.tlTestA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlTestA.Location = new System.Drawing.Point(0, 0);
             this.tlTestA.Name = "tlTestA";
-            this.tlTestA.Size = new System.Drawing.Size(253, 463);
+            this.tlTestA.Size = new System.Drawing.Size(295, 463);
             this.tlTestA.TabIndex = 0;
+            this.tlTestA.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tlTestA_AfterSelect);
             // 
             // gcIgnoreList
             // 
-            this.gcIgnoreList.Controls.Add(this.gridControl1);
+            this.gcIgnoreList.Controls.Add(this.lvErrorList);
             this.gcIgnoreList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcIgnoreList.Location = new System.Drawing.Point(0, 0);
             this.gcIgnoreList.Name = "gcIgnoreList";
-            this.gcIgnoreList.Size = new System.Drawing.Size(596, 463);
+            this.gcIgnoreList.Size = new System.Drawing.Size(554, 463);
             this.gcIgnoreList.TabIndex = 0;
             this.gcIgnoreList.Text = "是否需要覆盖已存在数据？";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 21);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(592, 440);
-            this.gridControl1.TabIndex = 1;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.col11,
-            this.col22});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsFind.FindNullPrompt = "";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // col11
-            // 
-            this.col11.Caption = "是否仍需要导入";
-            this.col11.FieldName = "A";
-            this.col11.Name = "col11";
-            this.col11.OptionsColumn.AllowFocus = false;
-            this.col11.Visible = true;
-            this.col11.VisibleIndex = 0;
-            // 
-            // col22
-            // 
-            this.col22.Caption = "名称";
-            this.col22.FieldName = "B";
-            this.col22.Name = "col22";
-            this.col22.OptionsColumn.AllowFocus = false;
-            this.col22.Visible = true;
-            this.col22.VisibleIndex = 1;
             // 
             // panelControl2
             // 
@@ -140,6 +96,25 @@
             this.btnOK.Text = "导入";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // lvErrorList
+            // 
+            this.lvErrorList.CheckBoxes = true;
+            this.lvErrorList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chID});
+            this.lvErrorList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvErrorList.Location = new System.Drawing.Point(2, 21);
+            this.lvErrorList.Name = "lvErrorList";
+            this.lvErrorList.Size = new System.Drawing.Size(550, 440);
+            this.lvErrorList.TabIndex = 1;
+            this.lvErrorList.UseCompatibleStateImageBehavior = false;
+            this.lvErrorList.View = System.Windows.Forms.View.Details;
+            this.lvErrorList.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvErrorList_ItemChecked);
+            // 
+            // chID
+            // 
+            this.chID.Text = "项目编号";
+            this.chID.Width = 300;
+            // 
             // ImporterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -157,8 +132,6 @@
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcIgnoreList)).EndInit();
             this.gcIgnoreList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -169,12 +142,10 @@
 
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraEditors.GroupControl gcIgnoreList;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn col11;
-        private DevExpress.XtraGrid.Columns.GridColumn col22;
         private System.Windows.Forms.TreeView tlTestA;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.SimpleButton btnOK;
+        private System.Windows.Forms.ListView lvErrorList;
+        private System.Windows.Forms.ColumnHeader chID;
     }
 }

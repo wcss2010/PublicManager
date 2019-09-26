@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Localization;
+using PublicManager.DB;
+using PublicManager.DB.Entitys;
 
 namespace PublicManager.Modules.Reporter
 {
@@ -22,41 +24,35 @@ namespace PublicManager.Modules.Reporter
         {
             base.OnLoad(e);
 
-            CustomButtonText(gridView1, SetGridLocalizer());
+            updateCatalogs();
+        }
 
-            DataTable dt = new DataTable();
-            dt.Columns.Add("A", typeof(string));
-            dt.Columns.Add("B", typeof(string));
-            dt.Columns.Add("C", typeof(string));
+        public void updateCatalogs()
+        {
+            dgvCatalogs.Rows.Clear();
 
-            for (int kk = 1; kk <= 10; kk++)
+            List<Catalog> list = ConnectionManager.Context.table("Catalog").where("CatalogType='建议书'").select("*").getList<Catalog>(new Catalog());
+            int indexx = 0;
+            foreach (Catalog catalog in list)
             {
-                dt.Rows.Add(new object[] { "数据D-" + kk, "数据E-" + kk, "数据F-" + kk });
+                indexx++;
+
+                List<object> cells = new List<object>();
+                cells.Add(indexx);
+                cells.Add(catalog.CatalogNumber);
+                cells.Add(catalog.CatalogName);
+
+                Person p = ConnectionManager.Context.table("Person").where("IsProjectMaster='true'").select("*").getItem<Person>(new Person());
+                if (p != null)
+                {
+                    cells.Add(p.PersonName);
+                    cells.Add(p.WorkUnit);
+                }
+
+                cells.Add("");
+
+                dgvCatalogs.Rows.Add(cells.ToArray());
             }
-            gridControl1.DataSource = dt;
-        }
-
-        /// <summary>
-        /// 自定义GridControl按钮文字
-        /// </summary>
-        /// <param name="girdview">GridView</param>
-        /// <param name="cusLocalizedKeyValue">需要转移的GridStringId，其对应的文字描述</param>
-        public void CustomButtonText(GridView girdview, Dictionary<GridStringId, string> cusLocalizedKeyValue)
-        {
-            BuilderGridLocalizer _bGridLocalizer = new BuilderGridLocalizer(cusLocalizedKeyValue);
-            GridLocalizer.Active = _bGridLocalizer;            
-        }
-        private Dictionary<GridStringId, string> SetGridLocalizer()
-        {
-            Dictionary<GridStringId, string> _gridLocalizer = new Dictionary<GridStringId, string>();
-            _gridLocalizer.Add(GridStringId.FindControlFindButton, "查找");
-            _gridLocalizer.Add(GridStringId.FindControlClearButton, "清空");
-            return _gridLocalizer;
-        }
-
-        private void gridView1_FocusedRowChanged_1(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-
         }
     }
 }
