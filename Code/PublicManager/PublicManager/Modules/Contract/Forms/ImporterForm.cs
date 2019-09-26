@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PublicManager.Modules.Contract.Forms
 {
-    public partial class ImporterForm : RibbonForm
+    public partial class ImporterForm : Form
     {
         /// <summary>
         /// 是否需要更新替换字典在改变替换列表中项目状态时
@@ -71,7 +71,7 @@ namespace PublicManager.Modules.Contract.Forms
             }
         }
 
-        private void btnImport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
             //需要替换的申报包列表
             List<string> importList = new List<string>();
@@ -256,6 +256,5 @@ namespace PublicManager.Modules.Contract.Forms
             else
                 return false;
         }
-
     }
 }
