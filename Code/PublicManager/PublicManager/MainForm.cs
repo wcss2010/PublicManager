@@ -54,6 +54,9 @@ namespace PublicManager
         {
             ModuleDict["合同书汇总"] = new ContractModuleController();
             ModuleDict["建议书汇总"] = new ReporterModuleController();
+            ModuleDict["项目课题关系"] = new Modules.DataCheck.ProjectSubjectCheck.ModuleController();
+            ModuleDict["项目成员关系"] = new Modules.DataCheck.ProjectPersonCheck.ModuleController();
+            ModuleDict["成员分析"] = new Modules.DataCheck.PersonCheck.ModuleController();
         }
 
         /// <summary>
@@ -177,6 +180,16 @@ namespace PublicManager
 
             //错误计数
             ProgressForm.errorCount++;
+        }
+
+        private void tlTestB_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
+        {
+            showModule(e.Node.GetDisplayText(0), true);
+        }
+
+        private void tlTestC_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
+        {
+            showModule(e.Node.GetDisplayText(0), true);
         }
     }
 }
