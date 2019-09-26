@@ -82,6 +82,11 @@ namespace PublicManager.Modules.Contract
                     //是否为项目负责人
                     obj.IsProjectMaster = (di.getString("ShiXiangMuFuZeRen") == "rbIsOnlyProject" || di.getString("ShiXiangMuFuZeRen") == "rbIsProjectAndSubject") ? "true" : "false";
 
+                    if (di.getString("ShiXiangMuFuZeRen") == "rbIsOnlyProject")
+                    {
+                        obj.SubjectID = string.Empty;
+                    }
+
                     //插入数据
                     obj.copyTo(ConnectionManager.Context.table("Person")).insert();
                 }

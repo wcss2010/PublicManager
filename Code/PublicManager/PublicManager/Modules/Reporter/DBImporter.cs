@@ -54,7 +54,10 @@ namespace PublicManager.Modules.Reporter
                     obj.CatalogID = proj.CatalogID;
                     obj.ProjectID = proj.ProjectID;
                     obj.SubjectName = di.getString("Name");
-                    //obj.TotalMoney = di.get("") != null ? decimal.Parse(di.get("").ToString()) : 0;
+
+                    object objMoney = localContext.table("Task").where("Role='负责人' and Type = '课题' and ProjectID = '" + obj.SubjectID + "'").select("TotalMoney").getValue();
+                    obj.TotalMoney = objMoney != null ? decimal.Parse(objMoney.ToString()) : 0;
+
                     obj.WorkDest = System.IO.Path.Combine(filesDir, "课题详细_" + obj.SubjectName + "_研究目标" + ".doc");
                     obj.WorkContent = System.IO.Path.Combine(filesDir, "课题详细_" + obj.SubjectName + "_研究内容" + ".doc");
                     obj.WorkTask = string.Empty;
@@ -96,6 +99,12 @@ namespace PublicManager.Modules.Reporter
 
                         //是否为项目负责人
                         obj.IsProjectMaster = diTask.getString("Type") == "项目" ? "true" : "false";
+
+                        //如果是项目负责人就清空课题ID
+                        if (obj.IsProjectMaster == "true")
+                        {
+                            obj.SubjectID = string.Empty;
+                        }
 
                         //插入数据
                         obj.copyTo(ConnectionManager.Context.table("Person")).insert();
