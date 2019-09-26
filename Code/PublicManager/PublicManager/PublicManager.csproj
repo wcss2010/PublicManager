@@ -116,6 +116,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuilderGridLocalizer.cs" />
+    <Compile Include="DB\ConnectionManager.cs" />
+    <Compile Include="DB\Entitys\Catalog.cs" />
+    <Compile Include="DB\Entitys\IEntity.cs" />
+    <Compile Include="DB\Entitys\Person.cs" />
+    <Compile Include="DB\Entitys\Project.cs" />
+    <Compile Include="DB\Entitys\Subject.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="static.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Today_32x32.png" />
