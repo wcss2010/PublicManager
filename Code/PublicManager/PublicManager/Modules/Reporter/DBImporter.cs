@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Noear.Weed;
+using PublicManager.DB;
+using PublicManager.DB.Entitys;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -16,11 +19,90 @@ namespace PublicManager.Modules.Reporter
         protected override string importDB(string catalogNumber, string sourceFile, Noear.Weed.DbContext localContext)
         {
             //处理项目信息
+            DataItem diProject = localContext.table("Project").where("Type = '项目'").select("*").getDataItem();
+            if (diProject != null && diProject.count() >= 1)
+            {
+                //读取版本号
+                string catalogVersionStr = "v1.1";
+                try
+                {
+                    catalogVersionStr = localContext.table("Version").select("VersionNum").getValue<string>(catalogVersionStr);
+                }
+                catch (Exception ex) { }
 
-            //处理课题列表
+                //更新Catalog
+                Catalog catalog = updateAndClearCatalog(catalogNumber, diProject.getString("Name"), "建议书", catalogVersionStr);
 
-            //处理人员信息
+                //添加项目信息
+                Project proj = new Project();
+                proj.ProjectID = catalog.CatalogID;
+                proj.CatalogID = catalog.CatalogID;
+                proj.ProjectName = catalog.CatalogName;
+                proj.SecretLevel = diProject.getString("SecretLevel");
+                proj.TotalMoney = diProject.get("TotalMoney") != null ? decimal.Parse(diProject.get("TotalMoney").ToString()) : 0;
+                proj.copyTo(ConnectionManager.Context.table("Project")).insert();
 
+                //附件目录
+                string filesDir = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(sourceFile), "Files");                
+
+                //处理课题列表
+                DataList dlSubject = localContext.table("Project").where("Type = '课题'").select("*").getDataList();
+                foreach (DataItem di in dlSubject.getRows())
+                {
+                    Subject obj = new Subject();
+                    obj.SubjectID = di.getString("ID");
+                    obj.CatalogID = proj.CatalogID;
+                    obj.ProjectID = proj.ProjectID;
+                    obj.SubjectName = di.getString("Name");
+                    //obj.TotalMoney = di.get("") != null ? decimal.Parse(di.get("").ToString()) : 0;
+                    obj.WorkDest = System.IO.Path.Combine(filesDir, "课题详细_" + obj.SubjectName + "_研究目标" + ".doc");
+                    obj.WorkContent = System.IO.Path.Combine(filesDir, "课题详细_" + obj.SubjectName + "_研究内容" + ".doc");
+                    obj.WorkTask = string.Empty;
+                    obj.copyTo(ConnectionManager.Context.table("Subject")).insert();
+                }
+
+                //处理人员信息
+                DataList dlTask = localContext.table("Task").select("*").getDataList();
+                foreach (DataItem diTask in dlTask.getRows())
+                {
+                    DataItem diPerson = localContext.table("Person").where("ID = '" + diTask.getString("PersonID") + "'").select("*").getDataItem();
+                    if (diPerson != null && diPerson.count() >= 1)
+                    {
+                        Person obj = new Person();
+                        obj.PersonID = Guid.NewGuid().ToString();
+                        obj.CatalogID = proj.CatalogID;
+                        obj.ProjectID = proj.ProjectID;
+                        obj.SubjectID = diTask.getString("ProjectID");
+                        obj.PersonName = diPerson.getString("Name");
+                        obj.PersonIDCard = diPerson.getString("IDCard");
+                        obj.PersonSex = diPerson.getString("Sex");
+                        obj.PersonJob = diPerson.getString("Job");
+                        obj.PersonSpecialty = diPerson.getString("Specialty");
+                        obj.TotalTime = diTask.getInt("TotalTime");
+                        obj.TaskContent = diTask.getString("Content");
+
+                        DataItem diUnit = localContext.table("Unit").where("ID='" + diPerson.getString("UnitID") + "'").select("*").getDataItem();
+                        if (diUnit != null && diUnit.count() >= 1)
+                        {
+                            obj.WorkUnit = diUnit.getString("UnitName");
+                        }
+                        else
+                        {
+                            obj.WorkUnit = "未知";
+                        }
+
+                        //设置项目中职务
+                        obj.JobInProject = diTask.getString("Role");
+
+                        //是否为项目负责人
+                        obj.IsProjectMaster = diTask.getString("Type") == "项目" ? "true" : "false";
+
+                        //插入数据
+                        obj.copyTo(ConnectionManager.Context.table("Person")).insert();
+                    }
+                }
+
+            }
             return null;
         }
     }
