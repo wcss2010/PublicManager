@@ -33,7 +33,28 @@ namespace PublicManager.Modules.DataCheck.ProjectPersonCheck
             foreach (Project proj in projList)
             {
                 //显示仅为项目负责人
-                //Person masterPerson = ConnectionManager.Context.table("Person").where
+                Person masterPerson = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '' and JobInProject = '负责人' and IsProjectMaster = 'true'").select("*").getItem<Person>(new Person());
+                if (masterPerson != null && masterPerson.PersonID != null && masterPerson.PersonID.Length >= 1)
+                {
+                    //存在仅为负责人的记录
+                    List<object> cells = new List<object>();
+                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
+                    cells.Add(proj.ProjectName);
+                    cells.Add("");
+                    cells.Add(masterPerson.PersonName);
+                    cells.Add(masterPerson.PersonIDCard);
+                    cells.Add(masterPerson.PersonSex);
+                    cells.Add(masterPerson.WorkUnit);
+                    cells.Add(masterPerson.PersonJob);
+                    cells.Add(masterPerson.PersonSpecialty);
+                    cells.Add(masterPerson.TotalTime);
+                    cells.Add(masterPerson.TaskContent);
+
+                    cells.Add("项目负责人");
+
+                    dataGridView1.Rows.Add(cells.ToArray());
+                }
+
                 //显示课题成员
                 List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                 foreach (Subject sub in subList)
