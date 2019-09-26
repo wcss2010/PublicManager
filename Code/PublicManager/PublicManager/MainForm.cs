@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -145,9 +146,37 @@ namespace PublicManager
             form.ShowDialog(this);
         }
 
-        internal static void writeLog(string p)
+        /// <summary>
+        /// 写入日志
+        /// </summary>
+        /// <param name="text"></param>
+        public static void writeLog(string text)
         {
-            
+            //日志目录
+            string logPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
+
+            //判断是否需要创建目录
+            if (!System.IO.Directory.Exists(logPath))
+            {
+                try
+                {
+                    System.IO.Directory.CreateDirectory(logPath);
+                }
+                catch (Exception ex) { }
+            }
+
+            //生成日志文件名称
+            string fileFullName = System.IO.Path.Combine(logPath, string.Format("{0}.txt", DateTime.Now.ToString("yyyyMMdd")));
+
+            //写日志
+            try
+            {
+                File.AppendAllText(fileFullName, DateTime.Now.ToString() + ":" + text + Environment.NewLine);
+            }
+            catch (Exception ex) { }
+
+            //错误计数
+            ProgressForm.errorCount++;
         }
     }
 }
