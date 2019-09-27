@@ -80,15 +80,40 @@ namespace PublicManager.Modules.Contract
                     obj.JobInProject = di.getString("ZhiWu");
 
                     //是否为项目负责人
-                    obj.IsProjectMaster = (di.getString("ShiXiangMuFuZeRen") == "rbIsOnlyProject" || di.getString("ShiXiangMuFuZeRen") == "rbIsProjectAndSubject") ? "true" : "false";
-
-                    if (di.getString("ShiXiangMuFuZeRen") == "rbIsOnlyProject")
+                    switch (di.getString("ShiXiangMuFuZeRen"))
                     {
-                        obj.SubjectID = string.Empty;
-                    }
+                        case "rbIsOnlyProject":
+                            obj.PersonID = Guid.NewGuid().ToString();
+                            obj.SubjectID = string.Empty;
+                            obj.IsProjectMaster = "true";
+                            //插入数据
+                            obj.copyTo(ConnectionManager.Context.table("Person")).insert();
+                            break;
+                        case "rbIsProjectAndSubject":
+                            string oldSubjectID = obj.SubjectID;
 
-                    //插入数据
-                    obj.copyTo(ConnectionManager.Context.table("Person")).insert();
+                            //保存项目负责人
+                            obj.PersonID = Guid.NewGuid().ToString();
+                            obj.SubjectID = string.Empty;
+                            obj.IsProjectMaster = "true";
+                            //插入数据
+                            obj.copyTo(ConnectionManager.Context.table("Person")).insert();
+
+                            //保存课题负责人
+                            obj.PersonID = Guid.NewGuid().ToString();
+                            obj.SubjectID = oldSubjectID;
+                            obj.IsProjectMaster = "false";
+                            //插入数据
+                            obj.copyTo(ConnectionManager.Context.table("Person")).insert();
+                            break;
+                        case "rbIsOnlySubject":
+                            //保存课题负责人或成员
+                            obj.PersonID = Guid.NewGuid().ToString();
+                            obj.IsProjectMaster = "false";
+                            //插入数据
+                            obj.copyTo(ConnectionManager.Context.table("Person")).insert();
+                            break;
+                    }
                 }
 
                 return catalog.CatalogID;
