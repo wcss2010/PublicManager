@@ -113,6 +113,7 @@
             this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
             this.skinRibbonGalleryBarItem1.Id = 3;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.GalleryItemClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.skinRibbonGalleryBarItem1_GalleryItemClick);
             // 
             // ribbonGalleryBarItem1
             // 
@@ -412,6 +413,7 @@
             this.Controls.Add(this.rcTopBar);
             this.Name = "MainForm";
             this.Ribbon = this.rcTopBar;
+            this.ShowIcon = false;
             this.StatusBar = this.rsbStatusBar;
             this.Text = "数据汇总系统";
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();

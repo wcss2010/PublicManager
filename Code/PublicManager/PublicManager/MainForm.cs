@@ -161,6 +161,12 @@ namespace PublicManager
             form.SkinMaskColor = UserLookAndFeel.Default.SkinMaskColor;
             form.SkinMaskColor2 = UserLookAndFeel.Default.SkinMaskColor2;
             form.ShowDialog(this);
+
+            MainConfig.Config.Dict["皮肤颜色1"] = UserLookAndFeel.Default.SkinMaskColor != null ? UserLookAndFeel.Default.SkinMaskColor.ToArgb().ToString() : "-1";
+            MainConfig.Config.Dict["皮肤颜色2"] = UserLookAndFeel.Default.SkinMaskColor2 != null ? UserLookAndFeel.Default.SkinMaskColor2.ToArgb().ToString() : "-1";
+
+            MainConfig.Config.Dict["当前皮肤"] = UserLookAndFeel.Default.ActiveSkinName;
+            MainConfig.saveConfig();
         }
 
         /// <summary>
@@ -240,6 +246,12 @@ namespace PublicManager
                 //显示模块
                 showModule(hitInfo.Node.GetDisplayText(0), true);
             }
+        }
+
+        private void skinRibbonGalleryBarItem1_GalleryItemClick(object sender, GalleryItemClickEventArgs e)
+        {
+            MainConfig.Config.Dict["当前皮肤"] = string.Concat(e.Item.Tag);
+            MainConfig.saveConfig();
         }
     }
 }
