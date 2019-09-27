@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using PublicManager.DB;
 using PublicManager.DB.Entitys;
+using System.IO;
 
 namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
 {
@@ -47,6 +48,25 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
             this.DisplayControl.Controls.Clear();
             this.Dock = DockStyle.Fill;
             this.DisplayControl.Controls.Add(this);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Rows.Count >= 1)
+            {
+                string content = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty;
+                if (content != null && content.EndsWith(".doc"))
+                {
+                    if (File.Exists(content))
+                    {
+                        try
+                        {
+                            System.Diagnostics.Process.Start(content);
+                        }
+                        catch (Exception ex) { }
+                    }
+                }
+            }
         }
     }
 }
