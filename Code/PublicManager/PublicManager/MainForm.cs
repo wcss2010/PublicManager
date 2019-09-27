@@ -3,6 +3,7 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.ColorWheel;
 using DevExpress.XtraNavBar;
+using DevExpress.XtraTreeList;
 using PublicManager.Modules;
 using PublicManager.Modules.Contract;
 using PublicManager.Modules.Reporter;
@@ -45,6 +46,9 @@ namespace PublicManager
 
             //加载所有模块
             loadModules();
+
+            //显示第一页
+            nbcLeftTree_ActiveGroupChanged(nbcLeftTree, new NavBarGroupEventArgs(nbcTestA));
         }
 
         /// <summary>
@@ -127,7 +131,20 @@ namespace PublicManager
 
         private void nbcLeftTree_ActiveGroupChanged(object sender, DevExpress.XtraNavBar.NavBarGroupEventArgs e)
         {
+            plRightContent.Controls.Clear();
 
+            if (e.Group.ControlContainer.Controls.Count >= 1)
+            {
+                if (e.Group.ControlContainer.Controls[0] is TreeList)
+                {
+                    TreeList tl = ((TreeList)e.Group.ControlContainer.Controls[0]);
+                    if (tl.Nodes.Count >= 1)
+                    {
+                        tl.SetFocusedNode(tl.Nodes[0]);
+                        showModule(tl.Nodes[0].GetDisplayText(0), true);
+                    }
+                }
+            }
         }
 
         private void nbcLeftTree_NavPaneStateChanged(object sender, EventArgs e)
@@ -135,11 +152,8 @@ namespace PublicManager
 
         }
 
-        private void tlTestA_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
-        {
-            showModule(e.Node.GetDisplayText(0), true);
-        }
-
+        private void tlTestA_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e) { }
+        
         private void btnSkinColorModify_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ColorWheelForm form = new ColorWheelForm();
@@ -182,14 +196,50 @@ namespace PublicManager
             ProgressForm.errorCount++;
         }
 
-        private void tlTestB_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
+        private void tlTestB_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e) { }
+        
+        private void tlTestC_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e) { }
+        
+        private void tlTestA_MouseClick(object sender, MouseEventArgs e)
         {
-            showModule(e.Node.GetDisplayText(0), true);
+            DevExpress.XtraTreeList.TreeList tree = ((DevExpress.XtraTreeList.TreeList)sender);
+            Point p = new Point(Cursor.Position.X, Cursor.Position.Y);　　//获取到鼠标点击的坐标位置
+            TreeListHitInfo hitInfo = tree.CalcHitInfo(e.Location);
+            if (hitInfo.HitInfoType == HitInfoType.Cell)
+            {
+                tree.SetFocusedNode(hitInfo.Node);         //这句话就是关键，用于选中节点　　
+
+                //显示模块
+                showModule(hitInfo.Node.GetDisplayText(0), true);
+            }
         }
 
-        private void tlTestC_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
+        private void tlTestB_MouseClick(object sender, MouseEventArgs e)
         {
-            showModule(e.Node.GetDisplayText(0), true);
+            DevExpress.XtraTreeList.TreeList tree = ((DevExpress.XtraTreeList.TreeList)sender);
+            Point p = new Point(Cursor.Position.X, Cursor.Position.Y);　　//获取到鼠标点击的坐标位置
+            TreeListHitInfo hitInfo = tree.CalcHitInfo(e.Location);
+            if (hitInfo.HitInfoType == HitInfoType.Cell)
+            {
+                tree.SetFocusedNode(hitInfo.Node);         //这句话就是关键，用于选中节点　　
+
+                //显示模块
+                showModule(hitInfo.Node.GetDisplayText(0), true);
+            }
+        }
+
+        private void tlTestC_MouseClick(object sender, MouseEventArgs e)
+        {
+            DevExpress.XtraTreeList.TreeList tree = ((DevExpress.XtraTreeList.TreeList)sender);
+            Point p = new Point(Cursor.Position.X, Cursor.Position.Y);　　//获取到鼠标点击的坐标位置
+            TreeListHitInfo hitInfo = tree.CalcHitInfo(e.Location);
+            if (hitInfo.HitInfoType == HitInfoType.Cell)
+            {
+                tree.SetFocusedNode(hitInfo.Node);         //这句话就是关键，用于选中节点　　
+
+                //显示模块
+                showModule(hitInfo.Node.GetDisplayText(0), true);
+            }
         }
     }
 }
