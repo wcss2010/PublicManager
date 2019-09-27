@@ -39,6 +39,16 @@ namespace PublicManager.Modules.Reporter
         /// </summary>
         private void updateDirectoryHint()
         {
+            if (MainConfig.Config.Dict.ContainsKey("建议总目录"))
+            {
+                totalDir = MainConfig.Config.Dict["建议总目录"];
+            }
+            
+            if (MainConfig.Config.Dict.ContainsKey("建议解压目录"))
+            {
+                decompressDir = MainConfig.Config.Dict["建议解压目录"];
+            }
+
             StatusLabelControl.Caption = "主目录:" + totalDir + ",解压目录:" + decompressDir;
         }
 
@@ -65,6 +75,10 @@ namespace PublicManager.Modules.Reporter
             if (fbdFolderSelect.ShowDialog() == DialogResult.OK)
             {
                 totalDir = fbdFolderSelect.SelectedPath;
+
+                MainConfig.Config.Dict["建议总目录"] = totalDir;
+                MainConfig.saveConfig();
+
                 updateDirectoryHint();
             }
         }
@@ -75,6 +89,10 @@ namespace PublicManager.Modules.Reporter
             if (fbdFolderSelect.ShowDialog() == DialogResult.OK)
             {
                 decompressDir = fbdFolderSelect.SelectedPath;
+
+                MainConfig.Config.Dict["建议解压目录"] = decompressDir;
+                MainConfig.saveConfig();
+
                 updateDirectoryHint();
             }
         }
