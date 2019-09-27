@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace PublicManager
 {
+    /// <summary>
+    /// 程序配置文件
+    /// </summary>
     public class MainConfig
     {
         /// <summary>
@@ -34,6 +37,13 @@ namespace PublicManager
             else
             {
                 Config = new MainConfig();
+
+                Config.Dict["合同验证_目录"] = "files";
+                Config.Dict["合同验证_文件"] = "static.db,合同书.doc";
+
+                Config.Dict["建议验证_目录"] = "files";
+                Config.Dict["建议验证_文件"] = "static.db,项目申报书.doc";
+
             }
         }
 
