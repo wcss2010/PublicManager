@@ -230,26 +230,27 @@ namespace PublicManager.Modules.Contract.Forms
                 //解压这个包
                 new ZipTool().UnZipFile(pkgZipFile, unZipDir, string.Empty, true);
                 //校验文件信息
-                //string[] foldersValidata = MainForm.validataConfig.Folders.Split(',');
-                //int foldersLen = foldersValidata.Length;
-                //string[] filesValidata = MainForm.validataConfig.Files.Split(',');
-                //int filesLen = filesValidata.Length;
-                //for (int i = 0; i < foldersLen; i++) {
-                //    if (!System.IO.Directory.Exists(Path.Combine(unZipDir, foldersValidata[i])))
-                //    {
-                //        MainForm.writeLog("项目" + createFileName + "的解包操作，" + foldersValidata[i] + "文件夹不存在");
-                //        outList.Add(foldersValidata[i]+"文件夹 不存在");
-                //    }
-                //}
-                //for (int i = 0; i < filesLen; i++)
-                //{
-                //    if (!File.Exists(Path.Combine(unZipDir, filesValidata[i])))
-                //    {
-                //        MainForm.writeLog("项目" + createFileName + "的解包操作，" + filesValidata[i] + "不存在");
-                //        outList.Add(filesValidata[i] + " 不存在");
-                //    }
-                //}
-                //MainForm.writeLog("项目" + createFileName + "的解包操作，结束ZIP文件解压");
+                string[] foldersValidata = MainConfig.Config.Dict["合同验证_目录"].Split(',');
+                int foldersLen = foldersValidata.Length;
+                string[] filesValidata = MainConfig.Config.Dict["合同验证_文件"].Split(',');
+                int filesLen = filesValidata.Length;
+                for (int i = 0; i < foldersLen; i++)
+                {
+                    if (!System.IO.Directory.Exists(Path.Combine(unZipDir, foldersValidata[i])))
+                    {
+                        MainForm.writeLog("项目" + createFileName + "的解包操作，" + foldersValidata[i] + "文件夹不存在");
+                        outList.Add(foldersValidata[i] + "文件夹 不存在");
+                    }
+                }
+                for (int i = 0; i < filesLen; i++)
+                {
+                    if (!File.Exists(Path.Combine(unZipDir, filesValidata[i])))
+                    {
+                        MainForm.writeLog("项目" + createFileName + "的解包操作，" + filesValidata[i] + "不存在");
+                        outList.Add(filesValidata[i] + " 不存在");
+                    }
+                }
+                MainForm.writeLog("项目" + createFileName + "的解包操作，结束ZIP文件解压");
             }
             else
             {
