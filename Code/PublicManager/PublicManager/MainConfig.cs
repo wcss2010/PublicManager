@@ -42,7 +42,7 @@ namespace PublicManager
         /// </summary>
         public static void saveConfig()
         {
-            string cnt = Newtonsoft.Json.JsonConvert.SerializeObject(Config);
+            string cnt = Newtonsoft.Json.JsonConvert.SerializeObject(Config, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(Path.Combine(Application.StartupPath, "config.json"), cnt);
         }
     }
