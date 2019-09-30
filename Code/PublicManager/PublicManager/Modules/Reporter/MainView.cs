@@ -39,6 +39,7 @@ namespace PublicManager.Modules.Reporter
 
                 List<object> cells = new List<object>();
                 cells.Add(indexx);
+                cells.Add(catalog.CatalogVersion);
                 cells.Add(catalog.CatalogNumber);
                 cells.Add(catalog.CatalogName);
 

@@ -44,6 +44,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                     {
                         //存在仅为负责人的记录
                         List<object> cells = new List<object>();
+                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
                         cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
                         cells.Add(proj.ProjectName);
                         cells.Add("");
@@ -75,6 +76,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                         }
 
                         List<object> cells = new List<object>();
+                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
                         cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
                         cells.Add(proj.ProjectName);
                         cells.Add(sub.SubjectName);

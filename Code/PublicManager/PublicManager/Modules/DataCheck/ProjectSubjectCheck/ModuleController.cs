@@ -28,6 +28,7 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
                foreach (Subject sub in subList)
                {
                    List<object> cells = new List<object>();
+                   cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
                    cells.Add(proj.ProjectName);
                    cells.Add(sub.SubjectName);

@@ -30,6 +30,7 @@
         {
             this.dgvCatalogs = new System.Windows.Forms.DataGridView();
             this.colIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCreater = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +45,7 @@
             this.dgvCatalogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCatalogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIndex,
+            this.Column1,
             this.colNumber,
             this.colName,
             this.colCreater,
@@ -66,6 +68,12 @@
             this.colIndex.Name = "colIndex";
             this.colIndex.ReadOnly = true;
             this.colIndex.Width = 60;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "数据库版本";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // colNumber
             // 
@@ -119,6 +127,7 @@
 
         private System.Windows.Forms.DataGridView dgvCatalogs;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIndex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCreater;
