@@ -48,6 +48,8 @@ namespace PublicManager.Modules.Reporter
                 proj.ProjectName = catalog.CatalogName;
                 proj.SecretLevel = diProject.getString("SecretLevel");
                 proj.TotalMoney = diProject.get("TotalMoney") != null ? decimal.Parse(diProject.get("TotalMoney").ToString()) : 0;
+                proj.Keywords = diProject.getString("Keywords");
+                proj.Domains = diProject.getString("Domain");
                 proj.copyTo(ConnectionManager.Context.table("Project")).insert();
                 
                 //处理课题列表

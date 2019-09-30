@@ -48,6 +48,11 @@ namespace PublicManager.Modules.Contract
                 proj.ProjectName = catalog.CatalogName;
                 proj.SecretLevel = diProject.getString("HeTongMiJi");
                 proj.TotalMoney = diProject.get("HeTongJiaKuan") != null ? decimal.Parse(diProject.get("HeTongJiaKuan").ToString()) : 0;
+                proj.Keywords = diProject.getString("HeTongGuanJianZi");
+                proj.Domains = diProject.getString("HeTongSuoShuLingYu");
+                proj.DutyUnit = diProject.getString("HeTongFuZeDanWei");
+                proj.DutyUnitOrg = diProject.getString("HeTongSuoShuBuMen");
+                proj.DutyUnitAddress = diProject.getString("HeTongSuoShuDiDian");
                 proj.copyTo(ConnectionManager.Context.table("Project")).insert();
 
                 //处理课题列表
@@ -63,6 +68,10 @@ namespace PublicManager.Modules.Contract
                     obj.WorkDest = di.getString("KeTiYanJiuMuBiao");
                     obj.WorkContent = di.getString("KeTiYanJiuNeiRong");
                     obj.WorkTask = di.getString("KeTiCanJiaDanWeiFenGong");
+                    obj.DutyUnit = diProject.getString("KeTiFuZeDanWei");
+                    obj.DutyUnitOrg = diProject.getString("KeTiSuoShuBuMen");
+                    obj.DutyUnitAddress = diProject.getString("KeTiSuoShuDiDian");
+
                     obj.copyTo(ConnectionManager.Context.table("Subject")).insert();
                 }
                 #endregion
