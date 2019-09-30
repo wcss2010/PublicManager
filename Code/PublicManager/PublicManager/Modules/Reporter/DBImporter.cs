@@ -50,6 +50,9 @@ namespace PublicManager.Modules.Reporter
                 proj.TotalMoney = diProject.get("TotalMoney") != null ? decimal.Parse(diProject.get("TotalMoney").ToString()) : 0;
                 proj.Keywords = diProject.getString("Keywords");
                 proj.Domains = diProject.getString("Domain");
+                proj.DutyUnit = localContext.table("Unit").where("ID='" + diProject.getString("UnitID") + "'").select("UnitName").getValue<string>("未知");
+                proj.DutyUnitOrg = "未知";
+                proj.DutyUnitAddress = localContext.table("Unit").where("ID='" + diProject.getString("UnitID") + "'").select("Address").getValue<string>("未知");
                 proj.copyTo(ConnectionManager.Context.table("Project")).insert();
                 
                 //处理课题列表
@@ -68,6 +71,11 @@ namespace PublicManager.Modules.Reporter
                     obj.WorkDest = System.IO.Path.Combine(filesDir, "课题详细_" + obj.SubjectName + "_研究目标" + ".doc");
                     obj.WorkContent = System.IO.Path.Combine(filesDir, "课题详细_" + obj.SubjectName + "_研究内容" + ".doc");
                     obj.WorkTask = string.Empty;
+
+                    obj.DutyUnit = localContext.table("Unit").where("ID='" + di.getString("UnitID") + "'").select("UnitName").getValue<string>("未知");
+                    obj.DutyUnitOrg = "未知";
+                    obj.DutyUnitAddress = localContext.table("Unit").where("ID='" + di.getString("UnitID") + "'").select("Address").getValue<string>("未知");
+
                     obj.copyTo(ConnectionManager.Context.table("Subject")).insert();
                 }
                 #endregion
