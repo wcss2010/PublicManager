@@ -32,6 +32,9 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
                    cells.Add(proj.ProjectName);
                    cells.Add(sub.SubjectName);
+                   cells.Add(sub.DutyUnit);
+                   cells.Add(sub.DutyUnitOrg);
+                   cells.Add(sub.DutyUnitAddress);
                    cells.Add(sub.TotalMoney);
                    cells.Add(sub.WorkDest);
                    cells.Add(sub.WorkContent);
