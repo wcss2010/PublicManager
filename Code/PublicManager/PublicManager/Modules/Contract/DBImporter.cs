@@ -18,12 +18,18 @@ namespace PublicManager.Modules.Contract
         /// <returns></returns>
         protected override string importDB(string catalogNumber, string sourceFile, Noear.Weed.DbContext localContext)
         {
+            //数据库版本号
+            string catalogVersionStr = "v1.1";
+
+            //附件目录
+            string filesDir = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(sourceFile), "Files");
+
             //处理项目信息
             DataItem diProject = localContext.table("JiBenXinXiBiao").select("*").getDataItem();
             if (diProject != null && diProject.count() >= 1)
             {
+                #region 读取版本号并更新Catalog信息
                 //读取版本号
-                string catalogVersionStr = "v1.1";
                 try
                 {
                     catalogVersionStr = localContext.table("Version").select("VersionNum").getValue<string>(catalogVersionStr);
@@ -32,8 +38,10 @@ namespace PublicManager.Modules.Contract
 
                 //更新Catalog
                 Catalog catalog = updateAndClearCatalog(catalogNumber, diProject.getString("HeTongMingCheng"), "合同书", catalogVersionStr);
+                #endregion
 
-                //添加项目信息
+                #region 导入项目及课题信息
+                //处理项目信息
                 Project proj = new Project();
                 proj.ProjectID = catalog.CatalogID;
                 proj.CatalogID = catalog.CatalogID;
@@ -57,7 +65,9 @@ namespace PublicManager.Modules.Contract
                     obj.WorkTask = di.getString("KeTiCanJiaDanWeiFenGong");
                     obj.copyTo(ConnectionManager.Context.table("Subject")).insert();
                 }
+                #endregion
 
+                #region 导入人员信息
                 //处理人员信息
                 DataList dlPerson = localContext.table("RenYuanBiao").select("*").getDataList();
                 foreach (DataItem di in dlPerson.getRows())
@@ -115,6 +125,7 @@ namespace PublicManager.Modules.Contract
                             break;
                     }
                 }
+                #endregion
 
                 return catalog.CatalogID;
             }

@@ -18,12 +18,18 @@ namespace PublicManager.Modules.Reporter
         /// <returns></returns>
         protected override string importDB(string catalogNumber, string sourceFile, Noear.Weed.DbContext localContext)
         {
+            //数据库版本号
+            string catalogVersionStr = "v1.1";
+
+            //附件目录
+            string filesDir = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(sourceFile), "Files");
+
             //处理项目信息
             DataItem diProject = localContext.table("Project").where("Type = '项目'").select("*").getDataItem();
             if (diProject != null && diProject.count() >= 1)
             {
+                #region 读取版本号并更新Catalog信息
                 //读取版本号
-                string catalogVersionStr = "v1.1";
                 try
                 {
                     catalogVersionStr = localContext.table("Version").select("VersionNum").getValue<string>(catalogVersionStr);
@@ -32,7 +38,9 @@ namespace PublicManager.Modules.Reporter
 
                 //更新Catalog
                 Catalog catalog = updateAndClearCatalog(catalogNumber, diProject.getString("Name"), "建议书", catalogVersionStr);
+                #endregion
 
+                #region 导入项目及课题信息
                 //添加项目信息
                 Project proj = new Project();
                 proj.ProjectID = catalog.CatalogID;
@@ -41,10 +49,7 @@ namespace PublicManager.Modules.Reporter
                 proj.SecretLevel = diProject.getString("SecretLevel");
                 proj.TotalMoney = diProject.get("TotalMoney") != null ? decimal.Parse(diProject.get("TotalMoney").ToString()) : 0;
                 proj.copyTo(ConnectionManager.Context.table("Project")).insert();
-
-                //附件目录
-                string filesDir = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(sourceFile), "Files");                
-
+                
                 //处理课题列表
                 DataList dlSubject = localContext.table("Project").where("Type = '课题'").select("*").getDataList();
                 foreach (DataItem di in dlSubject.getRows())
@@ -63,7 +68,9 @@ namespace PublicManager.Modules.Reporter
                     obj.WorkTask = string.Empty;
                     obj.copyTo(ConnectionManager.Context.table("Subject")).insert();
                 }
+                #endregion
 
+                #region 导入人员信息
                 //处理人员信息
                 DataList dlTask = localContext.table("Task").select("*").getDataList();
                 foreach (DataItem diTask in dlTask.getRows())
@@ -110,9 +117,14 @@ namespace PublicManager.Modules.Reporter
                         obj.copyTo(ConnectionManager.Context.table("Person")).insert();
                     }
                 }
-
+                #endregion
+                
+                return catalog.CatalogID;
             }
-            return null;
+            else
+            {
+                return string.Empty;
+            }
         }
     }
 }
