@@ -51,7 +51,7 @@ namespace PublicManager.Modules.Reporter
                 proj.Keywords = diProject.getString("Keywords");
                 proj.Domains = diProject.getString("Domain");
                 proj.DutyUnit = localContext.table("Unit").where("ID='" + diProject.getString("UnitID") + "'").select("UnitName").getValue<string>("未知");
-                proj.DutyUnitOrg = "未知";
+                //proj.DutyUnitOrg = "未知";
                 proj.DutyUnitAddress = localContext.table("Unit").where("ID='" + diProject.getString("UnitID") + "'").select("Address").getValue<string>("未知");
                 proj.copyTo(ConnectionManager.Context.table("Project")).insert();
                 
@@ -73,7 +73,7 @@ namespace PublicManager.Modules.Reporter
                     obj.WorkTask = string.Empty;
 
                     obj.DutyUnit = localContext.table("Unit").where("ID='" + di.getString("UnitID") + "'").select("UnitName").getValue<string>("未知");
-                    obj.DutyUnitOrg = "未知";
+                    //obj.DutyUnitOrg = "未知";
                     obj.DutyUnitAddress = localContext.table("Unit").where("ID='" + di.getString("UnitID") + "'").select("Address").getValue<string>("未知");
 
                     obj.copyTo(ConnectionManager.Context.table("Subject")).insert();
