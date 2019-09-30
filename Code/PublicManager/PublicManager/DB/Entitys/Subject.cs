@@ -23,6 +23,9 @@ namespace PublicManager.DB.Entitys
             query.set("WorkDest", WorkDest);
             query.set("WorkContent", WorkContent);
             query.set("WorkTask", WorkTask);
+            query.set("DutyUnit", DutyUnit);
+            query.set("DutyUnitOrg", DutyUnitOrg);
+            query.set("DutyUnitAddress", DutyUnitAddress);
 
             return query;
         }
@@ -35,6 +38,9 @@ namespace PublicManager.DB.Entitys
         public string WorkDest { get; set; }
         public string WorkContent { get; set; }
         public string WorkTask { get; set; }
+        public string DutyUnit { get; set; }
+        public string DutyUnitOrg { get; set; }
+        public string DutyUnitAddress { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
@@ -46,6 +52,9 @@ namespace PublicManager.DB.Entitys
             WorkDest = source("WorkDest").value<string>("");
             WorkContent = source("WorkContent").value<string>("");
             WorkTask = source("WorkTask").value<string>("");
+            DutyUnit = source("DutyUnit").value<string>("");
+            DutyUnitOrg = source("DutyUnitOrg").value<string>("");
+            DutyUnitAddress = source("DutyUnitAddress").value<string>("");
         }
 
         public override Noear.Weed.IBinder clone()
