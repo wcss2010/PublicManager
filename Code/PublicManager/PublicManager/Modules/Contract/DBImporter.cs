@@ -48,11 +48,25 @@ namespace PublicManager.Modules.Contract
                 proj.ProjectName = catalog.CatalogName;
                 proj.SecretLevel = diProject.getString("HeTongMiJi");
                 proj.TotalMoney = diProject.get("HeTongJiaKuan") != null ? decimal.Parse(diProject.get("HeTongJiaKuan").ToString()) : 0;
-                proj.Keywords = diProject.getString("HeTongGuanJianZi");
-                proj.Domains = diProject.getString("HeTongSuoShuLingYu");
-                proj.DutyUnit = diProject.getString("HeTongFuZeDanWei");
-                proj.DutyUnitOrg = diProject.getString("HeTongSuoShuBuMen");
-                proj.DutyUnitAddress = diProject.getString("HeTongSuoShuDiDian");
+
+                //导入1.3版之后版本新添加的字段
+                switch (catalogVersionStr)
+                {
+                    case "v1.1":
+                        break;
+                    case "v1.2":
+                        break;
+                    case "v1.3":
+                        break;
+                    case "v1.4":
+                        proj.Keywords = diProject.getString("HeTongGuanJianZi");
+                        proj.Domains = diProject.getString("HeTongSuoShuLingYu");
+                        proj.DutyUnit = diProject.getString("HeTongFuZeDanWei");
+                        proj.DutyUnitOrg = diProject.getString("HeTongSuoShuBuMen");
+                        proj.DutyUnitAddress = diProject.getString("HeTongSuoShuDiDian");
+                        break;
+                }
+
                 proj.copyTo(ConnectionManager.Context.table("Project")).insert();
 
                 //处理课题列表
@@ -68,9 +82,22 @@ namespace PublicManager.Modules.Contract
                     obj.WorkDest = di.getString("KeTiYanJiuMuBiao");
                     obj.WorkContent = di.getString("KeTiYanJiuNeiRong");
                     obj.WorkTask = di.getString("KeTiCanJiaDanWeiFenGong");
-                    obj.DutyUnit = diProject.getString("KeTiFuZeDanWei");
-                    obj.DutyUnitOrg = diProject.getString("KeTiSuoShuBuMen");
-                    obj.DutyUnitAddress = diProject.getString("KeTiSuoShuDiDian");
+
+                    //导入1.3版之后版本新添加的字段
+                    switch (catalogVersionStr)
+                    {
+                        case "v1.1":
+                            break;
+                        case "v1.2":
+                            break;
+                        case "v1.3":
+                            break;
+                        case "v1.4":
+                            obj.DutyUnit = diProject.getString("KeTiFuZeDanWei");
+                            obj.DutyUnitOrg = diProject.getString("KeTiSuoShuBuMen");
+                            obj.DutyUnitAddress = diProject.getString("KeTiSuoShuDiDian");
+                            break;
+                    }
 
                     obj.copyTo(ConnectionManager.Context.table("Subject")).insert();
                 }
