@@ -63,7 +63,7 @@ namespace PublicManager.Modules.Contract
                         proj.Domains = diProject.getString("HeTongSuoShuLingYu");
                         proj.DutyUnit = diProject.getString("HeTongFuZeDanWei");
                         proj.DutyUnitOrg = diProject.getString("HeTongSuoShuBuMen");
-                        proj.DutyUnitAddress = diProject.getString("HeTongSuoShuDiDian");
+                        proj.DutyUnitAddress = getAddress(diProject.getString("HeTongSuoShuDiDian"));
                         break;
                 }
 
@@ -93,9 +93,9 @@ namespace PublicManager.Modules.Contract
                         case "v1.3":
                             break;
                         case "v1.4":
-                            obj.DutyUnit = diProject.getString("KeTiFuZeDanWei");
-                            obj.DutyUnitOrg = diProject.getString("KeTiSuoShuBuMen");
-                            obj.DutyUnitAddress = diProject.getString("KeTiSuoShuDiDian");
+                            obj.DutyUnit = di.getString("KeTiFuZeDanWei");
+                            obj.DutyUnitOrg = di.getString("KeTiSuoShuBuMen");
+                            obj.DutyUnitAddress = getAddress(di.getString("KeTiSuoShuDiDian"));
                             break;
                     }
 
@@ -169,6 +169,27 @@ namespace PublicManager.Modules.Contract
             {
                 return string.Empty;
             }
+        }
+
+        private string getAddress(string temp)
+        {
+            string result = temp;
+            if (temp != null && temp.Contains("%|||%"))
+            {
+                string[] tt = temp.Split(new string[] { "%|||%" }, StringSplitOptions.None);
+                if (tt != null && tt.Length >= 3)
+                {
+                    if (!tt[1].Contains(tt[0]))
+                    {
+                        result = tt[0] + tt[1] + tt[2];
+                    }
+                    else
+                    {
+                        result = tt[1] + tt[2];
+                    }
+                }
+            }
+            return result;
         }
     }
 }
