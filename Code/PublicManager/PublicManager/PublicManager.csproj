@@ -312,6 +312,7 @@
     <None Include="static.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="汇总数据表.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Today_32x32.png" />
