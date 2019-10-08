@@ -5,6 +5,9 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using PublicManager.DB;
+using PublicManager.DB.Entitys;
+using System.IO;
 
 namespace PublicManager.Modules.Reporter
 {
@@ -111,7 +114,79 @@ namespace PublicManager.Modules.Reporter
 
         private void btnExportToExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.FileName = string.Empty;
+            sfd.Filter = "*.xlsx|*.xlsx";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    //输出的Excel路径
+                    string excelFile = sfd.FileName;
 
+                    //Excel数据
+                    MemoryStream memoryStream = new MemoryStream();
+                    //创建Workbook
+                    NPOI.XSSF.UserModel.XSSFWorkbook workbook = new NPOI.XSSF.UserModel.XSSFWorkbook();
+
+                    #region 设置Excel样式
+                    //创建单元格设置对象(普通内容)
+                    NPOI.SS.UserModel.ICellStyle cellStyleA = workbook.CreateCellStyle();
+                    cellStyleA.Alignment = NPOI.SS.UserModel.HorizontalAlignment.Left;
+                    cellStyleA.VerticalAlignment = NPOI.SS.UserModel.VerticalAlignment.Center;
+                    cellStyleA.BorderBottom = NPOI.SS.UserModel.BorderStyle.Thin;
+                    cellStyleA.BorderLeft = NPOI.SS.UserModel.BorderStyle.Thin;
+                    cellStyleA.BorderRight = NPOI.SS.UserModel.BorderStyle.Thin;
+                    cellStyleA.BorderTop = NPOI.SS.UserModel.BorderStyle.Thin;
+                    cellStyleA.WrapText = true;
+
+                    //创建单元格设置对象(普通内容)
+                    NPOI.SS.UserModel.ICellStyle cellStyleB = workbook.CreateCellStyle();
+                    cellStyleB.Alignment = NPOI.SS.UserModel.HorizontalAlignment.Center;
+                    cellStyleB.VerticalAlignment = NPOI.SS.UserModel.VerticalAlignment.Center;
+                    cellStyleB.BorderBottom = NPOI.SS.UserModel.BorderStyle.Thin;
+                    cellStyleB.BorderLeft = NPOI.SS.UserModel.BorderStyle.Thin;
+                    cellStyleB.BorderRight = NPOI.SS.UserModel.BorderStyle.Thin;
+                    cellStyleB.BorderTop = NPOI.SS.UserModel.BorderStyle.Thin;
+                    cellStyleB.WrapText = true;
+
+                    //创建设置字体对象(内容字体)
+                    NPOI.SS.UserModel.IFont fontA = workbook.CreateFont();
+                    fontA.FontHeightInPoints = 16;//设置字体大小
+                    fontA.FontName = "宋体";
+                    cellStyleA.SetFont(fontA);
+
+                    //创建设置字体对象(标题字体)
+                    NPOI.SS.UserModel.IFont fontB = workbook.CreateFont();
+                    fontB.FontHeightInPoints = 16;//设置字体大小
+                    fontB.FontName = "宋体";
+                    fontB.Boldweight = (short)NPOI.SS.UserModel.FontBoldWeight.Bold;
+                    cellStyleB.SetFont(fontB);
+                    #endregion
+
+                    #region 输出数据
+
+                    #endregion
+
+                    #region 输出文件并打开文件
+                    //输出到流
+                    workbook.Write(memoryStream);
+
+                    //写Excel文件
+                    File.WriteAllBytes(excelFile, memoryStream.ToArray());
+
+                    //显示提示
+                    MessageBox.Show("导出完成！路径：" + excelFile, "提示");
+
+                    //打开Excel文件
+                    System.Diagnostics.Process.Start(excelFile);
+                    #endregion
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("对不起，导出失败！Ex:" + ex.ToString());
+                }
+            }
         }
     }
 }
