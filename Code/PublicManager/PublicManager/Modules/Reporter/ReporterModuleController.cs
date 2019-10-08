@@ -126,6 +126,7 @@ namespace PublicManager.Modules.Reporter
 
                     //Excel数据
                     MemoryStream memoryStream = new MemoryStream();
+
                     //创建Workbook
                     NPOI.XSSF.UserModel.XSSFWorkbook workbook = new NPOI.XSSF.UserModel.XSSFWorkbook();
 
@@ -164,9 +165,33 @@ namespace PublicManager.Modules.Reporter
                     cellStyleB.SetFont(fontB);
                     #endregion
 
-                    #region 输出数据
+                    //基本数据
+                    DataTable dtBase = new DataTable();
+                    //金额数据
+                    DataTable dtMoney = new DataTable();
+                    //人员数据
+                    DataTable dtPerson = new DataTable();
+
+                    #region 输出基本数据
 
                     #endregion
+
+                    #region 输出金额数据
+
+                    #endregion
+
+                    #region 输出人员数据
+
+                    #endregion
+
+                    //写入基本数据
+                    writeSheet(workbook, cellStyleA, cellStyleB, dtBase);
+
+                    //写入金额数据
+                    writeSheet(workbook, cellStyleA, cellStyleB, dtMoney);
+
+                    //写入人员数据
+                    writeSheet(workbook, cellStyleA, cellStyleB, dtPerson);
 
                     #region 输出文件并打开文件
                     //输出到流

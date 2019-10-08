@@ -126,6 +126,7 @@ namespace PublicManager.Modules.Contract
 
                     //Excel数据
                     MemoryStream memoryStream = new MemoryStream();
+
                     //创建Workbook
                     NPOI.XSSF.UserModel.XSSFWorkbook workbook = new NPOI.XSSF.UserModel.XSSFWorkbook();
 
@@ -164,19 +165,24 @@ namespace PublicManager.Modules.Contract
                     cellStyleB.SetFont(fontB);
                     #endregion
 
-                    #region 输出数据
-                    DataTable dt = new DataTable();
+                    //基本数据
+                    DataTable dtBase = new DataTable();
+                    //金额数据
+                    DataTable dtMoney = new DataTable();
+                    //人员数据
+                    DataTable dtPerson = new DataTable();
 
+                    #region 输出基本数据
                     //生成列
-                    dt.Columns.Add("项目名称", typeof(string));
-                    dt.Columns.Add("项目领域", typeof(string));
-                    dt.Columns.Add("合同牵头单位", typeof(string));
-                    dt.Columns.Add("项目负责人", typeof(string));
-                    dt.Columns.Add("项目负责人电话", typeof(string));
-                    dt.Columns.Add("研究周期", typeof(string));
-                    dt.Columns.Add("项目总经费", typeof(string));
-                    dt.Columns.Add("研究目标", typeof(string));
-                    dt.Columns.Add("研究内容", typeof(string));
+                    dtBase.Columns.Add("项目名称", typeof(string));
+                    dtBase.Columns.Add("项目领域", typeof(string));
+                    dtBase.Columns.Add("合同牵头单位", typeof(string));
+                    dtBase.Columns.Add("项目负责人", typeof(string));
+                    dtBase.Columns.Add("项目负责人电话", typeof(string));
+                    dtBase.Columns.Add("研究周期", typeof(string));
+                    dtBase.Columns.Add("项目总经费", typeof(string));
+                    dtBase.Columns.Add("研究目标", typeof(string));
+                    dtBase.Columns.Add("研究内容", typeof(string));
                     //统计最大课题数量
                     int maxSubjectCount = 0;
                     List<Catalog> catalogList = ConnectionManager.Context.table("Catalog").where("CatalogType='合同书'").select("*").getList<Catalog>(new Catalog());
@@ -200,10 +206,10 @@ namespace PublicManager.Modules.Contract
                     }
                     for (int kk = 1; kk <= maxSubjectCount; kk++)
                     {
-                        dt.Columns.Add("课题" + kk + "名称", typeof(string));
-                        dt.Columns.Add("课题" + kk + "单位", typeof(string));
-                        dt.Columns.Add("课题" + kk + "负责人", typeof(string));
-                        dt.Columns.Add("课题" + kk + "负责人电话", typeof(string));
+                        dtBase.Columns.Add("课题" + kk + "名称", typeof(string));
+                        dtBase.Columns.Add("课题" + kk + "单位", typeof(string));
+                        dtBase.Columns.Add("课题" + kk + "负责人", typeof(string));
+                        dtBase.Columns.Add("课题" + kk + "负责人电话", typeof(string));
                     }
 
                     //生成内容
@@ -258,11 +264,26 @@ namespace PublicManager.Modules.Contract
                             cells.Add(string.Empty);
                         }
 
-                        dt.Rows.Add(cells.ToArray());
+                        dtBase.Rows.Add(cells.ToArray());
                     }
-
-                    writeSheet(workbook, cellStyleA, cellStyleB, dt);
                     #endregion
+
+                    #region 输出金额数据
+
+                    #endregion
+
+                    #region 输出人员数据
+
+                    #endregion
+
+                    //写入基本数据
+                    writeSheet(workbook, cellStyleA, cellStyleB, dtBase);
+
+                    //写入金额数据
+                    writeSheet(workbook, cellStyleA, cellStyleB, dtMoney);
+
+                    //写入人员数据
+                    writeSheet(workbook, cellStyleA, cellStyleB, dtPerson);
 
                     #region 输出文件并打开文件
                     //输出到流
