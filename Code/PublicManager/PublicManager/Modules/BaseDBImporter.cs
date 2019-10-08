@@ -17,6 +17,7 @@ namespace PublicManager.Modules
             ConnectionManager.Context.table("Project").where("CatalogID='" + catalogID + "'").delete();
             ConnectionManager.Context.table("Subject").where("CatalogID='" + catalogID + "'").delete();
             ConnectionManager.Context.table("Person").where("CatalogID='" + catalogID + "'").delete();
+            ConnectionManager.Context.table("Dicts").where("CatalogID='" + catalogID + "'").delete();
         }
 
         /// <summary>
@@ -102,6 +103,28 @@ namespace PublicManager.Modules
             catalog.copyTo(ConnectionManager.Context.table("Catalog")).insert();
 
             return catalog;
+        }
+
+        /// <summary>
+        /// 添加字典数据
+        /// </summary>
+        /// <param name="catalog"></param>
+        /// <param name="project"></param>
+        /// <param name="dType"></param>
+        /// <param name="dName"></param>
+        /// <param name="dValue"></param>
+        /// <param name="parentID"></param>
+        protected virtual void addDict(Catalog catalog, Project project, string dType, string dName, string dValue, string parentID)
+        {
+            Dicts dict = new Dicts();
+            dict.DictID = Guid.NewGuid().ToString();
+            dict.CatalogID = catalog.CatalogID;
+            dict.ProjectID = project.ProjectID;
+            dict.DictType = dType;
+            dict.DictName = dName;
+            dict.DictValue = dValue;
+            dict.ParentDictID = parentID;
+            dict.copyTo(ConnectionManager.Context.table("Dicts")).insert();
         }
     }
 }

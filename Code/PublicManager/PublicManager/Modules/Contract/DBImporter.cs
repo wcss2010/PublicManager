@@ -48,6 +48,17 @@ namespace PublicManager.Modules.Contract
                 proj.ProjectName = catalog.CatalogName;
                 proj.SecretLevel = diProject.getString("HeTongMiJi");
                 proj.TotalMoney = diProject.get("HeTongJiaKuan") != null ? decimal.Parse(diProject.get("HeTongJiaKuan").ToString()) : 0;
+                proj.ProjectNumber = diProject.getString("HeTongBianHao");
+
+                int totalYear = 0;
+                try
+                {
+                    DateTime startTime = DateTime.Parse(diProject.getString("HeTongKaiShiShiJian"));
+                    DateTime endTime = DateTime.Parse(diProject.getString("HeTongJieShuShiJian"));
+                    totalYear = (endTime.Year + 1) - startTime.Year;
+                }
+                catch (Exception ex) { }
+                proj.TotalTime = totalYear;
 
                 //导入1.3版之后版本新添加的字段
                 switch (catalogVersionStr)
@@ -121,6 +132,8 @@ namespace PublicManager.Modules.Contract
                     obj.TotalTime = di.getInt("MeiNianTouRuShiJian");
                     obj.TaskContent = di.getString("RenWuFenGong");
                     obj.WorkUnit = di.getString("GongZuoDanWei");
+                    obj.Telephone = string.Empty;
+                    obj.Mobilephone = string.Empty;
 
                     //设置项目中职务
                     obj.JobInProject = di.getString("ZhiWu");
@@ -161,6 +174,18 @@ namespace PublicManager.Modules.Contract
                             break;
                     }
                 }
+                #endregion
+
+                #region 写入金额数据
+                DataList dlMoneys = localContext.table("YuSuanBiao").select("*").getDataList();
+                if (dlMoneys != null && dlMoneys.getRowCount() >= 1)
+                {
+                    foreach (DataItem di in dlMoneys.getRows())
+                    {
+                        //添加字典
+                        addDict(catalog, proj, "MoneyAndInfo", (di.get("MingCheng") != null ? di.get("MingCheng").ToString() : string.Empty), (di.get("ShuJu") != null ? di.get("ShuJu").ToString() : string.Empty), string.Empty);
+                    }
+                } 
                 #endregion
 
                 return catalog.CatalogID;
