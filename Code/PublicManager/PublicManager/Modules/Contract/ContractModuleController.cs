@@ -269,6 +269,50 @@ namespace PublicManager.Modules.Contract
                     #endregion
 
                     #region 输出金额数据
+                    //生成列
+                    dtMoney.Columns.Add("项目领域", typeof(string));
+                    dtMoney.Columns.Add("项目名称", typeof(string));
+                    dtMoney.Columns.Add("合同编号", typeof(string));
+                    dtMoney.Columns.Add("研究周期", typeof(string));
+                    dtMoney.Columns.Add("总经费", typeof(string));
+
+                    dtMoney.Columns.Add("第一年度经费(万元)", typeof(string));
+                    dtMoney.Columns.Add("第一年度拨付时间", typeof(string));
+
+                    dtMoney.Columns.Add("第二年度经费(万元)", typeof(string));
+                    dtMoney.Columns.Add("第二年度拨付时间", typeof(string));
+
+                    dtMoney.Columns.Add("第三年度经费(万元)", typeof(string));
+                    dtMoney.Columns.Add("第三年度拨付时间", typeof(string));
+
+                    dtMoney.Columns.Add("第四年度经费(万元)", typeof(string));
+                    dtMoney.Columns.Add("第四年度拨付时间", typeof(string));
+
+                    dtMoney.Columns.Add("第五年度经费(万元)", typeof(string));
+                    dtMoney.Columns.Add("第五年度拨付时间", typeof(string));
+
+                    //生成内容
+                    foreach (Catalog c in catalogList)
+                    {
+                        List<object> cells = new List<object>();
+
+                        //项目信息
+                        Project p = ConnectionManager.Context.table("Project").where("CatalogID = '" + c.CatalogID + "'").select("*").getItem<Project>(new Project());
+                        cells.Add(p.Domains);
+                        cells.Add(p.ProjectName);
+                        cells.Add(string.Empty);
+                        cells.Add(string.Empty);
+                        cells.Add(p.TotalMoney);
+                        
+                        cells.Add(string.Empty);
+                        cells.Add(string.Empty);
+                        cells.Add(string.Empty);
+                        cells.Add(string.Empty);
+                        cells.Add(string.Empty);
+                        cells.Add(string.Empty);
+
+                        dtMoney.Rows.Add(cells.ToArray());
+                    }
 
                     #endregion
 
