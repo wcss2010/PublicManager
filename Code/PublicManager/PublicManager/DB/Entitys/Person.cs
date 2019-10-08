@@ -29,6 +29,8 @@ namespace PublicManager.DB.Entitys
             query.set("JobInProject", JobInProject);
             query.set("IsProjectMaster", IsProjectMaster);
             query.set("WorkUnit", WorkUnit);
+            query.set("Telephone", Telephone);
+            query.set("Mobilephone", Mobilephone);
 
             return query;
         }
@@ -47,6 +49,8 @@ namespace PublicManager.DB.Entitys
         public string JobInProject { get; set; }
         public string IsProjectMaster { get; set; }
         public string WorkUnit { get; set; }
+        public string Telephone { get; set; }
+        public string Mobilephone { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
@@ -64,6 +68,8 @@ namespace PublicManager.DB.Entitys
             JobInProject = source("JobInProject").value<string>("");
             IsProjectMaster = source("IsProjectMaster").value<string>("");
             WorkUnit = source("WorkUnit").value<string>("");
+            Telephone = source("Telephone").value<string>("");
+            Mobilephone = source("Mobilephone").value<string>("");
         }
 
         public override Noear.Weed.IBinder clone()

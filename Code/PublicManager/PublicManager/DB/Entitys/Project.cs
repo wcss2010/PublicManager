@@ -25,6 +25,8 @@ namespace PublicManager.DB.Entitys
             query.set("DutyUnit", DutyUnit);
             query.set("DutyUnitOrg", DutyUnitOrg);
             query.set("DutyUnitAddress", DutyUnitAddress);
+            query.set("ProjectNumber", ProjectNumber);
+            query.set("TotalTime", TotalTime);
 
             return query;
         }
@@ -39,6 +41,8 @@ namespace PublicManager.DB.Entitys
         public string DutyUnit { get; set; }
         public string DutyUnitOrg { get; set; }
         public string DutyUnitAddress { get; set; }
+        public string ProjectNumber { get; set; }
+        public int TotalTime { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
@@ -52,6 +56,8 @@ namespace PublicManager.DB.Entitys
             DutyUnit = source("DutyUnit").value<string>("");
             DutyUnitOrg = source("DutyUnitOrg").value<string>("");
             DutyUnitAddress = source("DutyUnitAddress").value<string>("");
+            ProjectNumber = source("ProjectNumber").value<string>("");
+            TotalTime = source("TotalTime").value<int>(0);
         }
 
         public override Noear.Weed.IBinder clone()
