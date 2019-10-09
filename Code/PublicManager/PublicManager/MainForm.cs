@@ -62,6 +62,7 @@ namespace PublicManager
             ModuleDict["项目成员关系"] = new Modules.DataCheck.ProjectPersonCheck.ModuleController();
             ModuleDict["成员分析"] = new Modules.DataCheck.PersonCheck.ModuleController();
             ModuleDict["地区分布情况"] = new Modules.DataCheck.AddressCheck.ModuleController();
+            ModuleDict["单位项目课题关系"] = new Modules.DataCheck.ProjectSubjectUnitCheck.ModuleController();
         }
 
         /// <summary>

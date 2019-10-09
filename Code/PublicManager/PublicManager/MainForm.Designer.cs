@@ -297,6 +297,8 @@
             "成员分析"}, -1);
             this.tlTestB.AppendNode(new object[] {
             "地区分布情况"}, -1);
+            this.tlTestB.AppendNode(new object[] {
+            "单位项目课题关系"}, -1);
             this.tlTestB.EndUnboundLoad();
             this.tlTestB.OptionsBehavior.Editable = false;
             this.tlTestB.OptionsView.ShowColumns = false;
