@@ -26,10 +26,10 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectUnitCheck
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dgvDetail.Rows.Clear();
-            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectName like '%" + txtKey.Text + "%'" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectName like '%%'" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
-               List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
+               List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "' and DutyUnit like '%" + txtKey.Text + "%'").select("*").getList<Subject>(new Subject());
                foreach (Subject sub in subList)
                {
                    List<object> cells = new List<object>();
