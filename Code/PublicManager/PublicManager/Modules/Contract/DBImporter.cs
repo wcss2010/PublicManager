@@ -53,8 +53,8 @@ namespace PublicManager.Modules.Contract
                 int totalYear = 0;
                 try
                 {
-                    DateTime startTime = DateTime.Parse(diProject.getString("HeTongKaiShiShiJian"));
-                    DateTime endTime = DateTime.Parse(diProject.getString("HeTongJieShuShiJian"));
+                    DateTime startTime = diProject.getDateTime("HeTongKaiShiShiJian");
+                    DateTime endTime = diProject.getDateTime("HeTongJieShuShiJian");
                     totalYear = (endTime.Year + 1) - startTime.Year;
                 }
                 catch (Exception ex) { }
