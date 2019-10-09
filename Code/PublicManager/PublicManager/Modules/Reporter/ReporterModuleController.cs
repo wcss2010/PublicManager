@@ -173,10 +173,122 @@ namespace PublicManager.Modules.Reporter
                     DataTable dtPerson = new DataTable();
 
                     #region 输出基本数据
+                    //生成列
+                    dtBase.Columns.Add("项目名称", typeof(string));
+                    dtBase.Columns.Add("项目领域", typeof(string));
+                    dtBase.Columns.Add("合同牵头单位", typeof(string));
+                    dtBase.Columns.Add("项目负责人", typeof(string));
+                    dtBase.Columns.Add("项目负责人电话", typeof(string));
+                    dtBase.Columns.Add("研究周期", typeof(string));
+                    dtBase.Columns.Add("项目总经费", typeof(string));
+                    //dtBase.Columns.Add("研究目标", typeof(string));
+                    //dtBase.Columns.Add("研究内容", typeof(string));
+                    dtBase.Columns.Add("课题名称", typeof(string));
+                    dtBase.Columns.Add("课题单位", typeof(string));
+                    dtBase.Columns.Add("课题负责人", typeof(string));
+                    dtBase.Columns.Add("课题负责人电话", typeof(string));
 
+                    List<Catalog> catalogList = ConnectionManager.Context.table("Catalog").where("CatalogType='建议书'").select("*").getList<Catalog>(new Catalog());
+
+                    //生成内容
+                    foreach (Catalog c in catalogList)
+                    {
+                        List<object> cells = new List<object>();
+
+                        //项目信息
+                        Project p = ConnectionManager.Context.table("Project").where("CatalogID = '" + c.CatalogID + "'").select("*").getItem<Project>(new Project());
+
+                        //项目名称
+                        cells.Add(p.ProjectName);
+
+                        //项目领域
+                        cells.Add(p.Domains);
+
+                        //项目牵头单位
+                        cells.Add(p.DutyUnit);
+
+                        Person projectMaster = ConnectionManager.Context.table("Person").where("IsProjectMaster='true' and JobInProject='负责人' and CatalogID = '" + c.CatalogID + "'").select("*").getItem<Person>(new Person());
+                        //项目负责人
+                        cells.Add(projectMaster.PersonName);
+                        //项目负责人电话
+                        cells.Add(projectMaster.Telephone);
+
+                        //研究周期
+                        cells.Add(p.TotalTime);
+
+                        //总经费
+                        cells.Add(p.TotalMoney);
+
+                        ////研究目标
+                        //cells.Add(getTxtContent(c, "研究目标"));
+
+                        ////研究内容
+                        //cells.Add(string.Empty);
+
+                        StringBuilder sbSubjectNames = new StringBuilder();
+                        StringBuilder sbSubjectUnits = new StringBuilder();
+                        StringBuilder sbSubjectPersons = new StringBuilder();
+                        StringBuilder sbSubjectPhones = new StringBuilder();
+
+                        //课题列表
+                        List<Subject> subjectList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + c.CatalogID + "'").select("*").getList<Subject>(new Subject());
+                        foreach (Subject s in subjectList)
+                        {
+                            sbSubjectNames.AppendLine(s.SubjectName);
+                            sbSubjectUnits.AppendLine(s.DutyUnit);
+
+                            Person subjectMaster = ConnectionManager.Context.table("Person").where("JobInProject='负责人' and CatalogID = '" + c.CatalogID + "' and SubjectID = '" + s.SubjectID + "'").select("*").getItem<Person>(new Person());
+                            sbSubjectPersons.AppendLine(subjectMaster.PersonName);
+                            sbSubjectPhones.AppendLine(subjectMaster.Telephone);
+                        }
+
+
+                        cells.Add(sbSubjectNames.ToString());
+                        cells.Add(sbSubjectUnits.ToString());
+                        cells.Add(sbSubjectPersons.ToString());
+                        cells.Add(sbSubjectPhones.ToString());
+                        dtBase.Rows.Add(cells.ToArray());
+                    }
                     #endregion
 
                     #region 输出金额数据
+                    //生成列
+                    dtMoney.Columns.Add("项目领域", typeof(string));
+                    dtMoney.Columns.Add("项目名称", typeof(string));
+                    //dtMoney.Columns.Add("合同编号", typeof(string));
+                    dtMoney.Columns.Add("研究周期", typeof(string));
+                    dtMoney.Columns.Add("总经费", typeof(string));
+
+                    dtMoney.Columns.Add("各年度经费(万元)", typeof(string));
+                    //dtMoney.Columns.Add("各年度拨付时间", typeof(string));
+
+                    //生成内容
+                    foreach (Catalog c in catalogList)
+                    {
+                        List<object> cells = new List<object>();
+
+                        //项目信息
+                        Project p = ConnectionManager.Context.table("Project").where("CatalogID = '" + c.CatalogID + "'").select("*").getItem<Project>(new Project());
+                        cells.Add(p.Domains);
+                        cells.Add(p.ProjectName);
+                        //cells.Add(p.ProjectNumber);
+                        cells.Add(p.TotalTime);
+                        cells.Add(p.TotalMoney);
+
+                        //生成各年度经费和时间字符串
+                        StringBuilder sbMoneyNum = new StringBuilder();
+                        //StringBuilder sbMoneyTime = new StringBuilder();
+                        for (int kkk = 1; kkk <= 5; kkk++)
+                        {
+                            sbMoneyNum.AppendLine(ConnectionManager.Context.table("Dicts").where("CatalogID='" + c.CatalogID + "' and DictName='Year" + kkk + "'").select("DictValue").getValue<string>(string.Empty));
+                            //sbMoneyTime.AppendLine(ConnectionManager.Context.table("Dicts").where("CatalogID='" + c.CatalogID + "' and DictName='Year" + kkk + "_SendDate'").select("DictValue").getValue<string>(string.Empty));
+                        }
+
+                        cells.Add(sbMoneyNum.ToString());
+                        //cells.Add(sbMoneyTime.ToString());
+
+                        dtMoney.Rows.Add(cells.ToArray());
+                    }
 
                     #endregion
 

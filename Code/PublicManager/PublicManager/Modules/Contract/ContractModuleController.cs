@@ -207,7 +207,7 @@ namespace PublicManager.Modules.Contract
                         //项目牵头单位
                         cells.Add(p.DutyUnit);
 
-                        Person projectMaster = ConnectionManager.Context.table("Person").where("IsProjectMaster='true' and JobInProject='负责人'").select("*").getItem<Person>(new Person());
+                        Person projectMaster = ConnectionManager.Context.table("Person").where("IsProjectMaster='true' and JobInProject='负责人' and CatalogID = '" + c.CatalogID + "'").select("*").getItem<Person>(new Person());
                         //项目负责人
                         cells.Add(projectMaster.PersonName);
                         //项目负责人电话
