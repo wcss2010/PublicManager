@@ -53,6 +53,8 @@ namespace PublicManager.Modules.Reporter
                 proj.DutyUnit = localContext.table("Unit").where("ID='" + diProject.getString("UnitID") + "'").select("UnitName").getValue<string>("未知");
                 //proj.DutyUnitOrg = "未知";
                 proj.DutyUnitAddress = localContext.table("Unit").where("ID='" + diProject.getString("UnitID") + "'").select("Address").getValue<string>("未知");
+                proj.ProjectNumber = string.Empty;
+                proj.TotalTime = diProject.getInt("TotalTime"); ;
                 proj.copyTo(ConnectionManager.Context.table("Project")).insert();
                 
                 //处理课题列表
@@ -100,6 +102,8 @@ namespace PublicManager.Modules.Reporter
                         obj.PersonSpecialty = diPerson.getString("Specialty");
                         obj.TotalTime = diTask.getInt("TotalTime");
                         obj.TaskContent = diTask.getString("Content");
+                        obj.Telephone = diPerson.getString("Telephone");
+                        obj.Mobilephone = diPerson.getString("MobilePhone");
 
                         DataItem diUnit = localContext.table("Unit").where("ID='" + diPerson.getString("UnitID") + "'").select("*").getDataItem();
                         if (diUnit != null && diUnit.count() >= 1)
@@ -128,7 +132,63 @@ namespace PublicManager.Modules.Reporter
                     }
                 }
                 #endregion
-                
+
+                #region 导入经费信息表
+                DataList dlMoneys = localContext.table("MoneyAndYear").select("*").getDataList();
+                if (dlMoneys != null && dlMoneys.getRowCount() >= 1)
+                {
+                    //关键字映射表
+                    Dictionary<string, string> nameDicts = new Dictionary<string, string>();
+                    nameDicts["ProjectRFA"] = "Money1";
+                    nameDicts["ProjectRFA1"] = "Money2";
+                    nameDicts["ProjectRFA1_1"] = "Money3";
+                    nameDicts["ProjectRFA1_1_1"] = "Money3_1";
+                    nameDicts["ProjectRFA1_1_2"] = "Money3_2";
+                    nameDicts["ProjectRFA1_1_3"] = "Money3_3";
+                    nameDicts["ProjectRFA1_2"] = "Money4";
+                    nameDicts["ProjectRFA1_3"] = "Money5";
+                    nameDicts["ProjectRFA1_3_1"] = "Money5_1";
+                    nameDicts["ProjectRFA1_3_2"] = "Money5_2";
+                    nameDicts["ProjectRFA1_4"] = "Money6";
+                    nameDicts["ProjectRFA1_5"] = "Money7";
+                    nameDicts["ProjectRFA1_6"] = "Money8";
+                    nameDicts["ProjectRFA1_7"] = "Money9";
+                    nameDicts["ProjectRFA1_8"] = "Money10";
+                    nameDicts["ProjectRFA1_9"] = "Money11";
+                    nameDicts["ProjectRFA2"] = "Money12";
+                    nameDicts["ProjectRFA2_1"] = "Money12_1";
+                    nameDicts["Projectoutlay1"] = "Year1";
+                    nameDicts["Projectoutlay2"] = "Year2";
+                    nameDicts["Projectoutlay3"] = "Year3";
+                    nameDicts["Projectoutlay4"] = "Year4";
+                    nameDicts["Projectoutlay5"] = "Year5";
+                    nameDicts["ProjectRFArm"] = "Info1";
+                    nameDicts["ProjectRFA1rm"] = "Info2";
+                    nameDicts["ProjectRFA1_1rm"] = "Info3";
+                    nameDicts["ProjectRFA1_1_1rm"] = "Info3_1";
+                    nameDicts["ProjectRFA1_1_2rm"] = "Info3_2";
+                    nameDicts["ProjectRFA1_1_3rm"] = "Info3_3";
+                    nameDicts["ProjectRFA1_2rm"] = "Info4";
+                    nameDicts["ProjectRFA1_3rm"] = "Info5";
+                    nameDicts["ProjectRFA1_3_1rm"] = "Info5_1";
+                    nameDicts["ProjectRFA1_3_2rm"] = "Info5_2";
+                    nameDicts["ProjectRFA1_4rm"] = "Info6";
+                    nameDicts["ProjectRFA1_5rm"] = "Info7";
+                    nameDicts["ProjectRFA1_6rm"] = "Info8";
+                    nameDicts["ProjectRFA1_7rm"] = "Info9";
+                    nameDicts["ProjectRFA1_8rm"] = "Info10";
+                    nameDicts["ProjectRFA1_9rm"] = "Info11";
+                    nameDicts["ProjectRFA2rm"] = "Info12";
+                    nameDicts["ProjectRFA2_1rm"] = "Info12_1";
+
+                    foreach (DataItem di in dlMoneys.getRows())
+                    {
+                        //添加字典
+                        addDict(catalog, proj, "Money,Info", nameDicts[di.getString("Name")], di.getString("Value"), string.Empty);
+                    }
+                }
+                #endregion
+
                 return catalog.CatalogID;
             }
             else
