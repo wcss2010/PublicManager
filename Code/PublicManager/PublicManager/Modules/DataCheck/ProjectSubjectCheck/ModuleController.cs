@@ -13,6 +13,11 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
 {
     public partial class ModuleController : BaseModuleController
     {
+        /// <summary>
+        /// CatalogID筛选条件
+        /// </summary>
+        string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+
         public ModuleController()
         {
             InitializeComponent();
@@ -20,8 +25,8 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectName like '%" + txtKey.Text + "%'").select("*").getList<Project>(new Project());
+            dgvDetail.Rows.Clear();
+            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectName like '%" + txtKey.Text + "%'" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
@@ -40,7 +45,7 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
                    cells.Add(sub.WorkContent);
                    cells.Add(sub.WorkTask);
 
-                   dataGridView1.Rows.Add(cells.ToArray());
+                   dgvDetail.Rows.Add(cells.ToArray());
                }
             }
         }
@@ -56,9 +61,9 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Rows.Count >= 1)
+            if (dgvDetail.Rows.Count >= 1)
             {
-                string content = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty;
+                string content = dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty;
                 if (content != null && content.EndsWith(".doc"))
                 {
                     if (File.Exists(content))
@@ -75,8 +80,28 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
 
         private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dataGridView1.Rows.Count <= 0) return;
-            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty).ToString();
+            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvDetail.Rows.Count <= 0) return;
+            dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = (dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty).ToString();
+        }
+
+        private void cbDisplayReporter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbDisplayContract.Checked && cbDisplayReporter.Checked)
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+            }
+            else if (cbDisplayContract.Checked)
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
+            }
+            else if (cbDisplayReporter.Checked)
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '建议书')";
+            }
+            else
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+            }
         }
     }
 }

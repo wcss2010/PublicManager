@@ -71,7 +71,7 @@
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "数据库版本";
+            this.Column1.HeaderText = "版本";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 

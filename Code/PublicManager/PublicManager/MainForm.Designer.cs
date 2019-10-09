@@ -380,6 +380,7 @@
             this.nbcTestD.Caption = "演示4";
             this.nbcTestD.LargeImage = global::PublicManager.Properties.Resources.Contact_32x32;
             this.nbcTestD.Name = "nbcTestD";
+            this.nbcTestD.Visible = false;
             // 
             // plRightContent
             // 

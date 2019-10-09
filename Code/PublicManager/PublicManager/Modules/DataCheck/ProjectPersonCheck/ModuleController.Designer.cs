@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtKey = new System.Windows.Forms.TextBox();
@@ -47,14 +47,16 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
+            this.cbDisplayContract = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvDetail);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -63,11 +65,11 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dgvDetail
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDetail.AllowUserToAddRows = false;
+            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13,
             this.Column6,
             this.Column7,
@@ -81,25 +83,27 @@
             this.Column9,
             this.Column10,
             this.Column12});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 39);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(1031, 534);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
+            this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetail.Location = new System.Drawing.Point(3, 41);
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.ReadOnly = true;
+            this.dgvDetail.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowTemplate.Height = 40;
+            this.dgvDetail.Size = new System.Drawing.Size(1031, 532);
+            this.dgvDetail.TabIndex = 3;
+            this.dgvDetail.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbDisplayReporter);
+            this.panel1.Controls.Add(this.cbDisplayContract);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.txtKey);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1031, 22);
+            this.panel1.Size = new System.Drawing.Size(1031, 24);
             this.panel1.TabIndex = 2;
             // 
             // btnSearch
@@ -107,7 +111,7 @@
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSearch.Location = new System.Drawing.Point(596, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 22);
+            this.btnSearch.Size = new System.Drawing.Size(75, 24);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "搜索";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -127,14 +131,14 @@
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 22);
+            this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "项目名称：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Column13
             // 
-            this.Column13.HeaderText = "数据库版本";
+            this.Column13.HeaderText = "版本";
             this.Column13.MinimumWidth = 90;
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
@@ -142,7 +146,7 @@
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "项目类型";
+            this.Column6.HeaderText = "类型";
             this.Column6.MinimumWidth = 80;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -234,6 +238,35 @@
             this.Column12.ReadOnly = true;
             this.Column12.Width = 80;
             // 
+            // cbDisplayReporter
+            // 
+            this.cbDisplayReporter.AutoSize = true;
+            this.cbDisplayReporter.Checked = true;
+            this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbDisplayReporter.Location = new System.Drawing.Point(789, 0);
+            this.cbDisplayReporter.Name = "cbDisplayReporter";
+            this.cbDisplayReporter.Size = new System.Drawing.Size(108, 24);
+            this.cbDisplayReporter.TabIndex = 6;
+            this.cbDisplayReporter.Text = "显示建议书内容";
+            this.cbDisplayReporter.UseVisualStyleBackColor = true;
+            this.cbDisplayReporter.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
+            // 
+            // cbDisplayContract
+            // 
+            this.cbDisplayContract.AutoSize = true;
+            this.cbDisplayContract.Checked = true;
+            this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbDisplayContract.Location = new System.Drawing.Point(671, 0);
+            this.cbDisplayContract.Name = "cbDisplayContract";
+            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.cbDisplayContract.Size = new System.Drawing.Size(118, 24);
+            this.cbDisplayContract.TabIndex = 5;
+            this.cbDisplayContract.Text = "显示合同书内容";
+            this.cbDisplayContract.UseVisualStyleBackColor = true;
+            this.cbDisplayContract.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
+            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -242,7 +275,7 @@
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1037, 576);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -256,7 +289,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtKey;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
@@ -270,5 +303,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.CheckBox cbDisplayReporter;
+        private System.Windows.Forms.CheckBox cbDisplayContract;
     }
 }

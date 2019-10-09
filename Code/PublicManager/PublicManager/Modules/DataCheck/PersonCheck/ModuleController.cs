@@ -12,6 +12,11 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
 {
     public partial class ModuleController : BaseModuleController
     {
+        /// <summary>
+        /// CatalogID筛选条件
+        /// </summary>
+        string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+
         public ModuleController()
         {
             InitializeComponent();
@@ -28,8 +33,8 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectID in (select ProjectID from Person where PersonName like '%" + txtKey.Text + "%')").select("*").getList<Project>(new Project());
+            dgvDetail.Rows.Clear();
+            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectID in (select ProjectID from Person where PersonName like '%" + txtKey.Text + "%')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                 //显示仅为项目负责人
@@ -59,7 +64,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
 
                         cells.Add("项目负责人");
 
-                        dataGridView1.Rows.Add(cells.ToArray());
+                        dgvDetail.Rows.Add(cells.ToArray());
                     }
                 }
 
@@ -101,7 +106,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
 
                         cells.Add(roleStr);
 
-                        dataGridView1.Rows.Add(cells.ToArray());
+                        dgvDetail.Rows.Add(cells.ToArray());
                     }
                 }
             }
@@ -109,8 +114,28 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
 
         private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dataGridView1.Rows.Count <= 0) return;
-            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty).ToString();
+            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvDetail.Rows.Count <= 0) return;
+            dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = (dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty).ToString();
+        }
+
+        private void cbDisplayReporter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbDisplayContract.Checked && cbDisplayReporter.Checked)
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+            }
+            else if (cbDisplayContract.Checked)
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
+            }
+            else if (cbDisplayReporter.Checked)
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '建议书')";
+            }
+            else
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+            }
         }
     }
 }
