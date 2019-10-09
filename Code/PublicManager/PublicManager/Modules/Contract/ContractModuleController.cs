@@ -183,34 +183,12 @@ namespace PublicManager.Modules.Contract
                     dtBase.Columns.Add("项目总经费", typeof(string));
                     dtBase.Columns.Add("研究目标", typeof(string));
                     dtBase.Columns.Add("研究内容", typeof(string));
-                    //统计最大课题数量
-                    int maxSubjectCount = 0;
-                    List<Catalog> catalogList = ConnectionManager.Context.table("Catalog").where("CatalogType='合同书'").select("*").getList<Catalog>(new Catalog());
-                    foreach (Catalog c in catalogList)
-                    {
-                        object objValue = ConnectionManager.Context.table("Subject").where("CatalogID = '" + c.CatalogID + "'").select("count(*)").getValue();
-                        if (objValue != null)
-                        {
-                            int intValue = 0;
-                            try
-                            {
-                                intValue = int.Parse(objValue.ToString());
-                            }
-                            catch (Exception ex) { }
+                    dtBase.Columns.Add("课题名称", typeof(string));
+                    dtBase.Columns.Add("课题单位", typeof(string));
+                    dtBase.Columns.Add("课题负责人", typeof(string));
+                    dtBase.Columns.Add("课题负责人电话", typeof(string));
 
-                            if (intValue >= maxSubjectCount)
-                            {
-                                maxSubjectCount = intValue;
-                            }
-                        }
-                    }
-                    for (int kk = 1; kk <= maxSubjectCount; kk++)
-                    {
-                        dtBase.Columns.Add("课题" + kk + "名称", typeof(string));
-                        dtBase.Columns.Add("课题" + kk + "单位", typeof(string));
-                        dtBase.Columns.Add("课题" + kk + "负责人", typeof(string));
-                        dtBase.Columns.Add("课题" + kk + "负责人电话", typeof(string));
-                    }
+                    List<Catalog> catalogList = ConnectionManager.Context.table("Catalog").where("CatalogType='合同书'").select("*").getList<Catalog>(new Catalog());
 
                     //生成内容
                     foreach (Catalog c in catalogList)
@@ -233,10 +211,10 @@ namespace PublicManager.Modules.Contract
                         //项目负责人
                         cells.Add(projectMaster.PersonName);
                         //项目负责人电话
-                        cells.Add(string.Empty);
+                        cells.Add(projectMaster.Telephone);
 
                         //研究周期
-                        cells.Add(string.Empty);
+                        cells.Add(p.TotalTime);
 
                         //总经费
                         cells.Add(p.TotalMoney);
@@ -247,23 +225,28 @@ namespace PublicManager.Modules.Contract
                         //研究内容
                         cells.Add(string.Empty);
 
+                        StringBuilder sbSubjectNames = new StringBuilder();
+                        StringBuilder sbSubjectUnits = new StringBuilder();
+                        StringBuilder sbSubjectPersons = new StringBuilder();
+                        StringBuilder sbSubjectPhones = new StringBuilder();
+
                         //课题列表
                         List<Subject> subjectList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + c.CatalogID + "'").select("*").getList<Subject>(new Subject());
                         foreach (Subject s in subjectList)
                         {
-                            cells.Add(s.SubjectName);
-                            cells.Add(s.DutyUnit);
+                            sbSubjectNames.AppendLine(s.SubjectName);
+                            sbSubjectUnits.AppendLine(s.DutyUnit);
 
                             Person subjectMaster = ConnectionManager.Context.table("Person").where("JobInProject='负责人' and CatalogID = '" + c.CatalogID + "' and SubjectID = '" + s.SubjectID + "'").select("*").getItem<Person>(new Person());
-                            cells.Add(subjectMaster.PersonName);
-                            cells.Add(string.Empty);
-                        }
-                        int emptyCount = maxSubjectCount - subjectList.Count;
-                        for (int vvv = 0; vvv < emptyCount; vvv++)
-                        {
-                            cells.Add(string.Empty);
+                            sbSubjectPersons.AppendLine(subjectMaster.PersonName);
+                            sbSubjectPhones.AppendLine(subjectMaster.Telephone);
                         }
 
+
+                        cells.Add(sbSubjectNames.ToString());
+                        cells.Add(sbSubjectUnits.ToString());
+                        cells.Add(sbSubjectPersons.ToString());
+                        cells.Add(sbSubjectPhones.ToString());
                         dtBase.Rows.Add(cells.ToArray());
                     }
                     #endregion
@@ -276,20 +259,8 @@ namespace PublicManager.Modules.Contract
                     dtMoney.Columns.Add("研究周期", typeof(string));
                     dtMoney.Columns.Add("总经费", typeof(string));
 
-                    dtMoney.Columns.Add("第一年度经费(万元)", typeof(string));
-                    dtMoney.Columns.Add("第一年度拨付时间", typeof(string));
-
-                    dtMoney.Columns.Add("第二年度经费(万元)", typeof(string));
-                    dtMoney.Columns.Add("第二年度拨付时间", typeof(string));
-
-                    dtMoney.Columns.Add("第三年度经费(万元)", typeof(string));
-                    dtMoney.Columns.Add("第三年度拨付时间", typeof(string));
-
-                    dtMoney.Columns.Add("第四年度经费(万元)", typeof(string));
-                    dtMoney.Columns.Add("第四年度拨付时间", typeof(string));
-
-                    dtMoney.Columns.Add("第五年度经费(万元)", typeof(string));
-                    dtMoney.Columns.Add("第五年度拨付时间", typeof(string));
+                    dtMoney.Columns.Add("各年度经费(万元)", typeof(string));
+                    dtMoney.Columns.Add("各年度拨付时间", typeof(string));
 
                     //生成内容
                     foreach (Catalog c in catalogList)
@@ -300,16 +271,21 @@ namespace PublicManager.Modules.Contract
                         Project p = ConnectionManager.Context.table("Project").where("CatalogID = '" + c.CatalogID + "'").select("*").getItem<Project>(new Project());
                         cells.Add(p.Domains);
                         cells.Add(p.ProjectName);
-                        cells.Add(string.Empty);
-                        cells.Add(string.Empty);
+                        cells.Add(p.ProjectNumber);
+                        cells.Add(p.TotalTime);
                         cells.Add(p.TotalMoney);
-                        
-                        cells.Add(string.Empty);
-                        cells.Add(string.Empty);
-                        cells.Add(string.Empty);
-                        cells.Add(string.Empty);
-                        cells.Add(string.Empty);
-                        cells.Add(string.Empty);
+
+                        //生成各年度经费和时间字符串
+                        StringBuilder sbMoneyNum = new StringBuilder();
+                        StringBuilder sbMoneyTime = new StringBuilder();
+                        for (int kkk = 1; kkk <= 5; kkk++)
+                        {
+                            sbMoneyNum.AppendLine(ConnectionManager.Context.table("Dicts").where("CatalogID='" + c.CatalogID + "' and DictName='Year" + kkk + "'").select("DictValue").getValue<string>(string.Empty));
+                            sbMoneyTime.AppendLine(ConnectionManager.Context.table("Dicts").where("CatalogID='" + c.CatalogID + "' and DictName='Year" + kkk + "_SendDate'").select("DictValue").getValue<string>(string.Empty));
+                        }
+
+                        cells.Add(sbMoneyNum.ToString());
+                        cells.Add(sbMoneyTime.ToString());
 
                         dtMoney.Rows.Add(cells.ToArray());
                     }
