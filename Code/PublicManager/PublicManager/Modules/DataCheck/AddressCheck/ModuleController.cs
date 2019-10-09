@@ -21,12 +21,13 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
         public ModuleController()
         {
             InitializeComponent();
+            cbOrgList.SelectedIndex = 0;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dgvDetail.Rows.Clear();
-            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectName like '%" + txtKey.Text + "%'" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectID in (select ProjectID from Subject where DutyUnitAddress like '%" + txtKey.Text + "%' and DutyUnitOrg = '" + cbOrgList.SelectedItem.ToString() + "')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
