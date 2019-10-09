@@ -208,6 +208,12 @@
     <Compile Include="Modules\DataCheck\ProjectSubjectCheck\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\DataCheck\AddressCheck\ModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\DataCheck\AddressCheck\ModuleController.Designer.cs">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\MainMenuController.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -270,6 +276,9 @@
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataCheck\ProjectSubjectCheck\ModuleController.resx">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DataCheck\AddressCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\MainMenuController.resx">
