@@ -33,16 +33,19 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
                List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                foreach (Subject sub in subList)
                {
-                   List<object> cells = new List<object>();
-                   cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
-                   cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
-                   cells.Add(proj.ProjectName);
-                   cells.Add(sub.SubjectName);
-                   cells.Add(sub.DutyUnit);
-                   cells.Add(sub.DutyUnitOrg);
-                   cells.Add(sub.DutyUnitAddress);
+                   if (sub.DutyUnitOrg == cbOrgList.SelectedItem.ToString())
+                   {
+                       List<object> cells = new List<object>();
+                       cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
+                       cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
+                       cells.Add(proj.ProjectName);
+                       cells.Add(sub.SubjectName);
+                       cells.Add(sub.DutyUnit);
+                       cells.Add(sub.DutyUnitOrg);
+                       cells.Add(sub.DutyUnitAddress);
 
-                   dgvDetail.Rows.Add(cells.ToArray());
+                       dgvDetail.Rows.Add(cells.ToArray());
+                   }
                }
             }
         }
