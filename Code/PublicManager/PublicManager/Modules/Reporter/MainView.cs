@@ -43,7 +43,7 @@ namespace PublicManager.Modules.Reporter
                 cells.Add(catalog.CatalogNumber);
                 cells.Add(catalog.CatalogName);
 
-                Person p = ConnectionManager.Context.table("Person").where("IsProjectMaster='true'").select("*").getItem<Person>(new Person());
+                Person p = ConnectionManager.Context.table("Person").where("IsProjectMaster='true' and CatalogID = '" + catalog.CatalogID + "'").select("*").getItem<Person>(new Person());
                 if (p != null)
                 {
                     cells.Add(p.PersonName);
