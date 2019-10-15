@@ -107,6 +107,23 @@ namespace PublicManager.Modules.Contract
                             obj.DutyUnit = di.getString("KeTiFuZeDanWei");
                             obj.DutyUnitOrg = di.getString("KeTiSuoShuBuMen");
                             obj.DutyUnitAddress = getAddress(di.getString("KeTiSuoShuDiDian"));
+
+                            //处理参加单位分工
+                            StringBuilder sbWorkTask = new StringBuilder();
+                            DataList items = localContext.table("RenWuBiao").where("KeTiBianHao='" + di.getString("BianHao") + "'").select("*").getDataList();
+                            if (items.getRowCount() >= 1)
+                            {
+                                sbWorkTask.Append("该课题由").Append(items.getRow(0).getString("DanWeiMing")).Append("单位负责，承担").Append(items.getRow(0).getString("RenWuFenGong")).Append("等任务；").AppendLine();
+                            }
+                            for (int kk = 1; kk < items.getRowCount(); kk++)
+                            {
+                                DataItem rwb = items.getRow(kk);
+                                sbWorkTask.Append(rwb.getString("DanWeiMing")).Append("单位参加，承担").Append(rwb.getString("RenWuFenGong")).Append("等任务；\n");
+                            }
+                            if (sbWorkTask.Length >= 1)
+                            {
+                                sbWorkTask.Remove(sbWorkTask.Length - 1, 1);
+                            }
                             break;
                     }
 
@@ -205,7 +222,7 @@ namespace PublicManager.Modules.Contract
                     }
                 }
                 #endregion
-                
+
                 return catalog.CatalogID;
             }
             else
