@@ -294,13 +294,38 @@ namespace PublicManager.Modules.Reporter.Forms
 
         private void tlTestA_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            //读取目录名称中的项目编号
-            string catalogNumber = e.Node.Text;
+            List<TreeNode> checkedList = getCheckedNodeList();
 
-            //判断当前项目是否需要导入
-            if (e.Node.Checked)
+            //移除不需要选项
+            List<string> delList = new List<string>();
+            foreach (KeyValuePair<string, bool> kvp in replaceDict)
             {
-                //需要导入
+                bool needRemove = true;
+
+                foreach (TreeNode selected in checkedList)
+                {
+                    if (selected.Text == kvp.Key)
+                    {
+                        needRemove = false;
+                        break;
+                    }
+                }
+
+                if (needRemove)
+                {
+                    delList.Add(kvp.Key);
+                }
+            }
+            foreach (string s in delList)
+            {
+                replaceDict.Remove(s);
+            }
+
+            //检查需要添加的选项
+            foreach (TreeNode selected in checkedList)
+            {
+                //读取目录名称中的项目编号
+                string catalogNumber = selected.Text;
 
                 //根据项目编号查询项目数量
                 long projectCount = ConnectionManager.Context.table("Catalog").where("catalognumber='" + catalogNumber + "'").select("count(*)").getValue<long>(0);
@@ -309,11 +334,6 @@ namespace PublicManager.Modules.Reporter.Forms
                 {
                     replaceDict[catalogNumber] = true;
                 }
-            }
-            else
-            {
-                //不需要导入
-                replaceDict.Remove(catalogNumber);
             }
 
             //刷新替换列表
@@ -330,6 +350,71 @@ namespace PublicManager.Modules.Reporter.Forms
                     replaceDict[e.Item.Text] = e.Item.Checked;
                 }
             }
+        }
+
+        /// <summary>
+        /// 获得勾选节点列表
+        /// </summary>
+        /// <returns></returns>
+        private List<TreeNode> getCheckedNodeList()
+        {
+            List<TreeNode> results = new List<TreeNode>();
+            foreach (TreeNode tn in tlTestA.Nodes)
+            {
+                if (tn.Checked)
+                {
+                    results.Add(tn);
+                }
+            }
+            return results;
+        }
+
+        private void tlTestA_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            List<TreeNode> checkedList = getCheckedNodeList();
+
+            //移除不需要选项
+            List<string> delList = new List<string>();
+            foreach (KeyValuePair<string, bool> kvp in replaceDict)
+            {
+                bool needRemove = true;
+
+                foreach (TreeNode selected in checkedList)
+                {
+                    if (selected.Text == kvp.Key)
+                    {
+                        needRemove = false;
+                        break;
+                    }
+                }
+
+                if (needRemove)
+                {
+                    delList.Add(kvp.Key);
+                }
+            }
+            foreach (string s in delList)
+            {
+                replaceDict.Remove(s);
+            }
+
+            //检查需要添加的选项
+            foreach (TreeNode selected in checkedList)
+            {
+                //读取目录名称中的项目编号
+                string catalogNumber = selected.Text;
+
+                //根据项目编号查询项目数量
+                long projectCount = ConnectionManager.Context.table("Catalog").where("catalognumber='" + catalogNumber + "'").select("count(*)").getValue<long>(0);
+                //判断这个项目是否被导入过
+                if (projectCount >= 1)
+                {
+                    replaceDict[catalogNumber] = true;
+                }
+            }
+
+            //刷新替换列表
+            reloadReplaceList();
         }
     }
 }
