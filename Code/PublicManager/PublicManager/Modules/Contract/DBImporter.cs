@@ -124,6 +124,7 @@ namespace PublicManager.Modules.Contract
                             {
                                 sbWorkTask.Remove(sbWorkTask.Length - 1, 1);
                             }
+                            obj.WorkTask = sbWorkTask.ToString();
                             break;
                     }
 
