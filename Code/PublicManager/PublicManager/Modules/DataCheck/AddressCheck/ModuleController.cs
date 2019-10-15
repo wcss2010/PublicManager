@@ -27,13 +27,13 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dgvDetail.Rows.Clear();
-            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectID in (select ProjectID from Subject where DutyUnitAddress like '%" + txtKey.Text + "%' and DutyUnitOrg = '" + cbOrgList.SelectedItem.ToString() + "')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectID in (select ProjectID from Subject where " + (string.IsNullOrEmpty(txtKey.Text) ? "1=1" : "DutyUnitAddress like '%" + txtKey.Text + "%'") + (cbOrgList.SelectedItem.ToString() == "全部" ? string.Empty : " and DutyUnitOrg = '" + cbOrgList.SelectedItem.ToString() + "'") + ")" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                foreach (Subject sub in subList)
                {
-                   if (sub.DutyUnitOrg == cbOrgList.SelectedItem.ToString())
+                   if (sub.DutyUnitOrg == cbOrgList.SelectedItem.ToString() || cbOrgList.SelectedItem.ToString() == "全部")
                    {
                        List<object> cells = new List<object>();
                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));

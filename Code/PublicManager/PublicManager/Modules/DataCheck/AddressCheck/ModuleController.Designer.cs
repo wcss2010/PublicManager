@@ -38,13 +38,13 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbOrgList = new System.Windows.Forms.ComboBox();
+            this.txtKey = new System.Windows.Forms.TextBox();
             this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
             this.cbDisplayContract = new System.Windows.Forms.CheckBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.txtKey = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbOrgList = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -155,6 +155,53 @@
             this.panel1.Size = new System.Drawing.Size(1028, 59);
             this.panel1.TabIndex = 2;
             // 
+            // cbOrgList
+            // 
+            this.cbOrgList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbOrgList.Font = new System.Drawing.Font("宋体", 9F);
+            this.cbOrgList.FormattingEnabled = true;
+            this.cbOrgList.ItemHeight = 12;
+            this.cbOrgList.Items.AddRange(new object[] {
+            "全部",
+            "陆军",
+            "海军",
+            "空军",
+            "火箭军",
+            "战略支援部队",
+            "联合勤务保障部队",
+            "军委机关直属单位",
+            "军事科学院",
+            "国防大学",
+            "国防科技大学",
+            "武警部队",
+            "教育部",
+            "工信部",
+            "中国科学院",
+            "中国兵器工业集团公司",
+            "中国兵器装备集团公司",
+            "中国船舶工业集团公司",
+            "中国船舶重工集团公司",
+            "中国电子科技集团公司",
+            "中国电子信息产业集团公司",
+            "中国航空发动机集团公司",
+            "中国航空工业集团公司",
+            "中国航天科工集团公司",
+            "中国航天科技集团公司",
+            "中国核工业集团公司",
+            "中国工程物理研究院",
+            "其它"});
+            this.cbOrgList.Location = new System.Drawing.Point(106, 30);
+            this.cbOrgList.Name = "cbOrgList";
+            this.cbOrgList.Size = new System.Drawing.Size(490, 20);
+            this.cbOrgList.TabIndex = 5;
+            // 
+            // txtKey
+            // 
+            this.txtKey.Location = new System.Drawing.Point(106, 0);
+            this.txtKey.Name = "txtKey";
+            this.txtKey.Size = new System.Drawing.Size(490, 21);
+            this.txtKey.TabIndex = 1;
+            // 
             // cbDisplayReporter
             // 
             this.cbDisplayReporter.AutoSize = true;
@@ -192,23 +239,6 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // txtKey
-            // 
-            this.txtKey.Location = new System.Drawing.Point(106, 0);
-            this.txtKey.Name = "txtKey";
-            this.txtKey.Size = new System.Drawing.Size(490, 21);
-            this.txtKey.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(3, -3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "所属地点：";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -219,44 +249,15 @@
             this.label2.Text = "所属部门：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cbOrgList
+            // label1
             // 
-            this.cbOrgList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbOrgList.Font = new System.Drawing.Font("宋体", 9F);
-            this.cbOrgList.FormattingEnabled = true;
-            this.cbOrgList.ItemHeight = 12;
-            this.cbOrgList.Items.AddRange(new object[] {
-            "陆军",
-            "海军",
-            "空军",
-            "火箭军",
-            "战略支援部队",
-            "联合勤务保障部队",
-            "军委机关直属单位",
-            "军事科学院",
-            "国防大学",
-            "国防科技大学",
-            "武警部队",
-            "教育部",
-            "工信部",
-            "中国科学院",
-            "中国兵器工业集团公司",
-            "中国兵器装备集团公司",
-            "中国船舶工业集团公司",
-            "中国船舶重工集团公司",
-            "中国电子科技集团公司",
-            "中国电子信息产业集团公司",
-            "中国航空发动机集团公司",
-            "中国航空工业集团公司",
-            "中国航天科工集团公司",
-            "中国航天科技集团公司",
-            "中国核工业集团公司",
-            "中国工程物理研究院",
-            "其它"});
-            this.cbOrgList.Location = new System.Drawing.Point(106, 30);
-            this.cbOrgList.Name = "cbOrgList";
-            this.cbOrgList.Size = new System.Drawing.Size(490, 20);
-            this.cbOrgList.TabIndex = 5;
+            this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(3, -3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "所属地点：";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ModuleController
             // 
