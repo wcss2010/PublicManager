@@ -137,5 +137,10 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                 strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
             }
         }
+
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            BaseModuleController.exportToExcel(dgvDetail);
+        }
     }
 }

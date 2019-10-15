@@ -47,6 +47,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtKey = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnExportToExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -183,6 +184,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnExportToExcel);
             this.panel1.Controls.Add(this.cbDisplayReporter);
             this.panel1.Controls.Add(this.cbDisplayContract);
             this.panel1.Controls.Add(this.btnSearch);
@@ -253,6 +255,17 @@
             this.label1.Text = "单位名称：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExportToExcel.Location = new System.Drawing.Point(897, 0);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(87, 24);
+            this.btnExportToExcel.TabIndex = 8;
+            this.btnExportToExcel.Text = "导出到Excel";
+            this.btnExportToExcel.UseVisualStyleBackColor = true;
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
+            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -289,5 +302,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn Column5;
         private System.Windows.Forms.CheckBox cbDisplayContract;
         private System.Windows.Forms.CheckBox cbDisplayReporter;
+        private System.Windows.Forms.Button btnExportToExcel;
     }
 }

@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars;
+using System.IO;
+using System.Diagnostics;
 
 namespace PublicManager.Modules
 {
@@ -149,6 +151,126 @@ namespace PublicManager.Modules
                 for (int k = 0; k < sheet.GetRow(0).Cells.Count; k++)
                 {
                     sheet.AutoSizeColumn(k);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 写入DataTable到Excel
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <param name="excelFile"></param>
+        public static void writeDataTableToExcel(DataTable dt, string excelFile)
+        {
+            //Excel数据
+            MemoryStream memoryStream = new MemoryStream();
+
+            //创建Workbook
+            NPOI.XSSF.UserModel.XSSFWorkbook workbook = new NPOI.XSSF.UserModel.XSSFWorkbook();
+
+            #region 设置Excel样式
+            //创建单元格设置对象(普通内容)
+            NPOI.SS.UserModel.ICellStyle cellStyleA = workbook.CreateCellStyle();
+            cellStyleA.Alignment = NPOI.SS.UserModel.HorizontalAlignment.Left;
+            cellStyleA.VerticalAlignment = NPOI.SS.UserModel.VerticalAlignment.Center;
+            cellStyleA.BorderBottom = NPOI.SS.UserModel.BorderStyle.Thin;
+            cellStyleA.BorderLeft = NPOI.SS.UserModel.BorderStyle.Thin;
+            cellStyleA.BorderRight = NPOI.SS.UserModel.BorderStyle.Thin;
+            cellStyleA.BorderTop = NPOI.SS.UserModel.BorderStyle.Thin;
+            cellStyleA.WrapText = true;
+
+            //创建单元格设置对象(普通内容)
+            NPOI.SS.UserModel.ICellStyle cellStyleB = workbook.CreateCellStyle();
+            cellStyleB.Alignment = NPOI.SS.UserModel.HorizontalAlignment.Center;
+            cellStyleB.VerticalAlignment = NPOI.SS.UserModel.VerticalAlignment.Center;
+            cellStyleB.BorderBottom = NPOI.SS.UserModel.BorderStyle.Thin;
+            cellStyleB.BorderLeft = NPOI.SS.UserModel.BorderStyle.Thin;
+            cellStyleB.BorderRight = NPOI.SS.UserModel.BorderStyle.Thin;
+            cellStyleB.BorderTop = NPOI.SS.UserModel.BorderStyle.Thin;
+            cellStyleB.WrapText = true;
+
+            //创建设置字体对象(内容字体)
+            NPOI.SS.UserModel.IFont fontA = workbook.CreateFont();
+            fontA.FontHeightInPoints = 16;//设置字体大小
+            fontA.FontName = "宋体";
+            cellStyleA.SetFont(fontA);
+
+            //创建设置字体对象(标题字体)
+            NPOI.SS.UserModel.IFont fontB = workbook.CreateFont();
+            fontB.FontHeightInPoints = 16;//设置字体大小
+            fontB.FontName = "宋体";
+            fontB.Boldweight = (short)NPOI.SS.UserModel.FontBoldWeight.Bold;
+            cellStyleB.SetFont(fontB);
+            #endregion
+
+            //写入基本数据
+            writeSheet(workbook, cellStyleA, cellStyleB, dt);
+
+            #region 输出文件
+            //输出到流
+            workbook.Write(memoryStream);
+
+            //写Excel文件
+            File.WriteAllBytes(excelFile, memoryStream.ToArray());
+            #endregion
+        }
+
+        /// <summary>
+        /// 导出DataGridView到DataTable
+        /// </summary>
+        /// <param name="myDGV"></param>
+        /// <returns></returns>
+        public static DataTable toDataTable(DataGridView myDGV)
+        {
+            DataTable dt = new DataTable();
+            for (int i = 0; i < myDGV.ColumnCount; i++)
+            {
+                dt.Columns.Add(myDGV.Columns[i].HeaderText);
+            }
+            //写入数值
+            for (int r = 0; r < myDGV.Rows.Count; r++)
+            {
+                List<object> values = new List<object>();
+                for (int i = 0; i < myDGV.ColumnCount; i++)
+                {
+                    values.Add(myDGV.Rows[r].Cells[i].Value);
+                }
+                dt.Rows.Add(values.ToArray());
+            }
+            return dt;
+        }
+
+        /// <summary>
+        /// 导出DataGrid中的数据到Excel文件并打开该文件(带文件保存对话框)
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void exportToExcel(DataGridView dgv)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.FileName = string.Empty;
+            sfd.Filter = "*.xlsx|*.xlsx";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    //导出DataGridView的数据到DataTable
+                    DataTable dt = toDataTable(dgv);
+
+                    //写入Excel文件
+                    writeDataTableToExcel(dt, sfd.FileName);
+
+                    //弹出提示
+                    MessageBox.Show("Excel导出完成！" + sfd.FileName);
+
+                    //打开文件
+                    if (File.Exists(sfd.FileName))
+                    {
+                        Process.Start(sfd.FileName);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("对不起，Excel导出失败！Ex:" + ex.ToString());
                 }
             }
         }

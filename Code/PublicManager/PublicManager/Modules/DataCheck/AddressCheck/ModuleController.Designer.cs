@@ -45,6 +45,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnExportToExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -142,6 +143,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnExportToExcel);
             this.panel1.Controls.Add(this.cbOrgList);
             this.panel1.Controls.Add(this.txtKey);
             this.panel1.Controls.Add(this.cbDisplayReporter);
@@ -259,6 +261,16 @@
             this.label1.Text = "所属地点：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Location = new System.Drawing.Point(915, 4);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(87, 44);
+            this.btnExportToExcel.TabIndex = 8;
+            this.btnExportToExcel.Text = "导出到Excel";
+            this.btnExportToExcel.UseVisualStyleBackColor = true;
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
+            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -293,5 +305,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbOrgList;
+        private System.Windows.Forms.Button btnExportToExcel;
     }
 }
