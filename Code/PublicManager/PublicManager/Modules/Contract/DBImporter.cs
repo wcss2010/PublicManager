@@ -132,8 +132,8 @@ namespace PublicManager.Modules.Contract
                     obj.TotalTime = di.getInt("MeiNianTouRuShiJian");
                     obj.TaskContent = di.getString("RenWuFenGong");
                     obj.WorkUnit = di.getString("GongZuoDanWei");
-                    obj.Telephone = string.Empty;
-                    obj.Mobilephone = string.Empty;
+                    obj.Telephone = di.exists("DianHua") ? di.getString("DianHua") : string.Empty;
+                    obj.Mobilephone = di.exists("ShouJi") ? di.getString("ShouJi") : string.Empty;
 
                     //设置项目中职务
                     obj.JobInProject = di.getString("ZhiWu");
