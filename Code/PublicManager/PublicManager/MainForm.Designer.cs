@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
@@ -416,6 +417,7 @@
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.rsbStatusBar);
             this.Controls.Add(this.rcTopBar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Ribbon = this.rcTopBar;
             this.ShowIcon = false;
