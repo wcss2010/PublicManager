@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using PublicManager.DB;
 using PublicManager.DB.Entitys;
 using System.IO;
+using Noear.Weed;
 
 namespace PublicManager.Modules.Contract
 {
@@ -281,7 +282,15 @@ namespace PublicManager.Modules.Contract
                         for (int kkk = 1; kkk <= 5; kkk++)
                         {
                             sbMoneyNum.AppendLine(ConnectionManager.Context.table("Dicts").where("CatalogID='" + c.CatalogID + "' and DictName='Year" + kkk + "'").select("DictValue").getValue<string>(string.Empty));
-                            sbMoneyTime.AppendLine(ConnectionManager.Context.table("Dicts").where("CatalogID='" + c.CatalogID + "' and DictName='Year" + kkk + "_SendDate'").select("DictValue").getValue<string>(string.Empty));
+
+                            DataList dlTimes = ConnectionManager.Context.table("Dicts").where("CatalogID='" + c.CatalogID + "' and DictName='Year" + kkk + "_SendDate'").select("DictValue").getDataList();
+                            if (dlTimes.getRowCount() >= 1)
+                            {
+                                foreach (DataItem di in dlTimes.getRows())
+                                {
+                                    sbMoneyTime.AppendLine(di.getString("DictValue"));
+                                }
+                            }
                         }
 
                         cells.Add(sbMoneyNum.ToString());
