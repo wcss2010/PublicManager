@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvDetail = new System.Windows.Forms.DataGridView();
+            this.dgvDetail = new PublicManager.Modules.DataGridViewEx();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -288,7 +288,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvDetail;
+        private PublicManager.Modules.DataGridViewEx dgvDetail;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;

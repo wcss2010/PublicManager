@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvDetail = new System.Windows.Forms.DataGridView();
+            this.dgvDetail = new PublicManager.Modules.DataGridViewEx();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -302,7 +302,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtKey;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvDetail;
+        private PublicManager.Modules.DataGridViewEx dgvDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;

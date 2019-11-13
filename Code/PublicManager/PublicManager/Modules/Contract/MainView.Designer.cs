@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvCatalogs = new System.Windows.Forms.DataGridView();
+            this.dgvCatalogs = new PublicManager.Modules.DataGridViewEx();
             this.colIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -125,7 +125,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvCatalogs;
+        private PublicManager.Modules.DataGridViewEx dgvCatalogs;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIndex;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumber;
