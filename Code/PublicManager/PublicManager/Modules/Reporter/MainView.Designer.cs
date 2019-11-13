@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCatalogs = new PublicManager.Modules.DataGridViewEx();
             this.colIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +44,16 @@
             // dgvCatalogs
             // 
             this.dgvCatalogs.AllowUserToAddRows = false;
+            this.dgvCatalogs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
+            this.dgvCatalogs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 10.5F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCatalogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCatalogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCatalogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIndex,
@@ -51,12 +63,21 @@
             this.colCreater,
             this.colCreaterUnit,
             this.colDel});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCatalogs.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCatalogs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCatalogs.Location = new System.Drawing.Point(0, 0);
             this.dgvCatalogs.MultiSelect = false;
             this.dgvCatalogs.Name = "dgvCatalogs";
             this.dgvCatalogs.ReadOnly = true;
             this.dgvCatalogs.RowHeadersVisible = false;
+            this.dgvCatalogs.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5F);
             this.dgvCatalogs.RowTemplate.Height = 23;
             this.dgvCatalogs.Size = new System.Drawing.Size(1028, 684);
             this.dgvCatalogs.TabIndex = 1;
@@ -67,32 +88,35 @@
             this.colIndex.HeaderText = "序号";
             this.colIndex.Name = "colIndex";
             this.colIndex.ReadOnly = true;
-            this.colIndex.Width = 60;
+            this.colIndex.Width = 5;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "版本";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Width = 5;
             // 
             // colNumber
             // 
             this.colNumber.HeaderText = "项目编号";
             this.colNumber.Name = "colNumber";
             this.colNumber.ReadOnly = true;
+            this.colNumber.Width = 5;
             // 
             // colName
             // 
             this.colName.HeaderText = "项目名称";
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
-            this.colName.Width = 200;
+            this.colName.Width = 5;
             // 
             // colCreater
             // 
             this.colCreater.HeaderText = "申请人";
             this.colCreater.Name = "colCreater";
             this.colCreater.ReadOnly = true;
+            this.colCreater.Width = 5;
             // 
             // colCreaterUnit
             // 
