@@ -48,6 +48,8 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
                    dgvDetail.Rows.Add(cells.ToArray());
                }
             }
+
+            dgvDetail.checkCellSize();
         }
 
         public override void start()

@@ -48,6 +48,8 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
                    }
                }
             }
+
+            dgvDetail.checkCellSize();
         }
 
         public override void start()

@@ -98,6 +98,8 @@ namespace PublicManager.Modules.DataCheck.ProjectPersonCheck
                     }
                 }
             }
+
+            dgvDetail.checkCellSize();
         }
 
         private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
