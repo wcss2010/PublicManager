@@ -93,7 +93,11 @@ namespace PublicManager.Modules
                     //一行可以放几个
                     int lineWordCount = rect.Width / wordWidth;
                     int rowCounts = str.Length / lineWordCount;
-                    int newHeight = (rowCounts + 2) * wordHeight;
+                    if (str.Length % lineWordCount > 0)
+                    {
+                        rowCounts++;
+                    }
+                    int newHeight = rowCounts * wordHeight;
 
                     if (newHeight > maxHeight)
                     {
@@ -104,7 +108,7 @@ namespace PublicManager.Modules
                 //设置高度
                 foreach (DataGridViewRow dgvRow in Rows)
                 {
-                    dgvRow.Height = maxHeight + 30;
+                    dgvRow.Height = maxHeight + 15;
                 }
                 UpdateRowHeightInfo(0, true);
             }
