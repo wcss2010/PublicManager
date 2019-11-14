@@ -97,7 +97,7 @@ namespace PublicManager.Modules
                     {
                         rowCounts++;
                     }
-                    int newHeight = rowCounts * wordHeight;
+                    int newHeight = rowCounts * (wordHeight + 4);
 
                     if (newHeight > maxHeight)
                     {
@@ -108,7 +108,7 @@ namespace PublicManager.Modules
                 //设置高度
                 foreach (DataGridViewRow dgvRow in Rows)
                 {
-                    dgvRow.Height = maxHeight + 15;
+                    dgvRow.Height = maxHeight;
                 }
                 UpdateRowHeightInfo(0, true);
             }
