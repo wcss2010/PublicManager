@@ -63,7 +63,7 @@ namespace PublicManager.Modules.DataCheck.ProjectSubjectCheck
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDetail.Rows.Count >= 1)
+            if (dgvDetail.Rows.Count >= 1 && e.RowIndex >= 0)
             {
                 string content = dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty;
                 if (content != null && content.EndsWith(".doc"))

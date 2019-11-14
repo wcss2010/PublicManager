@@ -58,7 +58,7 @@ namespace PublicManager.Modules.Reporter
         private void dgvCatalogs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //检查是否点击的是删除的那一列
-            if (e.ColumnIndex == dgvCatalogs.Columns.Count - 1)
+            if (e.ColumnIndex == dgvCatalogs.Columns.Count - 1 && e.RowIndex >= 0)
             {
                 //获得要删除的项目ID,项目编号
                 string projectId = ((Catalog)dgvCatalogs.Rows[e.RowIndex].Tag).CatalogID;
