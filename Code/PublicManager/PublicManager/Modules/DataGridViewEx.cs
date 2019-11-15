@@ -82,6 +82,11 @@ namespace PublicManager.Modules
                     //字符
                     string str = cells[t];
 
+                    if (string.IsNullOrEmpty(str))
+                    {
+                        continue;
+                    }
+
                     //单元格大小
                     Rectangle rect = GetColumnDisplayRectangle(t, true);
 
