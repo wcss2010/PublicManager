@@ -53,6 +53,8 @@ namespace PublicManager.Modules.Reporter
                 int rowIndex = dgvCatalogs.Rows.Add(cells.ToArray());
                 dgvCatalogs.Rows[rowIndex].Tag = catalog;
             }
+
+            dgvCatalogs.checkCellSize();
         }
 
         private void dgvCatalogs_CellContentClick(object sender, DataGridViewCellEventArgs e)

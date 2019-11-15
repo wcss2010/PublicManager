@@ -44,8 +44,6 @@
             // dgvCatalogs
             // 
             this.dgvCatalogs.AllowUserToAddRows = false;
-            this.dgvCatalogs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
-            this.dgvCatalogs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 10.5F);
@@ -86,37 +84,42 @@
             // colIndex
             // 
             this.colIndex.HeaderText = "序号";
+            this.colIndex.MinimumWidth = 60;
             this.colIndex.Name = "colIndex";
             this.colIndex.ReadOnly = true;
-            this.colIndex.Width = 5;
+            this.colIndex.Width = 60;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "版本";
+            this.Column1.MinimumWidth = 60;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 5;
+            this.Column1.Width = 60;
             // 
             // colNumber
             // 
             this.colNumber.HeaderText = "项目编号";
+            this.colNumber.MinimumWidth = 110;
             this.colNumber.Name = "colNumber";
             this.colNumber.ReadOnly = true;
-            this.colNumber.Width = 5;
+            this.colNumber.Width = 110;
             // 
             // colName
             // 
             this.colName.HeaderText = "项目名称";
+            this.colName.MinimumWidth = 110;
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
-            this.colName.Width = 5;
+            this.colName.Width = 110;
             // 
             // colCreater
             // 
             this.colCreater.HeaderText = "申请人";
+            this.colCreater.MinimumWidth = 80;
             this.colCreater.Name = "colCreater";
             this.colCreater.ReadOnly = true;
-            this.colCreater.Width = 5;
+            this.colCreater.Width = 80;
             // 
             // colCreaterUnit
             // 
@@ -127,13 +130,13 @@
             // 
             // colDel
             // 
-            this.colDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colDel.HeaderText = "";
+            this.colDel.MinimumWidth = 40;
             this.colDel.Name = "colDel";
             this.colDel.ReadOnly = true;
             this.colDel.Text = "删除";
             this.colDel.UseColumnTextForButtonValue = true;
-            this.colDel.Width = 5;
+            this.colDel.Width = 40;
             // 
             // MainView
             // 

@@ -97,7 +97,7 @@ namespace PublicManager.Modules
                     {
                         rowCounts++;
                     }
-                    int newHeight = rowCounts * (wordHeight + 4);
+                    int newHeight = rowCounts * (wordHeight + 5);
 
                     if (newHeight > maxHeight)
                     {
