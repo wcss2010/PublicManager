@@ -60,18 +60,6 @@
             this.nbcTestD = new DevExpress.XtraNavBar.NavBarGroup();
             this.plRightContent = new DevExpress.XtraEditors.PanelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbcLeftTree)).BeginInit();
-            this.nbcLeftTree.SuspendLayout();
-            this.navBarGroupControlContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tlTestA)).BeginInit();
-            this.navBarGroupControlContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tlTestB)).BeginInit();
-            this.navBarGroupControlContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tlTestC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plRightContent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rcTopBar
@@ -422,18 +410,6 @@
             this.Ribbon = this.rcTopBar;
             this.StatusBar = this.rsbStatusBar;
             this.Text = "数据汇总系统";
-            ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbcLeftTree)).EndInit();
-            this.nbcLeftTree.ResumeLayout(false);
-            this.navBarGroupControlContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tlTestA)).EndInit();
-            this.navBarGroupControlContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tlTestB)).EndInit();
-            this.navBarGroupControlContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tlTestC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plRightContent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

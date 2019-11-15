@@ -115,7 +115,11 @@ namespace PublicManager.Modules
                 {
                     dgvRow.Height = maxHeight;
                 }
-                UpdateRowHeightInfo(0, true);
+
+                if (Rows.Count > 0)
+                {
+                    UpdateRowHeightInfo(0, true);
+                }
             }
         }
     }
