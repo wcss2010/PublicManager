@@ -240,10 +240,10 @@
             // Column3
             // 
             this.Column3.HeaderText = "负责人身份证";
-            this.Column3.MinimumWidth = 130;
+            this.Column3.MinimumWidth = 135;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 130;
+            this.Column3.Width = 135;
             // 
             // Column4
             // 

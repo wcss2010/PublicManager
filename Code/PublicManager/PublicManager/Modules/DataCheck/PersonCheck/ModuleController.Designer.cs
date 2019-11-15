@@ -240,10 +240,10 @@
             // Column3
             // 
             this.Column3.HeaderText = "负责人身份证";
-            this.Column3.MinimumWidth = 150;
+            this.Column3.MinimumWidth = 135;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
+            this.Column3.Width = 135;
             // 
             // Column4
             // 
@@ -264,26 +264,26 @@
             // Column5
             // 
             this.Column5.HeaderText = "职务/职称";
-            this.Column5.MinimumWidth = 150;
+            this.Column5.MinimumWidth = 110;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 150;
+            this.Column5.Width = 110;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "专业(技术方向)";
-            this.Column8.MinimumWidth = 170;
+            this.Column8.MinimumWidth = 130;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
-            this.Column8.Width = 170;
+            this.Column8.Width = 130;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "每年投入时间（月）";
-            this.Column9.MinimumWidth = 180;
+            this.Column9.MinimumWidth = 160;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
-            this.Column9.Width = 180;
+            this.Column9.Width = 160;
             // 
             // Column10
             // 
@@ -296,10 +296,10 @@
             // Column12
             // 
             this.Column12.HeaderText = "项目中职务";
-            this.Column12.MinimumWidth = 150;
+            this.Column12.MinimumWidth = 110;
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
-            this.Column12.Width = 150;
+            this.Column12.Width = 110;
             // 
             // ModuleController
             // 
