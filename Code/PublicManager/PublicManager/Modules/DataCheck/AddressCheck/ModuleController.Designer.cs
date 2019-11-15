@@ -270,7 +270,7 @@
             // 
             this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column9.HeaderText = "负责单位";
-            this.Column9.MinimumWidth = 80;
+            this.Column9.MinimumWidth = 90;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             // 
@@ -278,7 +278,7 @@
             // 
             this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column10.HeaderText = "所属部门";
-            this.Column10.MinimumWidth = 80;
+            this.Column10.MinimumWidth = 90;
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             // 
@@ -286,7 +286,7 @@
             // 
             this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column11.HeaderText = "所属地点";
-            this.Column11.MinimumWidth = 80;
+            this.Column11.MinimumWidth = 90;
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
             // 

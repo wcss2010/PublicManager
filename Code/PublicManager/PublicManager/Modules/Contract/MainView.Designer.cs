@@ -131,12 +131,12 @@
             // colDel
             // 
             this.colDel.HeaderText = "";
-            this.colDel.MinimumWidth = 40;
+            this.colDel.MinimumWidth = 60;
             this.colDel.Name = "colDel";
             this.colDel.ReadOnly = true;
             this.colDel.Text = "删除";
             this.colDel.UseColumnTextForButtonValue = true;
-            this.colDel.Width = 40;
+            this.colDel.Width = 60;
             // 
             // MainView
             // 

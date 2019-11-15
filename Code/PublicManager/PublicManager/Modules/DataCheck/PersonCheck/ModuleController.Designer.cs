@@ -232,10 +232,10 @@
             // Column2
             // 
             this.Column2.HeaderText = "负责人";
-            this.Column2.MinimumWidth = 80;
+            this.Column2.MinimumWidth = 75;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 80;
+            this.Column2.Width = 75;
             // 
             // Column3
             // 
@@ -289,7 +289,7 @@
             // 
             this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column10.HeaderText = "任务分工";
-            this.Column10.MinimumWidth = 60;
+            this.Column10.MinimumWidth = 100;
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             // 

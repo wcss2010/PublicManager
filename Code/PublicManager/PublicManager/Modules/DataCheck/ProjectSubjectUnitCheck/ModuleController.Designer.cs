@@ -262,6 +262,7 @@
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column3.HeaderText = "研究目标";
+            this.Column3.MinimumWidth = 90;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -271,6 +272,7 @@
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column4.HeaderText = "研究内容";
+            this.Column4.MinimumWidth = 90;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -278,13 +280,13 @@
             // 
             // Column5
             // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column5.HeaderText = "参加单位分工";
             this.Column5.MinimumWidth = 140;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column5.Width = 140;
             // 
             // ModuleController
             // 
