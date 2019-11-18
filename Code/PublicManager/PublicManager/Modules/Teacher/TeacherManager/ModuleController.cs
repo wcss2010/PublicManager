@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using PublicManager.DB;
 
 namespace PublicManager.Modules.Teacher.TeacherManager
 {
@@ -31,7 +32,22 @@ namespace PublicManager.Modules.Teacher.TeacherManager
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            List<DB.Entitys.Teacher> list = ConnectionManager.Context.table("Teacher").where("TName='" + txtKey.Text + "' or TPhone='" + txtKey.Text + "' or TJob='" + txtKey.Text + "' or TUnit='" + txtKey.Text + "' or TRange='" + txtKey.Text + "'").select("*").getList<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
+            foreach (DB.Entitys.Teacher tr in list)
+            {
+                List<object> cells = new List<object>();
+                cells.Add(tr.TName);
+                cells.Add(tr.TSex);
+                cells.Add(tr.TPhone);
+                cells.Add(tr.TJob);
+                cells.Add(tr.TUnit);
+                cells.Add(tr.TRange);
 
+                int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
+                dgvDetail.Rows[rowIndex].Tag = tr;
+            }
+
+            dgvDetail.checkCellSize();
         }
 
         private void dgvDetail_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
