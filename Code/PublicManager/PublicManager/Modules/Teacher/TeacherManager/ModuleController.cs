@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using PublicManager.DB;
+using PublicManager.Modules.Teacher.TeacherManager.Forms;
 
 namespace PublicManager.Modules.Teacher.TeacherManager
 {
@@ -27,7 +28,10 @@ namespace PublicManager.Modules.Teacher.TeacherManager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            if (new AddOrUpdateTeacherAndCommentForm().ShowDialog() == DialogResult.OK)
+            {
+                btnSearch.PerformClick();
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -54,6 +58,25 @@ namespace PublicManager.Modules.Teacher.TeacherManager
         {
             if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvDetail.Rows.Count <= 0) return;
             dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = (dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty).ToString();
+        }
+
+        private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {   
+            if (e.RowIndex >= 0)
+            {
+                DB.Entitys.Teacher teacherObj = ((DB.Entitys.Teacher)dgvDetail.Rows[e.RowIndex].Tag);
+
+                if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
+                {
+                    //删除
+
+                }
+                else if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
+                {
+                    //编辑
+
+                }
+            }
         }
     }
 }

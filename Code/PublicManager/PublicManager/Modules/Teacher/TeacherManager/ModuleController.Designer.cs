@@ -154,6 +154,7 @@
             this.dgvDetail.RowTemplate.Height = 40;
             this.dgvDetail.Size = new System.Drawing.Size(1419, 640);
             this.dgvDetail.TabIndex = 4;
+            this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
             this.dgvDetail.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellMouseEnter);
             // 
             // Column1

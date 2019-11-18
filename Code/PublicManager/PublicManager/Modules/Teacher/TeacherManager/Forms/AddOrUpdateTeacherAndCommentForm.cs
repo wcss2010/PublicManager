@@ -9,11 +9,21 @@ using System.Windows.Forms;
 
 namespace PublicManager.Modules.Teacher.TeacherManager.Forms
 {
-    public partial class AddCommentForm : Form
+    public partial class AddOrUpdateTeacherAndCommentForm : Form
     {
-        public AddCommentForm()
+        public AddOrUpdateTeacherAndCommentForm()
         {
             InitializeComponent();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
