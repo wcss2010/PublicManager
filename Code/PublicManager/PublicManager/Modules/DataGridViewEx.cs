@@ -15,7 +15,8 @@ namespace PublicManager.Modules
             RowTemplate.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5f);
             DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5f);
-            RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5f);            
+            RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5f);
+            RowTemplate.Height = 30;
         }
 
         /// <summary>
@@ -110,12 +111,19 @@ namespace PublicManager.Modules
                     }
                 }
 
+                //如果计算出来的高度小于默认的直接就使用默认的
+                if (RowTemplate.Height > maxHeight)
+                {
+                    maxHeight = RowTemplate.Height;
+                }
+
                 //设置高度
                 foreach (DataGridViewRow dgvRow in Rows)
                 {
                     dgvRow.Height = maxHeight;
                 }
 
+                //更新每个单元格的高度
                 if (Rows.Count > 0)
                 {
                     UpdateRowHeightInfo(0, true);

@@ -151,7 +151,7 @@
             this.dgvDetail.ReadOnly = true;
             this.dgvDetail.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5F);
             this.dgvDetail.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowTemplate.Height = 40;
+            this.dgvDetail.RowTemplate.Height = 30;
             this.dgvDetail.Size = new System.Drawing.Size(1419, 640);
             this.dgvDetail.TabIndex = 4;
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
