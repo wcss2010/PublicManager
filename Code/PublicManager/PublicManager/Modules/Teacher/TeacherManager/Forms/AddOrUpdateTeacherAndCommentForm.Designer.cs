@@ -224,11 +224,11 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(696, 525);
             this.tableLayoutPanel1.TabIndex = 6;
@@ -250,7 +250,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(3, 3);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(149, 19);
+            this.panelControl3.Size = new System.Drawing.Size(149, 22);
             this.panelControl3.TabIndex = 8;
             // 
             // panelControl4
@@ -260,7 +260,7 @@
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl4.Location = new System.Drawing.Point(158, 3);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(149, 19);
+            this.panelControl4.Size = new System.Drawing.Size(149, 22);
             this.panelControl4.TabIndex = 8;
             // 
             // panelControl5
@@ -270,7 +270,7 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(313, 3);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(380, 19);
+            this.panelControl5.Size = new System.Drawing.Size(380, 22);
             this.panelControl5.TabIndex = 8;
             // 
             // panelControl6
@@ -279,9 +279,9 @@
             this.panelControl6.Controls.Add(this.textEdit3);
             this.panelControl6.Controls.Add(this.labelControl4);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl6.Location = new System.Drawing.Point(3, 28);
+            this.panelControl6.Location = new System.Drawing.Point(3, 31);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(690, 19);
+            this.panelControl6.Size = new System.Drawing.Size(690, 22);
             this.panelControl6.TabIndex = 8;
             // 
             // panelControl7
@@ -290,9 +290,9 @@
             this.panelControl7.Controls.Add(this.textEdit4);
             this.panelControl7.Controls.Add(this.labelControl6);
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl7.Location = new System.Drawing.Point(3, 53);
+            this.panelControl7.Location = new System.Drawing.Point(3, 59);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(690, 19);
+            this.panelControl7.Size = new System.Drawing.Size(690, 22);
             this.panelControl7.TabIndex = 8;
             // 
             // panelControl8
@@ -301,9 +301,9 @@
             this.panelControl8.Controls.Add(this.textEdit5);
             this.panelControl8.Controls.Add(this.labelControl5);
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl8.Location = new System.Drawing.Point(3, 78);
+            this.panelControl8.Location = new System.Drawing.Point(3, 87);
             this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(690, 19);
+            this.panelControl8.Size = new System.Drawing.Size(690, 22);
             this.panelControl8.TabIndex = 8;
             // 
             // dataGridViewEx1
@@ -327,13 +327,13 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewEx1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewEx1.Location = new System.Drawing.Point(3, 128);
+            this.dataGridViewEx1.Location = new System.Drawing.Point(3, 143);
             this.dataGridViewEx1.MultiSelect = false;
             this.dataGridViewEx1.Name = "dataGridViewEx1";
             this.dataGridViewEx1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5F);
             this.dataGridViewEx1.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewEx1.RowTemplate.Height = 23;
-            this.dataGridViewEx1.Size = new System.Drawing.Size(690, 394);
+            this.dataGridViewEx1.Size = new System.Drawing.Size(690, 379);
             this.dataGridViewEx1.TabIndex = 4;
             // 
             // AddOrUpdateTeacherAndCommentForm
