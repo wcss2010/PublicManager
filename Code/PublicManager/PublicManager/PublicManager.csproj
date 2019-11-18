@@ -253,6 +253,18 @@
     <Compile Include="Modules\Reporter\ReporterModuleController.Designer.cs">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Teacher\TeacherManager\Forms\AddCommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Teacher\TeacherManager\Forms\AddCommentForm.Designer.cs">
+      <DependentUpon>AddCommentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Teacher\TeacherManager\Forms\AddTeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Teacher\TeacherManager\Forms\AddTeacherForm.Designer.cs">
+      <DependentUpon>AddTeacherForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Teacher\TeacherManager\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -315,6 +327,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Reporter\ReporterModuleController.resx">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Teacher\TeacherManager\Forms\AddCommentForm.resx">
+      <DependentUpon>AddCommentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Teacher\TeacherManager\Forms\AddTeacherForm.resx">
+      <DependentUpon>AddTeacherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Teacher\TeacherManager\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
