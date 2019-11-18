@@ -12,6 +12,10 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
 {
     public partial class AddOrUpdateTeacherForm : Form
     {
+        public DB.Entitys.Teacher TeacherObj { get; set; }
+
+        public string teacherID = string.Empty;
+
         public AddOrUpdateTeacherForm(DB.Entitys.Teacher teacher)
         {
             InitializeComponent();
@@ -19,6 +23,8 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
             TeacherObj = teacher;
             if (TeacherObj != null)
             {
+                teacherID = TeacherObj.TeacherID;
+
                 txtTName.Text = TeacherObj.TName;
                 txtTSex.Text = TeacherObj.TSex;
                 txtTPhone.Text = TeacherObj.TPhone;
@@ -30,6 +36,8 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
             }
             else
             {
+                teacherID = Guid.NewGuid().ToString();
+
                 TeacherObj = new DB.Entitys.Teacher();
             }
         }
@@ -95,7 +103,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
 
             if (string.IsNullOrEmpty(TeacherObj.TeacherID))
             {
-                TeacherObj.TeacherID = Guid.NewGuid().ToString();
+                TeacherObj.TeacherID = teacherID;
                 TeacherObj.copyTo(ConnectionManager.Context.table("Teacher")).insert();
             }
             else
@@ -113,14 +121,15 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
 
         private void btnAddComment_Click(object sender, EventArgs e)
         {
-            if (new AddOrUpdateTeacherCommentForm(null).ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            AddOrUpdateTeacherCommentForm form = new AddOrUpdateTeacherCommentForm(null);
+            form.CommentObj.TeacherID = teacherID;
+
+            if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 updateTeacherComments();
             }
         }
-
-        public DB.Entitys.Teacher TeacherObj { get; set; }
-
+        
         private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)

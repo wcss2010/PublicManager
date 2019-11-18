@@ -253,11 +253,17 @@
     <Compile Include="Modules\Reporter\ReporterModuleController.Designer.cs">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Teacher\TeacherManager\Forms\AddOrUpdateTeacherAndCommentForm.cs">
+    <Compile Include="Modules\Teacher\TeacherManager\Forms\AddOrUpdateTeacherCommentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Teacher\TeacherManager\Forms\AddOrUpdateTeacherAndCommentForm.Designer.cs">
-      <DependentUpon>AddOrUpdateTeacherAndCommentForm.cs</DependentUpon>
+    <Compile Include="Modules\Teacher\TeacherManager\Forms\AddOrUpdateTeacherCommentForm.Designer.cs">
+      <DependentUpon>AddOrUpdateTeacherCommentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Teacher\TeacherManager\Forms\AddOrUpdateTeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Teacher\TeacherManager\Forms\AddOrUpdateTeacherForm.Designer.cs">
+      <DependentUpon>AddOrUpdateTeacherForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Teacher\TeacherManager\ModuleController.cs">
       <SubType>UserControl</SubType>
@@ -322,8 +328,11 @@
     <EmbeddedResource Include="Modules\Reporter\ReporterModuleController.resx">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Teacher\TeacherManager\Forms\AddOrUpdateTeacherAndCommentForm.resx">
-      <DependentUpon>AddOrUpdateTeacherAndCommentForm.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Teacher\TeacherManager\Forms\AddOrUpdateTeacherCommentForm.resx">
+      <DependentUpon>AddOrUpdateTeacherCommentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Teacher\TeacherManager\Forms\AddOrUpdateTeacherForm.resx">
+      <DependentUpon>AddOrUpdateTeacherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Teacher\TeacherManager\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
