@@ -47,7 +47,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
             if (TeacherObj != null)
             {
                 dgvDetail.Rows.Clear();
-                List<DB.Entitys.TeacherComment> list = ConnectionManager.Context.table("TeacherComment").where("TeacherID='" + TeacherObj.TeacherID + "'").select("*").getList<DB.Entitys.TeacherComment>(new DB.Entitys.TeacherComment());
+                List<DB.Entitys.TeacherComment> list = ConnectionManager.Context.table("TeacherComment").where("TeacherID='" + teacherID + "'").select("*").getList<DB.Entitys.TeacherComment>(new DB.Entitys.TeacherComment());
                 foreach (DB.Entitys.TeacherComment tc in list)
                 {
                     List<object> cells = new List<object>();

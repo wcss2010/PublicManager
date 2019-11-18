@@ -70,8 +70,11 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                 if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
                 {
                     //删除
-                    ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
-                    btnSearch.PerformClick();
+                    if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
+                        btnSearch.PerformClick();
+                    }
                 }
                 else if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
                 {
