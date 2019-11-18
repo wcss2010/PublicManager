@@ -73,6 +73,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                     if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
                         ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
+                        ConnectionManager.Context.table("TeacherComment").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
                         btnSearch.PerformClick();
                     }
                 }
