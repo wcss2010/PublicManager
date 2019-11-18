@@ -176,6 +176,9 @@ namespace PublicManager.Modules.Reporter.Forms
 
                             //关闭进度窗口
                             pf.Close();
+
+                            //关闭窗口
+                            Close();
                         }
                         catch (Exception ex)
                         {
@@ -183,10 +186,12 @@ namespace PublicManager.Modules.Reporter.Forms
                         }
                     }));
                 }
-            }));
-
-            //关闭窗口
-            Close();
+                else
+                {
+                    //关闭窗口
+                    Close();
+                }
+            }));            
         }
 
         /// <summary>
