@@ -20,26 +20,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
         {
             InitializeComponent();
 
-            TeacherObj = teacher;
-            if (TeacherObj != null)
-            {
-                teacherID = TeacherObj.TeacherID;
-
-                txtTName.Text = TeacherObj.TName;
-                txtTSex.Text = TeacherObj.TSex;
-                txtTPhone.Text = TeacherObj.TPhone;
-                txtTJob.Text = TeacherObj.TJob;
-                txtTUnit.Text = TeacherObj.TUnit;
-                txtTRange.Text = TeacherObj.TRange;
-
-                updateTeacherComments();
-            }
-            else
-            {
-                teacherID = Guid.NewGuid().ToString();
-
-                TeacherObj = new DB.Entitys.Teacher();
-            }
+            TeacherObj = teacher;            
         }
 
         private void updateTeacherComments()
@@ -161,6 +142,31 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
         {
             if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvDetail.Rows.Count <= 0) return;
             dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = (dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty).ToString();
+        }
+
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+
+            if (TeacherObj != null)
+            {
+                teacherID = TeacherObj.TeacherID;
+
+                txtTName.Text = TeacherObj.TName;
+                txtTSex.Text = TeacherObj.TSex;
+                txtTPhone.Text = TeacherObj.TPhone;
+                txtTJob.Text = TeacherObj.TJob;
+                txtTUnit.Text = TeacherObj.TUnit;
+                txtTRange.Text = TeacherObj.TRange;
+
+                updateTeacherComments();
+            }
+            else
+            {
+                teacherID = Guid.NewGuid().ToString();
+
+                TeacherObj = new DB.Entitys.Teacher();
+            }
         }
     }
 }
