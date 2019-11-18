@@ -251,9 +251,11 @@
     <Compile Include="Modules\Reporter\ReporterModuleController.Designer.cs">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Teacher\TeacherManager\TeacherManageModuleController.cs" />
-    <Compile Include="Modules\Teacher\TeacherManager\TeacherManageModuleController.Designer.cs">
-      <DependentUpon>TeacherManageModuleController.cs</DependentUpon>
+    <Compile Include="Modules\Teacher\TeacherManager\ModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Teacher\TeacherManager\ModuleController.Designer.cs">
+      <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgressForm.cs">
@@ -312,8 +314,8 @@
     <EmbeddedResource Include="Modules\Reporter\ReporterModuleController.resx">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Teacher\TeacherManager\TeacherManageModuleController.resx">
-      <DependentUpon>TeacherManageModuleController.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Teacher\TeacherManager\ModuleController.resx">
+      <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressForm.resx">
       <DependentUpon>ProgressForm.cs</DependentUpon>

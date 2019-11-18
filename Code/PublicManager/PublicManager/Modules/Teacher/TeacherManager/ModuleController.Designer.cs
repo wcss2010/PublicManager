@@ -1,6 +1,6 @@
 ﻿namespace PublicManager.Modules.Teacher.TeacherManager
 {
-    partial class TeacherManageModuleController
+    partial class ModuleController
     {
         /// <summary> 
         /// 必需的设计器变量。

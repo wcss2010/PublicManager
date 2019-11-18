@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace PublicManager.Modules.Teacher.TeacherManager
 {
-    public partial class TeacherManageModuleController : BaseModuleController
+    public partial class ModuleController : BaseModuleController
     {
-        public TeacherManageModuleController()
+        public ModuleController()
         {
             InitializeComponent();
         }
