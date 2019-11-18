@@ -28,7 +28,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (new AddOrUpdateTeacherAndCommentForm().ShowDialog() == DialogResult.OK)
+            if (new AddOrUpdateTeacherForm(null).ShowDialog() == DialogResult.OK)
             {
                 btnSearch.PerformClick();
             }
@@ -61,7 +61,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager
         }
 
         private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {   
+        {
             if (e.RowIndex >= 0)
             {
                 DB.Entitys.Teacher teacherObj = ((DB.Entitys.Teacher)dgvDetail.Rows[e.RowIndex].Tag);
@@ -69,12 +69,16 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                 if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
                 {
                     //删除
-
+                    ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
+                    btnSearch.PerformClick();
                 }
                 else if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
                 {
                     //编辑
-
+                    if (new AddOrUpdateTeacherForm(teacherObj).ShowDialog() == DialogResult.OK)
+                    {
+                        btnSearch.PerformClick();
+                    }
                 }
             }
         }
