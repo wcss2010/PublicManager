@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace PublicManager.Modules.Teacher.TeacherManager
 {
-    public partial class TeacherManageModuleController : UserControl
+    public partial class TeacherManageModuleController : BaseModuleController
     {
         public TeacherManageModuleController()
         {

@@ -60,6 +60,8 @@
             this.nbcTestD = new DevExpress.XtraNavBar.NavBarGroup();
             this.plRightContent = new DevExpress.XtraEditors.PanelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.tlTestD = new DevExpress.XtraTreeList.TreeList();
+            this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbcLeftTree)).BeginInit();
             this.nbcLeftTree.SuspendLayout();
@@ -72,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.plRightContent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tlTestD)).BeginInit();
             this.SuspendLayout();
             // 
             // rcTopBar
@@ -325,6 +328,7 @@
             // 
             this.navBarGroupControlContainer3.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.navBarGroupControlContainer3.Appearance.Options.UseBackColor = true;
+            this.navBarGroupControlContainer3.Controls.Add(this.tlTestD);
             this.navBarGroupControlContainer3.Controls.Add(this.tlTestC);
             this.navBarGroupControlContainer3.Name = "navBarGroupControlContainer3";
             this.navBarGroupControlContainer3.Size = new System.Drawing.Size(176, 264);
@@ -371,13 +375,13 @@
             // 
             // nbcTestC
             // 
-            this.nbcTestC.Caption = "数据比对";
+            this.nbcTestC.Caption = "专家管理";
             this.nbcTestC.ControlContainer = this.navBarGroupControlContainer3;
             this.nbcTestC.DragDropFlags = DevExpress.XtraNavBar.NavBarDragDrop.None;
             this.nbcTestC.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
             this.nbcTestC.GroupClientHeight = 177;
             this.nbcTestC.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
-            this.nbcTestC.LargeImage = global::PublicManager.Properties.Resources.BO_Task_Large;
+            this.nbcTestC.LargeImage = global::PublicManager.Properties.Resources.Contact_32x32;
             this.nbcTestC.Name = "nbcTestC";
             // 
             // nbcTestD
@@ -409,6 +413,52 @@
             this.splitContainerControl1.TabIndex = 6;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
+            // tlTestD
+            // 
+            this.tlTestD.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.tlTestD.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.treeListColumn3});
+            this.tlTestD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlTestD.Location = new System.Drawing.Point(0, 0);
+            this.tlTestD.Name = "tlTestD";
+            this.tlTestD.BeginUnboundLoad();
+            this.tlTestD.AppendNode(new object[] {
+            "专家信息管理"}, -1);
+            this.tlTestD.AppendNode(new object[] {
+            null}, -1);
+            this.tlTestD.AppendNode(new object[] {
+            null}, -1);
+            this.tlTestD.AppendNode(new object[] {
+            null}, -1);
+            this.tlTestD.AppendNode(new object[] {
+            null}, -1);
+            this.tlTestD.AppendNode(new object[] {
+            null}, -1);
+            this.tlTestD.AppendNode(new object[] {
+            null}, -1);
+            this.tlTestD.AppendNode(new object[] {
+            null}, -1);
+            this.tlTestD.EndUnboundLoad();
+            this.tlTestD.OptionsBehavior.Editable = false;
+            this.tlTestD.OptionsView.ShowColumns = false;
+            this.tlTestD.OptionsView.ShowHorzLines = false;
+            this.tlTestD.OptionsView.ShowIndentAsRowStyle = true;
+            this.tlTestD.OptionsView.ShowIndicator = false;
+            this.tlTestD.OptionsView.ShowVertLines = false;
+            this.tlTestD.Size = new System.Drawing.Size(176, 264);
+            this.tlTestD.TabIndex = 2;
+            // 
+            // treeListColumn3
+            // 
+            this.treeListColumn3.Caption = "treeListColumn3";
+            this.treeListColumn3.FieldName = "treeListColumn3";
+            this.treeListColumn3.MinWidth = 34;
+            this.treeListColumn3.Name = "treeListColumn3";
+            this.treeListColumn3.OptionsColumn.AllowFocus = false;
+            this.treeListColumn3.Visible = true;
+            this.treeListColumn3.VisibleIndex = 0;
+            this.treeListColumn3.Width = 93;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -434,6 +484,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.plRightContent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tlTestD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -472,6 +523,8 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
         private DevExpress.XtraTreeList.TreeList tlTestC;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
+        private DevExpress.XtraTreeList.TreeList tlTestD;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn3;
 
     }
 }

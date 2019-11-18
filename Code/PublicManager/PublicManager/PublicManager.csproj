@@ -251,6 +251,10 @@
     <Compile Include="Modules\Reporter\ReporterModuleController.Designer.cs">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Teacher\TeacherManager\TeacherManageModuleController.cs" />
+    <Compile Include="Modules\Teacher\TeacherManager\TeacherManageModuleController.Designer.cs">
+      <DependentUpon>TeacherManageModuleController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgressForm.cs">
       <SubType>Form</SubType>
@@ -307,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Reporter\ReporterModuleController.resx">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Teacher\TeacherManager\TeacherManageModuleController.resx">
+      <DependentUpon>TeacherManageModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressForm.resx">
       <DependentUpon>ProgressForm.cs</DependentUpon>
@@ -372,6 +379,7 @@
   <ItemGroup>
     <Content Include="managers.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
