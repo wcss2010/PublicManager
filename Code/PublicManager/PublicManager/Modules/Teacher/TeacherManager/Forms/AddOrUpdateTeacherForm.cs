@@ -148,24 +148,26 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
         {
             base.OnActivated(e);
 
-            if (TeacherObj != null)
+            if (string.IsNullOrEmpty(teacherID))
             {
-                teacherID = TeacherObj.TeacherID;
+                if (TeacherObj != null)
+                {
+                    teacherID = TeacherObj.TeacherID;
 
-                txtTName.Text = TeacherObj.TName;
-                txtTSex.Text = TeacherObj.TSex;
-                txtTPhone.Text = TeacherObj.TPhone;
-                txtTJob.Text = TeacherObj.TJob;
-                txtTUnit.Text = TeacherObj.TUnit;
-                txtTRange.Text = TeacherObj.TRange;
+                    txtTName.Text = TeacherObj.TName;
+                    txtTSex.Text = TeacherObj.TSex;
+                    txtTPhone.Text = TeacherObj.TPhone;
+                    txtTJob.Text = TeacherObj.TJob;
+                    txtTUnit.Text = TeacherObj.TUnit;
+                    txtTRange.Text = TeacherObj.TRange;
 
-                updateTeacherComments();
-            }
-            else
-            {
-                teacherID = Guid.NewGuid().ToString();
-
-                TeacherObj = new DB.Entitys.Teacher();
+                    updateTeacherComments();
+                }
+                else
+                {
+                    teacherID = Guid.NewGuid().ToString();
+                    TeacherObj = new DB.Entitys.Teacher();
+                }
             }
         }
     }
