@@ -36,7 +36,8 @@ namespace PublicManager.Modules.Teacher.TeacherManager
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            List<DB.Entitys.Teacher> list = ConnectionManager.Context.table("Teacher").where("TName='" + txtKey.Text + "' or TPhone='" + txtKey.Text + "' or TJob='" + txtKey.Text + "' or TUnit='" + txtKey.Text + "' or TRange='" + txtKey.Text + "'").select("*").getList<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
+            dgvDetail.Rows.Clear();
+            List<DB.Entitys.Teacher> list = ConnectionManager.Context.table("Teacher").where("TName like '%" + txtKey.Text + "%' or TPhone like '%" + txtKey.Text + "%' or TJob like '%" + txtKey.Text + "%' or TUnit like '%" + txtKey.Text + "%' or TRange like '%" + txtKey.Text + "%'").select("*").getList<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
             foreach (DB.Entitys.Teacher tr in list)
             {
                 List<object> cells = new List<object>();
