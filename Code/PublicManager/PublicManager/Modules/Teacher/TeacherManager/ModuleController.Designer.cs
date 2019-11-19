@@ -109,7 +109,6 @@
             this.btnImportFromExcel.TabIndex = 9;
             this.btnImportFromExcel.Text = "从Excel导入";
             this.btnImportFromExcel.UseVisualStyleBackColor = true;
-            this.btnImportFromExcel.Visible = false;
             this.btnImportFromExcel.Click += new System.EventHandler(this.btnImportFromExcel_Click);
             // 
             // btnAdd

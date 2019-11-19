@@ -91,7 +91,16 @@ namespace PublicManager.Modules.Teacher.TeacherManager
 
         private void btnImportFromExcel_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Excel(97-2003)|*.xls|Excel(2007-2013)|*.xlsx";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                DataSet ds = ExcelHelper.ExcelToDataSet(ofd.FileName, true);
+                if (ds != null && ds.Tables.Count >= 1)
+                {
+                   
+                }
+            }
         }
     }
 }

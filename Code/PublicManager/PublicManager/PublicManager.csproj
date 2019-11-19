@@ -367,6 +367,9 @@
     <None Include="static.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Templetes\teacherList.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="汇总数据表.xlsx" />
   </ItemGroup>
   <ItemGroup>
