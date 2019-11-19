@@ -135,6 +135,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                             teacherObj.copyTo(ConnectionManager.Context.table("Teacher")).insert();
                         }
                     }
+                    btnSearch.PerformClick();
                 }
                 catch (Exception ex)
                 {
