@@ -115,13 +115,13 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                                 }
                             }
 
-                            string tName = drr["姓名"] != null ? drr["姓名"].ToString() : string.Empty;
-                            string tSex = drr["性别"] != null ? drr["性别"].ToString() : string.Empty;
-                            string tIDCard = drr["身份证"] != null ? drr["身份证"].ToString() : string.Empty;
-                            string tPhone = drr["电话"] != null ? drr["电话"].ToString() : string.Empty;
-                            string tJob = drr["职务"] != null ? drr["职务"].ToString() : string.Empty;
-                            string tUnit = drr["单位"] != null ? drr["单位"].ToString() : string.Empty;
-                            string tRange = drr["领域"] != null ? drr["领域"].ToString() : string.Empty;
+                            string tName = drr["姓名"] != null ? drr["姓名"].ToString().Trim() : string.Empty;
+                            string tSex = drr["性别"] != null ? drr["性别"].ToString().Trim() : string.Empty;
+                            string tIDCard = drr["身份证"] != null ? drr["身份证"].ToString().Trim() : string.Empty;
+                            string tPhone = drr["电话"] != null ? drr["电话"].ToString().Trim() : string.Empty;
+                            string tJob = drr["职务"] != null ? drr["职务"].ToString().Trim() : string.Empty;
+                            string tUnit = drr["单位"] != null ? drr["单位"].ToString().Trim() : string.Empty;
+                            string tRange = drr["领域"] != null ? drr["领域"].ToString().Trim() : string.Empty;
 
                             DB.Entitys.Teacher teacherObj = new DB.Entitys.Teacher();
                             teacherObj.TeacherID = Guid.NewGuid().ToString();
@@ -132,7 +132,17 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                             teacherObj.TJob = tJob;
                             teacherObj.TUnit = tUnit;
                             teacherObj.TRange = tRange;
-                            teacherObj.copyTo(ConnectionManager.Context.table("Teacher")).insert();
+
+                            object objResult = ConnectionManager.Context.table("Teacher").where("TIDCard='" + tIDCard + "'").select("TeacherID").getValue();
+                            if (objResult == null || objResult.ToString().Equals(string.Empty))
+                            {
+                                teacherObj.copyTo(ConnectionManager.Context.table("Teacher")).insert();
+                            }
+                            else
+                            {
+                                teacherObj.TeacherID = objResult.ToString();
+                                teacherObj.copyTo(ConnectionManager.Context.table("Teacher")).where("TeacherID='" + teacherObj.TeacherID + "'").update();
+                            }
                         }
                     }
                     btnSearch.PerformClick();
