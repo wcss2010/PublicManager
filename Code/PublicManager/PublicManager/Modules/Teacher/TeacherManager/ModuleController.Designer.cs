@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnExportToExcel = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.llDownloadTemplete = new System.Windows.Forms.LinkLabel();
             this.btnImportFromExcel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtKey = new System.Windows.Forms.TextBox();
@@ -48,22 +48,11 @@
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.llDownloadTemplete = new System.Windows.Forms.LinkLabel();
+            this.btnExportToExcel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnExportToExcel
-            // 
-            this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExportToExcel.Location = new System.Drawing.Point(671, 0);
-            this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(87, 24);
-            this.btnExportToExcel.TabIndex = 7;
-            this.btnExportToExcel.Text = "导出到Excel";
-            this.btnExportToExcel.UseVisualStyleBackColor = true;
-            this.btnExportToExcel.Visible = false;
             // 
             // btnSearch
             // 
@@ -91,8 +80,8 @@
             // 
             this.panel1.Controls.Add(this.llDownloadTemplete);
             this.panel1.Controls.Add(this.btnImportFromExcel);
-            this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnExportToExcel);
+            this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.txtKey);
             this.panel1.Controls.Add(this.label1);
@@ -101,6 +90,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1419, 24);
             this.panel1.TabIndex = 2;
+            // 
+            // llDownloadTemplete
+            // 
+            this.llDownloadTemplete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.llDownloadTemplete.Location = new System.Drawing.Point(923, 0);
+            this.llDownloadTemplete.Name = "llDownloadTemplete";
+            this.llDownloadTemplete.Size = new System.Drawing.Size(91, 24);
+            this.llDownloadTemplete.TabIndex = 10;
+            this.llDownloadTemplete.TabStop = true;
+            this.llDownloadTemplete.Text = "导入模板.xlsx";
+            this.llDownloadTemplete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llDownloadTemplete.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llDownloadTemplete_LinkClicked);
             // 
             // btnImportFromExcel
             // 
@@ -116,7 +117,7 @@
             // btnAdd
             // 
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAdd.Location = new System.Drawing.Point(758, 0);
+            this.btnAdd.Location = new System.Drawing.Point(671, 0);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 24);
             this.btnAdd.TabIndex = 8;
@@ -135,14 +136,14 @@
             // dgvDetail
             // 
             this.dgvDetail.AllowUserToAddRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 10.5F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 10.5F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -154,14 +155,14 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDetail.Location = new System.Drawing.Point(3, 41);
             this.dgvDetail.Name = "dgvDetail";
@@ -169,6 +170,7 @@
             this.dgvDetail.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5F);
             this.dgvDetail.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowTemplate.Height = 30;
+            this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetail.Size = new System.Drawing.Size(1419, 640);
             this.dgvDetail.TabIndex = 4;
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
@@ -259,17 +261,16 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
-            // llDownloadTemplete
+            // btnExportToExcel
             // 
-            this.llDownloadTemplete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.llDownloadTemplete.Location = new System.Drawing.Point(923, 0);
-            this.llDownloadTemplete.Name = "llDownloadTemplete";
-            this.llDownloadTemplete.Size = new System.Drawing.Size(101, 24);
-            this.llDownloadTemplete.TabIndex = 10;
-            this.llDownloadTemplete.TabStop = true;
-            this.llDownloadTemplete.Text = "导入模板.xlsx";
-            this.llDownloadTemplete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.llDownloadTemplete.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llDownloadTemplete_LinkClicked);
+            this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExportToExcel.Location = new System.Drawing.Point(746, 0);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(87, 24);
+            this.btnExportToExcel.TabIndex = 11;
+            this.btnExportToExcel.Text = "导出到Excel";
+            this.btnExportToExcel.UseVisualStyleBackColor = true;
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
             // ModuleController
             // 
@@ -288,7 +289,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnExportToExcel;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
@@ -307,5 +307,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Column7;
         private System.Windows.Forms.DataGridViewButtonColumn Column8;
         private System.Windows.Forms.LinkLabel llDownloadTemplete;
+        private System.Windows.Forms.Button btnExportToExcel;
     }
 }

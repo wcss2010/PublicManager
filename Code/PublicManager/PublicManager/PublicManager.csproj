@@ -404,6 +404,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="managers.ico" />
+    <None Include="Templetes\TeacherColumnExportTempletes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

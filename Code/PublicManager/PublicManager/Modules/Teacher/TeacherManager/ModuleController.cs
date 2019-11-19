@@ -175,5 +175,60 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                 }
             }
         }
+
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            if (dgvDetail.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("对不起，请选择要导出的专家！");
+                return;
+            }
+
+            string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Templetes", "TeacherColumnExportTempletes.txt"));
+
+            try
+            {
+                //读取列名称
+                string[] colNames = File.ReadAllLines(sourcePath);
+
+                //添加列
+                DataTable dt = new DataTable();
+                foreach (string col in colNames)
+                {
+                    if (string.IsNullOrEmpty(col))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        dt.Columns.Add(col, typeof(string));
+                    }
+                }
+
+                //生成数据
+                foreach (DataGridViewRow dgvRow in dgvDetail.SelectedRows)
+                {
+                    DB.Entitys.Teacher teacherObj = ((DB.Entitys.Teacher)dgvRow.Tag);
+                    List<object> cells = new List<object>();
+                    cells.Add(teacherObj.TName);
+                    cells.Add(teacherObj.TName);
+                    cells.Add(new Random((int)DateTime.Now.Ticks).Next(100, 999).ToString());
+                    cells.Add(teacherObj.TJob);
+                    cells.Add(teacherObj.TPhone);
+                    cells.Add(string.Empty);
+                    dt.Rows.Add(cells.ToArray());
+                }
+
+                //导出数据
+                ExcelHelper.ExportToExcel(dt, "专家信息");
+
+                MessageBox.Show("导出完成！");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("导出失败！Ex:" + ex.ToString());
+            }
+
+        }
     }
 }
