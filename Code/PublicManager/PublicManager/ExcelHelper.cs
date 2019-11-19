@@ -255,7 +255,7 @@ namespace PublicManager
         public static void ExportToExcel(this DataTable data, string sheetName)
         {
             SaveFileDialog fileDialog = new SaveFileDialog();
-            fileDialog.Filter = "Excel(97-2003)|*.xls|Excel(2007-2013)|*.xlsx";
+            fileDialog.Filter = "Excel(2007-2013)|*.xlsx";
             if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
             {
                 return;
