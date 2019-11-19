@@ -38,7 +38,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtKey = new System.Windows.Forms.TextBox();
             this.dgvDetail = new PublicManager.Modules.DataGridViewEx();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +47,7 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -173,17 +173,6 @@
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
             this.dgvDetail.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellMouseEnter);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvDetail);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1425, 684);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "姓名";
@@ -257,6 +246,17 @@
             this.Column8.Text = "删除";
             this.Column8.UseColumnTextForButtonValue = true;
             this.Column8.Width = 60;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvDetail);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1425, 684);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
             // 
             // ModuleController
             // 
