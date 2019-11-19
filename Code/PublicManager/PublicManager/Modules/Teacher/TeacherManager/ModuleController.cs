@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using PublicManager.DB;
 using PublicManager.Modules.Teacher.TeacherManager.Forms;
+using System.IO;
+using System.Diagnostics;
 
 namespace PublicManager.Modules.Teacher.TeacherManager
 {
@@ -92,13 +94,73 @@ namespace PublicManager.Modules.Teacher.TeacherManager
         private void btnImportFromExcel_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Excel(97-2003)|*.xls|Excel(2007-2013)|*.xlsx";
+            ofd.Filter = "Excel(2007-2013)|*.xlsx";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                DataSet ds = ExcelHelper.ExcelToDataSet(ofd.FileName, true);
-                if (ds != null && ds.Tables.Count >= 1)
+                try
                 {
-                   
+                    DataSet ds = ExcelHelper.ExcelToDataSet(ofd.FileName, true);
+                    if (ds != null && ds.Tables.Count >= 1)
+                    {
+                        DataTable dt = ds.Tables[0];
+
+                        foreach (DataRow drr in dt.Rows)
+                        {
+                            //检查非空
+                            foreach (DataColumn dc in drr.Table.Columns)
+                            {
+                                if (drr[dc.ColumnName] == null || drr[dc.ColumnName].ToString() == string.Empty)
+                                {
+                                    throw new Exception("对不起，'" + dc.ColumnName + "'不能为空！");
+                                }
+                            }
+
+                            string tName = drr["姓名"] != null ? drr["姓名"].ToString() : string.Empty;
+                            string tSex = drr["性别"] != null ? drr["性别"].ToString() : string.Empty;
+                            string tIDCard = drr["身份证"] != null ? drr["身份证"].ToString() : string.Empty;
+                            string tPhone = drr["电话"] != null ? drr["电话"].ToString() : string.Empty;
+                            string tJob = drr["职务"] != null ? drr["职务"].ToString() : string.Empty;
+                            string tUnit = drr["单位"] != null ? drr["单位"].ToString() : string.Empty;
+                            string tRange = drr["领域"] != null ? drr["领域"].ToString() : string.Empty;
+
+                            DB.Entitys.Teacher teacherObj = new DB.Entitys.Teacher();
+                            teacherObj.TeacherID = Guid.NewGuid().ToString();
+                            teacherObj.TName = tName;
+                            teacherObj.TSex = tSex;
+                            teacherObj.TIDCard = tIDCard;
+                            teacherObj.TPhone = tPhone;
+                            teacherObj.TJob = tJob;
+                            teacherObj.TUnit = tUnit;
+                            teacherObj.TRange = tRange;
+                            teacherObj.copyTo(ConnectionManager.Context.table("Teacher")).insert();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("对不起，导入失败！Ex:" + ex.ToString());
+                }
+            }
+        }
+
+        private void llDownloadTemplete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Templetes", "teacherList.xlsx"));
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel(2007-2013)|*.xlsx";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    File.Copy(sourcePath, sfd.FileName, true);
+                    Process.Start(sfd.FileName);
+
+                    MessageBox.Show("下载完成！");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("下载失败！Ex:" + ex.ToString());
                 }
             }
         }
