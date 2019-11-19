@@ -212,7 +212,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                     List<object> cells = new List<object>();
                     cells.Add(teacherObj.TName);
                     cells.Add(teacherObj.TName);
-                    cells.Add(new Random((int)DateTime.Now.Ticks).Next(100, 999).ToString());
+                    cells.Add(new Random((int)DateTime.Now.Ticks + dgvRow.Index).Next(100, 999).ToString());
                     cells.Add(teacherObj.TJob);
                     cells.Add(teacherObj.TPhone);
                     cells.Add(string.Empty);
