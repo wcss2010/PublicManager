@@ -17,6 +17,7 @@ namespace PublicManager.DB.Entitys
             //设置值
             query.set("TeacherID", TeacherID);
             query.set("TName", TName);
+            query.set("TIDCard", TIDCard);
             query.set("TSex", TSex);
             query.set("TPhone", TPhone);
             query.set("TJob", TJob);
@@ -28,6 +29,7 @@ namespace PublicManager.DB.Entitys
 
         public string TeacherID { get; set; }
         public string TName { get; set; }
+        public string TIDCard { get; set; }
         public string TSex { get; set; }
         public string TPhone { get; set; }
         public string TJob { get; set; }
@@ -38,6 +40,7 @@ namespace PublicManager.DB.Entitys
         {
             TeacherID = source("TeacherID").value<string>(Guid.NewGuid().ToString());
             TName = source("TName").value<string>("");
+            TIDCard = source("TIDCard").value<string>("");
             TSex = source("TSex").value<string>("");
             TPhone = source("TPhone").value<string>("");
             TJob = source("TJob").value<string>("");

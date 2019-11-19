@@ -37,12 +37,13 @@ namespace PublicManager.Modules.Teacher.TeacherManager
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dgvDetail.Rows.Clear();
-            List<DB.Entitys.Teacher> list = ConnectionManager.Context.table("Teacher").where("TName like '%" + txtKey.Text + "%' or TPhone like '%" + txtKey.Text + "%' or TJob like '%" + txtKey.Text + "%' or TUnit like '%" + txtKey.Text + "%' or TRange like '%" + txtKey.Text + "%'").select("*").getList<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
+            List<DB.Entitys.Teacher> list = ConnectionManager.Context.table("Teacher").where("TName like '%" + txtKey.Text + "%'").select("*").getList<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
             foreach (DB.Entitys.Teacher tr in list)
             {
                 List<object> cells = new List<object>();
                 cells.Add(tr.TName);
                 cells.Add(tr.TSex);
+                cells.Add(tr.TIDCard);
                 cells.Add(tr.TPhone);
                 cells.Add(tr.TJob);
                 cells.Add(tr.TUnit);
@@ -86,6 +87,11 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                     }
                 }
             }
+        }
+
+        private void btnImportFromExcel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

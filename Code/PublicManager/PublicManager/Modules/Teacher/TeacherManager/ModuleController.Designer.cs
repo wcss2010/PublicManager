@@ -34,18 +34,20 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnImportFromExcel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtKey = new System.Windows.Forms.TextBox();
             this.dgvDetail = new PublicManager.Modules.DataGridViewEx();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -86,6 +88,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnImportFromExcel);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnExportToExcel);
             this.panel1.Controls.Add(this.btnSearch);
@@ -96,6 +99,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1419, 24);
             this.panel1.TabIndex = 2;
+            // 
+            // btnImportFromExcel
+            // 
+            this.btnImportFromExcel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnImportFromExcel.Location = new System.Drawing.Point(833, 0);
+            this.btnImportFromExcel.Name = "btnImportFromExcel";
+            this.btnImportFromExcel.Size = new System.Drawing.Size(90, 24);
+            this.btnImportFromExcel.TabIndex = 9;
+            this.btnImportFromExcel.Text = "从Excel导入";
+            this.btnImportFromExcel.UseVisualStyleBackColor = true;
+            this.btnImportFromExcel.Visible = false;
+            this.btnImportFromExcel.Click += new System.EventHandler(this.btnImportFromExcel_Click);
             // 
             // btnAdd
             // 
@@ -131,6 +146,7 @@
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
+            this.Column9,
             this.Column3,
             this.Column4,
             this.Column5,
@@ -157,6 +173,17 @@
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
             this.dgvDetail.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellMouseEnter);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvDetail);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1425, 684);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "姓名";
@@ -172,6 +199,14 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Width = 60;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "身份证";
+            this.Column9.MinimumWidth = 135;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 135;
             // 
             // Column3
             // 
@@ -223,17 +258,6 @@
             this.Column8.UseColumnTextForButtonValue = true;
             this.Column8.Width = 60;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvDetail);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1425, 684);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -259,8 +283,10 @@
         private DataGridViewEx dgvDetail;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnImportFromExcel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;

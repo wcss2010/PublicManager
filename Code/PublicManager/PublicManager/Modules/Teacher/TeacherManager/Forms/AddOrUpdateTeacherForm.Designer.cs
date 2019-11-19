@@ -52,13 +52,16 @@
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.dgvDetail = new PublicManager.Modules.DataGridViewEx();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnAddComment = new DevExpress.XtraEditors.SimpleButton();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnAddComment = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
+            this.txtIDCard = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtTName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTSex.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTPhone.Properties)).BeginInit();
@@ -82,6 +85,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
+            this.panelControl9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDCard.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -179,7 +185,7 @@
             this.txtTJob.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTJob.Location = new System.Drawing.Point(38, 2);
             this.txtTJob.Name = "txtTJob";
-            this.txtTJob.Size = new System.Drawing.Size(650, 20);
+            this.txtTJob.Size = new System.Drawing.Size(264, 20);
             this.txtTJob.TabIndex = 3;
             // 
             // txtTUnit
@@ -232,6 +238,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panelControl3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvDetail, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.panelControl2, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.panelControl9, 2, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -242,6 +249,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(696, 525);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
@@ -269,13 +277,13 @@
             // 
             // panelControl6
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.panelControl6, 3);
+            this.tableLayoutPanel1.SetColumnSpan(this.panelControl6, 2);
             this.panelControl6.Controls.Add(this.txtTJob);
             this.panelControl6.Controls.Add(this.labelControl4);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl6.Location = new System.Drawing.Point(3, 31);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(690, 22);
+            this.panelControl6.Size = new System.Drawing.Size(304, 22);
             this.panelControl6.TabIndex = 8;
             // 
             // panelControl5
@@ -346,36 +354,6 @@
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
             this.dgvDetail.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellMouseEnter);
             // 
-            // panelControl2
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.panelControl2, 3);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(3, 115);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(690, 22);
-            this.panelControl2.TabIndex = 9;
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.btnAddComment);
-            this.panelControl1.Controls.Add(this.btnOK);
-            this.panelControl1.Controls.Add(this.btnCancel);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 525);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(696, 37);
-            this.panelControl1.TabIndex = 7;
-            // 
-            // btnAddComment
-            // 
-            this.btnAddComment.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAddComment.Location = new System.Drawing.Point(458, 2);
-            this.btnAddComment.Name = "btnAddComment";
-            this.btnAddComment.Size = new System.Drawing.Size(86, 33);
-            this.btnAddComment.TabIndex = 6;
-            this.btnAddComment.Text = "新增评审记录";
-            this.btnAddComment.Click += new System.EventHandler(this.btnAddComment_Click);
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "时间";
@@ -411,6 +389,63 @@
             this.Column3.Text = "删除";
             this.Column3.UseColumnTextForButtonValue = true;
             this.Column3.Width = 60;
+            // 
+            // panelControl2
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.panelControl2, 3);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(3, 115);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(690, 22);
+            this.panelControl2.TabIndex = 9;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.btnAddComment);
+            this.panelControl1.Controls.Add(this.btnOK);
+            this.panelControl1.Controls.Add(this.btnCancel);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl1.Location = new System.Drawing.Point(0, 525);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(696, 37);
+            this.panelControl1.TabIndex = 7;
+            // 
+            // btnAddComment
+            // 
+            this.btnAddComment.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAddComment.Location = new System.Drawing.Point(458, 2);
+            this.btnAddComment.Name = "btnAddComment";
+            this.btnAddComment.Size = new System.Drawing.Size(86, 33);
+            this.btnAddComment.TabIndex = 6;
+            this.btnAddComment.Text = "新增评审记录";
+            this.btnAddComment.Click += new System.EventHandler(this.btnAddComment_Click);
+            // 
+            // panelControl9
+            // 
+            this.panelControl9.Controls.Add(this.txtIDCard);
+            this.panelControl9.Controls.Add(this.labelControl7);
+            this.panelControl9.Location = new System.Drawing.Point(313, 31);
+            this.panelControl9.Name = "panelControl9";
+            this.panelControl9.Size = new System.Drawing.Size(380, 22);
+            this.panelControl9.TabIndex = 10;
+            // 
+            // txtIDCard
+            // 
+            this.txtIDCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtIDCard.Location = new System.Drawing.Point(50, 2);
+            this.txtIDCard.Name = "txtIDCard";
+            this.txtIDCard.Size = new System.Drawing.Size(328, 20);
+            this.txtIDCard.TabIndex = 5;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelControl7.Location = new System.Drawing.Point(2, 2);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(48, 14);
+            this.labelControl7.TabIndex = 4;
+            this.labelControl7.Text = "身份证：";
             // 
             // AddOrUpdateTeacherForm
             // 
@@ -455,6 +490,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
+            this.panelControl9.ResumeLayout(false);
+            this.panelControl9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDCard.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -490,5 +529,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewButtonColumn Column4;
         private System.Windows.Forms.DataGridViewButtonColumn Column3;
+        private DevExpress.XtraEditors.PanelControl panelControl9;
+        private DevExpress.XtraEditors.TextEdit txtIDCard;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }

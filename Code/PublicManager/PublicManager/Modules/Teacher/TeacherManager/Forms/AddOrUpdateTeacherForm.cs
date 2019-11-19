@@ -55,6 +55,11 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
                 MessageBox.Show("对不起，请输入性别!");
                 return;
             }
+            if (txtIDCard.Text == string.Empty)
+            {
+                MessageBox.Show("对不起，请输入身份证!");
+                return;
+            }
             if (txtTPhone.Text == string.Empty)
             {
                 MessageBox.Show("对不起，请输入电话!");
@@ -78,6 +83,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
 
             TeacherObj.TName = txtTName.Text;
             TeacherObj.TSex = txtTSex.Text;
+            TeacherObj.TIDCard = txtIDCard.Text;
             TeacherObj.TPhone = txtTPhone.Text;
             TeacherObj.TJob = txtTJob.Text;
             TeacherObj.TUnit = txtTUnit.Text;
@@ -156,6 +162,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
 
                     txtTName.Text = TeacherObj.TName;
                     txtTSex.Text = TeacherObj.TSex;
+                    txtIDCard.Text = TeacherObj.TIDCard;
                     txtTPhone.Text = TeacherObj.TPhone;
                     txtTJob.Text = TeacherObj.TJob;
                     txtTUnit.Text = TeacherObj.TUnit;

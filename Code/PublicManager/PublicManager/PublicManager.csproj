@@ -162,6 +162,7 @@
     <Compile Include="DB\Entitys\Subject.cs" />
     <Compile Include="DB\Entitys\Teacher.cs" />
     <Compile Include="DB\Entitys\TeacherComment.cs" />
+    <Compile Include="ExcelHelper.cs" />
     <Compile Include="MainConfig.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
