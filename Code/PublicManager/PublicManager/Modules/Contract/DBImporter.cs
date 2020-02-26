@@ -227,7 +227,43 @@ namespace PublicManager.Modules.Contract
                 }
                 #endregion
 
-                #region 写入研究进度安排和拨付约定
+                #region 写入研究进度安排
+                DataList dlProgress = localContext.table("JinDuBiao").select("*").getDataList();
+                foreach (DataItem diProgress in dlProgress.getRows())
+                {
+                    try
+                    {
+                        WorkSteps ws = new WorkSteps();
+                        ws.WSID = Guid.NewGuid().ToString();
+                        ws.CatalogID = catalog.CatalogID;
+                        ws.ProjectID = proj.ProjectID;
+                        ws.WorkTime = DateTime.Parse(diProgress.get("ShiJian") != null ? diProgress.get("ShiJian").ToString() : DateTime.MinValue.ToString());
+                        ws.DestAndContent = diProgress.get("JieDuanMuBiao") != null ? diProgress.get("JieDuanMuBiao").ToString() : string.Empty;
+                        ws.ResultMethod = diProgress.get("JieDuanChengGuo") != null ? diProgress.get("JieDuanChengGuo").ToString() : string.Empty;
+                        ws.copyTo(ConnectionManager.Context.table("WorkSteps")).insert();
+                    }
+                    catch (Exception ex) { }
+                }
+                #endregion
+
+                #region 写入拨付约定
+                DataList dlRules = localContext.table("BoFuBiao").select("*").getDataList();
+                foreach (DataItem diRule in dlRules.getRows())
+                {
+                    try
+                    {
+                        MoneySends ms = new MoneySends();
+                        ms.MSID = Guid.NewGuid().ToString();
+                        ms.CatalogID = catalog.CatalogID;
+                        ms.ProjectID = proj.ProjectID;
+                        ms.SendRule = diRule.get("BoFuTiaoJian") != null ? diRule.get("BoFuTiaoJian").ToString() : string.Empty;
+                        ms.WillTime = DateTime.Parse(diRule.get("YuJiShiJian") != null ? diRule.get("YuJiShiJian").ToString() : DateTime.MinValue.ToString());
+                        ms.TotalMoney = decimal.Parse(diRule.get("JingFeiJinQian") != null ? diRule.get("JingFeiJinQian").ToString() : "0");
+                        ms.MemoText = diRule.get("BeiZhu") != null ? diRule.get("BeiZhu").ToString() : string.Empty;
+                        ms.copyTo(ConnectionManager.Context.table("MoneySends")).insert();
+                    }
+                    catch (Exception ex) { }
+                }
                 #endregion
 
                 return catalog.CatalogID;
