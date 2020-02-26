@@ -207,7 +207,7 @@ namespace PublicManager.Modules.Contract
                 #endregion
 
                 #region 写入课题金额数据
-                DataList dlSubjectMoneys = localContext.sql("select subjects.KeTiMingCheng as SubjectName,moneys.MingCheng as DictName,moneys.ShuJu as DictValue from KeTiYuSuanBiao moneys,KeTiBiao subjects where subjects.BianHao == moneys.KeTiBianHao", null).getDataList();
+                DataList dlSubjectMoneys = newSql(localContext, "temp", "select subjects.KeTiMingCheng as SubjectName,moneys.MingCheng as DictName,moneys.ShuJu as DictValue from KeTiYuSuanBiao moneys,KeTiBiao subjects where subjects.BianHao == moneys.KeTiBianHao", null, true).getDataList();
                 foreach (DataItem diSubjectMoneys in dlSubjectMoneys.getRows())
                 {
                     string subjectName = diSubjectMoneys.get("SubjectName") != null ? diSubjectMoneys.get("SubjectName").ToString() : string.Empty;

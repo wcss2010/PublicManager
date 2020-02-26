@@ -157,5 +157,23 @@ namespace PublicManager.Modules
         {
             addDict(catalog, project, null, dType, dName, dValue, parentID);
         }
+
+        /// <summary>
+        /// 执行一条SQL
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="tableName"></param>
+        /// <param name="sql"></param>
+        /// <param name="paramss"></param>
+        /// <param name="isLog"></param>
+        /// <returns></returns>
+        protected virtual Noear.Weed.DbQuery newSql(Noear.Weed.DbContext context,string tableName, string sql, object[] paramss, bool isLog)
+        {
+            return context.sql(sql, paramss).onCommandBuilt((cmd) =>
+            {
+                cmd.tag = tableName;
+                cmd.isLog = isLog;
+            });
+        }
     }
 }
