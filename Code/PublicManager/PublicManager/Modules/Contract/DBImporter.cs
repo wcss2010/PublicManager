@@ -201,27 +201,33 @@ namespace PublicManager.Modules.Contract
                     foreach (DataItem di in dlMoneys.getRows())
                     {
                         //添加字典
-                        addDict(catalog, proj, "Money,Info,SendRule", (di.get("MingCheng") != null ? di.get("MingCheng").ToString() : string.Empty), (di.get("ShuJu") != null ? di.get("ShuJu").ToString() : string.Empty), string.Empty);
+                        addDict(catalog, proj, "Money,Info", (di.get("MingCheng") != null ? di.get("MingCheng").ToString() : string.Empty), (di.get("ShuJu") != null ? di.get("ShuJu").ToString() : string.Empty), string.Empty);
                     }
                 }
-                DataList dlSendRule = localContext.table("BoFuBiao").orderBy("YuJiShiJian").select("*").getDataList();
-                if (dlSendRule != null && dlSendRule.getRowCount() >= 1)
-                {
-                    int lastYear = 0;
-                    int yearIndex = 0;
-                    foreach (DataItem di in dlSendRule.getRows())
-                    {
-                        DateTime date = DateTime.Parse(di.get("YuJiShiJian") != null ? di.get("YuJiShiJian").ToString() : DateTime.Now.ToString());
-                        if (date.Year != lastYear)
-                        {
-                            lastYear = date.Year;
-                            yearIndex++;
-                        }
+                #endregion
 
-                        //添加字典
-                        addDict(catalog, proj, "Money,Info,SendRule", "Year" + yearIndex + "_SendDate", date.ToString("yyyy年MM月dd日"), string.Empty);
+                #region 写入课题金额数据
+                DataList dlSubjectMoneys = localContext.sql("select subjects.KeTiMingCheng as SubjectName,moneys.MingCheng as DictName,moneys.ShuJu as DictValue from KeTiYuSuanBiao moneys,KeTiBiao subjects where subjects.BianHao == moneys.KeTiBianHao", null).getDataList();
+                foreach (DataItem diSubjectMoneys in dlSubjectMoneys.getRows())
+                {
+                    string subjectName = diSubjectMoneys.get("SubjectName") != null ? diSubjectMoneys.get("SubjectName").ToString() : string.Empty;
+                    string dictName = diSubjectMoneys.get("DictName") != null ? diSubjectMoneys.get("DictName").ToString() : string.Empty;
+                    string dictValue = diSubjectMoneys.get("DictValue") != null ? diSubjectMoneys.get("DictValue").ToString() : string.Empty;
+
+                    //查找课题
+                    Subject subj = ConnectionManager.Context.table("Subject").where("SubjectName='" + subjectName + "'").select("*").getItem<Subject>(new Subject());
+
+                    if (string.IsNullOrEmpty(subj.SubjectID))
+                    {
+                        continue;
                     }
+
+                    //添加数据
+                    addDict(catalog, proj, subj, "SubjectMoney,SubjectMoneyInfo", dictName, dictValue, string.Empty);
                 }
+                #endregion
+
+                #region 写入研究进度安排和拨付约定
                 #endregion
 
                 return catalog.CatalogID;
