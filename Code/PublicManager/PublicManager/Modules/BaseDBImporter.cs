@@ -110,21 +110,52 @@ namespace PublicManager.Modules
         /// </summary>
         /// <param name="catalog"></param>
         /// <param name="project"></param>
+        /// <param name="subject"></param>
+        /// <param name="dType"></param>
+        /// <param name="dName"></param>
+        /// <param name="dValue"></param>
+        /// <param name="parentID"></param>
+        protected virtual void addDict(Catalog catalog, Project project, Subject subject,string dType, string dName, string dValue, string parentID)
+        {
+            //删除相同的项目
+            ConnectionManager.Context.table("Dicts").where("ParentDictID = '" + parentID + "'" + (catalog != null ? (" and CatalogID = '" + catalog.CatalogID + "'") : string.Empty) + (project != null ? (" and ProjectID = '" + project.ProjectID + "'") : string.Empty) + (subject != null ? (" and SubjectID = '" + subject.SubjectID + "'") : string.Empty) + " and DictType = '" + dType + "' and DictName = '" + dName + "'").delete();
+
+            Dicts dict = new Dicts();
+            dict.DictID = Guid.NewGuid().ToString();
+            if (catalog != null)
+            {
+                dict.CatalogID = catalog.CatalogID;
+            }
+
+            if (project != null)
+            {
+                dict.ProjectID = project.ProjectID;
+            }
+
+            if (subject != null)
+            {
+                dict.SubjectID = subject.SubjectID;
+            }
+
+            dict.DictType = dType;
+            dict.DictName = dName;
+            dict.DictValue = dValue;
+            dict.ParentDictID = parentID;
+            dict.copyTo(ConnectionManager.Context.table("Dicts")).insert();
+        }
+
+        /// <summary>
+        /// 添加字典数据
+        /// </summary>
+        /// <param name="catalog"></param>
+        /// <param name="project"></param>
         /// <param name="dType"></param>
         /// <param name="dName"></param>
         /// <param name="dValue"></param>
         /// <param name="parentID"></param>
         protected virtual void addDict(Catalog catalog, Project project, string dType, string dName, string dValue, string parentID)
         {
-            Dicts dict = new Dicts();
-            dict.DictID = Guid.NewGuid().ToString();
-            dict.CatalogID = catalog.CatalogID;
-            dict.ProjectID = project.ProjectID;
-            dict.DictType = dType;
-            dict.DictName = dName;
-            dict.DictValue = dValue;
-            dict.ParentDictID = parentID;
-            dict.copyTo(ConnectionManager.Context.table("Dicts")).insert();
+            addDict(catalog, project, null, dType, dName, dValue, parentID);
         }
     }
 }
