@@ -162,18 +162,16 @@ namespace PublicManager.Modules
         /// 执行一条SQL
         /// </summary>
         /// <param name="context"></param>
-        /// <param name="tableName"></param>
         /// <param name="sql"></param>
-        /// <param name="paramss"></param>
-        /// <param name="isLog"></param>
         /// <returns></returns>
-        protected virtual Noear.Weed.DbQuery newSql(Noear.Weed.DbContext context,string tableName, string sql, object[] paramss, bool isLog)
+        protected virtual Noear.Weed.DbQuery newSql(Noear.Weed.DbContext context,string sql)
         {
-            return context.sql(sql, paramss).onCommandBuilt((cmd) =>
+            Noear.Weed.DbQuery query = context.sql(sql, new object[] { });
+            return query.onCommandBuilt((cmd) =>
             {
-                cmd.tag = tableName;
-                cmd.isLog = isLog;
-            });
+                cmd.tag = "table" + DateTime.Now.Ticks;
+                cmd.isLog = true;
+            });            
         }
     }
 }
