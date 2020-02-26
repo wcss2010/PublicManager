@@ -16,6 +16,8 @@ namespace PublicManager.DB.Entitys
         {
             //设置值
             query.set("WSID", WSID);
+            query.set("CatalogID", CatalogID);
+            query.set("ProjectID", ProjectID);
             query.set("WorkTime", WorkTime);
             query.set("DestAndContent", DestAndContent);
             query.set("ResultMethod", ResultMethod);
@@ -24,6 +26,8 @@ namespace PublicManager.DB.Entitys
         }
 
         public string WSID { get; set; }
+        public string CatalogID { get; set; }
+        public string ProjectID { get; set; }
         public DateTime WorkTime { get; set; }
         public string DestAndContent { get; set; }
         public string ResultMethod { get; set; }
@@ -31,6 +35,8 @@ namespace PublicManager.DB.Entitys
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
             WSID = source("WSID").value<string>("");
+            CatalogID = source("CatalogID").value<string>("");
+            ProjectID = source("ProjectID").value<string>("");
             WorkTime = source("WorkTime").value<DateTime>(DateTime.Now);
             DestAndContent = source("DestAndContent").value<string>("");
             ResultMethod = source("ResultMethod").value<string>("");
