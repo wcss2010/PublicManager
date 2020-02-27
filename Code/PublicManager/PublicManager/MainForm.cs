@@ -64,9 +64,9 @@ namespace PublicManager
             ModuleDict["地区分布情况"] = new Modules.DataCheck.AddressCheck.ModuleController();
             ModuleDict["单位项目课题关系"] = new Modules.DataCheck.ProjectSubjectUnitCheck.ModuleController();
             ModuleDict["专家信息管理"] = new Modules.Teacher.TeacherManager.ModuleController();
-            ModuleDict["研究进度安排"] = new Modules.WorkStep.StepManager.ModuleController();
-            ModuleDict["经费拨付约定"] = new Modules.MoneySend.SendManager.ModuleController();
-            ModuleDict["经费申请"] = new Modules.MoneyRequest.RequestManager.ModuleController();
+            ModuleDict["研究进度安排"] = new Modules.Lines.WorkStep.ModuleController();
+            ModuleDict["经费拨付约定"] = new Modules.Lines.MoneySend.ModuleController();
+            ModuleDict["经费申请"] = new Modules.Lines.MoneyRequest.ModuleController();
         }
 
         /// <summary>
