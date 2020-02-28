@@ -231,11 +231,20 @@
     <Compile Include="Modules\DataGridViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modules\Lines\MoneyRequest\HSkinTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Modules\Lines\MoneyRequest\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Modules\Lines\MoneyRequest\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Lines\MoneyRequest\MoneyTableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Lines\MoneyRequest\MoneyTableControl.designer.cs">
+      <DependentUpon>MoneyTableControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Lines\MoneySend\ModuleController.cs">
       <SubType>UserControl</SubType>
@@ -339,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lines\MoneyRequest\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Lines\MoneyRequest\MoneyTableControl.resx">
+      <DependentUpon>MoneyTableControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lines\MoneySend\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
