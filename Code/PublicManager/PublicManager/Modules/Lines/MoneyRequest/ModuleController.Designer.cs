@@ -29,12 +29,8 @@
         private void InitializeComponent()
         {
             this.tcMoneyTables = new System.Windows.Forms.TabControl();
-            this.tpProjectMoney = new System.Windows.Forms.TabPage();
-            this.moneyTableControl1 = new PublicManager.Modules.Lines.MoneyRequest.MoneyTableControl();
             this.tvProjectList = new System.Windows.Forms.TreeView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tcMoneyTables.SuspendLayout();
-            this.tpProjectMoney.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -43,32 +39,12 @@
             // 
             // tcMoneyTables
             // 
-            this.tcMoneyTables.Controls.Add(this.tpProjectMoney);
             this.tcMoneyTables.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcMoneyTables.Location = new System.Drawing.Point(0, 0);
             this.tcMoneyTables.Name = "tcMoneyTables";
             this.tcMoneyTables.SelectedIndex = 0;
             this.tcMoneyTables.Size = new System.Drawing.Size(782, 559);
             this.tcMoneyTables.TabIndex = 0;
-            // 
-            // tpProjectMoney
-            // 
-            this.tpProjectMoney.Controls.Add(this.moneyTableControl1);
-            this.tpProjectMoney.Location = new System.Drawing.Point(4, 22);
-            this.tpProjectMoney.Name = "tpProjectMoney";
-            this.tpProjectMoney.Padding = new System.Windows.Forms.Padding(3);
-            this.tpProjectMoney.Size = new System.Drawing.Size(774, 533);
-            this.tpProjectMoney.TabIndex = 0;
-            this.tpProjectMoney.Text = "项目经费预算";
-            this.tpProjectMoney.UseVisualStyleBackColor = true;
-            // 
-            // moneyTableControl1
-            // 
-            this.moneyTableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.moneyTableControl1.Location = new System.Drawing.Point(3, 3);
-            this.moneyTableControl1.Name = "moneyTableControl1";
-            this.moneyTableControl1.Size = new System.Drawing.Size(768, 527);
-            this.moneyTableControl1.TabIndex = 0;
             // 
             // tvProjectList
             // 
@@ -77,6 +53,7 @@
             this.tvProjectList.Name = "tvProjectList";
             this.tvProjectList.Size = new System.Drawing.Size(286, 559);
             this.tvProjectList.TabIndex = 1;
+            this.tvProjectList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvProjectList_AfterSelect);
             // 
             // splitContainer1
             // 
@@ -102,8 +79,6 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1072, 559);
-            this.tcMoneyTables.ResumeLayout(false);
-            this.tpProjectMoney.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -115,8 +90,6 @@
         #endregion
 
         private System.Windows.Forms.TabControl tcMoneyTables;
-        private System.Windows.Forms.TabPage tpProjectMoney;
-        private MoneyTableControl moneyTableControl1;
         private System.Windows.Forms.TreeView tvProjectList;
         private System.Windows.Forms.SplitContainer splitContainer1;
 

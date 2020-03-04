@@ -12,6 +12,13 @@ namespace PublicManager.Modules.Lines.MoneyRequest
     public partial class MoneyTableControl : UserControl
     {
         Dictionary<string, TextBox> boxDict = new Dictionary<string, TextBox>();
+        /// <summary>
+        /// 输入框字典
+        /// </summary>
+        public Dictionary<string, TextBox> BoxDict
+        {
+            get { return boxDict; }
+        }
 
         public MoneyTableControl()
         {
