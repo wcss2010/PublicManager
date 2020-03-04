@@ -49,6 +49,8 @@
             // tvProjectList
             // 
             this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvProjectList.FullRowSelect = true;
+            this.tvProjectList.HideSelection = false;
             this.tvProjectList.Location = new System.Drawing.Point(0, 0);
             this.tvProjectList.Name = "tvProjectList";
             this.tvProjectList.Size = new System.Drawing.Size(286, 559);
