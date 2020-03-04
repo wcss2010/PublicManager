@@ -35,29 +35,40 @@ namespace PublicManager.Modules.Lines.MoneyRequest
             List<Catalog> catalogList = ConnectionManager.Context.table("Catalog").select("*").getList<Catalog>(new Catalog());
             foreach (Catalog catalog in catalogList)
             {
-                TreeNode tn = new TreeNode();
-                tn.Text = catalog.CatalogName + "(" + catalog.CatalogVersion + ")";
-                tn.Tag = catalog;
-                tvProjectList.Nodes.Add(tn);
+                TreeNode parentNode = new TreeNode();
+                parentNode.Text = catalog.CatalogName + "(" + catalog.CatalogVersion + ")";
+                parentNode.Tag = catalog;
+                tvProjectList.Nodes.Add(parentNode);
+
+                //课题金额
+                List<Subject> subjectList = ConnectionManager.Context.table("Subject").where("CatalogID='" + catalog.CatalogID + "' and ProjectID='" + catalog.CatalogID + "'").select("*").getList<Subject>(new Subject());
+                foreach (Subject sub in subjectList)
+                {
+                    TreeNode subjectNode = new TreeNode();
+                    subjectNode.Text = sub.SubjectName;
+                    subjectNode.Tag = sub;
+                    parentNode.Nodes.Add(subjectNode);
+                }
             }
         }
 
         private void tvProjectList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            Catalog catalogObj = (Catalog)e.Node.Tag;
-
             tcMoneyTables.TabPages.Clear();
 
-            //项目金额
-            List<Dicts> projectDicts = ConnectionManager.Context.table("Dicts").where("CatalogID='" + catalogObj.CatalogID + "' and ProjectID='" + catalogObj.CatalogID + "' and (SubjectID is null or SubjectID= '')").select("*").getList<Dicts>(new Dicts());
-            addMoneyTablePage(catalogObj.CatalogID, catalogObj.CatalogName, projectDicts);
-
-            //课题金额
-            List<Subject> subjectList = ConnectionManager.Context.table("Subject").where("CatalogID='" + catalogObj.CatalogID + "' and ProjectID='" + catalogObj.CatalogID + "'").select("*").getList<Subject>(new Subject());
-            foreach (Subject sub in subjectList)
+            if (e.Node.Tag is Catalog)
             {
-                List<Dicts> subjectMoneyList = ConnectionManager.Context.table("Dicts").where("CatalogID='" + catalogObj.CatalogID + "' and ProjectID='" + catalogObj.CatalogID + "' and SubjectID='"+ sub.SubjectID +"'").select("*").getList<Dicts>(new Dicts());
-                addMoneyTablePage(catalogObj.CatalogID + "_" + sub.SubjectID, sub.SubjectName, subjectMoneyList);
+                //项目金额
+                Catalog catalogObj = (Catalog)e.Node.Tag;
+                List<Dicts> projectDicts = ConnectionManager.Context.table("Dicts").where("CatalogID='" + catalogObj.CatalogID + "' and ProjectID='" + catalogObj.CatalogID + "' and (SubjectID is null or SubjectID= '')").select("*").getList<Dicts>(new Dicts());
+                addMoneyTablePage(catalogObj.CatalogID, catalogObj.CatalogName, projectDicts);
+            }
+            else if (e.Node.Tag is Subject)
+            {
+                //课题金额
+                Subject subectObj = (Subject)e.Node.Tag;
+                List<Dicts> subjectMoneyList = ConnectionManager.Context.table("Dicts").where("CatalogID='" + subectObj.CatalogID + "' and ProjectID='" + subectObj.ProjectID + "' and SubjectID='" + subectObj.SubjectID + "'").select("*").getList<Dicts>(new Dicts());
+                addMoneyTablePage(subectObj.CatalogID + "_" + subectObj.SubjectID, subectObj.SubjectName, subjectMoneyList);
             }
         }
 
@@ -67,7 +78,7 @@ namespace PublicManager.Modules.Lines.MoneyRequest
         /// <param name="catalogID"></param>
         /// <param name="projectName"></param>
         /// <param name="moneyList"></param>
-        public void addMoneyTablePage(string catalogID,string projectName, List<Dicts> moneyList)
+        public void addMoneyTablePage(string catalogID, string projectName, List<Dicts> moneyList)
         {
             TabPage tp = new TabPage();
             tp.Name = catalogID;
