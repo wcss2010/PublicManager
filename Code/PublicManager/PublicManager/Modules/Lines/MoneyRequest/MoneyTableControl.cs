@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using ProjectContractPlugin.DB.Entitys;
+using PublicManager.DB.Entitys;
 
-namespace ProjectContractPlugin.Editor
+namespace PublicManager.Modules.Lines.MoneyRequest
 {
     public partial class MoneyTableControl : UserControl
     {
@@ -117,14 +116,14 @@ namespace ProjectContractPlugin.Editor
         /// 载入经费数据
         /// </summary>
         /// <param name="moneys"></param>
-        public void loadMoneys(List<KeTiYuSuanBiao> moneys)
+        public void loadMoneys(List<Dicts> moneys)
         {
-            foreach (KeTiYuSuanBiao ysb in moneys)
+            foreach (Dicts ysb in moneys)
             {
-                string ctrlName = "ibEdit" + ysb.MingCheng;
+                string ctrlName = "ibEdit" + ysb.DictName;
                 if (boxDict.ContainsKey(ctrlName))
                 {
-                    boxDict[ctrlName].Text = ysb.ShuJu;
+                    boxDict[ctrlName].Text = ysb.DictValue;
                 }
             }
         }
@@ -133,18 +132,18 @@ namespace ProjectContractPlugin.Editor
         /// 获得经费数据
         /// </summary>
         /// <returns></returns>
-        public List<KeTiYuSuanBiao> getMoneys()
+        public List<Dicts> getMoneys()
         {
-            List<KeTiYuSuanBiao> results = new List<KeTiYuSuanBiao>();
+            List<Dicts> results = new List<Dicts>();
 
-            foreach (KeyValuePair<string, TextBox> kvp in boxDict)
-            {
-                KeTiYuSuanBiao ysb = new KeTiYuSuanBiao();
-                ysb.BianHao = Guid.NewGuid().ToString();
-                ysb.MingCheng = kvp.Key.Replace("ibEdit", string.Empty);
-                ysb.ShuJu = kvp.Value.Text.Trim();
-                results.Add(ysb);
-            }
+            //foreach (KeyValuePair<string, TextBox> kvp in boxDict)
+            //{
+            //    Dicts ysb = new Dicts();
+            //    ysb.DictID = Guid.NewGuid().ToString();
+            //    ysb.DictName = kvp.Key.Replace("ibEdit", string.Empty);
+            //    ysb.DictValue = kvp.Value.Text.Trim();
+            //    results.Add(ysb);
+            //}
 
             return results;
         }

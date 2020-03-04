@@ -1,4 +1,4 @@
-﻿namespace ProjectContractPlugin.Editor
+﻿namespace PublicManager.Modules.Lines.MoneyRequest
 {
     partial class MoneyTableControl
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hSkinTableLayoutPanel1 = new ProjectContractPlugin.Controls.HSkinTableLayoutPanel();
+            this.hSkinTableLayoutPanel1 = new HSkinTableLayoutPanel();
             this.ibEditMoney5_2 = new System.Windows.Forms.TextBox();
             this.ibEditInfo3_1 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -848,7 +848,7 @@
 
         #endregion
 
-        private Controls.HSkinTableLayoutPanel hSkinTableLayoutPanel1;
+        private HSkinTableLayoutPanel hSkinTableLayoutPanel1;
         private System.Windows.Forms.TextBox ibEditMoney5_2;
         private System.Windows.Forms.TextBox ibEditInfo3_1;
         private System.Windows.Forms.Label label23;
