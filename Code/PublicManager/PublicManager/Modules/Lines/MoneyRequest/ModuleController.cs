@@ -49,7 +49,7 @@ namespace PublicManager.Modules.Lines.MoneyRequest
             tcMoneyTables.TabPages.Clear();
 
             //项目金额
-            List<Dicts> projectDicts = ConnectionManager.Context.table("Dicts").where("CatalogID='" + catalogObj.CatalogID + "' and ProjectID='" + catalogObj.CatalogID + "' and (SubjectID is null or SubjectID= = '')").select("*").getList<Dicts>(new Dicts());
+            List<Dicts> projectDicts = ConnectionManager.Context.table("Dicts").where("CatalogID='" + catalogObj.CatalogID + "' and ProjectID='" + catalogObj.CatalogID + "' and (SubjectID is null or SubjectID= '')").select("*").getList<Dicts>(new Dicts());
             addMoneyTablePage(catalogObj.CatalogID, catalogObj.CatalogName, projectDicts);
 
             //课题金额
