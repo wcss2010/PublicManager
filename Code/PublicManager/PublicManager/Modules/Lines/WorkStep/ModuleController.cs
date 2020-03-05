@@ -23,6 +23,13 @@ namespace PublicManager.Modules.Lines.WorkStep
             this.DisplayControl.Controls.Clear();
             this.Dock = DockStyle.Fill;
             this.DisplayControl.Controls.Add(this);
+
+            this.loadData();
+        }
+
+        private void loadData()
+        {
+
         }
     }
 }
