@@ -59,6 +59,7 @@
             this.btnExportToExcel.TabIndex = 7;
             this.btnExportToExcel.Text = "导出到Excel";
             this.btnExportToExcel.UseVisualStyleBackColor = true;
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
             // cbDisplayReporter
             // 

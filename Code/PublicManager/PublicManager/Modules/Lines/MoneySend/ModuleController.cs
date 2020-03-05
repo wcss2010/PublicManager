@@ -57,5 +57,10 @@ namespace PublicManager.Modules.Lines.MoneySend
 
             dgvDetail.checkCellSize();
         }
+
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            BaseModuleController.exportToExcel(dgvDetail);
+        }
     }
 }
