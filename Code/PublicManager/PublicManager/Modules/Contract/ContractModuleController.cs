@@ -280,7 +280,7 @@ namespace PublicManager.Modules.Contract
                         Dictionary<int, List<string>> yearTimeDict = new Dictionary<int, List<string>>();
                         int lastForIndex = 0;
                         int lastYear = 0;
-                        DataList dlMoneySendList = ConnectionManager.Context.table("MoneySends").orderBy("WillTime").select("WillTime").getDataList();
+                        DataList dlMoneySendList = ConnectionManager.Context.table("MoneySends").where("CatalogID='" + c.CatalogID + "'").orderBy("WillTime").select("WillTime").getDataList();
                         if (dlMoneySendList.getRowCount() >= 1)
                         {
                             List<string> yearList = new List<string>();
