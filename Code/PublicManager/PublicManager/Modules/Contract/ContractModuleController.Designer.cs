@@ -40,6 +40,7 @@
             this.rpgExprot = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.fbdFolderSelect = new System.Windows.Forms.FolderBrowserDialog();
             this.sfdExport = new System.Windows.Forms.SaveFileDialog();
+            this.btnExportYearMoneyToExcel = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,9 +53,10 @@
             this.btnSetDestDir,
             this.btnImportAll,
             this.btnImportWithSelected,
-            this.btnExportToExcel});
+            this.btnExportToExcel,
+            this.btnExportYearMoneyToExcel});
             this.rcTopBar.Location = new System.Drawing.Point(0, 0);
-            this.rcTopBar.MaxItemId = 6;
+            this.rcTopBar.MaxItemId = 7;
             this.rcTopBar.Name = "rcTopBar";
             this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpMaster});
@@ -94,7 +96,7 @@
             // 
             // btnExportToExcel
             // 
-            this.btnExportToExcel.Caption = "导出到Excel";
+            this.btnExportToExcel.Caption = "导出汇总信息到Excel";
             this.btnExportToExcel.Id = 5;
             this.btnExportToExcel.LargeGlyph = global::PublicManager.Properties.Resources.printtoexcel;
             this.btnExportToExcel.Name = "btnExportToExcel";
@@ -126,12 +128,21 @@
             // rpgExprot
             // 
             this.rpgExprot.ItemLinks.Add(this.btnExportToExcel);
+            this.rpgExprot.ItemLinks.Add(this.btnExportYearMoneyToExcel);
             this.rpgExprot.Name = "rpgExprot";
             this.rpgExprot.Text = "导出";
             // 
             // sfdExport
             // 
             this.sfdExport.Filter = "Excel文件(.xlsx)|*.xlsx";
+            // 
+            // btnExportYearMoneyToExcel
+            // 
+            this.btnExportYearMoneyToExcel.Caption = "导出年度经费汇总信息到Excel";
+            this.btnExportYearMoneyToExcel.Id = 6;
+            this.btnExportYearMoneyToExcel.LargeGlyph = global::PublicManager.Properties.Resources.printtoexcel;
+            this.btnExportYearMoneyToExcel.Name = "btnExportYearMoneyToExcel";
+            this.btnExportYearMoneyToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExportYearMoneyToExcel_ItemClick);
             // 
             // ContractModuleController
             // 
@@ -160,5 +171,6 @@
         private DevExpress.XtraBars.BarButtonItem btnExportToExcel;
         private System.Windows.Forms.FolderBrowserDialog fbdFolderSelect;
         private System.Windows.Forms.SaveFileDialog sfdExport;
+        private DevExpress.XtraBars.BarButtonItem btnExportYearMoneyToExcel;
     }
 }

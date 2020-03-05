@@ -380,5 +380,10 @@ namespace PublicManager.Modules.Contract
             }
             return result;
         }
+
+        private void btnExportYearMoneyToExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
