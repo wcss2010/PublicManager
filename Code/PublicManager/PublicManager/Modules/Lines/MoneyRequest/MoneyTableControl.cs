@@ -131,6 +131,8 @@ namespace PublicManager.Modules.Lines.MoneyRequest
                 if (boxDict.ContainsKey(ctrlName))
                 {
                     boxDict[ctrlName].Text = ysb.DictValue;
+
+                    Application.DoEvents();
                 }
             }
         }

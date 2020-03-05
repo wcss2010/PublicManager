@@ -83,18 +83,16 @@ namespace PublicManager.Modules.Lines.MoneyRequest
             TabPage tp = new TabPage();
             tp.Name = catalogID;
             tp.Text = projectName;
-
             MoneyTableControl mtc = new MoneyTableControl();
             foreach (TextBox tb in mtc.BoxDict.Values)
             {
                 tb.ReadOnly = true;
             }
+            tp.Controls.Add(mtc);
+            tcMoneyTables.TabPages.Add(tp);
+            Application.DoEvents();
 
             mtc.loadMoneys(moneyList);
-
-            tp.Controls.Add(mtc);
-
-            tcMoneyTables.TabPages.Add(tp);
         }
     }
 }
