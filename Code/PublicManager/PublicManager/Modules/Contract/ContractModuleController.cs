@@ -276,6 +276,32 @@ namespace PublicManager.Modules.Contract
                         cells.Add(p.TotalTime);
                         cells.Add(p.TotalMoney);
 
+                        //拨付时间
+                        Dictionary<int, List<string>> yearTimeDict = new Dictionary<int, List<string>>();
+                        int lastForIndex = 0;
+                        int lastYear = 0;
+                        DataList dlMoneySendList = ConnectionManager.Context.table("MoneySends").orderBy("WillTime").select("WillTime").getDataList();
+                        if (dlMoneySendList.getRowCount() >= 1)
+                        {
+                            List<string> yearList = new List<string>();
+                            foreach (DataItem diiii in dlMoneySendList.getRows())
+                            {
+                                DateTime willTime = diiii.get("WillTime") != null ? DateTime.Parse(diiii.get("WillTime").ToString()) : DateTime.Now;
+                                if (willTime.Year != lastYear)
+                                {
+                                    yearTimeDict[lastForIndex] = yearList;
+
+                                    lastForIndex++;
+                                    lastYear = willTime.Year;
+                                    yearList = new List<string>();
+                                }
+
+                                yearList.Add(willTime.ToString("yyyy年MM月dd日"));
+                            }
+
+                            yearTimeDict[lastForIndex] = yearList;
+                        }
+                        
                         //生成各年度经费和时间字符串
                         StringBuilder sbMoneyNum = new StringBuilder();
                         StringBuilder sbMoneyTime = new StringBuilder();
@@ -283,12 +309,11 @@ namespace PublicManager.Modules.Contract
                         {
                             sbMoneyNum.AppendLine(ConnectionManager.Context.table("Dicts").where("CatalogID='" + c.CatalogID + "' and DictName='Year" + kkk + "'").select("DictValue").getValue<string>(string.Empty));
 
-                            DataList dlTimes = ConnectionManager.Context.table("Dicts").where("CatalogID='" + c.CatalogID + "' and DictName='Year" + kkk + "_SendDate'").select("DictValue").getDataList();
-                            if (dlTimes.getRowCount() >= 1)
+                            if (yearTimeDict.ContainsKey(kkk))
                             {
-                                foreach (DataItem di in dlTimes.getRows())
+                                foreach (string sss in yearTimeDict[kkk])
                                 {
-                                    sbMoneyTime.AppendLine(di.getString("DictValue"));
+                                    sbMoneyTime.AppendLine(sss);
                                 }
                             }
                         }
