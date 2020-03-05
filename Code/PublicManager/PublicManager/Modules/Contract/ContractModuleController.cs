@@ -316,6 +316,10 @@ namespace PublicManager.Modules.Contract
                                     sbMoneyTime.AppendLine(sss);
                                 }
                             }
+                            else
+                            {
+                                sbMoneyTime.AppendLine("---");
+                            }
                         }
 
                         cells.Add(sbMoneyNum.ToString());
