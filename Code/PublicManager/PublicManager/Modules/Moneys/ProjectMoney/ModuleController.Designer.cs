@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tvProjectList = new System.Windows.Forms.TreeView();
+            this.tvProjectList = new PublicManager.Modules.TreeViewWithSearch();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.plContent = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -40,13 +40,16 @@
             // tvProjectList
             // 
             this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvProjectList.FullRowSelect = true;
-            this.tvProjectList.HideSelection = false;
+            this.tvProjectList.FocusNodeBackColor = System.Drawing.Color.Crimson;
+            this.tvProjectList.FocusNodeFontColor = System.Drawing.Color.White;
+            this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
             this.tvProjectList.Location = new System.Drawing.Point(0, 0);
+            this.tvProjectList.Margin = new System.Windows.Forms.Padding(4);
             this.tvProjectList.Name = "tvProjectList";
+            this.tvProjectList.NoFocusNodeBackColor = System.Drawing.Color.White;
+            this.tvProjectList.NoFocusNodeFontColor = System.Drawing.Color.Black;
             this.tvProjectList.Size = new System.Drawing.Size(286, 559);
             this.tvProjectList.TabIndex = 1;
-            this.tvProjectList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvProjectList_AfterSelect);
             // 
             // splitContainer1
             // 
@@ -90,7 +93,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView tvProjectList;
+        private TreeViewWithSearch tvProjectList;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel plContent;
 

@@ -26,19 +26,21 @@ namespace PublicManager.Modules.Moneys.ProjectMoney
             this.Dock = DockStyle.Fill;
             this.DisplayControl.Controls.Add(this);
 
+            this.tvProjectList.ContentTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvProjectList_AfterSelect);
+
             loadData();
         }
 
         private void loadData()
         {
-            tvProjectList.Nodes.Clear();
+            tvProjectList.ContentTreeView.Nodes.Clear();
             List<Catalog> catalogList = ConnectionManager.Context.table("Catalog").select("*").getList<Catalog>(new Catalog());
             foreach (Catalog catalog in catalogList)
             {
                 TreeNode parentNode = new TreeNode();
                 parentNode.Text = catalog.CatalogName + "(" + catalog.CatalogVersion + ")";
                 parentNode.Tag = catalog;
-                tvProjectList.Nodes.Add(parentNode);
+                tvProjectList.ContentTreeView.Nodes.Add(parentNode);
 
                 //课题金额
                 List<Subject> subjectList = ConnectionManager.Context.table("Subject").where("CatalogID='" + catalog.CatalogID + "' and ProjectID='" + catalog.CatalogID + "'").select("*").getList<Subject>(new Subject());
