@@ -301,6 +301,10 @@
     <Compile Include="Modules\Teacher\TeacherManager\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\TreeViewWithSearch.cs" />
+    <Compile Include="Modules\TreeViewWithSearch.designer.cs">
+      <DependentUpon>TreeViewWithSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgressForm.cs">
       <SubType>Form</SubType>
@@ -378,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Teacher\TeacherManager\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TreeViewWithSearch.resx">
+      <DependentUpon>TreeViewWithSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressForm.resx">
       <DependentUpon>ProgressForm.cs</DependentUpon>

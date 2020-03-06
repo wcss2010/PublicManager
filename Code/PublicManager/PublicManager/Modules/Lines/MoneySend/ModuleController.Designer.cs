@@ -64,8 +64,6 @@
             // cbDisplayReporter
             // 
             this.cbDisplayReporter.AutoSize = true;
-            this.cbDisplayReporter.Checked = true;
-            this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbDisplayReporter.Enabled = false;
             this.cbDisplayReporter.Location = new System.Drawing.Point(789, 0);
