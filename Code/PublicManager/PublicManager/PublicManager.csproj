@@ -301,7 +301,9 @@
     <Compile Include="Modules\Teacher\TeacherManager\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\TreeViewWithSearch.cs" />
+    <Compile Include="Modules\TreeViewWithSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Modules\TreeViewWithSearch.designer.cs">
       <DependentUpon>TreeViewWithSearch.cs</DependentUpon>
     </Compile>

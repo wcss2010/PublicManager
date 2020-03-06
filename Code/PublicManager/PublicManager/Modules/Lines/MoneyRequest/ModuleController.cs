@@ -54,7 +54,7 @@ namespace PublicManager.Modules.Lines.MoneyRequest
 
         private void tvProjectList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            tcMoneyTables.TabPages.Clear();
+            plContent.Controls.Clear();
 
             if (e.Node.Tag is Catalog)
             {
@@ -80,18 +80,12 @@ namespace PublicManager.Modules.Lines.MoneyRequest
         /// <param name="moneyList"></param>
         public void addMoneyTablePage(string catalogID, string projectName, List<Dicts> moneyList)
         {
-            TabPage tp = new TabPage();
-            tp.Name = catalogID;
-            tp.Text = projectName;
             MoneyTableControl mtc = new MoneyTableControl();
             foreach (TextBox tb in mtc.BoxDict.Values)
             {
                 tb.ReadOnly = true;
             }
-            tp.Controls.Add(mtc);
-            tcMoneyTables.TabPages.Add(tp);
-            Application.DoEvents();
-
+            plContent.Controls.Add(mtc);
             mtc.loadMoneys(moneyList);
         }
     }

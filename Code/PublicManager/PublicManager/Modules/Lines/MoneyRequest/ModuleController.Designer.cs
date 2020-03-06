@@ -28,23 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tcMoneyTables = new System.Windows.Forms.TabControl();
             this.tvProjectList = new System.Windows.Forms.TreeView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.plContent = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tcMoneyTables
-            // 
-            this.tcMoneyTables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcMoneyTables.Location = new System.Drawing.Point(0, 0);
-            this.tcMoneyTables.Name = "tcMoneyTables";
-            this.tcMoneyTables.SelectedIndex = 0;
-            this.tcMoneyTables.Size = new System.Drawing.Size(782, 559);
-            this.tcMoneyTables.TabIndex = 0;
             // 
             // tvProjectList
             // 
@@ -69,10 +60,18 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.tcMoneyTables);
+            this.splitContainer1.Panel2.Controls.Add(this.plContent);
             this.splitContainer1.Size = new System.Drawing.Size(1072, 559);
             this.splitContainer1.SplitterDistance = 286;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // plContent
+            // 
+            this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plContent.Location = new System.Drawing.Point(0, 0);
+            this.plContent.Name = "plContent";
+            this.plContent.Size = new System.Drawing.Size(782, 559);
+            this.plContent.TabIndex = 0;
             // 
             // ModuleController
             // 
@@ -91,9 +90,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tcMoneyTables;
         private System.Windows.Forms.TreeView tvProjectList;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel plContent;
 
     }
 }
