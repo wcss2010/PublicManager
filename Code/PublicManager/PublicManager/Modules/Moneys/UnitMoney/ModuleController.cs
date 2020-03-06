@@ -9,11 +9,27 @@ using System.Windows.Forms;
 
 namespace PublicManager.Modules.Moneys.UnitMoney
 {
-    public partial class ModuleController : UserControl
+    public partial class ModuleController : BaseModuleController
     {
         public ModuleController()
         {
             InitializeComponent();
+        }
+
+        public override void start()
+        {
+            base.start();
+
+            this.DisplayControl.Controls.Clear();
+            this.Dock = DockStyle.Fill;
+            this.DisplayControl.Controls.Add(this);
+
+            this.loadData();
+        }
+
+        private void loadData()
+        {
+
         }
     }
 }
