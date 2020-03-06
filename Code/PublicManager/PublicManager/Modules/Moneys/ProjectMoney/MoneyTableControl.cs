@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using PublicManager.DB.Entitys;
 
-namespace PublicManager.Modules.Lines.MoneyRequest
+namespace PublicManager.Modules.Moneys.ProjectMoney
 {
     public partial class MoneyTableControl : UserControl
     {

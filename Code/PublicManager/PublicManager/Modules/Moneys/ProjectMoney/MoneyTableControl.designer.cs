@@ -1,4 +1,4 @@
-﻿namespace PublicManager.Modules.Lines.MoneyRequest
+﻿namespace PublicManager.Modules.Moneys.ProjectMoney
 {
     partial class MoneyTableControl
     {

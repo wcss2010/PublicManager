@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace PublicManager.Modules.Lines.MoneyRequest
+namespace PublicManager.Modules.Moneys.ProjectMoney
 {
 	public class HSkinTableLayoutPanel : TableLayoutPanel
 	{
