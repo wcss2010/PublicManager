@@ -264,6 +264,18 @@
     <Compile Include="Modules\MainMenuController.Designer.cs">
       <DependentUpon>MainMenuController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Moneys\SubjectMoney\ModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Moneys\SubjectMoney\ModuleController.Designer.cs">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Moneys\UnitMoney\ModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Moneys\UnitMoney\ModuleController.Designer.cs">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Reporter\DBImporter.cs" />
     <Compile Include="Modules\Reporter\Forms\ImporterForm.cs">
       <SubType>Form</SubType>
@@ -366,6 +378,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\MainMenuController.resx">
       <DependentUpon>MainMenuController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Moneys\SubjectMoney\ModuleController.resx">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Moneys\UnitMoney\ModuleController.resx">
+      <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Reporter\Forms\ImporterForm.resx">
       <DependentUpon>ImporterForm.cs</DependentUpon>
