@@ -447,7 +447,7 @@
             // 
             // nbcTestD
             // 
-            this.nbcTestD.Caption = "过程管理";
+            this.nbcTestD.Caption = "经费管理";
             this.nbcTestD.ControlContainer = this.navBarGroupControlContainer4;
             this.nbcTestD.DragDropFlags = DevExpress.XtraNavBar.NavBarDragDrop.None;
             this.nbcTestD.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
@@ -488,11 +488,11 @@
             this.tlTestE.Name = "tlTestE";
             this.tlTestE.BeginUnboundLoad();
             this.tlTestE.AppendNode(new object[] {
-            "研究进度安排"}, -1);
+            "项目经费"}, -1);
             this.tlTestE.AppendNode(new object[] {
-            "经费拨付约定"}, -1);
+            "课题经费分配"}, -1);
             this.tlTestE.AppendNode(new object[] {
-            "经费申请"}, -1);
+            "单位经费分配"}, -1);
             this.tlTestE.EndUnboundLoad();
             this.tlTestE.OptionsBehavior.Editable = false;
             this.tlTestE.OptionsView.ShowColumns = false;
