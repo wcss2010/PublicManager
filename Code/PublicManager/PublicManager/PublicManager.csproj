@@ -231,19 +231,19 @@
     <Compile Include="Modules\DataGridViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Modules\Lines\MoneyRequest\HSkinTableLayoutPanel.cs">
+    <Compile Include="Modules\Moneys\ProjectMoney\HSkinTableLayoutPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Modules\Lines\MoneyRequest\ModuleController.cs">
+    <Compile Include="Modules\Moneys\ProjectMoney\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Lines\MoneyRequest\ModuleController.Designer.cs">
+    <Compile Include="Modules\Moneys\ProjectMoney\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Lines\MoneyRequest\MoneyTableControl.cs">
+    <Compile Include="Modules\Moneys\ProjectMoney\MoneyTableControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Lines\MoneyRequest\MoneyTableControl.designer.cs">
+    <Compile Include="Modules\Moneys\ProjectMoney\MoneyTableControl.designer.cs">
       <DependentUpon>MoneyTableControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Lines\MoneySend\ModuleController.cs">
@@ -352,10 +352,10 @@
     <EmbeddedResource Include="Modules\DataCheck\ProjectSubjectUnitCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Lines\MoneyRequest\ModuleController.resx">
+    <EmbeddedResource Include="Modules\Moneys\ProjectMoney\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Lines\MoneyRequest\MoneyTableControl.resx">
+    <EmbeddedResource Include="Modules\Moneys\ProjectMoney\MoneyTableControl.resx">
       <DependentUpon>MoneyTableControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lines\MoneySend\ModuleController.resx">
