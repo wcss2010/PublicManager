@@ -34,7 +34,7 @@ namespace PublicManager.Modules.Moneys.ProjectMoney
         private void loadData()
         {
             tvProjectList.ContentTreeView.Nodes.Clear();
-            List<Catalog> catalogList = ConnectionManager.Context.table("Catalog").select("*").getList<Catalog>(new Catalog());
+            List<Catalog> catalogList = ConnectionManager.Context.table("Catalog").where("CatalogType='合同书'").select("*").getList<Catalog>(new Catalog());
             foreach (Catalog catalog in catalogList)
             {
                 TreeNode parentNode = new TreeNode();
