@@ -28,18 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.plContent = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tvProjectList = new PublicManager.Modules.TreeViewWithSearch();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // plContent
+            // 
+            this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plContent.Location = new System.Drawing.Point(0, 0);
+            this.plContent.Name = "plContent";
+            this.plContent.Size = new System.Drawing.Size(712, 554);
+            this.plContent.TabIndex = 0;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tvProjectList);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.plContent);
+            this.splitContainer1.Size = new System.Drawing.Size(976, 554);
+            this.splitContainer1.SplitterDistance = 260;
+            this.splitContainer1.TabIndex = 3;
+            // 
+            // tvProjectList
+            // 
+            this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvProjectList.FocusNodeBackColor = System.Drawing.Color.Crimson;
+            this.tvProjectList.FocusNodeFontColor = System.Drawing.Color.White;
+            this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
+            this.tvProjectList.Location = new System.Drawing.Point(0, 0);
+            this.tvProjectList.Margin = new System.Windows.Forms.Padding(4);
+            this.tvProjectList.Name = "tvProjectList";
+            this.tvProjectList.NoFocusNodeBackColor = System.Drawing.Color.White;
+            this.tvProjectList.NoFocusNodeFontColor = System.Drawing.Color.Black;
+            this.tvProjectList.Size = new System.Drawing.Size(260, 554);
+            this.tvProjectList.TabIndex = 1;
             // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.splitContainer1);
             this.Name = "ModuleController";
-            this.Size = new System.Drawing.Size(389, 294);
+            this.Size = new System.Drawing.Size(976, 554);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel plContent;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private TreeViewWithSearch tvProjectList;
     }
 }
