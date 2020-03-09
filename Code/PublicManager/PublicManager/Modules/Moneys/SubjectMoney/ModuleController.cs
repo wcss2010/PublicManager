@@ -58,12 +58,12 @@ namespace PublicManager.Modules.Moneys.SubjectMoney
         {
             dgvDetail.Rows.Clear();
             List<List<object>> objectList = new List<List<object>>();
-            List<Subject> subjectList = ConnectionManager.Context.table("Subject").select("*").getList<Subject>(new Subject());
 
             if (e.Node.Tag is Catalog)
             {
                 //项目年度列表
                 Catalog catalogObj = (Catalog)e.Node.Tag;
+                List<Subject> subjectList = ConnectionManager.Context.table("Subject").where("CatalogID='" + catalogObj.CatalogID + "'").select("*").getList<Subject>(new Subject());
 
                 foreach (Subject sObj in subjectList)
                 {
@@ -94,6 +94,7 @@ namespace PublicManager.Modules.Moneys.SubjectMoney
             {
                 //课题年度列表
                 Subject sObj = (Subject)e.Node.Tag;
+                List<Subject> subjectList = ConnectionManager.Context.table("Subject").where("CatalogID='" + sObj.CatalogID + "'").select("*").getList<Subject>(new Subject());
 
                 List<SubjectMoneys> lxSubjects = ConnectionManager.Context.table("SubjectMoneys").where("CatalogID='" + sObj.CatalogID + "' and SubjectID='" + sObj.SubjectID + "'").orderBy("CatalogID,SubjectID,SMName").select("*").getList<SubjectMoneys>(new SubjectMoneys());
 

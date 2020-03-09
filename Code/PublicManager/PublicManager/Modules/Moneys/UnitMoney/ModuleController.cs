@@ -58,24 +58,25 @@ namespace PublicManager.Modules.Moneys.UnitMoney
         {
             dgvDetail.Rows.Clear();
             List<List<object>> objectList = new List<List<object>>();
-            List<string> unitList = new List<string>();
-            List<UnitMoneys> unitMoneysList = ConnectionManager.Context.table("UnitMoneys").select("*").getList<UnitMoneys>(new UnitMoneys());
-            foreach (UnitMoneys ums in unitMoneysList)
-            {
-                if (unitList.Contains(ums.UnitName))
-                {
-                    continue;
-                }
-                else
-                {
-                    unitList.Add(ums.UnitName);
-                }
-            }
 
             if (e.Node.Tag is Catalog)
             {
                 //项目年度列表
                 Catalog catalogObj = (Catalog)e.Node.Tag;
+
+                List<string> unitList = new List<string>();
+                List<UnitMoneys> unitMoneysList = ConnectionManager.Context.table("UnitMoneys").where("CatalogID='" + catalogObj.CatalogID + "'").select("*").getList<UnitMoneys>(new UnitMoneys());
+                foreach (UnitMoneys ums in unitMoneysList)
+                {
+                    if (unitList.Contains(ums.UnitName))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        unitList.Add(ums.UnitName);
+                    }
+                }
 
                 foreach (string unitName in unitList)
                 {
