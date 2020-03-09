@@ -266,6 +266,46 @@ namespace PublicManager.Modules.Contract
                 }
                 #endregion
 
+                #region 写入课题年度经费
+                dlSubjectMoneys = localContext.table("KeTiJingFeiNianDuBiao").select("*").getDataList();
+                foreach (DataItem di in dlSubjectMoneys.getRows())
+                {
+                    string oldSubjectId = di.get("KeTiBianHao") != null ? di.get("KeTiBianHao").ToString() : string.Empty;
+                    string moduleName = di.get("NianDu") != null ? di.get("NianDu").ToString() : string.Empty;
+                    string moduleValue = di.get("JingFei") != null ? di.get("JingFei").ToString() : string.Empty;
+                    string oldSubjectName = localContext.table("KeTiBiao").where("BianHao='" + oldSubjectId + "'").select("KeTiMingCheng").getValue<string>(string.Empty);
+                    string newSubjectID = ConnectionManager.Context.table("Subject").where("SubjectName='" + oldSubjectName + "'").select("SubjectID").getValue<string>(string.Empty);
+
+                    SubjectMoneys obj = new SubjectMoneys();
+                    obj.SMID = Guid.NewGuid().ToString();
+                    obj.CatalogID = catalog.CatalogID;
+                    obj.ProjectID = catalog.CatalogID;
+                    obj.SubjectID = newSubjectID;
+                    obj.SMName = moduleName;
+                    obj.SMValue = moduleValue;
+                    obj.copyTo(ConnectionManager.Context.table("SubjectMoneys")).insert();
+                }
+                #endregion
+
+                #region 写入单位年度经费
+                DataList dlUnitMoneys = localContext.table("DanWeiJingFeiNianDuBiao").select("*").getDataList();
+                foreach (DataItem di in dlUnitMoneys.getRows())
+                {
+                    string unitName = di.get("DanWeiMing") != null ? di.get("DanWeiMing").ToString() : string.Empty;
+                    string moduleName = di.get("NianDu") != null ? di.get("NianDu").ToString() : string.Empty;
+                    string moduleValue = di.get("JingFei") != null ? di.get("JingFei").ToString() : string.Empty;
+
+                    UnitMoneys obj = new UnitMoneys();
+                    obj.UMID = Guid.NewGuid().ToString();
+                    obj.CatalogID = catalog.CatalogID;
+                    obj.ProjectID = catalog.CatalogID;
+                    obj.UnitName = unitName;
+                    obj.UMName = moduleName;
+                    obj.UMValue = moduleValue;
+                    obj.copyTo(ConnectionManager.Context.table("UnitMoneys")).insert();
+                }
+                #endregion
+
                 return catalog.CatalogID;
             }
             else
