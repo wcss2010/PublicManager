@@ -161,8 +161,10 @@
     <Compile Include="DB\Entitys\Person.cs" />
     <Compile Include="DB\Entitys\Project.cs" />
     <Compile Include="DB\Entitys\Subject.cs" />
+    <Compile Include="DB\Entitys\SubjectMoneys.cs" />
     <Compile Include="DB\Entitys\Teacher.cs" />
     <Compile Include="DB\Entitys\TeacherComment.cs" />
+    <Compile Include="DB\Entitys\UnitMoneys.cs" />
     <Compile Include="DB\Entitys\WorkSteps.cs" />
     <Compile Include="ExcelHelper.cs" />
     <Compile Include="MainConfig.cs" />
