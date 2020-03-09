@@ -210,7 +210,7 @@
             // 
             // nbcLeftTree
             // 
-            this.nbcLeftTree.ActiveGroup = this.nbcTestF;
+            this.nbcLeftTree.ActiveGroup = this.nbcTestA;
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer1);
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer2);
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer3);
@@ -237,7 +237,6 @@
             this.nbcTestF.Caption = "项目过程管理";
             this.nbcTestF.ControlContainer = this.navBarGroupControlContainer5;
             this.nbcTestF.DragDropFlags = DevExpress.XtraNavBar.NavBarDragDrop.None;
-            this.nbcTestF.Expanded = true;
             this.nbcTestF.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
             this.nbcTestF.GroupClientHeight = 212;
             this.nbcTestF.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
@@ -506,6 +505,7 @@
             this.nbcTestA.Caption = "数据汇总";
             this.nbcTestA.ControlContainer = this.navBarGroupControlContainer1;
             this.nbcTestA.DragDropFlags = DevExpress.XtraNavBar.NavBarDragDrop.None;
+            this.nbcTestA.Expanded = true;
             this.nbcTestA.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
             this.nbcTestA.GroupClientHeight = 264;
             this.nbcTestA.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
