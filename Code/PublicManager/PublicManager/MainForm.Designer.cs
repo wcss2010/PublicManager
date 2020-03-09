@@ -66,6 +66,7 @@
             this.nbcTestB = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbcTestC = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbcTestD = new DevExpress.XtraNavBar.NavBarGroup();
+            this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.plRightContent = new DevExpress.XtraEditors.PanelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
@@ -215,6 +216,7 @@
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer2);
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer3);
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer4);
+            this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer5);
             this.nbcLeftTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nbcLeftTree.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.nbcTestA,
@@ -256,7 +258,7 @@
             // 
             this.tlTestF.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.tlTestF.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.treeListColumn4});
+            this.treeListColumn5});
             this.tlTestF.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlTestF.Location = new System.Drawing.Point(0, 0);
             this.tlTestF.Name = "tlTestF";
@@ -278,6 +280,15 @@
             this.tlTestF.TabIndex = 1;
             this.tlTestF.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestF_AfterFocusNode);
             this.tlTestF.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tlTestF_MouseClick);
+            // 
+            // treeListColumn5
+            // 
+            this.treeListColumn5.MinWidth = 52;
+            this.treeListColumn5.Name = "treeListColumn5";
+            this.treeListColumn5.OptionsColumn.AllowFocus = false;
+            this.treeListColumn5.Visible = true;
+            this.treeListColumn5.VisibleIndex = 0;
+            this.treeListColumn5.Width = 93;
             // 
             // treeListColumn4
             // 
@@ -643,6 +654,7 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn4;
         private DevExpress.XtraNavBar.NavBarGroup nbcTestF;
         private DevExpress.XtraTreeList.TreeList tlTestF;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn5;
     }
 }
 
