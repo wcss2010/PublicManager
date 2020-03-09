@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using PublicManager.DB;
 using PublicManager.DB.Entitys;
 
-namespace PublicManager.Modules.Lines.WorkStep
+namespace PublicManager.Modules.Lines.MoneyLines
 {
     public partial class ModuleController : BaseModuleController
     {

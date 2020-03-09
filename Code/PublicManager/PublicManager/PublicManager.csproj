@@ -233,6 +233,12 @@
     <Compile Include="Modules\DataGridViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modules\Lines\SubjectMoneys\ModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Lines\SubjectMoneys\ModuleController.Designer.cs">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Moneys\ProjectMoney\HSkinTableLayoutPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -248,16 +254,16 @@
     <Compile Include="Modules\Moneys\ProjectMoney\MoneyTableControl.designer.cs">
       <DependentUpon>MoneyTableControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Lines\MoneySend\ModuleController.cs">
+    <Compile Include="Modules\Lines\ProjectNodes\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Lines\MoneySend\ModuleController.Designer.cs">
+    <Compile Include="Modules\Lines\ProjectNodes\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Lines\WorkStep\ModuleController.cs">
+    <Compile Include="Modules\Lines\MoneyLines\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Lines\WorkStep\ModuleController.Designer.cs">
+    <Compile Include="Modules\Lines\MoneyLines\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\MainMenuController.cs">
@@ -366,16 +372,19 @@
     <EmbeddedResource Include="Modules\DataCheck\ProjectSubjectUnitCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Lines\SubjectMoneys\ModuleController.resx">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\Moneys\ProjectMoney\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Moneys\ProjectMoney\MoneyTableControl.resx">
       <DependentUpon>MoneyTableControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Lines\MoneySend\ModuleController.resx">
+    <EmbeddedResource Include="Modules\Lines\ProjectNodes\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Lines\WorkStep\ModuleController.resx">
+    <EmbeddedResource Include="Modules\Lines\MoneyLines\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\MainMenuController.resx">

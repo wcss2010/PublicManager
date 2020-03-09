@@ -1,4 +1,4 @@
-﻿namespace PublicManager.Modules.Lines.MoneySend
+﻿namespace PublicManager.Modules.Lines.ProjectNodes
 {
     partial class ModuleController
     {

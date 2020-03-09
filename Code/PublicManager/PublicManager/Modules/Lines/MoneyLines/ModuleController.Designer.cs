@@ -1,4 +1,4 @@
-﻿namespace PublicManager.Modules.Lines.WorkStep
+﻿namespace PublicManager.Modules.Lines.MoneyLines
 {
     partial class ModuleController
     {

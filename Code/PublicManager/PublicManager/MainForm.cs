@@ -70,6 +70,10 @@ namespace PublicManager
             ModuleDict["项目经费"] = new Modules.Moneys.ProjectMoney.ModuleController();
             ModuleDict["课题经费分配"] = new Modules.Moneys.SubjectMoney.ModuleController();
             ModuleDict["单位经费分配"] = new Modules.Moneys.UnitMoney.ModuleController();
+
+            ModuleDict["项目节点管理"] = new Modules.Lines.ProjectNodes.ModuleController();
+            ModuleDict["经费过程管理"] = new Modules.Lines.MoneyLines.ModuleController();
+            ModuleDict["课题经费管理"] = new Modules.Lines.SubjectMoneys.ModuleController();
         }
 
         /// <summary>
@@ -269,6 +273,25 @@ namespace PublicManager
         }
 
         private void tlTestE_MouseClick(object sender, MouseEventArgs e)
+        {
+            DevExpress.XtraTreeList.TreeList tree = ((DevExpress.XtraTreeList.TreeList)sender);
+            Point p = new Point(Cursor.Position.X, Cursor.Position.Y);　　//获取到鼠标点击的坐标位置
+            TreeListHitInfo hitInfo = tree.CalcHitInfo(e.Location);
+            if (hitInfo.HitInfoType == HitInfoType.Cell)
+            {
+                tree.SetFocusedNode(hitInfo.Node);         //这句话就是关键，用于选中节点　　
+
+                //显示模块
+                showModule(hitInfo.Node.GetDisplayText(0), true);
+            }
+        }
+
+        private void tlTestF_AfterFocusNode(object sender, NodeEventArgs e)
+        {
+
+        }
+
+        private void tlTestF_MouseClick(object sender, MouseEventArgs e)
         {
             DevExpress.XtraTreeList.TreeList tree = ((DevExpress.XtraTreeList.TreeList)sender);
             Point p = new Point(Cursor.Position.X, Cursor.Position.Y);　　//获取到鼠标点击的坐标位置
