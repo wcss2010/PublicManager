@@ -56,22 +56,72 @@ namespace PublicManager.Modules.Moneys.SubjectMoney
 
         private void tvProjectList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            plContent.Controls.Clear();
+            dgvDetail.Rows.Clear();
+            List<List<object>> objectList = new List<List<object>>();
+            List<Subject> subjectList = ConnectionManager.Context.table("Subject").select("*").getList<Subject>(new Subject());
 
-            //if (e.Node.Tag is Catalog)
-            //{
-            //    //项目金额
-            //    Catalog catalogObj = (Catalog)e.Node.Tag;
-            //    List<Dicts> projectDicts = ConnectionManager.Context.table("Dicts").where("CatalogID='" + catalogObj.CatalogID + "' and ProjectID='" + catalogObj.CatalogID + "' and (SubjectID is null or SubjectID= '')").select("*").getList<Dicts>(new Dicts());
-            //    addMoneyTablePage(catalogObj.CatalogID, catalogObj.CatalogName, projectDicts);
-            //}
-            //else if (e.Node.Tag is Subject)
-            //{
-            //    //课题金额
-            //    Subject subectObj = (Subject)e.Node.Tag;
-            //    List<Dicts> subjectMoneyList = ConnectionManager.Context.table("Dicts").where("CatalogID='" + subectObj.CatalogID + "' and ProjectID='" + subectObj.ProjectID + "' and SubjectID='" + subectObj.SubjectID + "'").select("*").getList<Dicts>(new Dicts());
-            //    addMoneyTablePage(subectObj.CatalogID + "_" + subectObj.SubjectID, subectObj.SubjectName, subjectMoneyList);
-            //}
+            if (e.Node.Tag is Catalog)
+            {
+                //项目年度列表
+                Catalog catalogObj = (Catalog)e.Node.Tag;
+
+                foreach (Subject sObj in subjectList)
+                {
+                    List<SubjectMoneys> lxSubjects = ConnectionManager.Context.table("SubjectMoneys").where("CatalogID='" + sObj.CatalogID + "' and SubjectID='" + sObj.SubjectID + "'").orderBy("CatalogID,SubjectID,SMName").select("*").getList<SubjectMoneys>(new SubjectMoneys());
+
+                    int totalValue = 0;
+                    List<object> cells = new List<object>();
+                    cells.Add(sObj.SubjectName);
+                    foreach (SubjectMoneys sms in lxSubjects)
+                    {
+                        try
+                        {
+                            totalValue += int.Parse(sms.SMValue);
+                        }
+                        catch (Exception ex) { }
+
+                        cells.Add(sms.SMValue);
+                    }
+                    for (int kk = 0; kk < 4 - lxSubjects.Count; kk++)
+                    {
+                        cells.Add("0");
+                    }
+                    cells.Add(totalValue.ToString());
+                    objectList.Add(cells);
+                }
+            }
+            else if (e.Node.Tag is Subject)
+            {
+                //课题年度列表
+                Subject sObj = (Subject)e.Node.Tag;
+
+                List<SubjectMoneys> lxSubjects = ConnectionManager.Context.table("SubjectMoneys").where("CatalogID='" + sObj.CatalogID + "' and SubjectID='" + sObj.SubjectID + "'").orderBy("CatalogID,SubjectID,SMName").select("*").getList<SubjectMoneys>(new SubjectMoneys());
+
+                int totalValue = 0;
+                List<object> cells = new List<object>();
+                cells.Add(sObj.SubjectName);
+                foreach (SubjectMoneys sms in lxSubjects)
+                {
+                    try
+                    {
+                        totalValue += int.Parse(sms.SMValue);
+                    }
+                    catch (Exception ex) { }
+
+                    cells.Add(sms.SMValue);
+                }
+                for (int kk = 0; kk < 4 - lxSubjects.Count; kk++)
+                {
+                    cells.Add("0");
+                }
+                cells.Add(totalValue.ToString());
+                objectList.Add(cells);
+            }
+
+            foreach (List<object> lxItem in objectList)
+            {
+                dgvDetail.Rows.Add(lxItem);
+            }
         }
     }
 }
