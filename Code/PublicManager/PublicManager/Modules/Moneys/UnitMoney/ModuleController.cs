@@ -79,7 +79,7 @@ namespace PublicManager.Modules.Moneys.UnitMoney
 
                 foreach (string unitName in unitList)
                 {
-                    List<UnitMoneys> lxUnits = ConnectionManager.Context.table("UnitMoneys").where("CatalogID='" + catalogObj.CatalogID + "' and UnitName='" + unitName + "'").orderBy("CatalogID,UnitName,SMName").select("*").getList<UnitMoneys>(new UnitMoneys());
+                    List<UnitMoneys> lxUnits = ConnectionManager.Context.table("UnitMoneys").where("CatalogID='" + catalogObj.CatalogID + "' and UnitName='" + unitName + "'").orderBy("CatalogID,UnitName,UMName").select("*").getList<UnitMoneys>(new UnitMoneys());
 
                     int totalValue = 0;
                     List<object> cells = new List<object>();
@@ -94,7 +94,7 @@ namespace PublicManager.Modules.Moneys.UnitMoney
 
                         cells.Add(ums.UMValue);
                     }
-                    for (int kk = 0; kk < 4 - lxUnits.Count; kk++)
+                    for (int kk = 0; kk < 5 - lxUnits.Count; kk++)
                     {
                         cells.Add("0");
                     }
@@ -105,7 +105,7 @@ namespace PublicManager.Modules.Moneys.UnitMoney
 
             foreach (List<object> lxItem in objectList)
             {
-                dgvDetail.Rows.Add(lxItem);
+                dgvDetail.Rows.Add(lxItem.ToArray());
             }
         }
     }

@@ -82,7 +82,7 @@ namespace PublicManager.Modules.Moneys.SubjectMoney
 
                         cells.Add(sms.SMValue);
                     }
-                    for (int kk = 0; kk < 4 - lxSubjects.Count; kk++)
+                    for (int kk = 0; kk < 5 - lxSubjects.Count; kk++)
                     {
                         cells.Add("0");
                     }
@@ -110,7 +110,7 @@ namespace PublicManager.Modules.Moneys.SubjectMoney
 
                     cells.Add(sms.SMValue);
                 }
-                for (int kk = 0; kk < 4 - lxSubjects.Count; kk++)
+                for (int kk = 0; kk < 5 - lxSubjects.Count; kk++)
                 {
                     cells.Add("0");
                 }
@@ -120,7 +120,7 @@ namespace PublicManager.Modules.Moneys.SubjectMoney
 
             foreach (List<object> lxItem in objectList)
             {
-                dgvDetail.Rows.Add(lxItem);
+                dgvDetail.Rows.Add(lxItem.ToArray());
             }
         }
     }
