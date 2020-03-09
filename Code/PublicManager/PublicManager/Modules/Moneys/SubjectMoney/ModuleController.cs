@@ -67,7 +67,7 @@ namespace PublicManager.Modules.Moneys.SubjectMoney
 
                 foreach (Subject sObj in subjectList)
                 {
-                    List<SubjectMoneys> lxSubjects = ConnectionManager.Context.table("SubjectMoneys").where("CatalogID='" + sObj.CatalogID + "' and SubjectID='" + sObj.SubjectID + "'").orderBy("CatalogID,SubjectID,SMName").select("*").getList<SubjectMoneys>(new SubjectMoneys());
+                    List<SubjectMoneys> lxSubjects = ConnectionManager.Context.table("SubjectMoneys").where("CatalogID='" + catalogObj.CatalogID + "' and SubjectID='" + sObj.SubjectID + "'").orderBy("CatalogID,SubjectID,SMName").select("*").getList<SubjectMoneys>(new SubjectMoneys());
 
                     int totalValue = 0;
                     List<object> cells = new List<object>();
