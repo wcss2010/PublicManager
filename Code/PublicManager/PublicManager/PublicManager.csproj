@@ -233,6 +233,12 @@
     <Compile Include="Modules\DataGridViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modules\Lines\MoneyLines\MoneyLinePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Lines\MoneyLines\MoneyLinePage.Designer.cs">
+      <DependentUpon>MoneyLinePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Lines\SubjectMoneys\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataCheck\ProjectSubjectUnitCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Lines\MoneyLines\MoneyLinePage.resx">
+      <DependentUpon>MoneyLinePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lines\SubjectMoneys\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
