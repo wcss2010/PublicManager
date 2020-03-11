@@ -40,7 +40,7 @@
             // tvProjectList
             // 
             this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvProjectList.FocusNodeBackColor = System.Drawing.Color.Crimson;
+            this.tvProjectList.FocusNodeBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.tvProjectList.FocusNodeFontColor = System.Drawing.Color.White;
             this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
             this.tvProjectList.Location = new System.Drawing.Point(0, 0);

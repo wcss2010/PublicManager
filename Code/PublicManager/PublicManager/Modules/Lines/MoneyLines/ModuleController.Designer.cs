@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.plContent = new System.Windows.Forms.Panel();
+            this.moneyLinePage1 = new PublicManager.Modules.Lines.MoneyLines.MoneyLinePage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvProjectList = new PublicManager.Modules.TreeViewWithSearch();
-            this.moneyLinePage1 = new PublicManager.Modules.Lines.MoneyLines.MoneyLinePage();
             this.plContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -47,6 +47,15 @@
             this.plContent.Name = "plContent";
             this.plContent.Size = new System.Drawing.Size(782, 568);
             this.plContent.TabIndex = 0;
+            // 
+            // moneyLinePage1
+            // 
+            this.moneyLinePage1.BackColor = System.Drawing.Color.White;
+            this.moneyLinePage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moneyLinePage1.Location = new System.Drawing.Point(0, 0);
+            this.moneyLinePage1.Name = "moneyLinePage1";
+            this.moneyLinePage1.Size = new System.Drawing.Size(782, 568);
+            this.moneyLinePage1.TabIndex = 0;
             // 
             // splitContainer1
             // 
@@ -68,7 +77,7 @@
             // tvProjectList
             // 
             this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvProjectList.FocusNodeBackColor = System.Drawing.Color.Crimson;
+            this.tvProjectList.FocusNodeBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.tvProjectList.FocusNodeFontColor = System.Drawing.Color.White;
             this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
             this.tvProjectList.Location = new System.Drawing.Point(0, 0);
@@ -78,15 +87,6 @@
             this.tvProjectList.NoFocusNodeFontColor = System.Drawing.Color.Black;
             this.tvProjectList.Size = new System.Drawing.Size(284, 568);
             this.tvProjectList.TabIndex = 1;
-            // 
-            // moneyLinePage1
-            // 
-            this.moneyLinePage1.BackColor = System.Drawing.Color.White;
-            this.moneyLinePage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.moneyLinePage1.Location = new System.Drawing.Point(0, 0);
-            this.moneyLinePage1.Name = "moneyLinePage1";
-            this.moneyLinePage1.Size = new System.Drawing.Size(782, 568);
-            this.moneyLinePage1.TabIndex = 0;
             // 
             // ModuleController
             // 

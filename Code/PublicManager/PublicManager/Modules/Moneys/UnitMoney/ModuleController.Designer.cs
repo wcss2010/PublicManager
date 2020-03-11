@@ -31,8 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.plContent = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tvProjectList = new PublicManager.Modules.TreeViewWithSearch();
             this.dgvDetail = new PublicManager.Modules.DataGridViewEx();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,12 +39,14 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tvProjectList = new PublicManager.Modules.TreeViewWithSearch();
             this.plContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // plContent
@@ -57,37 +57,6 @@
             this.plContent.Name = "plContent";
             this.plContent.Size = new System.Drawing.Size(739, 580);
             this.plContent.TabIndex = 0;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.tvProjectList);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.plContent);
-            this.splitContainer1.Size = new System.Drawing.Size(1012, 580);
-            this.splitContainer1.SplitterDistance = 269;
-            this.splitContainer1.TabIndex = 3;
-            // 
-            // tvProjectList
-            // 
-            this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvProjectList.FocusNodeBackColor = System.Drawing.Color.Crimson;
-            this.tvProjectList.FocusNodeFontColor = System.Drawing.Color.White;
-            this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
-            this.tvProjectList.Location = new System.Drawing.Point(0, 0);
-            this.tvProjectList.Margin = new System.Windows.Forms.Padding(4);
-            this.tvProjectList.Name = "tvProjectList";
-            this.tvProjectList.NoFocusNodeBackColor = System.Drawing.Color.White;
-            this.tvProjectList.NoFocusNodeFontColor = System.Drawing.Color.Black;
-            this.tvProjectList.Size = new System.Drawing.Size(269, 580);
-            this.tvProjectList.TabIndex = 1;
             // 
             // dgvDetail
             // 
@@ -176,6 +145,37 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tvProjectList);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.plContent);
+            this.splitContainer1.Size = new System.Drawing.Size(1012, 580);
+            this.splitContainer1.SplitterDistance = 269;
+            this.splitContainer1.TabIndex = 3;
+            // 
+            // tvProjectList
+            // 
+            this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvProjectList.FocusNodeBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tvProjectList.FocusNodeFontColor = System.Drawing.Color.White;
+            this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
+            this.tvProjectList.Location = new System.Drawing.Point(0, 0);
+            this.tvProjectList.Margin = new System.Windows.Forms.Padding(4);
+            this.tvProjectList.Name = "tvProjectList";
+            this.tvProjectList.NoFocusNodeBackColor = System.Drawing.Color.White;
+            this.tvProjectList.NoFocusNodeFontColor = System.Drawing.Color.Black;
+            this.tvProjectList.Size = new System.Drawing.Size(269, 580);
+            this.tvProjectList.TabIndex = 1;
+            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -184,11 +184,11 @@
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1012, 580);
             this.plContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
