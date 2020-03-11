@@ -53,10 +53,13 @@ namespace PublicManager.Modules.Lines.SubjectMoneys
 
                     //节点
                     List<MoneySends> subList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + catalog.CatalogID + "' and ProjectID = '" + catalog.CatalogID + "')").select("*").getList<MoneySends>(new MoneySends());
+                    int indexxxx = 0;
                     foreach (MoneySends mss in subList)
                     {
+                        indexxxx++;
+
                         TreeNode nodeSub = new TreeNode();
-                        nodeSub.Text = mss.SendRule;
+                        nodeSub.Text = "节点" + indexxxx + "(" + mss.SendRule + ")";
                         nodeSub.Tag = mss;
                         subjectNode.Nodes.Add(nodeSub);
                     }
