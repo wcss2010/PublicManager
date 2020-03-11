@@ -26,41 +26,74 @@ namespace PublicManager.Modules.Lines.SubjectMoneys
             this.Dock = DockStyle.Fill;
             this.DisplayControl.Controls.Add(this);
 
+            tvProjectList.ContentTreeView.AfterSelect += tvProjectList_AfterSelect;
+
             this.loadData();
         }
 
         private void loadData()
         {
-            
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            dgvDetail.Rows.Clear();
-            List<Project> projList = ConnectionManager.Context.table("Project").select("*").getList<Project>(new Project());
-            foreach (Project proj in projList)
+            tvProjectList.ContentTreeView.Nodes.Clear();
+            List<Catalog> catalogList = ConnectionManager.Context.table("Catalog").where("CatalogType='合同书'").select("*").getList<Catalog>(new Catalog());
+            foreach (Catalog catalog in catalogList)
             {
-                List<MoneySends> subList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "')" + (string.IsNullOrEmpty(txtKey.Text) ? string.Empty : " and (SendRule like '%" + txtKey.Text + "%' or MemoText like '%" + txtKey.Text + "%')")).select("*").getList<MoneySends>(new MoneySends());
-                foreach (MoneySends mss in subList)
-                {
-                    List<object> cells = new List<object>();
-                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
-                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
-                    cells.Add(mss.SendRule);
-                    cells.Add(mss.WillTime.ToString("yyyy年MM月dd日"));
-                    cells.Add(mss.TotalMoney);
-                    cells.Add(mss.MemoText);
+                TreeNode parentNode = new TreeNode();
+                parentNode.Text = catalog.CatalogName + "(" + catalog.CatalogVersion + ")";
+                parentNode.Tag = catalog;
+                tvProjectList.ContentTreeView.Nodes.Add(parentNode);
 
-                    dgvDetail.Rows.Add(cells.ToArray());
+                //课题金额
+                List<Subject> subjectList = ConnectionManager.Context.table("Subject").where("CatalogID='" + catalog.CatalogID + "' and ProjectID='" + catalog.CatalogID + "'").select("*").getList<Subject>(new Subject());
+                foreach (Subject sub in subjectList)
+                {
+                    TreeNode subjectNode = new TreeNode();
+                    subjectNode.Text = sub.SubjectName;
+                    subjectNode.Tag = sub;
+                    parentNode.Nodes.Add(subjectNode);
+
+                    //节点
+                    List<MoneySends> subList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + catalog.CatalogID + "' and ProjectID = '" + catalog.CatalogID + "')").select("*").getList<MoneySends>(new MoneySends());
+                    foreach (MoneySends mss in subList)
+                    {
+                        TreeNode nodeSub = new TreeNode();
+                        nodeSub.Text = mss.SendRule;
+                        nodeSub.Tag = mss;
+                        subjectNode.Nodes.Add(nodeSub);
+                    }
                 }
             }
-
-            dgvDetail.checkCellSize();
         }
 
-        private void btnExportToExcel_Click(object sender, EventArgs e)
+        private void tvProjectList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            BaseModuleController.exportToExcel(dgvDetail);
+            //dgvDetail.Rows.Clear();
+            //List<List<object>> objectList = new List<List<object>>();
+
+            //if (e.Node.Tag is Catalog)
+            //{
+            //    //项目年度列表
+            //    Catalog catalogObj = (Catalog)e.Node.Tag;
+
+            //    List<MoneySends> subList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + catalogObj.CatalogID + "' and ProjectID = '" + catalogObj.CatalogID + "')").select("*").getList<MoneySends>(new MoneySends());
+            //    int indexx = 0;
+            //    foreach (MoneySends mss in subList)
+            //    {
+            //        indexx++;
+            //        List<object> cells = new List<object>();
+            //        cells.Add(indexx.ToString());
+            //        cells.Add(mss.SendRule);
+            //        cells.Add(mss.WillTime.ToString("yyyy年MM月dd日"));
+            //        cells.Add(mss.TotalMoney);
+            //        cells.Add(mss.MemoText);
+
+            //        objectList.Add(cells);
+            //    }
+            //}
+
+            //foreach (List<object> lxItem in objectList)
+            //{
+            //    dgvDetail.Rows.Add(lxItem.ToArray());
+            //}
         }
     }
 }
