@@ -112,14 +112,7 @@ namespace PublicManager.Modules
 
     public class TreeViewEx : TreeView
     {
-        private Color focusNodeLineColor = Color.Gray;
-        public Color FocusNodeLineColor
-        {
-            get { return focusNodeLineColor; }
-            set { focusNodeLineColor = value; }
-        }
-
-        private Color focusNodeBackColor = Color.Green;
+        private Color focusNodeBackColor = Color.OrangeRed;
         public Color FocusNodeBackColor
         {
             get { return focusNodeBackColor; }
@@ -131,13 +124,6 @@ namespace PublicManager.Modules
         {
             get { return focusNodeFontColor; }
             set { focusNodeFontColor = value; }
-        }
-
-        private Color nofocusNodeLineColor = Color.Black;
-        public Color NofocusNodeLineColor
-        {
-            get { return nofocusNodeLineColor; }
-            set { nofocusNodeLineColor = value; }
         }
 
         private Color nofocusNodeBackColor = Color.White;
@@ -176,79 +162,33 @@ namespace PublicManager.Modules
 
         protected override void OnDrawNode(DrawTreeNodeEventArgs e)
         {
-            switch (e.State)
+            //读取默认设置
+            TreeNodeStates currentState = e.State;
+            Font currentFont = e.Node.NodeFont ?? e.Node.TreeView.Font;
+            Color currentFontColor = e.Node.ForeColor;
+            Color currentBackColor = e.Node.BackColor;
+            if (currentFontColor == Color.Empty)
             {
-                case TreeNodeStates.Checked:
-                    drawCustomNode(e, FocusNodeBackColor, FocusNodeFontColor);
-                    break;
-                case TreeNodeStates.Default:
-                    drawCustomNode(e, NoFocusNodeBackColor, NoFocusNodeFontColor);
-                    break;
-                case TreeNodeStates.Focused:
-                    drawCustomNode(e, FocusNodeBackColor, FocusNodeFontColor);
-                    break;
-                case TreeNodeStates.Grayed:
-                    drawCustomNode(e, NoFocusNodeBackColor, NoFocusNodeFontColor);
-                    break;
-                case TreeNodeStates.Hot:
-                    drawCustomNode(e, NoFocusNodeBackColor, NoFocusNodeFontColor);
-                    drawRectWithCustomNode(e, FocusNodeLineColor);
-                    break;
-                case TreeNodeStates.Indeterminate:
-                    drawCustomNode(e, NoFocusNodeBackColor, NoFocusNodeFontColor);
-                    break;
-                case TreeNodeStates.Marked:
-                    drawCustomNode(e, NoFocusNodeBackColor, NoFocusNodeFontColor);
-                    drawRectWithCustomNode(e, FocusNodeLineColor);
-                    break;
-                case TreeNodeStates.Selected:
-                    drawCustomNode(e, SelectedNodeBackColor, SelectedNodeFontColor);
-                    break;
-                case TreeNodeStates.ShowKeyboardCues:
-                    drawCustomNode(e, NoFocusNodeBackColor, NoFocusNodeFontColor);
-                    drawRectWithCustomNode(e, FocusNodeLineColor);
-                    break;
+                currentFontColor = NoFocusNodeFontColor;
             }
-        }
-
-        /// <summary>
-        /// 画选择框
-        /// </summary>
-        /// <param name="e"></param>
-        /// <param name="color"></param>
-        public void drawRectWithCustomNode(DrawTreeNodeEventArgs e, Color color)
-        {
-            //线的颜色
-            Pen focusPen = new Pen(color);
-            focusPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-
-            //画线框
-            Rectangle focusBounds = e.Node.Bounds;
-            focusBounds.Size = new Size(focusBounds.Width - 1,
-            focusBounds.Height - 1);
-            e.Graphics.DrawRectangle(focusPen, focusBounds);
-        }
-
-        /// <summary>
-        /// 画树节点
-        /// </summary>
-        /// <param name="e"></param>
-        /// <param name="backColor"></param>
-        /// <param name="fontColor"></param>
-        public void drawCustomNode(DrawTreeNodeEventArgs e, Color backColor, Color fontColor)
-        {
-            //画背景色
-            e.Graphics.FillRectangle(new SolidBrush(backColor), e.Node.Bounds);
-
-            //确定字体
-            Font nodeFont = e.Node.NodeFont;
-            if (nodeFont == null)
+            if (currentBackColor == Color.Empty)
             {
-                nodeFont = Font;
+                currentBackColor = NoFocusNodeBackColor;
             }
 
-            //画文字
-            e.Graphics.DrawString(e.Node.Text, nodeFont, new SolidBrush(fontColor), Rectangle.Inflate(e.Bounds, 2, 0));
+            if (e.Node == e.Node.TreeView.SelectedNode)
+            {
+                //选中状态
+                e.Graphics.FillRectangle(new SolidBrush(SelectedNodeBackColor), e.Bounds);
+                ControlPaint.DrawFocusRectangle(e.Graphics, e.Bounds, currentFontColor, SelectedNodeBackColor);
+                TextRenderer.DrawText(e.Graphics, e.Node.Text, currentFont, e.Bounds, SelectedNodeFontColor, Color.Red, TextFormatFlags.GlyphOverhangPadding);
+            }
+            else
+            {
+                //非选中状态
+                e.Graphics.FillRectangle(new SolidBrush(currentBackColor), e.Bounds);
+                TextRenderer.DrawText(e.Graphics, e.Node.Text, currentFont, e.Bounds, currentFontColor, TextFormatFlags.GlyphOverhangPadding);
+            }
         }
     }
 }
