@@ -123,6 +123,7 @@ namespace PublicManager.Modules.Moneys.SubjectMoney
             {
                 dgvDetail.Rows.Add(lxItem.ToArray());
             }
+            dgvDetail.checkCellSize();
         }
     }
 }

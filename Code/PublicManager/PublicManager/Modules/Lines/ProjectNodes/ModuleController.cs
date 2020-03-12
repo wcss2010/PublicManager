@@ -84,6 +84,7 @@ namespace PublicManager.Modules.Lines.ProjectNodes
             {
                 dgvDetail.Rows.Add(lxItem.ToArray());
             }
+            dgvDetail.checkCellSize();
         }
     }
 }

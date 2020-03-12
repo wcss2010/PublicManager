@@ -108,6 +108,7 @@ namespace PublicManager.Modules.Moneys.UnitMoney
             {
                 dgvDetail.Rows.Add(lxItem.ToArray());
             }
+            dgvDetail.checkCellSize();
         }
     }
 }
