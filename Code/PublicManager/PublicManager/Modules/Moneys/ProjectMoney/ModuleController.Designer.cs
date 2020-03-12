@@ -40,14 +40,14 @@
             // tvProjectList
             // 
             this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvProjectList.FocusNodeBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.tvProjectList.FocusNodeFontColor = System.Drawing.Color.White;
+            this.tvProjectList.ContentTreeView.FocusNodeBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tvProjectList.ContentTreeView.FocusNodeFontColor = System.Drawing.Color.White;
             this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
             this.tvProjectList.Location = new System.Drawing.Point(0, 0);
             this.tvProjectList.Margin = new System.Windows.Forms.Padding(4);
             this.tvProjectList.Name = "tvProjectList";
-            this.tvProjectList.NoFocusNodeBackColor = System.Drawing.Color.White;
-            this.tvProjectList.NoFocusNodeFontColor = System.Drawing.Color.Black;
+            this.tvProjectList.ContentTreeView.NoFocusNodeBackColor = System.Drawing.Color.White;
+            this.tvProjectList.ContentTreeView.NoFocusNodeFontColor = System.Drawing.Color.Black;
             this.tvProjectList.Size = new System.Drawing.Size(286, 559);
             this.tvProjectList.TabIndex = 1;
             // 
