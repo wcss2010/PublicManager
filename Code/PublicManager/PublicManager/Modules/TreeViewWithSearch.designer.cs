@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tvDetail = new System.Windows.Forms.TreeView();
+            this.tvDetail = new TreeViewEx();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtNodeKeys = new System.Windows.Forms.TextBox();
             this.lblHint = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView tvDetail;
+        private TreeViewEx tvDetail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtNodeKeys;
         private System.Windows.Forms.Label lblHint;
