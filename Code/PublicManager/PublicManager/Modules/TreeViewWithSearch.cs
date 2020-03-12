@@ -181,7 +181,7 @@ namespace PublicManager.Modules
                 //选中状态
                 e.Graphics.FillRectangle(new SolidBrush(SelectedNodeBackColor), e.Bounds);
                 ControlPaint.DrawFocusRectangle(e.Graphics, e.Bounds, currentFontColor, SelectedNodeBackColor);
-                TextRenderer.DrawText(e.Graphics, e.Node.Text, currentFont, e.Bounds, SelectedNodeFontColor, Color.Red, TextFormatFlags.GlyphOverhangPadding);
+                TextRenderer.DrawText(e.Graphics, e.Node.Text, currentFont, e.Bounds, SelectedNodeFontColor, SelectedNodeBackColor, TextFormatFlags.GlyphOverhangPadding);
             }
             else
             {
