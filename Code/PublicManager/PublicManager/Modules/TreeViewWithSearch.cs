@@ -33,8 +33,8 @@ namespace PublicManager.Modules
                     for (int i = 0; i < listSearchTreeNodes.Count; i++)
                     {
                         TreeNode trNode = listSearchTreeNodes[i];
-                        trNode.BackColor = NoFocusNodeBackColor;
-                        trNode.ForeColor = NoFocusNodeFontColor;
+                        trNode.BackColor = ContentTreeView.NoFocusNodeBackColor;
+                        trNode.ForeColor = ContentTreeView.NoFocusNodeFontColor;
                     }
                     ContentTreeView.SelectedNode = null;
                 }
@@ -46,8 +46,8 @@ namespace PublicManager.Modules
                 for (int i = 0; i < listSearchTreeNodes.Count; i++)
                 {
                     TreeNode trNode = listSearchTreeNodes[i];
-                    trNode.BackColor = NoFocusNodeBackColor;
-                    trNode.ForeColor = NoFocusNodeFontColor;
+                    trNode.BackColor = ContentTreeView.NoFocusNodeBackColor;
+                    trNode.ForeColor = ContentTreeView.NoFocusNodeFontColor;
                 }
                 ContentTreeView.SelectedNode = null;
             }
@@ -66,8 +66,8 @@ namespace PublicManager.Modules
                 {
                     ContentTreeView.SelectedNode = trNode.Parent;
                 }
-                trNode.BackColor = FocusNodeBackColor;
-                trNode.ForeColor = FocusNodeFontColor;
+                trNode.BackColor = ContentTreeView.FocusNodeBackColor;
+                trNode.ForeColor = ContentTreeView.FocusNodeFontColor;
             }
         }
 
@@ -91,8 +91,8 @@ namespace PublicManager.Modules
                 listSearchTreeNodes.Add(node);
             }
 
-            node.BackColor = NoFocusNodeBackColor;
-            node.ForeColor = NoFocusNodeFontColor;
+            node.BackColor = ContentTreeView.NoFocusNodeBackColor;
+            node.ForeColor = ContentTreeView.NoFocusNodeFontColor;
         }
 
         /// <summary>
