@@ -149,7 +149,7 @@
             // tvProjectList
             // 
             this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvProjectList.ContentTreeView.FocusNodeBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tvProjectList.ContentTreeView.FocusNodeBackColor = System.Drawing.Color.OrangeRed;
             this.tvProjectList.ContentTreeView.FocusNodeFontColor = System.Drawing.Color.White;
             this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
             this.tvProjectList.Location = new System.Drawing.Point(0, 0);
