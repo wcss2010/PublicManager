@@ -155,6 +155,11 @@
     <Compile Include="BuilderGridLocalizer.cs" />
     <Compile Include="DB\ConnectionManager.cs" />
     <Compile Include="DB\Entitys\Catalog.cs" />
+    <Compile Include="DB\Entitys\Contact_Table1.cs" />
+    <Compile Include="DB\Entitys\Contact_Table2.cs" />
+    <Compile Include="DB\Entitys\Contact_Table3.cs" />
+    <Compile Include="DB\Entitys\Contact_Table4.cs" />
+    <Compile Include="DB\Entitys\Contact_Table5.cs" />
     <Compile Include="DB\Entitys\Dicts.cs" />
     <Compile Include="DB\Entitys\IEntity.cs" />
     <Compile Include="DB\Entitys\MoneySends.cs" />
