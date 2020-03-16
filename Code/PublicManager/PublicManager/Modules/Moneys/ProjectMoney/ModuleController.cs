@@ -87,6 +87,7 @@ namespace PublicManager.Modules.Moneys.ProjectMoney
             {
                 tb.ReadOnly = true;
             }
+            mtc.Dock = DockStyle.Fill;
             plContent.Controls.Add(mtc);
             mtc.loadMoneys(moneyList);
         }

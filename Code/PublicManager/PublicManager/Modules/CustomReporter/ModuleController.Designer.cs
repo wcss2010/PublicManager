@@ -201,7 +201,7 @@
             this.dgvDetail.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5F);
             this.dgvDetail.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowTemplate.Height = 40;
-            this.dgvDetail.Size = new System.Drawing.Size(1017, 186);
+            this.dgvDetail.Size = new System.Drawing.Size(1017, 196);
             this.dgvDetail.TabIndex = 4;
             // 
             // Column13
@@ -239,9 +239,9 @@
             this.groupBox1.Controls.Add(this.splitContainer1);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 145);
+            this.groupBox1.Location = new System.Drawing.Point(0, 123);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1023, 418);
+            this.groupBox1.Size = new System.Drawing.Size(1023, 440);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -259,8 +259,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1017, 374);
-            this.splitContainer1.SplitterDistance = 186;
+            this.splitContainer1.Size = new System.Drawing.Size(1017, 396);
+            this.splitContainer1.SplitterDistance = 196;
             this.splitContainer1.TabIndex = 5;
             // 
             // flowLayoutPanel1
@@ -271,7 +271,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1017, 184);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1017, 196);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // groupBox2
@@ -602,7 +602,16 @@
             this.rcTopBar.Name = "rcTopBar";
             this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpMaster});
-            this.rcTopBar.Size = new System.Drawing.Size(1023, 145);
+            this.rcTopBar.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.rcTopBar.ShowCategoryInCaption = false;
+            this.rcTopBar.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
+            this.rcTopBar.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.False;
+            this.rcTopBar.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
+            this.rcTopBar.ShowQatLocationSelector = false;
+            this.rcTopBar.ShowToolbarCustomizeItem = false;
+            this.rcTopBar.Size = new System.Drawing.Size(1023, 123);
+            this.rcTopBar.Toolbar.ShowCustomizeItem = false;
+            this.rcTopBar.Visible = false;
             // 
             // btnSetSourceDir
             // 
@@ -638,6 +647,7 @@
             this.btnExportToExcel.Id = 5;
             this.btnExportToExcel.LargeGlyph = global::PublicManager.Properties.Resources.printtoexcel;
             this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExportToExcel_ItemClick);
             // 
             // rpMaster
             // 
