@@ -165,6 +165,38 @@
             this.lblTable0_2 = new System.Windows.Forms.Label();
             this.lblTable0_1 = new System.Windows.Forms.Label();
             this.lblTable0_0 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
+            this.label108 = new System.Windows.Forms.Label();
+            this.label109 = new System.Windows.Forms.Label();
+            this.label114 = new System.Windows.Forms.Label();
+            this.label115 = new System.Windows.Forms.Label();
+            this.label116 = new System.Windows.Forms.Label();
+            this.label117 = new System.Windows.Forms.Label();
+            this.label118 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
+            this.label121 = new System.Windows.Forms.Label();
+            this.label122 = new System.Windows.Forms.Label();
+            this.label123 = new System.Windows.Forms.Label();
+            this.label124 = new System.Windows.Forms.Label();
+            this.label125 = new System.Windows.Forms.Label();
+            this.label126 = new System.Windows.Forms.Label();
+            this.label127 = new System.Windows.Forms.Label();
+            this.label128 = new System.Windows.Forms.Label();
+            this.label129 = new System.Windows.Forms.Label();
+            this.label130 = new System.Windows.Forms.Label();
             this.hSkinTableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -189,15 +221,17 @@
             // hSkinTableLayoutPanel1
             // 
             this.hSkinTableLayoutPanel1.BorderColor = System.Drawing.Color.Black;
-            this.hSkinTableLayoutPanel1.ColumnCount = 8;
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.hSkinTableLayoutPanel1.ColumnCount = 10;
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.hSkinTableLayoutPanel1.Controls.Add(this.label23, 2, 3);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label3, 2, 1);
             this.hSkinTableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
@@ -224,23 +258,22 @@
             this.hSkinTableLayoutPanel1.Controls.Add(this.label24, 3, 3);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label25, 4, 3);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label26, 5, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label27, 6, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label28, 7, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable0_5, 7, 4);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label30, 7, 5);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label31, 7, 6);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label32, 7, 7);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label33, 7, 8);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label34, 7, 9);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label35, 7, 10);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label36, 7, 11);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label37, 7, 12);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label38, 7, 13);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label39, 7, 14);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label40, 7, 15);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label41, 7, 16);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label42, 7, 17);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label120, 7, 18);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label28, 9, 3);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable0_5, 9, 4);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label30, 9, 5);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label31, 9, 6);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label32, 9, 7);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label33, 9, 8);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label34, 9, 9);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label35, 9, 10);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label36, 9, 11);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label37, 9, 12);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label38, 9, 13);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label39, 9, 14);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label40, 9, 15);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label41, 9, 16);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label42, 9, 17);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label120, 9, 18);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label44, 6, 18);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label45, 5, 18);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label46, 4, 18);
@@ -316,6 +349,39 @@
             this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable0_2, 4, 4);
             this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable0_1, 3, 4);
             this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable0_0, 2, 4);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label27, 8, 3);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label29, 6, 3);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label43, 7, 3);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label48, 7, 4);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label49, 8, 4);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label58, 8, 5);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label59, 7, 5);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label68, 7, 6);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label69, 8, 6);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label78, 7, 7);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label79, 8, 7);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label88, 7, 8);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label89, 8, 8);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label98, 7, 9);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label99, 8, 9);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label108, 7, 10);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label109, 8, 10);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label114, 7, 11);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label115, 8, 11);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label116, 7, 12);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label117, 8, 12);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label118, 7, 13);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label119, 8, 13);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label121, 7, 14);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label122, 8, 14);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label123, 7, 15);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label124, 8, 15);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label125, 7, 16);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label126, 8, 16);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label127, 7, 17);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label128, 8, 17);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label129, 7, 18);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label130, 8, 18);
             this.hSkinTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hSkinTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.hSkinTableLayoutPanel1.Name = "hSkinTableLayoutPanel1";
@@ -339,17 +405,17 @@
             this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
             this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
             this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.Size = new System.Drawing.Size(840, 641);
+            this.hSkinTableLayoutPanel1.Size = new System.Drawing.Size(961, 641);
             this.hSkinTableLayoutPanel1.TabIndex = 0;
             // 
             // label23
             // 
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label23.Font = new System.Drawing.Font("宋体", 10F);
-            this.label23.Location = new System.Drawing.Point(211, 111);
+            this.label23.Location = new System.Drawing.Point(193, 111);
             this.label23.Margin = new System.Windows.Forms.Padding(1);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(103, 46);
+            this.label23.Size = new System.Drawing.Size(94, 46);
             this.label23.TabIndex = 2;
             this.label23.Text = "项目合同总价款";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -358,23 +424,23 @@
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("宋体", 10F);
-            this.label3.Location = new System.Drawing.Point(211, 32);
+            this.label3.Location = new System.Drawing.Point(193, 32);
             this.label3.Margin = new System.Windows.Forms.Padding(1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 46);
+            this.label3.Size = new System.Drawing.Size(94, 46);
             this.label3.TabIndex = 1;
             this.label3.Text = "累计预算经费";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel1, 8);
+            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel1, 10);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Margin = new System.Windows.Forms.Padding(1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(838, 29);
+            this.panel1.Size = new System.Drawing.Size(959, 29);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -383,20 +449,20 @@
             this.label2.Font = new System.Drawing.Font("宋体", 12F);
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(838, 29);
+            this.label2.Size = new System.Drawing.Size(959, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "项目经费总体收支情况(节点X)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel3, 8);
+            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel3, 10);
             this.panel3.Controls.Add(this.label22);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(1, 80);
             this.panel3.Margin = new System.Windows.Forms.Padding(1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(838, 29);
+            this.panel3.Size = new System.Drawing.Size(959, 29);
             this.panel3.TabIndex = 0;
             // 
             // label22
@@ -406,7 +472,7 @@
             this.label22.Location = new System.Drawing.Point(0, 0);
             this.label22.Margin = new System.Windows.Forms.Padding(1);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(838, 29);
+            this.label22.Size = new System.Drawing.Size(959, 29);
             this.label22.TabIndex = 2;
             this.label22.Text = "项目经费预算及支出情况";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -419,7 +485,7 @@
             this.panel4.Location = new System.Drawing.Point(1, 111);
             this.panel4.Margin = new System.Windows.Forms.Padding(1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(208, 46);
+            this.panel4.Size = new System.Drawing.Size(190, 46);
             this.panel4.TabIndex = 0;
             // 
             // label6
@@ -428,7 +494,7 @@
             this.label6.Font = new System.Drawing.Font("宋体", 10F);
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 46);
+            this.label6.Size = new System.Drawing.Size(190, 46);
             this.label6.TabIndex = 2;
             this.label6.Text = "科目名称";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -441,7 +507,7 @@
             this.panel5.Location = new System.Drawing.Point(1, 159);
             this.panel5.Margin = new System.Windows.Forms.Padding(1);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(208, 29);
+            this.panel5.Size = new System.Drawing.Size(190, 29);
             this.panel5.TabIndex = 0;
             // 
             // label7
@@ -450,7 +516,7 @@
             this.label7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(208, 29);
+            this.label7.Size = new System.Drawing.Size(190, 29);
             this.label7.TabIndex = 2;
             this.label7.Text = "(一) 直接费用";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -463,7 +529,7 @@
             this.panel6.Location = new System.Drawing.Point(1, 190);
             this.panel6.Margin = new System.Windows.Forms.Padding(1);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(208, 29);
+            this.panel6.Size = new System.Drawing.Size(190, 29);
             this.panel6.TabIndex = 0;
             // 
             // label8
@@ -472,7 +538,7 @@
             this.label8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(208, 29);
+            this.label8.Size = new System.Drawing.Size(190, 29);
             this.label8.TabIndex = 2;
             this.label8.Text = "  1.设备费";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -485,7 +551,7 @@
             this.panel7.Location = new System.Drawing.Point(1, 221);
             this.panel7.Margin = new System.Windows.Forms.Padding(1);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(208, 29);
+            this.panel7.Size = new System.Drawing.Size(190, 29);
             this.panel7.TabIndex = 0;
             // 
             // label9
@@ -494,7 +560,7 @@
             this.label9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(208, 29);
+            this.label9.Size = new System.Drawing.Size(190, 29);
             this.label9.TabIndex = 2;
             this.label9.Text = "    (1)设备购置费";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -507,7 +573,7 @@
             this.panel8.Location = new System.Drawing.Point(1, 252);
             this.panel8.Margin = new System.Windows.Forms.Padding(1);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(208, 29);
+            this.panel8.Size = new System.Drawing.Size(190, 29);
             this.panel8.TabIndex = 0;
             // 
             // label10
@@ -516,7 +582,7 @@
             this.label10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(208, 29);
+            this.label10.Size = new System.Drawing.Size(190, 29);
             this.label10.TabIndex = 2;
             this.label10.Text = "    (2)设备试制费";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -529,7 +595,7 @@
             this.panel9.Location = new System.Drawing.Point(1, 283);
             this.panel9.Margin = new System.Windows.Forms.Padding(1);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(208, 29);
+            this.panel9.Size = new System.Drawing.Size(190, 29);
             this.panel9.TabIndex = 0;
             // 
             // label11
@@ -538,7 +604,7 @@
             this.label11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label11.Location = new System.Drawing.Point(0, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(208, 29);
+            this.label11.Size = new System.Drawing.Size(190, 29);
             this.label11.TabIndex = 2;
             this.label11.Text = "    (3)其他";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -551,7 +617,7 @@
             this.panel10.Location = new System.Drawing.Point(1, 314);
             this.panel10.Margin = new System.Windows.Forms.Padding(1);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(208, 29);
+            this.panel10.Size = new System.Drawing.Size(190, 29);
             this.panel10.TabIndex = 0;
             // 
             // label12
@@ -560,7 +626,7 @@
             this.label12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label12.Location = new System.Drawing.Point(0, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(208, 29);
+            this.label12.Size = new System.Drawing.Size(190, 29);
             this.label12.TabIndex = 2;
             this.label12.Text = "  2.材料费";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -573,7 +639,7 @@
             this.panel11.Location = new System.Drawing.Point(1, 345);
             this.panel11.Margin = new System.Windows.Forms.Padding(1);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(208, 29);
+            this.panel11.Size = new System.Drawing.Size(190, 29);
             this.panel11.TabIndex = 0;
             // 
             // label13
@@ -582,7 +648,7 @@
             this.label13.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label13.Location = new System.Drawing.Point(0, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(208, 29);
+            this.label13.Size = new System.Drawing.Size(190, 29);
             this.label13.TabIndex = 2;
             this.label13.Text = "  3.外部协作费";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -595,7 +661,7 @@
             this.panel12.Location = new System.Drawing.Point(1, 376);
             this.panel12.Margin = new System.Windows.Forms.Padding(1);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(208, 29);
+            this.panel12.Size = new System.Drawing.Size(190, 29);
             this.panel12.TabIndex = 0;
             // 
             // label14
@@ -604,7 +670,7 @@
             this.label14.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label14.Location = new System.Drawing.Point(0, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(208, 29);
+            this.label14.Size = new System.Drawing.Size(190, 29);
             this.label14.TabIndex = 2;
             this.label14.Text = "  4.燃料动力费";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -617,7 +683,7 @@
             this.panel13.Location = new System.Drawing.Point(1, 407);
             this.panel13.Margin = new System.Windows.Forms.Padding(1);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(208, 29);
+            this.panel13.Size = new System.Drawing.Size(190, 29);
             this.panel13.TabIndex = 0;
             // 
             // label15
@@ -626,7 +692,7 @@
             this.label15.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label15.Location = new System.Drawing.Point(0, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(208, 29);
+            this.label15.Size = new System.Drawing.Size(190, 29);
             this.label15.TabIndex = 2;
             this.label15.Text = "  5.会议/差旅/国际合作与交流费";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -639,7 +705,7 @@
             this.panel14.Location = new System.Drawing.Point(1, 438);
             this.panel14.Margin = new System.Windows.Forms.Padding(1);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(208, 29);
+            this.panel14.Size = new System.Drawing.Size(190, 29);
             this.panel14.TabIndex = 0;
             // 
             // label16
@@ -648,7 +714,7 @@
             this.label16.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label16.Location = new System.Drawing.Point(0, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(208, 29);
+            this.label16.Size = new System.Drawing.Size(190, 29);
             this.label16.TabIndex = 2;
             this.label16.Text = "  6.出版/文献/信息传播知识产权事务费";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -661,7 +727,7 @@
             this.panel15.Location = new System.Drawing.Point(1, 469);
             this.panel15.Margin = new System.Windows.Forms.Padding(1);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(208, 29);
+            this.panel15.Size = new System.Drawing.Size(190, 29);
             this.panel15.TabIndex = 0;
             // 
             // label17
@@ -670,7 +736,7 @@
             this.label17.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label17.Location = new System.Drawing.Point(0, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(208, 29);
+            this.label17.Size = new System.Drawing.Size(190, 29);
             this.label17.TabIndex = 2;
             this.label17.Text = "  7.劳务费";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -683,7 +749,7 @@
             this.panel16.Location = new System.Drawing.Point(1, 500);
             this.panel16.Margin = new System.Windows.Forms.Padding(1);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(208, 29);
+            this.panel16.Size = new System.Drawing.Size(190, 29);
             this.panel16.TabIndex = 0;
             // 
             // label18
@@ -692,7 +758,7 @@
             this.label18.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label18.Location = new System.Drawing.Point(0, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(208, 29);
+            this.label18.Size = new System.Drawing.Size(190, 29);
             this.label18.TabIndex = 2;
             this.label18.Text = "  8.专家咨询费";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -705,7 +771,7 @@
             this.panel17.Location = new System.Drawing.Point(1, 531);
             this.panel17.Margin = new System.Windows.Forms.Padding(1);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(208, 29);
+            this.panel17.Size = new System.Drawing.Size(190, 29);
             this.panel17.TabIndex = 0;
             // 
             // label19
@@ -714,7 +780,7 @@
             this.label19.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label19.Location = new System.Drawing.Point(0, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(208, 29);
+            this.label19.Size = new System.Drawing.Size(190, 29);
             this.label19.TabIndex = 2;
             this.label19.Text = "  9.其他支出";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -727,7 +793,7 @@
             this.panel18.Location = new System.Drawing.Point(1, 562);
             this.panel18.Margin = new System.Windows.Forms.Padding(1);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(208, 29);
+            this.panel18.Size = new System.Drawing.Size(190, 29);
             this.panel18.TabIndex = 0;
             // 
             // label20
@@ -736,7 +802,7 @@
             this.label20.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label20.Location = new System.Drawing.Point(0, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(208, 29);
+            this.label20.Size = new System.Drawing.Size(190, 29);
             this.label20.TabIndex = 2;
             this.label20.Text = "(二) 间接费用 ";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -749,7 +815,7 @@
             this.panel19.Location = new System.Drawing.Point(1, 593);
             this.panel19.Margin = new System.Windows.Forms.Padding(1);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(208, 47);
+            this.panel19.Size = new System.Drawing.Size(190, 47);
             this.panel19.TabIndex = 0;
             // 
             // label21
@@ -758,7 +824,7 @@
             this.label21.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label21.Location = new System.Drawing.Point(0, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(208, 47);
+            this.label21.Size = new System.Drawing.Size(190, 47);
             this.label21.TabIndex = 2;
             this.label21.Text = "  10.管理费/科研绩效支出";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -770,7 +836,7 @@
             this.label1.Location = new System.Drawing.Point(1, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 46);
+            this.label1.Size = new System.Drawing.Size(94, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "合同价款";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -779,10 +845,10 @@
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("宋体", 10F);
-            this.label4.Location = new System.Drawing.Point(421, 32);
+            this.label4.Location = new System.Drawing.Point(385, 32);
             this.label4.Margin = new System.Windows.Forms.Padding(1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 46);
+            this.label4.Size = new System.Drawing.Size(94, 46);
             this.label4.TabIndex = 1;
             this.label4.Text = "累计到位经费";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -791,10 +857,10 @@
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("宋体", 10F);
-            this.label5.Location = new System.Drawing.Point(631, 32);
+            this.label5.Location = new System.Drawing.Point(577, 32);
             this.label5.Margin = new System.Windows.Forms.Padding(1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 46);
+            this.label5.Size = new System.Drawing.Size(94, 46);
             this.label5.TabIndex = 1;
             this.label5.Text = "累计支出经费";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -803,10 +869,10 @@
             // 
             this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label24.Font = new System.Drawing.Font("宋体", 10F);
-            this.label24.Location = new System.Drawing.Point(316, 111);
+            this.label24.Location = new System.Drawing.Point(289, 111);
             this.label24.Margin = new System.Windows.Forms.Padding(1);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(103, 46);
+            this.label24.Size = new System.Drawing.Size(94, 46);
             this.label24.TabIndex = 2;
             this.label24.Text = "项目阶段1支出经费";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -815,10 +881,10 @@
             // 
             this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label25.Font = new System.Drawing.Font("宋体", 10F);
-            this.label25.Location = new System.Drawing.Point(421, 111);
+            this.label25.Location = new System.Drawing.Point(385, 111);
             this.label25.Margin = new System.Windows.Forms.Padding(1);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(103, 46);
+            this.label25.Size = new System.Drawing.Size(94, 46);
             this.label25.TabIndex = 2;
             this.label25.Text = "项目阶段2支出经费";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -827,22 +893,22 @@
             // 
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label26.Font = new System.Drawing.Font("宋体", 10F);
-            this.label26.Location = new System.Drawing.Point(526, 111);
+            this.label26.Location = new System.Drawing.Point(481, 111);
             this.label26.Margin = new System.Windows.Forms.Padding(1);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(103, 46);
+            this.label26.Size = new System.Drawing.Size(94, 46);
             this.label26.TabIndex = 2;
-            this.label26.Text = "项目阶段x支出经费";
+            this.label26.Text = "项目阶段3支出经费";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label27
             // 
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Font = new System.Drawing.Font("宋体", 10F);
-            this.label27.Location = new System.Drawing.Point(631, 111);
+            this.label27.Location = new System.Drawing.Point(769, 111);
             this.label27.Margin = new System.Windows.Forms.Padding(1);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(103, 46);
+            this.label27.Size = new System.Drawing.Size(94, 46);
             this.label27.TabIndex = 2;
             this.label27.Text = "项目累计支出经费";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -851,10 +917,10 @@
             // 
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label28.Font = new System.Drawing.Font("宋体", 10F);
-            this.label28.Location = new System.Drawing.Point(736, 111);
+            this.label28.Location = new System.Drawing.Point(865, 111);
             this.label28.Margin = new System.Windows.Forms.Padding(1);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(103, 46);
+            this.label28.Size = new System.Drawing.Size(95, 46);
             this.label28.TabIndex = 2;
             this.label28.Text = "备注";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -863,10 +929,10 @@
             // 
             this.lblTable0_5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable0_5.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable0_5.Location = new System.Drawing.Point(736, 159);
+            this.lblTable0_5.Location = new System.Drawing.Point(865, 159);
             this.lblTable0_5.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable0_5.Name = "lblTable0_5";
-            this.lblTable0_5.Size = new System.Drawing.Size(103, 29);
+            this.lblTable0_5.Size = new System.Drawing.Size(95, 29);
             this.lblTable0_5.TabIndex = 2;
             this.lblTable0_5.Text = "空";
             this.lblTable0_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -875,10 +941,10 @@
             // 
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label30.Font = new System.Drawing.Font("宋体", 12F);
-            this.label30.Location = new System.Drawing.Point(736, 190);
+            this.label30.Location = new System.Drawing.Point(865, 190);
             this.label30.Margin = new System.Windows.Forms.Padding(1);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(103, 29);
+            this.label30.Size = new System.Drawing.Size(95, 29);
             this.label30.TabIndex = 2;
             this.label30.Text = "空";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -887,10 +953,10 @@
             // 
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("宋体", 12F);
-            this.label31.Location = new System.Drawing.Point(736, 221);
+            this.label31.Location = new System.Drawing.Point(865, 221);
             this.label31.Margin = new System.Windows.Forms.Padding(1);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(103, 29);
+            this.label31.Size = new System.Drawing.Size(95, 29);
             this.label31.TabIndex = 2;
             this.label31.Text = "空";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -899,10 +965,10 @@
             // 
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label32.Font = new System.Drawing.Font("宋体", 12F);
-            this.label32.Location = new System.Drawing.Point(736, 252);
+            this.label32.Location = new System.Drawing.Point(865, 252);
             this.label32.Margin = new System.Windows.Forms.Padding(1);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(103, 29);
+            this.label32.Size = new System.Drawing.Size(95, 29);
             this.label32.TabIndex = 2;
             this.label32.Text = "空";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -911,10 +977,10 @@
             // 
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label33.Font = new System.Drawing.Font("宋体", 12F);
-            this.label33.Location = new System.Drawing.Point(736, 283);
+            this.label33.Location = new System.Drawing.Point(865, 283);
             this.label33.Margin = new System.Windows.Forms.Padding(1);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(103, 29);
+            this.label33.Size = new System.Drawing.Size(95, 29);
             this.label33.TabIndex = 2;
             this.label33.Text = "空";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -923,10 +989,10 @@
             // 
             this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label34.Font = new System.Drawing.Font("宋体", 12F);
-            this.label34.Location = new System.Drawing.Point(736, 314);
+            this.label34.Location = new System.Drawing.Point(865, 314);
             this.label34.Margin = new System.Windows.Forms.Padding(1);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(103, 29);
+            this.label34.Size = new System.Drawing.Size(95, 29);
             this.label34.TabIndex = 2;
             this.label34.Text = "空";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -935,10 +1001,10 @@
             // 
             this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label35.Font = new System.Drawing.Font("宋体", 12F);
-            this.label35.Location = new System.Drawing.Point(736, 345);
+            this.label35.Location = new System.Drawing.Point(865, 345);
             this.label35.Margin = new System.Windows.Forms.Padding(1);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(103, 29);
+            this.label35.Size = new System.Drawing.Size(95, 29);
             this.label35.TabIndex = 2;
             this.label35.Text = "空";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -947,10 +1013,10 @@
             // 
             this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label36.Font = new System.Drawing.Font("宋体", 12F);
-            this.label36.Location = new System.Drawing.Point(736, 376);
+            this.label36.Location = new System.Drawing.Point(865, 376);
             this.label36.Margin = new System.Windows.Forms.Padding(1);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(103, 29);
+            this.label36.Size = new System.Drawing.Size(95, 29);
             this.label36.TabIndex = 2;
             this.label36.Text = "空";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -959,10 +1025,10 @@
             // 
             this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label37.Font = new System.Drawing.Font("宋体", 12F);
-            this.label37.Location = new System.Drawing.Point(736, 407);
+            this.label37.Location = new System.Drawing.Point(865, 407);
             this.label37.Margin = new System.Windows.Forms.Padding(1);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(103, 29);
+            this.label37.Size = new System.Drawing.Size(95, 29);
             this.label37.TabIndex = 2;
             this.label37.Text = "空";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -971,10 +1037,10 @@
             // 
             this.label38.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label38.Font = new System.Drawing.Font("宋体", 12F);
-            this.label38.Location = new System.Drawing.Point(736, 438);
+            this.label38.Location = new System.Drawing.Point(865, 438);
             this.label38.Margin = new System.Windows.Forms.Padding(1);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(103, 29);
+            this.label38.Size = new System.Drawing.Size(95, 29);
             this.label38.TabIndex = 2;
             this.label38.Text = "空";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -983,10 +1049,10 @@
             // 
             this.label39.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label39.Font = new System.Drawing.Font("宋体", 12F);
-            this.label39.Location = new System.Drawing.Point(736, 469);
+            this.label39.Location = new System.Drawing.Point(865, 469);
             this.label39.Margin = new System.Windows.Forms.Padding(1);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(103, 29);
+            this.label39.Size = new System.Drawing.Size(95, 29);
             this.label39.TabIndex = 2;
             this.label39.Text = "空";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -995,10 +1061,10 @@
             // 
             this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label40.Font = new System.Drawing.Font("宋体", 12F);
-            this.label40.Location = new System.Drawing.Point(736, 500);
+            this.label40.Location = new System.Drawing.Point(865, 500);
             this.label40.Margin = new System.Windows.Forms.Padding(1);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(103, 29);
+            this.label40.Size = new System.Drawing.Size(95, 29);
             this.label40.TabIndex = 2;
             this.label40.Text = "空";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1007,10 +1073,10 @@
             // 
             this.label41.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label41.Font = new System.Drawing.Font("宋体", 12F);
-            this.label41.Location = new System.Drawing.Point(736, 531);
+            this.label41.Location = new System.Drawing.Point(865, 531);
             this.label41.Margin = new System.Windows.Forms.Padding(1);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(103, 29);
+            this.label41.Size = new System.Drawing.Size(95, 29);
             this.label41.TabIndex = 2;
             this.label41.Text = "空";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1019,10 +1085,10 @@
             // 
             this.label42.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label42.Font = new System.Drawing.Font("宋体", 12F);
-            this.label42.Location = new System.Drawing.Point(736, 562);
+            this.label42.Location = new System.Drawing.Point(865, 562);
             this.label42.Margin = new System.Windows.Forms.Padding(1);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(103, 29);
+            this.label42.Size = new System.Drawing.Size(95, 29);
             this.label42.TabIndex = 2;
             this.label42.Text = "空";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1031,10 +1097,10 @@
             // 
             this.label120.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label120.Font = new System.Drawing.Font("宋体", 12F);
-            this.label120.Location = new System.Drawing.Point(736, 593);
+            this.label120.Location = new System.Drawing.Point(865, 593);
             this.label120.Margin = new System.Windows.Forms.Padding(1);
             this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(103, 47);
+            this.label120.Size = new System.Drawing.Size(95, 47);
             this.label120.TabIndex = 2;
             this.label120.Text = "空";
             this.label120.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1043,10 +1109,10 @@
             // 
             this.label44.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label44.Font = new System.Drawing.Font("宋体", 12F);
-            this.label44.Location = new System.Drawing.Point(631, 593);
+            this.label44.Location = new System.Drawing.Point(577, 593);
             this.label44.Margin = new System.Windows.Forms.Padding(1);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(103, 47);
+            this.label44.Size = new System.Drawing.Size(94, 47);
             this.label44.TabIndex = 2;
             this.label44.Text = "空";
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1055,10 +1121,10 @@
             // 
             this.label45.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label45.Font = new System.Drawing.Font("宋体", 12F);
-            this.label45.Location = new System.Drawing.Point(526, 593);
+            this.label45.Location = new System.Drawing.Point(481, 593);
             this.label45.Margin = new System.Windows.Forms.Padding(1);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(103, 47);
+            this.label45.Size = new System.Drawing.Size(94, 47);
             this.label45.TabIndex = 2;
             this.label45.Text = "空";
             this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1067,10 +1133,10 @@
             // 
             this.label46.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label46.Font = new System.Drawing.Font("宋体", 12F);
-            this.label46.Location = new System.Drawing.Point(421, 593);
+            this.label46.Location = new System.Drawing.Point(385, 593);
             this.label46.Margin = new System.Windows.Forms.Padding(1);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(103, 47);
+            this.label46.Size = new System.Drawing.Size(94, 47);
             this.label46.TabIndex = 2;
             this.label46.Text = "空";
             this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1079,10 +1145,10 @@
             // 
             this.label47.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label47.Font = new System.Drawing.Font("宋体", 12F);
-            this.label47.Location = new System.Drawing.Point(316, 593);
+            this.label47.Location = new System.Drawing.Point(289, 593);
             this.label47.Margin = new System.Windows.Forms.Padding(1);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(103, 47);
+            this.label47.Size = new System.Drawing.Size(94, 47);
             this.label47.TabIndex = 2;
             this.label47.Text = "空";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1091,10 +1157,10 @@
             // 
             this.lblTable14_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable14_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable14_0.Location = new System.Drawing.Point(211, 593);
+            this.lblTable14_0.Location = new System.Drawing.Point(193, 593);
             this.lblTable14_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable14_0.Name = "lblTable14_0";
-            this.lblTable14_0.Size = new System.Drawing.Size(103, 47);
+            this.lblTable14_0.Size = new System.Drawing.Size(94, 47);
             this.lblTable14_0.TabIndex = 2;
             this.lblTable14_0.Text = "空";
             this.lblTable14_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1103,10 +1169,10 @@
             // 
             this.lblTable13_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable13_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable13_0.Location = new System.Drawing.Point(211, 562);
+            this.lblTable13_0.Location = new System.Drawing.Point(193, 562);
             this.lblTable13_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable13_0.Name = "lblTable13_0";
-            this.lblTable13_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable13_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable13_0.TabIndex = 2;
             this.lblTable13_0.Text = "空";
             this.lblTable13_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1115,10 +1181,10 @@
             // 
             this.label50.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label50.Font = new System.Drawing.Font("宋体", 12F);
-            this.label50.Location = new System.Drawing.Point(316, 562);
+            this.label50.Location = new System.Drawing.Point(289, 562);
             this.label50.Margin = new System.Windows.Forms.Padding(1);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(103, 29);
+            this.label50.Size = new System.Drawing.Size(94, 29);
             this.label50.TabIndex = 2;
             this.label50.Text = "空";
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1127,10 +1193,10 @@
             // 
             this.label51.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label51.Font = new System.Drawing.Font("宋体", 12F);
-            this.label51.Location = new System.Drawing.Point(421, 562);
+            this.label51.Location = new System.Drawing.Point(385, 562);
             this.label51.Margin = new System.Windows.Forms.Padding(1);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(103, 29);
+            this.label51.Size = new System.Drawing.Size(94, 29);
             this.label51.TabIndex = 2;
             this.label51.Text = "空";
             this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1139,10 +1205,10 @@
             // 
             this.label52.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label52.Font = new System.Drawing.Font("宋体", 12F);
-            this.label52.Location = new System.Drawing.Point(526, 562);
+            this.label52.Location = new System.Drawing.Point(481, 562);
             this.label52.Margin = new System.Windows.Forms.Padding(1);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(103, 29);
+            this.label52.Size = new System.Drawing.Size(94, 29);
             this.label52.TabIndex = 2;
             this.label52.Text = "空";
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1151,10 +1217,10 @@
             // 
             this.label53.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label53.Font = new System.Drawing.Font("宋体", 12F);
-            this.label53.Location = new System.Drawing.Point(631, 562);
+            this.label53.Location = new System.Drawing.Point(577, 562);
             this.label53.Margin = new System.Windows.Forms.Padding(1);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(103, 29);
+            this.label53.Size = new System.Drawing.Size(94, 29);
             this.label53.TabIndex = 2;
             this.label53.Text = "空";
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1163,10 +1229,10 @@
             // 
             this.label54.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label54.Font = new System.Drawing.Font("宋体", 12F);
-            this.label54.Location = new System.Drawing.Point(631, 531);
+            this.label54.Location = new System.Drawing.Point(577, 531);
             this.label54.Margin = new System.Windows.Forms.Padding(1);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(103, 29);
+            this.label54.Size = new System.Drawing.Size(94, 29);
             this.label54.TabIndex = 2;
             this.label54.Text = "空";
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1175,10 +1241,10 @@
             // 
             this.label55.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label55.Font = new System.Drawing.Font("宋体", 12F);
-            this.label55.Location = new System.Drawing.Point(526, 531);
+            this.label55.Location = new System.Drawing.Point(481, 531);
             this.label55.Margin = new System.Windows.Forms.Padding(1);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(103, 29);
+            this.label55.Size = new System.Drawing.Size(94, 29);
             this.label55.TabIndex = 2;
             this.label55.Text = "空";
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1187,10 +1253,10 @@
             // 
             this.label56.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label56.Font = new System.Drawing.Font("宋体", 12F);
-            this.label56.Location = new System.Drawing.Point(421, 531);
+            this.label56.Location = new System.Drawing.Point(385, 531);
             this.label56.Margin = new System.Windows.Forms.Padding(1);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(103, 29);
+            this.label56.Size = new System.Drawing.Size(94, 29);
             this.label56.TabIndex = 2;
             this.label56.Text = "空";
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1199,10 +1265,10 @@
             // 
             this.label57.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label57.Font = new System.Drawing.Font("宋体", 12F);
-            this.label57.Location = new System.Drawing.Point(316, 531);
+            this.label57.Location = new System.Drawing.Point(289, 531);
             this.label57.Margin = new System.Windows.Forms.Padding(1);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(103, 29);
+            this.label57.Size = new System.Drawing.Size(94, 29);
             this.label57.TabIndex = 2;
             this.label57.Text = "空";
             this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1211,10 +1277,10 @@
             // 
             this.lblTable12_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable12_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable12_0.Location = new System.Drawing.Point(211, 531);
+            this.lblTable12_0.Location = new System.Drawing.Point(193, 531);
             this.lblTable12_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable12_0.Name = "lblTable12_0";
-            this.lblTable12_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable12_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable12_0.TabIndex = 2;
             this.lblTable12_0.Text = "空";
             this.lblTable12_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1223,10 +1289,10 @@
             // 
             this.lblTable11_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable11_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable11_0.Location = new System.Drawing.Point(211, 500);
+            this.lblTable11_0.Location = new System.Drawing.Point(193, 500);
             this.lblTable11_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable11_0.Name = "lblTable11_0";
-            this.lblTable11_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable11_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable11_0.TabIndex = 2;
             this.lblTable11_0.Text = "空";
             this.lblTable11_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1235,10 +1301,10 @@
             // 
             this.label60.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label60.Font = new System.Drawing.Font("宋体", 12F);
-            this.label60.Location = new System.Drawing.Point(316, 500);
+            this.label60.Location = new System.Drawing.Point(289, 500);
             this.label60.Margin = new System.Windows.Forms.Padding(1);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(103, 29);
+            this.label60.Size = new System.Drawing.Size(94, 29);
             this.label60.TabIndex = 2;
             this.label60.Text = "空";
             this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1247,10 +1313,10 @@
             // 
             this.label61.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label61.Font = new System.Drawing.Font("宋体", 12F);
-            this.label61.Location = new System.Drawing.Point(421, 500);
+            this.label61.Location = new System.Drawing.Point(385, 500);
             this.label61.Margin = new System.Windows.Forms.Padding(1);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(103, 29);
+            this.label61.Size = new System.Drawing.Size(94, 29);
             this.label61.TabIndex = 2;
             this.label61.Text = "空";
             this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1259,10 +1325,10 @@
             // 
             this.label62.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label62.Font = new System.Drawing.Font("宋体", 12F);
-            this.label62.Location = new System.Drawing.Point(526, 500);
+            this.label62.Location = new System.Drawing.Point(481, 500);
             this.label62.Margin = new System.Windows.Forms.Padding(1);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(103, 29);
+            this.label62.Size = new System.Drawing.Size(94, 29);
             this.label62.TabIndex = 2;
             this.label62.Text = "空";
             this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1271,10 +1337,10 @@
             // 
             this.label63.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label63.Font = new System.Drawing.Font("宋体", 12F);
-            this.label63.Location = new System.Drawing.Point(631, 500);
+            this.label63.Location = new System.Drawing.Point(577, 500);
             this.label63.Margin = new System.Windows.Forms.Padding(1);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(103, 29);
+            this.label63.Size = new System.Drawing.Size(94, 29);
             this.label63.TabIndex = 2;
             this.label63.Text = "空";
             this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1283,10 +1349,10 @@
             // 
             this.label64.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label64.Font = new System.Drawing.Font("宋体", 12F);
-            this.label64.Location = new System.Drawing.Point(631, 469);
+            this.label64.Location = new System.Drawing.Point(577, 469);
             this.label64.Margin = new System.Windows.Forms.Padding(1);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(103, 29);
+            this.label64.Size = new System.Drawing.Size(94, 29);
             this.label64.TabIndex = 2;
             this.label64.Text = "空";
             this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1295,10 +1361,10 @@
             // 
             this.label65.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label65.Font = new System.Drawing.Font("宋体", 12F);
-            this.label65.Location = new System.Drawing.Point(526, 469);
+            this.label65.Location = new System.Drawing.Point(481, 469);
             this.label65.Margin = new System.Windows.Forms.Padding(1);
             this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(103, 29);
+            this.label65.Size = new System.Drawing.Size(94, 29);
             this.label65.TabIndex = 2;
             this.label65.Text = "空";
             this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1307,10 +1373,10 @@
             // 
             this.label66.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label66.Font = new System.Drawing.Font("宋体", 12F);
-            this.label66.Location = new System.Drawing.Point(421, 469);
+            this.label66.Location = new System.Drawing.Point(385, 469);
             this.label66.Margin = new System.Windows.Forms.Padding(1);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(103, 29);
+            this.label66.Size = new System.Drawing.Size(94, 29);
             this.label66.TabIndex = 2;
             this.label66.Text = "空";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1319,10 +1385,10 @@
             // 
             this.label67.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label67.Font = new System.Drawing.Font("宋体", 12F);
-            this.label67.Location = new System.Drawing.Point(316, 469);
+            this.label67.Location = new System.Drawing.Point(289, 469);
             this.label67.Margin = new System.Windows.Forms.Padding(1);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(103, 29);
+            this.label67.Size = new System.Drawing.Size(94, 29);
             this.label67.TabIndex = 2;
             this.label67.Text = "空";
             this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1331,10 +1397,10 @@
             // 
             this.lblTable10_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable10_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable10_0.Location = new System.Drawing.Point(211, 469);
+            this.lblTable10_0.Location = new System.Drawing.Point(193, 469);
             this.lblTable10_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable10_0.Name = "lblTable10_0";
-            this.lblTable10_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable10_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable10_0.TabIndex = 2;
             this.lblTable10_0.Text = "空";
             this.lblTable10_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1343,10 +1409,10 @@
             // 
             this.lblTable9_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable9_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable9_0.Location = new System.Drawing.Point(211, 438);
+            this.lblTable9_0.Location = new System.Drawing.Point(193, 438);
             this.lblTable9_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable9_0.Name = "lblTable9_0";
-            this.lblTable9_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable9_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable9_0.TabIndex = 2;
             this.lblTable9_0.Text = "空";
             this.lblTable9_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1355,10 +1421,10 @@
             // 
             this.label70.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label70.Font = new System.Drawing.Font("宋体", 12F);
-            this.label70.Location = new System.Drawing.Point(316, 438);
+            this.label70.Location = new System.Drawing.Point(289, 438);
             this.label70.Margin = new System.Windows.Forms.Padding(1);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(103, 29);
+            this.label70.Size = new System.Drawing.Size(94, 29);
             this.label70.TabIndex = 2;
             this.label70.Text = "空";
             this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1367,10 +1433,10 @@
             // 
             this.label71.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label71.Font = new System.Drawing.Font("宋体", 12F);
-            this.label71.Location = new System.Drawing.Point(421, 438);
+            this.label71.Location = new System.Drawing.Point(385, 438);
             this.label71.Margin = new System.Windows.Forms.Padding(1);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(103, 29);
+            this.label71.Size = new System.Drawing.Size(94, 29);
             this.label71.TabIndex = 2;
             this.label71.Text = "空";
             this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1379,10 +1445,10 @@
             // 
             this.label72.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label72.Font = new System.Drawing.Font("宋体", 12F);
-            this.label72.Location = new System.Drawing.Point(526, 438);
+            this.label72.Location = new System.Drawing.Point(481, 438);
             this.label72.Margin = new System.Windows.Forms.Padding(1);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(103, 29);
+            this.label72.Size = new System.Drawing.Size(94, 29);
             this.label72.TabIndex = 2;
             this.label72.Text = "空";
             this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1391,10 +1457,10 @@
             // 
             this.label73.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label73.Font = new System.Drawing.Font("宋体", 12F);
-            this.label73.Location = new System.Drawing.Point(631, 438);
+            this.label73.Location = new System.Drawing.Point(577, 438);
             this.label73.Margin = new System.Windows.Forms.Padding(1);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(103, 29);
+            this.label73.Size = new System.Drawing.Size(94, 29);
             this.label73.TabIndex = 2;
             this.label73.Text = "空";
             this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1403,10 +1469,10 @@
             // 
             this.label74.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label74.Font = new System.Drawing.Font("宋体", 12F);
-            this.label74.Location = new System.Drawing.Point(631, 407);
+            this.label74.Location = new System.Drawing.Point(577, 407);
             this.label74.Margin = new System.Windows.Forms.Padding(1);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(103, 29);
+            this.label74.Size = new System.Drawing.Size(94, 29);
             this.label74.TabIndex = 2;
             this.label74.Text = "空";
             this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1415,10 +1481,10 @@
             // 
             this.label75.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label75.Font = new System.Drawing.Font("宋体", 12F);
-            this.label75.Location = new System.Drawing.Point(526, 407);
+            this.label75.Location = new System.Drawing.Point(481, 407);
             this.label75.Margin = new System.Windows.Forms.Padding(1);
             this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(103, 29);
+            this.label75.Size = new System.Drawing.Size(94, 29);
             this.label75.TabIndex = 2;
             this.label75.Text = "空";
             this.label75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1427,10 +1493,10 @@
             // 
             this.label76.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label76.Font = new System.Drawing.Font("宋体", 12F);
-            this.label76.Location = new System.Drawing.Point(421, 407);
+            this.label76.Location = new System.Drawing.Point(385, 407);
             this.label76.Margin = new System.Windows.Forms.Padding(1);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(103, 29);
+            this.label76.Size = new System.Drawing.Size(94, 29);
             this.label76.TabIndex = 2;
             this.label76.Text = "空";
             this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1439,10 +1505,10 @@
             // 
             this.label77.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label77.Font = new System.Drawing.Font("宋体", 12F);
-            this.label77.Location = new System.Drawing.Point(316, 407);
+            this.label77.Location = new System.Drawing.Point(289, 407);
             this.label77.Margin = new System.Windows.Forms.Padding(1);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(103, 29);
+            this.label77.Size = new System.Drawing.Size(94, 29);
             this.label77.TabIndex = 2;
             this.label77.Text = "空";
             this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1451,10 +1517,10 @@
             // 
             this.lblTable8_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable8_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable8_0.Location = new System.Drawing.Point(211, 407);
+            this.lblTable8_0.Location = new System.Drawing.Point(193, 407);
             this.lblTable8_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable8_0.Name = "lblTable8_0";
-            this.lblTable8_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable8_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable8_0.TabIndex = 2;
             this.lblTable8_0.Text = "空";
             this.lblTable8_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1463,10 +1529,10 @@
             // 
             this.lblTable7_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable7_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable7_0.Location = new System.Drawing.Point(211, 376);
+            this.lblTable7_0.Location = new System.Drawing.Point(193, 376);
             this.lblTable7_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable7_0.Name = "lblTable7_0";
-            this.lblTable7_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable7_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable7_0.TabIndex = 2;
             this.lblTable7_0.Text = "空";
             this.lblTable7_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1475,10 +1541,10 @@
             // 
             this.label80.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label80.Font = new System.Drawing.Font("宋体", 12F);
-            this.label80.Location = new System.Drawing.Point(316, 376);
+            this.label80.Location = new System.Drawing.Point(289, 376);
             this.label80.Margin = new System.Windows.Forms.Padding(1);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(103, 29);
+            this.label80.Size = new System.Drawing.Size(94, 29);
             this.label80.TabIndex = 2;
             this.label80.Text = "空";
             this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1487,10 +1553,10 @@
             // 
             this.label81.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label81.Font = new System.Drawing.Font("宋体", 12F);
-            this.label81.Location = new System.Drawing.Point(421, 376);
+            this.label81.Location = new System.Drawing.Point(385, 376);
             this.label81.Margin = new System.Windows.Forms.Padding(1);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(103, 29);
+            this.label81.Size = new System.Drawing.Size(94, 29);
             this.label81.TabIndex = 2;
             this.label81.Text = "空";
             this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1499,10 +1565,10 @@
             // 
             this.label82.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label82.Font = new System.Drawing.Font("宋体", 12F);
-            this.label82.Location = new System.Drawing.Point(526, 376);
+            this.label82.Location = new System.Drawing.Point(481, 376);
             this.label82.Margin = new System.Windows.Forms.Padding(1);
             this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(103, 29);
+            this.label82.Size = new System.Drawing.Size(94, 29);
             this.label82.TabIndex = 2;
             this.label82.Text = "空";
             this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1511,10 +1577,10 @@
             // 
             this.label83.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label83.Font = new System.Drawing.Font("宋体", 12F);
-            this.label83.Location = new System.Drawing.Point(631, 376);
+            this.label83.Location = new System.Drawing.Point(577, 376);
             this.label83.Margin = new System.Windows.Forms.Padding(1);
             this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(103, 29);
+            this.label83.Size = new System.Drawing.Size(94, 29);
             this.label83.TabIndex = 2;
             this.label83.Text = "空";
             this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1523,10 +1589,10 @@
             // 
             this.label84.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label84.Font = new System.Drawing.Font("宋体", 12F);
-            this.label84.Location = new System.Drawing.Point(631, 345);
+            this.label84.Location = new System.Drawing.Point(577, 345);
             this.label84.Margin = new System.Windows.Forms.Padding(1);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(103, 29);
+            this.label84.Size = new System.Drawing.Size(94, 29);
             this.label84.TabIndex = 2;
             this.label84.Text = "空";
             this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1535,10 +1601,10 @@
             // 
             this.label85.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label85.Font = new System.Drawing.Font("宋体", 12F);
-            this.label85.Location = new System.Drawing.Point(526, 345);
+            this.label85.Location = new System.Drawing.Point(481, 345);
             this.label85.Margin = new System.Windows.Forms.Padding(1);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(103, 29);
+            this.label85.Size = new System.Drawing.Size(94, 29);
             this.label85.TabIndex = 2;
             this.label85.Text = "空";
             this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1547,10 +1613,10 @@
             // 
             this.label86.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label86.Font = new System.Drawing.Font("宋体", 12F);
-            this.label86.Location = new System.Drawing.Point(421, 345);
+            this.label86.Location = new System.Drawing.Point(385, 345);
             this.label86.Margin = new System.Windows.Forms.Padding(1);
             this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(103, 29);
+            this.label86.Size = new System.Drawing.Size(94, 29);
             this.label86.TabIndex = 2;
             this.label86.Text = "空";
             this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1559,10 +1625,10 @@
             // 
             this.label87.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label87.Font = new System.Drawing.Font("宋体", 12F);
-            this.label87.Location = new System.Drawing.Point(316, 345);
+            this.label87.Location = new System.Drawing.Point(289, 345);
             this.label87.Margin = new System.Windows.Forms.Padding(1);
             this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(103, 29);
+            this.label87.Size = new System.Drawing.Size(94, 29);
             this.label87.TabIndex = 2;
             this.label87.Text = "空";
             this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1571,10 +1637,10 @@
             // 
             this.lblTable6_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable6_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable6_0.Location = new System.Drawing.Point(211, 345);
+            this.lblTable6_0.Location = new System.Drawing.Point(193, 345);
             this.lblTable6_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable6_0.Name = "lblTable6_0";
-            this.lblTable6_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable6_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable6_0.TabIndex = 2;
             this.lblTable6_0.Text = "空";
             this.lblTable6_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1583,10 +1649,10 @@
             // 
             this.lblTable5_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable5_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable5_0.Location = new System.Drawing.Point(211, 314);
+            this.lblTable5_0.Location = new System.Drawing.Point(193, 314);
             this.lblTable5_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable5_0.Name = "lblTable5_0";
-            this.lblTable5_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable5_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable5_0.TabIndex = 2;
             this.lblTable5_0.Text = "空";
             this.lblTable5_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1595,10 +1661,10 @@
             // 
             this.label90.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label90.Font = new System.Drawing.Font("宋体", 12F);
-            this.label90.Location = new System.Drawing.Point(316, 314);
+            this.label90.Location = new System.Drawing.Point(289, 314);
             this.label90.Margin = new System.Windows.Forms.Padding(1);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(103, 29);
+            this.label90.Size = new System.Drawing.Size(94, 29);
             this.label90.TabIndex = 2;
             this.label90.Text = "空";
             this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1607,10 +1673,10 @@
             // 
             this.label91.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label91.Font = new System.Drawing.Font("宋体", 12F);
-            this.label91.Location = new System.Drawing.Point(421, 314);
+            this.label91.Location = new System.Drawing.Point(385, 314);
             this.label91.Margin = new System.Windows.Forms.Padding(1);
             this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(103, 29);
+            this.label91.Size = new System.Drawing.Size(94, 29);
             this.label91.TabIndex = 2;
             this.label91.Text = "空";
             this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1619,10 +1685,10 @@
             // 
             this.label92.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label92.Font = new System.Drawing.Font("宋体", 12F);
-            this.label92.Location = new System.Drawing.Point(526, 314);
+            this.label92.Location = new System.Drawing.Point(481, 314);
             this.label92.Margin = new System.Windows.Forms.Padding(1);
             this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(103, 29);
+            this.label92.Size = new System.Drawing.Size(94, 29);
             this.label92.TabIndex = 2;
             this.label92.Text = "空";
             this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1631,10 +1697,10 @@
             // 
             this.label93.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label93.Font = new System.Drawing.Font("宋体", 12F);
-            this.label93.Location = new System.Drawing.Point(631, 314);
+            this.label93.Location = new System.Drawing.Point(577, 314);
             this.label93.Margin = new System.Windows.Forms.Padding(1);
             this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(103, 29);
+            this.label93.Size = new System.Drawing.Size(94, 29);
             this.label93.TabIndex = 2;
             this.label93.Text = "空";
             this.label93.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1643,10 +1709,10 @@
             // 
             this.label94.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label94.Font = new System.Drawing.Font("宋体", 12F);
-            this.label94.Location = new System.Drawing.Point(631, 283);
+            this.label94.Location = new System.Drawing.Point(577, 283);
             this.label94.Margin = new System.Windows.Forms.Padding(1);
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(103, 29);
+            this.label94.Size = new System.Drawing.Size(94, 29);
             this.label94.TabIndex = 2;
             this.label94.Text = "空";
             this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1655,10 +1721,10 @@
             // 
             this.label95.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label95.Font = new System.Drawing.Font("宋体", 12F);
-            this.label95.Location = new System.Drawing.Point(526, 283);
+            this.label95.Location = new System.Drawing.Point(481, 283);
             this.label95.Margin = new System.Windows.Forms.Padding(1);
             this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(103, 29);
+            this.label95.Size = new System.Drawing.Size(94, 29);
             this.label95.TabIndex = 2;
             this.label95.Text = "空";
             this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1667,10 +1733,10 @@
             // 
             this.label96.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label96.Font = new System.Drawing.Font("宋体", 12F);
-            this.label96.Location = new System.Drawing.Point(421, 283);
+            this.label96.Location = new System.Drawing.Point(385, 283);
             this.label96.Margin = new System.Windows.Forms.Padding(1);
             this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(103, 29);
+            this.label96.Size = new System.Drawing.Size(94, 29);
             this.label96.TabIndex = 2;
             this.label96.Text = "空";
             this.label96.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1679,10 +1745,10 @@
             // 
             this.label97.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label97.Font = new System.Drawing.Font("宋体", 12F);
-            this.label97.Location = new System.Drawing.Point(316, 283);
+            this.label97.Location = new System.Drawing.Point(289, 283);
             this.label97.Margin = new System.Windows.Forms.Padding(1);
             this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(103, 29);
+            this.label97.Size = new System.Drawing.Size(94, 29);
             this.label97.TabIndex = 2;
             this.label97.Text = "空";
             this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1691,10 +1757,10 @@
             // 
             this.lblTable4_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable4_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable4_0.Location = new System.Drawing.Point(211, 283);
+            this.lblTable4_0.Location = new System.Drawing.Point(193, 283);
             this.lblTable4_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable4_0.Name = "lblTable4_0";
-            this.lblTable4_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable4_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable4_0.TabIndex = 2;
             this.lblTable4_0.Text = "空";
             this.lblTable4_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1703,10 +1769,10 @@
             // 
             this.lblTable3_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable3_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable3_0.Location = new System.Drawing.Point(211, 252);
+            this.lblTable3_0.Location = new System.Drawing.Point(193, 252);
             this.lblTable3_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable3_0.Name = "lblTable3_0";
-            this.lblTable3_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable3_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable3_0.TabIndex = 2;
             this.lblTable3_0.Text = "空";
             this.lblTable3_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1715,10 +1781,10 @@
             // 
             this.label100.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label100.Font = new System.Drawing.Font("宋体", 12F);
-            this.label100.Location = new System.Drawing.Point(316, 252);
+            this.label100.Location = new System.Drawing.Point(289, 252);
             this.label100.Margin = new System.Windows.Forms.Padding(1);
             this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(103, 29);
+            this.label100.Size = new System.Drawing.Size(94, 29);
             this.label100.TabIndex = 2;
             this.label100.Text = "空";
             this.label100.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1727,10 +1793,10 @@
             // 
             this.label101.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label101.Font = new System.Drawing.Font("宋体", 12F);
-            this.label101.Location = new System.Drawing.Point(421, 252);
+            this.label101.Location = new System.Drawing.Point(385, 252);
             this.label101.Margin = new System.Windows.Forms.Padding(1);
             this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(103, 29);
+            this.label101.Size = new System.Drawing.Size(94, 29);
             this.label101.TabIndex = 2;
             this.label101.Text = "空";
             this.label101.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1739,10 +1805,10 @@
             // 
             this.label102.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label102.Font = new System.Drawing.Font("宋体", 12F);
-            this.label102.Location = new System.Drawing.Point(526, 252);
+            this.label102.Location = new System.Drawing.Point(481, 252);
             this.label102.Margin = new System.Windows.Forms.Padding(1);
             this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(103, 29);
+            this.label102.Size = new System.Drawing.Size(94, 29);
             this.label102.TabIndex = 2;
             this.label102.Text = "空";
             this.label102.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1751,10 +1817,10 @@
             // 
             this.label103.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label103.Font = new System.Drawing.Font("宋体", 12F);
-            this.label103.Location = new System.Drawing.Point(631, 252);
+            this.label103.Location = new System.Drawing.Point(577, 252);
             this.label103.Margin = new System.Windows.Forms.Padding(1);
             this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(103, 29);
+            this.label103.Size = new System.Drawing.Size(94, 29);
             this.label103.TabIndex = 2;
             this.label103.Text = "空";
             this.label103.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1763,10 +1829,10 @@
             // 
             this.label104.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label104.Font = new System.Drawing.Font("宋体", 12F);
-            this.label104.Location = new System.Drawing.Point(631, 221);
+            this.label104.Location = new System.Drawing.Point(577, 221);
             this.label104.Margin = new System.Windows.Forms.Padding(1);
             this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(103, 29);
+            this.label104.Size = new System.Drawing.Size(94, 29);
             this.label104.TabIndex = 2;
             this.label104.Text = "空";
             this.label104.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1775,10 +1841,10 @@
             // 
             this.label105.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label105.Font = new System.Drawing.Font("宋体", 12F);
-            this.label105.Location = new System.Drawing.Point(526, 221);
+            this.label105.Location = new System.Drawing.Point(481, 221);
             this.label105.Margin = new System.Windows.Forms.Padding(1);
             this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(103, 29);
+            this.label105.Size = new System.Drawing.Size(94, 29);
             this.label105.TabIndex = 2;
             this.label105.Text = "空";
             this.label105.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1787,10 +1853,10 @@
             // 
             this.label106.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label106.Font = new System.Drawing.Font("宋体", 12F);
-            this.label106.Location = new System.Drawing.Point(421, 221);
+            this.label106.Location = new System.Drawing.Point(385, 221);
             this.label106.Margin = new System.Windows.Forms.Padding(1);
             this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(103, 29);
+            this.label106.Size = new System.Drawing.Size(94, 29);
             this.label106.TabIndex = 2;
             this.label106.Text = "空";
             this.label106.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1799,10 +1865,10 @@
             // 
             this.label107.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label107.Font = new System.Drawing.Font("宋体", 12F);
-            this.label107.Location = new System.Drawing.Point(316, 221);
+            this.label107.Location = new System.Drawing.Point(289, 221);
             this.label107.Margin = new System.Windows.Forms.Padding(1);
             this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(103, 29);
+            this.label107.Size = new System.Drawing.Size(94, 29);
             this.label107.TabIndex = 2;
             this.label107.Text = "空";
             this.label107.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1811,10 +1877,10 @@
             // 
             this.lblTable2_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable2_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable2_0.Location = new System.Drawing.Point(211, 221);
+            this.lblTable2_0.Location = new System.Drawing.Point(193, 221);
             this.lblTable2_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable2_0.Name = "lblTable2_0";
-            this.lblTable2_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable2_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable2_0.TabIndex = 2;
             this.lblTable2_0.Text = "空";
             this.lblTable2_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1823,10 +1889,10 @@
             // 
             this.lblTable1_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable1_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable1_0.Location = new System.Drawing.Point(211, 190);
+            this.lblTable1_0.Location = new System.Drawing.Point(193, 190);
             this.lblTable1_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable1_0.Name = "lblTable1_0";
-            this.lblTable1_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable1_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable1_0.TabIndex = 2;
             this.lblTable1_0.Text = "空";
             this.lblTable1_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1835,10 +1901,10 @@
             // 
             this.label110.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label110.Font = new System.Drawing.Font("宋体", 12F);
-            this.label110.Location = new System.Drawing.Point(316, 190);
+            this.label110.Location = new System.Drawing.Point(289, 190);
             this.label110.Margin = new System.Windows.Forms.Padding(1);
             this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(103, 29);
+            this.label110.Size = new System.Drawing.Size(94, 29);
             this.label110.TabIndex = 2;
             this.label110.Text = "空";
             this.label110.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1847,10 +1913,10 @@
             // 
             this.label111.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label111.Font = new System.Drawing.Font("宋体", 12F);
-            this.label111.Location = new System.Drawing.Point(421, 190);
+            this.label111.Location = new System.Drawing.Point(385, 190);
             this.label111.Margin = new System.Windows.Forms.Padding(1);
             this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(103, 29);
+            this.label111.Size = new System.Drawing.Size(94, 29);
             this.label111.TabIndex = 2;
             this.label111.Text = "空";
             this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1859,10 +1925,10 @@
             // 
             this.label112.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label112.Font = new System.Drawing.Font("宋体", 12F);
-            this.label112.Location = new System.Drawing.Point(526, 190);
+            this.label112.Location = new System.Drawing.Point(481, 190);
             this.label112.Margin = new System.Windows.Forms.Padding(1);
             this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(103, 29);
+            this.label112.Size = new System.Drawing.Size(94, 29);
             this.label112.TabIndex = 2;
             this.label112.Text = "空";
             this.label112.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1871,10 +1937,10 @@
             // 
             this.label113.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label113.Font = new System.Drawing.Font("宋体", 12F);
-            this.label113.Location = new System.Drawing.Point(631, 190);
+            this.label113.Location = new System.Drawing.Point(577, 190);
             this.label113.Margin = new System.Windows.Forms.Padding(1);
             this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(103, 29);
+            this.label113.Size = new System.Drawing.Size(94, 29);
             this.label113.TabIndex = 2;
             this.label113.Text = "空";
             this.label113.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1883,10 +1949,10 @@
             // 
             this.lblTable0_4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable0_4.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable0_4.Location = new System.Drawing.Point(631, 159);
+            this.lblTable0_4.Location = new System.Drawing.Point(577, 159);
             this.lblTable0_4.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable0_4.Name = "lblTable0_4";
-            this.lblTable0_4.Size = new System.Drawing.Size(103, 29);
+            this.lblTable0_4.Size = new System.Drawing.Size(94, 29);
             this.lblTable0_4.TabIndex = 2;
             this.lblTable0_4.Text = "空";
             this.lblTable0_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1895,10 +1961,10 @@
             // 
             this.lblTable0_3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable0_3.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable0_3.Location = new System.Drawing.Point(526, 159);
+            this.lblTable0_3.Location = new System.Drawing.Point(481, 159);
             this.lblTable0_3.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable0_3.Name = "lblTable0_3";
-            this.lblTable0_3.Size = new System.Drawing.Size(103, 29);
+            this.lblTable0_3.Size = new System.Drawing.Size(94, 29);
             this.lblTable0_3.TabIndex = 2;
             this.lblTable0_3.Text = "空";
             this.lblTable0_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1907,10 +1973,10 @@
             // 
             this.lblTable0_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable0_2.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable0_2.Location = new System.Drawing.Point(421, 159);
+            this.lblTable0_2.Location = new System.Drawing.Point(385, 159);
             this.lblTable0_2.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable0_2.Name = "lblTable0_2";
-            this.lblTable0_2.Size = new System.Drawing.Size(103, 29);
+            this.lblTable0_2.Size = new System.Drawing.Size(94, 29);
             this.lblTable0_2.TabIndex = 2;
             this.lblTable0_2.Text = "空";
             this.lblTable0_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1919,10 +1985,10 @@
             // 
             this.lblTable0_1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable0_1.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable0_1.Location = new System.Drawing.Point(316, 159);
+            this.lblTable0_1.Location = new System.Drawing.Point(289, 159);
             this.lblTable0_1.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable0_1.Name = "lblTable0_1";
-            this.lblTable0_1.Size = new System.Drawing.Size(103, 29);
+            this.lblTable0_1.Size = new System.Drawing.Size(94, 29);
             this.lblTable0_1.TabIndex = 2;
             this.lblTable0_1.Text = "空";
             this.lblTable0_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1931,13 +1997,396 @@
             // 
             this.lblTable0_0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTable0_0.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblTable0_0.Location = new System.Drawing.Point(211, 159);
+            this.lblTable0_0.Location = new System.Drawing.Point(193, 159);
             this.lblTable0_0.Margin = new System.Windows.Forms.Padding(1);
             this.lblTable0_0.Name = "lblTable0_0";
-            this.lblTable0_0.Size = new System.Drawing.Size(103, 29);
+            this.lblTable0_0.Size = new System.Drawing.Size(94, 29);
             this.lblTable0_0.TabIndex = 2;
             this.lblTable0_0.Text = "空";
             this.lblTable0_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label29.Font = new System.Drawing.Font("宋体", 10F);
+            this.label29.Location = new System.Drawing.Point(577, 111);
+            this.label29.Margin = new System.Windows.Forms.Padding(1);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(94, 46);
+            this.label29.TabIndex = 2;
+            this.label29.Text = "项目阶段4支出经费";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label43
+            // 
+            this.label43.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label43.Font = new System.Drawing.Font("宋体", 10F);
+            this.label43.Location = new System.Drawing.Point(673, 111);
+            this.label43.Margin = new System.Windows.Forms.Padding(1);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(94, 46);
+            this.label43.TabIndex = 2;
+            this.label43.Text = "项目阶段5支出经费";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label48
+            // 
+            this.label48.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label48.Font = new System.Drawing.Font("宋体", 12F);
+            this.label48.Location = new System.Drawing.Point(673, 159);
+            this.label48.Margin = new System.Windows.Forms.Padding(1);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(94, 29);
+            this.label48.TabIndex = 2;
+            this.label48.Text = "空";
+            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label49
+            // 
+            this.label49.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label49.Font = new System.Drawing.Font("宋体", 12F);
+            this.label49.Location = new System.Drawing.Point(769, 159);
+            this.label49.Margin = new System.Windows.Forms.Padding(1);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(94, 29);
+            this.label49.TabIndex = 2;
+            this.label49.Text = "空";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label58
+            // 
+            this.label58.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label58.Font = new System.Drawing.Font("宋体", 12F);
+            this.label58.Location = new System.Drawing.Point(769, 190);
+            this.label58.Margin = new System.Windows.Forms.Padding(1);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(94, 29);
+            this.label58.TabIndex = 2;
+            this.label58.Text = "空";
+            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label59
+            // 
+            this.label59.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label59.Font = new System.Drawing.Font("宋体", 12F);
+            this.label59.Location = new System.Drawing.Point(673, 190);
+            this.label59.Margin = new System.Windows.Forms.Padding(1);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(94, 29);
+            this.label59.TabIndex = 2;
+            this.label59.Text = "空";
+            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label68
+            // 
+            this.label68.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label68.Font = new System.Drawing.Font("宋体", 12F);
+            this.label68.Location = new System.Drawing.Point(673, 221);
+            this.label68.Margin = new System.Windows.Forms.Padding(1);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(94, 29);
+            this.label68.TabIndex = 2;
+            this.label68.Text = "空";
+            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label69
+            // 
+            this.label69.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label69.Font = new System.Drawing.Font("宋体", 12F);
+            this.label69.Location = new System.Drawing.Point(769, 221);
+            this.label69.Margin = new System.Windows.Forms.Padding(1);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(94, 29);
+            this.label69.TabIndex = 2;
+            this.label69.Text = "空";
+            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label78
+            // 
+            this.label78.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label78.Font = new System.Drawing.Font("宋体", 12F);
+            this.label78.Location = new System.Drawing.Point(673, 252);
+            this.label78.Margin = new System.Windows.Forms.Padding(1);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(94, 29);
+            this.label78.TabIndex = 2;
+            this.label78.Text = "空";
+            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label79
+            // 
+            this.label79.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label79.Font = new System.Drawing.Font("宋体", 12F);
+            this.label79.Location = new System.Drawing.Point(769, 252);
+            this.label79.Margin = new System.Windows.Forms.Padding(1);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(94, 29);
+            this.label79.TabIndex = 2;
+            this.label79.Text = "空";
+            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label88
+            // 
+            this.label88.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label88.Font = new System.Drawing.Font("宋体", 12F);
+            this.label88.Location = new System.Drawing.Point(673, 283);
+            this.label88.Margin = new System.Windows.Forms.Padding(1);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(94, 29);
+            this.label88.TabIndex = 2;
+            this.label88.Text = "空";
+            this.label88.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label89
+            // 
+            this.label89.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label89.Font = new System.Drawing.Font("宋体", 12F);
+            this.label89.Location = new System.Drawing.Point(769, 283);
+            this.label89.Margin = new System.Windows.Forms.Padding(1);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(94, 29);
+            this.label89.TabIndex = 2;
+            this.label89.Text = "空";
+            this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label98
+            // 
+            this.label98.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label98.Font = new System.Drawing.Font("宋体", 12F);
+            this.label98.Location = new System.Drawing.Point(673, 314);
+            this.label98.Margin = new System.Windows.Forms.Padding(1);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(94, 29);
+            this.label98.TabIndex = 2;
+            this.label98.Text = "空";
+            this.label98.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label99
+            // 
+            this.label99.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label99.Font = new System.Drawing.Font("宋体", 12F);
+            this.label99.Location = new System.Drawing.Point(769, 314);
+            this.label99.Margin = new System.Windows.Forms.Padding(1);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(94, 29);
+            this.label99.TabIndex = 2;
+            this.label99.Text = "空";
+            this.label99.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label108
+            // 
+            this.label108.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label108.Font = new System.Drawing.Font("宋体", 12F);
+            this.label108.Location = new System.Drawing.Point(673, 345);
+            this.label108.Margin = new System.Windows.Forms.Padding(1);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(94, 29);
+            this.label108.TabIndex = 2;
+            this.label108.Text = "空";
+            this.label108.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label109
+            // 
+            this.label109.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label109.Font = new System.Drawing.Font("宋体", 12F);
+            this.label109.Location = new System.Drawing.Point(769, 345);
+            this.label109.Margin = new System.Windows.Forms.Padding(1);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(94, 29);
+            this.label109.TabIndex = 2;
+            this.label109.Text = "空";
+            this.label109.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label114
+            // 
+            this.label114.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label114.Font = new System.Drawing.Font("宋体", 12F);
+            this.label114.Location = new System.Drawing.Point(673, 376);
+            this.label114.Margin = new System.Windows.Forms.Padding(1);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(94, 29);
+            this.label114.TabIndex = 2;
+            this.label114.Text = "空";
+            this.label114.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label115
+            // 
+            this.label115.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label115.Font = new System.Drawing.Font("宋体", 12F);
+            this.label115.Location = new System.Drawing.Point(769, 376);
+            this.label115.Margin = new System.Windows.Forms.Padding(1);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(94, 29);
+            this.label115.TabIndex = 2;
+            this.label115.Text = "空";
+            this.label115.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label116
+            // 
+            this.label116.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label116.Font = new System.Drawing.Font("宋体", 12F);
+            this.label116.Location = new System.Drawing.Point(673, 407);
+            this.label116.Margin = new System.Windows.Forms.Padding(1);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(94, 29);
+            this.label116.TabIndex = 2;
+            this.label116.Text = "空";
+            this.label116.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label117
+            // 
+            this.label117.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label117.Font = new System.Drawing.Font("宋体", 12F);
+            this.label117.Location = new System.Drawing.Point(769, 407);
+            this.label117.Margin = new System.Windows.Forms.Padding(1);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(94, 29);
+            this.label117.TabIndex = 2;
+            this.label117.Text = "空";
+            this.label117.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label118
+            // 
+            this.label118.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label118.Font = new System.Drawing.Font("宋体", 12F);
+            this.label118.Location = new System.Drawing.Point(673, 438);
+            this.label118.Margin = new System.Windows.Forms.Padding(1);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(94, 29);
+            this.label118.TabIndex = 2;
+            this.label118.Text = "空";
+            this.label118.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label119
+            // 
+            this.label119.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label119.Font = new System.Drawing.Font("宋体", 12F);
+            this.label119.Location = new System.Drawing.Point(769, 438);
+            this.label119.Margin = new System.Windows.Forms.Padding(1);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(94, 29);
+            this.label119.TabIndex = 2;
+            this.label119.Text = "空";
+            this.label119.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label121
+            // 
+            this.label121.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label121.Font = new System.Drawing.Font("宋体", 12F);
+            this.label121.Location = new System.Drawing.Point(673, 469);
+            this.label121.Margin = new System.Windows.Forms.Padding(1);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(94, 29);
+            this.label121.TabIndex = 2;
+            this.label121.Text = "空";
+            this.label121.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label122
+            // 
+            this.label122.Font = new System.Drawing.Font("宋体", 12F);
+            this.label122.Location = new System.Drawing.Point(769, 469);
+            this.label122.Margin = new System.Windows.Forms.Padding(1);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(82, 29);
+            this.label122.TabIndex = 2;
+            this.label122.Text = "空";
+            this.label122.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label123
+            // 
+            this.label123.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label123.Font = new System.Drawing.Font("宋体", 12F);
+            this.label123.Location = new System.Drawing.Point(673, 500);
+            this.label123.Margin = new System.Windows.Forms.Padding(1);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(94, 29);
+            this.label123.TabIndex = 2;
+            this.label123.Text = "空";
+            this.label123.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label124
+            // 
+            this.label124.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label124.Font = new System.Drawing.Font("宋体", 12F);
+            this.label124.Location = new System.Drawing.Point(769, 500);
+            this.label124.Margin = new System.Windows.Forms.Padding(1);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(94, 29);
+            this.label124.TabIndex = 2;
+            this.label124.Text = "空";
+            this.label124.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label125
+            // 
+            this.label125.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label125.Font = new System.Drawing.Font("宋体", 12F);
+            this.label125.Location = new System.Drawing.Point(673, 531);
+            this.label125.Margin = new System.Windows.Forms.Padding(1);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(94, 29);
+            this.label125.TabIndex = 2;
+            this.label125.Text = "空";
+            this.label125.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label126
+            // 
+            this.label126.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label126.Font = new System.Drawing.Font("宋体", 12F);
+            this.label126.Location = new System.Drawing.Point(769, 531);
+            this.label126.Margin = new System.Windows.Forms.Padding(1);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(94, 29);
+            this.label126.TabIndex = 2;
+            this.label126.Text = "空";
+            this.label126.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label127
+            // 
+            this.label127.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label127.Font = new System.Drawing.Font("宋体", 12F);
+            this.label127.Location = new System.Drawing.Point(673, 562);
+            this.label127.Margin = new System.Windows.Forms.Padding(1);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(94, 29);
+            this.label127.TabIndex = 2;
+            this.label127.Text = "空";
+            this.label127.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label128
+            // 
+            this.label128.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label128.Font = new System.Drawing.Font("宋体", 12F);
+            this.label128.Location = new System.Drawing.Point(769, 562);
+            this.label128.Margin = new System.Windows.Forms.Padding(1);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(94, 29);
+            this.label128.TabIndex = 2;
+            this.label128.Text = "空";
+            this.label128.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label129
+            // 
+            this.label129.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label129.Font = new System.Drawing.Font("宋体", 12F);
+            this.label129.Location = new System.Drawing.Point(673, 593);
+            this.label129.Margin = new System.Windows.Forms.Padding(1);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(94, 47);
+            this.label129.TabIndex = 2;
+            this.label129.Text = "空";
+            this.label129.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label130
+            // 
+            this.label130.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label130.Font = new System.Drawing.Font("宋体", 12F);
+            this.label130.Location = new System.Drawing.Point(769, 593);
+            this.label130.Margin = new System.Windows.Forms.Padding(1);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(94, 47);
+            this.label130.TabIndex = 2;
+            this.label130.Text = "空";
+            this.label130.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MoneyLinePage
             // 
@@ -1946,7 +2395,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.hSkinTableLayoutPanel1);
             this.Name = "MoneyLinePage";
-            this.Size = new System.Drawing.Size(840, 641);
+            this.Size = new System.Drawing.Size(961, 641);
             this.hSkinTableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -2109,5 +2558,37 @@
         private System.Windows.Forms.Label lblTable0_2;
         private System.Windows.Forms.Label lblTable0_1;
         private System.Windows.Forms.Label lblTable0_0;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.Label label116;
+        private System.Windows.Forms.Label label117;
+        private System.Windows.Forms.Label label118;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.Label label123;
+        private System.Windows.Forms.Label label124;
+        private System.Windows.Forms.Label label125;
+        private System.Windows.Forms.Label label126;
+        private System.Windows.Forms.Label label127;
+        private System.Windows.Forms.Label label128;
+        private System.Windows.Forms.Label label129;
+        private System.Windows.Forms.Label label130;
     }
 }

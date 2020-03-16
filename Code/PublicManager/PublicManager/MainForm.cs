@@ -48,7 +48,7 @@ namespace PublicManager
             loadModules();
 
             //显示第一页
-            nbcLeftTree_ActiveGroupChanged(nbcLeftTree, new NavBarGroupEventArgs(nbcTestA));
+            nbcLeftTree_ActiveGroupChanged(nbcLeftTree, new NavBarGroupEventArgs(nbcTestG));
         }
 
         /// <summary>
