@@ -16,6 +16,11 @@ namespace PublicManager.Modules.CustomReporter
             InitializeComponent();
         }
 
+        public override DevExpress.XtraBars.Ribbon.RibbonPage[] getTopBarPages()
+        {
+            return new DevExpress.XtraBars.Ribbon.RibbonPage[] { rpMaster };
+        }
+
         public override void start()
         {
             base.start();

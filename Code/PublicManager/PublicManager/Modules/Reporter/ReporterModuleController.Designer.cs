@@ -94,7 +94,7 @@
             // 
             // btnExportToExcel
             // 
-            this.btnExportToExcel.Caption = "导出到Excel";
+            this.btnExportToExcel.Caption = "汇总导出";
             this.btnExportToExcel.Id = 5;
             this.btnExportToExcel.LargeGlyph = global::PublicManager.Properties.Resources.printtoexcel;
             this.btnExportToExcel.Name = "btnExportToExcel";

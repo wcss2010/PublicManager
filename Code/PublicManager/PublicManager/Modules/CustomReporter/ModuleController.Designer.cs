@@ -74,6 +74,14 @@
             this.checkBox28 = new System.Windows.Forms.CheckBox();
             this.checkBox29 = new System.Windows.Forms.CheckBox();
             this.checkBox30 = new System.Windows.Forms.CheckBox();
+            this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.btnSetSourceDir = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSetDestDir = new DevExpress.XtraBars.BarButtonItem();
+            this.btnImportAll = new DevExpress.XtraBars.BarButtonItem();
+            this.btnImportWithSelected = new DevExpress.XtraBars.BarButtonItem();
+            this.btnExportToExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.rpMaster = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rpgExport = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -86,6 +94,7 @@
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExportTo
@@ -192,7 +201,7 @@
             this.dgvDetail.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5F);
             this.dgvDetail.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowTemplate.Height = 40;
-            this.dgvDetail.Size = new System.Drawing.Size(1017, 259);
+            this.dgvDetail.Size = new System.Drawing.Size(1017, 186);
             this.dgvDetail.TabIndex = 4;
             // 
             // Column13
@@ -230,9 +239,9 @@
             this.groupBox1.Controls.Add(this.splitContainer1);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(0, 145);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1023, 563);
+            this.groupBox1.Size = new System.Drawing.Size(1023, 418);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -250,8 +259,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1017, 519);
-            this.splitContainer1.SplitterDistance = 259;
+            this.splitContainer1.Size = new System.Drawing.Size(1017, 374);
+            this.splitContainer1.SplitterDistance = 186;
             this.splitContainer1.TabIndex = 5;
             // 
             // flowLayoutPanel1
@@ -262,7 +271,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1017, 256);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1017, 184);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // groupBox2
@@ -578,11 +587,77 @@
             this.checkBox30.Text = "......";
             this.checkBox30.UseVisualStyleBackColor = true;
             // 
+            // rcTopBar
+            // 
+            this.rcTopBar.ExpandCollapseItem.Id = 0;
+            this.rcTopBar.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.rcTopBar.ExpandCollapseItem,
+            this.btnSetSourceDir,
+            this.btnSetDestDir,
+            this.btnImportAll,
+            this.btnImportWithSelected,
+            this.btnExportToExcel});
+            this.rcTopBar.Location = new System.Drawing.Point(0, 0);
+            this.rcTopBar.MaxItemId = 6;
+            this.rcTopBar.Name = "rcTopBar";
+            this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.rpMaster});
+            this.rcTopBar.Size = new System.Drawing.Size(1023, 145);
+            // 
+            // btnSetSourceDir
+            // 
+            this.btnSetSourceDir.Caption = "设置主目录";
+            this.btnSetSourceDir.Id = 1;
+            this.btnSetSourceDir.LargeGlyph = global::PublicManager.Properties.Resources.folderA;
+            this.btnSetSourceDir.Name = "btnSetSourceDir";
+            // 
+            // btnSetDestDir
+            // 
+            this.btnSetDestDir.Caption = "设置解压目录";
+            this.btnSetDestDir.Id = 2;
+            this.btnSetDestDir.LargeGlyph = global::PublicManager.Properties.Resources.folderB;
+            this.btnSetDestDir.Name = "btnSetDestDir";
+            // 
+            // btnImportAll
+            // 
+            this.btnImportAll.Caption = "导入所有";
+            this.btnImportAll.Id = 3;
+            this.btnImportAll.LargeGlyph = global::PublicManager.Properties.Resources.importA;
+            this.btnImportAll.Name = "btnImportAll";
+            // 
+            // btnImportWithSelected
+            // 
+            this.btnImportWithSelected.Caption = "选择性导入";
+            this.btnImportWithSelected.Id = 4;
+            this.btnImportWithSelected.LargeGlyph = global::PublicManager.Properties.Resources.importB;
+            this.btnImportWithSelected.Name = "btnImportWithSelected";
+            // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Caption = "年度经费汇总信息导出";
+            this.btnExportToExcel.Id = 5;
+            this.btnExportToExcel.LargeGlyph = global::PublicManager.Properties.Resources.printtoexcel;
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            // 
+            // rpMaster
+            // 
+            this.rpMaster.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rpgExport});
+            this.rpMaster.Name = "rpMaster";
+            this.rpMaster.Text = "合同书";
+            // 
+            // rpgExport
+            // 
+            this.rpgExport.ItemLinks.Add(this.btnExportToExcel);
+            this.rpgExport.Name = "rpgExport";
+            this.rpgExport.Text = "导出";
+            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.rcTopBar);
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1023, 563);
             this.panel1.ResumeLayout(false);
@@ -600,7 +675,9 @@
             this.groupBox3.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -650,5 +727,13 @@
         private System.Windows.Forms.CheckBox checkBox28;
         private System.Windows.Forms.CheckBox checkBox29;
         private System.Windows.Forms.CheckBox checkBox30;
+        private DevExpress.XtraBars.Ribbon.RibbonControl rcTopBar;
+        private DevExpress.XtraBars.BarButtonItem btnSetSourceDir;
+        private DevExpress.XtraBars.BarButtonItem btnSetDestDir;
+        private DevExpress.XtraBars.BarButtonItem btnImportAll;
+        private DevExpress.XtraBars.BarButtonItem btnImportWithSelected;
+        private DevExpress.XtraBars.BarButtonItem btnExportToExcel;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rpMaster;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgExport;
     }
 }
