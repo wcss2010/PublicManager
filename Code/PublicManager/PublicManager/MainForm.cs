@@ -56,18 +56,20 @@ namespace PublicManager
         /// </summary>
         private void loadModules()
         {
+            ModuleDict["首页"] = new PublicManager.Modules.MainPage.ModuleController();
+
             ModuleDict["合同书汇总"] = new ContractModuleController();
             ModuleDict["建议书汇总"] = new ReporterModuleController();
 
-            ModuleDict["项目课题关系"] = new Modules.DataCheck.ProjectSubjectCheck.ModuleController();
-            ModuleDict["项目成员关系"] = new Modules.DataCheck.ProjectPersonCheck.ModuleController();
+            ModuleDict["项目-课题"] = new Modules.DataCheck.ProjectSubjectCheck.ModuleController();
+            ModuleDict["项目-成员"] = new Modules.DataCheck.ProjectPersonCheck.ModuleController();
             ModuleDict["成员分析"] = new Modules.DataCheck.PersonCheck.ModuleController();
-            ModuleDict["地区分布情况"] = new Modules.DataCheck.AddressCheck.ModuleController();
-            ModuleDict["单位项目课题关系"] = new Modules.DataCheck.ProjectSubjectUnitCheck.ModuleController();
+            ModuleDict["地区分布分析"] = new Modules.DataCheck.AddressCheck.ModuleController();
+            ModuleDict["单位-课题"] = new Modules.DataCheck.ProjectSubjectUnitCheck.ModuleController();
 
             ModuleDict["专家信息管理"] = new Modules.Teacher.TeacherManager.ModuleController();
 
-            ModuleDict["项目经费"] = new Modules.Moneys.ProjectMoney.ModuleController();
+            ModuleDict["项目经费概览"] = new Modules.Moneys.ProjectMoney.ModuleController();
             ModuleDict["课题经费分配"] = new Modules.Moneys.SubjectMoney.ModuleController();
             ModuleDict["单位经费分配"] = new Modules.Moneys.UnitMoney.ModuleController();
 
@@ -146,16 +148,26 @@ namespace PublicManager
         {
             plRightContent.Controls.Clear();
 
-            if (e.Group.ControlContainer.Controls.Count >= 1)
+            if (e.Group.ControlContainer != null)
             {
-                if (e.Group.ControlContainer.Controls[0] is TreeList)
+                if (e.Group.ControlContainer.Controls.Count >= 1)
                 {
-                    TreeList tl = ((TreeList)e.Group.ControlContainer.Controls[0]);
-                    if (tl.Nodes.Count >= 1)
+                    if (e.Group.ControlContainer.Controls[0] is TreeList)
                     {
-                        tl.SetFocusedNode(tl.Nodes[0]);
-                        showModule(tl.Nodes[0].GetDisplayText(0), true);
+                        TreeList tl = ((TreeList)e.Group.ControlContainer.Controls[0]);
+                        if (tl.Nodes.Count >= 1)
+                        {
+                            tl.SetFocusedNode(tl.Nodes[0]);
+                            showModule(tl.Nodes[0].GetDisplayText(0), true);
+                        }
                     }
+                }
+            }
+            else
+            {
+                if (e.Group.Caption == "首页")
+                {
+                    showModule("首页", true);
                 }
             }
         }

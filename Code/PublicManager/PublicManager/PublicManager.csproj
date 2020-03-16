@@ -250,6 +250,12 @@
     <Compile Include="Modules\Lines\SubjectMoneys\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\MainPage\ModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\MainPage\ModuleController.Designer.cs">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Moneys\ProjectMoney\HSkinTableLayoutPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -387,6 +393,9 @@
       <DependentUpon>MoneyLinePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lines\SubjectMoneys\ModuleController.resx">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\MainPage\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Moneys\ProjectMoney\ModuleController.resx">
