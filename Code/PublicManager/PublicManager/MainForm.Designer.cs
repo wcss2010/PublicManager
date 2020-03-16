@@ -90,6 +90,8 @@
             // rcTopBar
             // 
             this.rcTopBar.AutoSaveLayoutToXml = true;
+            this.rcTopBar.DrawGroupCaptions = DevExpress.Utils.DefaultBoolean.False;
+            this.rcTopBar.DrawGroupsBorder = false;
             this.rcTopBar.ExpandCollapseItem.Id = 0;
             this.rcTopBar.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.rcTopBar.ExpandCollapseItem,
@@ -107,7 +109,7 @@
             this.rcTopBar.Location = new System.Drawing.Point(0, 0);
             this.rcTopBar.MaxItemId = 13;
             this.rcTopBar.Name = "rcTopBar";
-            this.rcTopBar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.rcTopBar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.rcTopBar.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.rcTopBar.ShowToolbarCustomizeItem = false;
             this.rcTopBar.Size = new System.Drawing.Size(1359, 50);
