@@ -248,6 +248,8 @@
             "合同书汇总"}, -1);
             this.tlTestA.AppendNode(new object[] {
             "建议书汇总"}, -1);
+            this.tlTestA.AppendNode(new object[] {
+            "自定义报表"}, -1);
             this.tlTestA.EndUnboundLoad();
             this.tlTestA.OptionsBehavior.Editable = false;
             this.tlTestA.OptionsView.ShowColumns = false;

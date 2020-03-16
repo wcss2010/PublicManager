@@ -60,6 +60,7 @@ namespace PublicManager
 
             ModuleDict["合同书汇总"] = new ContractModuleController();
             ModuleDict["建议书汇总"] = new ReporterModuleController();
+            ModuleDict["自定义报表"] = new PublicManager.Modules.CustomReporter.ModuleController();
 
             ModuleDict["项目-课题"] = new Modules.DataCheck.ProjectSubjectCheck.ModuleController();
             ModuleDict["项目-成员"] = new Modules.DataCheck.ProjectPersonCheck.ModuleController();
