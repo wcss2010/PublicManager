@@ -23,8 +23,10 @@ namespace PublicManager
             //加载皮肤
             if (MainConfig.Config.Dict.ContainsKey("当前皮肤"))
             {
-                string skinName = MainConfig.Config.Dict["当前皮肤"];
-                DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(string.IsNullOrEmpty(skinName) ? "Office 2010 Blue" : skinName);
+                //string skinName = MainConfig.Config.Dict["当前皮肤"];
+                //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(string.IsNullOrEmpty(skinName) ? "Office 2010 Blue" : skinName);
+
+                DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2010 Blue");
             }
             if (MainConfig.Config.Dict.ContainsKey("皮肤颜色1"))
             {

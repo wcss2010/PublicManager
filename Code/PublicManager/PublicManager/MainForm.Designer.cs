@@ -41,8 +41,6 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.bsiBottomText = new DevExpress.XtraBars.BarStaticItem();
-            this.rpPageB = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgGroupA = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rsbStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.nbcLeftTree = new DevExpress.XtraNavBar.NavBarControl();
             this.nbcTestG = new DevExpress.XtraNavBar.NavBarGroup();
@@ -109,12 +107,10 @@
             this.rcTopBar.Location = new System.Drawing.Point(0, 0);
             this.rcTopBar.MaxItemId = 13;
             this.rcTopBar.Name = "rcTopBar";
-            this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.rpPageB});
             this.rcTopBar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.rcTopBar.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.rcTopBar.ShowToolbarCustomizeItem = false;
-            this.rcTopBar.Size = new System.Drawing.Size(1359, 147);
+            this.rcTopBar.Size = new System.Drawing.Size(1359, 50);
             this.rcTopBar.StatusBar = this.rsbStatusBar;
             this.rcTopBar.Toolbar.ShowCustomizeItem = false;
             // 
@@ -188,20 +184,6 @@
             this.bsiBottomText.Name = "bsiBottomText";
             this.bsiBottomText.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // rpPageB
-            // 
-            this.rpPageB.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgGroupA});
-            this.rpPageB.Name = "rpPageB";
-            this.rpPageB.Text = "皮肤";
-            // 
-            // rpgGroupA
-            // 
-            this.rpgGroupA.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
-            this.rpgGroupA.ItemLinks.Add(this.btnSkinColorModify);
-            this.rpgGroupA.Name = "rpgGroupA";
-            this.rpgGroupA.Text = "皮肤";
-            // 
             // rsbStatusBar
             // 
             this.rsbStatusBar.ItemLinks.Add(this.bsiBottomText);
@@ -229,7 +211,7 @@
             this.nbcLeftTree.Location = new System.Drawing.Point(0, 0);
             this.nbcLeftTree.Name = "nbcLeftTree";
             this.nbcLeftTree.OptionsNavPane.ExpandedWidth = 113;
-            this.nbcLeftTree.Size = new System.Drawing.Size(113, 523);
+            this.nbcLeftTree.Size = new System.Drawing.Size(113, 620);
             this.nbcLeftTree.TabIndex = 2;
             this.nbcLeftTree.Text = "navBarControl1";
             this.nbcLeftTree.View = new DevExpress.XtraNavBar.ViewInfo.SkinNavigationPaneViewInfoRegistrator();
@@ -569,19 +551,19 @@
             this.plRightContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plRightContent.Location = new System.Drawing.Point(0, 0);
             this.plRightContent.Name = "plRightContent";
-            this.plRightContent.Size = new System.Drawing.Size(1241, 523);
+            this.plRightContent.Size = new System.Drawing.Size(1241, 620);
             this.plRightContent.TabIndex = 3;
             // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 147);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 50);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.nbcLeftTree);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.plRightContent);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1359, 523);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1359, 620);
             this.splitContainerControl1.SplitterPosition = 113;
             this.splitContainerControl1.TabIndex = 6;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -624,7 +606,6 @@
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl rcTopBar;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rpPageB;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar rsbStatusBar;
         private DevExpress.XtraNavBar.NavBarControl nbcLeftTree;
         private DevExpress.XtraNavBar.NavBarGroup nbcTestA;
@@ -637,7 +618,6 @@
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer4;
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer5;
         private DevExpress.XtraTreeList.TreeList tlTestA;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgGroupA;
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn col1;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
