@@ -91,7 +91,6 @@
             // 
             this.rcTopBar.AutoSaveLayoutToXml = true;
             this.rcTopBar.DrawGroupCaptions = DevExpress.Utils.DefaultBoolean.False;
-            this.rcTopBar.DrawGroupsBorder = false;
             this.rcTopBar.ExpandCollapseItem.Id = 0;
             this.rcTopBar.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.rcTopBar.ExpandCollapseItem,
