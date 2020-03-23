@@ -22,7 +22,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
             InitializeComponent();
 
             dgvDetail.OptionsBehavior.Editable = false;
-            dgvDetail.OptionsView.AllowCellMerge = true;
+            dgvDetail.OptionsView.AllowCellMerge = false;
         }
 
         public override void start()
