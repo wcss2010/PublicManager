@@ -48,7 +48,7 @@ namespace PublicManager
             loadModules();
 
             //显示第一页
-            nbcLeftTree_ActiveGroupChanged(nbcLeftTree, new NavBarGroupEventArgs(nbcTestG));
+            nbcLeftTree_ActiveGroupChanged(nbcLeftTree, new NavBarGroupEventArgs(nbcTestA));
         }
 
         /// <summary>
@@ -56,27 +56,27 @@ namespace PublicManager
         /// </summary>
         private void loadModules()
         {
-            ModuleDict["首页"] = new PublicManager.Modules.MainPage.ModuleController();
-
             ModuleDict["合同书汇总"] = new ContractModuleController();
             ModuleDict["建议书汇总"] = new ReporterModuleController();
-            ModuleDict["自定义报表"] = new PublicManager.Modules.CustomReporter.ModuleController();
+            ModuleDict["报表导出"] = new PublicManager.Modules.CustomReporter.ModuleController();
 
-            ModuleDict["项目-课题"] = new Modules.DataCheck.ProjectSubjectCheck.ModuleController();
-            ModuleDict["项目-成员"] = new Modules.DataCheck.ProjectPersonCheck.ModuleController();
-            ModuleDict["成员分析"] = new Modules.DataCheck.PersonCheck.ModuleController();
-            ModuleDict["地区分布分析"] = new Modules.DataCheck.AddressCheck.ModuleController();
-            ModuleDict["单位-课题"] = new Modules.DataCheck.ProjectSubjectUnitCheck.ModuleController();
+            ModuleDict["项目查询"] = new Modules.DataCheck.ProjectPersonCheck.ModuleController();
+            ModuleDict["课题查询"] = new Modules.DataCheck.ProjectSubjectCheck.ModuleController();
+            ModuleDict["成员查询"] = new Modules.DataCheck.PersonCheck.ModuleController();
+            ModuleDict["地区查询"] = new Modules.DataCheck.AddressCheck.ModuleController();
 
             ModuleDict["专家信息管理"] = new Modules.Teacher.TeacherManager.ModuleController();
 
             ModuleDict["项目经费概览"] = new Modules.Moneys.ProjectMoney.ModuleController();
-            ModuleDict["课题经费分配"] = new Modules.Moneys.SubjectMoney.ModuleController();
-            ModuleDict["单位经费分配"] = new Modules.Moneys.UnitMoney.ModuleController();
+            ModuleDict["课题经费管理"] = new Modules.Moneys.SubjectMoney.ModuleController();
+            ModuleDict["单位经费管理"] = new Modules.Moneys.UnitMoney.ModuleController();
 
+            ModuleDict["项目过程管理"] = new Modules.Lines.ProjectLines.ModuleController();
             ModuleDict["项目节点管理"] = new Modules.Lines.ProjectNodes.ModuleController();
             ModuleDict["经费过程管理"] = new Modules.Lines.MoneyLines.ModuleController();
             ModuleDict["课题经费管理"] = new Modules.Lines.SubjectMoneys.ModuleController();
+
+            ModuleDict["信息提醒"] = new PublicManager.Modules.MainPage.ModuleController();
         }
 
         /// <summary>
