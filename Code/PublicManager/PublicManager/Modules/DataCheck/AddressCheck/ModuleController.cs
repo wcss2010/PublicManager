@@ -22,11 +22,13 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
         {
             InitializeComponent();
             cbOrgList.SelectedIndex = 0;
+            dgvDetail.OptionsBehavior.Editable = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dgvDetail.Rows.Clear();
+            DataTable dt = getTempDataTable("row", 7);
+
             List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectID in (select ProjectID from Subject where " + (string.IsNullOrEmpty(txtKey.Text) ? "1=1" : "DutyUnitAddress like '%" + txtKey.Text + "%'") + (cbOrgList.SelectedItem.ToString() == "全部" ? string.Empty : " and DutyUnitOrg = '" + cbOrgList.SelectedItem.ToString() + "'") + ")" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
@@ -44,12 +46,12 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
                        cells.Add(sub.DutyUnitOrg);
                        cells.Add(sub.DutyUnitAddress);
 
-                       dgvDetail.Rows.Add(cells.ToArray());
+                       dt.Rows.Add(cells.ToArray());
                    }
                }
             }
 
-            dgvDetail.checkCellSize();
+            gcGrid.DataSource = dt;
         }
 
         public override void start()
@@ -59,31 +61,8 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
             this.DisplayControl.Controls.Clear();
             this.Dock = DockStyle.Fill;
             this.DisplayControl.Controls.Add(this);
-        }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvDetail.Rows.Count >= 1 && e.RowIndex >= 0)
-            {
-                string content = dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty;
-                if (content != null && content.EndsWith(".doc"))
-                {
-                    if (File.Exists(content))
-                    {
-                        try
-                        {
-                            System.Diagnostics.Process.Start(content);
-                        }
-                        catch (Exception ex) { }
-                    }
-                }
-            }
-        }
-
-        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvDetail.Rows.Count <= 0) return;
-            dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = (dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty).ToString();
+            dgvDetail.OptionsView.AllowCellMerge = true;
         }
 
         private void cbDisplayReporter_CheckedChanged(object sender, EventArgs e)
@@ -108,7 +87,7 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
 
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-            BaseModuleController.exportToExcel(dgvDetail);
+            exportToExcelWithDevExpress(dgvDetail);
         }
     }
 }
