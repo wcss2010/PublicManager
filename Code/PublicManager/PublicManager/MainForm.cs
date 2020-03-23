@@ -60,8 +60,8 @@ namespace PublicManager
             ModuleDict["建议书汇总"] = new ReporterModuleController();
             ModuleDict["报表导出"] = new PublicManager.Modules.CustomReporter.ModuleController();
 
-            ModuleDict["项目查询"] = new Modules.DataCheck.ProjectPersonCheck.ModuleController();
-            ModuleDict["课题查询"] = new Modules.DataCheck.ProjectSubjectCheck.ModuleController();
+            ModuleDict["项目查询"] = new Modules.DataCheck.ProjectCheck.ModuleController();
+            ModuleDict["课题查询"] = new Modules.DataCheck.SubjectCheck.ModuleController();
             ModuleDict["成员查询"] = new Modules.DataCheck.PersonCheck.ModuleController();
             ModuleDict["地区查询"] = new Modules.DataCheck.AddressCheck.ModuleController();
 

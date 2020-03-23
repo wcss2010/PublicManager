@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using PublicManager.DB;
 using PublicManager.DB.Entitys;
 
-namespace PublicManager.Modules.DataCheck.ProjectPersonCheck
+namespace PublicManager.Modules.DataCheck.ProjectCheck
 {
     public partial class ModuleController : BaseModuleController
     {

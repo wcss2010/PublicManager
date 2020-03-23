@@ -1,4 +1,4 @@
-﻿namespace PublicManager.Modules.DataCheck.ProjectSubjectUnitCheck
+﻿namespace PublicManager.Modules.DataCheck.SubjectCheck
 {
     partial class ModuleController
     {
@@ -191,7 +191,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "单位名称：";
+            this.label1.Text = "项目名称：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Column8

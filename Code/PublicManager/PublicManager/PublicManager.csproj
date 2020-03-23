@@ -217,28 +217,22 @@
     <Compile Include="Modules\DataCheck\PersonCheck\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\DataCheck\ProjectPersonCheck\ModuleController.cs">
+    <Compile Include="Modules\DataCheck\ProjectCheck\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\DataCheck\ProjectPersonCheck\ModuleController.Designer.cs">
+    <Compile Include="Modules\DataCheck\ProjectCheck\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\DataCheck\ProjectSubjectCheck\ModuleController.cs">
+    <Compile Include="Modules\DataCheck\SubjectCheck\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\DataCheck\ProjectSubjectCheck\ModuleController.Designer.cs">
+    <Compile Include="Modules\DataCheck\SubjectCheck\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\DataCheck\AddressCheck\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Modules\DataCheck\AddressCheck\ModuleController.Designer.cs">
-      <DependentUpon>ModuleController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\DataCheck\ProjectSubjectUnitCheck\ModuleController.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Modules\DataCheck\ProjectSubjectUnitCheck\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\DataGridViewEx.cs">
@@ -249,6 +243,12 @@
     </Compile>
     <Compile Include="Modules\Lines\MoneyLines\MoneyLinePage.Designer.cs">
       <DependentUpon>MoneyLinePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Lines\ProjectLines\ModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Lines\ProjectLines\ModuleController.Designer.cs">
+      <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Lines\SubjectMoneys\ModuleController.cs">
       <SubType>UserControl</SubType>
@@ -386,20 +386,20 @@
     <EmbeddedResource Include="Modules\DataCheck\PersonCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\DataCheck\ProjectPersonCheck\ModuleController.resx">
+    <EmbeddedResource Include="Modules\DataCheck\ProjectCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\DataCheck\ProjectSubjectCheck\ModuleController.resx">
+    <EmbeddedResource Include="Modules\DataCheck\SubjectCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataCheck\AddressCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\DataCheck\ProjectSubjectUnitCheck\ModuleController.resx">
-      <DependentUpon>ModuleController.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lines\MoneyLines\MoneyLinePage.resx">
       <DependentUpon>MoneyLinePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Lines\ProjectLines\ModuleController.resx">
+      <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lines\SubjectMoneys\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
