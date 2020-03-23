@@ -38,7 +38,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
         {
             DataTable dt = getTempDataTable("row", 13);
 
-            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectID in (select ProjectID from Person where PersonName like '%" + txtKey.Text + "%')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%' or ProjectID in (select ProjectID from Subject where SubjectName like '%" + txtKey.Text + "%') or ProjectID in (select ProjectID from Person where PersonName like '%" + txtKey.Text + "%'))" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                 //显示仅为项目负责人
@@ -56,7 +56,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                         cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
                         cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
                         cells.Add(proj.ProjectName);
-                        cells.Add("");
+                        cells.Add("*****");
                         cells.Add(masterPerson.PersonName);
                         cells.Add(masterPerson.PersonIDCard);
                         cells.Add(masterPerson.PersonSex);
