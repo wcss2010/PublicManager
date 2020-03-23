@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvDetail = new PublicManager.Modules.DataGridViewEx();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExportToExcel = new System.Windows.Forms.Button();
             this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
@@ -39,27 +36,30 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtKey = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gcData = new DevExpress.XtraGrid.GridControl();
+            this.dgvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvDetail);
+            this.groupBox1.Controls.Add(this.gcData);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -67,51 +67,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1538, 644);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            // 
-            // dgvDetail
-            // 
-            this.dgvDetail.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 10.5F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column13,
-            this.Column6,
-            this.Column7,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column11,
-            this.Column5,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column12});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetail.Location = new System.Drawing.Point(3, 41);
-            this.dgvDetail.Name = "dgvDetail";
-            this.dgvDetail.ReadOnly = true;
-            this.dgvDetail.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5F);
-            this.dgvDetail.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowTemplate.Height = 40;
-            this.dgvDetail.Size = new System.Drawing.Size(1532, 600);
-            this.dgvDetail.TabIndex = 4;
-            this.dgvDetail.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
             // 
             // panel1
             // 
@@ -197,109 +152,139 @@
             this.label1.Text = "人员名称：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Column13
+            // gcData
             // 
-            this.Column13.HeaderText = "版本";
-            this.Column13.MinimumWidth = 60;
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 60;
+            this.gcData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcData.Location = new System.Drawing.Point(3, 41);
+            this.gcData.MainView = this.dgvDetail;
+            this.gcData.Name = "gcData";
+            this.gcData.Size = new System.Drawing.Size(1532, 600);
+            this.gcData.TabIndex = 3;
+            this.gcData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgvDetail});
             // 
-            // Column6
+            // dgvDetail
             // 
-            this.Column6.HeaderText = "类型";
-            this.Column6.MinimumWidth = 60;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 60;
+            this.dgvDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn13});
+            this.dgvDetail.GridControl = this.gcData;
+            this.dgvDetail.Name = "dgvDetail";
             // 
-            // Column7
+            // gridColumn1
             // 
-            this.Column7.HeaderText = "项目名称";
-            this.Column7.MinimumWidth = 90;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 90;
+            this.gridColumn1.Caption = "版本";
+            this.gridColumn1.FieldName = "row1";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
-            // Column1
+            // gridColumn2
             // 
-            this.Column1.HeaderText = "课题名称";
-            this.Column1.MinimumWidth = 90;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 90;
+            this.gridColumn2.Caption = "类型";
+            this.gridColumn2.FieldName = "row2";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
-            // Column2
+            // gridColumn3
             // 
-            this.Column2.HeaderText = "负责人";
-            this.Column2.MinimumWidth = 75;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 75;
+            this.gridColumn3.Caption = "项目名称";
+            this.gridColumn3.FieldName = "row3";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
             // 
-            // Column3
+            // gridColumn4
             // 
-            this.Column3.HeaderText = "负责人身份证";
-            this.Column3.MinimumWidth = 135;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 135;
+            this.gridColumn4.Caption = "课题名称";
+            this.gridColumn4.FieldName = "row4";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
             // 
-            // Column4
+            // gridColumn5
             // 
-            this.Column4.HeaderText = "性别";
-            this.Column4.MinimumWidth = 60;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 60;
+            this.gridColumn5.Caption = "负责人";
+            this.gridColumn5.FieldName = "row5";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
             // 
-            // Column11
+            // gridColumn6
             // 
-            this.Column11.HeaderText = "工作单位";
-            this.Column11.MinimumWidth = 90;
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 90;
+            this.gridColumn6.Caption = "负责人身份证";
+            this.gridColumn6.FieldName = "row6";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
             // 
-            // Column5
+            // gridColumn7
             // 
-            this.Column5.HeaderText = "职务/职称";
-            this.Column5.MinimumWidth = 110;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 110;
+            this.gridColumn7.Caption = "性别";
+            this.gridColumn7.FieldName = "row7";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
             // 
-            // Column8
+            // gridColumn8
             // 
-            this.Column8.HeaderText = "专业(技术方向)";
-            this.Column8.MinimumWidth = 130;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 130;
+            this.gridColumn8.Caption = "工作单位";
+            this.gridColumn8.FieldName = "row8";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 7;
             // 
-            // Column9
+            // gridColumn9
             // 
-            this.Column9.HeaderText = "每年投入时间（月）";
-            this.Column9.MinimumWidth = 160;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 160;
+            this.gridColumn9.Caption = "职务/职称";
+            this.gridColumn9.FieldName = "row9";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 8;
             // 
-            // Column10
+            // gridColumn10
             // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column10.HeaderText = "任务分工";
-            this.Column10.MinimumWidth = 100;
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
+            this.gridColumn10.Caption = "专业(技术方向)";
+            this.gridColumn10.FieldName = "row10";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 9;
             // 
-            // Column12
+            // gridColumn11
             // 
-            this.Column12.HeaderText = "项目中职务";
-            this.Column12.MinimumWidth = 110;
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 110;
+            this.gridColumn11.Caption = "每年投入时间（月）";
+            this.gridColumn11.FieldName = "row11";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 10;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "任务分工";
+            this.gridColumn12.FieldName = "row12";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 11;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "项目中职务";
+            this.gridColumn13.FieldName = "row13";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 12;
             // 
             // ModuleController
             // 
@@ -309,9 +294,10 @@
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1538, 644);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,22 +309,23 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtKey;
         private System.Windows.Forms.Label label1;
-        private PublicManager.Modules.DataGridViewEx dgvDetail;
         private System.Windows.Forms.CheckBox cbDisplayReporter;
         private System.Windows.Forms.CheckBox cbDisplayContract;
         private System.Windows.Forms.Button btnExportToExcel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private DevExpress.XtraGrid.GridControl gcData;
+        private DevExpress.XtraGrid.Views.Grid.GridView dgvDetail;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
     }
 }

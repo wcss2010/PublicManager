@@ -20,6 +20,9 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
         public ModuleController()
         {
             InitializeComponent();
+
+            dgvDetail.OptionsBehavior.Editable = false;
+            dgvDetail.OptionsView.AllowCellMerge = true;
         }
 
         public override void start()
@@ -33,7 +36,8 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dgvDetail.Rows.Clear();
+            DataTable dt = getTempDataTable("row", 13);
+
             List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectID in (select ProjectID from Person where PersonName like '%" + txtKey.Text + "%')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
@@ -64,7 +68,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
 
                         cells.Add("项目负责人");
 
-                        dgvDetail.Rows.Add(cells.ToArray());
+                        dt.Rows.Add(cells.ToArray());
                     }
                 }
 
@@ -106,18 +110,11 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
 
                         cells.Add(roleStr);
 
-                        dgvDetail.Rows.Add(cells.ToArray());
+                        dt.Rows.Add(cells.ToArray());
                     }
                 }
             }
-
-            dgvDetail.checkCellSize();
-        }
-
-        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvDetail.Rows.Count <= 0) return;
-            dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = (dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty).ToString();
+            gcData.DataSource = dt;
         }
 
         private void cbDisplayReporter_CheckedChanged(object sender, EventArgs e)
@@ -142,7 +139,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
 
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-            BaseModuleController.exportToExcel(dgvDetail);
+            BaseModuleController.exportToExcelWithDevExpress(dgvDetail);
         }
     }
 }

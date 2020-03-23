@@ -22,7 +22,9 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
         {
             InitializeComponent();
             cbOrgList.SelectedIndex = 0;
+
             dgvDetail.OptionsBehavior.Editable = false;
+            dgvDetail.OptionsView.AllowCellMerge = true;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -50,7 +52,6 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
                    }
                }
             }
-
             gcGrid.DataSource = dt;
         }
 
