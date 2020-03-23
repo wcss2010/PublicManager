@@ -42,10 +42,10 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
             foreach (Project proj in projList)
             {
                 //显示仅为项目负责人
-                Person masterPerson = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '' and JobInProject = '负责人' and IsProjectMaster = 'true'").select("*").getItem<Person>(new Person());
-                if (masterPerson != null && masterPerson.PersonID != null && masterPerson.PersonID.Length >= 1)
+                Person masterPersonObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '' and JobInProject = '负责人' and IsProjectMaster = 'true'").select("*").getItem<Person>(new Person());
+                if (masterPersonObj != null && masterPersonObj.PersonID != null && masterPersonObj.PersonID.Length >= 1)
                 {
-                    if (masterPerson.PersonName == null || !masterPerson.PersonName.Contains(txtKey.Text))
+                    if ((masterPersonObj.PersonName == null || !masterPersonObj.PersonName.Contains(txtKey.Text)) && (proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)))
                     {
                         //
                     }
@@ -57,14 +57,14 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                         cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
                         cells.Add(proj.ProjectName);
                         cells.Add("*****");
-                        cells.Add(masterPerson.PersonName);
-                        cells.Add(masterPerson.PersonIDCard);
-                        cells.Add(masterPerson.PersonSex);
-                        cells.Add(masterPerson.WorkUnit);
-                        cells.Add(masterPerson.PersonJob);
-                        cells.Add(masterPerson.PersonSpecialty);
-                        cells.Add(masterPerson.TotalTime);
-                        cells.Add(masterPerson.TaskContent);
+                        cells.Add(masterPersonObj.PersonName);
+                        cells.Add(masterPersonObj.PersonIDCard);
+                        cells.Add(masterPersonObj.PersonSex);
+                        cells.Add(masterPersonObj.WorkUnit);
+                        cells.Add(masterPersonObj.PersonJob);
+                        cells.Add(masterPersonObj.PersonSpecialty);
+                        cells.Add(masterPersonObj.TotalTime);
+                        cells.Add(masterPersonObj.TaskContent);
 
                         cells.Add("项目负责人");
 
@@ -79,7 +79,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                     List<Person> perList = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "'").select("*").getList<Person>(new Person());
                     foreach (Person p in perList)
                     {
-                        if (p.PersonName == null || !p.PersonName.Contains(txtKey.Text))
+                        if ((p.PersonName == null || !p.PersonName.Contains(txtKey.Text)) && (proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)) && (sub.SubjectName == null || !sub.SubjectName.Contains(txtKey.Text)))
                         {
                             continue;
                         }
