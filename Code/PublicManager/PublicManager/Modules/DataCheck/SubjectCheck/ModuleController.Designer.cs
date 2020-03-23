@@ -45,6 +45,8 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
@@ -143,7 +145,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "项目名称：";
+            this.label1.Text = "关键字：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gcGrid
@@ -166,7 +168,9 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
-            this.gridColumn7});
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9});
             this.dgvDetail.GridControl = this.gcGrid;
             this.dgvDetail.Name = "dgvDetail";
             // 
@@ -200,27 +204,38 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "负责单位";
-            this.gridColumn5.FieldName = "row5";
+            this.gridColumn5.Caption = "课题负责人";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
             // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "所属部门";
-            this.gridColumn6.FieldName = "row6";
+            this.gridColumn6.Caption = "课题负责单位";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
             // 
             // gridColumn7
             // 
-            this.gridColumn7.Caption = "所属地点";
-            this.gridColumn7.FieldName = "row7";
+            this.gridColumn7.Caption = "所属大单位";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 4;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "单位地址";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 5;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "课题总经费";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 6;
             // 
             // ModuleController
             // 
@@ -257,5 +272,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
     }
 }

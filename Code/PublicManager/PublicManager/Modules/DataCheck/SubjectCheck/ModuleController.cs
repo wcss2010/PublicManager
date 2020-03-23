@@ -21,6 +21,9 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
         public ModuleController()
         {
             InitializeComponent();
+
+            dgvDetail.OptionsBehavior.Editable = false;
+            dgvDetail.OptionsView.AllowCellMerge = true;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -108,7 +111,7 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
 
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-            BaseModuleController.exportToExcel(dgvDetail);
+            exportToExcelWithDevExpress(dgvDetail);
         }
     }
 }

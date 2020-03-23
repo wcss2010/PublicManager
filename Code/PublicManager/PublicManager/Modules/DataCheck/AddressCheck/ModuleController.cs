@@ -26,8 +26,7 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = false;
         }
-
-
+        
         private void btnSearch_Click(object sender, EventArgs e)
         {
             DataTable dt = getTempDataTable("row", 7);
