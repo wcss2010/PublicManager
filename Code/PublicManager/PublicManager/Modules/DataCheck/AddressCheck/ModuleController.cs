@@ -62,8 +62,6 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
             this.DisplayControl.Controls.Clear();
             this.Dock = DockStyle.Fill;
             this.DisplayControl.Controls.Add(this);
-
-            dgvDetail.OptionsView.AllowCellMerge = true;
         }
 
         private void cbDisplayReporter_CheckedChanged(object sender, EventArgs e)

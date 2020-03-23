@@ -28,8 +28,9 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dgvDetail.Rows.Clear();
-            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectName like '%" + txtKey.Text + "%'" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            DataTable dt = getTempDataTable("row", 9);
+
+            List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%' or ProjectID in (select ProjectID from Subject where SubjectName like '%" + txtKey.Text + "%'))" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
@@ -40,19 +41,26 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
                    cells.Add(proj.ProjectName);
                    cells.Add(sub.SubjectName);
+
+                   Person personObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "' and JobInProject = '负责人'").select("*").getItem<Person>(new Person());
+                   if (string.IsNullOrEmpty(personObj.PersonID))
+                   {
+                       continue;
+                   }
+                   else
+                   {
+                       cells.Add(personObj.PersonName);
+                   }
+
                    cells.Add(sub.DutyUnit);
                    cells.Add(sub.DutyUnitOrg);
                    cells.Add(sub.DutyUnitAddress);
                    cells.Add(sub.TotalMoney);
-                   cells.Add(sub.WorkDest);
-                   cells.Add(sub.WorkContent);
-                   cells.Add(sub.WorkTask);
 
-                   dgvDetail.Rows.Add(cells.ToArray());
+                   dt.Rows.Add(cells.ToArray());
                }
             }
-
-            dgvDetail.checkCellSize();
+            gcGrid.DataSource = dt;
         }
 
         public override void start()
@@ -62,31 +70,6 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
             this.DisplayControl.Controls.Clear();
             this.Dock = DockStyle.Fill;
             this.DisplayControl.Controls.Add(this);
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvDetail.Rows.Count >= 1 && e.RowIndex >= 0)
-            {
-                string content = dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty;
-                if (content != null && content.EndsWith(".doc"))
-                {
-                    if (File.Exists(content))
-                    {
-                        try
-                        {
-                            System.Diagnostics.Process.Start(content);
-                        }
-                        catch (Exception ex) { }
-                    }
-                }
-            }
-        }
-
-        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvDetail.Rows.Count <= 0) return;
-            dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = (dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty).ToString();
         }
 
         private void cbDisplayReporter_CheckedChanged(object sender, EventArgs e)
