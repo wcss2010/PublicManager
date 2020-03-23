@@ -166,9 +166,9 @@ namespace PublicManager
             }
             else
             {
-                if (e.Group.Caption == "首页")
+                if (e.Group.Caption == "信息提醒")
                 {
-                    showModule("首页", true);
+                    showModule("信息提醒", true);
                 }
             }
         }
