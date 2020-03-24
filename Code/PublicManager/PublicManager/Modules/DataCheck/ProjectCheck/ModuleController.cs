@@ -34,6 +34,8 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
             dgvSub.OptionsView.AllowCellMerge = true;
             dgvSub.OptionsView.ShowGroupPanel = false;
             cma2 = new DEGridViewCellMergeAdapter(dgvSub, new string[] { "row1" });
+
+            cbDisplayReporter.Checked = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

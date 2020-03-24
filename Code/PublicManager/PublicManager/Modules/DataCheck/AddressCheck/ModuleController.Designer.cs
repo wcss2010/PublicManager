@@ -68,10 +68,10 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 63);
+            this.gcGrid.Location = new System.Drawing.Point(3, 46);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1028, 525);
+            this.gcGrid.Size = new System.Drawing.Size(1028, 542);
             this.gcGrid.TabIndex = 3;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -154,14 +154,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 46);
+            this.panel1.Size = new System.Drawing.Size(1028, 29);
             this.panel1.TabIndex = 2;
             // 
             // btnExportToExcel
             // 
-            this.btnExportToExcel.Location = new System.Drawing.Point(915, 4);
+            this.btnExportToExcel.Location = new System.Drawing.Point(914, 5);
             this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(87, 36);
+            this.btnExportToExcel.Size = new System.Drawing.Size(87, 23);
             this.btnExportToExcel.TabIndex = 8;
             this.btnExportToExcel.Text = "导出到Excel";
             this.btnExportToExcel.UseVisualStyleBackColor = true;
@@ -202,14 +202,14 @@
             "中国核工业集团公司",
             "中国工程物理研究院",
             "其它"});
-            this.cbOrgList.Location = new System.Drawing.Point(432, 16);
+            this.cbOrgList.Location = new System.Drawing.Point(431, 7);
             this.cbOrgList.Name = "cbOrgList";
             this.cbOrgList.Size = new System.Drawing.Size(165, 20);
             this.cbOrgList.TabIndex = 5;
             // 
             // txtKey
             // 
-            this.txtKey.Location = new System.Drawing.Point(111, 16);
+            this.txtKey.Location = new System.Drawing.Point(110, 7);
             this.txtKey.Name = "txtKey";
             this.txtKey.Size = new System.Drawing.Size(215, 20);
             this.txtKey.TabIndex = 1;
@@ -219,7 +219,7 @@
             this.cbDisplayReporter.AutoSize = true;
             this.cbDisplayReporter.Checked = true;
             this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(801, 18);
+            this.cbDisplayReporter.Location = new System.Drawing.Point(800, 9);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
             this.cbDisplayReporter.Size = new System.Drawing.Size(108, 16);
             this.cbDisplayReporter.TabIndex = 4;
@@ -232,7 +232,7 @@
             this.cbDisplayContract.AutoSize = true;
             this.cbDisplayContract.Checked = true;
             this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDisplayContract.Location = new System.Drawing.Point(683, 18);
+            this.cbDisplayContract.Location = new System.Drawing.Point(682, 9);
             this.cbDisplayContract.Name = "cbDisplayContract";
             this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.cbDisplayContract.Size = new System.Drawing.Size(118, 16);
@@ -243,9 +243,9 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(603, 8);
+            this.btnSearch.Location = new System.Drawing.Point(602, 6);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 30);
+            this.btnSearch.Size = new System.Drawing.Size(75, 21);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "搜索";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -254,7 +254,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(329, 13);
+            this.label2.Location = new System.Drawing.Point(328, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 24);
             this.label2.TabIndex = 0;
@@ -264,7 +264,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(10, 13);
+            this.label1.Location = new System.Drawing.Point(9, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 0;

@@ -27,6 +27,8 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = true;
             cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3" });
+
+            cbDisplayReporter.Checked = false;
         }
         
         private void btnSearch_Click(object sender, EventArgs e)

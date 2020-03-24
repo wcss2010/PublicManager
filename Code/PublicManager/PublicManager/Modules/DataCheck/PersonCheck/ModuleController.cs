@@ -25,6 +25,8 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = true;
             cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3" });
+
+            cbDisplayReporter.Checked = false;
         }
 
         public override void start()
