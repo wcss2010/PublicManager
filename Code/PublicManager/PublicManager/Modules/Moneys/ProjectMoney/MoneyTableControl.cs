@@ -11,11 +11,11 @@ namespace PublicManager.Modules.Moneys.ProjectMoney
 {
     public partial class MoneyTableControl : UserControl
     {
-        Dictionary<string, TextBox> boxDict = new Dictionary<string, TextBox>();
+        Dictionary<string, MoneyLabel> boxDict = new Dictionary<string, MoneyLabel>();
         /// <summary>
         /// 输入框字典
         /// </summary>
-        public Dictionary<string, TextBox> BoxDict
+        public Dictionary<string, MoneyLabel> BoxDict
         {
             get { return boxDict; }
         }
@@ -36,9 +36,9 @@ namespace PublicManager.Modules.Moneys.ProjectMoney
         {
             foreach (Control c in parent.Controls)
             {
-                if (c is TextBox)
+                if (c is MoneyLabel)
                 {
-                    boxDict[c.Name] = (TextBox)c;
+                    boxDict[c.Name] = (MoneyLabel)c;
                 }
                 else
                 {
@@ -86,5 +86,17 @@ namespace PublicManager.Modules.Moneys.ProjectMoney
 
             return results;
         }
+    }
+
+    public class MoneyLabel : Label
+    {
+        public MoneyLabel() : base()
+        {
+            AutoSize = false;
+        }
+
+        public bool Multiline { get; set; }
+
+        public bool ReadOnly { get; set; }
     }
 }

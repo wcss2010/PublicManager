@@ -70,6 +70,7 @@
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(0, 0);
             this.plContent.Name = "plContent";
+            this.plContent.Padding = new System.Windows.Forms.Padding(10);
             this.plContent.Size = new System.Drawing.Size(782, 559);
             this.plContent.TabIndex = 0;
             // 

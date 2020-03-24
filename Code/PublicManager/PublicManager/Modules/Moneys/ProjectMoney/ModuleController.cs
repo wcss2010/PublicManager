@@ -83,9 +83,10 @@ namespace PublicManager.Modules.Moneys.ProjectMoney
         public void addMoneyTablePage(string catalogID, string projectName, List<Dicts> moneyList)
         {
             MoneyTableControl mtc = new MoneyTableControl();
-            foreach (TextBox tb in mtc.BoxDict.Values)
+            foreach (MoneyLabel tb in mtc.BoxDict.Values)
             {
                 tb.ReadOnly = true;
+                tb.Margin = new Padding(2);
             }
             mtc.Dock = DockStyle.Fill;
             plContent.Controls.Add(mtc);

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.hSkinTableLayoutPanel1 = new PublicManager.Modules.Moneys.ProjectMoney.HSkinTableLayoutPanel();
-            this.ibEditMoney5_2 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo3_1 = new System.Windows.Forms.TextBox();
+            this.ibEditMoney5_2 = new MoneyLabel();
+            this.ibEditInfo3_1 = new MoneyLabel();
             this.label23 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -52,40 +52,40 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.ibEditMoney1 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney2 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney3 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney4 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney5 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney6 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney7 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney8 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney9 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney10 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney11 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney12 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney13 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo1 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo2 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo3 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo4 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo5 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo6 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo7 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo8 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo9 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo10 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo11 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo12 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo13 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo3_2 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo3_3 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo5_1 = new System.Windows.Forms.TextBox();
-            this.ibEditInfo5_2 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney3_1 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney3_2 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney3_3 = new System.Windows.Forms.TextBox();
-            this.ibEditMoney5_1 = new System.Windows.Forms.TextBox();
+            this.ibEditMoney1 = new MoneyLabel();
+            this.ibEditMoney2 = new MoneyLabel();
+            this.ibEditMoney3 = new MoneyLabel();
+            this.ibEditMoney4 = new MoneyLabel();
+            this.ibEditMoney5 = new MoneyLabel();
+            this.ibEditMoney6 = new MoneyLabel();
+            this.ibEditMoney7 = new MoneyLabel();
+            this.ibEditMoney8 = new MoneyLabel();
+            this.ibEditMoney9 = new MoneyLabel();
+            this.ibEditMoney10 = new MoneyLabel();
+            this.ibEditMoney11 = new MoneyLabel();
+            this.ibEditMoney12 = new MoneyLabel();
+            this.ibEditMoney13 = new MoneyLabel();
+            this.ibEditInfo1 = new MoneyLabel();
+            this.ibEditInfo2 = new MoneyLabel();
+            this.ibEditInfo3 = new MoneyLabel();
+            this.ibEditInfo4 = new MoneyLabel();
+            this.ibEditInfo5 = new MoneyLabel();
+            this.ibEditInfo6 = new MoneyLabel();
+            this.ibEditInfo7 = new MoneyLabel();
+            this.ibEditInfo8 = new MoneyLabel();
+            this.ibEditInfo9 = new MoneyLabel();
+            this.ibEditInfo10 = new MoneyLabel();
+            this.ibEditInfo11 = new MoneyLabel();
+            this.ibEditInfo12 = new MoneyLabel();
+            this.ibEditInfo13 = new MoneyLabel();
+            this.ibEditInfo3_2 = new MoneyLabel();
+            this.ibEditInfo3_3 = new MoneyLabel();
+            this.ibEditInfo5_1 = new MoneyLabel();
+            this.ibEditInfo5_2 = new MoneyLabel();
+            this.ibEditMoney3_1 = new MoneyLabel();
+            this.ibEditMoney3_2 = new MoneyLabel();
+            this.ibEditMoney3_3 = new MoneyLabel();
+            this.ibEditMoney5_1 = new MoneyLabel();
             this.hSkinTableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -188,7 +188,7 @@
             this.ibEditMoney5_2.Name = "ibEditMoney5_2";
             this.ibEditMoney5_2.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney5_2.TabIndex = 19;
-            this.ibEditMoney5_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney5_2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney5_2.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditInfo3_1
@@ -463,7 +463,7 @@
             this.ibEditMoney1.ReadOnly = true;
             this.ibEditMoney1.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney1.TabIndex = 10;
-            this.ibEditMoney1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney1.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney2
@@ -476,7 +476,7 @@
             this.ibEditMoney2.ReadOnly = true;
             this.ibEditMoney2.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney2.TabIndex = 11;
-            this.ibEditMoney2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney2.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney3
@@ -489,7 +489,7 @@
             this.ibEditMoney3.ReadOnly = true;
             this.ibEditMoney3.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney3.TabIndex = 12;
-            this.ibEditMoney3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney3.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney4
@@ -501,7 +501,7 @@
             this.ibEditMoney4.Name = "ibEditMoney4";
             this.ibEditMoney4.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney4.TabIndex = 16;
-            this.ibEditMoney4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney4.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney5
@@ -514,7 +514,7 @@
             this.ibEditMoney5.ReadOnly = true;
             this.ibEditMoney5.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney5.TabIndex = 17;
-            this.ibEditMoney5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney5.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney6
@@ -526,7 +526,7 @@
             this.ibEditMoney6.Name = "ibEditMoney6";
             this.ibEditMoney6.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney6.TabIndex = 20;
-            this.ibEditMoney6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney6.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney7
@@ -538,7 +538,7 @@
             this.ibEditMoney7.Name = "ibEditMoney7";
             this.ibEditMoney7.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney7.TabIndex = 21;
-            this.ibEditMoney7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney7.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney8
@@ -550,7 +550,7 @@
             this.ibEditMoney8.Name = "ibEditMoney8";
             this.ibEditMoney8.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney8.TabIndex = 22;
-            this.ibEditMoney8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney8.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney9
@@ -562,7 +562,7 @@
             this.ibEditMoney9.Name = "ibEditMoney9";
             this.ibEditMoney9.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney9.TabIndex = 23;
-            this.ibEditMoney9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney9.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney10
@@ -574,7 +574,7 @@
             this.ibEditMoney10.Name = "ibEditMoney10";
             this.ibEditMoney10.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney10.TabIndex = 24;
-            this.ibEditMoney10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney10.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney11
@@ -586,7 +586,7 @@
             this.ibEditMoney11.Name = "ibEditMoney11";
             this.ibEditMoney11.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney11.TabIndex = 25;
-            this.ibEditMoney11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney11.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney12
@@ -599,7 +599,7 @@
             this.ibEditMoney12.ReadOnly = true;
             this.ibEditMoney12.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney12.TabIndex = 26;
-            this.ibEditMoney12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney12.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney13
@@ -611,7 +611,7 @@
             this.ibEditMoney13.Name = "ibEditMoney13";
             this.ibEditMoney13.Size = new System.Drawing.Size(167, 30);
             this.ibEditMoney13.TabIndex = 27;
-            this.ibEditMoney13.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney13.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditInfo1
@@ -793,7 +793,7 @@
             this.ibEditMoney3_1.Name = "ibEditMoney3_1";
             this.ibEditMoney3_1.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney3_1.TabIndex = 13;
-            this.ibEditMoney3_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney3_1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney3_1.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney3_2
@@ -805,7 +805,7 @@
             this.ibEditMoney3_2.Name = "ibEditMoney3_2";
             this.ibEditMoney3_2.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney3_2.TabIndex = 14;
-            this.ibEditMoney3_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney3_2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney3_2.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney3_3
@@ -817,7 +817,7 @@
             this.ibEditMoney3_3.Name = "ibEditMoney3_3";
             this.ibEditMoney3_3.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney3_3.TabIndex = 15;
-            this.ibEditMoney3_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney3_3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney3_3.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // ibEditMoney5_1
@@ -829,7 +829,7 @@
             this.ibEditMoney5_1.Name = "ibEditMoney5_1";
             this.ibEditMoney5_1.Size = new System.Drawing.Size(167, 25);
             this.ibEditMoney5_1.TabIndex = 18;
-            this.ibEditMoney5_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ibEditMoney5_1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibEditMoney5_1.TextChanged += new System.EventHandler(this.ibEditMoney1_TextChanged);
             // 
             // MoneyTableControl
@@ -849,8 +849,8 @@
         #endregion
 
         private HSkinTableLayoutPanel hSkinTableLayoutPanel1;
-        private System.Windows.Forms.TextBox ibEditMoney5_2;
-        private System.Windows.Forms.TextBox ibEditInfo3_1;
+        private MoneyLabel ibEditMoney5_2;
+        private MoneyLabel ibEditInfo3_1;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
@@ -872,39 +872,39 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox ibEditMoney1;
-        private System.Windows.Forms.TextBox ibEditMoney2;
-        private System.Windows.Forms.TextBox ibEditMoney3;
-        private System.Windows.Forms.TextBox ibEditMoney4;
-        private System.Windows.Forms.TextBox ibEditMoney5;
-        private System.Windows.Forms.TextBox ibEditMoney6;
-        private System.Windows.Forms.TextBox ibEditMoney7;
-        private System.Windows.Forms.TextBox ibEditMoney8;
-        private System.Windows.Forms.TextBox ibEditMoney9;
-        private System.Windows.Forms.TextBox ibEditMoney10;
-        private System.Windows.Forms.TextBox ibEditMoney11;
-        private System.Windows.Forms.TextBox ibEditMoney12;
-        private System.Windows.Forms.TextBox ibEditMoney13;
-        private System.Windows.Forms.TextBox ibEditInfo1;
-        private System.Windows.Forms.TextBox ibEditInfo2;
-        private System.Windows.Forms.TextBox ibEditInfo3;
-        private System.Windows.Forms.TextBox ibEditInfo4;
-        private System.Windows.Forms.TextBox ibEditInfo5;
-        private System.Windows.Forms.TextBox ibEditInfo6;
-        private System.Windows.Forms.TextBox ibEditInfo7;
-        private System.Windows.Forms.TextBox ibEditInfo8;
-        private System.Windows.Forms.TextBox ibEditInfo9;
-        private System.Windows.Forms.TextBox ibEditInfo10;
-        private System.Windows.Forms.TextBox ibEditInfo11;
-        private System.Windows.Forms.TextBox ibEditInfo12;
-        private System.Windows.Forms.TextBox ibEditInfo13;
-        private System.Windows.Forms.TextBox ibEditInfo3_2;
-        private System.Windows.Forms.TextBox ibEditInfo3_3;
-        private System.Windows.Forms.TextBox ibEditInfo5_1;
-        private System.Windows.Forms.TextBox ibEditInfo5_2;
-        private System.Windows.Forms.TextBox ibEditMoney3_1;
-        private System.Windows.Forms.TextBox ibEditMoney3_2;
-        private System.Windows.Forms.TextBox ibEditMoney3_3;
-        private System.Windows.Forms.TextBox ibEditMoney5_1;
+        private MoneyLabel ibEditMoney1;
+        private MoneyLabel ibEditMoney2;
+        private MoneyLabel ibEditMoney3;
+        private MoneyLabel ibEditMoney4;
+        private MoneyLabel ibEditMoney5;
+        private MoneyLabel ibEditMoney6;
+        private MoneyLabel ibEditMoney7;
+        private MoneyLabel ibEditMoney8;
+        private MoneyLabel ibEditMoney9;
+        private MoneyLabel ibEditMoney10;
+        private MoneyLabel ibEditMoney11;
+        private MoneyLabel ibEditMoney12;
+        private MoneyLabel ibEditMoney13;
+        private MoneyLabel ibEditInfo1;
+        private MoneyLabel ibEditInfo2;
+        private MoneyLabel ibEditInfo3;
+        private MoneyLabel ibEditInfo4;
+        private MoneyLabel ibEditInfo5;
+        private MoneyLabel ibEditInfo6;
+        private MoneyLabel ibEditInfo7;
+        private MoneyLabel ibEditInfo8;
+        private MoneyLabel ibEditInfo9;
+        private MoneyLabel ibEditInfo10;
+        private MoneyLabel ibEditInfo11;
+        private MoneyLabel ibEditInfo12;
+        private MoneyLabel ibEditInfo13;
+        private MoneyLabel ibEditInfo3_2;
+        private MoneyLabel ibEditInfo3_3;
+        private MoneyLabel ibEditInfo5_1;
+        private MoneyLabel ibEditInfo5_2;
+        private MoneyLabel ibEditMoney3_1;
+        private MoneyLabel ibEditMoney3_2;
+        private MoneyLabel ibEditMoney3_3;
+        private MoneyLabel ibEditMoney5_1;
     }
 }
