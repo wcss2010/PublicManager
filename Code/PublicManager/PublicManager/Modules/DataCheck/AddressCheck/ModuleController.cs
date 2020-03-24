@@ -24,7 +24,7 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
             cbOrgList.SelectedIndex = 0;
 
             dgvDetail.OptionsBehavior.Editable = false;
-            dgvDetail.OptionsView.AllowCellMerge = false;
+            dgvDetail.OptionsView.AllowCellMerge = true;
         }
         
         private void btnSearch_Click(object sender, EventArgs e)

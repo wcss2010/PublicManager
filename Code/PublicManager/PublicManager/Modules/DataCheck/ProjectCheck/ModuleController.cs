@@ -23,10 +23,12 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
             InitializeComponent();
 
             dgvDetail.OptionsBehavior.Editable = false;
-            dgvDetail.OptionsView.AllowCellMerge = false;
+            dgvDetail.OptionsView.AllowCellMerge = true;
             dgvDetail.OptionsDetail.AllowExpandEmptyDetails = true;
             dgvDetail.OptionsDetail.ShowDetailTabs = false;
-            //dgvDetail.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
+
+            dgvSub.OptionsBehavior.Editable = false;
+            dgvSub.OptionsView.AllowCellMerge = true;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
