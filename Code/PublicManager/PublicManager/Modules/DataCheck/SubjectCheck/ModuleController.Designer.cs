@@ -51,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -67,10 +68,10 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 41);
+            this.gcGrid.Location = new System.Drawing.Point(3, 39);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1028, 547);
+            this.gcGrid.Size = new System.Drawing.Size(1028, 549);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -169,7 +170,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 24);
+            this.panel1.Size = new System.Drawing.Size(1028, 22);
             this.panel1.TabIndex = 2;
             // 
             // btnExportToExcel
@@ -177,7 +178,7 @@
             this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnExportToExcel.Location = new System.Drawing.Point(897, 0);
             this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(87, 24);
+            this.btnExportToExcel.Size = new System.Drawing.Size(87, 22);
             this.btnExportToExcel.TabIndex = 8;
             this.btnExportToExcel.Text = "导出到Excel";
             this.btnExportToExcel.UseVisualStyleBackColor = true;
@@ -191,7 +192,7 @@
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbDisplayReporter.Location = new System.Drawing.Point(789, 0);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
-            this.cbDisplayReporter.Size = new System.Drawing.Size(108, 24);
+            this.cbDisplayReporter.Size = new System.Drawing.Size(108, 22);
             this.cbDisplayReporter.TabIndex = 4;
             this.cbDisplayReporter.Text = "显示建议书内容";
             this.cbDisplayReporter.UseVisualStyleBackColor = true;
@@ -206,7 +207,7 @@
             this.cbDisplayContract.Location = new System.Drawing.Point(671, 0);
             this.cbDisplayContract.Name = "cbDisplayContract";
             this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.cbDisplayContract.Size = new System.Drawing.Size(118, 24);
+            this.cbDisplayContract.Size = new System.Drawing.Size(118, 22);
             this.cbDisplayContract.TabIndex = 3;
             this.cbDisplayContract.Text = "显示合同书内容";
             this.cbDisplayContract.UseVisualStyleBackColor = true;
@@ -217,7 +218,7 @@
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSearch.Location = new System.Drawing.Point(596, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 24);
+            this.btnSearch.Size = new System.Drawing.Size(75, 22);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "搜索";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -228,7 +229,10 @@
             this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtKey.Location = new System.Drawing.Point(106, 0);
             this.txtKey.Name = "txtKey";
-            this.txtKey.Size = new System.Drawing.Size(490, 21);
+            this.txtKey.Properties.NullValuePrompt = "请输入项目名称、课题名称！";
+            this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtKey.Properties.ShowNullValuePromptWhenFocused = true;
+            this.txtKey.Size = new System.Drawing.Size(490, 20);
             this.txtKey.TabIndex = 1;
             // 
             // label1
@@ -237,7 +241,7 @@
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(106, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "关键字：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -254,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -51,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -160,7 +161,7 @@
             // 
             this.btnExportToExcel.Location = new System.Drawing.Point(915, 4);
             this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(87, 44);
+            this.btnExportToExcel.Size = new System.Drawing.Size(87, 36);
             this.btnExportToExcel.TabIndex = 8;
             this.btnExportToExcel.Text = "导出到Excel";
             this.btnExportToExcel.UseVisualStyleBackColor = true;
@@ -201,16 +202,16 @@
             "中国核工业集团公司",
             "中国工程物理研究院",
             "其它"});
-            this.cbOrgList.Location = new System.Drawing.Point(432, 11);
+            this.cbOrgList.Location = new System.Drawing.Point(432, 16);
             this.cbOrgList.Name = "cbOrgList";
             this.cbOrgList.Size = new System.Drawing.Size(165, 20);
             this.cbOrgList.TabIndex = 5;
             // 
             // txtKey
             // 
-            this.txtKey.Location = new System.Drawing.Point(111, 11);
+            this.txtKey.Location = new System.Drawing.Point(111, 16);
             this.txtKey.Name = "txtKey";
-            this.txtKey.Size = new System.Drawing.Size(215, 21);
+            this.txtKey.Size = new System.Drawing.Size(215, 20);
             this.txtKey.TabIndex = 1;
             // 
             // cbDisplayReporter
@@ -253,7 +254,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(329, 8);
+            this.label2.Location = new System.Drawing.Point(329, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 24);
             this.label2.TabIndex = 0;
@@ -263,7 +264,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(10, 8);
+            this.label1.Location = new System.Drawing.Point(10, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 0;
@@ -282,6 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
