@@ -27,6 +27,8 @@ namespace PublicManager.DB.Entitys
             query.set("DutyUnitAddress", DutyUnitAddress);
             query.set("ProjectNumber", ProjectNumber);
             query.set("TotalTime", TotalTime);
+            query.set("ProjectRange", ProjectRange);
+            query.set("TaskNumber", TaskNumber);
 
             return query;
         }
@@ -43,10 +45,12 @@ namespace PublicManager.DB.Entitys
         public string DutyUnitAddress { get; set; }
         public string ProjectNumber { get; set; }
         public int TotalTime { get; set; }
+        public string ProjectRange { get; set; }
+        public string TaskNumber { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
-            ProjectID = source("ProjectID").value<string>(Guid.NewGuid().ToString());
+            ProjectID = source("ProjectID").value<string>("");
             CatalogID = source("CatalogID").value<string>("");
             ProjectName = source("ProjectName").value<string>("");
             SecretLevel = source("SecretLevel").value<string>("");
@@ -58,6 +62,8 @@ namespace PublicManager.DB.Entitys
             DutyUnitAddress = source("DutyUnitAddress").value<string>("");
             ProjectNumber = source("ProjectNumber").value<string>("");
             TotalTime = source("TotalTime").value<int>(0);
+            ProjectRange = source("ProjectRange").value<string>("");
+            TaskNumber = source("TaskNumber").value<string>("");
         }
 
         public override Noear.Weed.IBinder clone()
