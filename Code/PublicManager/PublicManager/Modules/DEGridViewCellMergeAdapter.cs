@@ -14,6 +14,7 @@ namespace PublicManager.Modules
             this.myGridView = gv;
             this.myGridView.OptionsView.AllowCellMerge = true;
             this.myGridView.CellMerge += myGridView_CellMerge;
+            mergeFieldNameList.AddRange(mergeColNames);
         }
 
         void myGridView_CellMerge(object sender, DevExpress.XtraGrid.Views.Grid.CellMergeEventArgs e)
