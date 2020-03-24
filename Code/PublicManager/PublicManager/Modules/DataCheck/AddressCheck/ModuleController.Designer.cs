@@ -67,10 +67,10 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 76);
+            this.gcGrid.Location = new System.Drawing.Point(3, 63);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1028, 512);
+            this.gcGrid.Size = new System.Drawing.Size(1028, 525);
             this.gcGrid.TabIndex = 3;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -153,7 +153,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 59);
+            this.panel1.Size = new System.Drawing.Size(1028, 46);
             this.panel1.TabIndex = 2;
             // 
             // btnExportToExcel
@@ -201,16 +201,16 @@
             "中国核工业集团公司",
             "中国工程物理研究院",
             "其它"});
-            this.cbOrgList.Location = new System.Drawing.Point(106, 30);
+            this.cbOrgList.Location = new System.Drawing.Point(432, 11);
             this.cbOrgList.Name = "cbOrgList";
-            this.cbOrgList.Size = new System.Drawing.Size(490, 20);
+            this.cbOrgList.Size = new System.Drawing.Size(165, 20);
             this.cbOrgList.TabIndex = 5;
             // 
             // txtKey
             // 
-            this.txtKey.Location = new System.Drawing.Point(106, 0);
+            this.txtKey.Location = new System.Drawing.Point(111, 11);
             this.txtKey.Name = "txtKey";
-            this.txtKey.Size = new System.Drawing.Size(490, 21);
+            this.txtKey.Size = new System.Drawing.Size(215, 21);
             this.txtKey.TabIndex = 1;
             // 
             // cbDisplayReporter
@@ -242,9 +242,9 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(603, 4);
+            this.btnSearch.Location = new System.Drawing.Point(603, 8);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 45);
+            this.btnSearch.Size = new System.Drawing.Size(75, 30);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "搜索";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(3, 24);
+            this.label2.Location = new System.Drawing.Point(329, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 24);
             this.label2.TabIndex = 0;
@@ -263,7 +263,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(3, -3);
+            this.label1.Location = new System.Drawing.Point(10, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 0;
