@@ -41,7 +41,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExportToExcel = new System.Windows.Forms.Button();
             this.cbOrgList = new System.Windows.Forms.ComboBox();
-            this.txtKey = new System.Windows.Forms.TextBox();
+            this.txtKey = new DevExpress.XtraEditors.TextEdit();
             this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
             this.cbDisplayContract = new System.Windows.Forms.CheckBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -291,7 +291,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtKey;
+        private DevExpress.XtraEditors.TextEdit txtKey;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.CheckBox cbDisplayContract;
         private System.Windows.Forms.CheckBox cbDisplayReporter;
