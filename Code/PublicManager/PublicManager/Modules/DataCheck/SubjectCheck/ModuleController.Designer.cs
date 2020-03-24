@@ -176,7 +176,7 @@
             // btnExportToExcel
             // 
             this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExportToExcel.Location = new System.Drawing.Point(897, 0);
+            this.btnExportToExcel.Location = new System.Drawing.Point(925, 0);
             this.btnExportToExcel.Name = "btnExportToExcel";
             this.btnExportToExcel.Size = new System.Drawing.Size(87, 22);
             this.btnExportToExcel.TabIndex = 8;
@@ -190,7 +190,7 @@
             this.cbDisplayReporter.Checked = true;
             this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(789, 0);
+            this.cbDisplayReporter.Location = new System.Drawing.Point(817, 0);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
             this.cbDisplayReporter.Size = new System.Drawing.Size(108, 22);
             this.cbDisplayReporter.TabIndex = 4;
@@ -204,7 +204,7 @@
             this.cbDisplayContract.Checked = true;
             this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbDisplayContract.Location = new System.Drawing.Point(671, 0);
+            this.cbDisplayContract.Location = new System.Drawing.Point(699, 0);
             this.cbDisplayContract.Name = "cbDisplayContract";
             this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.cbDisplayContract.Size = new System.Drawing.Size(118, 22);
@@ -216,7 +216,7 @@
             // btnSearch
             // 
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSearch.Location = new System.Drawing.Point(596, 0);
+            this.btnSearch.Location = new System.Drawing.Point(624, 0);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 22);
             this.btnSearch.TabIndex = 2;
@@ -227,7 +227,7 @@
             // txtKey
             // 
             this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtKey.Location = new System.Drawing.Point(106, 0);
+            this.txtKey.Location = new System.Drawing.Point(134, 0);
             this.txtKey.Name = "txtKey";
             this.txtKey.Properties.NullValuePrompt = "请输入项目名称、课题名称！";
             this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
@@ -241,9 +241,9 @@
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 22);
+            this.label1.Size = new System.Drawing.Size(134, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "关键字：";
+            this.label1.Text = "搜索关键字：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ModuleController
