@@ -41,10 +41,10 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
         private void btnSearch_Click(object sender, EventArgs e)
         {
             DataSet dsAll = new DataSet();
-            DataTable masterDt = getTempDataTable("row", 15);
+            DataTable masterDt = getTempDataTable("row", 16);
             DataTable detailDt = getTempDataTable("row", 6);
 
-            List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%' or ProjectID in (select ProjectID from Subject where SubjectName like '%" + txtKey.Text + "%'))" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = ConnectionManager.Context.table("Project").where("(Keywords like '%" + txtKey.Text + "%' or ProjectName like '%" + txtKey.Text + "%' or ProjectID in (select ProjectID from Subject where SubjectName like '%" + txtKey.Text + "%'))" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                 #region 主表数据
@@ -73,6 +73,7 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                 cells.Add(proj.DutyUnitAddress);
                 cells.Add(string.Empty);
                 cells.Add(proj.ProjectID);
+                cells.Add(proj.Keywords);
                 masterDt.Rows.Add(cells.ToArray());
                 #endregion
 
@@ -82,7 +83,7 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                     List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                     foreach (Subject sub in subList)
                     {
-                        if ((proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)) && (sub.SubjectName == null || !sub.SubjectName.Contains(txtKey.Text)))
+                        if ((proj.Keywords == null || !proj.Keywords.Contains(txtKey.Text)) && (proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)) && (sub.SubjectName == null || !sub.SubjectName.Contains(txtKey.Text)))
                         {
                             continue;
                         }
@@ -108,6 +109,7 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                 #endregion
             }
 
+            #region 生成从属关系数据
             masterDt.TableName = "MainView";
             detailDt.TableName = "SubjectView";
             dsAll.Tables.Add(masterDt);
@@ -122,6 +124,7 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
 
             dsAll.Relations.Add(detailDt.TableName, keyColumn, foreignColumn, false);     //从表的层次名
             gcGrid.DataSource = dsAll.Tables[masterDt.TableName];
+            #endregion
         }
 
         public override void start()
