@@ -17,6 +17,8 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
         /// CatalogID筛选条件
         /// </summary>
         string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+        private DEGridViewCellMergeAdapter cma1;
+        private DEGridViewCellMergeAdapter cma2;
 
         public ModuleController()
         {
@@ -26,9 +28,11 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
             dgvDetail.OptionsView.AllowCellMerge = true;
             dgvDetail.OptionsDetail.AllowExpandEmptyDetails = true;
             dgvDetail.OptionsDetail.ShowDetailTabs = false;
+            cma1 = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3", "row4" });
 
             dgvSub.OptionsBehavior.Editable = false;
             dgvSub.OptionsView.AllowCellMerge = true;
+            cma2 = new DEGridViewCellMergeAdapter(dgvSub, new string[] { "row1" });
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
