@@ -283,7 +283,7 @@ namespace PublicManager.Modules
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.FileName = string.Empty;
-            sfd.Filter = "*.xlsx|*.xlsx";
+            sfd.Filter = "*.xls|*.xls";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 try
