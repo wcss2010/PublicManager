@@ -238,6 +238,7 @@
     <Compile Include="Modules\DataGridViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modules\DEGridViewCellMergeAdapter.cs" />
     <Compile Include="Modules\Lines\MoneyLines\MoneyLinePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
