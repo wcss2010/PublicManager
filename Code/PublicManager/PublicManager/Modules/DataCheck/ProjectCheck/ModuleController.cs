@@ -28,10 +28,11 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
             dgvDetail.OptionsView.AllowCellMerge = true;
             dgvDetail.OptionsDetail.AllowExpandEmptyDetails = true;
             dgvDetail.OptionsDetail.ShowDetailTabs = false;
-            cma1 = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3", "row4" });
+            cma1 = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3", "row4", "row5", "row6" });
 
             dgvSub.OptionsBehavior.Editable = false;
             dgvSub.OptionsView.AllowCellMerge = true;
+            dgvSub.OptionsView.ShowGroupPanel = false;
             cma2 = new DEGridViewCellMergeAdapter(dgvSub, new string[] { "row1" });
         }
 

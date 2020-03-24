@@ -25,7 +25,7 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
 
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = true;
-            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1" });
+            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3" });
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
