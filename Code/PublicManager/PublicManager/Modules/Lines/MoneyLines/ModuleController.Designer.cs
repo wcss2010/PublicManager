@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.plContent = new System.Windows.Forms.Panel();
-            this.moneyLinePage1 = new PublicManager.Modules.Lines.MoneyLines.MoneyLinePage();
+            this.mlDetail = new PublicManager.Modules.Lines.MoneyLines.MoneyLinePage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvProjectList = new PublicManager.Modules.TreeViewWithSearch();
             this.plContent.SuspendLayout();
@@ -41,21 +41,22 @@
             // 
             // plContent
             // 
-            this.plContent.Controls.Add(this.moneyLinePage1);
+            this.plContent.Controls.Add(this.mlDetail);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(0, 0);
             this.plContent.Name = "plContent";
+            this.plContent.Padding = new System.Windows.Forms.Padding(8);
             this.plContent.Size = new System.Drawing.Size(782, 568);
             this.plContent.TabIndex = 0;
             // 
-            // moneyLinePage1
+            // mlDetail
             // 
-            this.moneyLinePage1.BackColor = System.Drawing.Color.White;
-            this.moneyLinePage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.moneyLinePage1.Location = new System.Drawing.Point(0, 0);
-            this.moneyLinePage1.Name = "moneyLinePage1";
-            this.moneyLinePage1.Size = new System.Drawing.Size(782, 568);
-            this.moneyLinePage1.TabIndex = 0;
+            this.mlDetail.BackColor = System.Drawing.Color.White;
+            this.mlDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mlDetail.Location = new System.Drawing.Point(8, 8);
+            this.mlDetail.Name = "mlDetail";
+            this.mlDetail.Size = new System.Drawing.Size(766, 552);
+            this.mlDetail.TabIndex = 0;
             // 
             // splitContainer1
             // 
@@ -77,14 +78,10 @@
             // tvProjectList
             // 
             this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvProjectList.ContentTreeView.FocusNodeBackColor = System.Drawing.Color.OrangeRed;
-            this.tvProjectList.ContentTreeView.FocusNodeFontColor = System.Drawing.Color.White;
             this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
             this.tvProjectList.Location = new System.Drawing.Point(0, 0);
             this.tvProjectList.Margin = new System.Windows.Forms.Padding(4);
             this.tvProjectList.Name = "tvProjectList";
-            this.tvProjectList.ContentTreeView.NoFocusNodeBackColor = System.Drawing.Color.White;
-            this.tvProjectList.ContentTreeView.NoFocusNodeFontColor = System.Drawing.Color.Black;
             this.tvProjectList.Size = new System.Drawing.Size(284, 568);
             this.tvProjectList.TabIndex = 1;
             // 
@@ -109,7 +106,7 @@
         private System.Windows.Forms.Panel plContent;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private TreeViewWithSearch tvProjectList;
-        private MoneyLinePage moneyLinePage1;
+        private MoneyLinePage mlDetail;
 
     }
 }

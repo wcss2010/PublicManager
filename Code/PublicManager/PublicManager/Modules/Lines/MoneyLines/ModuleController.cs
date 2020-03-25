@@ -69,6 +69,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
 
         private void tvProjectList_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            mlDetail.setCellValue(2, 4, "fdsafda");
             //dgvDetail.Rows.Clear();
             //List<List<object>> objectList = new List<List<object>>();
 

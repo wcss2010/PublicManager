@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hSkinTableLayoutPanel1 = new PublicManager.Modules.Moneys.ProjectMoney.HSkinTableLayoutPanel();
+            this.plDetail = new PublicManager.Modules.Moneys.ProjectMoney.HSkinTableLayoutPanel();
             this.label23 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -73,7 +73,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.lblTable0_5 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -165,6 +164,7 @@
             this.lblTable0_2 = new System.Windows.Forms.Label();
             this.lblTable0_1 = new System.Windows.Forms.Label();
             this.lblTable0_0 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
@@ -197,7 +197,13 @@
             this.label128 = new System.Windows.Forms.Label();
             this.label129 = new System.Windows.Forms.Label();
             this.label130 = new System.Windows.Forms.Label();
-            this.hSkinTableLayoutPanel1.SuspendLayout();
+            this.label131 = new System.Windows.Forms.Label();
+            this.label132 = new System.Windows.Forms.Label();
+            this.label133 = new System.Windows.Forms.Label();
+            this.label134 = new System.Windows.Forms.Label();
+            this.label135 = new System.Windows.Forms.Label();
+            this.label136 = new System.Windows.Forms.Label();
+            this.plDetail.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -218,195 +224,201 @@
             this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
-            // hSkinTableLayoutPanel1
+            // plDetail
             // 
-            this.hSkinTableLayoutPanel1.BorderColor = System.Drawing.Color.Black;
-            this.hSkinTableLayoutPanel1.ColumnCount = 10;
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label23, 2, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label3, 2, 1);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel4, 0, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel5, 0, 4);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel6, 0, 5);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel7, 0, 6);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel8, 0, 7);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel9, 0, 8);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel10, 0, 9);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel11, 0, 10);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel12, 0, 11);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel13, 0, 12);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel14, 0, 13);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel15, 0, 14);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel16, 0, 15);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel17, 0, 16);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel18, 0, 17);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel19, 0, 18);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label4, 4, 1);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label5, 6, 1);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label24, 3, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label25, 4, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label26, 5, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label28, 9, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable0_5, 9, 4);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label30, 9, 5);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label31, 9, 6);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label32, 9, 7);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label33, 9, 8);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label34, 9, 9);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label35, 9, 10);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label36, 9, 11);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label37, 9, 12);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label38, 9, 13);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label39, 9, 14);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label40, 9, 15);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label41, 9, 16);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label42, 9, 17);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label120, 9, 18);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label44, 6, 18);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label45, 5, 18);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label46, 4, 18);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label47, 3, 18);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable14_0, 2, 18);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable13_0, 2, 17);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label50, 3, 17);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label51, 4, 17);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label52, 5, 17);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label53, 6, 17);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label54, 6, 16);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label55, 5, 16);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label56, 4, 16);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label57, 3, 16);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable12_0, 2, 16);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable11_0, 2, 15);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label60, 3, 15);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label61, 4, 15);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label62, 5, 15);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label63, 6, 15);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label64, 6, 14);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label65, 5, 14);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label66, 4, 14);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label67, 3, 14);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable10_0, 2, 14);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable9_0, 2, 13);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label70, 3, 13);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label71, 4, 13);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label72, 5, 13);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label73, 6, 13);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label74, 6, 12);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label75, 5, 12);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label76, 4, 12);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label77, 3, 12);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable8_0, 2, 12);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable7_0, 2, 11);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label80, 3, 11);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label81, 4, 11);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label82, 5, 11);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label83, 6, 11);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label84, 6, 10);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label85, 5, 10);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label86, 4, 10);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label87, 3, 10);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable6_0, 2, 10);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable5_0, 2, 9);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label90, 3, 9);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label91, 4, 9);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label92, 5, 9);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label93, 6, 9);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label94, 6, 8);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label95, 5, 8);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label96, 4, 8);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label97, 3, 8);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable4_0, 2, 8);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable3_0, 2, 7);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label100, 3, 7);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label101, 4, 7);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label102, 5, 7);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label103, 6, 7);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label104, 6, 6);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label105, 5, 6);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label106, 4, 6);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label107, 3, 6);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable2_0, 2, 6);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable1_0, 2, 5);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label110, 3, 5);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label111, 4, 5);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label112, 5, 5);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label113, 6, 5);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable0_4, 6, 4);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable0_3, 5, 4);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable0_2, 4, 4);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable0_1, 3, 4);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.lblTable0_0, 2, 4);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label27, 8, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label29, 6, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label43, 7, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label48, 7, 4);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label49, 8, 4);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label58, 8, 5);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label59, 7, 5);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label68, 7, 6);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label69, 8, 6);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label78, 7, 7);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label79, 8, 7);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label88, 7, 8);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label89, 8, 8);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label98, 7, 9);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label99, 8, 9);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label108, 7, 10);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label109, 8, 10);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label114, 7, 11);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label115, 8, 11);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label116, 7, 12);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label117, 8, 12);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label118, 7, 13);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label119, 8, 13);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label121, 7, 14);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label122, 8, 14);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label123, 7, 15);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label124, 8, 15);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label125, 7, 16);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label126, 8, 16);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label127, 7, 17);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label128, 8, 17);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label129, 7, 18);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label130, 8, 18);
-            this.hSkinTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hSkinTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.hSkinTableLayoutPanel1.Name = "hSkinTableLayoutPanel1";
-            this.hSkinTableLayoutPanel1.RowCount = 19;
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.584829F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.584829F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
-            this.hSkinTableLayoutPanel1.Size = new System.Drawing.Size(961, 641);
-            this.hSkinTableLayoutPanel1.TabIndex = 0;
+            this.plDetail.BorderColor = System.Drawing.Color.Black;
+            this.plDetail.ColumnCount = 10;
+            this.plDetail.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.plDetail.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.plDetail.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.plDetail.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.plDetail.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.plDetail.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.plDetail.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.plDetail.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.plDetail.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.plDetail.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.plDetail.Controls.Add(this.label23, 2, 3);
+            this.plDetail.Controls.Add(this.label3, 2, 1);
+            this.plDetail.Controls.Add(this.panel1, 0, 0);
+            this.plDetail.Controls.Add(this.panel3, 0, 2);
+            this.plDetail.Controls.Add(this.panel4, 0, 3);
+            this.plDetail.Controls.Add(this.panel5, 0, 4);
+            this.plDetail.Controls.Add(this.panel6, 0, 5);
+            this.plDetail.Controls.Add(this.panel7, 0, 6);
+            this.plDetail.Controls.Add(this.panel8, 0, 7);
+            this.plDetail.Controls.Add(this.panel9, 0, 8);
+            this.plDetail.Controls.Add(this.panel10, 0, 9);
+            this.plDetail.Controls.Add(this.panel11, 0, 10);
+            this.plDetail.Controls.Add(this.panel12, 0, 11);
+            this.plDetail.Controls.Add(this.panel13, 0, 12);
+            this.plDetail.Controls.Add(this.panel14, 0, 13);
+            this.plDetail.Controls.Add(this.panel15, 0, 14);
+            this.plDetail.Controls.Add(this.panel16, 0, 15);
+            this.plDetail.Controls.Add(this.panel17, 0, 16);
+            this.plDetail.Controls.Add(this.panel18, 0, 17);
+            this.plDetail.Controls.Add(this.panel19, 0, 18);
+            this.plDetail.Controls.Add(this.label1, 0, 1);
+            this.plDetail.Controls.Add(this.label4, 4, 1);
+            this.plDetail.Controls.Add(this.label5, 6, 1);
+            this.plDetail.Controls.Add(this.label24, 3, 3);
+            this.plDetail.Controls.Add(this.label25, 4, 3);
+            this.plDetail.Controls.Add(this.label26, 5, 3);
+            this.plDetail.Controls.Add(this.label28, 9, 3);
+            this.plDetail.Controls.Add(this.lblTable0_5, 9, 4);
+            this.plDetail.Controls.Add(this.label30, 9, 5);
+            this.plDetail.Controls.Add(this.label31, 9, 6);
+            this.plDetail.Controls.Add(this.label32, 9, 7);
+            this.plDetail.Controls.Add(this.label33, 9, 8);
+            this.plDetail.Controls.Add(this.label34, 9, 9);
+            this.plDetail.Controls.Add(this.label35, 9, 10);
+            this.plDetail.Controls.Add(this.label36, 9, 11);
+            this.plDetail.Controls.Add(this.label37, 9, 12);
+            this.plDetail.Controls.Add(this.label38, 9, 13);
+            this.plDetail.Controls.Add(this.label39, 9, 14);
+            this.plDetail.Controls.Add(this.label40, 9, 15);
+            this.plDetail.Controls.Add(this.label41, 9, 16);
+            this.plDetail.Controls.Add(this.label42, 9, 17);
+            this.plDetail.Controls.Add(this.label120, 9, 18);
+            this.plDetail.Controls.Add(this.label44, 6, 18);
+            this.plDetail.Controls.Add(this.label45, 5, 18);
+            this.plDetail.Controls.Add(this.label46, 4, 18);
+            this.plDetail.Controls.Add(this.label47, 3, 18);
+            this.plDetail.Controls.Add(this.lblTable14_0, 2, 18);
+            this.plDetail.Controls.Add(this.lblTable13_0, 2, 17);
+            this.plDetail.Controls.Add(this.label50, 3, 17);
+            this.plDetail.Controls.Add(this.label51, 4, 17);
+            this.plDetail.Controls.Add(this.label52, 5, 17);
+            this.plDetail.Controls.Add(this.label53, 6, 17);
+            this.plDetail.Controls.Add(this.label54, 6, 16);
+            this.plDetail.Controls.Add(this.label55, 5, 16);
+            this.plDetail.Controls.Add(this.label56, 4, 16);
+            this.plDetail.Controls.Add(this.label57, 3, 16);
+            this.plDetail.Controls.Add(this.lblTable12_0, 2, 16);
+            this.plDetail.Controls.Add(this.lblTable11_0, 2, 15);
+            this.plDetail.Controls.Add(this.label60, 3, 15);
+            this.plDetail.Controls.Add(this.label61, 4, 15);
+            this.plDetail.Controls.Add(this.label62, 5, 15);
+            this.plDetail.Controls.Add(this.label63, 6, 15);
+            this.plDetail.Controls.Add(this.label64, 6, 14);
+            this.plDetail.Controls.Add(this.label65, 5, 14);
+            this.plDetail.Controls.Add(this.label66, 4, 14);
+            this.plDetail.Controls.Add(this.label67, 3, 14);
+            this.plDetail.Controls.Add(this.lblTable10_0, 2, 14);
+            this.plDetail.Controls.Add(this.lblTable9_0, 2, 13);
+            this.plDetail.Controls.Add(this.label70, 3, 13);
+            this.plDetail.Controls.Add(this.label71, 4, 13);
+            this.plDetail.Controls.Add(this.label72, 5, 13);
+            this.plDetail.Controls.Add(this.label73, 6, 13);
+            this.plDetail.Controls.Add(this.label74, 6, 12);
+            this.plDetail.Controls.Add(this.label75, 5, 12);
+            this.plDetail.Controls.Add(this.label76, 4, 12);
+            this.plDetail.Controls.Add(this.label77, 3, 12);
+            this.plDetail.Controls.Add(this.lblTable8_0, 2, 12);
+            this.plDetail.Controls.Add(this.lblTable7_0, 2, 11);
+            this.plDetail.Controls.Add(this.label80, 3, 11);
+            this.plDetail.Controls.Add(this.label81, 4, 11);
+            this.plDetail.Controls.Add(this.label82, 5, 11);
+            this.plDetail.Controls.Add(this.label83, 6, 11);
+            this.plDetail.Controls.Add(this.label84, 6, 10);
+            this.plDetail.Controls.Add(this.label85, 5, 10);
+            this.plDetail.Controls.Add(this.label86, 4, 10);
+            this.plDetail.Controls.Add(this.label87, 3, 10);
+            this.plDetail.Controls.Add(this.lblTable6_0, 2, 10);
+            this.plDetail.Controls.Add(this.lblTable5_0, 2, 9);
+            this.plDetail.Controls.Add(this.label90, 3, 9);
+            this.plDetail.Controls.Add(this.label91, 4, 9);
+            this.plDetail.Controls.Add(this.label92, 5, 9);
+            this.plDetail.Controls.Add(this.label93, 6, 9);
+            this.plDetail.Controls.Add(this.label94, 6, 8);
+            this.plDetail.Controls.Add(this.label95, 5, 8);
+            this.plDetail.Controls.Add(this.label96, 4, 8);
+            this.plDetail.Controls.Add(this.label97, 3, 8);
+            this.plDetail.Controls.Add(this.lblTable4_0, 2, 8);
+            this.plDetail.Controls.Add(this.lblTable3_0, 2, 7);
+            this.plDetail.Controls.Add(this.label100, 3, 7);
+            this.plDetail.Controls.Add(this.label101, 4, 7);
+            this.plDetail.Controls.Add(this.label102, 5, 7);
+            this.plDetail.Controls.Add(this.label103, 6, 7);
+            this.plDetail.Controls.Add(this.label104, 6, 6);
+            this.plDetail.Controls.Add(this.label105, 5, 6);
+            this.plDetail.Controls.Add(this.label106, 4, 6);
+            this.plDetail.Controls.Add(this.label107, 3, 6);
+            this.plDetail.Controls.Add(this.lblTable2_0, 2, 6);
+            this.plDetail.Controls.Add(this.lblTable1_0, 2, 5);
+            this.plDetail.Controls.Add(this.label110, 3, 5);
+            this.plDetail.Controls.Add(this.label111, 4, 5);
+            this.plDetail.Controls.Add(this.label112, 5, 5);
+            this.plDetail.Controls.Add(this.label113, 6, 5);
+            this.plDetail.Controls.Add(this.lblTable0_4, 6, 4);
+            this.plDetail.Controls.Add(this.lblTable0_3, 5, 4);
+            this.plDetail.Controls.Add(this.lblTable0_2, 4, 4);
+            this.plDetail.Controls.Add(this.lblTable0_1, 3, 4);
+            this.plDetail.Controls.Add(this.lblTable0_0, 2, 4);
+            this.plDetail.Controls.Add(this.label27, 8, 3);
+            this.plDetail.Controls.Add(this.label29, 6, 3);
+            this.plDetail.Controls.Add(this.label43, 7, 3);
+            this.plDetail.Controls.Add(this.label48, 7, 4);
+            this.plDetail.Controls.Add(this.label49, 8, 4);
+            this.plDetail.Controls.Add(this.label58, 8, 5);
+            this.plDetail.Controls.Add(this.label59, 7, 5);
+            this.plDetail.Controls.Add(this.label68, 7, 6);
+            this.plDetail.Controls.Add(this.label69, 8, 6);
+            this.plDetail.Controls.Add(this.label78, 7, 7);
+            this.plDetail.Controls.Add(this.label79, 8, 7);
+            this.plDetail.Controls.Add(this.label88, 7, 8);
+            this.plDetail.Controls.Add(this.label89, 8, 8);
+            this.plDetail.Controls.Add(this.label98, 7, 9);
+            this.plDetail.Controls.Add(this.label99, 8, 9);
+            this.plDetail.Controls.Add(this.label108, 7, 10);
+            this.plDetail.Controls.Add(this.label109, 8, 10);
+            this.plDetail.Controls.Add(this.label114, 7, 11);
+            this.plDetail.Controls.Add(this.label115, 8, 11);
+            this.plDetail.Controls.Add(this.label116, 7, 12);
+            this.plDetail.Controls.Add(this.label117, 8, 12);
+            this.plDetail.Controls.Add(this.label118, 7, 13);
+            this.plDetail.Controls.Add(this.label119, 8, 13);
+            this.plDetail.Controls.Add(this.label121, 7, 14);
+            this.plDetail.Controls.Add(this.label122, 8, 14);
+            this.plDetail.Controls.Add(this.label123, 7, 15);
+            this.plDetail.Controls.Add(this.label124, 8, 15);
+            this.plDetail.Controls.Add(this.label125, 7, 16);
+            this.plDetail.Controls.Add(this.label126, 8, 16);
+            this.plDetail.Controls.Add(this.label127, 7, 17);
+            this.plDetail.Controls.Add(this.label128, 8, 17);
+            this.plDetail.Controls.Add(this.label129, 7, 18);
+            this.plDetail.Controls.Add(this.label130, 8, 18);
+            this.plDetail.Controls.Add(this.label131, 1, 1);
+            this.plDetail.Controls.Add(this.label132, 3, 1);
+            this.plDetail.Controls.Add(this.label133, 5, 1);
+            this.plDetail.Controls.Add(this.label134, 7, 1);
+            this.plDetail.Controls.Add(this.label135, 8, 1);
+            this.plDetail.Controls.Add(this.label136, 9, 1);
+            this.plDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plDetail.Location = new System.Drawing.Point(0, 0);
+            this.plDetail.Name = "plDetail";
+            this.plDetail.RowCount = 19;
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.584829F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.584829F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.990019F));
+            this.plDetail.Size = new System.Drawing.Size(961, 641);
+            this.plDetail.TabIndex = 0;
             // 
             // label23
             // 
@@ -434,7 +446,7 @@
             // 
             // panel1
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel1, 10);
+            this.plDetail.SetColumnSpan(this.panel1, 10);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1, 1);
@@ -456,7 +468,7 @@
             // 
             // panel3
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel3, 10);
+            this.plDetail.SetColumnSpan(this.panel3, 10);
             this.panel3.Controls.Add(this.label22);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(1, 80);
@@ -479,7 +491,7 @@
             // 
             // panel4
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel4, 2);
+            this.plDetail.SetColumnSpan(this.panel4, 2);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(1, 111);
@@ -501,7 +513,7 @@
             // 
             // panel5
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel5, 2);
+            this.plDetail.SetColumnSpan(this.panel5, 2);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(1, 159);
@@ -523,7 +535,7 @@
             // 
             // panel6
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel6, 2);
+            this.plDetail.SetColumnSpan(this.panel6, 2);
             this.panel6.Controls.Add(this.label8);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(1, 190);
@@ -545,7 +557,7 @@
             // 
             // panel7
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel7, 2);
+            this.plDetail.SetColumnSpan(this.panel7, 2);
             this.panel7.Controls.Add(this.label9);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(1, 221);
@@ -567,7 +579,7 @@
             // 
             // panel8
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel8, 2);
+            this.plDetail.SetColumnSpan(this.panel8, 2);
             this.panel8.Controls.Add(this.label10);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(1, 252);
@@ -589,7 +601,7 @@
             // 
             // panel9
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel9, 2);
+            this.plDetail.SetColumnSpan(this.panel9, 2);
             this.panel9.Controls.Add(this.label11);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(1, 283);
@@ -611,7 +623,7 @@
             // 
             // panel10
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel10, 2);
+            this.plDetail.SetColumnSpan(this.panel10, 2);
             this.panel10.Controls.Add(this.label12);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(1, 314);
@@ -633,7 +645,7 @@
             // 
             // panel11
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel11, 2);
+            this.plDetail.SetColumnSpan(this.panel11, 2);
             this.panel11.Controls.Add(this.label13);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(1, 345);
@@ -655,7 +667,7 @@
             // 
             // panel12
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel12, 2);
+            this.plDetail.SetColumnSpan(this.panel12, 2);
             this.panel12.Controls.Add(this.label14);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(1, 376);
@@ -677,7 +689,7 @@
             // 
             // panel13
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel13, 2);
+            this.plDetail.SetColumnSpan(this.panel13, 2);
             this.panel13.Controls.Add(this.label15);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(1, 407);
@@ -699,7 +711,7 @@
             // 
             // panel14
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel14, 2);
+            this.plDetail.SetColumnSpan(this.panel14, 2);
             this.panel14.Controls.Add(this.label16);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(1, 438);
@@ -721,7 +733,7 @@
             // 
             // panel15
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel15, 2);
+            this.plDetail.SetColumnSpan(this.panel15, 2);
             this.panel15.Controls.Add(this.label17);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(1, 469);
@@ -743,7 +755,7 @@
             // 
             // panel16
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel16, 2);
+            this.plDetail.SetColumnSpan(this.panel16, 2);
             this.panel16.Controls.Add(this.label18);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel16.Location = new System.Drawing.Point(1, 500);
@@ -765,7 +777,7 @@
             // 
             // panel17
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel17, 2);
+            this.plDetail.SetColumnSpan(this.panel17, 2);
             this.panel17.Controls.Add(this.label19);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(1, 531);
@@ -787,7 +799,7 @@
             // 
             // panel18
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel18, 2);
+            this.plDetail.SetColumnSpan(this.panel18, 2);
             this.panel18.Controls.Add(this.label20);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel18.Location = new System.Drawing.Point(1, 562);
@@ -809,7 +821,7 @@
             // 
             // panel19
             // 
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel19, 2);
+            this.plDetail.SetColumnSpan(this.panel19, 2);
             this.panel19.Controls.Add(this.label21);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel19.Location = new System.Drawing.Point(1, 593);
@@ -900,18 +912,6 @@
             this.label26.TabIndex = 2;
             this.label26.Text = "项目阶段3支出经费";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label27
-            // 
-            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label27.Font = new System.Drawing.Font("宋体", 10F);
-            this.label27.Location = new System.Drawing.Point(769, 111);
-            this.label27.Margin = new System.Windows.Forms.Padding(1);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(94, 46);
-            this.label27.TabIndex = 2;
-            this.label27.Text = "项目累计支出经费";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label28
             // 
@@ -2005,6 +2005,18 @@
             this.lblTable0_0.Text = "空";
             this.lblTable0_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label27
+            // 
+            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label27.Font = new System.Drawing.Font("宋体", 10F);
+            this.label27.Location = new System.Drawing.Point(769, 111);
+            this.label27.Margin = new System.Windows.Forms.Padding(1);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(94, 46);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "项目累计支出经费";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label29
             // 
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2388,15 +2400,87 @@
             this.label130.Text = "空";
             this.label130.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label131
+            // 
+            this.label131.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label131.Font = new System.Drawing.Font("宋体", 12F);
+            this.label131.Location = new System.Drawing.Point(97, 32);
+            this.label131.Margin = new System.Windows.Forms.Padding(1);
+            this.label131.Name = "label131";
+            this.label131.Size = new System.Drawing.Size(94, 46);
+            this.label131.TabIndex = 2;
+            this.label131.Text = "空";
+            this.label131.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label132
+            // 
+            this.label132.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label132.Font = new System.Drawing.Font("宋体", 12F);
+            this.label132.Location = new System.Drawing.Point(289, 32);
+            this.label132.Margin = new System.Windows.Forms.Padding(1);
+            this.label132.Name = "label132";
+            this.label132.Size = new System.Drawing.Size(94, 46);
+            this.label132.TabIndex = 2;
+            this.label132.Text = "空";
+            this.label132.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label133
+            // 
+            this.label133.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label133.Font = new System.Drawing.Font("宋体", 12F);
+            this.label133.Location = new System.Drawing.Point(481, 32);
+            this.label133.Margin = new System.Windows.Forms.Padding(1);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(94, 46);
+            this.label133.TabIndex = 2;
+            this.label133.Text = "空";
+            this.label133.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label134
+            // 
+            this.label134.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label134.Font = new System.Drawing.Font("宋体", 12F);
+            this.label134.Location = new System.Drawing.Point(673, 32);
+            this.label134.Margin = new System.Windows.Forms.Padding(1);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(94, 46);
+            this.label134.TabIndex = 2;
+            this.label134.Text = "空";
+            this.label134.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label135
+            // 
+            this.label135.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label135.Font = new System.Drawing.Font("宋体", 12F);
+            this.label135.Location = new System.Drawing.Point(769, 32);
+            this.label135.Margin = new System.Windows.Forms.Padding(1);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(94, 46);
+            this.label135.TabIndex = 2;
+            this.label135.Text = "空";
+            this.label135.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label136
+            // 
+            this.label136.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label136.Font = new System.Drawing.Font("宋体", 12F);
+            this.label136.Location = new System.Drawing.Point(865, 32);
+            this.label136.Margin = new System.Windows.Forms.Padding(1);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(95, 46);
+            this.label136.TabIndex = 2;
+            this.label136.Text = "空";
+            this.label136.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MoneyLinePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.hSkinTableLayoutPanel1);
+            this.Controls.Add(this.plDetail);
             this.Name = "MoneyLinePage";
             this.Size = new System.Drawing.Size(961, 641);
-            this.hSkinTableLayoutPanel1.ResumeLayout(false);
+            this.plDetail.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -2421,7 +2505,7 @@
 
         #endregion
 
-        private Moneys.ProjectMoney.HSkinTableLayoutPanel hSkinTableLayoutPanel1;
+        private Moneys.ProjectMoney.HSkinTableLayoutPanel plDetail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
@@ -2590,5 +2674,11 @@
         private System.Windows.Forms.Label label128;
         private System.Windows.Forms.Label label129;
         private System.Windows.Forms.Label label130;
+        private System.Windows.Forms.Label label131;
+        private System.Windows.Forms.Label label132;
+        private System.Windows.Forms.Label label133;
+        private System.Windows.Forms.Label label134;
+        private System.Windows.Forms.Label label135;
+        private System.Windows.Forms.Label label136;
     }
 }
