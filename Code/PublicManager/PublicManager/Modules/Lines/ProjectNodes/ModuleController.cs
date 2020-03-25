@@ -233,6 +233,7 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                                             break;
                                     }
                                 }
+                                MessageBox.Show("导入完成！");
                             }
                         }
                         catch (Exception ex)
