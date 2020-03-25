@@ -84,6 +84,7 @@ namespace PublicManager.Modules.Lines.ProjectLines
                 cells.Add(proj.ContactCheckLevelB);
                 cells.Add(proj.Memo);
 
+                cells.Add(proj.ProjectID);
                 dt.Rows.Add(cells.ToArray());
             }
             gcGrid.DataSource = dt;
