@@ -77,6 +77,13 @@ namespace PublicManager.Modules.Lines.ProjectLines
                 cells.Add(proj.DutyUnitOrg);
                 cells.Add(proj.DutyUnitAddress);
 
+                cells.Add(proj.OKQuestionMemo);
+                cells.Add(proj.OKCheckA);
+                cells.Add(proj.OKCheckB);
+                cells.Add(proj.ContactCheckLevelA);
+                cells.Add(proj.ContactCheckLevelB);
+                cells.Add(proj.Memo);
+
                 dt.Rows.Add(cells.ToArray());
             }
             gcGrid.DataSource = dt;

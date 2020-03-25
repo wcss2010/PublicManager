@@ -67,7 +67,7 @@
             // btnExportToExcel
             // 
             this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExportToExcel.Location = new System.Drawing.Point(925, 0);
+            this.btnExportToExcel.Location = new System.Drawing.Point(804, 0);
             this.btnExportToExcel.Name = "btnExportToExcel";
             this.btnExportToExcel.Size = new System.Drawing.Size(87, 22);
             this.btnExportToExcel.TabIndex = 8;
@@ -82,7 +82,7 @@
             this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbDisplayReporter.Enabled = false;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(817, 0);
+            this.cbDisplayReporter.Location = new System.Drawing.Point(696, 0);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
             this.cbDisplayReporter.Size = new System.Drawing.Size(108, 22);
             this.cbDisplayReporter.TabIndex = 4;
@@ -97,7 +97,7 @@
             this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbDisplayContract.Enabled = false;
-            this.cbDisplayContract.Location = new System.Drawing.Point(699, 0);
+            this.cbDisplayContract.Location = new System.Drawing.Point(578, 0);
             this.cbDisplayContract.Name = "cbDisplayContract";
             this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.cbDisplayContract.Size = new System.Drawing.Size(118, 22);
@@ -109,7 +109,7 @@
             // btnSearch
             // 
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSearch.Location = new System.Drawing.Point(624, 0);
+            this.btnSearch.Location = new System.Drawing.Point(503, 0);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 22);
             this.btnSearch.TabIndex = 2;
@@ -139,7 +139,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1075, 22);
+            this.panel1.Size = new System.Drawing.Size(1211, 22);
             this.panel1.TabIndex = 2;
             // 
             // txtKey
@@ -150,7 +150,7 @@
             this.txtKey.Properties.NullValuePrompt = "请输入项目名称、课题名称！";
             this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtKey.Properties.ShowNullValuePromptWhenFocused = true;
-            this.txtKey.Size = new System.Drawing.Size(490, 20);
+            this.txtKey.Size = new System.Drawing.Size(369, 20);
             this.txtKey.TabIndex = 1;
             // 
             // gridColumn2
@@ -332,7 +332,7 @@
             this.gcGrid.Location = new System.Drawing.Point(3, 39);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1075, 540);
+            this.gcGrid.Size = new System.Drawing.Size(1211, 540);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -344,7 +344,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1081, 582);
+            this.groupBox1.Size = new System.Drawing.Size(1217, 582);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -354,7 +354,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "ModuleController";
-            this.Size = new System.Drawing.Size(1081, 582);
+            this.Size = new System.Drawing.Size(1217, 582);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();
