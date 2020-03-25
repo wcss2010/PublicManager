@@ -29,6 +29,12 @@ namespace PublicManager.DB.Entitys
             query.set("TotalTime", TotalTime);
             query.set("ProjectRange", ProjectRange);
             query.set("TaskNumber", TaskNumber);
+            query.set("OKQuestionMemo", OKQuestionMemo);
+            query.set("OKCheckA", OKCheckA);
+            query.set("OKCheckB", OKCheckB);
+            query.set("ContactCheckLevelA", ContactCheckLevelA);
+            query.set("ContactCheckLevelB", ContactCheckLevelB);
+            query.set("Memo", Memo);
 
             return query;
         }
@@ -47,6 +53,12 @@ namespace PublicManager.DB.Entitys
         public int TotalTime { get; set; }
         public string ProjectRange { get; set; }
         public string TaskNumber { get; set; }
+        public string OKQuestionMemo { get; set; }
+        public string OKCheckA { get; set; }
+        public string OKCheckB { get; set; }
+        public string ContactCheckLevelA { get; set; }
+        public string ContactCheckLevelB { get; set; }
+        public string Memo { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
@@ -64,6 +76,12 @@ namespace PublicManager.DB.Entitys
             TotalTime = source("TotalTime").value<int>(0);
             ProjectRange = source("ProjectRange").value<string>("");
             TaskNumber = source("TaskNumber").value<string>("");
+            OKQuestionMemo = source("OKQuestionMemo").value<string>("");
+            OKCheckA = source("OKCheckA").value<string>("");
+            OKCheckB = source("OKCheckB").value<string>("");
+            ContactCheckLevelA = source("ContactCheckLevelA").value<string>("");
+            ContactCheckLevelB = source("ContactCheckLevelB").value<string>("");
+            Memo = source("Memo").value<string>("");
         }
 
         public override Noear.Weed.IBinder clone()
