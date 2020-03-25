@@ -48,7 +48,7 @@ namespace PublicManager.Modules.Lines.ProjectLines
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataTable dt = getTempDataTable("row", 9);
+            DataTable dt = getTempDataTable("row", 20);
 
             List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
