@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using PublicManager.DB;
 using PublicManager.DB.Entitys;
+using System.IO;
+using System.Diagnostics;
 
 namespace PublicManager.Modules.Lines.ProjectNodes
 {
@@ -16,6 +18,15 @@ namespace PublicManager.Modules.Lines.ProjectNodes
         public ModuleController()
         {
             InitializeComponent();
+
+            gvDetail.OptionsBehavior.Editable = false;
+            //gvDetail.OptionsView.AllowCellMerge = true;
+            //cma = new DEGridViewCellMergeAdapter(gvDetail, new string[] { "row3" });
+        }
+
+        public override DevExpress.XtraBars.Ribbon.RibbonPage[] getTopBarPages()
+        {
+            return new DevExpress.XtraBars.Ribbon.RibbonPage[] { rpMaster };
         }
 
         public override void start()
@@ -56,7 +67,6 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
         private void tvProjectList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            dgvDetail.Rows.Clear();
             List<List<object>> objectList = new List<List<object>>();
 
             if (e.Node.Tag is Catalog)
@@ -75,16 +85,79 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                     cells.Add(mss.WillTime.ToString("yyyy年MM月dd日"));
                     cells.Add(mss.TotalMoney);
                     cells.Add(mss.MemoText);
+                    cells.Add(mss.MSID);
 
                     objectList.Add(cells);
                 }
             }
 
+            DataTable dt = getTempDataTable("row", 6);
             foreach (List<object> lxItem in objectList)
             {
-                dgvDetail.Rows.Add(lxItem.ToArray());
+                dt.Rows.Add(lxItem.ToArray());
             }
-            dgvDetail.checkCellSize();
+            gcGrid.DataSource = dt;
+        }
+
+        private void btnDownloadExcelA_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.FileName = string.Empty;
+            sfd.Filter = "*.xlsx|*.xlsx";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    //复制模板文件
+                    File.Copy(Path.Combine(Application.StartupPath, Path.Combine("Templetes", "moneyImport.xlsx")), sfd.FileName);
+
+                    //弹出提示
+                    MessageBox.Show("Excel导出完成！" + sfd.FileName);
+
+                    //打开文件
+                    if (File.Exists(sfd.FileName))
+                    {
+                        Process.Start(sfd.FileName);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("对不起，Excel导出失败！Ex:" + ex.ToString());
+                }
+            }
+        }
+
+        private void btnImportExcelA_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenFileDialog sfd = new OpenFileDialog();
+            sfd.FileName = string.Empty;
+            sfd.Filter = "*.xlsx|*.xlsx";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    DataSet ds = ExcelHelper.ExcelToDataSet(sfd.FileName);
+                    if (ds != null && ds.Tables.Count >= 2)
+                    {
+                        foreach (DataTable dt in ds.Tables)
+                        {
+                            switch (dt.TableName)
+                            {
+                                case "a":
+
+                                    break;
+                                case "b":
+
+                                    break;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("对不起，Excel导入失败！Ex:" + ex.ToString());
+                }
+            }
         }
     }
 }

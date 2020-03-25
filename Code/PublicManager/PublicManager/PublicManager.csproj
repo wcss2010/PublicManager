@@ -479,6 +479,9 @@
     <None Include="static.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Templetes\moneyImport.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Templetes\teacherList.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

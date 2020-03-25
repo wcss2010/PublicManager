@@ -276,6 +276,38 @@ namespace PublicManager.Modules
         }
 
         /// <summary>
+        /// 将DataTable导出到Excel
+        /// </summary>
+        /// <param name="dtt"></param>
+        public static void exportToExcel(DataTable dtt)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.FileName = string.Empty;
+            sfd.Filter = "*.xlsx|*.xlsx";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    //写入Excel文件
+                    writeDataTableToExcel(dtt, sfd.FileName);
+
+                    //弹出提示
+                    MessageBox.Show("Excel导出完成！" + sfd.FileName);
+
+                    //打开文件
+                    if (File.Exists(sfd.FileName))
+                    {
+                        Process.Start(sfd.FileName);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("对不起，Excel导出失败！Ex:" + ex.ToString());
+                }
+            }
+        }
+
+        /// <summary>
         /// 导出DataGrid中的数据到Excel文件并打开该文件(带文件保存对话框)
         /// </summary>
         /// <param name="dgv"></param>

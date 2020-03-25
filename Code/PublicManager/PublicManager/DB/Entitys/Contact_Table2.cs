@@ -18,6 +18,7 @@ namespace PublicManager.DB.Entitys
             query.set("TID", TID);
             query.set("CatalogID", CatalogID);
             query.set("ProjectID", ProjectID);
+            query.set("NodeID", NodeID);
             query.set("WorkDeskJob", WorkDeskJob);
             query.set("PersonName", PersonName);
             query.set("PersonUnit", PersonUnit);
@@ -30,6 +31,7 @@ namespace PublicManager.DB.Entitys
         public string TID { get; set; }
         public string CatalogID { get; set; }
         public string ProjectID { get; set; }
+        public string NodeID { get; set; }
         public string WorkDeskJob { get; set; }
         public string PersonName { get; set; }
         public string PersonUnit { get; set; }
@@ -41,6 +43,7 @@ namespace PublicManager.DB.Entitys
             TID = source("TID").value<string>("");
             CatalogID = source("CatalogID").value<string>("");
             ProjectID = source("ProjectID").value<string>("");
+            NodeID = source("NodeID").value<string>("");
             WorkDeskJob = source("WorkDeskJob").value<string>("");
             PersonName = source("PersonName").value<string>("");
             PersonUnit = source("PersonUnit").value<string>("");
