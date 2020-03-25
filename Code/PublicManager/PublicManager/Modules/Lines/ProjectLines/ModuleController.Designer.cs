@@ -55,9 +55,9 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -148,7 +148,7 @@
             this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtKey.Location = new System.Drawing.Point(134, 0);
             this.txtKey.Name = "txtKey";
-            this.txtKey.Properties.NullValuePrompt = "请输入项目名称、课题名称！";
+            this.txtKey.Properties.NullValuePrompt = "请输入项目名称！";
             this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtKey.Properties.ShowNullValuePromptWhenFocused = true;
             this.txtKey.Size = new System.Drawing.Size(278, 20);
@@ -328,6 +328,12 @@
             this.gridColumn19.Visible = true;
             this.gridColumn19.VisibleIndex = 16;
             // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "ProjectID";
+            this.gridColumn20.FieldName = "row20";
+            this.gridColumn20.Name = "gridColumn20";
+            // 
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -349,12 +355,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1217, 582);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.Caption = "ProjectID";
-            this.gridColumn20.FieldName = "row20";
-            this.gridColumn20.Name = "gridColumn20";
             // 
             // ModuleController
             // 
