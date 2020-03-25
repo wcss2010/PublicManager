@@ -16,6 +16,10 @@ namespace PublicManager.Modules.Lines.SubjectMoneys
         public ModuleController()
         {
             InitializeComponent();
+
+            gvDetail.OptionsBehavior.Editable = false;
+            //gvDetail.OptionsView.AllowCellMerge = true;
+            //cma = new DEGridViewCellMergeAdapter(gvDetail, new string[] { "row3" });
         }
 
         public override void start()
@@ -69,34 +73,46 @@ namespace PublicManager.Modules.Lines.SubjectMoneys
 
         private void tvProjectList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            //dgvDetail.Rows.Clear();
-            //List<List<object>> objectList = new List<List<object>>();
+            List<List<object>> objectList = new List<List<object>>();
 
-            //if (e.Node.Tag is Catalog)
-            //{
-            //    //项目年度列表
-            //    Catalog catalogObj = (Catalog)e.Node.Tag;
+            if (e.Node.Tag is Catalog)
+            {
+                //项目年度列表
+                Catalog catalogObj = (Catalog)e.Node.Tag;
 
-            //    List<MoneySends> subList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + catalogObj.CatalogID + "' and ProjectID = '" + catalogObj.CatalogID + "')").select("*").getList<MoneySends>(new MoneySends());
-            //    int indexx = 0;
-            //    foreach (MoneySends mss in subList)
-            //    {
-            //        indexx++;
-            //        List<object> cells = new List<object>();
-            //        cells.Add(indexx.ToString());
-            //        cells.Add(mss.SendRule);
-            //        cells.Add(mss.WillTime.ToString("yyyy年MM月dd日"));
-            //        cells.Add(mss.TotalMoney);
-            //        cells.Add(mss.MemoText);
+            }
+            else if (e.Node.Tag is Subject)
+            {
+                //项目年度列表
+                Subject subjectObj = (Subject)e.Node.Tag;
 
-            //        objectList.Add(cells);
-            //    }
-            //}
+            }
+            else if (e.Node.Tag is MoneySends)
+            {
+                //项目年度列表
+                MoneySends moneySendObj = (MoneySends)e.Node.Tag;
 
-            //foreach (List<object> lxItem in objectList)
-            //{
-            //    dgvDetail.Rows.Add(lxItem.ToArray());
-            //}
+                DataTable dt = getTempDataTable("row", 8);
+                //显示节点经费
+                List<Contact_Table5> moneyss = ConnectionManager.Context.table("Contact_Table5").where("NodeID='" + moneySendObj.MSID + "'").select("*").getList<Contact_Table5>(new Contact_Table5());
+                foreach (Contact_Table5 mObj in moneyss)
+                {
+                    List<object> cells = new List<object>();
+
+                    Subject subjectObj = (Subject)e.Node.Parent.Tag;
+                    cells.Add(subjectObj.SubjectName);
+                    cells.Add(mObj.SubjectWorkUnit);
+                    cells.Add(mObj.SubjectTotalMoney);
+                    cells.Add(mObj.SubjectSendMoney);
+                    cells.Add(mObj.SubjectSendTime);
+                    cells.Add(mObj.SubjectSendedMoney);
+                    cells.Add(mObj.SubjectUseMoney);
+                    cells.Add(mObj.SubjectNoSendMoney);
+
+                    dt.Rows.Add(cells.ToArray());
+                }
+                gcGrid.DataSource = dt;
+            }
         }
     }
 }
