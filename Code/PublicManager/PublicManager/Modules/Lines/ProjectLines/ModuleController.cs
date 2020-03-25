@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using PublicManager.DB.Entitys;
 using PublicManager.DB;
+using PublicManager.Modules.Lines.ProjectLines.Froms;
 
 namespace PublicManager.Modules.Lines.ProjectLines
 {
@@ -113,6 +114,25 @@ namespace PublicManager.Modules.Lines.ProjectLines
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
             exportToExcelWithDevExpress(dgvDetail);
+        }
+
+        private void btnCheckProject_Click(object sender, EventArgs e)
+        {
+            int[] selecteds = dgvDetail.GetSelectedRows();
+            if (selecteds != null && selecteds.Length >= 1)
+            {
+                object objValue = dgvDetail.GetRowCellValue(selecteds[0], "row20");
+                if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
+                {
+                    string projectId = objValue.ToString();
+
+                    Project proj = ConnectionManager.Context.table("Project").where("ProjectID='" + projectId + "'").select("*").getItem<Project>(new Project());
+                    if (new CheckEditForm(proj).ShowDialog() == DialogResult.OK)
+                    {
+                        btnSearch.PerformClick();
+                    }
+                }
+            }
         }
     }
 }

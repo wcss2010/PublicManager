@@ -58,6 +58,7 @@
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCheckProject = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -131,6 +132,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCheckProject);
             this.panel1.Controls.Add(this.btnExportToExcel);
             this.panel1.Controls.Add(this.cbDisplayReporter);
             this.panel1.Controls.Add(this.cbDisplayContract);
@@ -356,6 +358,17 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // btnCheckProject
+            // 
+            this.btnCheckProject.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCheckProject.Location = new System.Drawing.Point(800, 0);
+            this.btnCheckProject.Name = "btnCheckProject";
+            this.btnCheckProject.Size = new System.Drawing.Size(87, 22);
+            this.btnCheckProject.TabIndex = 9;
+            this.btnCheckProject.Text = "编辑审核信息";
+            this.btnCheckProject.UseVisualStyleBackColor = true;
+            this.btnCheckProject.Click += new System.EventHandler(this.btnCheckProject_Click);
+            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -405,5 +418,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private System.Windows.Forms.Button btnCheckProject;
     }
 }

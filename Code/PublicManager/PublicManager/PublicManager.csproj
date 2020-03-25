@@ -245,6 +245,12 @@
     <Compile Include="Modules\Lines\MoneyLines\MoneyLinePage.Designer.cs">
       <DependentUpon>MoneyLinePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Lines\ProjectLines\Froms\CheckEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Lines\ProjectLines\Froms\CheckEditForm.Designer.cs">
+      <DependentUpon>CheckEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Lines\ProjectLines\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -398,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lines\MoneyLines\MoneyLinePage.resx">
       <DependentUpon>MoneyLinePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Lines\ProjectLines\Froms\CheckEditForm.resx">
+      <DependentUpon>CheckEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lines\ProjectLines\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
