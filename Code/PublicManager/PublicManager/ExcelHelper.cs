@@ -203,7 +203,14 @@ namespace PublicManager
                             case CellType.Formula:
                                 {
                                     cell = evaluator.EvaluateInCell(cell) as HSSFCell;
-                                    dr[j] = cell.ToString();
+                                    if (cell != null)
+                                    {
+                                        dr[j] = cell.ToString();
+                                    }
+                                    else
+                                    {
+                                        dr[j] = string.Empty;
+                                    }
                                     break;
                                 }
                             default:
