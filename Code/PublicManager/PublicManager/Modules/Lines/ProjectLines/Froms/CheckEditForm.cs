@@ -1,4 +1,5 @@
-﻿using PublicManager.DB;
+﻿using DevExpress.XtraBars.Ribbon;
+using PublicManager.DB;
 using PublicManager.DB.Entitys;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PublicManager.Modules.Lines.ProjectLines.Froms
 {
-    public partial class CheckEditForm : Form
+    public partial class CheckEditForm : RibbonForm
     {
         private Project projectObj;
         public CheckEditForm(Project proj)
