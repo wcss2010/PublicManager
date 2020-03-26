@@ -56,27 +56,27 @@ namespace PublicManager
         /// </summary>
         private void loadModules()
         {
-            ModuleDict["合同书汇总"] = new ContractModuleController();
-            ModuleDict["建议书汇总"] = new ReporterModuleController();
-            ModuleDict["报表导出"] = new PublicManager.Modules.CustomReporter.ModuleController();
+            ModuleDict[nbcTestA.Caption + "xxxx" + "合同书汇总"] = new ContractModuleController();
+            ModuleDict[nbcTestA.Caption + "xxxx" + "建议书汇总"] = new ReporterModuleController();
+            ModuleDict[nbcTestA.Caption + "xxxx" + "报表导出"] = new PublicManager.Modules.CustomReporter.ModuleController();
 
-            ModuleDict["项目查询"] = new Modules.DataCheck.ProjectCheck.ModuleController();
-            ModuleDict["课题查询"] = new Modules.DataCheck.SubjectCheck.ModuleController();
-            ModuleDict["成员查询"] = new Modules.DataCheck.PersonCheck.ModuleController();
-            ModuleDict["地区查询"] = new Modules.DataCheck.AddressCheck.ModuleController();
+            ModuleDict[nbcTestB.Caption + "xxxx" + "项目查询"] = new Modules.DataCheck.ProjectCheck.ModuleController();
+            ModuleDict[nbcTestB.Caption + "xxxx" + "课题查询"] = new Modules.DataCheck.SubjectCheck.ModuleController();
+            ModuleDict[nbcTestB.Caption + "xxxx" + "成员查询"] = new Modules.DataCheck.PersonCheck.ModuleController();
+            ModuleDict[nbcTestB.Caption + "xxxx" + "地区查询"] = new Modules.DataCheck.AddressCheck.ModuleController();
 
-            ModuleDict["专家信息管理"] = new Modules.Teacher.TeacherManager.ModuleController();
+            ModuleDict[nbcTestF.Caption + "xxxx" + "项目过程管理"] = new Modules.Lines.ProjectLines.ModuleController();
+            ModuleDict[nbcTestF.Caption + "xxxx" + "项目节点管理"] = new Modules.Lines.ProjectNodes.ModuleController();
+            ModuleDict[nbcTestF.Caption + "xxxx" + "经费过程管理"] = new Modules.Lines.MoneyLines.ModuleController();
+            ModuleDict[nbcTestF.Caption + "xxxx" + "课题经费管理"] = new Modules.Lines.SubjectMoneys.ModuleController();
 
-            ModuleDict["项目经费概览"] = new Modules.Moneys.ProjectMoney.ModuleController();
-            ModuleDict["课题经费管理"] = new Modules.Moneys.SubjectMoney.ModuleController();
-            ModuleDict["单位经费管理"] = new Modules.Moneys.UnitMoney.ModuleController();
+            ModuleDict[nbcTestD.Caption + "xxxx" + "项目经费概览"] = new Modules.Moneys.ProjectMoney.ModuleController();
+            ModuleDict[nbcTestD.Caption + "xxxx" + "课题经费管理"] = new Modules.Moneys.SubjectMoney.ModuleController();
+            ModuleDict[nbcTestD.Caption + "xxxx" + "单位经费管理"] = new Modules.Moneys.UnitMoney.ModuleController();
 
-            ModuleDict["项目过程管理"] = new Modules.Lines.ProjectLines.ModuleController();
-            ModuleDict["项目节点管理"] = new Modules.Lines.ProjectNodes.ModuleController();
-            ModuleDict["经费过程管理"] = new Modules.Lines.MoneyLines.ModuleController();
-            ModuleDict["课题经费管理"] = new Modules.Lines.SubjectMoneys.ModuleController();
+            ModuleDict[nbcTestC.Caption + "xxxx" + "专家信息管理"] = new Modules.Teacher.TeacherManager.ModuleController();
 
-            ModuleDict["信息提醒"] = new PublicManager.Modules.MainPage.ModuleController();
+            ModuleDict[nbcTestG.Caption + "xxxx" + "信息提醒"] = new PublicManager.Modules.MainPage.ModuleController();
         }
 
         /// <summary>
@@ -159,7 +159,8 @@ namespace PublicManager
                         if (tl.Nodes.Count >= 1)
                         {
                             tl.SetFocusedNode(tl.Nodes[0]);
-                            showModule(tl.Nodes[0].GetDisplayText(0), true);
+
+                            showModule(e.Group.Caption + "xxxx" + tl.Nodes[0].GetDisplayText(0), true);
                         }
                     }
                 }
@@ -168,17 +169,10 @@ namespace PublicManager
             {
                 if (e.Group.Caption == "信息提醒")
                 {
-                    showModule("信息提醒", true);
+                    showModule(e.Group.Caption + "xxxx" + "信息提醒", true);
                 }
             }
         }
-
-        private void nbcLeftTree_NavPaneStateChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tlTestA_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e) { }
         
         private void btnSkinColorModify_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -227,10 +221,6 @@ namespace PublicManager
             //错误计数
             ProgressForm.errorCount++;
         }
-
-        private void tlTestB_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e) { }
-        
-        private void tlTestC_AfterFocusNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e) { }
         
         private void tlTestA_MouseClick(object sender, MouseEventArgs e)
         {
@@ -242,7 +232,10 @@ namespace PublicManager
                 tree.SetFocusedNode(hitInfo.Node);         //这句话就是关键，用于选中节点　　
 
                 //显示模块
-                showModule(hitInfo.Node.GetDisplayText(0), true);
+                if (nbcLeftTree.ActiveGroup != null)
+                {
+                    showModule(nbcLeftTree.ActiveGroup.Caption + "xxxx" + hitInfo.Node.GetDisplayText(0), true);
+                }
             }
         }
 
@@ -256,7 +249,10 @@ namespace PublicManager
                 tree.SetFocusedNode(hitInfo.Node);         //这句话就是关键，用于选中节点　　
 
                 //显示模块
-                showModule(hitInfo.Node.GetDisplayText(0), true);
+                if (nbcLeftTree.ActiveGroup != null)
+                {
+                    showModule(nbcLeftTree.ActiveGroup.Caption + "xxxx" + hitInfo.Node.GetDisplayText(0), true);
+                }
             }
         }
 
@@ -270,7 +266,10 @@ namespace PublicManager
                 tree.SetFocusedNode(hitInfo.Node);         //这句话就是关键，用于选中节点　　
 
                 //显示模块
-                showModule(hitInfo.Node.GetDisplayText(0), true);
+                if (nbcLeftTree.ActiveGroup != null)
+                {
+                    showModule(nbcLeftTree.ActiveGroup.Caption + "xxxx" + hitInfo.Node.GetDisplayText(0), true);
+                }
             }
         }
 
@@ -278,11 +277,6 @@ namespace PublicManager
         {
             //MainConfig.Config.Dict["当前皮肤"] = string.Concat(e.Item.Tag);
             //MainConfig.saveConfig();
-        }
-
-        private void tlTestE_AfterFocusNode(object sender, NodeEventArgs e)
-        {
-
         }
 
         private void tlTestE_MouseClick(object sender, MouseEventArgs e)
@@ -295,13 +289,11 @@ namespace PublicManager
                 tree.SetFocusedNode(hitInfo.Node);         //这句话就是关键，用于选中节点　　
 
                 //显示模块
-                showModule(hitInfo.Node.GetDisplayText(0), true);
+                if (nbcLeftTree.ActiveGroup != null)
+                {
+                    showModule(nbcLeftTree.ActiveGroup.Caption + "xxxx" + hitInfo.Node.GetDisplayText(0), true);
+                }
             }
-        }
-
-        private void tlTestF_AfterFocusNode(object sender, NodeEventArgs e)
-        {
-
         }
 
         private void tlTestF_MouseClick(object sender, MouseEventArgs e)
@@ -314,7 +306,10 @@ namespace PublicManager
                 tree.SetFocusedNode(hitInfo.Node);         //这句话就是关键，用于选中节点　　
 
                 //显示模块
-                showModule(hitInfo.Node.GetDisplayText(0), true);
+                if (nbcLeftTree.ActiveGroup != null)
+                {
+                    showModule(nbcLeftTree.ActiveGroup.Caption + "xxxx" + hitInfo.Node.GetDisplayText(0), true);
+                }
             }
         }
     }

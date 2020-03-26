@@ -216,7 +216,6 @@
             this.nbcLeftTree.TabIndex = 2;
             this.nbcLeftTree.Text = "navBarControl1";
             this.nbcLeftTree.View = new DevExpress.XtraNavBar.ViewInfo.SkinNavigationPaneViewInfoRegistrator();
-            this.nbcLeftTree.NavPaneStateChanged += new System.EventHandler(this.nbcLeftTree_NavPaneStateChanged);
             this.nbcLeftTree.ActiveGroupChanged += new DevExpress.XtraNavBar.NavBarGroupEventHandler(this.nbcLeftTree_ActiveGroupChanged);
             // 
             // nbcTestD
@@ -263,7 +262,6 @@
             this.tlTestE.OptionsView.ShowVertLines = false;
             this.tlTestE.Size = new System.Drawing.Size(113, 269);
             this.tlTestE.TabIndex = 1;
-            this.tlTestE.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestE_AfterFocusNode);
             this.tlTestE.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tlTestE_MouseClick);
             // 
             // treeListColumn4
@@ -308,7 +306,6 @@
             this.tlTestA.OptionsView.ShowVertLines = false;
             this.tlTestA.Size = new System.Drawing.Size(113, 269);
             this.tlTestA.TabIndex = 0;
-            this.tlTestA.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestA_AfterFocusNode);
             this.tlTestA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tlTestA_MouseClick);
             // 
             // col1
@@ -355,7 +352,6 @@
             this.tlTestB.OptionsView.ShowVertLines = false;
             this.tlTestB.Size = new System.Drawing.Size(113, 269);
             this.tlTestB.TabIndex = 1;
-            this.tlTestB.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestB_AfterFocusNode);
             this.tlTestB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tlTestB_MouseClick);
             // 
             // treeListColumn1
@@ -425,7 +421,6 @@
             this.tlTestC.OptionsView.ShowVertLines = false;
             this.tlTestC.Size = new System.Drawing.Size(176, 264);
             this.tlTestC.TabIndex = 1;
-            this.tlTestC.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestC_AfterFocusNode);
             this.tlTestC.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tlTestC_MouseClick);
             // 
             // treeListColumn2
@@ -472,7 +467,6 @@
             this.tlTestF.OptionsView.ShowVertLines = false;
             this.tlTestF.Size = new System.Drawing.Size(113, 269);
             this.tlTestF.TabIndex = 1;
-            this.tlTestF.AfterFocusNode += new DevExpress.XtraTreeList.NodeEventHandler(this.tlTestF_AfterFocusNode);
             this.tlTestF.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tlTestF_MouseClick);
             // 
             // treeListColumn5
