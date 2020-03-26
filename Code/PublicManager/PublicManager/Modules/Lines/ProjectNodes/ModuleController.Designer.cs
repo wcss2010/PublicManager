@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.plContent = new System.Windows.Forms.Panel();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.gvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -37,43 +36,39 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tvProjectList = new PublicManager.Modules.TreeViewWithSearch();
             this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnSetSourceDir = new DevExpress.XtraBars.BarButtonItem();
             this.btnSetDestDir = new DevExpress.XtraBars.BarButtonItem();
             this.btnImportAll = new DevExpress.XtraBars.BarButtonItem();
             this.btnImportWithSelected = new DevExpress.XtraBars.BarButtonItem();
             this.btnDownloadExcelA = new DevExpress.XtraBars.BarButtonItem();
+            this.btnImportExcelA = new DevExpress.XtraBars.BarButtonItem();
             this.rpMaster = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgImportA = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnImportExcelA = new DevExpress.XtraBars.BarButtonItem();
-            this.plContent.SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExportToExcel = new System.Windows.Forms.Button();
+            this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
+            this.cbDisplayContract = new System.Windows.Forms.CheckBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtKey = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // plContent
-            // 
-            this.plContent.Controls.Add(this.gcGrid);
-            this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(0, 0);
-            this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(784, 434);
-            this.plContent.TabIndex = 0;
             // 
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(0, 0);
+            this.gcGrid.Location = new System.Drawing.Point(3, 39);
             this.gcGrid.MainView = this.gvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(784, 434);
+            this.gcGrid.Size = new System.Drawing.Size(1067, 392);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetail});
@@ -81,6 +76,7 @@
             // gvDetail
             // 
             this.gvDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn7,
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -135,33 +131,6 @@
             this.gridColumn6.Caption = "gridColumn6";
             this.gridColumn6.FieldName = "row6";
             this.gridColumn6.Name = "gridColumn6";
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 123);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.tvProjectList);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.plContent);
-            this.splitContainer1.Size = new System.Drawing.Size(1073, 434);
-            this.splitContainer1.SplitterDistance = 285;
-            this.splitContainer1.TabIndex = 4;
-            // 
-            // tvProjectList
-            // 
-            this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
-            this.tvProjectList.Location = new System.Drawing.Point(0, 0);
-            this.tvProjectList.Margin = new System.Windows.Forms.Padding(4);
-            this.tvProjectList.Name = "tvProjectList";
-            this.tvProjectList.Size = new System.Drawing.Size(285, 434);
-            this.tvProjectList.TabIndex = 1;
             // 
             // rcTopBar
             // 
@@ -226,6 +195,14 @@
             this.btnDownloadExcelA.Name = "btnDownloadExcelA";
             this.btnDownloadExcelA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDownloadExcelA_ItemClick);
             // 
+            // btnImportExcelA
+            // 
+            this.btnImportExcelA.Caption = "导入节点与课题项目经费";
+            this.btnImportExcelA.Id = 6;
+            this.btnImportExcelA.LargeGlyph = global::PublicManager.Properties.Resources.importA;
+            this.btnImportExcelA.Name = "btnImportExcelA";
+            this.btnImportExcelA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportExcelA_ItemClick);
+            // 
             // rpMaster
             // 
             this.rpMaster.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -240,30 +217,129 @@
             this.rpgImportA.Name = "rpgImportA";
             this.rpgImportA.Text = "导入A";
             // 
-            // btnImportExcelA
+            // groupBox1
             // 
-            this.btnImportExcelA.Caption = "导入节点与课题项目经费";
-            this.btnImportExcelA.Id = 6;
-            this.btnImportExcelA.LargeGlyph = global::PublicManager.Properties.Resources.importA;
-            this.btnImportExcelA.Name = "btnImportExcelA";
-            this.btnImportExcelA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportExcelA_ItemClick);
+            this.groupBox1.Controls.Add(this.gcGrid);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 123);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1073, 434);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnExportToExcel);
+            this.panel1.Controls.Add(this.cbDisplayReporter);
+            this.panel1.Controls.Add(this.cbDisplayContract);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.txtKey);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 17);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1067, 22);
+            this.panel1.TabIndex = 2;
+            // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExportToExcel.Location = new System.Drawing.Point(713, 0);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(87, 22);
+            this.btnExportToExcel.TabIndex = 8;
+            this.btnExportToExcel.Text = "导出到Excel";
+            this.btnExportToExcel.UseVisualStyleBackColor = true;
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
+            // 
+            // cbDisplayReporter
+            // 
+            this.cbDisplayReporter.AutoSize = true;
+            this.cbDisplayReporter.Checked = true;
+            this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbDisplayReporter.Enabled = false;
+            this.cbDisplayReporter.Location = new System.Drawing.Point(605, 0);
+            this.cbDisplayReporter.Name = "cbDisplayReporter";
+            this.cbDisplayReporter.Size = new System.Drawing.Size(108, 22);
+            this.cbDisplayReporter.TabIndex = 4;
+            this.cbDisplayReporter.Text = "显示建议书内容";
+            this.cbDisplayReporter.UseVisualStyleBackColor = true;
+            this.cbDisplayReporter.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
+            // 
+            // cbDisplayContract
+            // 
+            this.cbDisplayContract.AutoSize = true;
+            this.cbDisplayContract.Checked = true;
+            this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbDisplayContract.Enabled = false;
+            this.cbDisplayContract.Location = new System.Drawing.Point(487, 0);
+            this.cbDisplayContract.Name = "cbDisplayContract";
+            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.cbDisplayContract.Size = new System.Drawing.Size(118, 22);
+            this.cbDisplayContract.TabIndex = 3;
+            this.cbDisplayContract.Text = "显示合同书内容";
+            this.cbDisplayContract.UseVisualStyleBackColor = true;
+            this.cbDisplayContract.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSearch.Location = new System.Drawing.Point(412, 0);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 22);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "搜索";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtKey
+            // 
+            this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtKey.Location = new System.Drawing.Point(134, 0);
+            this.txtKey.Name = "txtKey";
+            this.txtKey.Properties.NullValuePrompt = "请输入项目名称！";
+            this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtKey.Properties.ShowNullValuePromptWhenFocused = true;
+            this.txtKey.Size = new System.Drawing.Size(278, 20);
+            this.txtKey.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "搜索关键字：";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "项目名称";
+            this.gridColumn7.FieldName = "row7";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 0;
             // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rcTopBar);
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1073, 557);
-            this.plContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,9 +347,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel plContent;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private TreeViewWithSearch tvProjectList;
         private DevExpress.XtraGrid.GridControl gcGrid;
         private DevExpress.XtraGrid.Views.Grid.GridView gvDetail;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -291,6 +364,15 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage rpMaster;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgImportA;
         private DevExpress.XtraBars.BarButtonItem btnImportExcelA;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnExportToExcel;
+        private System.Windows.Forms.CheckBox cbDisplayReporter;
+        private System.Windows.Forms.CheckBox cbDisplayContract;
+        private System.Windows.Forms.Button btnSearch;
+        private DevExpress.XtraEditors.TextEdit txtKey;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
 
     }
 }

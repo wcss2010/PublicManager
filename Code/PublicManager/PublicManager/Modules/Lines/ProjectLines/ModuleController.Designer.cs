@@ -34,6 +34,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCheckProject = new System.Windows.Forms.Button();
             this.txtKey = new DevExpress.XtraEditors.TextEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,7 +59,6 @@
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCheckProject = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -144,6 +144,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1211, 22);
             this.panel1.TabIndex = 2;
+            // 
+            // btnCheckProject
+            // 
+            this.btnCheckProject.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCheckProject.Location = new System.Drawing.Point(800, 0);
+            this.btnCheckProject.Name = "btnCheckProject";
+            this.btnCheckProject.Size = new System.Drawing.Size(87, 22);
+            this.btnCheckProject.TabIndex = 9;
+            this.btnCheckProject.Text = "编辑审核信息";
+            this.btnCheckProject.UseVisualStyleBackColor = true;
+            this.btnCheckProject.Click += new System.EventHandler(this.btnCheckProject_Click);
             // 
             // txtKey
             // 
@@ -357,17 +368,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1217, 582);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            // 
-            // btnCheckProject
-            // 
-            this.btnCheckProject.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCheckProject.Location = new System.Drawing.Point(800, 0);
-            this.btnCheckProject.Name = "btnCheckProject";
-            this.btnCheckProject.Size = new System.Drawing.Size(87, 22);
-            this.btnCheckProject.TabIndex = 9;
-            this.btnCheckProject.Text = "编辑审核信息";
-            this.btnCheckProject.UseVisualStyleBackColor = true;
-            this.btnCheckProject.Click += new System.EventHandler(this.btnCheckProject_Click);
             // 
             // ModuleController
             // 
