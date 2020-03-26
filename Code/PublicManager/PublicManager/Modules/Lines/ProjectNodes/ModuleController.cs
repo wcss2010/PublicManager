@@ -104,14 +104,115 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                             DataSet ds = ExcelHelper.ExcelToDataSet(sfd.FileName);
                             if (ds != null && ds.Tables.Count >= 2)
                             {
-                                //清除数据
+                                #region 清除数据
+                                ConnectionManager.Context.table("Contact_Table1").where("NodeID='" + nodeId + "'").delete();
+                                ConnectionManager.Context.table("Contact_Table2").where("NodeID='" + nodeId + "'").delete();
+                                ConnectionManager.Context.table("Contact_Table3").where("NodeID='" + nodeId + "'").delete();
                                 ConnectionManager.Context.table("Contact_Table4").where("NodeID='" + nodeId + "'").delete();
                                 ConnectionManager.Context.table("Contact_Table5").where("NodeID='" + nodeId + "'").delete();
+                                #endregion
 
                                 foreach (DataTable dt in ds.Tables)
                                 {
                                     switch (dt.TableName)
                                     {
+                                        case "项目基本情况":
+                                            #region 项目基本情况
+
+                                            foreach (DataRow dr in dt.Rows)
+                                            {
+                                                string value1 = dr["项目名称"] != null ? dr["项目名称"].ToString() : string.Empty;
+                                                string value2 = dr["项目牵头单位"] != null ? dr["项目牵头单位"].ToString() : string.Empty;
+                                                string value3 = dr["项目总负责人"] != null ? dr["项目总负责人"].ToString() : string.Empty;
+                                                string value4 = dr["项目总经费"] != null ? dr["项目总经费"].ToString() : string.Empty;
+                                                string value5 = dr["项目到位经费"] != null ? dr["项目到位经费"].ToString() : string.Empty;
+
+                                                Contact_Table1 ct1 = new Contact_Table1();
+                                                ct1.TID = Guid.NewGuid().ToString();
+                                                ct1.CatalogID = mss.CatalogID;
+                                                ct1.ProjectID = mss.ProjectID;
+                                                ct1.NodeID = mss.MSID;
+
+                                                ct1.ProjectName = value1;
+                                                ct1.WorkUnit = value2;
+                                                ct1.ProjectMaster = value3;
+                                                try
+                                                {
+                                                    ct1.TotalMoney = decimal.Parse(value4);
+                                                }
+                                                catch (Exception ex)
+                                                {
+                                                    MessageBox.Show("对不起，项目(" + value1 + ")的总经费错误！");
+                                                }
+                                                try
+                                                {
+                                                    ct1.TotalMoneyNow = decimal.Parse(value5);
+                                                }
+                                                catch (Exception ex)
+                                                {
+                                                    MessageBox.Show("对不起，项目(" + value1 + ")的到位错误！");
+                                                }
+
+                                                ct1.copyTo(ConnectionManager.Context.table(typeof(Contact_Table1).Name)).insert();
+                                            }
+                                            #endregion
+                                            break;
+                                        case "项目办公室组成":
+                                            #region 项目办公室组成
+                                            foreach (DataRow dr in dt.Rows)
+                                            {
+                                                string value1 = dr["项目办公室职务"] != null ? dr["项目办公室职务"].ToString() : string.Empty;
+                                                string value2 = dr["姓名"] != null ? dr["姓名"].ToString() : string.Empty;
+                                                string value3 = dr["单位"] != null ? dr["单位"].ToString() : string.Empty;
+                                                string value4 = dr["职务/职称"] != null ? dr["职务/职称"].ToString() : string.Empty;
+                                                string value5 = dr["联系电话"] != null ? dr["联系电话"].ToString() : string.Empty;
+
+                                                Contact_Table2 ct2 = new Contact_Table2();
+                                                ct2.TID = Guid.NewGuid().ToString();
+                                                ct2.CatalogID = mss.CatalogID;
+                                                ct2.ProjectID = mss.ProjectID;
+                                                ct2.NodeID = mss.MSID;
+
+                                                ct2.WorkDeskJob = value1;
+                                                ct2.PersonName = value2;
+                                                ct2.PersonUnit = value3;
+                                                ct2.PersonJob = value4;
+                                                ct2.PersonPhone = value5;
+
+                                                ct2.copyTo(ConnectionManager.Context.table(typeof(Contact_Table2).Name)).insert();
+                                            }
+
+                                            #endregion
+                                            break;
+                                        case "项目完成情况":
+                                            #region 项目完成情况
+                                            foreach (DataColumn dc in dt.Columns)
+                                            {
+                                                if (string.IsNullOrEmpty(dc.ColumnName))
+                                                {
+                                                    continue;
+                                                }
+
+                                                int rowIndexxx = 0;
+                                                foreach (DataRow dr in dt.Rows)
+                                                {
+                                                    rowIndexxx++;
+                                                    string valueStr = dr[dc.ColumnName] != null ? dr[dc.ColumnName].ToString() : string.Empty;
+
+                                                    Contact_Table3 ct3 = new Contact_Table3();
+                                                    ct3.TID = Guid.NewGuid().ToString();
+                                                    ct3.CatalogID = mss.CatalogID;
+                                                    ct3.ProjectID = mss.ProjectID;
+                                                    ct3.NodeID = mss.MSID;
+
+                                                    ct3.ModuleName = dc.ColumnName + "xxxxx" + rowIndexxx;
+                                                    ct3.ModuleValue = valueStr;
+
+                                                    ct3.copyTo(ConnectionManager.Context.table(typeof(Contact_Table3).Name)).insert();
+                                                }
+                                            }
+                                            #endregion
+                                            break;
                                         case "项目经费使用情况":
                                             #region 导入 项目经费使用情况
                                             foreach (DataColumn dc in dt.Columns)
@@ -129,14 +230,14 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
                                                     //取值
                                                     string valStr = dr[dc.ColumnName] != null ? dr[dc.ColumnName].ToString() : string.Empty;
-                                                    Contact_Table4 ct = new Contact_Table4();
-                                                    ct.TID = Guid.NewGuid().ToString();
-                                                    ct.CatalogID = mss.CatalogID;
-                                                    ct.ProjectID = mss.ProjectID;
-                                                    ct.NodeID = mss.MSID;
-                                                    ct.ModuleName = dc.ColumnName + "xxxxx" + rowIndexx;
-                                                    ct.ModuleValue = valStr;
-                                                    ct.copyTo(ConnectionManager.Context.table("Contact_Table4")).insert();
+                                                    Contact_Table4 ct4 = new Contact_Table4();
+                                                    ct4.TID = Guid.NewGuid().ToString();
+                                                    ct4.CatalogID = mss.CatalogID;
+                                                    ct4.ProjectID = mss.ProjectID;
+                                                    ct4.NodeID = mss.MSID;
+                                                    ct4.ModuleName = dc.ColumnName + "xxxxx" + rowIndexx;
+                                                    ct4.ModuleValue = valStr;
+                                                    ct4.copyTo(ConnectionManager.Context.table("Contact_Table4")).insert();
                                                 }
                                             }
                                             #endregion
@@ -165,20 +266,20 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                                                     continue;
                                                 }
 
-                                                Contact_Table5 ct = new Contact_Table5();
-                                                ct.TID = Guid.NewGuid().ToString();
-                                                ct.CatalogID = mss.CatalogID;
-                                                ct.ProjectID = mss.ProjectID;
-                                                ct.NodeID = mss.MSID;
-                                                ct.SubjectID = subjectObj.SubjectID;
-                                                ct.SubjectWorkUnit = value2;
-                                                ct.SubjectTotalMoney = decimal.Parse(value3);
-                                                ct.SubjectSendMoney = decimal.Parse(value4);
-                                                ct.SubjectSendTime = DateTime.Parse(value5);
-                                                ct.SubjectSendedMoney = decimal.Parse(value6);
-                                                ct.SubjectUseMoney = decimal.Parse(value7);
-                                                ct.SubjectNoSendMoney = decimal.Parse(value8);
-                                                ct.copyTo(ConnectionManager.Context.table("Contact_Table5")).insert();
+                                                Contact_Table5 ct5 = new Contact_Table5();
+                                                ct5.TID = Guid.NewGuid().ToString();
+                                                ct5.CatalogID = mss.CatalogID;
+                                                ct5.ProjectID = mss.ProjectID;
+                                                ct5.NodeID = mss.MSID;
+                                                ct5.SubjectID = subjectObj.SubjectID;
+                                                ct5.SubjectWorkUnit = value2;
+                                                ct5.SubjectTotalMoney = decimal.Parse(value3);
+                                                ct5.SubjectSendMoney = decimal.Parse(value4);
+                                                ct5.SubjectSendTime = DateTime.Parse(value5);
+                                                ct5.SubjectSendedMoney = decimal.Parse(value6);
+                                                ct5.SubjectUseMoney = decimal.Parse(value7);
+                                                ct5.SubjectNoSendMoney = decimal.Parse(value8);
+                                                ct5.copyTo(ConnectionManager.Context.table("Contact_Table5")).insert();
                                             }
                                             #endregion
                                             break;

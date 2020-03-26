@@ -20,6 +20,7 @@ namespace PublicManager.DB.Entitys
             query.set("ProjectID", ProjectID);
             query.set("NodeID", NodeID);
             query.set("WorkUnit", WorkUnit);
+            query.set("ProjectName", ProjectName);
             query.set("ProjectMaster", ProjectMaster);
             query.set("TotalMoney", TotalMoney);
             query.set("TotalMoneyNow", TotalMoneyNow);
@@ -32,6 +33,7 @@ namespace PublicManager.DB.Entitys
         public string ProjectID { get; set; }
         public string NodeID { get; set; }
         public string WorkUnit { get; set; }
+        public string ProjectName { get; set; }
         public string ProjectMaster { get; set; }
         public decimal TotalMoney { get; set; }
         public decimal TotalMoneyNow { get; set; }
@@ -43,6 +45,7 @@ namespace PublicManager.DB.Entitys
             ProjectID = source("ProjectID").value<string>("");
             NodeID = source("NodeID").value<string>("");
             WorkUnit = source("WorkUnit").value<string>("");
+            ProjectName = source("ProjectName").value<string>("");
             ProjectMaster = source("ProjectMaster").value<string>("");
             TotalMoney = source("TotalMoney").value<decimal>(0);
             TotalMoneyNow = source("TotalMoneyNow").value<decimal>(0);
