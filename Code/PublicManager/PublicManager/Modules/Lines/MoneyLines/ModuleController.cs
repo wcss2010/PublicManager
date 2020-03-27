@@ -75,6 +75,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
 
                 DataTable dtCatalog = mlpMoneys.getTempMoneyTable("row", e.Node.Nodes.Count);
                 mlpMoneys.showOrHideTopPanel(true);
+                mlpMoneys.setNodeName("");
                 mlpMoneys.showOrHideColumn(dtCatalog.Columns.Count - 1, false);
                 mlpMoneys.showOrHideColumn(dtCatalog.Columns.Count - 2, true);
                 for (int yyy = 0; yyy < e.Node.Nodes.Count; yyy++)
@@ -220,6 +221,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
                 MoneySends moneySendObj = (MoneySends)e.Node.Tag;
                 DataTable dtData = mlpMoneys.getTempMoneyTable("row", e.Node.Parent.Nodes.Count);
                 mlpMoneys.showOrHideTopPanel(false);
+                mlpMoneys.setNodeName(e.Node.Text);
                 int nodeIndex = e.Node.Parent.Nodes.IndexOf(e.Node);
                 mlpMoneys.showOrHideColumn(dtData.Columns.Count - 1, true);
                 mlpMoneys.showOrHideColumn(dtData.Columns.Count - 2, false);

@@ -126,5 +126,10 @@ namespace PublicManager.Modules.Lines.MoneyLines
         {
             dgvDetail.Columns[colIndex].Visible = isShow;
         }
+
+        public void setNodeName(string nodeName)
+        {
+            plMain.Text = plMain.Tag + nodeName;
+        }
     }
 }
