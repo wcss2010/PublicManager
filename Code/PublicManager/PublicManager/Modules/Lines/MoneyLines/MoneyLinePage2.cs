@@ -129,7 +129,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
 
         public void setNodeName(string nodeName)
         {
-            plMain.Text = plMain.Tag + nodeName;
+            plMain.Text = plMain.Tag + "(" + nodeName + ")";
         }
     }
 }
