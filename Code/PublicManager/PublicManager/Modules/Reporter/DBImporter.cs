@@ -37,7 +37,7 @@ namespace PublicManager.Modules.Reporter
                 catch (Exception ex) { }
 
                 //更新Catalog
-                Catalog catalog = updateAndClearCatalog(catalogNumber, diProject.getString("Name"), "建议书", catalogVersionStr);
+                Catalog catalog = updateAndClearCatalog(catalogNumber, getValueWithDefault<string>(diProject.get("Name"),string.Empty), "建议书", catalogVersionStr);
                 #endregion
 
                 #region 导入项目及课题信息
@@ -46,13 +46,13 @@ namespace PublicManager.Modules.Reporter
                 proj.ProjectID = catalog.CatalogID;
                 proj.CatalogID = catalog.CatalogID;
                 proj.ProjectName = catalog.CatalogName;
-                proj.SecretLevel = diProject.getString("SecretLevel");
+                proj.SecretLevel = getValueWithDefault<string>(diProject.get("SecretLevel"),string.Empty);
                 proj.TotalMoney = diProject.get("TotalMoney") != null ? decimal.Parse(diProject.get("TotalMoney").ToString()) : 0;
-                proj.Keywords = diProject.getString("Keywords");
-                proj.Domains = diProject.getString("Domain");
-                proj.DutyUnit = localContext.table("Unit").where("ID='" + diProject.getString("UnitID") + "'").select("UnitName").getValue<string>("未知");
+                proj.Keywords = getValueWithDefault<string>(diProject.get("Keywords"),string.Empty);
+                proj.Domains = getValueWithDefault<string>(diProject.get("Domain"),string.Empty);
+                proj.DutyUnit = localContext.table("Unit").where("ID='" + diProject.get("UnitID") + "'").select("UnitName").getValue<string>("未知");
                 //proj.DutyUnitOrg = "未知";
-                proj.DutyUnitAddress = localContext.table("Unit").where("ID='" + diProject.getString("UnitID") + "'").select("Address").getValue<string>("未知");
+                proj.DutyUnitAddress = localContext.table("Unit").where("ID='" + diProject.get("UnitID") + "'").select("Address").getValue<string>("未知");
                 proj.ProjectNumber = string.Empty;
                 proj.TotalTime = diProject.getInt("TotalTime"); ;
                 proj.copyTo(ConnectionManager.Context.table("Project")).insert();
@@ -62,10 +62,10 @@ namespace PublicManager.Modules.Reporter
                 foreach (DataItem di in dlSubject.getRows())
                 {
                     Subject obj = new Subject();
-                    obj.SubjectID = di.getString("ID");
+                    obj.SubjectID = getValueWithDefault<string>(di.get("ID"),string.Empty);
                     obj.CatalogID = proj.CatalogID;
                     obj.ProjectID = proj.ProjectID;
-                    obj.SubjectName = di.getString("Name");
+                    obj.SubjectName = getValueWithDefault<string>(di.get("Name"),string.Empty);
 
                     object objMoney = localContext.table("Task").where("Role='负责人' and Type = '课题' and ProjectID = '" + obj.SubjectID + "'").select("TotalMoney").getValue();
                     obj.TotalMoney = objMoney != null ? decimal.Parse(objMoney.ToString()) : 0;
@@ -74,9 +74,9 @@ namespace PublicManager.Modules.Reporter
                     obj.WorkContent = System.IO.Path.Combine(filesDir, "课题详细_" + obj.SubjectName + "_研究内容" + ".doc");
                     obj.WorkTask = string.Empty;
 
-                    obj.DutyUnit = localContext.table("Unit").where("ID='" + di.getString("UnitID") + "'").select("UnitName").getValue<string>("未知");
+                    obj.DutyUnit = localContext.table("Unit").where("ID='" + di.get("UnitID") + "'").select("UnitName").getValue<string>("未知");
                     //obj.DutyUnitOrg = "未知";
-                    obj.DutyUnitAddress = localContext.table("Unit").where("ID='" + di.getString("UnitID") + "'").select("Address").getValue<string>("未知");
+                    obj.DutyUnitAddress = localContext.table("Unit").where("ID='" + di.get("UnitID") + "'").select("Address").getValue<string>("未知");
 
                     obj.copyTo(ConnectionManager.Context.table("Subject")).insert();
                 }
@@ -87,28 +87,28 @@ namespace PublicManager.Modules.Reporter
                 DataList dlTask = localContext.table("Task").select("*").getDataList();
                 foreach (DataItem diTask in dlTask.getRows())
                 {
-                    DataItem diPerson = localContext.table("Person").where("ID = '" + diTask.getString("PersonID") + "'").select("*").getDataItem();
+                    DataItem diPerson = localContext.table("Person").where("ID = '" + diTask.get("PersonID") + "'").select("*").getDataItem();
                     if (diPerson != null && diPerson.count() >= 1)
                     {
                         Person obj = new Person();
                         obj.PersonID = Guid.NewGuid().ToString();
                         obj.CatalogID = proj.CatalogID;
                         obj.ProjectID = proj.ProjectID;
-                        obj.SubjectID = diTask.getString("ProjectID");
-                        obj.PersonName = diPerson.getString("Name");
-                        obj.PersonIDCard = diPerson.getString("IDCard");
-                        obj.PersonSex = diPerson.getString("Sex");
-                        obj.PersonJob = diPerson.getString("Job");
-                        obj.PersonSpecialty = diPerson.getString("Specialty");
+                        obj.SubjectID = getValueWithDefault<string>(diTask.get("ProjectID"),string.Empty);
+                        obj.PersonName = getValueWithDefault<string>(diPerson.get("Name"),string.Empty);
+                        obj.PersonIDCard = getValueWithDefault<string>(diPerson.get("IDCard"),string.Empty);
+                        obj.PersonSex = getValueWithDefault<string>(diPerson.get("Sex"),string.Empty);
+                        obj.PersonJob = getValueWithDefault<string>(diPerson.get("Job"),string.Empty);
+                        obj.PersonSpecialty = getValueWithDefault<string>(diPerson.get("Specialty"),string.Empty);
                         obj.TotalTime = diTask.getInt("TotalTime");
-                        obj.TaskContent = diTask.getString("Content");
-                        obj.Telephone = diPerson.getString("Telephone");
-                        obj.Mobilephone = diPerson.getString("MobilePhone");
+                        obj.TaskContent = getValueWithDefault<string>(diTask.get("Content"),string.Empty);
+                        obj.Telephone = getValueWithDefault<string>(diPerson.get("Telephone"),string.Empty);
+                        obj.Mobilephone = getValueWithDefault<string>(diPerson.get("MobilePhone"),string.Empty);
 
-                        DataItem diUnit = localContext.table("Unit").where("ID='" + diPerson.getString("UnitID") + "'").select("*").getDataItem();
+                        DataItem diUnit = localContext.table("Unit").where("ID='" + diPerson.get("UnitID") + "'").select("*").getDataItem();
                         if (diUnit != null && diUnit.count() >= 1)
                         {
-                            obj.WorkUnit = diUnit.getString("UnitName");
+                            obj.WorkUnit = getValueWithDefault<string>(diUnit.get("UnitName"),string.Empty);
                         }
                         else
                         {
@@ -116,10 +116,10 @@ namespace PublicManager.Modules.Reporter
                         }
 
                         //设置项目中职务
-                        obj.JobInProject = diTask.getString("Role");
+                        obj.JobInProject = getValueWithDefault<string>(diTask.get("Role"),string.Empty);
 
                         //是否为项目负责人
-                        obj.IsProjectMaster = diTask.getString("Type") == "项目" ? "true" : "false";
+                        obj.IsProjectMaster = diTask.get("Type") == "项目" ? "true" : "false";
 
                         //如果是项目负责人就清空课题ID
                         if (obj.IsProjectMaster == "true")
@@ -184,7 +184,7 @@ namespace PublicManager.Modules.Reporter
                     foreach (DataItem di in dlMoneys.getRows())
                     {
                         //添加字典
-                        addDict(catalog, proj, "Money,Info", nameDicts[di.getString("Name")], di.getString("Value"), string.Empty);
+                        addDict(catalog, proj, "Money,Info", nameDicts[getValueWithDefault<string>(di.get("Name"), string.Empty)], getValueWithDefault<string>(di.get("Value"), string.Empty), string.Empty);
                     }
                 }
                 #endregion
