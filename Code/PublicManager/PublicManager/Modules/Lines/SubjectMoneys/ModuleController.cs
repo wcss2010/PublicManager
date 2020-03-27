@@ -46,26 +46,26 @@ namespace PublicManager.Modules.Lines.SubjectMoneys
                 parentNode.Tag = catalog;
                 tvProjectList.ContentTreeView.Nodes.Add(parentNode);
 
-                //课题金额
-                List<Subject> subjectList = ConnectionManager.Context.table("Subject").where("CatalogID='" + catalog.CatalogID + "' and ProjectID='" + catalog.CatalogID + "'").select("*").getList<Subject>(new Subject());
-                foreach (Subject sub in subjectList)
+                //节点
+                List<MoneySends> subList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + catalog.CatalogID + "' and ProjectID = '" + catalog.CatalogID + "')").select("*").getList<MoneySends>(new MoneySends());
+                int indexxxx = 0;
+                foreach (MoneySends mss in subList)
                 {
-                    TreeNode subjectNode = new TreeNode();
-                    subjectNode.Text = sub.SubjectName;
-                    subjectNode.Tag = sub;
-                    parentNode.Nodes.Add(subjectNode);
+                    indexxxx++;
 
-                    //节点
-                    List<MoneySends> subList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + catalog.CatalogID + "' and ProjectID = '" + catalog.CatalogID + "')").select("*").getList<MoneySends>(new MoneySends());
-                    int indexxxx = 0;
-                    foreach (MoneySends mss in subList)
+                    TreeNode nodeSub = new TreeNode();
+                    nodeSub.Text = "节点" + indexxxx + "(" + mss.SendRule + ")";
+                    nodeSub.Tag = mss;
+                    parentNode.Nodes.Add(nodeSub);
+
+                    //课题金额
+                    List<Subject> subjectList = ConnectionManager.Context.table("Subject").where("CatalogID='" + catalog.CatalogID + "' and ProjectID='" + catalog.CatalogID + "'").select("*").getList<Subject>(new Subject());
+                    foreach (Subject sub in subjectList)
                     {
-                        indexxxx++;
-
-                        TreeNode nodeSub = new TreeNode();
-                        nodeSub.Text = "节点" + indexxxx + "(" + mss.SendRule + ")";
-                        nodeSub.Tag = mss;
-                        subjectNode.Nodes.Add(nodeSub);
+                        TreeNode subjectNode = new TreeNode();
+                        subjectNode.Text = sub.SubjectName;
+                        subjectNode.Tag = sub;
+                        nodeSub.Nodes.Add(subjectNode);
                     }
                 }
             }
@@ -80,26 +80,54 @@ namespace PublicManager.Modules.Lines.SubjectMoneys
                 //项目年度列表
                 Catalog catalogObj = (Catalog)e.Node.Tag;
 
+                #region 显示数据
+                DataTable dt = getTempDataTable("row", 9);
+
+                foreach (TreeNode ptnss in e.Node.Nodes)
+                {
+                    MoneySends moneySendObj = (MoneySends)ptnss.Tag;
+
+                    foreach (TreeNode tns in ptnss.Nodes)
+                    {
+                        Subject subjectObj = (Subject)tns.Tag;
+
+                        //显示节点经费
+                        List<Contact_Table5> moneyss = ConnectionManager.Context.table("Contact_Table5").where("NodeID='" + moneySendObj.MSID + "' and SubjectID = '" + subjectObj.SubjectID + "'").select("*").getList<Contact_Table5>(new Contact_Table5());
+                        foreach (Contact_Table5 mObj in moneyss)
+                        {
+                            List<object> cells = new List<object>();
+
+                            cells.Add(subjectObj.SubjectName);
+                            cells.Add(mObj.SubjectWorkUnit);
+                            cells.Add(mObj.SubjectTotalMoney);
+                            cells.Add(mObj.SubjectSendMoney);
+                            cells.Add(mObj.SubjectSendTime);
+                            cells.Add(mObj.SubjectSendedMoney);
+                            cells.Add(mObj.SubjectUseMoney);
+                            cells.Add(mObj.SubjectNoSendMoney);
+                            cells.Add(ptnss.Text);
+
+                            dt.Rows.Add(cells.ToArray());
+                        }
+                        gcGrid.DataSource = dt;
+                    }
+                }
+                #endregion
             }
             else if (e.Node.Tag is Subject)
             {
                 //项目年度列表
                 Subject subjectObj = (Subject)e.Node.Tag;
+                MoneySends moneySendObj = (MoneySends)e.Node.Parent.Tag;
 
-            }
-            else if (e.Node.Tag is MoneySends)
-            {
-                //项目年度列表
-                MoneySends moneySendObj = (MoneySends)e.Node.Tag;
-
-                DataTable dt = getTempDataTable("row", 8);
+                #region 显示数据
+                DataTable dt = getTempDataTable("row", 9);
                 //显示节点经费
-                List<Contact_Table5> moneyss = ConnectionManager.Context.table("Contact_Table5").where("NodeID='" + moneySendObj.MSID + "'").select("*").getList<Contact_Table5>(new Contact_Table5());
+                List<Contact_Table5> moneyss = ConnectionManager.Context.table("Contact_Table5").where("NodeID='" + moneySendObj.MSID + "' and SubjectID = '" + subjectObj.SubjectID + "'").select("*").getList<Contact_Table5>(new Contact_Table5());
                 foreach (Contact_Table5 mObj in moneyss)
                 {
                     List<object> cells = new List<object>();
 
-                    Subject subjectObj = (Subject)e.Node.Parent.Tag;
                     cells.Add(subjectObj.SubjectName);
                     cells.Add(mObj.SubjectWorkUnit);
                     cells.Add(mObj.SubjectTotalMoney);
@@ -108,10 +136,45 @@ namespace PublicManager.Modules.Lines.SubjectMoneys
                     cells.Add(mObj.SubjectSendedMoney);
                     cells.Add(mObj.SubjectUseMoney);
                     cells.Add(mObj.SubjectNoSendMoney);
+                    cells.Add(e.Node.Text);
 
                     dt.Rows.Add(cells.ToArray());
                 }
                 gcGrid.DataSource = dt;
+                #endregion
+            }
+            else if (e.Node.Tag is MoneySends)
+            {
+                //项目年度列表
+                MoneySends moneySendObj = (MoneySends)e.Node.Tag;
+
+                #region 显示数据
+                DataTable dt = getTempDataTable("row", 9);
+                foreach (TreeNode tns in e.Node.Nodes)
+                {
+                    Subject subjectObj = (Subject)tns.Tag;
+
+                    //显示节点经费
+                    List<Contact_Table5> moneyss = ConnectionManager.Context.table("Contact_Table5").where("NodeID='" + moneySendObj.MSID + "' and SubjectID = '" + subjectObj.SubjectID + "'").select("*").getList<Contact_Table5>(new Contact_Table5());
+                    foreach (Contact_Table5 mObj in moneyss)
+                    {
+                        List<object> cells = new List<object>();
+
+                        cells.Add(subjectObj.SubjectName);
+                        cells.Add(mObj.SubjectWorkUnit);
+                        cells.Add(mObj.SubjectTotalMoney);
+                        cells.Add(mObj.SubjectSendMoney);
+                        cells.Add(mObj.SubjectSendTime);
+                        cells.Add(mObj.SubjectSendedMoney);
+                        cells.Add(mObj.SubjectUseMoney);
+                        cells.Add(mObj.SubjectNoSendMoney);
+                        cells.Add(e.Node.Text);
+
+                        dt.Rows.Add(cells.ToArray());
+                    }
+                    gcGrid.DataSource = dt;
+                }
+                #endregion
             }
         }
     }

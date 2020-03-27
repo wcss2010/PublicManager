@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.plContent = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tvProjectList = new PublicManager.Modules.TreeViewWithSearch();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.gvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,13 +39,16 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tvProjectList = new PublicManager.Modules.TreeViewWithSearch();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.plContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // plContent
@@ -58,6 +59,96 @@
             this.plContent.Name = "plContent";
             this.plContent.Size = new System.Drawing.Size(784, 557);
             this.plContent.TabIndex = 0;
+            // 
+            // gcGrid
+            // 
+            this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcGrid.Location = new System.Drawing.Point(0, 0);
+            this.gcGrid.MainView = this.gvDetail;
+            this.gcGrid.Name = "gcGrid";
+            this.gcGrid.Size = new System.Drawing.Size(784, 557);
+            this.gcGrid.TabIndex = 4;
+            this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDetail});
+            // 
+            // gvDetail
+            // 
+            this.gvDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn9,
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8});
+            this.gvDetail.GridControl = this.gcGrid;
+            this.gvDetail.Name = "gvDetail";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "课题名称";
+            this.gridColumn1.FieldName = "row1";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "课题负责单位";
+            this.gridColumn2.FieldName = "row2";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "课题合同总价款";
+            this.gridColumn3.FieldName = "row3";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 3;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "课题应拨经费";
+            this.gridColumn4.FieldName = "row4";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 4;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "课题经费拨付时间";
+            this.gridColumn5.FieldName = "row5";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 5;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "课题已拨经费";
+            this.gridColumn6.FieldName = "row6";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 6;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "课题支出经费";
+            this.gridColumn7.FieldName = "row7";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 7;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "课题应拨未拨经费";
+            this.gridColumn8.FieldName = "row8";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 8;
             // 
             // splitContainer1
             // 
@@ -86,94 +177,13 @@
             this.tvProjectList.Size = new System.Drawing.Size(285, 557);
             this.tvProjectList.TabIndex = 1;
             // 
-            // gcGrid
+            // gridColumn9
             // 
-            this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(0, 0);
-            this.gcGrid.MainView = this.gvDetail;
-            this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(784, 557);
-            this.gcGrid.TabIndex = 4;
-            this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvDetail});
-            // 
-            // gvDetail
-            // 
-            this.gvDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8});
-            this.gvDetail.GridControl = this.gcGrid;
-            this.gvDetail.Name = "gvDetail";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "课题名称";
-            this.gridColumn1.FieldName = "row1";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "课题负责单位";
-            this.gridColumn2.FieldName = "row2";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "课题合同总价款";
-            this.gridColumn3.FieldName = "row3";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "课题应拨经费";
-            this.gridColumn4.FieldName = "row4";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "课题经费拨付时间";
-            this.gridColumn5.FieldName = "row5";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "课题已拨经费";
-            this.gridColumn6.FieldName = "row6";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "课题支出经费";
-            this.gridColumn7.FieldName = "row7";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "课题应拨未拨经费";
-            this.gridColumn8.FieldName = "row8";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn9.Caption = "节点名称";
+            this.gridColumn9.FieldName = "row9";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 0;
             // 
             // ModuleController
             // 
@@ -183,12 +193,12 @@
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1073, 557);
             this.plContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -208,6 +218,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
 
     }
 }
