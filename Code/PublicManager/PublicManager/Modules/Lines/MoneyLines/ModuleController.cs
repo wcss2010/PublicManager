@@ -75,11 +75,14 @@ namespace PublicManager.Modules.Lines.MoneyLines
 
                 DataTable dtCatalog = mlpMoneys.getTempMoneyTable("row", e.Node.Nodes.Count);
                 mlpMoneys.showOrHideTopPanel(true);
-                mlpMoneys.showOrHideColumn(e.Node.Nodes.Count - 2, true);
+                mlpMoneys.showOrHideColumn(dtCatalog.Columns.Count - 1, false);
+                mlpMoneys.showOrHideColumn(dtCatalog.Columns.Count - 2, true);
                 for (int yyy = 0; yyy < e.Node.Nodes.Count; yyy++)
                 {
                     mlpMoneys.showOrHideColumn(2 + yyy, true);
                 }
+
+                Application.DoEvents();
 
                 #region 显示总表
                 int nodeIndex = 0;
@@ -218,6 +221,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
                 DataTable dtData = mlpMoneys.getTempMoneyTable("row", e.Node.Parent.Nodes.Count);
                 mlpMoneys.showOrHideTopPanel(false);
                 int nodeIndex = e.Node.Parent.Nodes.IndexOf(e.Node);
+                mlpMoneys.showOrHideColumn(dtData.Columns.Count - 1, true);
                 mlpMoneys.showOrHideColumn(dtData.Columns.Count - 2, false);
                 for (int ttt = 0; ttt < e.Node.Parent.Nodes.Count; ttt++)
                 {
