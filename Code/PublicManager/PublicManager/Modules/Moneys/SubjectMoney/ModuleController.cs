@@ -13,9 +13,14 @@ namespace PublicManager.Modules.Moneys.SubjectMoney
 {
     public partial class ModuleController : BaseModuleController
     {
+        private DEGridViewCellMergeAdapter cma;
         public ModuleController()
         {
             InitializeComponent();
+
+            gvDetail.OptionsBehavior.Editable = false;
+            gvDetail.OptionsView.AllowCellMerge = true;
+            cma = new DEGridViewCellMergeAdapter(gvDetail, new string[] { "row1" });
         }
 
         public override void start()
@@ -56,7 +61,6 @@ namespace PublicManager.Modules.Moneys.SubjectMoney
 
         private void tvProjectList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            dgvDetail.Rows.Clear();
             List<List<object>> objectList = new List<List<object>>();
 
             if (e.Node.Tag is Catalog)
@@ -119,11 +123,12 @@ namespace PublicManager.Modules.Moneys.SubjectMoney
                 objectList.Add(cells);
             }
 
+            DataTable dt = BaseModuleController.getTempDataTable("row", 7);
             foreach (List<object> lxItem in objectList)
             {
-                dgvDetail.Rows.Add(lxItem.ToArray());
+                dt.Rows.Add(lxItem.ToArray());
             }
-            dgvDetail.checkCellSize();
+            gcGrid.DataSource = dt;
         }
     }
 }

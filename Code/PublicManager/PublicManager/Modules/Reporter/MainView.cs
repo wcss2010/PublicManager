@@ -18,6 +18,7 @@ namespace PublicManager.Modules.Reporter
         public MainView()
         {
             InitializeComponent();
+            gvDetail.OptionsBehavior.Editable = false;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -29,7 +30,7 @@ namespace PublicManager.Modules.Reporter
 
         public void updateCatalogs()
         {
-            dgvCatalogs.Rows.Clear();
+            DataTable dt = BaseModuleController.getTempDataTable("row", 8);
 
             List<Catalog> list = ConnectionManager.Context.table("Catalog").where("CatalogType='建议书'").select("*").getList<Catalog>(new Catalog());
             int indexx = 0;
@@ -50,37 +51,42 @@ namespace PublicManager.Modules.Reporter
                     cells.Add(p.WorkUnit);
                 }
 
-                int rowIndex = dgvCatalogs.Rows.Add(cells.ToArray());
-                dgvCatalogs.Rows[rowIndex].Tag = catalog;
-            }
+                cells.Add(catalog.CatalogID);
+                cells.Add("删除");
 
-            dgvCatalogs.checkCellSize();
+                dt.Rows.Add(cells.ToArray());
+            }
+            gcGrid.DataSource = dt;
         }
 
-        private void dgvCatalogs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void gvDetail_RowCellClick(object sender, RowCellClickEventArgs e)
         {
-            //检查是否点击的是删除的那一列
-            if (e.ColumnIndex == dgvCatalogs.Columns.Count - 1 && e.RowIndex >= 0)
+            if (e.Column.FieldName == "row8")
             {
-                //获得要删除的项目ID,项目编号
-                string projectId = ((Catalog)dgvCatalogs.Rows[e.RowIndex].Tag).CatalogID;
-                string projectNumber = ((Catalog)dgvCatalogs.Rows[e.RowIndex].Tag).CatalogNumber;
-
-                //显示删除提示框
-                if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                object objectCatalogID = gvDetail.GetRowCellValue(e.RowHandle, e.Column);
+                if (objectCatalogID != null)
                 {
-                    //删除项目数据
-                    new DBImporter().deleteProject(projectId);
+                    string catalogID = objectCatalogID.ToString();
 
-                    //删除申报包缓存
-                    //try
-                    //{
-                    //    System.IO.Directory.Delete(System.IO.Path.Combine(PackageDir, projectNumber), true);
-                    //}
-                    //catch (Exception ex) { MainForm.writeLog(ex.ToString()); }
+                    Catalog catalogObj = ConnectionManager.Context.table("Catalog").where("CatalogID='" + catalogID + "'").select("*").getItem<Catalog>(new Catalog());
+                    if (string.IsNullOrEmpty(catalogObj.CatalogID))
+                    {
+                        return;
+                    }
 
-                    //刷新GridView
-                    updateCatalogs();
+                    //获得要删除的项目ID,项目编号
+                    string projectId = catalogObj.CatalogID;
+                    string projectNumber = catalogObj.CatalogNumber;
+
+                    //显示删除提示框
+                    if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        //删除项目数据
+                        new DBImporter().deleteProject(projectId);
+
+                        //刷新GridView
+                        updateCatalogs();
+                    }
                 }
             }
         }

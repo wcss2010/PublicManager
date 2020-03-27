@@ -28,138 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvCatalogs = new PublicManager.Modules.DataGridViewEx();
-            this.colIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCreater = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCreaterUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogs)).BeginInit();
+            this.gcGrid = new DevExpress.XtraGrid.GridControl();
+            this.gvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvCatalogs
+            // gcGrid
             // 
-            this.dgvCatalogs.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 10.5F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCatalogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCatalogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCatalogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIndex,
-            this.Column1,
-            this.colNumber,
-            this.colName,
-            this.colCreater,
-            this.colCreaterUnit,
-            this.colDel});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCatalogs.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCatalogs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCatalogs.Location = new System.Drawing.Point(0, 0);
-            this.dgvCatalogs.MultiSelect = false;
-            this.dgvCatalogs.Name = "dgvCatalogs";
-            this.dgvCatalogs.ReadOnly = true;
-            this.dgvCatalogs.RowHeadersVisible = false;
-            this.dgvCatalogs.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5F);
-            this.dgvCatalogs.RowTemplate.Height = 23;
-            this.dgvCatalogs.Size = new System.Drawing.Size(1034, 689);
-            this.dgvCatalogs.TabIndex = 1;
-            this.dgvCatalogs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogs_CellContentClick);
+            this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcGrid.Location = new System.Drawing.Point(0, 0);
+            this.gcGrid.MainView = this.gvDetail;
+            this.gcGrid.Name = "gcGrid";
+            this.gcGrid.Size = new System.Drawing.Size(1034, 689);
+            this.gcGrid.TabIndex = 6;
+            this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDetail});
             // 
-            // colIndex
+            // gvDetail
             // 
-            this.colIndex.HeaderText = "序号";
-            this.colIndex.MinimumWidth = 60;
-            this.colIndex.Name = "colIndex";
-            this.colIndex.ReadOnly = true;
-            this.colIndex.Width = 60;
+            this.gvDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8});
+            this.gvDetail.GridControl = this.gcGrid;
+            this.gvDetail.Name = "gvDetail";
+            this.gvDetail.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvDetail_RowCellClick);
             // 
-            // Column1
+            // gridColumn1
             // 
-            this.Column1.HeaderText = "版本";
-            this.Column1.MinimumWidth = 60;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 60;
+            this.gridColumn1.Caption = "序号";
+            this.gridColumn1.FieldName = "row1";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 126;
             // 
-            // colNumber
+            // gridColumn2
             // 
-            this.colNumber.HeaderText = "项目编号";
-            this.colNumber.MinimumWidth = 110;
-            this.colNumber.Name = "colNumber";
-            this.colNumber.ReadOnly = true;
-            this.colNumber.Width = 110;
+            this.gridColumn2.Caption = "版本";
+            this.gridColumn2.FieldName = "row2";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 126;
             // 
-            // colName
+            // gridColumn3
             // 
-            this.colName.HeaderText = "项目名称";
-            this.colName.MinimumWidth = 110;
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Width = 110;
+            this.gridColumn3.Caption = "项目编号";
+            this.gridColumn3.FieldName = "row3";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 126;
             // 
-            // colCreater
+            // gridColumn4
             // 
-            this.colCreater.HeaderText = "申请人";
-            this.colCreater.MinimumWidth = 80;
-            this.colCreater.Name = "colCreater";
-            this.colCreater.ReadOnly = true;
-            this.colCreater.Width = 80;
+            this.gridColumn4.Caption = "项目名称";
+            this.gridColumn4.FieldName = "row4";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 126;
             // 
-            // colCreaterUnit
+            // gridColumn5
             // 
-            this.colCreaterUnit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCreaterUnit.HeaderText = "申请人单位";
-            this.colCreaterUnit.Name = "colCreaterUnit";
-            this.colCreaterUnit.ReadOnly = true;
+            this.gridColumn5.Caption = "申请人";
+            this.gridColumn5.FieldName = "row5";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 126;
             // 
-            // colDel
+            // gridColumn6
             // 
-            this.colDel.HeaderText = "";
-            this.colDel.MinimumWidth = 60;
-            this.colDel.Name = "colDel";
-            this.colDel.ReadOnly = true;
-            this.colDel.Text = "删除";
-            this.colDel.UseColumnTextForButtonValue = true;
-            this.colDel.Width = 60;
+            this.gridColumn6.Caption = "申请人单位";
+            this.gridColumn6.FieldName = "row6";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 126;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "ProjectId";
+            this.gridColumn7.FieldName = "row7";
+            this.gridColumn7.Name = "gridColumn7";
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.FieldName = "row8";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.Width = 30;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dgvCatalogs);
+            this.Controls.Add(this.gcGrid);
             this.Name = "MainView";
             this.Size = new System.Drawing.Size(1034, 689);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private PublicManager.Modules.DataGridViewEx dgvCatalogs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIndex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCreater;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCreaterUnit;
-        private System.Windows.Forms.DataGridViewButtonColumn colDel;
+        private DevExpress.XtraGrid.GridControl gcGrid;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDetail;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
 
 
     }
