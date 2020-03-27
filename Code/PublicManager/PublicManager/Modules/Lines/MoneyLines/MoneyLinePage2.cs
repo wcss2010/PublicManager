@@ -129,6 +129,11 @@ namespace PublicManager.Modules.Lines.MoneyLines
 
         public void setNodeName(string nodeName)
         {
+            if (string.IsNullOrEmpty(nodeName))
+            {
+                return;
+            }
+
             plMain.Text = plMain.Tag + "(" + nodeName + ")";
         }
     }
