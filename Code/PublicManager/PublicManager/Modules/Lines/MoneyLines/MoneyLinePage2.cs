@@ -131,6 +131,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
         {
             if (string.IsNullOrEmpty(nodeName))
             {
+                plMain.Text = plMain.Tag.ToString();
                 return;
             }
 
