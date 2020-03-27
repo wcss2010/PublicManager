@@ -180,9 +180,9 @@ namespace PublicManager.Modules
         /// <param name="val"></param>
         /// <param name="defaultString"></param>
         /// <returns></returns>
-        protected virtual string getStringWithDefault(string val, string defaultString)
+        protected virtual T getValueWithDefault<T>(T val, T defaultVal) 
         {
-            return val != null ? val.ToString() : defaultString;
+            return val != null ? (T)Convert.ChangeType(val.ToString(), typeof(T)) : defaultVal;
         }
     }
 }
