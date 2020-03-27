@@ -173,5 +173,16 @@ namespace PublicManager.Modules
                 cmd.isLog = true;
             });            
         }
+
+        /// <summary>
+        /// 如果值为空，则使用初始值
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="defaultString"></param>
+        /// <returns></returns>
+        protected virtual string getStringWithDefault(string val, string defaultString)
+        {
+            return val != null ? val.ToString() : defaultString;
+        }
     }
 }
