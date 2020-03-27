@@ -61,7 +61,7 @@ namespace PublicManager.Modules.Reporter.Forms
                     System.IO.DirectoryInfo fi = new System.IO.DirectoryInfo(s);
                     Regex rege = new Regex("-", RegexOptions.Compiled);
                     int count = rege.Matches(fi.Name).Count;
-                    if (fi.Name.StartsWith(DateTime.Now.Year.ToString()) && count == 3)
+                    if (count == 3)
                     {
                         //添加目录名称
                         TreeNode tn = new TreeNode();
