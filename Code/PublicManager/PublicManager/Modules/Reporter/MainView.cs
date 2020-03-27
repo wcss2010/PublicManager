@@ -63,7 +63,7 @@ namespace PublicManager.Modules.Reporter
         {
             if (e.Column.FieldName == "row8")
             {
-                object objectCatalogID = gvDetail.GetRowCellValue(e.RowHandle, e.Column);
+                object objectCatalogID = gvDetail.GetRowCellValue(e.RowHandle, "row7");
                 if (objectCatalogID != null)
                 {
                     string catalogID = objectCatalogID.ToString();

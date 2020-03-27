@@ -130,6 +130,7 @@
             // 
             // gridColumn8
             // 
+            this.gridColumn8.Caption = "...";
             this.gridColumn8.FieldName = "row8";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
