@@ -57,7 +57,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
             colTemp.FieldName = fieldNameBefore + colIndexx;
             colTemp.Name = fieldNameBefore + colIndexx;
             colTemp.Visible = true;
-            colTemp.VisibleIndex = 0;
+            colTemp.VisibleIndex = colIndexx;
             dgvDetail.Columns.Add(colTemp);
 
             colIndexx++;
@@ -66,7 +66,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
             colTemp.FieldName = fieldNameBefore + colIndexx;
             colTemp.Name = fieldNameBefore + colIndexx;
             colTemp.Visible = true;
-            colTemp.VisibleIndex = 0;
+            colTemp.VisibleIndex = colIndexx;
             dgvDetail.Columns.Add(colTemp);
 
             for (int kkk = 1; kkk <= nodeFieldCount; kkk++)
@@ -77,7 +77,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
                 colTemp.FieldName = fieldNameBefore + colIndexx;
                 colTemp.Name = fieldNameBefore + colIndexx;
                 colTemp.Visible = true;
-                colTemp.VisibleIndex = 0;
+                colTemp.VisibleIndex = colIndexx;
                 dgvDetail.Columns.Add(colTemp);
             }
 
@@ -87,7 +87,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
             colTemp.FieldName = fieldNameBefore + colIndexx;
             colTemp.Name = fieldNameBefore + colIndexx;
             colTemp.Visible = true;
-            colTemp.VisibleIndex = 0;
+            colTemp.VisibleIndex = colIndexx;
             dgvDetail.Columns.Add(colTemp);
 
             colIndexx++;
@@ -96,7 +96,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
             colTemp.FieldName = fieldNameBefore + colIndexx;
             colTemp.Name = fieldNameBefore + colIndexx;
             colTemp.Visible = true;
-            colTemp.VisibleIndex = 0;
+            colTemp.VisibleIndex = colIndexx;
             dgvDetail.Columns.Add(colTemp);
             #endregion
 
@@ -115,6 +115,16 @@ namespace PublicManager.Modules.Lines.MoneyLines
             #endregion
 
             return dtTemp;
+        }
+
+        public void setTableDataSource(DataTable dt)
+        {
+            gcGrid.DataSource = dt;
+        }
+
+        public void showOrHideColumn(int colIndex,bool isShow)
+        {
+            dgvDetail.Columns[colIndex].Visible = isShow;
         }
     }
 }

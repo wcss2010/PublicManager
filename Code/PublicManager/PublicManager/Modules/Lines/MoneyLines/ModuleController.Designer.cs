@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.plContent = new System.Windows.Forms.Panel();
-            this.mlDetail = new PublicManager.Modules.Lines.MoneyLines.MoneyLinePage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvProjectList = new PublicManager.Modules.TreeViewWithSearch();
+            this.mlpMoneys = new PublicManager.Modules.Lines.MoneyLines.MoneyLinePage2();
             this.plContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -41,22 +41,13 @@
             // 
             // plContent
             // 
-            this.plContent.Controls.Add(this.mlDetail);
+            this.plContent.Controls.Add(this.mlpMoneys);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(0, 0);
             this.plContent.Name = "plContent";
             this.plContent.Padding = new System.Windows.Forms.Padding(8);
             this.plContent.Size = new System.Drawing.Size(782, 568);
             this.plContent.TabIndex = 0;
-            // 
-            // mlDetail
-            // 
-            this.mlDetail.BackColor = System.Drawing.Color.White;
-            this.mlDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mlDetail.Location = new System.Drawing.Point(8, 8);
-            this.mlDetail.Name = "mlDetail";
-            this.mlDetail.Size = new System.Drawing.Size(766, 552);
-            this.mlDetail.TabIndex = 0;
             // 
             // splitContainer1
             // 
@@ -85,6 +76,14 @@
             this.tvProjectList.Size = new System.Drawing.Size(284, 568);
             this.tvProjectList.TabIndex = 1;
             // 
+            // mlpMoneys
+            // 
+            this.mlpMoneys.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mlpMoneys.Location = new System.Drawing.Point(8, 8);
+            this.mlpMoneys.Name = "mlpMoneys";
+            this.mlpMoneys.Size = new System.Drawing.Size(766, 552);
+            this.mlpMoneys.TabIndex = 0;
+            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -106,7 +105,7 @@
         private System.Windows.Forms.Panel plContent;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private TreeViewWithSearch tvProjectList;
-        private MoneyLinePage mlDetail;
+        private MoneyLinePage2 mlpMoneys;
 
     }
 }

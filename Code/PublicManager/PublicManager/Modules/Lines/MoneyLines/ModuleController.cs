@@ -69,8 +69,6 @@ namespace PublicManager.Modules.Lines.MoneyLines
 
         private void tvProjectList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            clearMoneyTable();
-
             List<List<object>> objectList = new List<List<object>>();
             if (e.Node.Tag is Catalog)
             {
@@ -80,7 +78,16 @@ namespace PublicManager.Modules.Lines.MoneyLines
             }
             else if (e.Node.Tag is MoneySends)
             {
+                #region 显示金额表
                 MoneySends moneySendObj = (MoneySends)e.Node.Tag;
+                DataTable dtData = mlpMoneys.getTempMoneyTable("row", e.Node.Parent.Nodes.Count);
+                mlpMoneys.showOrHideTopPanel(false);
+                int nodeIndex = e.Node.Parent.Nodes.IndexOf(e.Node);
+                mlpMoneys.showOrHideColumn(dtData.Columns.Count - 2, false);
+                for (int ttt = 0; ttt < e.Node.Parent.Nodes.Count; ttt++)
+                {
+                    mlpMoneys.showOrHideColumn(2 + ttt, false);
+                }
 
                 //显示节点经费
                 List<Contact_Table4> moneyss = ConnectionManager.Context.table("Contact_Table4").where("NodeID='" + moneySendObj.MSID + "'").select("*").getList<Contact_Table4>(new Contact_Table4());
@@ -95,7 +102,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
                                 string[] tttt = mObj.ModuleName.Split(new string[] { "xxxxx" }, StringSplitOptions.None);
                                 if (tttt != null && tttt.Length >= 2)
                                 {
-                                    mlDetail.setCellValue(2, 4+ (int.Parse(tttt[1]) - 1), mObj.ModuleValue);
+                                    dtData.Rows[(int.Parse(tttt[1]) - 1)][1] = mObj.ModuleValue;
                                 }
                             }
                             else if (mObj.ModuleName.StartsWith("本阶段支出经费"))
@@ -103,7 +110,8 @@ namespace PublicManager.Modules.Lines.MoneyLines
                                 string[] tttt = mObj.ModuleName.Split(new string[] { "xxxxx" }, StringSplitOptions.None);
                                 if (tttt != null && tttt.Length >= 2)
                                 {
-                                    mlDetail.setCellValue(3, 4 + (int.Parse(tttt[1]) - 1), mObj.ModuleValue);
+                                    mlpMoneys.showOrHideColumn(2 + nodeIndex, true);
+                                    dtData.Rows[(int.Parse(tttt[1]) - 1)][2 + nodeIndex] = mObj.ModuleValue;
                                 }
                             }
                             else if (mObj.ModuleName.StartsWith("备注"))
@@ -111,58 +119,16 @@ namespace PublicManager.Modules.Lines.MoneyLines
                                 string[] tttt = mObj.ModuleName.Split(new string[] { "xxxxx" }, StringSplitOptions.None);
                                 if (tttt != null && tttt.Length >= 2)
                                 {
-                                    mlDetail.setCellValue(9, 4 + (int.Parse(tttt[1]) - 1), mObj.ModuleValue);
+                                    dtData.Rows[(int.Parse(tttt[1]) - 1)][dtData.Columns.Count - 1] = mObj.ModuleValue;
                                 }
                             }
                         }
                     }
                     catch (Exception ex) { }
                 }
+                mlpMoneys.setTableDataSource(dtData);
+                #endregion
             }
-        }
-
-        private void clearMoneyTable()
-        {
-            #region 设置标题栏
-            //合同价款
-            mlDetail.setCellValue(1, 1, "0");
-
-            //累计预算经费
-            mlDetail.setCellValue(3, 1, "0");
-
-            //累计到位经费
-            mlDetail.setCellValue(5, 1, "0");
-
-            //累计支出经费
-            mlDetail.setCellValue(7, 1, "0");
-
-            //空,暂时没用到
-            mlDetail.setCellValue(8, 1, string.Empty);
-            //空,暂时没用到
-            mlDetail.setCellValue(9, 1, string.Empty);
-            #endregion
-
-            #region 清理经费表
-            int defaultX = 2;
-            int defaultY = 4;
-            for (int sy = 0; sy < 15; sy++)
-            {
-                for (int sx = 0; sx < 8; sx++)
-                {
-                    int nowX = defaultX + sx;
-                    int nowY = defaultY + sy;
-
-                    if (sx == 7)
-                    {
-                        mlDetail.setCellValue(nowX, nowY, string.Empty);
-                    }
-                    else
-                    {
-                        mlDetail.setCellValue(nowX, nowY, string.Empty);
-                    }
-                }
-            }
-            #endregion
         }
     }
 }
