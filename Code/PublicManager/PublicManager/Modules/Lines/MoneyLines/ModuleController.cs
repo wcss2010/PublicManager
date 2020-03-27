@@ -71,7 +71,6 @@ namespace PublicManager.Modules.Lines.MoneyLines
         {
             if (e.Node.Tag is Catalog)
             {
-                #region 显示总表
                 Catalog catalogObj = (Catalog)e.Node.Tag;
 
                 DataTable dtCatalog = mlpMoneys.getTempMoneyTable("row", e.Node.Nodes.Count);
@@ -82,6 +81,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
                     mlpMoneys.showOrHideColumn(2 + yyy, true);
                 }
 
+                #region 显示总表
                 int nodeIndex = 0;
                 foreach (TreeNode sub in e.Node.Nodes)
                 {
@@ -160,6 +160,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
                 mlpMoneys.setTableDataSource(dtCatalog);
                 #endregion
 
+                #region 显示标题栏的值
                 //合同金额
                 Project proj = ConnectionManager.Context.table("Project").where("ProjectID='" + catalogObj.CatalogID + "'").select("*").getItem<Project>(new Project());
                 mlpMoneys.setTag1Value(proj.TotalMoney != null ? proj.TotalMoney.ToString() : string.Empty);
@@ -209,10 +210,10 @@ namespace PublicManager.Modules.Lines.MoneyLines
                     totalVal += vall;
                 }
                 mlpMoneys.setTag4Value(totalVal + "");
+                #endregion
             }
             else if (e.Node.Tag is MoneySends)
             {
-                #region 显示金额表
                 MoneySends moneySendObj = (MoneySends)e.Node.Tag;
                 DataTable dtData = mlpMoneys.getTempMoneyTable("row", e.Node.Parent.Nodes.Count);
                 mlpMoneys.showOrHideTopPanel(false);
@@ -223,6 +224,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
                     mlpMoneys.showOrHideColumn(2 + ttt, false);
                 }
 
+                #region 显示金额表
                 //显示节点经费
                 List<Contact_Table4> moneyss = ConnectionManager.Context.table("Contact_Table4").where("NodeID='" + moneySendObj.MSID + "'").select("*").getList<Contact_Table4>(new Contact_Table4());
                 foreach (Contact_Table4 mObj in moneyss)
