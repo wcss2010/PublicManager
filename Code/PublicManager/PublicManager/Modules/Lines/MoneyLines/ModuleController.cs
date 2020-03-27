@@ -69,7 +69,6 @@ namespace PublicManager.Modules.Lines.MoneyLines
 
         private void tvProjectList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            List<List<object>> objectList = new List<List<object>>();
             if (e.Node.Tag is Catalog)
             {
                 #region 显示总表
@@ -160,6 +159,56 @@ namespace PublicManager.Modules.Lines.MoneyLines
                 }
                 mlpMoneys.setTableDataSource(dtCatalog);
                 #endregion
+
+                //合同金额
+                Project proj = ConnectionManager.Context.table("Project").where("ProjectID='" + catalogObj.CatalogID + "'").select("*").getItem<Project>(new Project());
+                mlpMoneys.setTag1Value(proj.TotalMoney != null ? proj.TotalMoney.ToString() : string.Empty);
+
+                //累计预算= 项目节点管理中的经费金额
+                decimal totalVal = 0;
+                foreach (TreeNode tn in e.Node.Nodes)
+                {
+                    totalVal += ((MoneySends)tn.Tag).TotalMoney;
+                }
+                mlpMoneys.setTag2Value(totalVal + "");
+
+                //累计到位= 项目基本情况——项目到位经费
+                totalVal = 0;
+                foreach (TreeNode tn in e.Node.Nodes)
+                {
+                   List<Contact_Table1> table1sss = ConnectionManager.Context.table("Contact_Table1").where("NodeID='" + ((MoneySends)tn.Tag).MSID + "'").select("*").getList<Contact_Table1>(new Contact_Table1());
+                   foreach (Contact_Table1 table1 in table1sss)
+                   {
+                       if (string.IsNullOrEmpty(table1.TID))
+                       {
+                           continue;
+                       }
+
+                       totalVal += table1.TotalMoneyNow;
+                   }
+                }
+                mlpMoneys.setTag3Value(totalVal + "");
+
+                //累计支出= 项目经费使用情况——本阶段支出经费——合计
+                totalVal = 0;
+                foreach (TreeNode tn in e.Node.Nodes)
+                {
+                    Contact_Table4 table1 = ConnectionManager.Context.table("Contact_Table4").where("NodeID='" + ((MoneySends)tn.Tag).MSID + "' and ModuleName = '本阶段支出经费xxxxx16'").select("*").getItem<Contact_Table4>(new Contact_Table4());
+                    if (string.IsNullOrEmpty(table1.TID))
+                    {
+                        continue;
+                    }
+
+                    decimal vall = 0;
+                    try
+                    {
+                        vall = decimal.Parse(table1.ModuleValue);
+                    }
+                    catch (Exception ex) { }
+
+                    totalVal += vall;
+                }
+                mlpMoneys.setTag4Value(totalVal + "");
             }
             else if (e.Node.Tag is MoneySends)
             {
