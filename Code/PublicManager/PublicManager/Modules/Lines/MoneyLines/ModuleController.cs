@@ -72,9 +72,94 @@ namespace PublicManager.Modules.Lines.MoneyLines
             List<List<object>> objectList = new List<List<object>>();
             if (e.Node.Tag is Catalog)
             {
+                #region 显示总表
                 Catalog catalogObj = (Catalog)e.Node.Tag;
 
-                //显示总的经费
+                DataTable dtCatalog = mlpMoneys.getTempMoneyTable("row", e.Node.Nodes.Count);
+                mlpMoneys.showOrHideTopPanel(true);
+                mlpMoneys.showOrHideColumn(e.Node.Nodes.Count - 2, true);
+                for (int yyy = 0; yyy < e.Node.Nodes.Count; yyy++)
+                {
+                    mlpMoneys.showOrHideColumn(2 + yyy, true);
+                }
+
+                int nodeIndex = 0;
+                foreach (TreeNode sub in e.Node.Nodes)
+                {
+                    MoneySends mss = (MoneySends)sub.Tag;
+
+                    List<Contact_Table4> moneyss = ConnectionManager.Context.table("Contact_Table4").where("NodeID='" + mss.MSID + "'").select("*").getList<Contact_Table4>(new Contact_Table4());
+                    foreach (Contact_Table4 mObj in moneyss)
+                    {
+                        try
+                        {
+                            if (mObj.ModuleName != null)
+                            {
+                                if (mObj.ModuleName.StartsWith("项目合同"))
+                                {
+                                    string[] tttt = mObj.ModuleName.Split(new string[] { "xxxxx" }, StringSplitOptions.None);
+                                    if (tttt != null && tttt.Length >= 2)
+                                    {
+                                        decimal val = 0;
+                                        try
+                                        {
+                                            val = decimal.Parse(mObj.ModuleValue);
+                                        }
+                                        catch (Exception ex) { }
+
+                                        decimal total = 0;
+                                        try
+                                        {
+                                            total = decimal.Parse(dtCatalog.Rows[(int.Parse(tttt[1]) - 1)][1].ToString());
+                                        }
+                                        catch (Exception ex) { }
+
+                                        dtCatalog.Rows[(int.Parse(tttt[1]) - 1)][1] = total + val;
+                                    }
+                                }
+                                else if (mObj.ModuleName.StartsWith("本阶段支出经费"))
+                                {
+                                    string[] tttt = mObj.ModuleName.Split(new string[] { "xxxxx" }, StringSplitOptions.None);
+                                    if (tttt != null && tttt.Length >= 2)
+                                    {
+                                        decimal val = 0;
+                                        try
+                                        {
+                                            val = decimal.Parse(mObj.ModuleValue);
+                                        }
+                                        catch (Exception ex) { }
+
+                                        decimal total = 0;
+                                        try
+                                        {
+                                            total = decimal.Parse(dtCatalog.Rows[(int.Parse(tttt[1]) - 1)][dtCatalog.Columns.Count - 2].ToString());
+                                        }
+                                        catch (Exception ex) { }
+
+                                        mlpMoneys.showOrHideColumn(2 + nodeIndex, true);
+                                        dtCatalog.Rows[(int.Parse(tttt[1]) - 1)][2 + nodeIndex] = val;
+
+                                        total += val;
+                                        dtCatalog.Rows[(int.Parse(tttt[1]) - 1)][dtCatalog.Columns.Count - 2] = total;
+                                    }
+                                }
+                                //else if (mObj.ModuleName.StartsWith("备注"))
+                                //{
+                                //    string[] tttt = mObj.ModuleName.Split(new string[] { "xxxxx" }, StringSplitOptions.None);
+                                //    if (tttt != null && tttt.Length >= 2)
+                                //    {
+                                //        dtData.Rows[(int.Parse(tttt[1]) - 1)][dtData.Columns.Count - 1] = mObj.ModuleValue;
+                                //    }
+                                //}
+                            }
+                        }
+                        catch (Exception ex) { }
+                    }
+
+                    nodeIndex++;
+                }
+                mlpMoneys.setTableDataSource(dtCatalog);
+                #endregion
             }
             else if (e.Node.Tag is MoneySends)
             {
