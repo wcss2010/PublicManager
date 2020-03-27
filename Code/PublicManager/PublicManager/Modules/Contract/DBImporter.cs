@@ -37,7 +37,7 @@ namespace PublicManager.Modules.Contract
                 catch (Exception ex) { }
 
                 //更新Catalog
-                Catalog catalog = updateAndClearCatalog(catalogNumber, diProject.getString("HeTongMingCheng"), "合同书", catalogVersionStr);
+                Catalog catalog = updateAndClearCatalog(catalogNumber, getValueWithDefault<string>(diProject.get("HeTongMingCheng"), string.Empty), "合同书", catalogVersionStr);
                 #endregion
 
                 #region 导入项目及课题信息
@@ -46,9 +46,9 @@ namespace PublicManager.Modules.Contract
                 proj.ProjectID = catalog.CatalogID;
                 proj.CatalogID = catalog.CatalogID;
                 proj.ProjectName = catalog.CatalogName;
-                proj.SecretLevel = diProject.getString("HeTongMiJi");
+                proj.SecretLevel = getValueWithDefault<string>(diProject.get("HeTongMiJi"), string.Empty);
                 proj.TotalMoney = diProject.get("HeTongJiaKuan") != null ? decimal.Parse(diProject.get("HeTongJiaKuan").ToString()) : 0;
-                proj.ProjectNumber = diProject.getString("HeTongBianHao");
+                proj.ProjectNumber = getValueWithDefault<string>(diProject.get("HeTongBianHao"), string.Empty);
 
                 int totalYear = 0;
                 try
@@ -70,11 +70,11 @@ namespace PublicManager.Modules.Contract
                     case "v1.3":
                         break;
                     case "v1.4":
-                        proj.Keywords = diProject.getString("HeTongGuanJianZi");
-                        proj.Domains = diProject.getString("HeTongSuoShuLingYu");
-                        proj.DutyUnit = diProject.getString("HeTongFuZeDanWei");
-                        proj.DutyUnitOrg = diProject.getString("HeTongSuoShuBuMen");
-                        proj.DutyUnitAddress = getAddress(diProject.getString("HeTongSuoShuDiDian"));
+                        proj.Keywords = getValueWithDefault<string>(diProject.get("HeTongGuanJianZi"), string.Empty);
+                        proj.Domains = getValueWithDefault<string>(diProject.get("HeTongSuoShuLingYu"), string.Empty);
+                        proj.DutyUnit = getValueWithDefault<string>(diProject.get("HeTongFuZeDanWei"), string.Empty);
+                        proj.DutyUnitOrg = getValueWithDefault<string>(diProject.get("HeTongSuoShuBuMen"), string.Empty);
+                        proj.DutyUnitAddress = getAddress(getValueWithDefault<string>(diProject.get("HeTongSuoShuDiDian"), string.Empty));
                         break;
                 }
 
@@ -85,14 +85,14 @@ namespace PublicManager.Modules.Contract
                 foreach (DataItem di in dlSubject.getRows())
                 {
                     Subject obj = new Subject();
-                    obj.SubjectID = di.getString("BianHao");
+                    obj.SubjectID = getValueWithDefault<string>(di.get("BianHao"), string.Empty);
                     obj.CatalogID = proj.CatalogID;
                     obj.ProjectID = proj.ProjectID;
-                    obj.SubjectName = di.getString("KeTiMingCheng");
+                    obj.SubjectName = getValueWithDefault<string>(di.get("KeTiMingCheng"), string.Empty);
                     //obj.TotalMoney = di.get("") != null ? decimal.Parse(di.get("").ToString()) : 0;
-                    obj.WorkDest = di.getString("KeTiYanJiuMuBiao");
-                    obj.WorkContent = di.getString("KeTiYanJiuNeiRong");
-                    obj.WorkTask = di.getString("KeTiCanJiaDanWeiFenGong");
+                    obj.WorkDest = getValueWithDefault<string>(di.get("KeTiYanJiuMuBiao"), string.Empty);
+                    obj.WorkContent = getValueWithDefault<string>(di.get("KeTiYanJiuNeiRong"), string.Empty);
+                    obj.WorkTask = getValueWithDefault<string>(di.get("KeTiCanJiaDanWeiFenGong"), string.Empty);
 
                     //导入1.3版之后版本新添加的字段
                     switch (catalogVersionStr)
@@ -104,21 +104,21 @@ namespace PublicManager.Modules.Contract
                         case "v1.3":
                             break;
                         case "v1.4":
-                            obj.DutyUnit = di.getString("KeTiFuZeDanWei");
-                            obj.DutyUnitOrg = di.getString("KeTiSuoShuBuMen");
-                            obj.DutyUnitAddress = getAddress(di.getString("KeTiSuoShuDiDian"));
+                            obj.DutyUnit = getValueWithDefault<string>(di.get("KeTiFuZeDanWei"), string.Empty);
+                            obj.DutyUnitOrg = getValueWithDefault<string>(di.get("KeTiSuoShuBuMen"), string.Empty);
+                            obj.DutyUnitAddress = getAddress(getValueWithDefault<string>(di.get("KeTiSuoShuDiDian"), string.Empty));
 
                             //处理参加单位分工
                             StringBuilder sbWorkTask = new StringBuilder();
-                            DataList items = localContext.table("RenWuBiao").where("KeTiBianHao='" + di.getString("BianHao") + "'").select("*").getDataList();
+                            DataList items = localContext.table("RenWuBiao").where("KeTiBianHao='" + getValueWithDefault<string>(di.get("BianHao"), string.Empty) + "'").select("*").getDataList();
                             if (items.getRowCount() >= 1)
                             {
-                                sbWorkTask.Append("该课题由").Append(items.getRow(0).getString("DanWeiMing")).Append("单位负责，承担").Append(items.getRow(0).getString("RenWuFenGong")).Append("等任务；").AppendLine();
+                                sbWorkTask.Append("该课题由").Append(getValueWithDefault<string>(items.getRow(0).get("DanWeiMing"), string.Empty)).Append("单位负责，承担").Append(getValueWithDefault<string>(items.getRow(0).get("RenWuFenGong"), string.Empty)).Append("等任务；").AppendLine();
                             }
                             for (int kk = 1; kk < items.getRowCount(); kk++)
                             {
                                 DataItem rwb = items.getRow(kk);
-                                sbWorkTask.Append(rwb.getString("DanWeiMing")).Append("单位参加，承担").Append(rwb.getString("RenWuFenGong")).Append("等任务；\n");
+                                sbWorkTask.Append(getValueWithDefault<string>(rwb.get("DanWeiMing"),string.Empty)).Append("单位参加，承担").Append(getValueWithDefault<string>(rwb.get("RenWuFenGong"), string.Empty)).Append("等任务；\n");
                             }
                             if (sbWorkTask.Length >= 1)
                             {
@@ -141,23 +141,23 @@ namespace PublicManager.Modules.Contract
                     obj.PersonID = Guid.NewGuid().ToString();
                     obj.CatalogID = proj.CatalogID;
                     obj.ProjectID = proj.ProjectID;
-                    obj.SubjectID = di.getString("KeTiBiaoHao");
-                    obj.PersonName = di.getString("XingMing");
-                    obj.PersonIDCard = di.getString("ShenFenZhengHao");
-                    obj.PersonSex = di.getString("XingBie");
-                    obj.PersonJob = di.getString("ZhiCheng");
-                    obj.PersonSpecialty = di.getString("ZhuanYe");
+                    obj.SubjectID = getValueWithDefault<string>(di.get("KeTiBiaoHao"), string.Empty);
+                    obj.PersonName = getValueWithDefault<string>(di.get("XingMing"), string.Empty);
+                    obj.PersonIDCard = getValueWithDefault<string>(di.get("ShenFenZhengHao"), string.Empty);
+                    obj.PersonSex = getValueWithDefault<string>(di.get("XingBie"), string.Empty);
+                    obj.PersonJob = getValueWithDefault<string>(di.get("ZhiCheng"), string.Empty);
+                    obj.PersonSpecialty = getValueWithDefault<string>(di.get("ZhuanYe"), string.Empty);
                     obj.TotalTime = di.getInt("MeiNianTouRuShiJian");
-                    obj.TaskContent = di.getString("RenWuFenGong");
-                    obj.WorkUnit = di.getString("GongZuoDanWei");
-                    obj.Telephone = di.exists("DianHua") ? di.getString("DianHua") : string.Empty;
-                    obj.Mobilephone = di.exists("ShouJi") ? di.getString("ShouJi") : string.Empty;
+                    obj.TaskContent = getValueWithDefault<string>(di.get("RenWuFenGong"), string.Empty);
+                    obj.WorkUnit = getValueWithDefault<string>(di.get("GongZuoDanWei"), string.Empty);
+                    obj.Telephone = di.exists("DianHua") ? getValueWithDefault<string>(di.get("DianHua"), string.Empty) : string.Empty;
+                    obj.Mobilephone = di.exists("ShouJi") ? getValueWithDefault<string>(di.get("ShouJi"), string.Empty) : string.Empty;
 
                     //设置项目中职务
-                    obj.JobInProject = di.getString("ZhiWu");
+                    obj.JobInProject = getValueWithDefault<string>(di.get("ZhiWu"), string.Empty);
 
                     //是否为项目负责人
-                    switch (di.getString("ShiXiangMuFuZeRen"))
+                    switch (getValueWithDefault<string>(di.get("ShiXiangMuFuZeRen"), string.Empty))
                     {
                         case "rbIsOnlyProject":
                             obj.PersonID = Guid.NewGuid().ToString();
