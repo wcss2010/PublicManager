@@ -59,7 +59,7 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                 cells.Add(proj.TotalTime);
                 cells.Add(proj.SecretLevel);
                 //显示仅为项目负责人
-                Person masterPerson = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '' and JobInProject = '负责人' and IsProjectMaster = 'true'").select("*").getItem<Person>(new Person());
+                Person masterPerson = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '' and IsProjectMaster = 'true'").select("*").getItem<Person>(new Person());
                 if (masterPerson != null && masterPerson.PersonID != null && masterPerson.PersonID.Length >= 1)
                 {
                     cells.Add(masterPerson.PersonName);
