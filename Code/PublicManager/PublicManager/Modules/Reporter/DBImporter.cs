@@ -119,7 +119,7 @@ namespace PublicManager.Modules.Reporter
                         obj.JobInProject = getValueWithDefault<string>(diTask.get("Role"),string.Empty);
 
                         //是否为项目负责人
-                        obj.IsProjectMaster = diTask.get("Type") == "项目" ? "true" : "false";
+                        obj.IsProjectMaster = diTask.get("Type").ToString() == "项目" ? "true" : "false";
 
                         //如果是项目负责人就清空课题ID
                         if (obj.IsProjectMaster == "true")
