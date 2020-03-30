@@ -64,7 +64,17 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
                    cells.Add(sub.DutyUnit);
                    cells.Add(sub.DutyUnitOrg);
                    cells.Add(sub.DutyUnitAddress);
-                   cells.Add(sub.TotalMoney);
+
+                   if (cells[1] != null && cells[1].ToString() == "合同书")
+                   {
+                       //合同书总经费
+                       cells.Add(ConnectionManager.Context.table("Dicts").where("SubjectID='" + sub.SubjectID + "' and DictType='SubjectMoney,SubjectMoneyInfo' and DictName = 'Money1'").select("DictValue").getValue<string>(""));
+                   }
+                   else
+                   {
+                       //建议书总经费
+                       cells.Add(sub.TotalMoney);
+                   }
 
                    dt.Rows.Add(cells.ToArray());
                }
