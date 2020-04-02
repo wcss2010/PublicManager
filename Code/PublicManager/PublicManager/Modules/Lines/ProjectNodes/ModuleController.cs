@@ -117,7 +117,7 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                     cells.Add(mss.WillLevel);
                     cells.Add(mss.WillWorker);
 
-                    cells.Add("从Excel导入");
+                    cells.Add("从Excel导入数据");
 
                     dt.Rows.Add(cells.ToArray());
                 }
@@ -147,7 +147,7 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
         private void gvDetail_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            if (e.CellValue != null && e.CellValue.ToString() == "从Excel导入")
+            if (e.CellValue != null && e.CellValue.ToString() == "从Excel导入数据")
             {
                 int[] selecteds = gvDetail.GetSelectedRows();
                 if (selecteds != null && selecteds.Length >= 1)

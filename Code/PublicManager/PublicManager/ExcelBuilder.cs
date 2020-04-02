@@ -522,7 +522,10 @@ namespace PublicManager
                             case CellType.Formula:
                                 {
                                     cell = evaluator.EvaluateInCell(cell) as HSSFCell;
-                                    dr[j] = cell.ToString();
+                                    if (cell != null)
+                                    {
+                                        dr[j] = cell.ToString();
+                                    }
                                     break;
                                 }
                             default:
