@@ -41,13 +41,13 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnSetSourceDir = new DevExpress.XtraBars.BarButtonItem();
             this.btnSetDestDir = new DevExpress.XtraBars.BarButtonItem();
             this.btnImportAll = new DevExpress.XtraBars.BarButtonItem();
             this.btnImportWithSelected = new DevExpress.XtraBars.BarButtonItem();
             this.btnDownloadExcelA = new DevExpress.XtraBars.BarButtonItem();
-            this.btnImportExcelA = new DevExpress.XtraBars.BarButtonItem();
             this.rpMaster = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgImportA = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -98,15 +98,18 @@
             this.gridColumn8,
             this.gridColumn4,
             this.gridColumn5,
-            this.gridColumn6});
+            this.gridColumn6,
+            this.gridColumn12});
             this.gvDetail.GridControl = this.gcGrid;
             this.gvDetail.Name = "gvDetail";
+            this.gvDetail.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvDetail_RowCellClick);
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "项目名称";
             this.gridColumn7.FieldName = "row7";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.FixedWidth = true;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
             // 
@@ -189,6 +192,14 @@
             this.gridColumn6.FieldName = "row6";
             this.gridColumn6.Name = "gridColumn6";
             // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "...";
+            this.gridColumn12.FieldName = "row12";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 10;
+            // 
             // rcTopBar
             // 
             this.rcTopBar.ExpandCollapseItem.Id = 0;
@@ -198,8 +209,7 @@
             this.btnSetDestDir,
             this.btnImportAll,
             this.btnImportWithSelected,
-            this.btnDownloadExcelA,
-            this.btnImportExcelA});
+            this.btnDownloadExcelA});
             this.rcTopBar.Location = new System.Drawing.Point(0, 0);
             this.rcTopBar.MaxItemId = 9;
             this.rcTopBar.Name = "rcTopBar";
@@ -252,14 +262,6 @@
             this.btnDownloadExcelA.Name = "btnDownloadExcelA";
             this.btnDownloadExcelA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDownloadExcelA_ItemClick);
             // 
-            // btnImportExcelA
-            // 
-            this.btnImportExcelA.Caption = "导入节点与课题项目经费";
-            this.btnImportExcelA.Id = 6;
-            this.btnImportExcelA.LargeGlyph = global::PublicManager.Properties.Resources.importA;
-            this.btnImportExcelA.Name = "btnImportExcelA";
-            this.btnImportExcelA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportExcelA_ItemClick);
-            // 
             // rpMaster
             // 
             this.rpMaster.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -270,7 +272,6 @@
             // rpgImportA
             // 
             this.rpgImportA.ItemLinks.Add(this.btnDownloadExcelA);
-            this.rpgImportA.ItemLinks.Add(this.btnImportExcelA);
             this.rpgImportA.Name = "rpgImportA";
             this.rpgImportA.Text = "导入A";
             // 
@@ -375,8 +376,6 @@
             // cbDisplayReporter
             // 
             this.cbDisplayReporter.AutoSize = true;
-            this.cbDisplayReporter.Checked = true;
-            this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbDisplayReporter.Enabled = false;
             this.cbDisplayReporter.Location = new System.Drawing.Point(812, 0);
@@ -478,7 +477,6 @@
         private DevExpress.XtraBars.BarButtonItem btnDownloadExcelA;
         private DevExpress.XtraBars.Ribbon.RibbonPage rpMaster;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgImportA;
-        private DevExpress.XtraBars.BarButtonItem btnImportExcelA;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnExportToExcel;
@@ -498,6 +496,7 @@
         private System.Windows.Forms.DateTimePicker txtWillTime;
         private System.Windows.Forms.CheckBox cbNodeWillTime;
         private System.Windows.Forms.CheckBox cbWillTime;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
 
     }
 }
