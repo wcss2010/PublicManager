@@ -292,6 +292,8 @@
             "成员查询"}, -1);
             this.tlTestB.AppendNode(new object[] {
             "单位查询"}, -1);
+            this.tlTestB.AppendNode(new object[] {
+            "经费预算查询"}, -1);
             this.tlTestB.EndUnboundLoad();
             this.tlTestB.OptionsBehavior.Editable = false;
             this.tlTestB.OptionsView.ShowColumns = false;
