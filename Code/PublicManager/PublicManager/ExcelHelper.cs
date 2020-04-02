@@ -60,5 +60,26 @@ namespace PublicManager
                 MessageBox.Show("导出Excel失败！Ex:" + ex.ToString());
             }
         }
+
+        /// <summary>
+        /// 将Excel表格转换为DataSet
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="firstRowAsHeader"></param>
+        /// <returns></returns>
+        public static DataSet ExcelToDataSet(string fileName, bool firstRowAsHeader)
+        {
+            return ExcelBuilder.excelToDataSet(fileName, firstRowAsHeader);
+        }
+
+        /// <summary>
+        /// 将Excel表格转换为DataSet
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public static DataSet ExcelToDataSet(string fileName)
+        {
+            return ExcelBuilder.excelToDataSet(fileName);
+        }
     }
 }
