@@ -32,7 +32,7 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataTable dt = getTempDataTable("row", 9);
+            DataTable dt = getTempDataTable("row", 11);
 
             List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%' or ProjectID in (select ProjectID from Subject where SubjectName like '%" + txtKey.Text + "%'))" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
@@ -74,6 +74,16 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
                    {
                        //建议书总经费
                        cells.Add(sub.TotalMoney);
+                   }
+
+                   if (string.IsNullOrEmpty(personObj.PersonID))
+                   {
+                       continue;
+                   }
+                   else
+                   {
+                       cells.Add(personObj.Telephone);
+                       cells.Add(personObj.Mobilephone);
                    }
 
                    dt.Rows.Add(cells.ToArray());
