@@ -170,6 +170,9 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                         {
                             try
                             {
+                                int subjectCount = 0;
+                                List<string> errorSubjectList = new List<string>();
+
                                 DataSet ds = ExcelHelper.ExcelToDataSet(sfd.FileName);
                                 if (ds != null && ds.Tables.Count >= 2)
                                 {
@@ -315,6 +318,8 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                                                 #region 导入 课题经费拨付与支出情况
                                                 foreach (DataRow dr in dt.Rows)
                                                 {
+                                                    subjectCount++;
+
                                                     string value1 = dr["课题名称"] != null ? dr["课题名称"].ToString() : string.Empty;
                                                     string value2 = dr["课题负责单位"] != null ? dr["课题负责单位"].ToString() : string.Empty;
                                                     string value3 = dr["课题合同总价款"] != null ? dr["课题合同总价款"].ToString() : string.Empty;
@@ -326,12 +331,14 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
                                                     if (string.IsNullOrEmpty(value1))
                                                     {
+                                                        errorSubjectList.Add(value1);
                                                         continue;
                                                     }
 
                                                     Subject subjectObj = ConnectionManager.Context.table("Subject").where("CatalogID='" + mss.CatalogID + "' and SubjectName='" + value1 + "'").select("*").getItem<Subject>(new Subject());
                                                     if (subjectObj != null && string.IsNullOrEmpty(subjectObj.SubjectID))
                                                     {
+                                                        errorSubjectList.Add(value1);
                                                         continue;
                                                     }
 
@@ -354,7 +361,22 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                                                 break;
                                         }
                                     }
-                                    MessageBox.Show("导入完成！");
+                                    
+                                    //组织文字
+                                    StringBuilder importResult = new StringBuilder();
+                                    importResult.Append("导入成功！").Append("共找到课题经费拨付支出情况").Append(subjectCount).Append("条,其中").Append(errorSubjectList.Count).Append("条导入错误！");
+                                    if (errorSubjectList.Count >= 1)
+                                    {
+                                        importResult.Append("分别是(");
+                                        foreach (string s in errorSubjectList)
+                                        {
+                                            importResult.Append("\"").Append(s).Append("\",");
+                                        }
+                                        importResult.Remove(importResult.Length - 1, 1);
+                                        importResult.Append(")");
+                                    }
+
+                                    MessageBox.Show(importResult.ToString());
                                 }
                             }
                             catch (Exception ex)
