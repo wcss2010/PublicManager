@@ -35,7 +35,7 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
         {
             DataTable dt = getTempDataTable("row", 7);
 
-            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectID in (select ProjectID from Subject where " + (string.IsNullOrEmpty(txtKey.Text) ? "1=1" : "DutyUnitAddress like '%" + txtKey.Text + "%'") + (cbOrgList.SelectedItem.ToString() == "全部" ? string.Empty : " and DutyUnitOrg = '" + cbOrgList.SelectedItem.ToString() + "'") + ")" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = ConnectionManager.Context.table("Project").where("ProjectID in (select ProjectID from Subject where " + (string.IsNullOrEmpty(txtKey.Text) ? "1=1" : "DutyUnitAddress like '%" + txtKey.Text + "%' or DutyUnit like '%" + txtKey.Text + "%'") + (cbOrgList.SelectedItem.ToString() == "全部" ? string.Empty : " and DutyUnitOrg = '" + cbOrgList.SelectedItem.ToString() + "'") + ")" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
@@ -43,6 +43,11 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
                {
                    if (sub.DutyUnitOrg == cbOrgList.SelectedItem.ToString() || cbOrgList.SelectedItem.ToString() == "全部")
                    {
+                       if (!string.IsNullOrEmpty(txtKey.Text) && ((sub.DutyUnit != null && !sub.DutyUnit.Contains(txtKey.Text)) && (sub.DutyUnitAddress != null && !sub.DutyUnitAddress.Contains(txtKey.Text))))
+                       {
+                           continue;
+                       }
+
                        List<object> cells = new List<object>();
                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));

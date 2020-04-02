@@ -40,12 +40,12 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExportToExcel = new System.Windows.Forms.Button();
-            this.cbOrgList = new System.Windows.Forms.ComboBox();
-            this.txtKey = new DevExpress.XtraEditors.TextEdit();
             this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
             this.cbDisplayContract = new System.Windows.Forms.CheckBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.cbOrgList = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtKey = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
@@ -68,10 +68,10 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 46);
+            this.gcGrid.Location = new System.Drawing.Point(3, 36);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1028, 542);
+            this.gcGrid.Size = new System.Drawing.Size(1028, 552);
             this.gcGrid.TabIndex = 3;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -144,31 +144,73 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnExportToExcel);
-            this.panel1.Controls.Add(this.cbOrgList);
-            this.panel1.Controls.Add(this.txtKey);
             this.panel1.Controls.Add(this.cbDisplayReporter);
             this.panel1.Controls.Add(this.cbDisplayContract);
             this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.cbOrgList);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtKey);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 29);
+            this.panel1.Size = new System.Drawing.Size(1028, 19);
             this.panel1.TabIndex = 2;
             // 
             // btnExportToExcel
             // 
-            this.btnExportToExcel.Location = new System.Drawing.Point(914, 5);
+            this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExportToExcel.Location = new System.Drawing.Point(938, 0);
             this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(87, 23);
+            this.btnExportToExcel.Size = new System.Drawing.Size(87, 19);
             this.btnExportToExcel.TabIndex = 8;
             this.btnExportToExcel.Text = "导出到Excel";
             this.btnExportToExcel.UseVisualStyleBackColor = true;
             this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
+            // cbDisplayReporter
+            // 
+            this.cbDisplayReporter.AutoSize = true;
+            this.cbDisplayReporter.Checked = true;
+            this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbDisplayReporter.Location = new System.Drawing.Point(830, 0);
+            this.cbDisplayReporter.Name = "cbDisplayReporter";
+            this.cbDisplayReporter.Size = new System.Drawing.Size(108, 19);
+            this.cbDisplayReporter.TabIndex = 4;
+            this.cbDisplayReporter.Text = "显示建议书内容";
+            this.cbDisplayReporter.UseVisualStyleBackColor = true;
+            this.cbDisplayReporter.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
+            // 
+            // cbDisplayContract
+            // 
+            this.cbDisplayContract.AutoSize = true;
+            this.cbDisplayContract.Checked = true;
+            this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbDisplayContract.Location = new System.Drawing.Point(712, 0);
+            this.cbDisplayContract.Name = "cbDisplayContract";
+            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.cbDisplayContract.Size = new System.Drawing.Size(118, 19);
+            this.cbDisplayContract.TabIndex = 3;
+            this.cbDisplayContract.Text = "显示合同书内容";
+            this.cbDisplayContract.UseVisualStyleBackColor = true;
+            this.cbDisplayContract.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSearch.Location = new System.Drawing.Point(637, 0);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 19);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "搜索";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // cbOrgList
             // 
+            this.cbOrgList.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbOrgList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOrgList.Font = new System.Drawing.Font("宋体", 9F);
             this.cbOrgList.FormattingEnabled = true;
@@ -202,73 +244,42 @@
             "中国核工业集团公司",
             "中国工程物理研究院",
             "其它"});
-            this.cbOrgList.Location = new System.Drawing.Point(431, 7);
+            this.cbOrgList.Location = new System.Drawing.Point(472, 0);
             this.cbOrgList.Name = "cbOrgList";
             this.cbOrgList.Size = new System.Drawing.Size(165, 20);
             this.cbOrgList.TabIndex = 5;
             // 
-            // txtKey
-            // 
-            this.txtKey.Location = new System.Drawing.Point(110, 7);
-            this.txtKey.Name = "txtKey";
-            this.txtKey.Size = new System.Drawing.Size(215, 20);
-            this.txtKey.TabIndex = 1;
-            // 
-            // cbDisplayReporter
-            // 
-            this.cbDisplayReporter.AutoSize = true;
-            this.cbDisplayReporter.Checked = true;
-            this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(800, 9);
-            this.cbDisplayReporter.Name = "cbDisplayReporter";
-            this.cbDisplayReporter.Size = new System.Drawing.Size(108, 16);
-            this.cbDisplayReporter.TabIndex = 4;
-            this.cbDisplayReporter.Text = "显示建议书内容";
-            this.cbDisplayReporter.UseVisualStyleBackColor = true;
-            this.cbDisplayReporter.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
-            // 
-            // cbDisplayContract
-            // 
-            this.cbDisplayContract.AutoSize = true;
-            this.cbDisplayContract.Checked = true;
-            this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDisplayContract.Location = new System.Drawing.Point(682, 9);
-            this.cbDisplayContract.Name = "cbDisplayContract";
-            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.cbDisplayContract.Size = new System.Drawing.Size(118, 16);
-            this.cbDisplayContract.TabIndex = 3;
-            this.cbDisplayContract.Text = "显示合同书内容";
-            this.cbDisplayContract.UseVisualStyleBackColor = true;
-            this.cbDisplayContract.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(602, 6);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 21);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "搜索";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // label2
             // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(328, 4);
+            this.label2.Location = new System.Drawing.Point(366, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 24);
+            this.label2.Size = new System.Drawing.Size(106, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "所属部门：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // txtKey
+            // 
+            this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtKey.Location = new System.Drawing.Point(126, 0);
+            this.txtKey.Name = "txtKey";
+            this.txtKey.Properties.NullValuePrompt = "请输入负责单位、所属地点！";
+            this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtKey.Properties.ShowNullValuePromptWhenFocused = true;
+            this.txtKey.Size = new System.Drawing.Size(240, 20);
+            this.txtKey.TabIndex = 1;
+            // 
             // label1
             // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(9, 4);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(126, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "所属地点：";
+            this.label1.Text = "搜索关键字：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ModuleController
