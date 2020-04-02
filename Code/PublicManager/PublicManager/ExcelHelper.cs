@@ -81,5 +81,31 @@ namespace PublicManager
         {
             return ExcelBuilder.excelToDataSet(fileName);
         }
+        
+        /// <summary>
+        /// 获得日期值
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="formatString"></param>
+        /// <param name="defaultString"></param>
+        /// <returns></returns>
+        public static string getDateTimeForString(DateTime val, string formatString, string defaultString)
+        {
+            if (val != null)
+            {
+                if (val <= DateTime.MinValue)
+                {
+                    return defaultString;
+                }
+                else
+                {
+                    return val.ToString(formatString);
+                }
+            }
+            else
+            {
+                return defaultString;
+            }
+        }
     }
 }

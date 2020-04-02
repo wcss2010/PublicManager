@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tvDetail = new TreeViewEx();
+            this.tvDetail = new PublicManager.Modules.TreeViewEx();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtNodeKeys = new System.Windows.Forms.TextBox();
             this.lblHint = new System.Windows.Forms.Label();
@@ -38,10 +38,17 @@
             // tvDetail
             // 
             this.tvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvDetail.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
+            this.tvDetail.FocusNodeBackColor = System.Drawing.Color.OrangeRed;
+            this.tvDetail.FocusNodeFontColor = System.Drawing.Color.White;
             this.tvDetail.FullRowSelect = true;
             this.tvDetail.HideSelection = false;
             this.tvDetail.Location = new System.Drawing.Point(0, 28);
             this.tvDetail.Name = "tvDetail";
+            this.tvDetail.NoFocusNodeBackColor = System.Drawing.Color.White;
+            this.tvDetail.NoFocusNodeFontColor = System.Drawing.Color.Black;
+            this.tvDetail.SelectedNodeBackColor = System.Drawing.Color.LightGreen;
+            this.tvDetail.SelectedNodeFontColor = System.Drawing.Color.White;
             this.tvDetail.Size = new System.Drawing.Size(580, 691);
             this.tvDetail.TabIndex = 1;
             // 
@@ -73,7 +80,7 @@
             this.lblHint.Name = "lblHint";
             this.lblHint.Size = new System.Drawing.Size(78, 28);
             this.lblHint.TabIndex = 0;
-            this.lblHint.Text = "关建字：";
+            this.lblHint.Text = "关键词：";
             this.lblHint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // TreeViewWithSearch
