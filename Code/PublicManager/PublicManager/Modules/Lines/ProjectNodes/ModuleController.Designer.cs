@@ -312,7 +312,9 @@
             // 
             // txtWillTime
             // 
+            this.txtWillTime.CustomFormat = "yyyy年MM月dd日";
             this.txtWillTime.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtWillTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtWillTime.Location = new System.Drawing.Point(169, 0);
             this.txtWillTime.Name = "txtWillTime";
             this.txtWillTime.Size = new System.Drawing.Size(106, 21);
@@ -331,7 +333,9 @@
             // 
             // txtNodeWillTime
             // 
+            this.txtNodeWillTime.CustomFormat = "yyyy年MM月dd日";
             this.txtNodeWillTime.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtNodeWillTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtNodeWillTime.Location = new System.Drawing.Point(233, 0);
             this.txtNodeWillTime.Name = "txtNodeWillTime";
             this.txtNodeWillTime.Size = new System.Drawing.Size(107, 21);
