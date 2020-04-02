@@ -22,6 +22,10 @@ namespace PublicManager.DB.Entitys
             query.set("WillTime", WillTime);
             query.set("TotalMoney", TotalMoney);
             query.set("MemoText", MemoText);
+            query.set("NodeWillTime", NodeWillTime);
+            query.set("WillContent", WillContent);
+            query.set("WillLevel", WillLevel);
+            query.set("WillWorker", WillWorker);
 
             return query;
         }
@@ -33,6 +37,10 @@ namespace PublicManager.DB.Entitys
         public DateTime WillTime { get; set; }
         public decimal TotalMoney { get; set; }
         public string MemoText { get; set; }
+        public DateTime NodeWillTime { get; set; }
+        public string WillContent { get; set; }
+        public string WillLevel { get; set; }
+        public string WillWorker { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
@@ -43,6 +51,10 @@ namespace PublicManager.DB.Entitys
             WillTime = source("WillTime").value<DateTime>(DateTime.Now);
             TotalMoney = source("TotalMoney").value<decimal>(0);
             MemoText = source("MemoText").value<string>("");
+            NodeWillTime = source("NodeWillTime").value<DateTime>(DateTime.Now);
+            WillContent = source("WillContent").value<string>("");
+            WillLevel = source("WillLevel").value<string>("");
+            WillWorker = source("WillWorker").value<string>("");
         }
 
         public override Noear.Weed.IBinder clone()
