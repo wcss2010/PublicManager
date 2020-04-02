@@ -237,5 +237,53 @@ namespace PublicManager
                 s.Close();
             }
         }
+
+        /// <summary>
+        /// 获得文件与目录列表
+        /// </summary>
+        /// <param name="zipFile"></param>
+        /// <returns></returns>
+        public static List<string> getFileListInZip(string zipFile)
+        {
+            List<string> results = new List<string>();
+            if (File.Exists(zipFile))
+            {
+                ZipFile zfObj = null;
+                try
+                {
+                    zfObj = new ZipFile(zipFile);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("对不起，压缩文件(" + zipFile + ")读取失败！Ex:" + ex.ToString());
+                }
+
+                try
+                {
+                    foreach (ZipEntry theEntry in zfObj)
+                    {
+                        if (theEntry.IsFile)
+                        {
+                            //文件
+                            results.Add(theEntry.Name);
+                        }
+                        else if (theEntry.IsDirectory)
+                        {
+                            //目录
+                            results.Add(theEntry.Name);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("对不起，压缩文件(" + zipFile + ")读取失败！Ex:" + ex.ToString());
+                }
+                finally
+                {
+                    zfObj.Close();
+                }
+            }
+            return results;
+        }
     }
 }

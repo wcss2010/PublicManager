@@ -171,6 +171,7 @@
     <Compile Include="DB\Entitys\TeacherComment.cs" />
     <Compile Include="DB\Entitys\UnitMoneys.cs" />
     <Compile Include="DB\Entitys\WorkSteps.cs" />
+    <Compile Include="ExcelBuilder.cs" />
     <Compile Include="ExcelHelper.cs" />
     <Compile Include="MainConfig.cs" />
     <Compile Include="MainForm.cs">
