@@ -94,11 +94,11 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                 int indexx = 0;
                 foreach (MoneySends mss in subList)
                 {
-                    if ((cbNodeWillTime.Checked && mss.NodeWillTime != null && mss.NodeWillTime > DateTime.MinValue && mss.NodeWillTime >= txtNodeWillTime.Value) || mss.NodeWillTime <= DateTime.MinValue)
+                    if ((cbNodeWillTime.Checked && mss.NodeWillTime != null && mss.NodeWillTime > DateTime.MinValue && mss.NodeWillTime >= txtNodeWillTime.Value) || (cbNodeWillTime.Checked && mss.NodeWillTime <= DateTime.MinValue))
                     {
                         continue;
                     }
-                    if ((cbWillTime.Checked && mss.WillTime != null && mss.WillTime > DateTime.MinValue && mss.WillTime >= txtWillTime.Value) || mss.WillTime <= DateTime.MinValue)
+                    if ((cbWillTime.Checked && mss.WillTime != null && mss.WillTime > DateTime.MinValue && mss.WillTime >= txtWillTime.Value) || (cbWillTime.Checked && mss.WillTime <= DateTime.MinValue))
                     {
                         continue;
                     }
