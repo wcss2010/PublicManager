@@ -224,6 +224,7 @@
             // 
             // rcTopBar
             // 
+            this.rcTopBar.AutoHideEmptyItems = true;
             this.rcTopBar.AutoSaveLayoutToXml = true;
             this.rcTopBar.DrawGroupCaptions = DevExpress.Utils.DefaultBoolean.False;
             this.rcTopBar.DrawGroupsBorder = false;
@@ -251,7 +252,9 @@
             this.rcTopBar.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.False;
             this.rcTopBar.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.rcTopBar.ShowQatLocationSelector = false;
+            this.rcTopBar.ShowToolbarCustomizeItem = false;
             this.rcTopBar.Size = new System.Drawing.Size(762, 27);
+            this.rcTopBar.Toolbar.ShowCustomizeItem = false;
             // 
             // barCheckItem1
             // 

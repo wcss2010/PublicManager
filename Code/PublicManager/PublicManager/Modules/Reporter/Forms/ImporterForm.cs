@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PublicManager.Modules.Reporter.Forms
 {
-    public partial class ImporterForm : Form
+    public partial class ImporterForm : RibbonForm
     {
         /// <summary>
         /// 是否需要更新替换字典在改变替换列表中项目状态时
