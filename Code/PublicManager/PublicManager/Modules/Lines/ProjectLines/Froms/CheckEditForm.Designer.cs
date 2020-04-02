@@ -54,6 +54,8 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.bsiBottomText = new DevExpress.XtraBars.BarStaticItem();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTaskNumber = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxItemA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxItemB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxItemC.Properties)).BeginInit();
@@ -61,12 +63,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbxItemE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMemo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTaskNumber.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label1.Location = new System.Drawing.Point(22, 50);
+            this.label1.Location = new System.Drawing.Point(22, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 16);
             this.label1.TabIndex = 0;
@@ -75,7 +78,7 @@
             // label2
             // 
             this.label2.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label2.Location = new System.Drawing.Point(54, 102);
+            this.label2.Location = new System.Drawing.Point(54, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 0;
@@ -84,7 +87,7 @@
             // label3
             // 
             this.label3.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label3.Location = new System.Drawing.Point(54, 151);
+            this.label3.Location = new System.Drawing.Point(54, 194);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 0;
@@ -93,7 +96,7 @@
             // label4
             // 
             this.label4.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label4.Location = new System.Drawing.Point(22, 203);
+            this.label4.Location = new System.Drawing.Point(22, 246);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 16);
             this.label4.TabIndex = 0;
@@ -102,7 +105,7 @@
             // label5
             // 
             this.label5.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label5.Location = new System.Drawing.Point(22, 253);
+            this.label5.Location = new System.Drawing.Point(22, 296);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 16);
             this.label5.TabIndex = 0;
@@ -111,7 +114,7 @@
             // label6
             // 
             this.label6.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label6.Location = new System.Drawing.Point(86, 302);
+            this.label6.Location = new System.Drawing.Point(86, 345);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 16);
             this.label6.TabIndex = 0;
@@ -119,7 +122,7 @@
             // 
             // cbxItemA
             // 
-            this.cbxItemA.Location = new System.Drawing.Point(155, 48);
+            this.cbxItemA.Location = new System.Drawing.Point(155, 91);
             this.cbxItemA.Name = "cbxItemA";
             this.cbxItemA.Properties.Appearance.Font = new System.Drawing.Font("宋体", 11F);
             this.cbxItemA.Properties.Appearance.Options.UseFont = true;
@@ -134,7 +137,7 @@
             // 
             // cbxItemB
             // 
-            this.cbxItemB.Location = new System.Drawing.Point(155, 100);
+            this.cbxItemB.Location = new System.Drawing.Point(155, 143);
             this.cbxItemB.Name = "cbxItemB";
             this.cbxItemB.Properties.Appearance.Font = new System.Drawing.Font("宋体", 11F);
             this.cbxItemB.Properties.Appearance.Options.UseFont = true;
@@ -149,7 +152,7 @@
             // 
             // cbxItemC
             // 
-            this.cbxItemC.Location = new System.Drawing.Point(156, 149);
+            this.cbxItemC.Location = new System.Drawing.Point(156, 192);
             this.cbxItemC.Name = "cbxItemC";
             this.cbxItemC.Properties.Appearance.Font = new System.Drawing.Font("宋体", 11F);
             this.cbxItemC.Properties.Appearance.Options.UseFont = true;
@@ -164,7 +167,7 @@
             // 
             // cbxItemD
             // 
-            this.cbxItemD.Location = new System.Drawing.Point(155, 201);
+            this.cbxItemD.Location = new System.Drawing.Point(155, 244);
             this.cbxItemD.Name = "cbxItemD";
             this.cbxItemD.Properties.Appearance.Font = new System.Drawing.Font("宋体", 11F);
             this.cbxItemD.Properties.Appearance.Options.UseFont = true;
@@ -180,7 +183,7 @@
             // 
             // cbxItemE
             // 
-            this.cbxItemE.Location = new System.Drawing.Point(155, 251);
+            this.cbxItemE.Location = new System.Drawing.Point(155, 294);
             this.cbxItemE.Name = "cbxItemE";
             this.cbxItemE.Properties.Appearance.Font = new System.Drawing.Font("宋体", 11F);
             this.cbxItemE.Properties.Appearance.Options.UseFont = true;
@@ -196,14 +199,14 @@
             // 
             // txtMemo
             // 
-            this.txtMemo.Location = new System.Drawing.Point(155, 301);
+            this.txtMemo.Location = new System.Drawing.Point(155, 344);
             this.txtMemo.Name = "txtMemo";
             this.txtMemo.Size = new System.Drawing.Size(584, 20);
             this.txtMemo.TabIndex = 5;
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(213, 342);
+            this.btnOK.Location = new System.Drawing.Point(213, 385);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(107, 42);
             this.btnOK.TabIndex = 6;
@@ -212,7 +215,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(486, 342);
+            this.btnCancel.Location = new System.Drawing.Point(486, 385);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 42);
             this.btnCancel.TabIndex = 7;
@@ -318,11 +321,27 @@
             this.bsiBottomText.Name = "bsiBottomText";
             this.bsiBottomText.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("宋体", 12F);
+            this.labelControl1.Location = new System.Drawing.Point(54, 45);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(72, 16);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "计划批次:";
+            // 
+            // txtTaskNumber
+            // 
+            this.txtTaskNumber.Location = new System.Drawing.Point(155, 44);
+            this.txtTaskNumber.Name = "txtTaskNumber";
+            this.txtTaskNumber.Size = new System.Drawing.Size(584, 20);
+            this.txtTaskNumber.TabIndex = 5;
+            // 
             // CheckEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 399);
+            this.ClientSize = new System.Drawing.Size(762, 470);
             this.Controls.Add(this.cbxItemE);
             this.Controls.Add(this.cbxItemD);
             this.Controls.Add(this.cbxItemC);
@@ -330,6 +349,8 @@
             this.Controls.Add(this.cbxItemA);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.txtTaskNumber);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtMemo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -353,6 +374,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbxItemE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMemo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTaskNumber.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,5 +408,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarStaticItem bsiBottomText;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtTaskNumber;
     }
 }

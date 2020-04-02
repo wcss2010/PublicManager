@@ -19,6 +19,7 @@ namespace PublicManager.Modules.Lines.ProjectLines.Froms
             InitializeComponent();
 
             projectObj = proj;
+            txtTaskNumber.Text = proj.TaskNumber;
             cbxItemA.Text = proj.OKQuestionMemo;
             cbxItemB.Text = proj.OKCheckA;
             cbxItemC.Text = proj.OKCheckB;
@@ -34,6 +35,7 @@ namespace PublicManager.Modules.Lines.ProjectLines.Froms
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            projectObj.TaskNumber = txtTaskNumber.Text;
             projectObj.OKQuestionMemo = cbxItemA.Text;
             projectObj.OKCheckA = cbxItemB.Text;
             projectObj.OKCheckB = cbxItemC.Text;
