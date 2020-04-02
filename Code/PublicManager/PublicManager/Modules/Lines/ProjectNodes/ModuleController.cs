@@ -304,7 +304,7 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataTable dt = getTempDataTable("row", 7);
+            DataTable dt = getTempDataTable("row", 11);
 
             List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
@@ -313,15 +313,28 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                 int indexx = 0;
                 foreach (MoneySends mss in subList)
                 {
+                    if (cbNodeWillTime.Checked && mss.NodeWillTime != null && mss.NodeWillTime >= txtNodeWillTime.Value)
+                    {
+                        continue;
+                    }
+                    if (cbWillTime.Checked && mss.WillTime != null && mss.WillTime >= txtWillTime.Value)
+                    {
+                        continue;
+                    }
+
                     indexx++;
                     List<object> cells = new List<object>();
                     cells.Add(indexx.ToString());
                     cells.Add(mss.SendRule);
-                    cells.Add(mss.WillTime.ToString("yyyy年MM月dd日"));
+                    cells.Add((mss.WillTime != null ? mss.WillTime : DateTime.Now).ToString("yyyy年MM月dd日"));
                     cells.Add(mss.TotalMoney);
                     cells.Add(mss.MemoText);
                     cells.Add(mss.MSID);
                     cells.Add(proj.ProjectName);
+                    cells.Add((mss.NodeWillTime != null ? mss.NodeWillTime : DateTime.Now).ToString("yyyy年MM月dd日"));
+                    cells.Add(mss.WillContent);
+                    cells.Add(mss.WillLevel);
+                    cells.Add(mss.WillWorker);
 
                     dt.Rows.Add(cells.ToArray());
                 }
