@@ -63,16 +63,13 @@ namespace PublicManager
             ModuleDict[nbcTestB.Caption + "xxxx" + "项目查询"] = new Modules.DataCheck.ProjectCheck.ModuleController();
             ModuleDict[nbcTestB.Caption + "xxxx" + "课题查询"] = new Modules.DataCheck.SubjectCheck.ModuleController();
             ModuleDict[nbcTestB.Caption + "xxxx" + "成员查询"] = new Modules.DataCheck.PersonCheck.ModuleController();
-            ModuleDict[nbcTestB.Caption + "xxxx" + "地区查询"] = new Modules.DataCheck.AddressCheck.ModuleController();
+            ModuleDict[nbcTestB.Caption + "xxxx" + "单位查询"] = new Modules.DataCheck.AddressCheck.ModuleController();
+            ModuleDict[nbcTestB.Caption + "xxxx" + "经费预算查询"] = new Modules.DataCheck.MoneyCheck.ModuleController();
 
             ModuleDict[nbcTestF.Caption + "xxxx" + "项目过程管理"] = new Modules.Lines.ProjectLines.ModuleController();
             ModuleDict[nbcTestF.Caption + "xxxx" + "项目节点管理"] = new Modules.Lines.ProjectNodes.ModuleController();
             ModuleDict[nbcTestF.Caption + "xxxx" + "经费过程管理"] = new Modules.Lines.MoneyLines.ModuleController();
             ModuleDict[nbcTestF.Caption + "xxxx" + "课题经费管理"] = new Modules.Lines.SubjectMoneys.ModuleController();
-
-            ModuleDict[nbcTestD.Caption + "xxxx" + "项目经费概览"] = new Modules.Moneys.ProjectMoney.ModuleController();
-            ModuleDict[nbcTestD.Caption + "xxxx" + "课题经费管理"] = new Modules.Moneys.SubjectMoney.ModuleController();
-            ModuleDict[nbcTestD.Caption + "xxxx" + "单位经费管理"] = new Modules.Moneys.UnitMoney.ModuleController();
 
             ModuleDict[nbcTestC.Caption + "xxxx" + "专家信息管理"] = new Modules.Teacher.TeacherManager.ModuleController();
 
@@ -277,23 +274,6 @@ namespace PublicManager
         {
             //MainConfig.Config.Dict["当前皮肤"] = string.Concat(e.Item.Tag);
             //MainConfig.saveConfig();
-        }
-
-        private void tlTestE_MouseClick(object sender, MouseEventArgs e)
-        {
-            DevExpress.XtraTreeList.TreeList tree = ((DevExpress.XtraTreeList.TreeList)sender);
-            Point p = new Point(Cursor.Position.X, Cursor.Position.Y);　　//获取到鼠标点击的坐标位置
-            TreeListHitInfo hitInfo = tree.CalcHitInfo(e.Location);
-            if (hitInfo.HitInfoType == HitInfoType.Cell)
-            {
-                tree.SetFocusedNode(hitInfo.Node);         //这句话就是关键，用于选中节点　　
-
-                //显示模块
-                if (nbcLeftTree.ActiveGroup != null)
-                {
-                    showModule(nbcLeftTree.ActiveGroup.Caption + "xxxx" + hitInfo.Node.GetDisplayText(0), true);
-                }
-            }
         }
 
         private void tlTestF_MouseClick(object sender, MouseEventArgs e)

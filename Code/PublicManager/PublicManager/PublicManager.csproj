@@ -212,6 +212,12 @@
     <Compile Include="Modules\CustomReporter\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\DataCheck\MoneyCheck\ModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\DataCheck\MoneyCheck\ModuleController.Designer.cs">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\DataCheck\PersonCheck\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -276,19 +282,13 @@
     <Compile Include="Modules\MainPage\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Moneys\ProjectMoney\HSkinTableLayoutPanel.cs">
+    <Compile Include="Modules\DataCheck\MoneyCheck\HSkinTableLayoutPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Modules\Moneys\ProjectMoney\ModuleController.cs">
+    <Compile Include="Modules\DataCheck\MoneyCheck\MoneyTableControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Moneys\ProjectMoney\ModuleController.Designer.cs">
-      <DependentUpon>ModuleController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\Moneys\ProjectMoney\MoneyTableControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Modules\Moneys\ProjectMoney\MoneyTableControl.designer.cs">
+    <Compile Include="Modules\DataCheck\MoneyCheck\MoneyTableControl.designer.cs">
       <DependentUpon>MoneyTableControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Lines\ProjectNodes\ModuleController.cs">
@@ -308,18 +308,6 @@
     </Compile>
     <Compile Include="Modules\MainMenuController.Designer.cs">
       <DependentUpon>MainMenuController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\Moneys\SubjectMoney\ModuleController.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Modules\Moneys\SubjectMoney\ModuleController.Designer.cs">
-      <DependentUpon>ModuleController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\Moneys\UnitMoney\ModuleController.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Modules\Moneys\UnitMoney\ModuleController.Designer.cs">
-      <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Reporter\DBImporter.cs" />
     <Compile Include="Modules\Reporter\Forms\ImporterForm.cs">
@@ -397,6 +385,9 @@
     <EmbeddedResource Include="Modules\CustomReporter\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DataCheck\MoneyCheck\ModuleController.resx">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataCheck\PersonCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
@@ -427,10 +418,7 @@
     <EmbeddedResource Include="Modules\MainPage\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Moneys\ProjectMoney\ModuleController.resx">
-      <DependentUpon>ModuleController.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Moneys\ProjectMoney\MoneyTableControl.resx">
+    <EmbeddedResource Include="Modules\DataCheck\MoneyCheck\MoneyTableControl.resx">
       <DependentUpon>MoneyTableControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lines\ProjectNodes\ModuleController.resx">
@@ -441,12 +429,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\MainMenuController.resx">
       <DependentUpon>MainMenuController.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Moneys\SubjectMoney\ModuleController.resx">
-      <DependentUpon>ModuleController.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Moneys\UnitMoney\ModuleController.resx">
-      <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Reporter\Forms\ImporterForm.resx">
       <DependentUpon>ImporterForm.cs</DependentUpon>

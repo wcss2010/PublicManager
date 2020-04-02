@@ -43,10 +43,7 @@
             this.bsiBottomText = new DevExpress.XtraBars.BarStaticItem();
             this.rsbStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.nbcLeftTree = new DevExpress.XtraNavBar.NavBarControl();
-            this.nbcTestD = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarGroupControlContainer4 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
-            this.tlTestE = new DevExpress.XtraTreeList.TreeList();
-            this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.nbcTestA = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.tlTestA = new DevExpress.XtraTreeList.TreeList();
             this.col1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -61,7 +58,6 @@
             this.navBarGroupControlContainer5 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.tlTestF = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.nbcTestA = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbcTestB = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbcTestF = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbcTestC = new DevExpress.XtraNavBar.NavBarGroup();
@@ -71,8 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbcLeftTree)).BeginInit();
             this.nbcLeftTree.SuspendLayout();
-            this.navBarGroupControlContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tlTestE)).BeginInit();
             this.navBarGroupControlContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tlTestA)).BeginInit();
             this.navBarGroupControlContainer2.SuspendLayout();
@@ -199,14 +193,12 @@
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer1);
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer2);
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer3);
-            this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer4);
             this.nbcLeftTree.Controls.Add(this.navBarGroupControlContainer5);
             this.nbcLeftTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nbcLeftTree.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.nbcTestA,
             this.nbcTestB,
             this.nbcTestF,
-            this.nbcTestD,
             this.nbcTestC,
             this.nbcTestG});
             this.nbcLeftTree.Location = new System.Drawing.Point(0, 0);
@@ -218,60 +210,17 @@
             this.nbcLeftTree.View = new DevExpress.XtraNavBar.ViewInfo.SkinNavigationPaneViewInfoRegistrator();
             this.nbcLeftTree.ActiveGroupChanged += new DevExpress.XtraNavBar.NavBarGroupEventHandler(this.nbcLeftTree_ActiveGroupChanged);
             // 
-            // nbcTestD
+            // nbcTestA
             // 
-            this.nbcTestD.Caption = "经费管理";
-            this.nbcTestD.ControlContainer = this.navBarGroupControlContainer4;
-            this.nbcTestD.DragDropFlags = DevExpress.XtraNavBar.NavBarDragDrop.None;
-            this.nbcTestD.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
-            this.nbcTestD.GroupClientHeight = 212;
-            this.nbcTestD.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
-            this.nbcTestD.LargeImage = ((System.Drawing.Image)(resources.GetObject("nbcTestD.LargeImage")));
-            this.nbcTestD.Name = "nbcTestD";
-            // 
-            // navBarGroupControlContainer4
-            // 
-            this.navBarGroupControlContainer4.Appearance.BackColor = System.Drawing.SystemColors.Control;
-            this.navBarGroupControlContainer4.Appearance.Options.UseBackColor = true;
-            this.navBarGroupControlContainer4.Controls.Add(this.tlTestE);
-            this.navBarGroupControlContainer4.Name = "navBarGroupControlContainer4";
-            this.navBarGroupControlContainer4.Size = new System.Drawing.Size(113, 269);
-            this.navBarGroupControlContainer4.TabIndex = 2;
-            // 
-            // tlTestE
-            // 
-            this.tlTestE.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.tlTestE.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.treeListColumn4});
-            this.tlTestE.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlTestE.Location = new System.Drawing.Point(0, 0);
-            this.tlTestE.Name = "tlTestE";
-            this.tlTestE.BeginUnboundLoad();
-            this.tlTestE.AppendNode(new object[] {
-            "项目经费概览"}, -1);
-            this.tlTestE.AppendNode(new object[] {
-            "课题经费管理"}, -1);
-            this.tlTestE.AppendNode(new object[] {
-            "单位经费管理"}, -1);
-            this.tlTestE.EndUnboundLoad();
-            this.tlTestE.OptionsBehavior.Editable = false;
-            this.tlTestE.OptionsView.ShowColumns = false;
-            this.tlTestE.OptionsView.ShowHorzLines = false;
-            this.tlTestE.OptionsView.ShowIndentAsRowStyle = true;
-            this.tlTestE.OptionsView.ShowIndicator = false;
-            this.tlTestE.OptionsView.ShowVertLines = false;
-            this.tlTestE.Size = new System.Drawing.Size(113, 269);
-            this.tlTestE.TabIndex = 1;
-            this.tlTestE.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tlTestE_MouseClick);
-            // 
-            // treeListColumn4
-            // 
-            this.treeListColumn4.MinWidth = 52;
-            this.treeListColumn4.Name = "treeListColumn4";
-            this.treeListColumn4.OptionsColumn.AllowFocus = false;
-            this.treeListColumn4.Visible = true;
-            this.treeListColumn4.VisibleIndex = 0;
-            this.treeListColumn4.Width = 93;
+            this.nbcTestA.Caption = "信息导入";
+            this.nbcTestA.ControlContainer = this.navBarGroupControlContainer1;
+            this.nbcTestA.DragDropFlags = DevExpress.XtraNavBar.NavBarDragDrop.None;
+            this.nbcTestA.Expanded = true;
+            this.nbcTestA.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
+            this.nbcTestA.GroupClientHeight = 264;
+            this.nbcTestA.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
+            this.nbcTestA.LargeImage = ((System.Drawing.Image)(resources.GetObject("nbcTestA.LargeImage")));
+            this.nbcTestA.Name = "nbcTestA";
             // 
             // navBarGroupControlContainer1
             // 
@@ -279,7 +228,7 @@
             this.navBarGroupControlContainer1.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer1.Controls.Add(this.tlTestA);
             this.navBarGroupControlContainer1.Name = "navBarGroupControlContainer1";
-            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(113, 269);
+            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(113, 315);
             this.navBarGroupControlContainer1.TabIndex = 0;
             // 
             // tlTestA
@@ -304,7 +253,7 @@
             this.tlTestA.OptionsView.ShowIndentAsRowStyle = true;
             this.tlTestA.OptionsView.ShowIndicator = false;
             this.tlTestA.OptionsView.ShowVertLines = false;
-            this.tlTestA.Size = new System.Drawing.Size(113, 269);
+            this.tlTestA.Size = new System.Drawing.Size(113, 315);
             this.tlTestA.TabIndex = 0;
             this.tlTestA.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tlTestA_MouseClick);
             // 
@@ -342,7 +291,7 @@
             this.tlTestB.AppendNode(new object[] {
             "成员查询"}, -1);
             this.tlTestB.AppendNode(new object[] {
-            "地区查询"}, -1);
+            "单位查询"}, -1);
             this.tlTestB.EndUnboundLoad();
             this.tlTestB.OptionsBehavior.Editable = false;
             this.tlTestB.OptionsView.ShowColumns = false;
@@ -478,18 +427,6 @@
             this.treeListColumn5.VisibleIndex = 0;
             this.treeListColumn5.Width = 93;
             // 
-            // nbcTestA
-            // 
-            this.nbcTestA.Caption = "信息导入";
-            this.nbcTestA.ControlContainer = this.navBarGroupControlContainer1;
-            this.nbcTestA.DragDropFlags = DevExpress.XtraNavBar.NavBarDragDrop.None;
-            this.nbcTestA.Expanded = true;
-            this.nbcTestA.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
-            this.nbcTestA.GroupClientHeight = 264;
-            this.nbcTestA.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
-            this.nbcTestA.LargeImage = ((System.Drawing.Image)(resources.GetObject("nbcTestA.LargeImage")));
-            this.nbcTestA.Name = "nbcTestA";
-            // 
             // nbcTestB
             // 
             this.nbcTestB.Caption = "信息查询";
@@ -567,8 +504,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbcLeftTree)).EndInit();
             this.nbcLeftTree.ResumeLayout(false);
-            this.navBarGroupControlContainer4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tlTestE)).EndInit();
             this.navBarGroupControlContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tlTestA)).EndInit();
             this.navBarGroupControlContainer2.ResumeLayout(false);
@@ -598,13 +533,11 @@
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer1;
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer2;
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer3;
-        private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer4;
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer5;
         private DevExpress.XtraTreeList.TreeList tlTestA;
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn col1;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
-        private DevExpress.XtraNavBar.NavBarGroup nbcTestD;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
         private DevExpress.XtraBars.BarButtonItem btnSkinColorModify;
@@ -621,8 +554,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
         private DevExpress.XtraTreeList.TreeList tlTestD;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn3;
-        private DevExpress.XtraTreeList.TreeList tlTestE;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn4;
         private DevExpress.XtraNavBar.NavBarGroup nbcTestF;
         private DevExpress.XtraTreeList.TreeList tlTestF;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn5;
