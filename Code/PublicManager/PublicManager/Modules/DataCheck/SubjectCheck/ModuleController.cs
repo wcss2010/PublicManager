@@ -54,7 +54,7 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
                    Person personObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "' and JobInProject = '负责人'").select("*").getItem<Person>(new Person());
                    if (string.IsNullOrEmpty(personObj.PersonID))
                    {
-                       continue;
+                       cells.Add(string.Empty);
                    }
                    else
                    {
@@ -78,7 +78,8 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
 
                    if (string.IsNullOrEmpty(personObj.PersonID))
                    {
-                       continue;
+                       cells.Add(string.Empty);
+                       cells.Add(string.Empty);
                    }
                    else
                    {

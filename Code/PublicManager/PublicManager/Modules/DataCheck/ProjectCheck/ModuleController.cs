@@ -41,8 +41,8 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
         private void btnSearch_Click(object sender, EventArgs e)
         {
             DataSet dsAll = new DataSet();
-            DataTable masterDt = getTempDataTable("row", 16);
-            DataTable detailDt = getTempDataTable("row", 6);
+            DataTable masterDt = getTempDataTable("row", 18);
+            DataTable detailDt = getTempDataTable("row", 8);
 
             List<Project> projList = ConnectionManager.Context.table("Project").where("(Keywords like '%" + txtKey.Text + "%' or ProjectName like '%" + txtKey.Text + "%' or ProjectID in (select ProjectID from Subject where SubjectName like '%" + txtKey.Text + "%'))" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
@@ -74,6 +74,18 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                 cells.Add(string.Empty);
                 cells.Add(proj.ProjectID);
                 cells.Add(proj.Keywords);
+
+                if (masterPerson != null && masterPerson.PersonID != null && masterPerson.PersonID.Length >= 1)
+                {
+                    cells.Add(masterPerson.Telephone);
+                    cells.Add(masterPerson.Mobilephone);
+                }
+                else
+                {
+                    cells.Add(string.Empty);
+                    cells.Add(string.Empty);
+                }
+
                 masterDt.Rows.Add(cells.ToArray());
                 #endregion
 
@@ -93,7 +105,7 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                         Person personObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "' and JobInProject = '负责人'").select("*").getItem<Person>(new Person());
                         if (string.IsNullOrEmpty(personObj.PersonID))
                         {
-                            continue;
+                            cells.Add(string.Empty);
                         }
                         else
                         {
@@ -103,6 +115,18 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                         cells.Add(sub.DutyUnitOrg);
                         cells.Add(sub.DutyUnitAddress);
                         cells.Add(proj.ProjectID);
+
+                        if (string.IsNullOrEmpty(personObj.PersonID))
+                        {
+                            cells.Add(string.Empty);
+                            cells.Add(string.Empty);
+                        }
+                        else
+                        {
+                            cells.Add(personObj.Telephone);
+                            cells.Add(personObj.Mobilephone);
+                        }
+
                         detailDt.Rows.Add(cells.ToArray());
                     }
                 }

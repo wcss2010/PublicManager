@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.dgvSub = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,10 +46,13 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,7 +65,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtKey = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -74,6 +78,8 @@
             this.dgvSub.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn15,
             this.gridColumn16,
+            this.gridColumn25,
+            this.gridColumn24,
             this.gridColumn17,
             this.gridColumn18,
             this.gridColumn19});
@@ -97,13 +103,29 @@
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 1;
             // 
+            // gridColumn25
+            // 
+            this.gridColumn25.Caption = "课题负责人座机";
+            this.gridColumn25.FieldName = "row7";
+            this.gridColumn25.Name = "gridColumn25";
+            this.gridColumn25.Visible = true;
+            this.gridColumn25.VisibleIndex = 2;
+            // 
+            // gridColumn24
+            // 
+            this.gridColumn24.Caption = "课题负责人手机";
+            this.gridColumn24.FieldName = "row8";
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 3;
+            // 
             // gridColumn17
             // 
             this.gridColumn17.Caption = "课题负责单位";
             this.gridColumn17.FieldName = "row3";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 2;
+            this.gridColumn17.VisibleIndex = 4;
             // 
             // gridColumn18
             // 
@@ -111,7 +133,7 @@
             this.gridColumn18.FieldName = "row4";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 3;
+            this.gridColumn18.VisibleIndex = 5;
             // 
             // gridColumn19
             // 
@@ -119,15 +141,15 @@
             this.gridColumn19.FieldName = "row5";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 4;
+            this.gridColumn19.VisibleIndex = 6;
             // 
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.LevelTemplate = this.dgvSub;
-            gridLevelNode2.RelationName = "SubjectView";
+            gridLevelNode1.LevelTemplate = this.dgvSub;
+            gridLevelNode1.RelationName = "SubjectView";
             this.gcGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gcGrid.Location = new System.Drawing.Point(3, 39);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
@@ -152,6 +174,8 @@
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn10,
+            this.gridColumn23,
+            this.gridColumn22,
             this.gridColumn11,
             this.gridColumn12,
             this.gridColumn13,
@@ -210,6 +234,14 @@
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
             // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "项目关键词";
+            this.gridColumn21.FieldName = "row16";
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 4;
+            // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "总经费";
@@ -242,13 +274,29 @@
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 8;
             // 
+            // gridColumn23
+            // 
+            this.gridColumn23.Caption = "项目负责人座机";
+            this.gridColumn23.FieldName = "row17";
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 9;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.Caption = "项目负责人手机";
+            this.gridColumn22.FieldName = "row18";
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.Visible = true;
+            this.gridColumn22.VisibleIndex = 10;
+            // 
             // gridColumn11
             // 
             this.gridColumn11.Caption = "项目牵头单位";
             this.gridColumn11.FieldName = "row11";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 9;
+            this.gridColumn11.VisibleIndex = 11;
             // 
             // gridColumn12
             // 
@@ -256,7 +304,7 @@
             this.gridColumn12.FieldName = "row12";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 10;
+            this.gridColumn12.VisibleIndex = 12;
             // 
             // gridColumn13
             // 
@@ -264,7 +312,7 @@
             this.gridColumn13.FieldName = "row13";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 11;
+            this.gridColumn13.VisibleIndex = 13;
             // 
             // gridColumn14
             // 
@@ -272,7 +320,7 @@
             this.gridColumn14.FieldName = "row14";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 12;
+            this.gridColumn14.VisibleIndex = 14;
             // 
             // groupBox1
             // 
@@ -372,14 +420,6 @@
             this.label1.Text = "搜索关键字：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // gridColumn21
-            // 
-            this.gridColumn21.Caption = "项目关键词";
-            this.gridColumn21.FieldName = "row16";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 4;
-            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -432,5 +472,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
     }
 }
