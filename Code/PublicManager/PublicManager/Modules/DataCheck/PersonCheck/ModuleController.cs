@@ -42,14 +42,14 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
         {
             DataTable dt = getTempDataTable("row", 13);
 
-            List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%' or ProjectID in (select ProjectID from Subject where SubjectName like '%" + txtKey.Text + "%') or ProjectID in (select ProjectID from Person where PersonName like '%" + txtKey.Text + "%'))" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%' or ProjectID in (select ProjectID from Subject where SubjectName like '%" + txtKey.Text + "%') or ProjectID in (select ProjectID from Person where PersonName like '%" + txtKey.Text + "%' or PersonSpecialty like '%" + txtKey.Text + "%' or TaskContent like '%" + txtKey.Text + "%'))" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                 //显示仅为项目负责人
                 Person masterPersonObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '' and IsProjectMaster = 'true'").select("*").getItem<Person>(new Person());
                 if (masterPersonObj != null && masterPersonObj.PersonID != null && masterPersonObj.PersonID.Length >= 1)
                 {
-                    if ((masterPersonObj.PersonName == null || !masterPersonObj.PersonName.Contains(txtKey.Text)) && (proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)))
+                    if ((masterPersonObj.PersonSpecialty == null || !masterPersonObj.PersonSpecialty.Contains(txtKey.Text)) && (masterPersonObj.TaskContent == null || !masterPersonObj.TaskContent.Contains(txtKey.Text)) && (masterPersonObj.PersonName == null || !masterPersonObj.PersonName.Contains(txtKey.Text)) && (proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)))
                     {
                         //
                     }
@@ -83,7 +83,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                     List<Person> perList = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "'").select("*").getList<Person>(new Person());
                     foreach (Person p in perList)
                     {
-                        if ((p.PersonName == null || !p.PersonName.Contains(txtKey.Text)) && (proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)) && (sub.SubjectName == null || !sub.SubjectName.Contains(txtKey.Text)))
+                        if ((p.PersonSpecialty == null || !p.PersonSpecialty.Contains(txtKey.Text)) && (p.TaskContent == null || !p.TaskContent.Contains(txtKey.Text)) && (p.PersonName == null || !p.PersonName.Contains(txtKey.Text)) && (proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)) && (sub.SubjectName == null || !sub.SubjectName.Contains(txtKey.Text)))
                         {
                             continue;
                         }

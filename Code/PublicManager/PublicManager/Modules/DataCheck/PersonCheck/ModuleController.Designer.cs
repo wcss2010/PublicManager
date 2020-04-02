@@ -267,7 +267,7 @@
             this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtKey.Location = new System.Drawing.Point(133, 0);
             this.txtKey.Name = "txtKey";
-            this.txtKey.Properties.NullValuePrompt = "请输入项目名称、课题名称、人员名称！";
+            this.txtKey.Properties.NullValuePrompt = "请输入项目名称、课题名称、人员名称、专业、任务分工！";
             this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtKey.Properties.ShowNullValuePromptWhenFocused = true;
             this.txtKey.Size = new System.Drawing.Size(490, 20);
