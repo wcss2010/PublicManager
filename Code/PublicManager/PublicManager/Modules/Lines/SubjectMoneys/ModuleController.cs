@@ -101,7 +101,7 @@ namespace PublicManager.Modules.Lines.SubjectMoneys
                             cells.Add(mObj.SubjectWorkUnit);
                             cells.Add(mObj.SubjectTotalMoney);
                             cells.Add(mObj.SubjectSendMoney);
-                            cells.Add(mObj.SubjectSendTime);
+                            cells.Add(ExcelHelper.getDateTimeForString(mObj.SubjectSendTime, "yyyy年MM月dd日", string.Empty));
                             cells.Add(mObj.SubjectSendedMoney);
                             cells.Add(mObj.SubjectUseMoney);
                             cells.Add(mObj.SubjectNoSendMoney);
@@ -132,7 +132,7 @@ namespace PublicManager.Modules.Lines.SubjectMoneys
                     cells.Add(mObj.SubjectWorkUnit);
                     cells.Add(mObj.SubjectTotalMoney);
                     cells.Add(mObj.SubjectSendMoney);
-                    cells.Add(mObj.SubjectSendTime);
+                    cells.Add(ExcelHelper.getDateTimeForString(mObj.SubjectSendTime, "yyyy年MM月dd日", string.Empty));
                     cells.Add(mObj.SubjectSendedMoney);
                     cells.Add(mObj.SubjectUseMoney);
                     cells.Add(mObj.SubjectNoSendMoney);
@@ -164,7 +164,7 @@ namespace PublicManager.Modules.Lines.SubjectMoneys
                         cells.Add(mObj.SubjectWorkUnit);
                         cells.Add(mObj.SubjectTotalMoney);
                         cells.Add(mObj.SubjectSendMoney);
-                        cells.Add(mObj.SubjectSendTime);
+                        cells.Add(ExcelHelper.getDateTimeForString(mObj.SubjectSendTime, "yyyy年MM月dd日", string.Empty));
                         cells.Add(mObj.SubjectSendedMoney);
                         cells.Add(mObj.SubjectUseMoney);
                         cells.Add(mObj.SubjectNoSendMoney);

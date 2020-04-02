@@ -107,12 +107,12 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                     List<object> cells = new List<object>();
                     cells.Add(indexx.ToString());
                     cells.Add(mss.SendRule);
-                    cells.Add((mss.WillTime != null ? mss.WillTime : DateTime.Now).ToString("yyyy年MM月dd日"));
+                    cells.Add(ExcelHelper.getDateTimeForString(mss.WillTime,"yyyy年MM月dd日",string.Empty));
                     cells.Add(mss.TotalMoney);
                     cells.Add(mss.MemoText);
                     cells.Add(mss.MSID);
                     cells.Add(proj.ProjectName);
-                    cells.Add((mss.NodeWillTime != null ? mss.NodeWillTime : DateTime.Now).ToString("yyyy年MM月dd日"));
+                    cells.Add(ExcelHelper.getDateTimeForString(mss.NodeWillTime, "yyyy年MM月dd日", string.Empty));
                     cells.Add(mss.WillContent);
                     cells.Add(mss.WillLevel);
                     cells.Add(mss.WillWorker);
