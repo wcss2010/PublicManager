@@ -7,10 +7,11 @@ using System.Text;
 using System.Windows.Forms;
 using PublicManager.DB;
 using PublicManager.Modules.Teacher.TeacherManager.Forms;
+using DevExpress.XtraBars.Ribbon;
 
 namespace PublicManager.Modules.Teacher.TeacherManager.Forms
 {
-    public partial class AddOrUpdateTeacherCommentForm : Form
+    public partial class AddOrUpdateTeacherCommentForm : RibbonForm
     {
         public AddOrUpdateTeacherCommentForm(DB.Entitys.TeacherComment commentObj)
         {

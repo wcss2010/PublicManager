@@ -7,10 +7,11 @@ using System.Text;
 using System.Windows.Forms;
 using PublicManager.DB;
 using PublicManager.Modules.Teacher.TeacherManager.Forms;
+using DevExpress.XtraBars.Ribbon;
 
 namespace PublicManager.Modules.Teacher.TeacherManager.Forms
 {
-    public partial class AddOrUpdateTeacherForm : Form
+    public partial class AddOrUpdateTeacherForm : RibbonForm
     {
         public DB.Entitys.Teacher TeacherObj { get; set; }
 
@@ -20,26 +21,36 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
         {
             InitializeComponent();
 
-            TeacherObj = teacher;            
+            TeacherObj = teacher;
+
+            txtTSex.SelectedIndex = 0;
+
+            dgvDetail.OptionsBehavior.Editable = false;
+            //dgvDetail.OptionsView.AllowCellMerge = true;
+            //cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3" });
         }
 
         private void updateTeacherComments()
         {
             if (TeacherObj != null)
             {
-                dgvDetail.Rows.Clear();
+                DataTable dtTemp = BaseModuleController.getTempDataTable("row", 5);
+
                 List<DB.Entitys.TeacherComment> list = ConnectionManager.Context.table("TeacherComment").where("TeacherID='" + teacherID + "'").select("*").getList<DB.Entitys.TeacherComment>(new DB.Entitys.TeacherComment());
                 foreach (DB.Entitys.TeacherComment tc in list)
                 {
                     List<object> cells = new List<object>();
-                    cells.Add(tc.CommentDate.ToString("yyyy-MM-dd"));
+                    cells.Add(ExcelHelper.getDateTimeForString(tc.CommentDate, "yyyy年MM月dd日", string.Empty));
                     cells.Add(tc.CommentText);
 
-                    int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
-                    dgvDetail.Rows[rowIndex].Tag = tc;
-                }
+                    cells.Add(tc.TeacherCommentID);
 
-                dgvDetail.checkCellSize();
+                    cells.Add("编辑");
+                    cells.Add("删除");
+
+                    dtTemp.Rows.Add(cells.ToArray());
+                }
+                gcGrid.DataSource = dtTemp;
             }
         }
 
@@ -55,14 +66,9 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
                 MessageBox.Show("对不起，请输入性别!");
                 return;
             }
-            if (txtIDCard.Text == string.Empty)
-            {
-                MessageBox.Show("对不起，请输入身份证!");
-                return;
-            }
             if (txtTPhone.Text == string.Empty)
             {
-                MessageBox.Show("对不起，请输入电话!");
+                MessageBox.Show("对不起，请输入联系方式!");
                 return;
             }
             if (txtTJob.Text == string.Empty)
@@ -70,24 +76,41 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
                 MessageBox.Show("对不起，请输入职务!");
                 return;
             }
+            if (txtTJobName.Text == string.Empty)
+            {
+                MessageBox.Show("对不起，请输入职称!");
+                return;
+            }
             if (txtTUnit.Text == string.Empty)
             {
                 MessageBox.Show("对不起，请输入单位!");
                 return;
             }
-            if (txtTRange.Text == string.Empty)
+            if (txtTDirection.Text == string.Empty)
             {
-                MessageBox.Show("对不起，请输入领域!");
+                MessageBox.Show("对不起，请输入主要研究方向!");
+                return;
+            }
+            if (txtTSource.Text == string.Empty)
+            {
+                MessageBox.Show("对不起，请输入专家来源!");
+                return;
+            }
+            if (txtTInnerJob.Text == string.Empty)
+            {
+                MessageBox.Show("对不起，请输入内部职务!");
                 return;
             }
 
             TeacherObj.TName = txtTName.Text;
             TeacherObj.TSex = txtTSex.Text;
-            TeacherObj.TIDCard = txtIDCard.Text;
             TeacherObj.TPhone = txtTPhone.Text;
             TeacherObj.TJob = txtTJob.Text;
+            TeacherObj.TJobTopic = txtTJobName.Text;
             TeacherObj.TUnit = txtTUnit.Text;
-            TeacherObj.TRange = txtTRange.Text;
+            TeacherObj.TDirection = txtTDirection.Text;
+            TeacherObj.TSource = txtTSource.Text;
+            TeacherObj.TInnerJob = txtTInnerJob.Text;
 
             if (string.IsNullOrEmpty(TeacherObj.TeacherID))
             {
@@ -117,38 +140,6 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
                 updateTeacherComments();
             }
         }
-        
-        private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DB.Entitys.TeacherComment commentObj = ((DB.Entitys.TeacherComment)dgvDetail.Rows[e.RowIndex].Tag);
-
-                if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
-                {
-                    //删除
-                    if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        ConnectionManager.Context.table("TeacherComment").where("TeacherCommentID='" + commentObj.TeacherCommentID + "'").delete();
-                        updateTeacherComments();
-                    }
-                }
-                else if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
-                {
-                    //编辑
-                    if (new AddOrUpdateTeacherCommentForm(commentObj).ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    {
-                        updateTeacherComments();
-                    }
-                }
-            }
-        }
-
-        private void dgvDetail_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvDetail.Rows.Count <= 0) return;
-            dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = (dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty).ToString();
-        }
 
         protected override void OnActivated(EventArgs e)
         {
@@ -162,11 +153,13 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
 
                     txtTName.Text = TeacherObj.TName;
                     txtTSex.Text = TeacherObj.TSex;
-                    txtIDCard.Text = TeacherObj.TIDCard;
                     txtTPhone.Text = TeacherObj.TPhone;
                     txtTJob.Text = TeacherObj.TJob;
+                    txtTJobName.Text = TeacherObj.TJobTopic;
                     txtTUnit.Text = TeacherObj.TUnit;
-                    txtTRange.Text = TeacherObj.TRange;
+                    txtTDirection.Text = TeacherObj.TDirection;
+                    txtTSource.Text = TeacherObj.TSource;
+                    txtTInnerJob.Text = TeacherObj.TInnerJob;
 
                     updateTeacherComments();
                 }
@@ -174,6 +167,42 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
                 {
                     teacherID = Guid.NewGuid().ToString();
                     TeacherObj = new DB.Entitys.Teacher();
+                }
+            }
+        }
+
+        private void dgvDetail_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            string teacherCommentID = string.Empty;
+            object objectTeacherCommentID = dgvDetail.GetRowCellValue(e.RowHandle, "row3");
+            if (objectTeacherCommentID != null)
+            {
+                teacherCommentID = objectTeacherCommentID.ToString();
+            }
+
+            DB.Entitys.TeacherComment commentObj = ConnectionManager.Context.table("TeacherComment").where("TeacherCommentID='" + teacherCommentID + "'").select("*").getItem<DB.Entitys.TeacherComment>(new DB.Entitys.TeacherComment());
+            if (string.IsNullOrEmpty(commentObj.TeacherCommentID))
+            {
+                return;
+            }
+            else
+            {
+                if (e.Column.FieldName == "row4")
+                {
+                    //编辑
+                    if (new AddOrUpdateTeacherCommentForm(commentObj).ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        updateTeacherComments();
+                    }
+                }
+                else if (e.Column.FieldName == "row5")
+                {
+                    //删除
+                    if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        ConnectionManager.Context.table("TeacherComment").where("TeacherCommentID='" + commentObj.TeacherCommentID + "'").delete();
+                        updateTeacherComments();
+                    }
                 }
             }
         }
