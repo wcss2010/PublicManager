@@ -154,57 +154,57 @@ namespace PublicManager.Modules.Teacher.TeacherManager
 
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-            //if (dgvDetail.SelectedRows.Count == 0)
-            //{
-            //    MessageBox.Show("对不起，请选择要导出的专家！");
-            //    return;
-            //}
+            List<DB.Entitys.Teacher> selectedTeacherList = getCheckedTeacherList();
 
-            //string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Templetes", "TeacherColumnExportTempletes.txt"));
+            if (selectedTeacherList.Count == 0)
+            {
+                MessageBox.Show("对不起，请选择要导出的专家！");
+                return;
+            }
 
-            //try
-            //{
-            //    //读取列名称
-            //    string[] colNames = File.ReadAllLines(sourcePath);
+            string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Templetes", "TeacherColumnExportTempletes.txt"));
 
-            //    //添加列
-            //    DataTable dt = new DataTable();
-            //    foreach (string col in colNames)
-            //    {
-            //        if (string.IsNullOrEmpty(col))
-            //        {
-            //            continue;
-            //        }
-            //        else
-            //        {
-            //            dt.Columns.Add(col, typeof(string));
-            //        }
-            //    }
+            try
+            {
+                //读取列名称
+                string[] colNames = File.ReadAllLines(sourcePath);
 
-            //    //生成数据
-            //    foreach (DataGridViewRow dgvRow in dgvDetail.SelectedRows)
-            //    {
-            //        DB.Entitys.Teacher teacherObj = ((DB.Entitys.Teacher)dgvRow.Tag);
-            //        List<object> cells = new List<object>();
-            //        cells.Add(teacherObj.TName);
-            //        cells.Add(teacherObj.TName);
-            //        cells.Add(new Random((int)DateTime.Now.Ticks + dgvRow.Index).Next(100, 999).ToString());
-            //        cells.Add(teacherObj.TJob);
-            //        cells.Add(teacherObj.TPhone);
-            //        cells.Add(string.Empty);
-            //        dt.Rows.Add(cells.ToArray());
-            //    }
+                //添加列
+                DataTable dt = new DataTable();
+                foreach (string col in colNames)
+                {
+                    if (string.IsNullOrEmpty(col))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        dt.Columns.Add(col, typeof(string));
+                    }
+                }
 
-            //    //导出数据
-            //    ExcelHelper.ExportToExcel(dt, "专家信息");
+                //生成数据
+                foreach (DB.Entitys.Teacher teacherObj in selectedTeacherList)
+                {
+                    List<object> cells = new List<object>();
+                    cells.Add(teacherObj.TName);
+                    cells.Add(teacherObj.TName);
+                    cells.Add(new Random((int)DateTime.Now.Ticks + (selectedTeacherList.IndexOf(teacherObj) + 1)).Next(100, 999).ToString());
+                    cells.Add(teacherObj.TJob + "//" + teacherObj.TJobTopic);
+                    cells.Add(teacherObj.TPhone);
+                    cells.Add(string.Empty);
+                    dt.Rows.Add(cells.ToArray());
+                }
 
-            //    MessageBox.Show("导出完成！");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("导出失败！Ex:" + ex.ToString());
-            //}
+                //导出数据
+                ExcelHelper.ExportToExcel(dt, "专家信息");
 
+                MessageBox.Show("导出完成！");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("导出失败！Ex:" + ex.ToString());
+            }
         }
 
         private void dgvDetail_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
@@ -243,6 +243,36 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// 获得选择项列表
+        /// </summary>
+        /// <returns></returns>
+        public List<DB.Entitys.Teacher> getCheckedTeacherList()
+        {
+            List<DB.Entitys.Teacher> result = new List<DB.Entitys.Teacher>();
+            int[] rowNumberList = dgvDetail.GetSelectedRows();
+            foreach (int rowIndex in rowNumberList)
+            {
+                string teacherID = string.Empty;
+                object objectTeacherID = dgvDetail.GetRowCellValue(rowIndex, "row9");
+                if (objectTeacherID != null)
+                {
+                    teacherID = objectTeacherID.ToString();
+                }
+
+                DB.Entitys.Teacher teacherObj = ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherID + "'").select("*").getItem<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
+                if (string.IsNullOrEmpty(teacherObj.TeacherID))
+                {
+                    continue;
+                }
+                else
+                {
+                    result.Add(teacherObj);
+                }
+            }
+            return result;
         }
     }
 }
