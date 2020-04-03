@@ -152,7 +152,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager.Forms
                     teacherID = TeacherObj.TeacherID;
 
                     txtTName.Text = TeacherObj.TName;
-                    txtTSex.Text = TeacherObj.TSex;
+                    txtTSex.SelectedIndex = 0;
                     txtTPhone.Text = TeacherObj.TPhone;
                     txtTJob.Text = TeacherObj.TJob;
                     txtTJobName.Text = TeacherObj.TJobTopic;
