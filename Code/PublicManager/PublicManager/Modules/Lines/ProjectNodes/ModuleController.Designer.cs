@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.gvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -209,10 +209,10 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            serializableAppearanceObject1.Options.UseTextOptions = true;
-            serializableAppearanceObject1.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            serializableAppearanceObject2.Options.UseTextOptions = true;
+            serializableAppearanceObject2.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "从Excel导入数据", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "从Excel导入数据", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -320,20 +320,20 @@
             this.panel2.Controls.Add(this.txtWillTime);
             this.panel2.Controls.Add(this.cbWillTime);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(396, 0);
+            this.panel2.Location = new System.Drawing.Point(344, 0);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(312, 21);
+            this.panel2.Size = new System.Drawing.Size(262, 21);
             this.panel2.TabIndex = 5;
             // 
             // txtWillTime
             // 
-            this.txtWillTime.CustomFormat = "yyyy年MM月dd日 HH:mm:ss";
+            this.txtWillTime.CustomFormat = "yyyy年MM月dd日";
             this.txtWillTime.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtWillTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtWillTime.Location = new System.Drawing.Point(149, 0);
             this.txtWillTime.Name = "txtWillTime";
-            this.txtWillTime.Size = new System.Drawing.Size(162, 21);
+            this.txtWillTime.Size = new System.Drawing.Size(110, 21);
             this.txtWillTime.TabIndex = 2;
             // 
             // cbWillTime
@@ -349,12 +349,12 @@
             // 
             // txtNodeWillTime
             // 
-            this.txtNodeWillTime.CustomFormat = "yyyy年MM月dd日 HH:mm:ss";
+            this.txtNodeWillTime.CustomFormat = "yyyy年MM月dd日";
             this.txtNodeWillTime.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtNodeWillTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtNodeWillTime.Location = new System.Drawing.Point(233, 0);
             this.txtNodeWillTime.Name = "txtNodeWillTime";
-            this.txtNodeWillTime.Size = new System.Drawing.Size(163, 21);
+            this.txtNodeWillTime.Size = new System.Drawing.Size(111, 21);
             this.txtNodeWillTime.TabIndex = 3;
             // 
             // cbNodeWillTime

@@ -94,11 +94,11 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                 int indexx = 0;
                 foreach (MoneySends mss in subList)
                 {
-                    if ((cbNodeWillTime.Checked && mss.NodeWillTime != null && mss.NodeWillTime > DateTime.MinValue && mss.NodeWillTime >= txtNodeWillTime.Value) || (cbNodeWillTime.Checked && mss.NodeWillTime <= DateTime.MinValue))
+                    if (cbNodeWillTime.Checked && isCurrentDay(mss.NodeWillTime, txtNodeWillTime) == false)
                     {
                         continue;
                     }
-                    if ((cbWillTime.Checked && mss.WillTime != null && mss.WillTime > DateTime.MinValue && mss.WillTime >= txtWillTime.Value) || (cbWillTime.Checked && mss.WillTime <= DateTime.MinValue))
+                    if (cbWillTime.Checked && isCurrentDay(mss.WillTime, txtWillTime) == false)
                     {
                         continue;
                     }
@@ -386,6 +386,27 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                         }
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// 检查是不是今天的数据
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="picker"></param>
+        /// <returns></returns>
+        private bool isCurrentDay(DateTime val, DateTimePicker picker)
+        {
+            if (val > DateTime.MinValue && picker != null && picker.Value > DateTime.MinValue)
+            {
+                DateTime startTime = new DateTime(picker.Value.Year, picker.Value.Month, picker.Value.Day, 0, 0, 0);
+                DateTime endTime = new DateTime(picker.Value.Year, picker.Value.Month, picker.Value.Day, 23, 59, 59);
+
+                return val >= startTime && val <= endTime;
+            }
+            else
+            {
+                return false;
             }
         }
     }
