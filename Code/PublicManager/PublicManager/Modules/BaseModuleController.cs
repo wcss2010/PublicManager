@@ -9,13 +9,14 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars;
 using System.IO;
 using System.Diagnostics;
+using DevExpress.XtraEditors;
 
 namespace PublicManager.Modules
 {
     /// <summary>
     /// 模块控制器
     /// </summary>
-    public partial class BaseModuleController : UserControl
+    public partial class BaseModuleController : XtraUserControl
     {
         /// <summary>
         /// 构造器
