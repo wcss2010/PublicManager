@@ -145,7 +145,7 @@
             // 
             // gridColumn11
             // 
-            this.gridColumn11.Caption = "节点的评估时间";
+            this.gridColumn11.Caption = "节点评估时间";
             this.gridColumn11.FieldName = "row8";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
