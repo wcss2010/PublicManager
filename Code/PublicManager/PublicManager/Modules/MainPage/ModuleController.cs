@@ -20,6 +20,8 @@ namespace PublicManager.Modules.MainPage
             gvDetail.OptionsBehavior.Editable = false;
             gvDetail.OptionsView.AllowCellMerge = true;
             cma = new DEGridViewCellMergeAdapter(gvDetail, new string[] { "row1" });
+
+            switchNodeData();
         }
 
         public override void start()
