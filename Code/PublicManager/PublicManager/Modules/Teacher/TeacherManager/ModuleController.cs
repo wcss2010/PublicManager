@@ -17,6 +17,10 @@ namespace PublicManager.Modules.Teacher.TeacherManager
         public ModuleController()
         {
             InitializeComponent();
+
+            dgvDetail.OptionsBehavior.Editable = false;
+            //dgvDetail.OptionsView.AllowCellMerge = true;
+            //cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3" });
         }
 
         public override void start()
@@ -38,57 +42,29 @@ namespace PublicManager.Modules.Teacher.TeacherManager
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dgvDetail.Rows.Clear();
+            DataTable dtTemp = getTempDataTable("row", 11);
+
             List<DB.Entitys.Teacher> list = ConnectionManager.Context.table("Teacher").where("TName like '%" + txtKey.Text + "%'").select("*").getList<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
             foreach (DB.Entitys.Teacher tr in list)
             {
                 List<object> cells = new List<object>();
                 cells.Add(tr.TName);
-                cells.Add(tr.TSex);
-                cells.Add(tr.TIDCard);
-                cells.Add(tr.TPhone);
-                cells.Add(tr.TJob);
                 cells.Add(tr.TUnit);
-                cells.Add(tr.TRange);
+                cells.Add(tr.TJob);
+                cells.Add(tr.TJobTopic);
+                cells.Add(tr.TDirection);
+                cells.Add(tr.TPhone);
+                cells.Add(tr.TSource);
+                cells.Add(tr.TInnerJob);
 
-                int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
-                dgvDetail.Rows[rowIndex].Tag = tr;
+                cells.Add(tr.TeacherID);
+
+                cells.Add("编辑");
+                cells.Add("删除");
+
+                dtTemp.Rows.Add(cells.ToArray());
             }
-
-            dgvDetail.checkCellSize();
-        }
-
-        private void dgvDetail_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvDetail.Rows.Count <= 0) return;
-            dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = (dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty).ToString();
-        }
-
-        private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DB.Entitys.Teacher teacherObj = ((DB.Entitys.Teacher)dgvDetail.Rows[e.RowIndex].Tag);
-
-                if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
-                {
-                    //删除
-                    if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
-                        ConnectionManager.Context.table("TeacherComment").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
-                        btnSearch.PerformClick();
-                    }
-                }
-                else if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
-                {
-                    //编辑
-                    if (new AddOrUpdateTeacherForm(teacherObj).ShowDialog() == DialogResult.OK)
-                    {
-                        btnSearch.PerformClick();
-                    }
-                }
-            }
+            gcGrid.DataSource = dtTemp;
         }
 
         private void btnImportFromExcel_Click(object sender, EventArgs e)
@@ -178,57 +154,95 @@ namespace PublicManager.Modules.Teacher.TeacherManager
 
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-            if (dgvDetail.SelectedRows.Count == 0)
+            //if (dgvDetail.SelectedRows.Count == 0)
+            //{
+            //    MessageBox.Show("对不起，请选择要导出的专家！");
+            //    return;
+            //}
+
+            //string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Templetes", "TeacherColumnExportTempletes.txt"));
+
+            //try
+            //{
+            //    //读取列名称
+            //    string[] colNames = File.ReadAllLines(sourcePath);
+
+            //    //添加列
+            //    DataTable dt = new DataTable();
+            //    foreach (string col in colNames)
+            //    {
+            //        if (string.IsNullOrEmpty(col))
+            //        {
+            //            continue;
+            //        }
+            //        else
+            //        {
+            //            dt.Columns.Add(col, typeof(string));
+            //        }
+            //    }
+
+            //    //生成数据
+            //    foreach (DataGridViewRow dgvRow in dgvDetail.SelectedRows)
+            //    {
+            //        DB.Entitys.Teacher teacherObj = ((DB.Entitys.Teacher)dgvRow.Tag);
+            //        List<object> cells = new List<object>();
+            //        cells.Add(teacherObj.TName);
+            //        cells.Add(teacherObj.TName);
+            //        cells.Add(new Random((int)DateTime.Now.Ticks + dgvRow.Index).Next(100, 999).ToString());
+            //        cells.Add(teacherObj.TJob);
+            //        cells.Add(teacherObj.TPhone);
+            //        cells.Add(string.Empty);
+            //        dt.Rows.Add(cells.ToArray());
+            //    }
+
+            //    //导出数据
+            //    ExcelHelper.ExportToExcel(dt, "专家信息");
+
+            //    MessageBox.Show("导出完成！");
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("导出失败！Ex:" + ex.ToString());
+            //}
+
+        }
+
+        private void dgvDetail_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            string teacherID = string.Empty;
+            object objectTeacherID = dgvDetail.GetRowCellValue(e.RowHandle, "row9");
+            if (objectTeacherID != null)
             {
-                MessageBox.Show("对不起，请选择要导出的专家！");
+                teacherID = objectTeacherID.ToString();
+            }
+
+            DB.Entitys.Teacher teacherObj = ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherID + "'").select("*").getItem<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
+
+            if (string.IsNullOrEmpty(teacherObj.TeacherID))
+            {
                 return;
             }
-
-            string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Templetes", "TeacherColumnExportTempletes.txt"));
-
-            try
+            else
             {
-                //读取列名称
-                string[] colNames = File.ReadAllLines(sourcePath);
-
-                //添加列
-                DataTable dt = new DataTable();
-                foreach (string col in colNames)
+                if (e.Column.FieldName == "row10")
                 {
-                    if (string.IsNullOrEmpty(col))
+                    //编辑
+                    if (new AddOrUpdateTeacherForm(teacherObj).ShowDialog() == DialogResult.OK)
                     {
-                        continue;
-                    }
-                    else
-                    {
-                        dt.Columns.Add(col, typeof(string));
+                        btnSearch.PerformClick();
                     }
                 }
-
-                //生成数据
-                foreach (DataGridViewRow dgvRow in dgvDetail.SelectedRows)
+                else if (e.Column.FieldName == "row11")
                 {
-                    DB.Entitys.Teacher teacherObj = ((DB.Entitys.Teacher)dgvRow.Tag);
-                    List<object> cells = new List<object>();
-                    cells.Add(teacherObj.TName);
-                    cells.Add(teacherObj.TName);
-                    cells.Add(new Random((int)DateTime.Now.Ticks + dgvRow.Index).Next(100, 999).ToString());
-                    cells.Add(teacherObj.TJob);
-                    cells.Add(teacherObj.TPhone);
-                    cells.Add(string.Empty);
-                    dt.Rows.Add(cells.ToArray());
+                    //删除
+                    if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
+                        ConnectionManager.Context.table("TeacherComment").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
+                        btnSearch.PerformClick();
+                    }
                 }
-
-                //导出数据
-                ExcelHelper.ExportToExcel(dt, "专家信息");
-
-                MessageBox.Show("导出完成！");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("导出失败！Ex:" + ex.ToString());
-            }
-
         }
     }
 }
