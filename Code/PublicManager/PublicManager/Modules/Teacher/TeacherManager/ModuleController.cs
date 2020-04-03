@@ -91,25 +91,27 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                                 }
                             }
 
-                            string tName = drr["姓名"] != null ? drr["姓名"].ToString().Trim() : string.Empty;
-                            string tSex = drr["性别"] != null ? drr["性别"].ToString().Trim() : string.Empty;
-                            string tIDCard = drr["身份证"] != null ? drr["身份证"].ToString().Trim() : string.Empty;
-                            string tPhone = drr["电话"] != null ? drr["电话"].ToString().Trim() : string.Empty;
-                            string tJob = drr["职务"] != null ? drr["职务"].ToString().Trim() : string.Empty;
-                            string tUnit = drr["单位"] != null ? drr["单位"].ToString().Trim() : string.Empty;
-                            string tRange = drr["领域"] != null ? drr["领域"].ToString().Trim() : string.Empty;
+                            string strTag1 = drr["姓名"] != null ? drr["姓名"].ToString().Trim() : string.Empty;
+                            string strTag2 = drr["单位"] != null ? drr["单位"].ToString().Trim() : string.Empty;
+                            string strTag3 = drr["职务"] != null ? drr["职务"].ToString().Trim() : string.Empty;
+                            string strTag4 = drr["职称"] != null ? drr["职称"].ToString().Trim() : string.Empty;
+                            string strTag5 = drr["主要研究方向"] != null ? drr["主要研究方向"].ToString().Trim() : string.Empty;
+                            string strTag6 = drr["联系方式"] != null ? drr["联系方式"].ToString().Trim() : string.Empty;
+                            string strTag7 = drr["专家来源"] != null ? drr["专家来源"].ToString().Trim() : string.Empty;
+                            string strTag8 = drr["内部职务"] != null ? drr["内部职务"].ToString().Trim() : string.Empty;
 
                             DB.Entitys.Teacher teacherObj = new DB.Entitys.Teacher();
                             teacherObj.TeacherID = Guid.NewGuid().ToString();
-                            teacherObj.TName = tName;
-                            teacherObj.TSex = tSex;
-                            teacherObj.TIDCard = tIDCard;
-                            teacherObj.TPhone = tPhone;
-                            teacherObj.TJob = tJob;
-                            teacherObj.TUnit = tUnit;
-                            teacherObj.TRange = tRange;
+                            teacherObj.TName = strTag1;
+                            teacherObj.TUnit = strTag2;
+                            teacherObj.TJob = strTag3;
+                            teacherObj.TJobTopic = strTag4;
+                            teacherObj.TDirection = strTag5;
+                            teacherObj.TPhone = strTag6;
+                            teacherObj.TSource = strTag7;
+                            teacherObj.TInnerJob = strTag8;
 
-                            object objResult = ConnectionManager.Context.table("Teacher").where("TIDCard='" + tIDCard + "'").select("TeacherID").getValue();
+                            object objResult = ConnectionManager.Context.table("Teacher").where("TName='" + teacherObj.TName + "' and TPhone = '" + teacherObj.TPhone + "'").select("TeacherID").getValue();
                             if (objResult == null || objResult.ToString().Equals(string.Empty))
                             {
                                 teacherObj.copyTo(ConnectionManager.Context.table("Teacher")).insert();
@@ -190,7 +192,8 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                     cells.Add(teacherObj.TName);
                     cells.Add(teacherObj.TName);
                     cells.Add(new Random((int)DateTime.Now.Ticks + (selectedTeacherList.IndexOf(teacherObj) + 1)).Next(100, 999).ToString());
-                    cells.Add(teacherObj.TJob + "//" + teacherObj.TJobTopic);
+                    cells.Add(teacherObj.TJob);
+                    cells.Add(teacherObj.TJobTopic);
                     cells.Add(teacherObj.TPhone);
                     cells.Add(string.Empty);
                     dt.Rows.Add(cells.ToArray());
