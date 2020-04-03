@@ -26,7 +26,7 @@ namespace PublicManager.Modules.Lines.ProjectLines
 
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = true;
-            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3", "row4", "row5", "row6" });
+            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3", "row4", "row5", "row6", "row23" });
 
             cbDisplayReporter.Checked = false;
         }
@@ -49,7 +49,7 @@ namespace PublicManager.Modules.Lines.ProjectLines
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataTable dt = getTempDataTable("row", 20);
+            DataTable dt = getTempDataTable("row", 23);
 
             List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
@@ -86,6 +86,20 @@ namespace PublicManager.Modules.Lines.ProjectLines
                 cells.Add(proj.Memo);
 
                 cells.Add(proj.ProjectID);
+
+                if (masterPerson != null && masterPerson.PersonID != null && masterPerson.PersonID.Length >= 1)
+                {
+                    cells.Add(masterPerson.Telephone);
+                    cells.Add(masterPerson.Mobilephone);
+                }
+                else
+                {
+                    cells.Add(string.Empty);
+                    cells.Add(string.Empty);
+                }
+
+                cells.Add(proj.ProjectRange);
+
                 dt.Rows.Add(cells.ToArray());
             }
             gcGrid.DataSource = dt;
