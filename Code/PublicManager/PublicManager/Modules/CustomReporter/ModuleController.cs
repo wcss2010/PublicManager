@@ -279,10 +279,10 @@ namespace PublicManager.Modules.CustomReporter
         private void btnSearch_Click(object sender, EventArgs e)
         {
             DataSet dsAll = new DataSet();
-            DataTable masterDt = getTempDataTable("row", 18);
+            DataTable masterDt = getTempDataTable("row", 25);
             DataTable detailDt = getTempDataTable("row", 8);
 
-            List<Project> projList = ConnectionManager.Context.table("Project").where("(Keywords like '%" + txtKey.Text + "%' or ProjectName like '%" + txtKey.Text + "%' or ProjectID in (select ProjectID from Subject where SubjectName like '%" + txtKey.Text + "%'))" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = ConnectionManager.Context.table("Project").where("(TaskNumber like '%" + txtKey.Text + "%' or ProjectName like '%" + txtKey.Text + "%')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                 #region 主表数据
@@ -317,12 +317,21 @@ namespace PublicManager.Modules.CustomReporter
                 {
                     cells.Add(masterPerson.Telephone);
                     cells.Add(masterPerson.Mobilephone);
+                    cells.Add(masterPerson.PersonJob);
                 }
                 else
                 {
                     cells.Add(string.Empty);
                     cells.Add(string.Empty);
+                    cells.Add(string.Empty);
                 }
+
+                cells.Add(proj.OKQuestionMemo);
+                cells.Add(proj.OKCheckA);
+                cells.Add(proj.OKCheckB);
+                cells.Add(proj.ContactCheckLevelA);
+                cells.Add(proj.ContactCheckLevelB);
+                cells.Add(proj.Memo);
 
                 masterDt.Rows.Add(cells.ToArray());
                 #endregion
@@ -333,11 +342,6 @@ namespace PublicManager.Modules.CustomReporter
                     List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                     foreach (Subject sub in subList)
                     {
-                        if ((proj.Keywords == null || !proj.Keywords.Contains(txtKey.Text)) && (proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)) && (sub.SubjectName == null || !sub.SubjectName.Contains(txtKey.Text)))
-                        {
-                            continue;
-                        }
-
                         cells = new List<object>();
                         cells.Add(sub.SubjectName);
                         Person personObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "' and JobInProject = '负责人'").select("*").getItem<Person>(new Person());
