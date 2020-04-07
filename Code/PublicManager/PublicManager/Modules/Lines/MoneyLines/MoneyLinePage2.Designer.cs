@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.plMain = new DevExpress.XtraEditors.GroupControl();
+            this.plTopGroup = new DevExpress.XtraEditors.GroupControl();
             this.plContent = new DevExpress.XtraEditors.GroupControl();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.dgvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -41,8 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblTag1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.plMain)).BeginInit();
-            this.plMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.plTopGroup)).BeginInit();
+            this.plTopGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plContent)).BeginInit();
             this.plContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
@@ -51,25 +51,24 @@
             this.plTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // plMain
+            // plTopGroup
             // 
-            this.plMain.Controls.Add(this.plContent);
-            this.plMain.Controls.Add(this.plTop);
-            this.plMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plMain.Location = new System.Drawing.Point(0, 0);
-            this.plMain.Name = "plMain";
-            this.plMain.Size = new System.Drawing.Size(1000, 567);
-            this.plMain.TabIndex = 0;
-            this.plMain.Tag = "项目经费总体收支情况";
-            this.plMain.Text = "项目经费总体收支情况";
+            this.plTopGroup.Controls.Add(this.plTop);
+            this.plTopGroup.Dock = System.Windows.Forms.DockStyle.Top;
+            this.plTopGroup.Location = new System.Drawing.Point(0, 0);
+            this.plTopGroup.Name = "plTopGroup";
+            this.plTopGroup.Size = new System.Drawing.Size(1000, 52);
+            this.plTopGroup.TabIndex = 0;
+            this.plTopGroup.Tag = "项目经费总体收支情况";
+            this.plTopGroup.Text = "项目经费总体收支情况";
             // 
             // plContent
             // 
             this.plContent.Controls.Add(this.gcGrid);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(2, 50);
+            this.plContent.Location = new System.Drawing.Point(0, 52);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(996, 515);
+            this.plContent.Size = new System.Drawing.Size(1000, 515);
             this.plContent.TabIndex = 1;
             this.plContent.Text = "项目经费预算及支出情况";
             // 
@@ -79,7 +78,7 @@
             this.gcGrid.Location = new System.Drawing.Point(2, 21);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(992, 492);
+            this.gcGrid.Size = new System.Drawing.Size(996, 492);
             this.gcGrid.TabIndex = 5;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -205,11 +204,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.plMain);
+            this.Controls.Add(this.plContent);
+            this.Controls.Add(this.plTopGroup);
             this.Name = "MoneyLinePage2";
             this.Size = new System.Drawing.Size(1000, 567);
-            ((System.ComponentModel.ISupportInitialize)(this.plMain)).EndInit();
-            this.plMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.plTopGroup)).EndInit();
+            this.plTopGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plContent)).EndInit();
             this.plContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
@@ -222,7 +222,7 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.GroupControl plMain;
+        private DevExpress.XtraEditors.GroupControl plTopGroup;
         private DevExpress.XtraEditors.PanelControl plTop;
         private DevExpress.XtraEditors.GroupControl plContent;
         private DevExpress.XtraGrid.GridControl gcGrid;

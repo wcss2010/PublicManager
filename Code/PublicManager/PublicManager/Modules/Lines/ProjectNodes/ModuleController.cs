@@ -199,6 +199,12 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                                                     string value4 = dr["项目总经费"] != null ? dr["项目总经费"].ToString() : string.Empty;
                                                     string value5 = dr["项目到位经费"] != null ? dr["项目到位经费"].ToString() : string.Empty;
 
+                                                    string value6 = dr["节点评估时间"] != null ? dr["节点评估时间"].ToString() : string.Empty;
+                                                    string value7 = dr["节点评估意见"] != null ? dr["节点评估意见"].ToString() : string.Empty;
+                                                    string value8 = dr["节点评估等级"] != null ? dr["节点评估等级"].ToString() : string.Empty;
+                                                    string value9 = dr["节点评估专家"] != null ? dr["节点评估专家"].ToString() : string.Empty;
+
+                                                    //添加节点-项目信息
                                                     Contact_Table1 ct1 = new Contact_Table1();
                                                     ct1.TID = Guid.NewGuid().ToString();
                                                     ct1.CatalogID = mss.CatalogID;
@@ -226,6 +232,18 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                                                     }
 
                                                     ct1.copyTo(ConnectionManager.Context.table(typeof(Contact_Table1).Name)).insert();
+
+                                                    //更新节点信息
+                                                    try
+                                                    {
+                                                        mss.NodeWillTime = DateTime.Parse(value6);
+                                                    }
+                                                    catch (Exception ex) { }
+
+                                                    mss.WillContent = value7;
+                                                    mss.WillLevel = value8;
+                                                    mss.WillWorker = value9;
+                                                    mss.copyTo(ConnectionManager.Context.table("MoneySends")).where("MSID='" + mss.MSID + "'").update();
                                                 }
                                                 #endregion
                                                 break;

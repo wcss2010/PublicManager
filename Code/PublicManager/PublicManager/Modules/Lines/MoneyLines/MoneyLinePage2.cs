@@ -40,7 +40,7 @@ namespace PublicManager.Modules.Lines.MoneyLines
 
         public void showOrHideTopPanel(bool isShow)
         {
-            plTop.Visible = isShow;
+            plTopGroup.Visible = isShow;
         }
 
         public DataTable getTempMoneyTable(string fieldNameBefore, int nodeFieldCount)
@@ -131,11 +131,11 @@ namespace PublicManager.Modules.Lines.MoneyLines
         {
             if (string.IsNullOrEmpty(nodeName))
             {
-                plMain.Text = plMain.Tag.ToString();
+                plTopGroup.Text = plTopGroup.Tag.ToString();
                 return;
             }
 
-            plMain.Text = plMain.Tag + "(" + nodeName + ")";
+            plTopGroup.Text = plTopGroup.Tag + "(" + nodeName + ")";
         }
     }
 }
