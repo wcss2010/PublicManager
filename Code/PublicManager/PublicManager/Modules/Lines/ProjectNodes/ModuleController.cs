@@ -396,6 +396,7 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
                                     MessageBox.Show(importResult.ToString());
                                 }
+                                btnSearch.PerformClick();
                             }
                             catch (Exception ex)
                             {
