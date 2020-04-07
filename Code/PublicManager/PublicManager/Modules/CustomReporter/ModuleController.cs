@@ -608,6 +608,9 @@ namespace PublicManager.Modules.CustomReporter
                     }
                     dtt.Rows.Add(cells.ToArray());
                 }
+
+                //导出
+                ExcelHelper.ExportToExcel(dtt, "项目数据");
             }
         }
     }
