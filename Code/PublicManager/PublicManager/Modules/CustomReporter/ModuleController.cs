@@ -561,18 +561,53 @@ namespace PublicManager.Modules.CustomReporter
                 }
                 #endregion
 
+                //创建临时表格
                 DataTable dtt = new DataTable();
-
                 List<DataColumn> cList = new List<DataColumn>();
                 foreach (KeyValuePair<string, string> kvpp in projectTable)
                 {
                     dtt.Columns.Add(kvpp.Key, typeof(string));
                 }
 
+                //取数据表
                 DataTable mainView = dsAll.Tables["MainView"];
                 DataTable subjectView = dsAll.Tables["SubjectView"];
 
+                //构造数据
+                for (int rowIndex = 0; rowIndex < mainView.Rows.Count; rowIndex++)
+                {
+                    List<object> cells = new List<object>();
+                    string projectId = mainView.Rows[rowIndex]["row15"] != null ? mainView.Rows[rowIndex]["row15"].ToString() : string.Empty;
 
+                    foreach (KeyValuePair<string, string> kvpp in projectTable)
+                    {
+                        if (kvpp.Key == "课题列表")
+                        {
+                            //课题数据
+                            StringBuilder sb = new StringBuilder();
+                            foreach (DataRow drr in subjectView.Rows)
+                            {
+                                string foreignId = drr["row6"] != null ? drr["row6"].ToString() : string.Empty;
+                                if (projectId == foreignId)
+                                {
+                                    foreach (KeyValuePair<string, string> subKvp in subjectTable)
+                                    {
+                                        string val = drr[subKvp.Value] != null ? drr[subKvp.Value].ToString() : string.Empty;
+                                        sb.Append(val).Append(",");
+                                    }
+                                    sb.Remove(sb.Length - 1, 1).AppendLine();
+                                }
+                            }
+                            cells.Add(sb.ToString());
+                        }
+                        else
+                        {
+                            //项目数据
+                            cells.Add(mainView.Rows[rowIndex][kvpp.Value] != null ? mainView.Rows[rowIndex][kvpp.Value].ToString() : string.Empty);
+                        }
+                    }
+                    dtt.Rows.Add(cells.ToArray());
+                }
             }
         }
     }
