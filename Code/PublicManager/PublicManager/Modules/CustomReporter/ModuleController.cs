@@ -11,17 +11,23 @@ using PublicManager.DB.Entitys;
 using PublicManager.DB;
 using Noear.Weed;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Columns;
 
 namespace PublicManager.Modules.CustomReporter
 {
     public partial class ModuleController : BaseModuleController
     {
+        Dictionary<string, CheckBox> projectColumnDict = new Dictionary<string, CheckBox>();
+        Dictionary<string, CheckBox> subjectColumnDict = new Dictionary<string, CheckBox>();
+
         /// <summary>
         /// CatalogID筛选条件
         /// </summary>
         string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
         private DEGridViewCellMergeAdapter cma1;
         private DEGridViewCellMergeAdapter cma2;
+        private CheckBox subjectIOCheckBox;
+        private DataSet dsAll;
 
         public ModuleController()
         {
@@ -39,6 +45,100 @@ namespace PublicManager.Modules.CustomReporter
             cma2 = new DEGridViewCellMergeAdapter(dgvSub, new string[] { "row1" });
 
             cbDisplayReporter.Checked = false;
+
+            makeColumnList();
+        }
+
+        private void makeColumnList()
+        {
+            //主表
+            foreach (GridColumn gcc in dgvDetail.Columns)
+            {
+                if (gcc.Visible)
+                {
+                    CheckBox cbb = new CheckBox();
+                    cbb.Name = gcc.FieldName + "++" + gcc.Caption;
+                    cbb.Text = gcc.Caption;
+                    cbb.Checked = true;
+                    cbb.AutoSize = true;
+                    cbb.Tag = gcc;
+
+                    projectColumnDict[cbb.Name] = cbb;
+                    fplProject.Controls.Add(cbb);
+
+                    if (gcc.Caption == "牵头单位地址")
+                    {
+                        cbb = new CheckBox();
+                        cbb.Name = "*****" + "++" + "课题列表";
+                        cbb.Text = "课题列表";
+                        cbb.Checked = true;
+                        cbb.AutoSize = true;
+                        cbb.Tag = null;
+
+                        projectColumnDict[cbb.Name] = cbb;
+                        fplProject.Controls.Add(cbb);
+
+                        subjectIOCheckBox = cbb;
+
+                        cbb.CheckedChanged += cbb_CheckedChanged;
+                    }
+                }
+            }
+
+            //从表
+            foreach (GridColumn gcc in dgvSub.Columns)
+            {
+                if (gcc.Visible)
+                {
+                    CheckBox cbbxx = new CheckBox();
+                    cbbxx.Name = gcc.FieldName + "++" + gcc.Caption;
+                    cbbxx.Text = gcc.Caption;
+                    cbbxx.Checked = true;
+                    cbbxx.AutoSize = true;
+                    cbbxx.Tag = gcc;
+
+                    subjectColumnDict[cbbxx.Name] = cbbxx;
+                    fplSubject.Controls.Add(cbbxx);
+
+                    cbbxx.CheckedChanged += cbbxx_CheckedChanged;
+                }
+            }
+        }
+
+        void cbbxx_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkObj = ((CheckBox)sender);
+
+            int checkedCount = 0;
+            foreach (Control c in checkObj.Parent.Controls)
+            {
+                if (c is CheckBox)
+                {
+                    if (((CheckBox)c).Checked)
+                    {
+                        checkedCount++;
+                    }
+                }
+            }
+
+            if (checkedCount <= 0)
+            {
+                subjectIOCheckBox.Checked = false;
+            }
+        }
+
+        void cbb_CheckedChanged(object sender, EventArgs e)
+        {
+            fplSubject.Visible = ((CheckBox)sender).Checked;
+            plDetailHeader.Visible = ((CheckBox)sender).Checked;
+
+            foreach (Control c in fplSubject.Controls)
+            {
+                if (c is CheckBox)
+                {
+                    ((CheckBox)c).Checked = true;
+                }
+            }
         }
 
         public override DevExpress.XtraBars.Ribbon.RibbonPage[] getTopBarPages()
@@ -278,7 +378,7 @@ namespace PublicManager.Modules.CustomReporter
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataSet dsAll = new DataSet();
+            dsAll = new DataSet();
             DataTable masterDt = getTempDataTable("row", 25);
             DataTable detailDt = getTempDataTable("row", 8);
 
@@ -409,6 +509,70 @@ namespace PublicManager.Modules.CustomReporter
                         view.ExpandGroupRow(-1);
                     }
                 }
+            }
+        }
+
+        private void plOutputHeaderList_SizeChanged(object sender, EventArgs e)
+        {
+            plMasterHeader.Width = plOutputHeaderList.Width - 20;
+            plDetailHeader.Width = plOutputHeaderList.Width - 20;
+        }
+
+        private void btnExportTo_Click(object sender, EventArgs e)
+        {
+            if (dsAll != null && dsAll.Tables.Count >= 2)
+            {
+                List<KeyValuePair<string, string>> projectTable = new List<KeyValuePair<string, string>>();
+                List<KeyValuePair<string, string>> subjectTable = new List<KeyValuePair<string, string>>();
+
+                #region 检查需要输出的列
+                //项目
+                foreach (Control c in fplProject.Controls)
+                {
+                    if (c is CheckBox)                    {
+                        CheckBox obj = ((CheckBox)c);
+                        if (obj.Checked)
+                        {
+                            if (obj.Text == "课题列表")
+                            {
+                                projectTable.Add(new KeyValuePair<string, string>(obj.Text, "*****"));
+                            }
+                            else
+                            {
+                                projectTable.Add(new KeyValuePair<string, string>(obj.Text, ((GridColumn)obj.Tag).FieldName));
+                            }
+                        }
+                    }
+                }
+                //课题
+                if (fplSubject.Visible)
+                {
+                    foreach (Control c in fplSubject.Controls)
+                    {
+                        if (c is CheckBox)
+                        {
+                            CheckBox obj = ((CheckBox)c);
+                            if (obj.Checked)
+                            {
+                                subjectTable.Add(new KeyValuePair<string, string>(obj.Text, ((GridColumn)obj.Tag).FieldName));
+                            }
+                        }
+                    }
+                }
+                #endregion
+
+                DataTable dtt = new DataTable();
+
+                List<DataColumn> cList = new List<DataColumn>();
+                foreach (KeyValuePair<string, string> kvpp in projectTable)
+                {
+                    dtt.Columns.Add(kvpp.Key, typeof(string));
+                }
+
+                DataTable mainView = dsAll.Tables["MainView"];
+                DataTable subjectView = dsAll.Tables["SubjectView"];
+
+
             }
         }
     }

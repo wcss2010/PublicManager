@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.dgvSub = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,60 +42,42 @@
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExportTo = new System.Windows.Forms.Button();
             this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
             this.cbDisplayContract = new System.Windows.Forms.CheckBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtKey = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox24 = new System.Windows.Forms.CheckBox();
-            this.checkBox25 = new System.Windows.Forms.CheckBox();
-            this.checkBox26 = new System.Windows.Forms.CheckBox();
-            this.checkBox27 = new System.Windows.Forms.CheckBox();
-            this.checkBox28 = new System.Windows.Forms.CheckBox();
-            this.checkBox29 = new System.Windows.Forms.CheckBox();
-            this.checkBox30 = new System.Windows.Forms.CheckBox();
+            this.plOutputHeaderList = new System.Windows.Forms.FlowLayoutPanel();
+            this.plMasterHeader = new DevExpress.XtraEditors.GroupControl();
+            this.fplProject = new System.Windows.Forms.FlowLayoutPanel();
+            this.plDetailHeader = new DevExpress.XtraEditors.GroupControl();
+            this.fplSubject = new System.Windows.Forms.FlowLayoutPanel();
             this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnSetSourceDir = new DevExpress.XtraBars.BarButtonItem();
             this.btnSetDestDir = new DevExpress.XtraBars.BarButtonItem();
@@ -104,13 +86,6 @@
             this.btnExportToExcel = new DevExpress.XtraBars.BarButtonItem();
             this.rpMaster = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgExport = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -121,11 +96,11 @@
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
+            this.plOutputHeaderList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.plMasterHeader)).BeginInit();
+            this.plMasterHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.plDetailHeader)).BeginInit();
+            this.plDetailHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -202,14 +177,14 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.LevelTemplate = this.dgvSub;
-            gridLevelNode2.RelationName = "SubjectView";
+            gridLevelNode1.LevelTemplate = this.dgvSub;
+            gridLevelNode1.RelationName = "SubjectView";
             this.gcGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gcGrid.Location = new System.Drawing.Point(0, 26);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1187, 227);
+            this.gcGrid.Size = new System.Drawing.Size(1421, 227);
             this.gcGrid.TabIndex = 5;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail,
@@ -265,22 +240,6 @@
             this.gridColumn2.FieldName = "row2";
             this.gridColumn2.Name = "gridColumn2";
             // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "项目领域";
-            this.gridColumn3.FieldName = "row3";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "计划批次";
-            this.gridColumn4.FieldName = "row4";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 6;
-            // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "项目编号";
@@ -288,6 +247,16 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 1;
+            this.gridColumn5.Width = 70;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "项目领域";
+            this.gridColumn3.FieldName = "row3";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.Width = 70;
             // 
             // gridColumn6
             // 
@@ -296,6 +265,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.Width = 70;
             // 
             // gridColumn21
             // 
@@ -310,6 +280,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
+            this.gridColumn7.Width = 70;
             // 
             // gridColumn8
             // 
@@ -318,6 +289,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 4;
+            this.gridColumn8.Width = 70;
             // 
             // gridColumn9
             // 
@@ -326,6 +298,16 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 5;
+            this.gridColumn9.Width = 70;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "计划批次";
+            this.gridColumn4.FieldName = "row4";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 6;
+            this.gridColumn4.Width = 70;
             // 
             // gridColumn10
             // 
@@ -334,22 +316,7 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 7;
-            // 
-            // gridColumn23
-            // 
-            this.gridColumn23.Caption = "项目负责人座机";
-            this.gridColumn23.FieldName = "row17";
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 8;
-            // 
-            // gridColumn22
-            // 
-            this.gridColumn22.Caption = "项目负责人手机";
-            this.gridColumn22.FieldName = "row18";
-            this.gridColumn22.Name = "gridColumn22";
-            this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 9;
+            this.gridColumn10.Width = 70;
             // 
             // gridColumn11
             // 
@@ -357,7 +324,35 @@
             this.gridColumn11.FieldName = "row11";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 10;
+            this.gridColumn11.VisibleIndex = 8;
+            this.gridColumn11.Width = 101;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "项目负责人职务/职称";
+            this.gridColumn26.FieldName = "row19";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 9;
+            this.gridColumn26.Width = 111;
+            // 
+            // gridColumn23
+            // 
+            this.gridColumn23.Caption = "项目负责人座机";
+            this.gridColumn23.FieldName = "row17";
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 10;
+            this.gridColumn23.Width = 109;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.Caption = "项目负责人手机";
+            this.gridColumn22.FieldName = "row18";
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.Visible = true;
+            this.gridColumn22.VisibleIndex = 11;
+            this.gridColumn22.Width = 105;
             // 
             // gridColumn12
             // 
@@ -365,7 +360,8 @@
             this.gridColumn12.FieldName = "row12";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 11;
+            this.gridColumn12.VisibleIndex = 12;
+            this.gridColumn12.Width = 58;
             // 
             // gridColumn13
             // 
@@ -373,7 +369,8 @@
             this.gridColumn13.FieldName = "row13";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 12;
+            this.gridColumn13.VisibleIndex = 13;
+            this.gridColumn13.Width = 93;
             // 
             // gridColumn14
             // 
@@ -381,13 +378,67 @@
             this.gridColumn14.FieldName = "row14";
             this.gridColumn14.Name = "gridColumn14";
             // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "选题评议";
+            this.gridColumn27.FieldName = "row20";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 14;
+            this.gridColumn27.Width = 39;
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "立项审核";
+            this.gridColumn28.FieldName = "row21";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 15;
+            this.gridColumn28.Width = 39;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.Caption = "立项复议";
+            this.gridColumn29.FieldName = "row22";
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 16;
+            this.gridColumn29.Width = 39;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.Caption = "合同审查等级";
+            this.gridColumn30.FieldName = "row23";
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 17;
+            this.gridColumn30.Width = 39;
+            // 
+            // gridColumn31
+            // 
+            this.gridColumn31.Caption = "合同审核等级";
+            this.gridColumn31.FieldName = "row24";
+            this.gridColumn31.Name = "gridColumn31";
+            this.gridColumn31.Visible = true;
+            this.gridColumn31.VisibleIndex = 18;
+            this.gridColumn31.Width = 39;
+            // 
+            // gridColumn32
+            // 
+            this.gridColumn32.Caption = "备注";
+            this.gridColumn32.FieldName = "row25";
+            this.gridColumn32.Name = "gridColumn32";
+            this.gridColumn32.Visible = true;
+            this.gridColumn32.VisibleIndex = 19;
+            this.gridColumn32.Width = 71;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.splitContainer1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 123);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1193, 534);
+            this.groupBox1.Size = new System.Drawing.Size(1427, 534);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -405,15 +456,15 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1187, 513);
+            this.splitContainer1.Panel2.Controls.Add(this.plOutputHeaderList);
+            this.splitContainer1.Size = new System.Drawing.Size(1421, 513);
             this.splitContainer1.SplitterDistance = 253;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 5;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnExportTo);
             this.panel1.Controls.Add(this.cbDisplayReporter);
             this.panel1.Controls.Add(this.cbDisplayContract);
             this.panel1.Controls.Add(this.btnSearch);
@@ -422,18 +473,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1187, 26);
+            this.panel1.Size = new System.Drawing.Size(1421, 26);
             this.panel1.TabIndex = 3;
             // 
-            // button1
+            // btnExportTo
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(1046, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 26);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "导出到Excel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExportTo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExportTo.Location = new System.Drawing.Point(1046, 0);
+            this.btnExportTo.Name = "btnExportTo";
+            this.btnExportTo.Size = new System.Drawing.Size(101, 26);
+            this.btnExportTo.TabIndex = 8;
+            this.btnExportTo.Text = "导出到Excel";
+            this.btnExportTo.UseVisualStyleBackColor = true;
+            this.btnExportTo.Click += new System.EventHandler(this.btnExportTo_Click);
             // 
             // cbDisplayReporter
             // 
@@ -497,329 +549,51 @@
             this.label1.Text = "搜索关键字：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // flowLayoutPanel1
+            // plOutputHeaderList
             // 
-            this.flowLayoutPanel1.Controls.Add(this.groupBox2);
-            this.flowLayoutPanel1.Controls.Add(this.groupBox3);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1187, 255);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.plOutputHeaderList.Controls.Add(this.plMasterHeader);
+            this.plOutputHeaderList.Controls.Add(this.plDetailHeader);
+            this.plOutputHeaderList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plOutputHeaderList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.plOutputHeaderList.Location = new System.Drawing.Point(0, 0);
+            this.plOutputHeaderList.Name = "plOutputHeaderList";
+            this.plOutputHeaderList.Size = new System.Drawing.Size(1421, 255);
+            this.plOutputHeaderList.TabIndex = 0;
+            this.plOutputHeaderList.SizeChanged += new System.EventHandler(this.plOutputHeaderList_SizeChanged);
             // 
-            // groupBox2
+            // plMasterHeader
             // 
-            this.groupBox2.Controls.Add(this.flowLayoutPanel2);
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1155, 75);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "项目基本信息要素";
+            this.plMasterHeader.Controls.Add(this.fplProject);
+            this.plMasterHeader.Location = new System.Drawing.Point(3, 3);
+            this.plMasterHeader.Name = "plMasterHeader";
+            this.plMasterHeader.Size = new System.Drawing.Size(851, 121);
+            this.plMasterHeader.TabIndex = 2;
+            this.plMasterHeader.Text = "项目基本信息要素";
             // 
-            // flowLayoutPanel2
+            // fplProject
             // 
-            this.flowLayoutPanel2.Controls.Add(this.checkBox1);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox2);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox3);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox4);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox5);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox11);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox12);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox13);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox14);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox15);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox16);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox17);
-            this.flowLayoutPanel2.Controls.Add(this.checkBox18);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 18);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(9);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1149, 54);
-            this.flowLayoutPanel2.TabIndex = 0;
+            this.fplProject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fplProject.Location = new System.Drawing.Point(2, 21);
+            this.fplProject.Name = "fplProject";
+            this.fplProject.Size = new System.Drawing.Size(847, 98);
+            this.fplProject.TabIndex = 0;
             // 
-            // checkBox1
+            // plDetailHeader
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 12);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(74, 18);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "项目名称";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.plDetailHeader.Controls.Add(this.fplSubject);
+            this.plDetailHeader.Location = new System.Drawing.Point(3, 130);
+            this.plDetailHeader.Name = "plDetailHeader";
+            this.plDetailHeader.Size = new System.Drawing.Size(851, 122);
+            this.plDetailHeader.TabIndex = 1;
+            this.plDetailHeader.Text = "课题要素";
             // 
-            // checkBox2
+            // fplSubject
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(92, 12);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(74, 18);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "项目批次";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(172, 12);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(74, 18);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "项目编号";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(252, 12);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(62, 18);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "总经费";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(320, 12);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(74, 18);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "年度经费";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox11
-            // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(400, 12);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(50, 18);
-            this.checkBox11.TabIndex = 6;
-            this.checkBox11.Text = "......";
-            this.checkBox11.UseVisualStyleBackColor = true;
-            // 
-            // checkBox12
-            // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(456, 12);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(50, 18);
-            this.checkBox12.TabIndex = 7;
-            this.checkBox12.Text = "......";
-            this.checkBox12.UseVisualStyleBackColor = true;
-            // 
-            // checkBox13
-            // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(512, 12);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(50, 18);
-            this.checkBox13.TabIndex = 8;
-            this.checkBox13.Text = "......";
-            this.checkBox13.UseVisualStyleBackColor = true;
-            // 
-            // checkBox14
-            // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(568, 12);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(50, 18);
-            this.checkBox14.TabIndex = 9;
-            this.checkBox14.Text = "......";
-            this.checkBox14.UseVisualStyleBackColor = true;
-            // 
-            // checkBox15
-            // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(624, 12);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(50, 18);
-            this.checkBox15.TabIndex = 10;
-            this.checkBox15.Text = "......";
-            this.checkBox15.UseVisualStyleBackColor = true;
-            // 
-            // checkBox16
-            // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(680, 12);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(50, 18);
-            this.checkBox16.TabIndex = 11;
-            this.checkBox16.Text = "......";
-            this.checkBox16.UseVisualStyleBackColor = true;
-            // 
-            // checkBox17
-            // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(736, 12);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(50, 18);
-            this.checkBox17.TabIndex = 12;
-            this.checkBox17.Text = "......";
-            this.checkBox17.UseVisualStyleBackColor = true;
-            // 
-            // checkBox18
-            // 
-            this.checkBox18.AutoSize = true;
-            this.checkBox18.Location = new System.Drawing.Point(792, 12);
-            this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(50, 18);
-            this.checkBox18.TabIndex = 13;
-            this.checkBox18.Text = "......";
-            this.checkBox18.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.flowLayoutPanel3);
-            this.groupBox3.Location = new System.Drawing.Point(3, 84);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1155, 71);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "课题要素";
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.checkBox6);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox7);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox8);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox9);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox10);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox24);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox25);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox26);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox27);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox28);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox29);
-            this.flowLayoutPanel3.Controls.Add(this.checkBox30);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 18);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(9);
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1149, 50);
-            this.flowLayoutPanel3.TabIndex = 1;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(12, 12);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(74, 18);
-            this.checkBox6.TabIndex = 1;
-            this.checkBox6.Text = "课题名称";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(92, 12);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(86, 18);
-            this.checkBox7.TabIndex = 2;
-            this.checkBox7.Text = "课题负责人";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(184, 12);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(98, 18);
-            this.checkBox8.TabIndex = 3;
-            this.checkBox8.Text = "课题负责单位";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(288, 12);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(74, 18);
-            this.checkBox9.TabIndex = 4;
-            this.checkBox9.Text = "课题经费";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // checkBox10
-            // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(368, 12);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(134, 18);
-            this.checkBox10.TabIndex = 5;
-            this.checkBox10.Text = "课题负责人联系电话";
-            this.checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // checkBox24
-            // 
-            this.checkBox24.AutoSize = true;
-            this.checkBox24.Location = new System.Drawing.Point(508, 12);
-            this.checkBox24.Name = "checkBox24";
-            this.checkBox24.Size = new System.Drawing.Size(50, 18);
-            this.checkBox24.TabIndex = 6;
-            this.checkBox24.Text = "......";
-            this.checkBox24.UseVisualStyleBackColor = true;
-            // 
-            // checkBox25
-            // 
-            this.checkBox25.AutoSize = true;
-            this.checkBox25.Location = new System.Drawing.Point(564, 12);
-            this.checkBox25.Name = "checkBox25";
-            this.checkBox25.Size = new System.Drawing.Size(50, 18);
-            this.checkBox25.TabIndex = 7;
-            this.checkBox25.Text = "......";
-            this.checkBox25.UseVisualStyleBackColor = true;
-            // 
-            // checkBox26
-            // 
-            this.checkBox26.AutoSize = true;
-            this.checkBox26.Location = new System.Drawing.Point(620, 12);
-            this.checkBox26.Name = "checkBox26";
-            this.checkBox26.Size = new System.Drawing.Size(50, 18);
-            this.checkBox26.TabIndex = 8;
-            this.checkBox26.Text = "......";
-            this.checkBox26.UseVisualStyleBackColor = true;
-            // 
-            // checkBox27
-            // 
-            this.checkBox27.AutoSize = true;
-            this.checkBox27.Location = new System.Drawing.Point(676, 12);
-            this.checkBox27.Name = "checkBox27";
-            this.checkBox27.Size = new System.Drawing.Size(50, 18);
-            this.checkBox27.TabIndex = 9;
-            this.checkBox27.Text = "......";
-            this.checkBox27.UseVisualStyleBackColor = true;
-            // 
-            // checkBox28
-            // 
-            this.checkBox28.AutoSize = true;
-            this.checkBox28.Location = new System.Drawing.Point(732, 12);
-            this.checkBox28.Name = "checkBox28";
-            this.checkBox28.Size = new System.Drawing.Size(50, 18);
-            this.checkBox28.TabIndex = 10;
-            this.checkBox28.Text = "......";
-            this.checkBox28.UseVisualStyleBackColor = true;
-            // 
-            // checkBox29
-            // 
-            this.checkBox29.AutoSize = true;
-            this.checkBox29.Location = new System.Drawing.Point(788, 12);
-            this.checkBox29.Name = "checkBox29";
-            this.checkBox29.Size = new System.Drawing.Size(50, 18);
-            this.checkBox29.TabIndex = 11;
-            this.checkBox29.Text = "......";
-            this.checkBox29.UseVisualStyleBackColor = true;
-            // 
-            // checkBox30
-            // 
-            this.checkBox30.AutoSize = true;
-            this.checkBox30.Location = new System.Drawing.Point(844, 12);
-            this.checkBox30.Name = "checkBox30";
-            this.checkBox30.Size = new System.Drawing.Size(50, 18);
-            this.checkBox30.TabIndex = 12;
-            this.checkBox30.Text = "......";
-            this.checkBox30.UseVisualStyleBackColor = true;
+            this.fplSubject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fplSubject.Location = new System.Drawing.Point(2, 21);
+            this.fplSubject.Name = "fplSubject";
+            this.fplSubject.Size = new System.Drawing.Size(847, 99);
+            this.fplSubject.TabIndex = 0;
             // 
             // rcTopBar
             // 
@@ -843,7 +617,7 @@
             this.rcTopBar.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.rcTopBar.ShowQatLocationSelector = false;
             this.rcTopBar.ShowToolbarCustomizeItem = false;
-            this.rcTopBar.Size = new System.Drawing.Size(1193, 123);
+            this.rcTopBar.Size = new System.Drawing.Size(1427, 123);
             this.rcTopBar.Toolbar.ShowCustomizeItem = false;
             this.rcTopBar.Visible = false;
             // 
@@ -896,62 +670,6 @@
             this.rpgExport.Name = "rpgExport";
             this.rpgExport.Text = "导出";
             // 
-            // gridColumn26
-            // 
-            this.gridColumn26.Caption = "项目负责人职务/职称";
-            this.gridColumn26.FieldName = "row19";
-            this.gridColumn26.Name = "gridColumn26";
-            this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 13;
-            // 
-            // gridColumn27
-            // 
-            this.gridColumn27.Caption = "选题评议";
-            this.gridColumn27.FieldName = "row20";
-            this.gridColumn27.Name = "gridColumn27";
-            this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 14;
-            // 
-            // gridColumn28
-            // 
-            this.gridColumn28.Caption = "立项审核";
-            this.gridColumn28.FieldName = "row21";
-            this.gridColumn28.Name = "gridColumn28";
-            this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 15;
-            // 
-            // gridColumn29
-            // 
-            this.gridColumn29.Caption = "立项复议";
-            this.gridColumn29.FieldName = "row22";
-            this.gridColumn29.Name = "gridColumn29";
-            this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 16;
-            // 
-            // gridColumn30
-            // 
-            this.gridColumn30.Caption = "合同审查等级";
-            this.gridColumn30.FieldName = "row23";
-            this.gridColumn30.Name = "gridColumn30";
-            this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 17;
-            // 
-            // gridColumn31
-            // 
-            this.gridColumn31.Caption = "合同审核等级";
-            this.gridColumn31.FieldName = "row24";
-            this.gridColumn31.Name = "gridColumn31";
-            this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 18;
-            // 
-            // gridColumn32
-            // 
-            this.gridColumn32.Caption = "备注";
-            this.gridColumn32.FieldName = "row25";
-            this.gridColumn32.Name = "gridColumn32";
-            this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 19;
-            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -959,7 +677,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rcTopBar);
             this.Name = "ModuleController";
-            this.Size = new System.Drawing.Size(1193, 657);
+            this.Size = new System.Drawing.Size(1427, 657);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSub)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
@@ -971,13 +689,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
+            this.plOutputHeaderList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.plMasterHeader)).EndInit();
+            this.plMasterHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.plDetailHeader)).EndInit();
+            this.plDetailHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -988,36 +704,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.CheckBox checkBox17;
-        private System.Windows.Forms.CheckBox checkBox18;
-        private System.Windows.Forms.CheckBox checkBox24;
-        private System.Windows.Forms.CheckBox checkBox25;
-        private System.Windows.Forms.CheckBox checkBox26;
-        private System.Windows.Forms.CheckBox checkBox27;
-        private System.Windows.Forms.CheckBox checkBox28;
-        private System.Windows.Forms.CheckBox checkBox29;
-        private System.Windows.Forms.CheckBox checkBox30;
         private DevExpress.XtraBars.Ribbon.RibbonControl rcTopBar;
         private DevExpress.XtraBars.BarButtonItem btnSetSourceDir;
         private DevExpress.XtraBars.BarButtonItem btnSetDestDir;
@@ -1027,7 +713,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage rpMaster;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgExport;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExportTo;
         private System.Windows.Forms.CheckBox cbDisplayReporter;
         private System.Windows.Forms.CheckBox cbDisplayContract;
         private System.Windows.Forms.Button btnSearch;
@@ -1068,5 +754,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
+        private System.Windows.Forms.FlowLayoutPanel plOutputHeaderList;
+        private DevExpress.XtraEditors.GroupControl plMasterHeader;
+        private DevExpress.XtraEditors.GroupControl plDetailHeader;
+        private System.Windows.Forms.FlowLayoutPanel fplProject;
+        private System.Windows.Forms.FlowLayoutPanel fplSubject;
     }
 }
