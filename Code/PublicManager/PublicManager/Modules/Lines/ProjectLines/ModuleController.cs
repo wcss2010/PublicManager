@@ -14,10 +14,6 @@ namespace PublicManager.Modules.Lines.ProjectLines
 {
     public partial class ModuleController : BaseModuleController
     {
-        /// <summary>
-        /// CatalogID筛选条件
-        /// </summary>
-        string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
         private DEGridViewCellMergeAdapter cma;
 
         public ModuleController()
@@ -28,7 +24,7 @@ namespace PublicManager.Modules.Lines.ProjectLines
             dgvDetail.OptionsView.AllowCellMerge = true;
             cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3", "row4", "row5", "row6", "row23" });
 
-            cbDisplayReporter.Checked = false;
+            srpSearch.IsDisplayReporterData = false;
         }
 
         public override void start()
@@ -47,11 +43,30 @@ namespace PublicManager.Modules.Lines.ProjectLines
 
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnCheckProject_Click(object sender, EventArgs e)
+        {
+            int[] selecteds = dgvDetail.GetSelectedRows();
+            if (selecteds != null && selecteds.Length >= 1)
+            {
+                object objValue = dgvDetail.GetRowCellValue(selecteds[0], "row20");
+                if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
+                {
+                    string projectId = objValue.ToString();
+
+                    Project proj = ConnectionManager.Context.table("Project").where("ProjectID='" + projectId + "'").select("*").getItem<Project>(new Project());
+                    if (new CheckEditForm(proj).ShowDialog() == DialogResult.OK)
+                    {
+                        srpSearch.search();
+                    }
+                }
+            }
+        }
+
+        private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
             DataTable dt = getTempDataTable("row", 23);
 
-            List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
             foreach (Project proj in projList)
             {
                 List<object> cells = new List<object>();
@@ -105,56 +120,14 @@ namespace PublicManager.Modules.Lines.ProjectLines
             gcGrid.DataSource = dt;
         }
 
-        private void cbDisplayReporter_CheckedChanged(object sender, EventArgs e)
+        private void srpSearch_OnResetClick(object sender, EventArgs args)
         {
-            if (cbDisplayContract.Checked && cbDisplayReporter.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
-            }
-            else if (cbDisplayContract.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
-            }
-            else if (cbDisplayReporter.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '建议书')";
-            }
-            else
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
-            }
+            srpSearch.search();
         }
 
-        private void btnExportToExcel_Click(object sender, EventArgs e)
+        private void srpSearch_OnExportToClick(object sender, EventArgs args)
         {
             exportToExcelWithDevExpress(dgvDetail);
-        }
-
-        private void btnCheckProject_Click(object sender, EventArgs e)
-        {
-            int[] selecteds = dgvDetail.GetSelectedRows();
-            if (selecteds != null && selecteds.Length >= 1)
-            {
-                object objValue = dgvDetail.GetRowCellValue(selecteds[0], "row20");
-                if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
-                {
-                    string projectId = objValue.ToString();
-
-                    Project proj = ConnectionManager.Context.table("Project").where("ProjectID='" + projectId + "'").select("*").getItem<Project>(new Project());
-                    if (new CheckEditForm(proj).ShowDialog() == DialogResult.OK)
-                    {
-                        btnSearch.PerformClick();
-                    }
-                }
-            }
-        }
-
-        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '\r')
-            {
-                btnSearch.PerformClick();
-            }
         }
     }
 }

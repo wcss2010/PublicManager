@@ -15,10 +15,6 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 {
     public partial class ModuleController : BaseModuleController
     {
-        /// <summary>
-        /// CatalogID筛选条件
-        /// </summary>
-        string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
         private DEGridViewCellMergeAdapter cma;
 
         public ModuleController()
@@ -75,73 +71,6 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                 {
                     MessageBox.Show("对不起，Excel导出失败！Ex:" + ex.ToString());
                 }
-            }
-        }
-
-        private void btnExportToExcel_Click(object sender, EventArgs e)
-        {
-            exportToExcelWithDevExpress(gvDetail);
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            DataTable dt = getTempDataTable("row", 12);
-
-            List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
-            foreach (Project proj in projList)
-            {
-                List<MoneySends> subList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "')").select("*").getList<MoneySends>(new MoneySends());
-                int indexx = 0;
-                foreach (MoneySends mss in subList)
-                {
-                    if (cbNodeWillTime.Checked && isCurrentDay(mss.NodeWillTime, txtNodeWillTime) == false)
-                    {
-                        continue;
-                    }
-                    if (cbWillTime.Checked && isCurrentDay(mss.WillTime, txtWillTime) == false)
-                    {
-                        continue;
-                    }
-
-                    indexx++;
-                    List<object> cells = new List<object>();
-                    cells.Add(indexx.ToString());
-                    cells.Add(mss.SendRule);
-                    cells.Add(ExcelHelper.getDateTimeForString(mss.WillTime,"yyyy年MM月dd日",string.Empty));
-                    cells.Add(mss.TotalMoney);
-                    cells.Add(mss.MemoText);
-                    cells.Add(mss.MSID);
-                    cells.Add(proj.ProjectName);
-                    cells.Add(ExcelHelper.getDateTimeForString(mss.NodeWillTime, "yyyy年MM月dd日", string.Empty));
-                    cells.Add(mss.WillContent);
-                    cells.Add(mss.WillLevel);
-                    cells.Add(mss.WillWorker);
-
-                    cells.Add("从Excel导入数据");
-
-                    dt.Rows.Add(cells.ToArray());
-                }
-            }
-            gcGrid.DataSource = dt;
-        }
-
-        private void cbDisplayReporter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbDisplayContract.Checked && cbDisplayReporter.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
-            }
-            else if (cbDisplayContract.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
-            }
-            else if (cbDisplayReporter.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '建议书')";
-            }
-            else
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
             }
         }
 
@@ -396,7 +325,7 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
                                     MessageBox.Show(importResult.ToString());
                                 }
-                                btnSearch.PerformClick();
+                                srpSearch.search();
                             }
                             catch (Exception ex)
                             {
@@ -429,12 +358,56 @@ namespace PublicManager.Modules.Lines.ProjectNodes
             }
         }
 
-        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
+        private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
-            if (e.KeyChar == '\r')
+            DataTable dt = getTempDataTable("row", 12);
+
+            List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
+            foreach (Project proj in projList)
             {
-                btnSearch.PerformClick();
+                List<MoneySends> subList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "')").select("*").getList<MoneySends>(new MoneySends());
+                int indexx = 0;
+                foreach (MoneySends mss in subList)
+                {
+                    if (srpSearch.Key3Label.Checked && isCurrentDay(mss.NodeWillTime, srpSearch.Key3EditControl) == false)
+                    {
+                        continue;
+                    }
+                    if (srpSearch.Key4Label.Checked && isCurrentDay(mss.WillTime, srpSearch.Key4EditControl) == false)
+                    {
+                        continue;
+                    }
+
+                    indexx++;
+                    List<object> cells = new List<object>();
+                    cells.Add(indexx.ToString());
+                    cells.Add(mss.SendRule);
+                    cells.Add(ExcelHelper.getDateTimeForString(mss.WillTime, "yyyy年MM月dd日", string.Empty));
+                    cells.Add(mss.TotalMoney);
+                    cells.Add(mss.MemoText);
+                    cells.Add(mss.MSID);
+                    cells.Add(proj.ProjectName);
+                    cells.Add(ExcelHelper.getDateTimeForString(mss.NodeWillTime, "yyyy年MM月dd日", string.Empty));
+                    cells.Add(mss.WillContent);
+                    cells.Add(mss.WillLevel);
+                    cells.Add(mss.WillWorker);
+
+                    cells.Add("从Excel导入数据");
+
+                    dt.Rows.Add(cells.ToArray());
+                }
             }
+            gcGrid.DataSource = dt;
+        }
+
+        private void srpSearch_OnResetClick(object sender, EventArgs args)
+        {
+            srpSearch.search();
+        }
+
+        private void srpSearch_OnExportToClick(object sender, EventArgs args)
+        {
+            exportToExcelWithDevExpress(gvDetail);
         }
     }
 }
