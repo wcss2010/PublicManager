@@ -148,5 +148,13 @@ namespace PublicManager.Modules.Lines.ProjectLines
                 }
             }
         }
+
+        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                btnSearch.PerformClick();
+            }
+        }
     }
 }

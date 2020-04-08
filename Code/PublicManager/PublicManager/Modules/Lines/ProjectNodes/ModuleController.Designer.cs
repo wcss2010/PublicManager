@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.gvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -80,12 +80,12 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 59);
+            this.gcGrid.Location = new System.Drawing.Point(3, 66);
             this.gcGrid.MainView = this.gvDetail;
             this.gcGrid.Name = "gcGrid";
             this.gcGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.gcGrid.Size = new System.Drawing.Size(1067, 372);
+            this.gcGrid.Size = new System.Drawing.Size(1246, 458);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetail});
@@ -210,7 +210,7 @@
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "从Excel导入数据", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "从Excel导入数据", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -236,7 +236,7 @@
             this.rcTopBar.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.rcTopBar.ShowQatLocationSelector = false;
             this.rcTopBar.ShowToolbarCustomizeItem = false;
-            this.rcTopBar.Size = new System.Drawing.Size(1073, 123);
+            this.rcTopBar.Size = new System.Drawing.Size(1252, 123);
             this.rcTopBar.Toolbar.ShowCustomizeItem = false;
             this.rcTopBar.Visible = false;
             // 
@@ -297,7 +297,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 123);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1073, 434);
+            this.groupBox1.Size = new System.Drawing.Size(1252, 527);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
@@ -307,10 +307,10 @@
             this.panel3.Controls.Add(this.txtNodeWillTime);
             this.panel3.Controls.Add(this.cbNodeWillTime);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(3, 38);
+            this.panel3.Location = new System.Drawing.Point(3, 42);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(125, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(1067, 21);
+            this.panel3.Padding = new System.Windows.Forms.Padding(146, 0, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(1246, 24);
             this.panel3.TabIndex = 6;
             // 
             // panel2
@@ -318,10 +318,10 @@
             this.panel2.Controls.Add(this.txtWillTime);
             this.panel2.Controls.Add(this.cbWillTime);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(344, 0);
+            this.panel2.Location = new System.Drawing.Point(385, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(262, 21);
+            this.panel2.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.panel2.Size = new System.Drawing.Size(306, 24);
             this.panel2.TabIndex = 5;
             // 
             // txtWillTime
@@ -329,18 +329,18 @@
             this.txtWillTime.CustomFormat = "yyyy年MM月dd日";
             this.txtWillTime.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtWillTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtWillTime.Location = new System.Drawing.Point(149, 0);
+            this.txtWillTime.Location = new System.Drawing.Point(152, 0);
             this.txtWillTime.Name = "txtWillTime";
-            this.txtWillTime.Size = new System.Drawing.Size(110, 21);
+            this.txtWillTime.Size = new System.Drawing.Size(128, 22);
             this.txtWillTime.TabIndex = 2;
             // 
             // cbWillTime
             // 
             this.cbWillTime.AutoSize = true;
             this.cbWillTime.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbWillTime.Location = new System.Drawing.Point(5, 0);
+            this.cbWillTime.Location = new System.Drawing.Point(6, 0);
             this.cbWillTime.Name = "cbWillTime";
-            this.cbWillTime.Size = new System.Drawing.Size(144, 21);
+            this.cbWillTime.Size = new System.Drawing.Size(146, 24);
             this.cbWillTime.TabIndex = 3;
             this.cbWillTime.Text = "合同书预计评估时间：";
             this.cbWillTime.UseVisualStyleBackColor = true;
@@ -350,18 +350,18 @@
             this.txtNodeWillTime.CustomFormat = "yyyy年MM月dd日";
             this.txtNodeWillTime.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtNodeWillTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNodeWillTime.Location = new System.Drawing.Point(233, 0);
+            this.txtNodeWillTime.Location = new System.Drawing.Point(256, 0);
             this.txtNodeWillTime.Name = "txtNodeWillTime";
-            this.txtNodeWillTime.Size = new System.Drawing.Size(111, 21);
+            this.txtNodeWillTime.Size = new System.Drawing.Size(129, 22);
             this.txtNodeWillTime.TabIndex = 3;
             // 
             // cbNodeWillTime
             // 
             this.cbNodeWillTime.AutoSize = true;
             this.cbNodeWillTime.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbNodeWillTime.Location = new System.Drawing.Point(125, 0);
+            this.cbNodeWillTime.Location = new System.Drawing.Point(146, 0);
             this.cbNodeWillTime.Name = "cbNodeWillTime";
-            this.cbNodeWillTime.Size = new System.Drawing.Size(108, 21);
+            this.cbNodeWillTime.Size = new System.Drawing.Size(110, 24);
             this.cbNodeWillTime.TabIndex = 3;
             this.cbNodeWillTime.Text = "节点评估时间：";
             this.cbNodeWillTime.UseVisualStyleBackColor = true;
@@ -375,17 +375,17 @@
             this.panel1.Controls.Add(this.txtKey);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 17);
+            this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1067, 21);
+            this.panel1.Size = new System.Drawing.Size(1246, 24);
             this.panel1.TabIndex = 2;
             // 
             // btnExportToExcel
             // 
             this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExportToExcel.Location = new System.Drawing.Point(931, 0);
+            this.btnExportToExcel.Location = new System.Drawing.Point(1054, 0);
             this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(87, 21);
+            this.btnExportToExcel.Size = new System.Drawing.Size(101, 24);
             this.btnExportToExcel.TabIndex = 8;
             this.btnExportToExcel.Text = "导出到Excel";
             this.btnExportToExcel.UseVisualStyleBackColor = true;
@@ -396,9 +396,9 @@
             this.cbDisplayReporter.AutoSize = true;
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbDisplayReporter.Enabled = false;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(823, 0);
+            this.cbDisplayReporter.Location = new System.Drawing.Point(944, 0);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
-            this.cbDisplayReporter.Size = new System.Drawing.Size(108, 21);
+            this.cbDisplayReporter.Size = new System.Drawing.Size(110, 24);
             this.cbDisplayReporter.TabIndex = 4;
             this.cbDisplayReporter.Text = "显示建议书内容";
             this.cbDisplayReporter.UseVisualStyleBackColor = true;
@@ -411,10 +411,10 @@
             this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbDisplayContract.Enabled = false;
-            this.cbDisplayContract.Location = new System.Drawing.Point(705, 0);
+            this.cbDisplayContract.Location = new System.Drawing.Point(822, 0);
             this.cbDisplayContract.Name = "cbDisplayContract";
-            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.cbDisplayContract.Size = new System.Drawing.Size(118, 21);
+            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.cbDisplayContract.Size = new System.Drawing.Size(122, 24);
             this.cbDisplayContract.TabIndex = 3;
             this.cbDisplayContract.Text = "显示合同书内容";
             this.cbDisplayContract.UseVisualStyleBackColor = true;
@@ -423,9 +423,9 @@
             // btnSearch
             // 
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSearch.Location = new System.Drawing.Point(636, 0);
+            this.btnSearch.Location = new System.Drawing.Point(742, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(69, 21);
+            this.btnSearch.Size = new System.Drawing.Size(80, 24);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "搜索";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -434,13 +434,14 @@
             // txtKey
             // 
             this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtKey.Location = new System.Drawing.Point(124, 0);
+            this.txtKey.Location = new System.Drawing.Point(145, 0);
             this.txtKey.Name = "txtKey";
             this.txtKey.Properties.NullValuePrompt = "请输入项目名称！";
             this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtKey.Properties.ShowNullValuePromptWhenFocused = true;
-            this.txtKey.Size = new System.Drawing.Size(512, 20);
+            this.txtKey.Size = new System.Drawing.Size(597, 20);
             this.txtKey.TabIndex = 1;
+            this.txtKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKey_KeyPress);
             // 
             // label1
             // 
@@ -448,19 +449,19 @@
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 21);
+            this.label1.Size = new System.Drawing.Size(145, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "搜索关键字：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ModuleController
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rcTopBar);
             this.Name = "ModuleController";
-            this.Size = new System.Drawing.Size(1073, 557);
+            this.Size = new System.Drawing.Size(1252, 650);
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();

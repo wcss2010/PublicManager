@@ -39,6 +39,7 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dgvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,6 +48,8 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,9 +62,6 @@
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -72,9 +72,9 @@
             // btnExportToExcel
             // 
             this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExportToExcel.Location = new System.Drawing.Point(713, 0);
+            this.btnExportToExcel.Location = new System.Drawing.Point(799, 0);
             this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(87, 22);
+            this.btnExportToExcel.Size = new System.Drawing.Size(101, 26);
             this.btnExportToExcel.TabIndex = 8;
             this.btnExportToExcel.Text = "导出到Excel";
             this.btnExportToExcel.UseVisualStyleBackColor = true;
@@ -87,9 +87,9 @@
             this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbDisplayReporter.Enabled = false;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(605, 0);
+            this.cbDisplayReporter.Location = new System.Drawing.Point(689, 0);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
-            this.cbDisplayReporter.Size = new System.Drawing.Size(108, 22);
+            this.cbDisplayReporter.Size = new System.Drawing.Size(110, 26);
             this.cbDisplayReporter.TabIndex = 4;
             this.cbDisplayReporter.Text = "显示建议书内容";
             this.cbDisplayReporter.UseVisualStyleBackColor = true;
@@ -102,10 +102,10 @@
             this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbDisplayContract.Enabled = false;
-            this.cbDisplayContract.Location = new System.Drawing.Point(487, 0);
+            this.cbDisplayContract.Location = new System.Drawing.Point(567, 0);
             this.cbDisplayContract.Name = "cbDisplayContract";
-            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.cbDisplayContract.Size = new System.Drawing.Size(118, 22);
+            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.cbDisplayContract.Size = new System.Drawing.Size(122, 26);
             this.cbDisplayContract.TabIndex = 3;
             this.cbDisplayContract.Text = "显示合同书内容";
             this.cbDisplayContract.UseVisualStyleBackColor = true;
@@ -114,9 +114,9 @@
             // btnSearch
             // 
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSearch.Location = new System.Drawing.Point(412, 0);
+            this.btnSearch.Location = new System.Drawing.Point(480, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 22);
+            this.btnSearch.Size = new System.Drawing.Size(87, 26);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "搜索";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 22);
+            this.label1.Size = new System.Drawing.Size(156, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "搜索关键字：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -143,17 +143,17 @@
             this.panel1.Controls.Add(this.txtKey);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 17);
+            this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1211, 22);
+            this.panel1.Size = new System.Drawing.Size(1414, 26);
             this.panel1.TabIndex = 2;
             // 
             // btnCheckProject
             // 
             this.btnCheckProject.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCheckProject.Location = new System.Drawing.Point(800, 0);
+            this.btnCheckProject.Location = new System.Drawing.Point(900, 0);
             this.btnCheckProject.Name = "btnCheckProject";
-            this.btnCheckProject.Size = new System.Drawing.Size(87, 22);
+            this.btnCheckProject.Size = new System.Drawing.Size(101, 26);
             this.btnCheckProject.TabIndex = 9;
             this.btnCheckProject.Text = "编辑审核信息";
             this.btnCheckProject.UseVisualStyleBackColor = true;
@@ -162,13 +162,14 @@
             // txtKey
             // 
             this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtKey.Location = new System.Drawing.Point(134, 0);
+            this.txtKey.Location = new System.Drawing.Point(156, 0);
             this.txtKey.Name = "txtKey";
             this.txtKey.Properties.NullValuePrompt = "请输入项目名称！";
             this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtKey.Properties.ShowNullValuePromptWhenFocused = true;
-            this.txtKey.Size = new System.Drawing.Size(278, 20);
+            this.txtKey.Size = new System.Drawing.Size(324, 20);
             this.txtKey.TabIndex = 1;
+            this.txtKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKey_KeyPress);
             // 
             // gridColumn2
             // 
@@ -210,6 +211,15 @@
             this.gridColumn20});
             this.dgvDetail.GridControl = this.gcGrid;
             this.dgvDetail.Name = "dgvDetail";
+            // 
+            // gridColumn23
+            // 
+            this.gridColumn23.Caption = "项目领域/技术方向";
+            this.gridColumn23.FieldName = "row23";
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 0;
+            this.gridColumn23.Width = 98;
             // 
             // gridColumn3
             // 
@@ -281,6 +291,24 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 8;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.Caption = "项目负责人座机";
+            this.gridColumn22.FieldName = "row21";
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.Visible = true;
+            this.gridColumn22.VisibleIndex = 9;
+            this.gridColumn22.Width = 92;
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "项目负责人手机";
+            this.gridColumn21.FieldName = "row22";
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 10;
+            this.gridColumn21.Width = 92;
             // 
             // gridColumn11
             // 
@@ -371,10 +399,10 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 39);
+            this.gcGrid.Location = new System.Drawing.Point(3, 44);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1211, 540);
+            this.gcGrid.Size = new System.Drawing.Size(1414, 632);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -386,44 +414,17 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1217, 582);
+            this.groupBox1.Size = new System.Drawing.Size(1420, 679);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // gridColumn21
-            // 
-            this.gridColumn21.Caption = "项目负责人手机";
-            this.gridColumn21.FieldName = "row22";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 10;
-            this.gridColumn21.Width = 92;
-            // 
-            // gridColumn22
-            // 
-            this.gridColumn22.Caption = "项目负责人座机";
-            this.gridColumn22.FieldName = "row21";
-            this.gridColumn22.Name = "gridColumn22";
-            this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 9;
-            this.gridColumn22.Width = 92;
-            // 
-            // gridColumn23
-            // 
-            this.gridColumn23.Caption = "项目领域/技术方向";
-            this.gridColumn23.FieldName = "row23";
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 0;
-            this.gridColumn23.Width = 98;
-            // 
             // ModuleController
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "ModuleController";
-            this.Size = new System.Drawing.Size(1217, 582);
+            this.Size = new System.Drawing.Size(1420, 679);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();

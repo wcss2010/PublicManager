@@ -203,5 +203,13 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                 }
             }
         }
+
+        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                btnSearch.PerformClick();
+            }
+        }
     }
 }

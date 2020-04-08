@@ -277,5 +277,13 @@ namespace PublicManager.Modules.Teacher.TeacherManager
             }
             return result;
         }
+
+        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                btnSearch.PerformClick();
+            }
+        }
     }
 }

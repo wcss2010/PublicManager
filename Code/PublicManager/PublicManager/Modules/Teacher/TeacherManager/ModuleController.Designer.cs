@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -65,9 +65,9 @@
             // btnSearch
             // 
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSearch.Location = new System.Drawing.Point(596, 0);
+            this.btnSearch.Location = new System.Drawing.Point(695, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 24);
+            this.btnSearch.Size = new System.Drawing.Size(87, 28);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "搜索";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(124, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "专家名称：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -94,17 +94,17 @@
             this.panel1.Controls.Add(this.txtKey);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 17);
+            this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1192, 24);
+            this.panel1.Size = new System.Drawing.Size(1392, 28);
             this.panel1.TabIndex = 2;
             // 
             // llDownloadTemplete
             // 
             this.llDownloadTemplete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.llDownloadTemplete.Location = new System.Drawing.Point(923, 0);
+            this.llDownloadTemplete.Location = new System.Drawing.Point(1075, 0);
             this.llDownloadTemplete.Name = "llDownloadTemplete";
-            this.llDownloadTemplete.Size = new System.Drawing.Size(91, 24);
+            this.llDownloadTemplete.Size = new System.Drawing.Size(106, 28);
             this.llDownloadTemplete.TabIndex = 10;
             this.llDownloadTemplete.TabStop = true;
             this.llDownloadTemplete.Text = "导入模板.xlsx";
@@ -114,9 +114,9 @@
             // btnImportFromExcel
             // 
             this.btnImportFromExcel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnImportFromExcel.Location = new System.Drawing.Point(833, 0);
+            this.btnImportFromExcel.Location = new System.Drawing.Point(970, 0);
             this.btnImportFromExcel.Name = "btnImportFromExcel";
-            this.btnImportFromExcel.Size = new System.Drawing.Size(90, 24);
+            this.btnImportFromExcel.Size = new System.Drawing.Size(105, 28);
             this.btnImportFromExcel.TabIndex = 9;
             this.btnImportFromExcel.Text = "从Excel导入";
             this.btnImportFromExcel.UseVisualStyleBackColor = true;
@@ -125,9 +125,9 @@
             // btnExportToExcel
             // 
             this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExportToExcel.Location = new System.Drawing.Point(746, 0);
+            this.btnExportToExcel.Location = new System.Drawing.Point(869, 0);
             this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(87, 24);
+            this.btnExportToExcel.Size = new System.Drawing.Size(101, 28);
             this.btnExportToExcel.TabIndex = 11;
             this.btnExportToExcel.Text = "导出到Excel";
             this.btnExportToExcel.UseVisualStyleBackColor = true;
@@ -136,9 +136,9 @@
             // btnAdd
             // 
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAdd.Location = new System.Drawing.Point(671, 0);
+            this.btnAdd.Location = new System.Drawing.Point(782, 0);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 24);
+            this.btnAdd.Size = new System.Drawing.Size(87, 28);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "添加";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -147,10 +147,11 @@
             // txtKey
             // 
             this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtKey.Location = new System.Drawing.Point(106, 0);
+            this.txtKey.Location = new System.Drawing.Point(124, 0);
             this.txtKey.Name = "txtKey";
-            this.txtKey.Size = new System.Drawing.Size(490, 21);
+            this.txtKey.Size = new System.Drawing.Size(571, 22);
             this.txtKey.TabIndex = 1;
+            this.txtKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKey_KeyPress);
             // 
             // groupBox1
             // 
@@ -159,20 +160,20 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1198, 569);
+            this.groupBox1.Size = new System.Drawing.Size(1398, 664);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 41);
+            this.gcGrid.Location = new System.Drawing.Point(3, 46);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
             this.gcGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemButtonEdit2});
-            this.gcGrid.Size = new System.Drawing.Size(1192, 525);
+            this.gcGrid.Size = new System.Drawing.Size(1392, 615);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -281,7 +282,7 @@
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "编辑", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "编辑", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -299,17 +300,17 @@
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "删除", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "删除", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // ModuleController
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "ModuleController";
-            this.Size = new System.Drawing.Size(1198, 569);
+            this.Size = new System.Drawing.Size(1398, 664);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

@@ -428,5 +428,13 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                 return false;
             }
         }
+
+        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                btnSearch.PerformClick();
+            }
+        }
     }
 }

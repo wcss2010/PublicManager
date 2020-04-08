@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.dgvSub = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -146,14 +146,14 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.dgvSub;
-            gridLevelNode1.RelationName = "SubjectView";
+            gridLevelNode2.LevelTemplate = this.dgvSub;
+            gridLevelNode2.RelationName = "SubjectView";
             this.gcGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
-            this.gcGrid.Location = new System.Drawing.Point(3, 39);
+            gridLevelNode2});
+            this.gcGrid.Location = new System.Drawing.Point(3, 44);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1522, 534);
+            this.gcGrid.Size = new System.Drawing.Size(1777, 625);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail,
@@ -329,7 +329,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1528, 576);
+            this.groupBox1.Size = new System.Drawing.Size(1783, 672);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -342,17 +342,17 @@
             this.panel1.Controls.Add(this.txtKey);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 17);
+            this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1522, 22);
+            this.panel1.Size = new System.Drawing.Size(1777, 26);
             this.panel1.TabIndex = 2;
             // 
             // btnExportToExcel
             // 
             this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExportToExcel.Location = new System.Drawing.Point(924, 0);
+            this.btnExportToExcel.Location = new System.Drawing.Point(1046, 0);
             this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(87, 22);
+            this.btnExportToExcel.Size = new System.Drawing.Size(101, 26);
             this.btnExportToExcel.TabIndex = 8;
             this.btnExportToExcel.Text = "导出到Excel";
             this.btnExportToExcel.UseVisualStyleBackColor = true;
@@ -364,9 +364,9 @@
             this.cbDisplayReporter.Checked = true;
             this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(816, 0);
+            this.cbDisplayReporter.Location = new System.Drawing.Point(936, 0);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
-            this.cbDisplayReporter.Size = new System.Drawing.Size(108, 22);
+            this.cbDisplayReporter.Size = new System.Drawing.Size(110, 26);
             this.cbDisplayReporter.TabIndex = 6;
             this.cbDisplayReporter.Text = "显示建议书内容";
             this.cbDisplayReporter.UseVisualStyleBackColor = true;
@@ -378,10 +378,10 @@
             this.cbDisplayContract.Checked = true;
             this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbDisplayContract.Location = new System.Drawing.Point(698, 0);
+            this.cbDisplayContract.Location = new System.Drawing.Point(814, 0);
             this.cbDisplayContract.Name = "cbDisplayContract";
-            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.cbDisplayContract.Size = new System.Drawing.Size(118, 22);
+            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.cbDisplayContract.Size = new System.Drawing.Size(122, 26);
             this.cbDisplayContract.TabIndex = 5;
             this.cbDisplayContract.Text = "显示合同书内容";
             this.cbDisplayContract.UseVisualStyleBackColor = true;
@@ -390,9 +390,9 @@
             // btnSearch
             // 
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSearch.Location = new System.Drawing.Point(623, 0);
+            this.btnSearch.Location = new System.Drawing.Point(727, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 22);
+            this.btnSearch.Size = new System.Drawing.Size(87, 26);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "搜索";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -401,13 +401,14 @@
             // txtKey
             // 
             this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtKey.Location = new System.Drawing.Point(133, 0);
+            this.txtKey.Location = new System.Drawing.Point(155, 0);
             this.txtKey.Name = "txtKey";
             this.txtKey.Properties.NullValuePrompt = "请输入项目名称、课题名称、项目关键词！";
             this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtKey.Properties.ShowNullValuePromptWhenFocused = true;
-            this.txtKey.Size = new System.Drawing.Size(490, 20);
+            this.txtKey.Size = new System.Drawing.Size(572, 20);
             this.txtKey.TabIndex = 1;
+            this.txtKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKey_KeyPress);
             // 
             // label1
             // 
@@ -415,18 +416,18 @@
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 22);
+            this.label1.Size = new System.Drawing.Size(155, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "搜索关键字：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ModuleController
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "ModuleController";
-            this.Size = new System.Drawing.Size(1528, 576);
+            this.Size = new System.Drawing.Size(1783, 672);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSub)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();

@@ -97,5 +97,18 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
         {
             exportToExcelWithDevExpress(dgvDetail);
         }
+
+        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                btnSearch.PerformClick();
+            }
+        }
+
+        private void cbOrgList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSearch.PerformClick();
+        }
     }
 }

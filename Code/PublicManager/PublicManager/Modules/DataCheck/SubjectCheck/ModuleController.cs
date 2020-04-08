@@ -126,5 +126,13 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
         {
             exportToExcelWithDevExpress(dgvDetail);
         }
+
+        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                btnSearch.PerformClick();
+            }
+        }
     }
 }

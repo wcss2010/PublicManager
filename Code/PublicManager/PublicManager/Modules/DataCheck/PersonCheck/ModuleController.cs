@@ -145,5 +145,13 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
         {
             BaseModuleController.exportToExcelWithDevExpress(dgvDetail);
         }
+
+        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                btnSearch.PerformClick();
+            }
+        }
     }
 }
