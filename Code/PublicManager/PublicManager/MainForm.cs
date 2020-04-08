@@ -58,7 +58,8 @@ namespace PublicManager
         {
             ModuleDict[nbcTestA.Caption + "xxxx" + "合同书汇总"] = new ContractModuleController();
             ModuleDict[nbcTestA.Caption + "xxxx" + "建议书汇总"] = new ReporterModuleController();
-            ModuleDict[nbcTestA.Caption + "xxxx" + "报表导出"] = new PublicManager.Modules.CustomReporter.ModuleController();
+
+            ModuleDict[nbcTestH.Caption + "xxxx" + "报表导出"] = new PublicManager.Modules.DataExport.CustomReporter.ModuleController();
 
             ModuleDict[nbcTestB.Caption + "xxxx" + "项目查询"] = new Modules.DataCheck.ProjectCheck.ModuleController();
             ModuleDict[nbcTestB.Caption + "xxxx" + "课题查询"] = new Modules.DataCheck.SubjectCheck.ModuleController();
@@ -277,6 +278,23 @@ namespace PublicManager
         }
 
         private void tlTestF_MouseClick(object sender, MouseEventArgs e)
+        {
+            DevExpress.XtraTreeList.TreeList tree = ((DevExpress.XtraTreeList.TreeList)sender);
+            Point p = new Point(Cursor.Position.X, Cursor.Position.Y);　　//获取到鼠标点击的坐标位置
+            TreeListHitInfo hitInfo = tree.CalcHitInfo(e.Location);
+            if (hitInfo.HitInfoType == HitInfoType.Cell)
+            {
+                tree.SetFocusedNode(hitInfo.Node);         //这句话就是关键，用于选中节点　　
+
+                //显示模块
+                if (nbcLeftTree.ActiveGroup != null)
+                {
+                    showModule(nbcLeftTree.ActiveGroup.Caption + "xxxx" + hitInfo.Node.GetDisplayText(0), true);
+                }
+            }
+        }
+
+        private void tlTestG_MouseClick(object sender, MouseEventArgs e)
         {
             DevExpress.XtraTreeList.TreeList tree = ((DevExpress.XtraTreeList.TreeList)sender);
             Point p = new Point(Cursor.Position.X, Cursor.Position.Y);　　//获取到鼠标点击的坐标位置
