@@ -1,4 +1,5 @@
-﻿using PublicManager.DB;
+﻿using Noear.Weed;
+using PublicManager.DB;
 using PublicManager.DB.Entitys;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,20 @@ namespace PublicManager.Modules
     public class MakeSQLWithSearchRule
     {
         /// <summary>
+        /// 用于记录子表的相关数据ID,用于筛选(Value=表名++Guid(数据ID))
+        /// </summary>
+        public static List<string> includeSubTableIdList = new List<string>();
+
+        /// <summary>
         /// 获得项目信息列表
         /// </summary>
         /// <param name="srp"></param>
         /// <returns></returns>
         public static List<Project> getProjectList(SearchRulePanel srp)
         {
+            //初始化缓存
+            includeSubTableIdList = new List<string>();
+
             //获得搜索选择条件
             Dictionary<string,bool> ruleDict = srp.getRuleCheckedDict();
 
@@ -47,37 +56,43 @@ namespace PublicManager.Modules
                     switch (kvp.Key)
                     {
                         case "项目名称":
-                            sb.Append("or ").Append("ProjectName like '%" + srp.Key1EditControl.Text + "%'");
+                            sb.Append(" or ").Append("ProjectName like '%" + srp.Key1EditControl.Text + "%'");
                             break;
                         case "计划批次":
-                            sb.Append("or ").Append("TaskNumber like '%" + srp.Key1EditControl.Text + "%'");
+                            sb.Append(" or ").Append("TaskNumber like '%" + srp.Key1EditControl.Text + "%'");
                             break;
                         case "项目关键词":
-                            sb.Append("or ").Append("Keywords like '%" + srp.Key1EditControl.Text + "%'");
+                            sb.Append(" or ").Append("Keywords like '%" + srp.Key1EditControl.Text + "%'");
                             break;
                         case "课题名称":
-                            sb.Append("or ").Append("ProjectID in (select ProjectID from Subject where SubjectName like '%" + srp.Key1EditControl.Text + "%')");
+                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Subject where SubjectName like '%" + srp.Key1EditControl.Text + "%')");
+                            getDataIdList("Subject", "SubjectName like '%" + srp.Key1EditControl.Text + "%'", "SubjectID");
                             break;
                         case "课题负责单位":
-                            sb.Append("or ").Append("ProjectID in (select ProjectID from Subject where DutyUnit like '%" + srp.Key1EditControl.Text + "%')");
+                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Subject where DutyUnit like '%" + srp.Key1EditControl.Text + "%')");
+                            getDataIdList("Subject", "DutyUnit like '%" + srp.Key1EditControl.Text + "%'", "SubjectID");
                             break;
                         case "课题所属地点":
-                            sb.Append("or ").Append("ProjectID in (select ProjectID from Subject where DutyUnitAddress like '%" + srp.Key1EditControl.Text + "%')");
+                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Subject where DutyUnitAddress like '%" + srp.Key1EditControl.Text + "%')");
+                            getDataIdList("Subject", "DutyUnitAddress like '%" + srp.Key1EditControl.Text + "%'", "SubjectID");
                             break;
                         case "人员名称":
-                            sb.Append("or ").Append("ProjectID in (select ProjectID from Person where PersonName like '%" + srp.Key1EditControl.Text + "%')");
+                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where PersonName like '%" + srp.Key1EditControl.Text + "%')");
+                            getDataIdList("Person", "PersonName like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
                             break;
                         case "人员专业":
-                            sb.Append("or ").Append("ProjectID in (select ProjectID from Person where PersonSpecialty like '%" + srp.Key1EditControl.Text + "%')");
+                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where PersonSpecialty like '%" + srp.Key1EditControl.Text + "%')");
+                            getDataIdList("Person", "PersonSpecialty like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
                             break;
                         case "人员任务分工":
-                            sb.Append("or ").Append("ProjectID in (select ProjectID from Person where TaskContent like '%" + srp.Key1EditControl.Text + "%')");
+                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where TaskContent like '%" + srp.Key1EditControl.Text + "%')");
+                            getDataIdList("Person", "TaskContent like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
                             break;
                     }
                 }
             }
             sb.Append(")");
-            whereString = sb.ToString().Replace("(or ", "(");
+            whereString = sb.ToString().Replace("( or ", "(");
             #endregion
 
             #region 生成大单位条件
@@ -90,6 +105,36 @@ namespace PublicManager.Modules
 
             //查询数据
             return ConnectionManager.Context.table("Project").where(whereString + srp.CatalogIDFilterString).select("*").getList<Project>(new Project());
+        }
+
+        /// <summary>
+        /// 获得ID列表
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="whereString"></param>
+        /// <param name="idField"></param>
+        private static void getDataIdList(string tableName, string whereString, string idField)
+        {
+            DataList dlIDList = ConnectionManager.Context.table(tableName).where(whereString).select(idField).getDataList();
+            if (dlIDList.getRowCount() >= 1)
+            {
+                foreach (DataItem di in dlIDList.getRows())
+                {
+                    if (di.exists(idField))
+                    {
+                        try
+                        {
+                            includeSubTableIdList.Add(tableName + "++" + di.getString(idField));
+                        }
+                        catch (Exception ex) { }
+                    }
+                }
+            }
+        }
+
+        public static bool isDisplayData(string tableName, string id)
+        {
+            return includeSubTableIdList.Contains(tableName + "++" + id);
         }
     }
 }
