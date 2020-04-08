@@ -20,10 +20,6 @@ namespace PublicManager.Modules.DataExport.CustomReporter
         Dictionary<string, CheckBox> projectColumnDict = new Dictionary<string, CheckBox>();
         Dictionary<string, CheckBox> subjectColumnDict = new Dictionary<string, CheckBox>();
 
-        /// <summary>
-        /// CatalogID筛选条件
-        /// </summary>
-        string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
         private DEGridViewCellMergeAdapter cma1;
         private DEGridViewCellMergeAdapter cma2;
         private CheckBox subjectIOCheckBox;
@@ -175,13 +171,41 @@ namespace PublicManager.Modules.DataExport.CustomReporter
             //}
         }
                 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void dgvDetail_MasterRowExpanded(object sender, DevExpress.XtraGrid.Views.Grid.CustomMasterRowEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (view != null)
+            {
+                object objProjectID = view.GetRowCellValue(e.RowHandle, "row15");
+                if (objProjectID != null)
+                {
+                    string projectID = objProjectID.ToString();
+
+                    GridView detailView = view.GetDetailView(e.RowHandle, e.RelationIndex) as GridView;
+                    if (detailView != null)
+                    {
+                        view.ExpandGroupRow(-1);
+                    }
+                }
+            }
+        }
+
+        private void plOutputHeaderList_SizeChanged(object sender, EventArgs e)
+        {
+            plMasterHeader.Width = plOutputHeaderList.Width - 20;
+            plDetailHeader.Width = plOutputHeaderList.Width - 20;
+        }
+
+        private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
             dsAll = new DataSet();
             DataTable masterDt = getTempDataTable("row", 31);
             DataTable detailDt = getTempDataTable("row", 8);
 
-            List<Project> projList = ConnectionManager.Context.table("Project").where("(TaskNumber like '%" + txtKey.Text + "%' or ProjectName like '%" + txtKey.Text + "%')" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            string filterString = "(TaskNumber like '%" + srpSearch.Key1EditControl.Text + "%' or ProjectName like '%" + srpSearch.Key1EditControl.Text + "%')";
+            Dictionary<string,bool> ruleDict = srpSearch.getRuleCheckedDict();
+
+            List<Project> projList = ConnectionManager.Context.table("Project").where(filterString + srpSearch.CatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                 #region 主表数据
@@ -322,32 +346,12 @@ namespace PublicManager.Modules.DataExport.CustomReporter
             #endregion
         }
 
-        private void dgvDetail_MasterRowExpanded(object sender, DevExpress.XtraGrid.Views.Grid.CustomMasterRowEventArgs e)
+        private void srpSearch_OnResetClick(object sender, EventArgs args)
         {
-            GridView view = sender as GridView;
-            if (view != null)
-            {
-                object objProjectID = view.GetRowCellValue(e.RowHandle, "row15");
-                if (objProjectID != null)
-                {
-                    string projectID = objProjectID.ToString();
-
-                    GridView detailView = view.GetDetailView(e.RowHandle, e.RelationIndex) as GridView;
-                    if (detailView != null)
-                    {
-                        view.ExpandGroupRow(-1);
-                    }
-                }
-            }
+            srpSearch.search();
         }
 
-        private void plOutputHeaderList_SizeChanged(object sender, EventArgs e)
-        {
-            plMasterHeader.Width = plOutputHeaderList.Width - 20;
-            plDetailHeader.Width = plOutputHeaderList.Width - 20;
-        }
-
-        private void btnExportTo_Click(object sender, EventArgs e)
+        private void srpSearch_OnExportToClick(object sender, EventArgs args)
         {
             if (dsAll != null && dsAll.Tables.Count >= 2)
             {
@@ -440,14 +444,6 @@ namespace PublicManager.Modules.DataExport.CustomReporter
 
                 //导出
                 ExcelHelper.ExportToExcel(dtt, "项目数据");
-            }
-        }
-
-        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '\r')
-            {
-                btnSearch.PerformClick();
             }
         }
     }

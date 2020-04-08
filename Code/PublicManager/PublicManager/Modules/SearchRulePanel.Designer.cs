@@ -42,7 +42,7 @@
             this.btnExportTo = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.txtKey2 = new System.Windows.Forms.ComboBox();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.plTimePanel = new DevExpress.XtraEditors.PanelControl();
             this.txtKey4 = new System.Windows.Forms.DateTimePicker();
             this.lblKey4 = new System.Windows.Forms.CheckBox();
             this.txtKey3 = new System.Windows.Forms.DateTimePicker();
@@ -55,8 +55,8 @@
             this.plCatalogType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.plTimePanel)).BeginInit();
+            this.plTimePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // plRules
@@ -73,8 +73,8 @@
             // tplControls
             // 
             this.tplControls.ColumnCount = 3;
-            this.tplControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.7085F));
-            this.tplControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.2915F));
+            this.tplControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tplControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tplControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tplControls.Controls.Add(this.lblKey3, 0, 2);
             this.tplControls.Controls.Add(this.txtKey1, 1, 0);
@@ -83,7 +83,7 @@
             this.tplControls.Controls.Add(this.lblKey1, 0, 0);
             this.tplControls.Controls.Add(this.panelControl2, 2, 1);
             this.tplControls.Controls.Add(this.txtKey2, 1, 1);
-            this.tplControls.Controls.Add(this.panelControl1, 1, 2);
+            this.tplControls.Controls.Add(this.plTimePanel, 1, 2);
             this.tplControls.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tplControls.Location = new System.Drawing.Point(152, 21);
             this.tplControls.Name = "tplControls";
@@ -96,6 +96,7 @@
             // 
             // lblKey3
             // 
+            this.lblKey3.AutoSize = true;
             this.lblKey3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblKey3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblKey3.Location = new System.Drawing.Point(3, 67);
@@ -114,7 +115,7 @@
             this.txtKey1.Properties.NullValuePrompt = "请输入XXXXXX！";
             this.txtKey1.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtKey1.Properties.ShowNullValuePromptWhenFocused = true;
-            this.txtKey1.Size = new System.Drawing.Size(502, 20);
+            this.txtKey1.Size = new System.Drawing.Size(499, 20);
             this.txtKey1.TabIndex = 3;
             this.txtKey1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKey1_KeyDown);
             // 
@@ -123,9 +124,9 @@
             this.plCatalogType.Controls.Add(this.cbDisplayReporter);
             this.plCatalogType.Controls.Add(this.cbDisplayContract);
             this.plCatalogType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plCatalogType.Location = new System.Drawing.Point(678, 3);
+            this.plCatalogType.Location = new System.Drawing.Point(675, 3);
             this.plCatalogType.Name = "plCatalogType";
-            this.plCatalogType.Size = new System.Drawing.Size(205, 26);
+            this.plCatalogType.Size = new System.Drawing.Size(208, 26);
             this.plCatalogType.TabIndex = 2;
             // 
             // cbDisplayReporter
@@ -134,7 +135,7 @@
             this.cbDisplayReporter.Checked = true;
             this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(141, 2);
+            this.cbDisplayReporter.Location = new System.Drawing.Point(144, 2);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
             this.cbDisplayReporter.Size = new System.Drawing.Size(62, 22);
             this.cbDisplayReporter.TabIndex = 6;
@@ -159,6 +160,7 @@
             // 
             // lblKey2
             // 
+            this.lblKey2.AutoSize = true;
             this.lblKey2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblKey2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblKey2.Location = new System.Drawing.Point(3, 35);
@@ -171,6 +173,7 @@
             // 
             // lblKey1
             // 
+            this.lblKey1.AutoSize = true;
             this.lblKey1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblKey1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblKey1.Location = new System.Drawing.Point(3, 0);
@@ -186,9 +189,9 @@
             this.panelControl2.Controls.Add(this.btnExportTo);
             this.panelControl2.Controls.Add(this.btnSearch);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(678, 35);
+            this.panelControl2.Location = new System.Drawing.Point(675, 35);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(205, 26);
+            this.panelControl2.Size = new System.Drawing.Size(208, 26);
             this.panelControl2.TabIndex = 4;
             // 
             // btnReset
@@ -196,7 +199,7 @@
             this.btnReset.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnReset.Location = new System.Drawing.Point(67, 2);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(62, 22);
+            this.btnReset.Size = new System.Drawing.Size(65, 22);
             this.btnReset.TabIndex = 1;
             this.btnReset.Text = "重置";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -204,7 +207,7 @@
             // btnExportTo
             // 
             this.btnExportTo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExportTo.Location = new System.Drawing.Point(129, 2);
+            this.btnExportTo.Location = new System.Drawing.Point(132, 2);
             this.btnExportTo.Name = "btnExportTo";
             this.btnExportTo.Size = new System.Drawing.Size(74, 22);
             this.btnExportTo.TabIndex = 0;
@@ -227,20 +230,21 @@
             this.txtKey2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtKey2.Location = new System.Drawing.Point(170, 35);
             this.txtKey2.Name = "txtKey2";
-            this.txtKey2.Size = new System.Drawing.Size(502, 22);
+            this.txtKey2.Size = new System.Drawing.Size(499, 22);
             this.txtKey2.TabIndex = 5;
             this.txtKey2.Visible = false;
             // 
-            // panelControl1
+            // plTimePanel
             // 
-            this.panelControl1.Controls.Add(this.txtKey4);
-            this.panelControl1.Controls.Add(this.lblKey4);
-            this.panelControl1.Controls.Add(this.txtKey3);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(170, 67);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(502, 26);
-            this.panelControl1.TabIndex = 6;
+            this.plTimePanel.Controls.Add(this.txtKey4);
+            this.plTimePanel.Controls.Add(this.lblKey4);
+            this.plTimePanel.Controls.Add(this.txtKey3);
+            this.plTimePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plTimePanel.Location = new System.Drawing.Point(170, 67);
+            this.plTimePanel.Name = "plTimePanel";
+            this.plTimePanel.Size = new System.Drawing.Size(499, 26);
+            this.plTimePanel.TabIndex = 6;
+            this.plTimePanel.Visible = false;
             // 
             // txtKey4
             // 
@@ -280,7 +284,6 @@
             // 
             this.fplCheckList.AutoScroll = true;
             this.fplCheckList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.fplCheckList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.fplCheckList.Location = new System.Drawing.Point(2, 21);
             this.fplCheckList.Name = "fplCheckList";
             this.fplCheckList.Size = new System.Drawing.Size(150, 96);
@@ -296,14 +299,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.plRules)).EndInit();
             this.plRules.ResumeLayout(false);
             this.tplControls.ResumeLayout(false);
+            this.tplControls.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plCatalogType)).EndInit();
             this.plCatalogType.ResumeLayout(false);
             this.plCatalogType.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.plTimePanel)).EndInit();
+            this.plTimePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -324,7 +328,7 @@
         private DevExpress.XtraEditors.SimpleButton btnReset;
         private System.Windows.Forms.CheckBox lblKey2;
         private System.Windows.Forms.ComboBox txtKey2;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PanelControl plTimePanel;
         private System.Windows.Forms.CheckBox lblKey3;
         private System.Windows.Forms.CheckBox lblKey4;
         private System.Windows.Forms.DateTimePicker txtKey4;

@@ -73,10 +73,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExportTo = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtKey = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
+            this.srpSearch = new PublicManager.Modules.SearchRulePanel();
             this.plOutputHeaderList = new System.Windows.Forms.FlowLayoutPanel();
             this.plMasterHeader = new DevExpress.XtraEditors.GroupControl();
             this.fplProject = new System.Windows.Forms.FlowLayoutPanel();
@@ -91,7 +88,6 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             this.plOutputHeaderList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plMasterHeader)).BeginInit();
             this.plMasterHeader.SuspendLayout();
@@ -176,10 +172,10 @@
             gridLevelNode1.RelationName = "SubjectView";
             this.gcGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gcGrid.Location = new System.Drawing.Point(0, 26);
+            this.gcGrid.Location = new System.Drawing.Point(0, 81);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1421, 286);
+            this.gcGrid.Size = new System.Drawing.Size(1421, 231);
             this.gcGrid.TabIndex = 5;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail,
@@ -519,60 +515,28 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnExportTo);
-            this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.txtKey);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.srpSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1421, 26);
+            this.panel1.Size = new System.Drawing.Size(1421, 81);
             this.panel1.TabIndex = 3;
             // 
-            // btnExportTo
+            // srpSearch
             // 
-            this.btnExportTo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExportTo.Location = new System.Drawing.Point(814, 0);
-            this.btnExportTo.Name = "btnExportTo";
-            this.btnExportTo.Size = new System.Drawing.Size(101, 26);
-            this.btnExportTo.TabIndex = 8;
-            this.btnExportTo.Text = "导出到Excel";
-            this.btnExportTo.UseVisualStyleBackColor = true;
-            this.btnExportTo.Click += new System.EventHandler(this.btnExportTo_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSearch.Location = new System.Drawing.Point(727, 0);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(87, 26);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "搜索";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtKey
-            // 
-            this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtKey.Location = new System.Drawing.Point(155, 0);
-            this.txtKey.Name = "txtKey";
-            this.txtKey.Properties.NullValuePrompt = "请输入项目名称、计划批次！";
-            this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
-            this.txtKey.Properties.ShowNullValuePromptWhenFocused = true;
-            this.txtKey.Size = new System.Drawing.Size(572, 20);
-            this.txtKey.TabIndex = 1;
-            this.txtKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKey_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "搜索关键字：";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.srpSearch.CheckListPanelWidth = 85;
+            this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.srpSearch.IsShowCatalogTypePanel = true;
+            this.srpSearch.IsShowDateTimePanel = false;
+            this.srpSearch.Key1FieldString = "项目名称;计划批次";
+            this.srpSearch.Location = new System.Drawing.Point(0, 0);
+            this.srpSearch.Name = "srpSearch";
+            this.srpSearch.Size = new System.Drawing.Size(1421, 81);
+            this.srpSearch.TabIndex = 9;
+            this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
+            this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
+            this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
             // 
             // plOutputHeaderList
             // 
@@ -632,11 +596,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();
             this.plOutputHeaderList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plMasterHeader)).EndInit();
             this.plMasterHeader.ResumeLayout(false);
@@ -651,10 +615,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnExportTo;
-        private System.Windows.Forms.Button btnSearch;
-        private DevExpress.XtraEditors.TextEdit txtKey;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.GridControl gcGrid;
         private DevExpress.XtraGrid.Views.Grid.GridView dgvSub;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
@@ -701,5 +661,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
+        private SearchRulePanel srpSearch;
     }
 }

@@ -65,6 +65,59 @@ namespace PublicManager.Modules
         /// </summary>
         public System.Windows.Forms.DateTimePicker Key4EditControl { get { return txtKey4; } }
 
+        private bool isShowTimePanel = false;
+        /// <summary>
+        /// 是否显示最下面时间那一行
+        /// </summary>
+        public bool IsShowDateTimePanel
+        {
+            get { return isShowTimePanel; }
+            set
+            {
+                isShowTimePanel = value;
+
+                if (value)
+                {
+                    plTimePanel.Visible = value;
+                    tplControls.RowStyles[tplControls.RowStyles.Count - 1].Height = 33.33f;
+                }
+                else
+                {
+                    tplControls.RowStyles[tplControls.RowStyles.Count - 1].Height = 0f;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 显示合同书数据
+        /// </summary>
+        public bool IsDisplayContractData
+        {
+            get
+            {
+                return cbDisplayContract.Checked;
+            }
+            set
+            {
+                cbDisplayContract.Checked = value;
+            }
+        }
+
+        /// <summary>
+        /// 显示建议书数据
+        /// </summary>
+        public bool IsDisplayReporterData
+        {
+            get
+            {
+                return cbDisplayReporter.Checked;
+            }
+            set
+            {
+                cbDisplayReporter.Checked = value;
+            }
+        }
+
         public event SearchClickDelegate OnSearchClick;
         public event ResetClickDelegate OnResetClick;
         public event ExportToClickDelegate OnExportToClick;
@@ -92,11 +145,12 @@ namespace PublicManager.Modules
                     {
                         CheckEdit ce = new CheckEdit();
                         ce.Name = ss;
+                        ce.Text = ss;
                         ce.Checked = true;
                         fplCheckList.Controls.Add(ce);
                     }
 
-                    Key1EditControl.Properties.NullValuePrompt = "请输入" + value.Replace(";", "或") + "！";
+                    Key1EditControl.Properties.NullValuePrompt = "请输入" + value.Replace(";", "、") + "的关键字！";
                 }
             }
         }
@@ -113,6 +167,18 @@ namespace PublicManager.Modules
             set
             {
                 plCatalogType.Visible = value;
+            }
+        }
+
+        public int CheckListPanelWidth
+        {
+            get
+            {
+                return fplCheckList.Width;
+            }
+            set
+            {
+                fplCheckList.Width = value;
             }
         }
 
@@ -224,6 +290,30 @@ namespace PublicManager.Modules
             {
                 btnSearch.PerformClick();
             }
+        }
+
+        /// <summary>
+        /// 搜索
+        /// </summary>
+        public void search()
+        {
+            btnSearch.PerformClick();
+        }
+
+        /// <summary>
+        /// 重置
+        /// </summary>
+        public void reset()
+        {
+            btnReset.PerformClick();
+        }
+
+        /// <summary>
+        /// 导出
+        /// </summary>
+        public void exportTo()
+        {
+            btnExportTo.PerformClick();
         }
     }
 }
