@@ -613,5 +613,13 @@ namespace PublicManager.Modules.CustomReporter
                 ExcelHelper.ExportToExcel(dtt, "项目数据");
             }
         }
+
+        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                btnSearch.PerformClick();
+            }
+        }
     }
 }

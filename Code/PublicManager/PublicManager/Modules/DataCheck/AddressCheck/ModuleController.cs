@@ -108,7 +108,7 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
 
         private void cbOrgList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnSearch.PerformClick();
+            //btnSearch.PerformClick();
         }
     }
 }
