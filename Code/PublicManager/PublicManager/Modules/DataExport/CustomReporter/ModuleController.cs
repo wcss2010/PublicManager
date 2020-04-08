@@ -202,10 +202,7 @@ namespace PublicManager.Modules.DataExport.CustomReporter
             DataTable masterDt = getTempDataTable("row", 31);
             DataTable detailDt = getTempDataTable("row", 8);
 
-            string filterString = "(TaskNumber like '%" + srpSearch.Key1EditControl.Text + "%' or ProjectName like '%" + srpSearch.Key1EditControl.Text + "%')";
-            Dictionary<string,bool> ruleDict = srpSearch.getRuleCheckedDict();
-
-            List<Project> projList = ConnectionManager.Context.table("Project").where(filterString + srpSearch.CatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
             foreach (Project proj in projList)
             {
                 #region 主表数据

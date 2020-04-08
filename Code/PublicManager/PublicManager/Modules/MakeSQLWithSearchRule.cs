@@ -17,7 +17,7 @@ namespace PublicManager.Modules
         /// </summary>
         /// <param name="srp"></param>
         /// <returns></returns>
-        public List<Project> getProjectList(SearchRulePanel srp)
+        public static List<Project> getProjectList(SearchRulePanel srp)
         {
             //获得搜索选择条件
             Dictionary<string,bool> ruleDict = srp.getRuleCheckedDict();
