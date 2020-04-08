@@ -527,10 +527,13 @@
             // 
             this.srpSearch.CheckListPanelWidth = 85;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.srpSearch.IsDisplayCatalogTypePanel = false;
             this.srpSearch.IsDisplayContractData = true;
+            this.srpSearch.IsDisplayDateTimePanel = true;
+            this.srpSearch.IsDisplayKey2 = false;
+            this.srpSearch.IsDisplayKey3 = false;
+            this.srpSearch.IsDisplayKey4 = false;
             this.srpSearch.IsDisplayReporterData = false;
-            this.srpSearch.IsShowCatalogTypePanel = false;
-            this.srpSearch.IsDisplayDateTimePanel = false;
             this.srpSearch.Key1FieldString = "项目名称;计划批次";
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";

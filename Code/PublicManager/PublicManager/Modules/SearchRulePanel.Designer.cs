@@ -249,9 +249,8 @@
             // txtKey4
             // 
             this.txtKey4.CustomFormat = "yyyy年MM月dd日";
-            this.txtKey4.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtKey4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtKey4.Location = new System.Drawing.Point(347, 2);
+            this.txtKey4.Location = new System.Drawing.Point(374, 2);
             this.txtKey4.Name = "txtKey4";
             this.txtKey4.Size = new System.Drawing.Size(124, 22);
             this.txtKey4.TabIndex = 5;
@@ -259,9 +258,8 @@
             // 
             // lblKey4
             // 
-            this.lblKey4.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblKey4.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblKey4.Location = new System.Drawing.Point(125, 2);
+            this.lblKey4.Location = new System.Drawing.Point(152, 2);
             this.lblKey4.Name = "lblKey4";
             this.lblKey4.Size = new System.Drawing.Size(222, 22);
             this.lblKey4.TabIndex = 1;
@@ -272,7 +270,6 @@
             // txtKey3
             // 
             this.txtKey3.CustomFormat = "yyyy年MM月dd日";
-            this.txtKey3.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtKey3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtKey3.Location = new System.Drawing.Point(2, 2);
             this.txtKey3.Name = "txtKey3";

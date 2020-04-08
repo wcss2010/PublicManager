@@ -130,7 +130,7 @@ namespace PublicManager.Modules
         /// <summary>
         /// 是否显示搜索条件2内容
         /// </summary>
-        protected bool IsDisplayKey2
+        public bool IsDisplayKey2
         {
             get { return isDisplayKey2; }
             set
@@ -146,7 +146,7 @@ namespace PublicManager.Modules
         /// <summary>
         /// 是否显示搜索条件3内容
         /// </summary>
-        protected bool IsDisplayKey3
+        public bool IsDisplayKey3
         {
             get { return isDisplayKey3; }
             set
@@ -160,7 +160,7 @@ namespace PublicManager.Modules
 
         private bool isDisplayKey4 = false;
         /// 是否显示搜索条件4内容
-        protected bool IsDisplayKey4
+        public bool IsDisplayKey4
         {
             get { return isDisplayKey4; }
             set
@@ -212,7 +212,7 @@ namespace PublicManager.Modules
         /// <summary>
         /// 是否显示合同书建议书切换面板
         /// </summary>
-        public bool IsShowCatalogTypePanel
+        public bool IsDisplayCatalogTypePanel
         {
             get
             {
