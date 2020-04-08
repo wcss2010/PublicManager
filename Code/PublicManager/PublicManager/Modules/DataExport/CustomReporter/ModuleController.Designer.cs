@@ -529,7 +529,7 @@
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = false;
             this.srpSearch.IsDisplayContractData = true;
-            this.srpSearch.IsDisplayDateTimePanel = false;
+            this.srpSearch.IsDisplayKey3OR4Panel = false;
             this.srpSearch.IsDisplayKey2 = false;
             this.srpSearch.IsDisplayKey3 = false;
             this.srpSearch.IsDisplayKey4 = false;

@@ -207,12 +207,12 @@
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = true;
             this.srpSearch.IsDisplayContractData = true;
-            this.srpSearch.IsDisplayDateTimePanel = false;
+            this.srpSearch.IsDisplayKey3OR4Panel = false;
             this.srpSearch.IsDisplayKey2 = false;
             this.srpSearch.IsDisplayKey3 = false;
             this.srpSearch.IsDisplayKey4 = false;
             this.srpSearch.IsDisplayReporterData = true;
-            this.srpSearch.IsEnabledCheckListPanel = true;
+            this.srpSearch.IsDisplayCheckListPanel = true;
             this.srpSearch.Key1FieldString = "项目名称;课题名称;人员名称;人员专业;人员任务分工";
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";

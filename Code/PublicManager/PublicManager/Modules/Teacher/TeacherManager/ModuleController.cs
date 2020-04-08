@@ -36,35 +36,8 @@ namespace PublicManager.Modules.Teacher.TeacherManager
         {
             if (new AddOrUpdateTeacherForm(null).ShowDialog() == DialogResult.OK)
             {
-                btnSearch.PerformClick();
+                srpSearch.search();
             }
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            DataTable dtTemp = getTempDataTable("row", 11);
-
-            List<DB.Entitys.Teacher> list = ConnectionManager.Context.table("Teacher").where("TName like '%" + txtKey.Text + "%'").select("*").getList<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
-            foreach (DB.Entitys.Teacher tr in list)
-            {
-                List<object> cells = new List<object>();
-                cells.Add(tr.TName);
-                cells.Add(tr.TUnit);
-                cells.Add(tr.TJob);
-                cells.Add(tr.TJobTopic);
-                cells.Add(tr.TDirection);
-                cells.Add(tr.TPhone);
-                cells.Add(tr.TSource);
-                cells.Add(tr.TInnerJob);
-
-                cells.Add(tr.TeacherID);
-
-                cells.Add("编辑");
-                cells.Add("删除");
-
-                dtTemp.Rows.Add(cells.ToArray());
-            }
-            gcGrid.DataSource = dtTemp;
         }
 
         private void btnImportFromExcel_Click(object sender, EventArgs e)
@@ -123,7 +96,7 @@ namespace PublicManager.Modules.Teacher.TeacherManager
                             }
                         }
                     }
-                    btnSearch.PerformClick();
+                    srpSearch.search();
                 }
                 catch (Exception ex)
                 {
@@ -154,7 +127,107 @@ namespace PublicManager.Modules.Teacher.TeacherManager
             }
         }
 
-        private void btnExportToExcel_Click(object sender, EventArgs e)
+        private void dgvDetail_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            string teacherID = string.Empty;
+            object objectTeacherID = dgvDetail.GetRowCellValue(e.RowHandle, "row9");
+            if (objectTeacherID != null)
+            {
+                teacherID = objectTeacherID.ToString();
+            }
+
+            DB.Entitys.Teacher teacherObj = ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherID + "'").select("*").getItem<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
+
+            if (string.IsNullOrEmpty(teacherObj.TeacherID))
+            {
+                return;
+            }
+            else
+            {
+                if (e.Column.FieldName == "row10")
+                {
+                    //编辑
+                    if (new AddOrUpdateTeacherForm(teacherObj).ShowDialog() == DialogResult.OK)
+                    {
+                        srpSearch.search();
+                    }
+                }
+                else if (e.Column.FieldName == "row11")
+                {
+                    //删除
+                    if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
+                        ConnectionManager.Context.table("TeacherComment").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
+                        srpSearch.search();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 获得选择项列表
+        /// </summary>
+        /// <returns></returns>
+        public List<DB.Entitys.Teacher> getCheckedTeacherList()
+        {
+            List<DB.Entitys.Teacher> result = new List<DB.Entitys.Teacher>();
+            int[] rowNumberList = dgvDetail.GetSelectedRows();
+            foreach (int rowIndex in rowNumberList)
+            {
+                string teacherID = string.Empty;
+                object objectTeacherID = dgvDetail.GetRowCellValue(rowIndex, "row9");
+                if (objectTeacherID != null)
+                {
+                    teacherID = objectTeacherID.ToString();
+                }
+
+                DB.Entitys.Teacher teacherObj = ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherID + "'").select("*").getItem<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
+                if (string.IsNullOrEmpty(teacherObj.TeacherID))
+                {
+                    continue;
+                }
+                else
+                {
+                    result.Add(teacherObj);
+                }
+            }
+            return result;
+        }
+
+        private void srpSearch_OnSearchClick(object sender, EventArgs args)
+        {
+            DataTable dtTemp = getTempDataTable("row", 11);
+
+            List<DB.Entitys.Teacher> list = ConnectionManager.Context.table("Teacher").where("TName like '%" + srpSearch.Key1EditControl.Text + "%'").select("*").getList<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
+            foreach (DB.Entitys.Teacher tr in list)
+            {
+                List<object> cells = new List<object>();
+                cells.Add(tr.TName);
+                cells.Add(tr.TUnit);
+                cells.Add(tr.TJob);
+                cells.Add(tr.TJobTopic);
+                cells.Add(tr.TDirection);
+                cells.Add(tr.TPhone);
+                cells.Add(tr.TSource);
+                cells.Add(tr.TInnerJob);
+
+                cells.Add(tr.TeacherID);
+
+                cells.Add("编辑");
+                cells.Add("删除");
+
+                dtTemp.Rows.Add(cells.ToArray());
+            }
+            gcGrid.DataSource = dtTemp;
+        }
+
+        private void srpSearch_OnResetClick(object sender, EventArgs args)
+        {
+            srpSearch.search();
+        }
+
+        private void srpSearch_OnExportToClick(object sender, EventArgs args)
         {
             List<DB.Entitys.Teacher> selectedTeacherList = getCheckedTeacherList();
 
@@ -207,82 +280,6 @@ namespace PublicManager.Modules.Teacher.TeacherManager
             catch (Exception ex)
             {
                 MessageBox.Show("导出失败！Ex:" + ex.ToString());
-            }
-        }
-
-        private void dgvDetail_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
-        {
-            string teacherID = string.Empty;
-            object objectTeacherID = dgvDetail.GetRowCellValue(e.RowHandle, "row9");
-            if (objectTeacherID != null)
-            {
-                teacherID = objectTeacherID.ToString();
-            }
-
-            DB.Entitys.Teacher teacherObj = ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherID + "'").select("*").getItem<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
-
-            if (string.IsNullOrEmpty(teacherObj.TeacherID))
-            {
-                return;
-            }
-            else
-            {
-                if (e.Column.FieldName == "row10")
-                {
-                    //编辑
-                    if (new AddOrUpdateTeacherForm(teacherObj).ShowDialog() == DialogResult.OK)
-                    {
-                        btnSearch.PerformClick();
-                    }
-                }
-                else if (e.Column.FieldName == "row11")
-                {
-                    //删除
-                    if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
-                        ConnectionManager.Context.table("TeacherComment").where("TeacherID='" + teacherObj.TeacherID + "'").delete();
-                        btnSearch.PerformClick();
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// 获得选择项列表
-        /// </summary>
-        /// <returns></returns>
-        public List<DB.Entitys.Teacher> getCheckedTeacherList()
-        {
-            List<DB.Entitys.Teacher> result = new List<DB.Entitys.Teacher>();
-            int[] rowNumberList = dgvDetail.GetSelectedRows();
-            foreach (int rowIndex in rowNumberList)
-            {
-                string teacherID = string.Empty;
-                object objectTeacherID = dgvDetail.GetRowCellValue(rowIndex, "row9");
-                if (objectTeacherID != null)
-                {
-                    teacherID = objectTeacherID.ToString();
-                }
-
-                DB.Entitys.Teacher teacherObj = ConnectionManager.Context.table("Teacher").where("TeacherID='" + teacherID + "'").select("*").getItem<DB.Entitys.Teacher>(new DB.Entitys.Teacher());
-                if (string.IsNullOrEmpty(teacherObj.TeacherID))
-                {
-                    continue;
-                }
-                else
-                {
-                    result.Add(teacherObj);
-                }
-            }
-            return result;
-        }
-
-        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '\r')
-            {
-                btnSearch.PerformClick();
             }
         }
     }

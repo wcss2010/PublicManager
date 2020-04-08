@@ -73,26 +73,39 @@ namespace PublicManager.Modules
         [Browsable(false)]
         public System.Windows.Forms.DateTimePicker Key4EditControl { get { return txtKey4; } }
 
-        private bool isDisplayTimePanel = false;
         /// <summary>
-        /// 是否显示最下面时间那一行
+        /// 是否显示Key3或Key4的面板
         /// </summary>
-        public bool IsDisplayDateTimePanel
+        public bool IsDisplayKey3OR4Panel
         {
-            get { return isDisplayTimePanel; }
+            get { return plKey3Panel.Visible; }
             set
             {
-                isDisplayTimePanel = value;
+                plKey3Panel.Visible = value;
+            }
+        }
 
-                if (value)
-                {
-                    plTimePanel.Visible = value;
-                    tplControls.RowStyles[tplControls.RowStyles.Count - 1].Height = 33.33f;
-                }
-                else
-                {
-                    tplControls.RowStyles[tplControls.RowStyles.Count - 1].Height = 0f;
-                }
+        /// <summary>
+        /// 是否显示Key2的面板
+        /// </summary>
+        public bool IsDisplayKey2Panel
+        {
+            get { return plKey2Panel.Visible; }
+            set
+            {
+                plKey2Panel.Visible = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示Key1的面板
+        /// </summary>
+        public bool IsDisplayKey1Panel
+        {
+            get { return plKey1Panel.Visible; }
+            set
+            {
+                plKey1Panel.Visible = value;
             }
         }
 
@@ -240,7 +253,7 @@ namespace PublicManager.Modules
         /// <summary>
         /// 搜索关键字条件是否可编辑
         /// </summary>
-        public bool IsEnabledCheckListPanel
+        public bool IsDisplayCheckListPanel
         {
             get
             {
