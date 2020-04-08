@@ -197,9 +197,10 @@ namespace PublicManager.Modules
                     string[] teams = value.Split(new string[] { ";" }, StringSplitOptions.None);
                     foreach (string ss in teams)
                     {
-                        CheckEdit ce = new CheckEdit();
+                        CheckBox ce = new CheckBox();
                         ce.Name = ss;
                         ce.Text = ss;
+                        ce.AutoSize = true;
                         ce.Checked = true;
                         fplCheckList.Controls.Add(ce);
                     }
@@ -265,9 +266,9 @@ namespace PublicManager.Modules
             Dictionary<string, bool> results = new Dictionary<string, bool>();
             foreach (Control c in fplCheckList.Controls)
             {
-                if (c is CheckEdit)
+                if (c is CheckBox)
                 {
-                    CheckEdit ce = (CheckEdit)c;
+                    CheckBox ce = (CheckBox)c;
                     if (string.IsNullOrEmpty(ce.Name))
                     {
                         continue;
@@ -293,9 +294,9 @@ namespace PublicManager.Modules
         {
             foreach (Control c in fplCheckList.Controls)
             {
-                if (c is CheckEdit)
+                if (c is CheckBox)
                 {
-                    CheckEdit ce = (CheckEdit)c;
+                    CheckBox ce = (CheckBox)c;
                     ce.Checked = true;
                 }
             }
