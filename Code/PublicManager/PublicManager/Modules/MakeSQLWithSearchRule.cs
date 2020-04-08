@@ -102,6 +102,7 @@ namespace PublicManager.Modules
                 if (srp.Key2EditControl.SelectedItem != null && !srp.Key2EditControl.SelectedItem.ToString().Equals("全部"))
                 {
                     whereString += " and ProjectID in (select ProjectID from Subject where DutyUnitOrg = '" + srp.Key2EditControl.Text + "')";
+                    getDataIdList("Subject", "DutyUnitOrg = '" + srp.Key2EditControl.Text + "'", "SubjectID");
                 }
             }
             #endregion

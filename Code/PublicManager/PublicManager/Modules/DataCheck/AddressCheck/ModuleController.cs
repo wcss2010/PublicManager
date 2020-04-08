@@ -57,6 +57,8 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
             cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3" });
 
             srpSearch.IsDisplayReporterData = false;
+            srpSearch.Key2Label.Checked = true;
+            srpSearch.Key2Label.Enabled = false;
         }
 
         public override void start()
