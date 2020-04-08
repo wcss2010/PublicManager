@@ -80,18 +80,21 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
                 List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                 foreach (Subject sub in subList)
                 {
-                    if (MakeSQLWithSearchRule.isDisplayData(typeof(Subject).Name, sub.SubjectID))
+                    if (srpSearch.Key2EditControl.Text == "全部" || sub.DutyUnitOrg == srpSearch.Key2EditControl.Text)
                     {
-                        List<object> cells = new List<object>();
-                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
-                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
-                        cells.Add(proj.ProjectName);
-                        cells.Add(sub.SubjectName);
-                        cells.Add(sub.DutyUnit);
-                        cells.Add(sub.DutyUnitOrg);
-                        cells.Add(sub.DutyUnitAddress);
+                        if (MakeSQLWithSearchRule.isDisplayData(typeof(Subject).Name, sub.SubjectID) || string.IsNullOrEmpty(srpSearch.Key1EditControl.Text))
+                        {
+                            List<object> cells = new List<object>();
+                            cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
+                            cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
+                            cells.Add(proj.ProjectName);
+                            cells.Add(sub.SubjectName);
+                            cells.Add(sub.DutyUnit);
+                            cells.Add(sub.DutyUnitOrg);
+                            cells.Add(sub.DutyUnitAddress);
 
-                        dt.Rows.Add(cells.ToArray());
+                            dt.Rows.Add(cells.ToArray());
+                        }
                     }
                 }
             }

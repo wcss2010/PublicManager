@@ -102,22 +102,6 @@ namespace PublicManager.Modules
                 #endregion
             }
 
-            #region 生成大单位条件
-            if (srp.IsDisplayKey2)
-            {
-                //大单位可用
-                if (srp.Key2EditControl.SelectedItem != null && !srp.Key2EditControl.SelectedItem.ToString().Equals("全部"))
-                {
-                    whereString += " and ProjectID in (select ProjectID from Subject where DutyUnitOrg = '" + srp.Key2EditControl.Text + "')";
-                    getDataIdList("Subject", "DutyUnitOrg = '" + srp.Key2EditControl.Text + "'", "SubjectID");
-                }
-                else
-                {
-                    getDataIdList("Subject", "1=1", "SubjectID");
-                }
-            }
-            #endregion
-
             //查询数据
             return ConnectionManager.Context.table("Project").where(whereString + srp.CatalogIDFilterString).select("*").getList<Project>(new Project());
         }
