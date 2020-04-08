@@ -45,60 +45,69 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                 Person masterPersonObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '' and IsProjectMaster = 'true'").select("*").getItem<Person>(new Person());
                 if (masterPersonObj != null && masterPersonObj.PersonID != null && masterPersonObj.PersonID.Length >= 1)
                 {
-                    //存在仅为负责人的记录
-                    List<object> cells = new List<object>();
-                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
-                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
-                    cells.Add(proj.ProjectName);
-                    cells.Add("*****");
-                    cells.Add(masterPersonObj.PersonName);
-                    cells.Add(masterPersonObj.PersonIDCard);
-                    cells.Add(masterPersonObj.PersonSex);
-                    cells.Add(masterPersonObj.WorkUnit);
-                    cells.Add(masterPersonObj.PersonJob);
-                    cells.Add(masterPersonObj.PersonSpecialty);
-                    cells.Add(masterPersonObj.TotalTime);
-                    cells.Add(masterPersonObj.TaskContent);
+                    if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("人员")) && MakeSQLWithSearchRule.isDisplayData(typeof(Person).Name, masterPersonObj.PersonID)))
+                    {
+                        //存在仅为负责人的记录
+                        List<object> cells = new List<object>();
+                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
+                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
+                        cells.Add(proj.ProjectName);
+                        cells.Add("*****");
+                        cells.Add(masterPersonObj.PersonName);
+                        cells.Add(masterPersonObj.PersonIDCard);
+                        cells.Add(masterPersonObj.PersonSex);
+                        cells.Add(masterPersonObj.WorkUnit);
+                        cells.Add(masterPersonObj.PersonJob);
+                        cells.Add(masterPersonObj.PersonSpecialty);
+                        cells.Add(masterPersonObj.TotalTime);
+                        cells.Add(masterPersonObj.TaskContent);
 
-                    cells.Add("项目负责人");
+                        cells.Add("项目负责人");
 
-                    dt.Rows.Add(cells.ToArray());
+                        dt.Rows.Add(cells.ToArray());
+                    }
                 }
 
                 //显示课题成员
                 List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                 foreach (Subject sub in subList)
                 {
-                    List<Person> perList = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "'").select("*").getList<Person>(new Person());
-                    foreach (Person p in perList)
+                    if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("课题")) && MakeSQLWithSearchRule.isDisplayData(typeof(Subject).Name, sub.SubjectID)) || (srpSearch.isUsingRule("课题") == false && srpSearch.isUsingRule("项目")==true))
                     {
-                        List<object> cells = new List<object>();
-                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
-                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
-                        cells.Add(proj.ProjectName);
-                        cells.Add(sub.SubjectName);
-                        cells.Add(p.PersonName);
-                        cells.Add(p.PersonIDCard);
-                        cells.Add(p.PersonSex);
-                        cells.Add(p.WorkUnit);
-                        cells.Add(p.PersonJob);
-                        cells.Add(p.PersonSpecialty);
-                        cells.Add(p.TotalTime);
-                        cells.Add(p.TaskContent);
-
-                        string roleStr = "未知";
-                        if (p.IsProjectMaster == "true")
+                        List<Person> perList = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "'").select("*").getList<Person>(new Person());
+                        foreach (Person p in perList)
                         {
-                            roleStr = "项目负责人兼" + sub.SubjectName + "的" + p.JobInProject;
-                        }
-                        else
-                        {
-                            roleStr = sub.SubjectName + "的" + p.JobInProject;
-                        }
+                            if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("人员")) && MakeSQLWithSearchRule.isDisplayData(typeof(Person).Name, p.PersonID)))
+                            {
+                                List<object> cells = new List<object>();
+                                cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
+                                cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
+                                cells.Add(proj.ProjectName);
+                                cells.Add(sub.SubjectName);
+                                cells.Add(p.PersonName);
+                                cells.Add(p.PersonIDCard);
+                                cells.Add(p.PersonSex);
+                                cells.Add(p.WorkUnit);
+                                cells.Add(p.PersonJob);
+                                cells.Add(p.PersonSpecialty);
+                                cells.Add(p.TotalTime);
+                                cells.Add(p.TaskContent);
 
-                        cells.Add(roleStr);
+                                string roleStr = "未知";
+                                if (p.IsProjectMaster == "true")
+                                {
+                                    roleStr = "项目负责人兼" + sub.SubjectName + "的" + p.JobInProject;
+                                }
+                                else
+                                {
+                                    roleStr = sub.SubjectName + "的" + p.JobInProject;
+                                }
 
-                        dt.Rows.Add(cells.ToArray());
+                                cells.Add(roleStr);
+
+                                dt.Rows.Add(cells.ToArray());
+                            }
+                        }
                     }
                 }
             }
