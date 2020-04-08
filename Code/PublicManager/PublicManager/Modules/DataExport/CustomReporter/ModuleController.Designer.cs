@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.dgvSub = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,7 +48,13 @@
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -78,14 +84,6 @@
             this.fplProject = new System.Windows.Forms.FlowLayoutPanel();
             this.plDetailHeader = new DevExpress.XtraEditors.GroupControl();
             this.fplSubject = new System.Windows.Forms.FlowLayoutPanel();
-            this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.btnSetSourceDir = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSetDestDir = new DevExpress.XtraBars.BarButtonItem();
-            this.btnImportAll = new DevExpress.XtraBars.BarButtonItem();
-            this.btnImportWithSelected = new DevExpress.XtraBars.BarButtonItem();
-            this.btnExportToExcel = new DevExpress.XtraBars.BarButtonItem();
-            this.rpMaster = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgExport = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -101,7 +99,6 @@
             this.plMasterHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plDetailHeader)).BeginInit();
             this.plDetailHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSub
@@ -177,14 +174,14 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.LevelTemplate = this.dgvSub;
-            gridLevelNode2.RelationName = "SubjectView";
+            gridLevelNode1.LevelTemplate = this.dgvSub;
+            gridLevelNode1.RelationName = "SubjectView";
             this.gcGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gcGrid.Location = new System.Drawing.Point(0, 26);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1421, 227);
+            this.gcGrid.Size = new System.Drawing.Size(1421, 286);
             this.gcGrid.TabIndex = 5;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail,
@@ -202,7 +199,13 @@
             this.gridColumn21,
             this.gridColumn7,
             this.gridColumn8,
+            this.gridColumn37,
+            this.gridColumn36,
+            this.gridColumn35,
+            this.gridColumn34,
+            this.gridColumn33,
             this.gridColumn9,
+            this.gridColumn38,
             this.gridColumn4,
             this.gridColumn10,
             this.gridColumn11,
@@ -247,7 +250,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 0;
-            this.gridColumn5.Width = 70;
+            this.gridColumn5.Width = 53;
             // 
             // gridColumn3
             // 
@@ -256,7 +259,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
-            this.gridColumn3.Width = 70;
+            this.gridColumn3.Width = 53;
             // 
             // gridColumn6
             // 
@@ -265,7 +268,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
-            this.gridColumn6.Width = 70;
+            this.gridColumn6.Width = 53;
             // 
             // gridColumn21
             // 
@@ -280,7 +283,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
-            this.gridColumn7.Width = 70;
+            this.gridColumn7.Width = 53;
             // 
             // gridColumn8
             // 
@@ -289,7 +292,52 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 4;
-            this.gridColumn8.Width = 70;
+            this.gridColumn8.Width = 53;
+            // 
+            // gridColumn37
+            // 
+            this.gridColumn37.Caption = "第一年度经费";
+            this.gridColumn37.FieldName = "row26";
+            this.gridColumn37.Name = "gridColumn37";
+            this.gridColumn37.Visible = true;
+            this.gridColumn37.VisibleIndex = 5;
+            this.gridColumn37.Width = 56;
+            // 
+            // gridColumn36
+            // 
+            this.gridColumn36.Caption = "第二年度经费";
+            this.gridColumn36.FieldName = "row27";
+            this.gridColumn36.Name = "gridColumn36";
+            this.gridColumn36.Visible = true;
+            this.gridColumn36.VisibleIndex = 6;
+            this.gridColumn36.Width = 56;
+            // 
+            // gridColumn35
+            // 
+            this.gridColumn35.Caption = "第三年度经费";
+            this.gridColumn35.FieldName = "row28";
+            this.gridColumn35.Name = "gridColumn35";
+            this.gridColumn35.Visible = true;
+            this.gridColumn35.VisibleIndex = 7;
+            this.gridColumn35.Width = 56;
+            // 
+            // gridColumn34
+            // 
+            this.gridColumn34.Caption = "第四年度经费";
+            this.gridColumn34.FieldName = "row29";
+            this.gridColumn34.Name = "gridColumn34";
+            this.gridColumn34.Visible = true;
+            this.gridColumn34.VisibleIndex = 8;
+            this.gridColumn34.Width = 56;
+            // 
+            // gridColumn33
+            // 
+            this.gridColumn33.Caption = "第五年度经费";
+            this.gridColumn33.FieldName = "row30";
+            this.gridColumn33.Name = "gridColumn33";
+            this.gridColumn33.Visible = true;
+            this.gridColumn33.VisibleIndex = 9;
+            this.gridColumn33.Width = 56;
             // 
             // gridColumn9
             // 
@@ -297,8 +345,17 @@
             this.gridColumn9.FieldName = "row9";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 5;
-            this.gridColumn9.Width = 70;
+            this.gridColumn9.VisibleIndex = 10;
+            this.gridColumn9.Width = 53;
+            // 
+            // gridColumn38
+            // 
+            this.gridColumn38.Caption = "起止时间";
+            this.gridColumn38.FieldName = "row31";
+            this.gridColumn38.Name = "gridColumn38";
+            this.gridColumn38.Visible = true;
+            this.gridColumn38.VisibleIndex = 11;
+            this.gridColumn38.Width = 48;
             // 
             // gridColumn4
             // 
@@ -306,8 +363,8 @@
             this.gridColumn4.FieldName = "row4";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 6;
-            this.gridColumn4.Width = 70;
+            this.gridColumn4.VisibleIndex = 12;
+            this.gridColumn4.Width = 53;
             // 
             // gridColumn10
             // 
@@ -315,8 +372,8 @@
             this.gridColumn10.FieldName = "row10";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 7;
-            this.gridColumn10.Width = 70;
+            this.gridColumn10.VisibleIndex = 13;
+            this.gridColumn10.Width = 53;
             // 
             // gridColumn11
             // 
@@ -324,8 +381,8 @@
             this.gridColumn11.FieldName = "row11";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 8;
-            this.gridColumn11.Width = 101;
+            this.gridColumn11.VisibleIndex = 14;
+            this.gridColumn11.Width = 67;
             // 
             // gridColumn26
             // 
@@ -333,8 +390,8 @@
             this.gridColumn26.FieldName = "row19";
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 9;
-            this.gridColumn26.Width = 111;
+            this.gridColumn26.VisibleIndex = 15;
+            this.gridColumn26.Width = 62;
             // 
             // gridColumn23
             // 
@@ -342,8 +399,8 @@
             this.gridColumn23.FieldName = "row17";
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 10;
-            this.gridColumn23.Width = 109;
+            this.gridColumn23.VisibleIndex = 16;
+            this.gridColumn23.Width = 63;
             // 
             // gridColumn22
             // 
@@ -351,8 +408,8 @@
             this.gridColumn22.FieldName = "row18";
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 11;
-            this.gridColumn22.Width = 105;
+            this.gridColumn22.VisibleIndex = 17;
+            this.gridColumn22.Width = 66;
             // 
             // gridColumn12
             // 
@@ -360,8 +417,8 @@
             this.gridColumn12.FieldName = "row12";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 12;
-            this.gridColumn12.Width = 58;
+            this.gridColumn12.VisibleIndex = 18;
+            this.gridColumn12.Width = 48;
             // 
             // gridColumn13
             // 
@@ -369,8 +426,8 @@
             this.gridColumn13.FieldName = "row13";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 13;
-            this.gridColumn13.Width = 93;
+            this.gridColumn13.VisibleIndex = 19;
+            this.gridColumn13.Width = 55;
             // 
             // gridColumn14
             // 
@@ -384,8 +441,8 @@
             this.gridColumn27.FieldName = "row20";
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 14;
-            this.gridColumn27.Width = 39;
+            this.gridColumn27.VisibleIndex = 20;
+            this.gridColumn27.Width = 48;
             // 
             // gridColumn28
             // 
@@ -393,8 +450,8 @@
             this.gridColumn28.FieldName = "row21";
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 15;
-            this.gridColumn28.Width = 39;
+            this.gridColumn28.VisibleIndex = 21;
+            this.gridColumn28.Width = 50;
             // 
             // gridColumn29
             // 
@@ -402,8 +459,8 @@
             this.gridColumn29.FieldName = "row22";
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 16;
-            this.gridColumn29.Width = 39;
+            this.gridColumn29.VisibleIndex = 22;
+            this.gridColumn29.Width = 52;
             // 
             // gridColumn30
             // 
@@ -411,8 +468,8 @@
             this.gridColumn30.FieldName = "row23";
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 17;
-            this.gridColumn30.Width = 39;
+            this.gridColumn30.VisibleIndex = 23;
+            this.gridColumn30.Width = 44;
             // 
             // gridColumn31
             // 
@@ -420,8 +477,8 @@
             this.gridColumn31.FieldName = "row24";
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 18;
-            this.gridColumn31.Width = 39;
+            this.gridColumn31.VisibleIndex = 24;
+            this.gridColumn31.Width = 51;
             // 
             // gridColumn32
             // 
@@ -429,16 +486,16 @@
             this.gridColumn32.FieldName = "row25";
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 19;
-            this.gridColumn32.Width = 71;
+            this.gridColumn32.VisibleIndex = 25;
+            this.gridColumn32.Width = 45;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.splitContainer1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 123);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1427, 534);
+            this.groupBox1.Size = new System.Drawing.Size(1427, 657);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -457,8 +514,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.plOutputHeaderList);
-            this.splitContainer1.Size = new System.Drawing.Size(1421, 513);
-            this.splitContainer1.SplitterDistance = 253;
+            this.splitContainer1.Size = new System.Drawing.Size(1421, 636);
+            this.splitContainer1.SplitterDistance = 312;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 5;
             // 
@@ -558,7 +615,7 @@
             this.plOutputHeaderList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.plOutputHeaderList.Location = new System.Drawing.Point(0, 0);
             this.plOutputHeaderList.Name = "plOutputHeaderList";
-            this.plOutputHeaderList.Size = new System.Drawing.Size(1421, 255);
+            this.plOutputHeaderList.Size = new System.Drawing.Size(1421, 319);
             this.plOutputHeaderList.TabIndex = 0;
             this.plOutputHeaderList.SizeChanged += new System.EventHandler(this.plOutputHeaderList_SizeChanged);
             // 
@@ -596,87 +653,11 @@
             this.fplSubject.Size = new System.Drawing.Size(847, 99);
             this.fplSubject.TabIndex = 0;
             // 
-            // rcTopBar
-            // 
-            this.rcTopBar.ExpandCollapseItem.Id = 0;
-            this.rcTopBar.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.rcTopBar.ExpandCollapseItem,
-            this.btnSetSourceDir,
-            this.btnSetDestDir,
-            this.btnImportAll,
-            this.btnImportWithSelected,
-            this.btnExportToExcel});
-            this.rcTopBar.Location = new System.Drawing.Point(0, 0);
-            this.rcTopBar.MaxItemId = 6;
-            this.rcTopBar.Name = "rcTopBar";
-            this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.rpMaster});
-            this.rcTopBar.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.rcTopBar.ShowCategoryInCaption = false;
-            this.rcTopBar.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
-            this.rcTopBar.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.False;
-            this.rcTopBar.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.rcTopBar.ShowQatLocationSelector = false;
-            this.rcTopBar.ShowToolbarCustomizeItem = false;
-            this.rcTopBar.Size = new System.Drawing.Size(1427, 123);
-            this.rcTopBar.Toolbar.ShowCustomizeItem = false;
-            this.rcTopBar.Visible = false;
-            // 
-            // btnSetSourceDir
-            // 
-            this.btnSetSourceDir.Caption = "设置主目录";
-            this.btnSetSourceDir.Id = 1;
-            this.btnSetSourceDir.LargeGlyph = global::PublicManager.Properties.Resources.folderA;
-            this.btnSetSourceDir.Name = "btnSetSourceDir";
-            // 
-            // btnSetDestDir
-            // 
-            this.btnSetDestDir.Caption = "设置解压目录";
-            this.btnSetDestDir.Id = 2;
-            this.btnSetDestDir.LargeGlyph = global::PublicManager.Properties.Resources.folderB;
-            this.btnSetDestDir.Name = "btnSetDestDir";
-            // 
-            // btnImportAll
-            // 
-            this.btnImportAll.Caption = "导入所有";
-            this.btnImportAll.Id = 3;
-            this.btnImportAll.LargeGlyph = global::PublicManager.Properties.Resources.importA;
-            this.btnImportAll.Name = "btnImportAll";
-            // 
-            // btnImportWithSelected
-            // 
-            this.btnImportWithSelected.Caption = "选择性导入";
-            this.btnImportWithSelected.Id = 4;
-            this.btnImportWithSelected.LargeGlyph = global::PublicManager.Properties.Resources.importB;
-            this.btnImportWithSelected.Name = "btnImportWithSelected";
-            // 
-            // btnExportToExcel
-            // 
-            this.btnExportToExcel.Caption = "年度经费汇总信息导出";
-            this.btnExportToExcel.Id = 5;
-            this.btnExportToExcel.LargeGlyph = global::PublicManager.Properties.Resources.printtoexcel;
-            this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExportToExcel_ItemClick);
-            // 
-            // rpMaster
-            // 
-            this.rpMaster.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgExport});
-            this.rpMaster.Name = "rpMaster";
-            this.rpMaster.Text = "合同书";
-            // 
-            // rpgExport
-            // 
-            this.rpgExport.ItemLinks.Add(this.btnExportToExcel);
-            this.rpgExport.Name = "rpgExport";
-            this.rpgExport.Text = "导出";
-            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.rcTopBar);
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1427, 657);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSub)).EndInit();
@@ -695,9 +676,7 @@
             this.plMasterHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plDetailHeader)).EndInit();
             this.plDetailHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -705,14 +684,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private DevExpress.XtraBars.Ribbon.RibbonControl rcTopBar;
-        private DevExpress.XtraBars.BarButtonItem btnSetSourceDir;
-        private DevExpress.XtraBars.BarButtonItem btnSetDestDir;
-        private DevExpress.XtraBars.BarButtonItem btnImportAll;
-        private DevExpress.XtraBars.BarButtonItem btnImportWithSelected;
-        private DevExpress.XtraBars.BarButtonItem btnExportToExcel;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rpMaster;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgExport;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnExportTo;
         private System.Windows.Forms.CheckBox cbDisplayReporter;
@@ -760,5 +731,11 @@
         private DevExpress.XtraEditors.GroupControl plDetailHeader;
         private System.Windows.Forms.FlowLayoutPanel fplProject;
         private System.Windows.Forms.FlowLayoutPanel fplSubject;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
     }
 }
