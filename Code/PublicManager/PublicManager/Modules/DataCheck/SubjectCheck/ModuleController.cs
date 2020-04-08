@@ -45,49 +45,52 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
                List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                foreach (Subject sub in subList)
                {
-                   List<object> cells = new List<object>();
-                   cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
-                   cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
-                   cells.Add(proj.ProjectName);
-                   cells.Add(sub.SubjectName);
+                   if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("课题")) && MakeSQLWithSearchRule.isDisplayData(typeof(Subject).Name, sub.SubjectID)))
+                   {
+                       List<object> cells = new List<object>();
+                       cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
+                       cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
+                       cells.Add(proj.ProjectName);
+                       cells.Add(sub.SubjectName);
 
-                   Person personObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "' and JobInProject = '负责人'").select("*").getItem<Person>(new Person());
-                   if (string.IsNullOrEmpty(personObj.PersonID))
-                   {
-                       cells.Add(string.Empty);
-                   }
-                   else
-                   {
-                       cells.Add(personObj.PersonName);
-                   }
+                       Person personObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "' and JobInProject = '负责人'").select("*").getItem<Person>(new Person());
+                       if (string.IsNullOrEmpty(personObj.PersonID))
+                       {
+                           cells.Add(string.Empty);
+                       }
+                       else
+                       {
+                           cells.Add(personObj.PersonName);
+                       }
 
-                   cells.Add(sub.DutyUnit);
-                   cells.Add(sub.DutyUnitOrg);
-                   cells.Add(sub.DutyUnitAddress);
+                       cells.Add(sub.DutyUnit);
+                       cells.Add(sub.DutyUnitOrg);
+                       cells.Add(sub.DutyUnitAddress);
 
-                   if (cells[1] != null && cells[1].ToString() == "合同书")
-                   {
-                       //合同书总经费
-                       cells.Add(ConnectionManager.Context.table("Dicts").where("CatalogID = '" + proj.CatalogID + "' and SubjectID ='" + sub.SubjectID + "' and DictType='SubjectMoney,SubjectMoneyInfo' and DictName = 'Money1'").select("DictValue").getValue<string>(""));
-                   }
-                   else
-                   {
-                       //建议书总经费
-                       cells.Add(sub.TotalMoney);
-                   }
+                       if (cells[1] != null && cells[1].ToString() == "合同书")
+                       {
+                           //合同书总经费
+                           cells.Add(ConnectionManager.Context.table("Dicts").where("CatalogID = '" + proj.CatalogID + "' and SubjectID ='" + sub.SubjectID + "' and DictType='SubjectMoney,SubjectMoneyInfo' and DictName = 'Money1'").select("DictValue").getValue<string>(""));
+                       }
+                       else
+                       {
+                           //建议书总经费
+                           cells.Add(sub.TotalMoney);
+                       }
 
-                   if (string.IsNullOrEmpty(personObj.PersonID))
-                   {
-                       cells.Add(string.Empty);
-                       cells.Add(string.Empty);
-                   }
-                   else
-                   {
-                       cells.Add(personObj.Telephone);
-                       cells.Add(personObj.Mobilephone);
-                   }
+                       if (string.IsNullOrEmpty(personObj.PersonID))
+                       {
+                           cells.Add(string.Empty);
+                           cells.Add(string.Empty);
+                       }
+                       else
+                       {
+                           cells.Add(personObj.Telephone);
+                           cells.Add(personObj.Mobilephone);
+                       }
 
-                   dt.Rows.Add(cells.ToArray());
+                       dt.Rows.Add(cells.ToArray());
+                   }
                }
             }
             gcGrid.DataSource = dt;

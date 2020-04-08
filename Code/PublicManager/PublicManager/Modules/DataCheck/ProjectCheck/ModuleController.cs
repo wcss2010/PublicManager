@@ -134,34 +134,37 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                     List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                     foreach (Subject sub in subList)
                     {
-                        cells = new List<object>();
-                        cells.Add(sub.SubjectName);
-                        Person personObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "' and JobInProject = '负责人'").select("*").getItem<Person>(new Person());
-                        if (string.IsNullOrEmpty(personObj.PersonID))
+                        if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("课题")) && MakeSQLWithSearchRule.isDisplayData(typeof(Subject).Name, sub.SubjectID)))
                         {
-                            cells.Add(string.Empty);
-                        }
-                        else
-                        {
-                            cells.Add(personObj.PersonName);
-                        }
-                        cells.Add(sub.DutyUnit);
-                        cells.Add(sub.DutyUnitOrg);
-                        cells.Add(sub.DutyUnitAddress);
-                        cells.Add(proj.ProjectID);
+                            cells = new List<object>();
+                            cells.Add(sub.SubjectName);
+                            Person personObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "' and JobInProject = '负责人'").select("*").getItem<Person>(new Person());
+                            if (string.IsNullOrEmpty(personObj.PersonID))
+                            {
+                                cells.Add(string.Empty);
+                            }
+                            else
+                            {
+                                cells.Add(personObj.PersonName);
+                            }
+                            cells.Add(sub.DutyUnit);
+                            cells.Add(sub.DutyUnitOrg);
+                            cells.Add(sub.DutyUnitAddress);
+                            cells.Add(proj.ProjectID);
 
-                        if (string.IsNullOrEmpty(personObj.PersonID))
-                        {
-                            cells.Add(string.Empty);
-                            cells.Add(string.Empty);
-                        }
-                        else
-                        {
-                            cells.Add(personObj.Telephone);
-                            cells.Add(personObj.Mobilephone);
-                        }
+                            if (string.IsNullOrEmpty(personObj.PersonID))
+                            {
+                                cells.Add(string.Empty);
+                                cells.Add(string.Empty);
+                            }
+                            else
+                            {
+                                cells.Add(personObj.Telephone);
+                                cells.Add(personObj.Mobilephone);
+                            }
 
-                        detailDt.Rows.Add(cells.ToArray());
+                            detailDt.Rows.Add(cells.ToArray());
+                        }
                     }
                 }
                 #endregion
