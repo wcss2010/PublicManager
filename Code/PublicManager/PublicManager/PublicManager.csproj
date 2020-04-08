@@ -206,10 +206,10 @@
     <Compile Include="Modules\Contract\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\CustomReporter\ModuleController.cs">
+    <Compile Include="Modules\DataExport\CustomReporter\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\CustomReporter\ModuleController.Designer.cs">
+    <Compile Include="Modules\DataExport\CustomReporter\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\DataCheck\MoneyCheck\ModuleController.cs">
@@ -382,7 +382,7 @@
     <EmbeddedResource Include="Modules\Contract\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\CustomReporter\ModuleController.resx">
+    <EmbeddedResource Include="Modules\DataExport\CustomReporter\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataCheck\MoneyCheck\ModuleController.resx">

@@ -1,4 +1,4 @@
-﻿namespace PublicManager.Modules.CustomReporter
+﻿namespace PublicManager.Modules.DataExport.CustomReporter
 {
     partial class ModuleController
     {

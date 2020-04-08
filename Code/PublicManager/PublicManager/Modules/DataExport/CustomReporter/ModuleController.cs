@@ -13,7 +13,7 @@ using Noear.Weed;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Columns;
 
-namespace PublicManager.Modules.CustomReporter
+namespace PublicManager.Modules.DataExport.CustomReporter
 {
     public partial class ModuleController : BaseModuleController
     {
