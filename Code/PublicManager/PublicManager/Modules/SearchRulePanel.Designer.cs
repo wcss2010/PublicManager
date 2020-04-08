@@ -245,9 +245,9 @@
             this.panelControl2.Controls.Add(this.btnExportTo);
             this.panelControl2.Controls.Add(this.btnSearch);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(2, 31);
+            this.panelControl2.Location = new System.Drawing.Point(2, 24);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(208, 32);
+            this.panelControl2.Size = new System.Drawing.Size(208, 26);
             this.panelControl2.TabIndex = 4;
             // 
             // btnReset
@@ -255,7 +255,7 @@
             this.btnReset.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnReset.Location = new System.Drawing.Point(67, 2);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(65, 28);
+            this.btnReset.Size = new System.Drawing.Size(65, 22);
             this.btnReset.TabIndex = 1;
             this.btnReset.Text = "重置";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -265,7 +265,7 @@
             this.btnExportTo.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExportTo.Location = new System.Drawing.Point(132, 2);
             this.btnExportTo.Name = "btnExportTo";
-            this.btnExportTo.Size = new System.Drawing.Size(74, 28);
+            this.btnExportTo.Size = new System.Drawing.Size(74, 22);
             this.btnExportTo.TabIndex = 0;
             this.btnExportTo.Text = "导出Excel";
             this.btnExportTo.Click += new System.EventHandler(this.btnExportTo_Click);
@@ -275,7 +275,7 @@
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSearch.Location = new System.Drawing.Point(2, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(65, 28);
+            this.btnSearch.Size = new System.Drawing.Size(65, 22);
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "搜索";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -287,7 +287,7 @@
             this.plCatalogType.Dock = System.Windows.Forms.DockStyle.Top;
             this.plCatalogType.Location = new System.Drawing.Point(2, 2);
             this.plCatalogType.Name = "plCatalogType";
-            this.plCatalogType.Size = new System.Drawing.Size(208, 29);
+            this.plCatalogType.Size = new System.Drawing.Size(208, 22);
             this.plCatalogType.TabIndex = 2;
             // 
             // cbDisplayReporter
@@ -298,7 +298,7 @@
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Right;
             this.cbDisplayReporter.Location = new System.Drawing.Point(144, 2);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
-            this.cbDisplayReporter.Size = new System.Drawing.Size(62, 25);
+            this.cbDisplayReporter.Size = new System.Drawing.Size(62, 18);
             this.cbDisplayReporter.TabIndex = 6;
             this.cbDisplayReporter.Text = "未立项";
             this.cbDisplayReporter.UseVisualStyleBackColor = true;
@@ -313,7 +313,7 @@
             this.cbDisplayContract.Location = new System.Drawing.Point(2, 2);
             this.cbDisplayContract.Name = "cbDisplayContract";
             this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.cbDisplayContract.Size = new System.Drawing.Size(74, 25);
+            this.cbDisplayContract.Size = new System.Drawing.Size(74, 18);
             this.cbDisplayContract.TabIndex = 5;
             this.cbDisplayContract.Text = "已立项";
             this.cbDisplayContract.UseVisualStyleBackColor = true;

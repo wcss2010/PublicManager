@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.srpSearch = new PublicManager.Modules.SearchRulePanel();
             this.btnCheckProject = new System.Windows.Forms.Button();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,7 +57,6 @@
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.srpSearch = new PublicManager.Modules.SearchRulePanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
@@ -70,15 +70,38 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1414, 90);
+            this.panel1.Size = new System.Drawing.Size(1414, 53);
             this.panel1.TabIndex = 2;
+            // 
+            // srpSearch
+            // 
+            this.srpSearch.CheckListPanelWidth = 150;
+            this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.srpSearch.IsDisplayCatalogTypePanel = false;
+            this.srpSearch.IsDisplayCheckListPanel = false;
+            this.srpSearch.IsDisplayContractData = true;
+            this.srpSearch.IsDisplayKey1Panel = true;
+            this.srpSearch.IsDisplayKey2 = false;
+            this.srpSearch.IsDisplayKey2Panel = false;
+            this.srpSearch.IsDisplayKey3 = false;
+            this.srpSearch.IsDisplayKey3OR4Panel = false;
+            this.srpSearch.IsDisplayKey4 = false;
+            this.srpSearch.IsDisplayReporterData = true;
+            this.srpSearch.Key1FieldString = "项目名称";
+            this.srpSearch.Location = new System.Drawing.Point(0, 0);
+            this.srpSearch.Name = "srpSearch";
+            this.srpSearch.Size = new System.Drawing.Size(1349, 87);
+            this.srpSearch.TabIndex = 10;
+            this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
+            this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
+            this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
             // 
             // btnCheckProject
             // 
             this.btnCheckProject.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCheckProject.Location = new System.Drawing.Point(1349, 0);
             this.btnCheckProject.Name = "btnCheckProject";
-            this.btnCheckProject.Size = new System.Drawing.Size(65, 90);
+            this.btnCheckProject.Size = new System.Drawing.Size(65, 53);
             this.btnCheckProject.TabIndex = 9;
             this.btnCheckProject.Text = "编辑审核信息";
             this.btnCheckProject.UseVisualStyleBackColor = true;
@@ -312,10 +335,10 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 108);
+            this.gcGrid.Location = new System.Drawing.Point(3, 71);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1414, 568);
+            this.gcGrid.Size = new System.Drawing.Size(1414, 605);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -330,27 +353,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1420, 679);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            // 
-            // srpSearch
-            // 
-            this.srpSearch.CheckListPanelWidth = 150;
-            this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.srpSearch.IsDisplayCatalogTypePanel = false;
-            this.srpSearch.IsDisplayContractData = true;
-            this.srpSearch.IsDisplayKey3OR4Panel = false;
-            this.srpSearch.IsDisplayKey2 = false;
-            this.srpSearch.IsDisplayKey3 = false;
-            this.srpSearch.IsDisplayKey4 = false;
-            this.srpSearch.IsDisplayReporterData = true;
-            this.srpSearch.IsDisplayCheckListPanel = true;
-            this.srpSearch.Key1FieldString = "项目名称";
-            this.srpSearch.Location = new System.Drawing.Point(0, 0);
-            this.srpSearch.Name = "srpSearch";
-            this.srpSearch.Size = new System.Drawing.Size(1349, 87);
-            this.srpSearch.TabIndex = 10;
-            this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
-            this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
-            this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
             // 
             // ModuleController
             // 
