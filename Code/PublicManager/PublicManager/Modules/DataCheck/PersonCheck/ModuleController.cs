@@ -12,10 +12,6 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
 {
     public partial class ModuleController : BaseModuleController
     {
-        /// <summary>
-        /// CatalogID筛选条件
-        /// </summary>
-        string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
         private DEGridViewCellMergeAdapter cma;
 
         public ModuleController()
@@ -26,7 +22,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
             dgvDetail.OptionsView.AllowCellMerge = true;
             cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3" });
 
-            cbDisplayReporter.Checked = false;
+            srpSearch.IsDisplayReporterData = false;
         }
 
         public override void start()
@@ -38,42 +34,35 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
             this.DisplayControl.Controls.Add(this);
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
             DataTable dt = getTempDataTable("row", 13);
 
-            List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%' or ProjectID in (select ProjectID from Subject where SubjectName like '%" + txtKey.Text + "%') or ProjectID in (select ProjectID from Person where PersonName like '%" + txtKey.Text + "%' or PersonSpecialty like '%" + txtKey.Text + "%' or TaskContent like '%" + txtKey.Text + "%'))" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
             foreach (Project proj in projList)
             {
                 //显示仅为项目负责人
                 Person masterPersonObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '' and IsProjectMaster = 'true'").select("*").getItem<Person>(new Person());
                 if (masterPersonObj != null && masterPersonObj.PersonID != null && masterPersonObj.PersonID.Length >= 1)
                 {
-                    if ((masterPersonObj.PersonSpecialty == null || !masterPersonObj.PersonSpecialty.Contains(txtKey.Text)) && (masterPersonObj.TaskContent == null || !masterPersonObj.TaskContent.Contains(txtKey.Text)) && (masterPersonObj.PersonName == null || !masterPersonObj.PersonName.Contains(txtKey.Text)) && (proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)))
-                    {
-                        //
-                    }
-                    else
-                    {
-                        //存在仅为负责人的记录
-                        List<object> cells = new List<object>();
-                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
-                        cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
-                        cells.Add(proj.ProjectName);
-                        cells.Add("*****");
-                        cells.Add(masterPersonObj.PersonName);
-                        cells.Add(masterPersonObj.PersonIDCard);
-                        cells.Add(masterPersonObj.PersonSex);
-                        cells.Add(masterPersonObj.WorkUnit);
-                        cells.Add(masterPersonObj.PersonJob);
-                        cells.Add(masterPersonObj.PersonSpecialty);
-                        cells.Add(masterPersonObj.TotalTime);
-                        cells.Add(masterPersonObj.TaskContent);
+                    //存在仅为负责人的记录
+                    List<object> cells = new List<object>();
+                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
+                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
+                    cells.Add(proj.ProjectName);
+                    cells.Add("*****");
+                    cells.Add(masterPersonObj.PersonName);
+                    cells.Add(masterPersonObj.PersonIDCard);
+                    cells.Add(masterPersonObj.PersonSex);
+                    cells.Add(masterPersonObj.WorkUnit);
+                    cells.Add(masterPersonObj.PersonJob);
+                    cells.Add(masterPersonObj.PersonSpecialty);
+                    cells.Add(masterPersonObj.TotalTime);
+                    cells.Add(masterPersonObj.TaskContent);
 
-                        cells.Add("项目负责人");
+                    cells.Add("项目负责人");
 
-                        dt.Rows.Add(cells.ToArray());
-                    }
+                    dt.Rows.Add(cells.ToArray());
                 }
 
                 //显示课题成员
@@ -83,11 +72,6 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                     List<Person> perList = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "'").select("*").getList<Person>(new Person());
                     foreach (Person p in perList)
                     {
-                        if ((p.PersonSpecialty == null || !p.PersonSpecialty.Contains(txtKey.Text)) && (p.TaskContent == null || !p.TaskContent.Contains(txtKey.Text)) && (p.PersonName == null || !p.PersonName.Contains(txtKey.Text)) && (proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)) && (sub.SubjectName == null || !sub.SubjectName.Contains(txtKey.Text)))
-                        {
-                            continue;
-                        }
-
                         List<object> cells = new List<object>();
                         cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
                         cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
@@ -121,37 +105,14 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
             gcData.DataSource = dt;
         }
 
-        private void cbDisplayReporter_CheckedChanged(object sender, EventArgs e)
+        private void srpSearch_OnResetClick(object sender, EventArgs args)
         {
-            if (cbDisplayContract.Checked && cbDisplayReporter.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
-            }
-            else if (cbDisplayContract.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
-            }
-            else if (cbDisplayReporter.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '建议书')";
-            }
-            else
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
-            }
+            srpSearch.search();
         }
 
-        private void btnExportToExcel_Click(object sender, EventArgs e)
+        private void srpSearch_OnExportToClick(object sender, EventArgs args)
         {
             BaseModuleController.exportToExcelWithDevExpress(dgvDetail);
-        }
-
-        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '\r')
-            {
-                btnSearch.PerformClick();
-            }
         }
     }
 }
