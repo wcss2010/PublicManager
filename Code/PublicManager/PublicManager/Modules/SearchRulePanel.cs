@@ -38,12 +38,32 @@ namespace PublicManager.Modules
         /// <summary>
         /// 搜索条件2标签
         /// </summary>
-        public Label Key2Label { get { return lblKey2; } }
+        public CheckBox Key2Label { get { return lblKey2; } }
 
         /// <summary>
         /// 搜索条件2内容
         /// </summary>
         public System.Windows.Forms.ComboBox Key2EditControl { get { return txtKey2; } }
+
+        /// <summary>
+        /// 搜索条件3标签
+        /// </summary>
+        public CheckBox Key3Label { get { return lblKey3; } }
+
+        /// <summary>
+        /// 搜索条件3内容
+        /// </summary>
+        public System.Windows.Forms.DateTimePicker Key3EditControl { get { return txtKey3; } }
+
+        /// <summary>
+        /// 搜索条件4标签
+        /// </summary>
+        public CheckBox Key4Label { get { return lblKey4; } }
+
+        /// <summary>
+        /// 搜索条件4内容
+        /// </summary>
+        public System.Windows.Forms.DateTimePicker Key4EditControl { get { return txtKey4; } }
 
         public event SearchClickDelegate OnSearchClick;
         public event ResetClickDelegate OnResetClick;
@@ -149,6 +169,10 @@ namespace PublicManager.Modules
             {
                 Key2EditControl.SelectedIndex = 0;
             }
+            Key3Label.Checked = false;
+            Key4Label.Checked = false;
+            Key3EditControl.Value = DateTime.Now;
+            Key4EditControl.Value = DateTime.Now;
 
             if (OnResetClick != null)
             {
