@@ -34,66 +34,73 @@ namespace PublicManager.Modules
             //生成的查询条件
             string whereString = string.Empty;
 
-            #region 生成关键字条件
-            StringBuilder sb = new StringBuilder();
-            bool isIgnoreAll = true;
-
-            //检查是否需要忽略所有选项
-            foreach (KeyValuePair<string, bool> kvp in ruleDict)
+            if (string.IsNullOrEmpty(srp.Key1EditControl.Text))
             {
-                if (kvp.Value)
-                {
-                    isIgnoreAll = false;
-                    break;
-                }
+                whereString = "(1=1)";
             }
-
-            sb.Append("(");
-            foreach (KeyValuePair<string, bool> kvp in ruleDict)
+            else
             {
-                if (kvp.Value || isIgnoreAll)
+                #region 生成关键字条件
+                StringBuilder sb = new StringBuilder();
+                bool isIgnoreAll = true;
+
+                //检查是否需要忽略所有选项
+                foreach (KeyValuePair<string, bool> kvp in ruleDict)
                 {
-                    switch (kvp.Key)
+                    if (kvp.Value)
                     {
-                        case "项目名称":
-                            sb.Append(" or ").Append("ProjectName like '%" + srp.Key1EditControl.Text + "%'");
-                            break;
-                        case "计划批次":
-                            sb.Append(" or ").Append("TaskNumber like '%" + srp.Key1EditControl.Text + "%'");
-                            break;
-                        case "项目关键词":
-                            sb.Append(" or ").Append("Keywords like '%" + srp.Key1EditControl.Text + "%'");
-                            break;
-                        case "课题名称":
-                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Subject where SubjectName like '%" + srp.Key1EditControl.Text + "%')");
-                            getDataIdList("Subject", "SubjectName like '%" + srp.Key1EditControl.Text + "%'", "SubjectID");
-                            break;
-                        case "课题负责单位":
-                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Subject where DutyUnit like '%" + srp.Key1EditControl.Text + "%')");
-                            getDataIdList("Subject", "DutyUnit like '%" + srp.Key1EditControl.Text + "%'", "SubjectID");
-                            break;
-                        case "课题所属地点":
-                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Subject where DutyUnitAddress like '%" + srp.Key1EditControl.Text + "%')");
-                            getDataIdList("Subject", "DutyUnitAddress like '%" + srp.Key1EditControl.Text + "%'", "SubjectID");
-                            break;
-                        case "人员名称":
-                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where PersonName like '%" + srp.Key1EditControl.Text + "%')");
-                            getDataIdList("Person", "PersonName like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
-                            break;
-                        case "人员专业":
-                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where PersonSpecialty like '%" + srp.Key1EditControl.Text + "%')");
-                            getDataIdList("Person", "PersonSpecialty like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
-                            break;
-                        case "人员任务分工":
-                            sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where TaskContent like '%" + srp.Key1EditControl.Text + "%')");
-                            getDataIdList("Person", "TaskContent like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
-                            break;
+                        isIgnoreAll = false;
+                        break;
                     }
                 }
+
+                sb.Append("(");
+                foreach (KeyValuePair<string, bool> kvp in ruleDict)
+                {
+                    if (kvp.Value || isIgnoreAll)
+                    {
+                        switch (kvp.Key)
+                        {
+                            case "项目名称":
+                                sb.Append(" or ").Append("ProjectName like '%" + srp.Key1EditControl.Text + "%'");
+                                break;
+                            case "计划批次":
+                                sb.Append(" or ").Append("TaskNumber like '%" + srp.Key1EditControl.Text + "%'");
+                                break;
+                            case "项目关键词":
+                                sb.Append(" or ").Append("Keywords like '%" + srp.Key1EditControl.Text + "%'");
+                                break;
+                            case "课题名称":
+                                sb.Append(" or ").Append("ProjectID in (select ProjectID from Subject where SubjectName like '%" + srp.Key1EditControl.Text + "%')");
+                                getDataIdList("Subject", "SubjectName like '%" + srp.Key1EditControl.Text + "%'", "SubjectID");
+                                break;
+                            case "课题负责单位":
+                                sb.Append(" or ").Append("ProjectID in (select ProjectID from Subject where DutyUnit like '%" + srp.Key1EditControl.Text + "%')");
+                                getDataIdList("Subject", "DutyUnit like '%" + srp.Key1EditControl.Text + "%'", "SubjectID");
+                                break;
+                            case "课题所属地点":
+                                sb.Append(" or ").Append("ProjectID in (select ProjectID from Subject where DutyUnitAddress like '%" + srp.Key1EditControl.Text + "%')");
+                                getDataIdList("Subject", "DutyUnitAddress like '%" + srp.Key1EditControl.Text + "%'", "SubjectID");
+                                break;
+                            case "人员名称":
+                                sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where PersonName like '%" + srp.Key1EditControl.Text + "%')");
+                                getDataIdList("Person", "PersonName like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
+                                break;
+                            case "人员专业":
+                                sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where PersonSpecialty like '%" + srp.Key1EditControl.Text + "%')");
+                                getDataIdList("Person", "PersonSpecialty like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
+                                break;
+                            case "人员任务分工":
+                                sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where TaskContent like '%" + srp.Key1EditControl.Text + "%')");
+                                getDataIdList("Person", "TaskContent like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
+                                break;
+                        }
+                    }
+                }
+                sb.Append(")");
+                whereString = sb.ToString().Replace("( or ", "(");
+                #endregion
             }
-            sb.Append(")");
-            whereString = sb.ToString().Replace("( or ", "(");
-            #endregion
 
             #region 生成大单位条件
             if (srp.IsDisplayKey2)
