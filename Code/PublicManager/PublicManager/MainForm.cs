@@ -56,8 +56,8 @@ namespace PublicManager
         /// </summary>
         private void loadModules()
         {
-            ModuleDict[nbcTestA.Caption + "xxxx" + "合同书汇总"] = new ContractModuleController();
-            ModuleDict[nbcTestA.Caption + "xxxx" + "建议书汇总"] = new ReporterModuleController();
+            ModuleDict[nbcTestA.Caption + "xxxx" + "合同书数据包导入"] = new ContractModuleController();
+            ModuleDict[nbcTestA.Caption + "xxxx" + "建议书数据包导入"] = new ReporterModuleController();
 
             ModuleDict[nbcTestH.Caption + "xxxx" + "报表导出"] = new PublicManager.Modules.DataExport.CustomReporter.ModuleController();
 
