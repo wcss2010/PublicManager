@@ -23,7 +23,7 @@ namespace PublicManager.Modules.DataExport.CustomReporter
         /// <summary>
         /// CatalogID筛选条件
         /// </summary>
-        string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+        string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
         private DEGridViewCellMergeAdapter cma1;
         private DEGridViewCellMergeAdapter cma2;
         private CheckBox subjectIOCheckBox;
@@ -43,8 +43,6 @@ namespace PublicManager.Modules.DataExport.CustomReporter
             dgvSub.OptionsView.AllowCellMerge = true;
             dgvSub.OptionsView.ShowGroupPanel = false;
             cma2 = new DEGridViewCellMergeAdapter(dgvSub, new string[] { "row1" });
-
-            cbDisplayReporter.Checked = false;
 
             makeColumnList();
         }
@@ -177,26 +175,6 @@ namespace PublicManager.Modules.DataExport.CustomReporter
             //}
         }
                 
-        private void cbDisplayReporter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbDisplayContract.Checked && cbDisplayReporter.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
-            }
-            else if (cbDisplayContract.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
-            }
-            else if (cbDisplayReporter.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '建议书')";
-            }
-            else
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
-            }
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dsAll = new DataSet();

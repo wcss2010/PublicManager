@@ -74,8 +74,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExportTo = new System.Windows.Forms.Button();
-            this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
-            this.cbDisplayContract = new System.Windows.Forms.CheckBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtKey = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
@@ -522,8 +520,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnExportTo);
-            this.panel1.Controls.Add(this.cbDisplayReporter);
-            this.panel1.Controls.Add(this.cbDisplayContract);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.txtKey);
             this.panel1.Controls.Add(this.label1);
@@ -536,42 +532,13 @@
             // btnExportTo
             // 
             this.btnExportTo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExportTo.Location = new System.Drawing.Point(1046, 0);
+            this.btnExportTo.Location = new System.Drawing.Point(814, 0);
             this.btnExportTo.Name = "btnExportTo";
             this.btnExportTo.Size = new System.Drawing.Size(101, 26);
             this.btnExportTo.TabIndex = 8;
             this.btnExportTo.Text = "导出到Excel";
             this.btnExportTo.UseVisualStyleBackColor = true;
             this.btnExportTo.Click += new System.EventHandler(this.btnExportTo_Click);
-            // 
-            // cbDisplayReporter
-            // 
-            this.cbDisplayReporter.AutoSize = true;
-            this.cbDisplayReporter.Checked = true;
-            this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(936, 0);
-            this.cbDisplayReporter.Name = "cbDisplayReporter";
-            this.cbDisplayReporter.Size = new System.Drawing.Size(110, 26);
-            this.cbDisplayReporter.TabIndex = 6;
-            this.cbDisplayReporter.Text = "显示建议书内容";
-            this.cbDisplayReporter.UseVisualStyleBackColor = true;
-            this.cbDisplayReporter.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
-            // 
-            // cbDisplayContract
-            // 
-            this.cbDisplayContract.AutoSize = true;
-            this.cbDisplayContract.Checked = true;
-            this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbDisplayContract.Location = new System.Drawing.Point(814, 0);
-            this.cbDisplayContract.Name = "cbDisplayContract";
-            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.cbDisplayContract.Size = new System.Drawing.Size(122, 26);
-            this.cbDisplayContract.TabIndex = 5;
-            this.cbDisplayContract.Text = "显示合同书内容";
-            this.cbDisplayContract.UseVisualStyleBackColor = true;
-            this.cbDisplayContract.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
             // 
             // btnSearch
             // 
@@ -669,7 +636,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();
             this.plOutputHeaderList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plMasterHeader)).EndInit();
@@ -686,8 +652,6 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnExportTo;
-        private System.Windows.Forms.CheckBox cbDisplayReporter;
-        private System.Windows.Forms.CheckBox cbDisplayContract;
         private System.Windows.Forms.Button btnSearch;
         private DevExpress.XtraEditors.TextEdit txtKey;
         private System.Windows.Forms.Label label1;
