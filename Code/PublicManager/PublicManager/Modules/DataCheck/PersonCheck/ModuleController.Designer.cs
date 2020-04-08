@@ -66,10 +66,10 @@
             // gcData
             // 
             this.gcData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcData.Location = new System.Drawing.Point(3, 104);
+            this.gcData.Location = new System.Drawing.Point(3, 161);
             this.gcData.MainView = this.dgvDetail;
             this.gcData.Name = "gcData";
-            this.gcData.Size = new System.Drawing.Size(1788, 644);
+            this.gcData.Size = new System.Drawing.Size(1788, 587);
             this.gcData.TabIndex = 3;
             this.gcData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -198,7 +198,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1788, 86);
+            this.panel1.Size = new System.Drawing.Size(1788, 143);
             this.panel1.TabIndex = 2;
             // 
             // srpSearch
@@ -206,17 +206,19 @@
             this.srpSearch.CheckListPanelWidth = 150;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = true;
+            this.srpSearch.IsDisplayCheckListPanel = true;
             this.srpSearch.IsDisplayContractData = true;
-            this.srpSearch.IsDisplayKey3OR4Panel = false;
+            this.srpSearch.IsDisplayKey1Panel = true;
             this.srpSearch.IsDisplayKey2 = false;
+            this.srpSearch.IsDisplayKey2Panel = false;
             this.srpSearch.IsDisplayKey3 = false;
+            this.srpSearch.IsDisplayKey3OR4Panel = false;
             this.srpSearch.IsDisplayKey4 = false;
             this.srpSearch.IsDisplayReporterData = true;
-            this.srpSearch.IsDisplayCheckListPanel = true;
             this.srpSearch.Key1FieldString = "项目名称;课题名称;人员名称;人员专业;人员任务分工";
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
-            this.srpSearch.Size = new System.Drawing.Size(1788, 86);
+            this.srpSearch.Size = new System.Drawing.Size(1788, 143);
             this.srpSearch.TabIndex = 8;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);

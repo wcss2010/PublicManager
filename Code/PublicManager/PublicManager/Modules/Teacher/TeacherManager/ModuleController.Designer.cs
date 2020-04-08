@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.srpSearch = new PublicManager.Modules.SearchRulePanel();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.llDownloadTemplete = new System.Windows.Forms.LinkLabel();
             this.btnImportFromExcel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -49,16 +51,14 @@
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.srpSearch = new PublicManager.Modules.SearchRulePanel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,8 +68,41 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1392, 54);
+            this.panel1.Size = new System.Drawing.Size(1392, 52);
             this.panel1.TabIndex = 2;
+            // 
+            // srpSearch
+            // 
+            this.srpSearch.CheckListPanelWidth = 150;
+            this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.srpSearch.IsDisplayCatalogTypePanel = false;
+            this.srpSearch.IsDisplayCheckListPanel = false;
+            this.srpSearch.IsDisplayContractData = true;
+            this.srpSearch.IsDisplayKey1Panel = true;
+            this.srpSearch.IsDisplayKey2 = false;
+            this.srpSearch.IsDisplayKey2Panel = false;
+            this.srpSearch.IsDisplayKey3 = false;
+            this.srpSearch.IsDisplayKey3OR4Panel = false;
+            this.srpSearch.IsDisplayKey4 = false;
+            this.srpSearch.IsDisplayReporterData = true;
+            this.srpSearch.Key1FieldString = "专家姓名";
+            this.srpSearch.Location = new System.Drawing.Point(0, 0);
+            this.srpSearch.Name = "srpSearch";
+            this.srpSearch.Size = new System.Drawing.Size(1296, 60);
+            this.srpSearch.TabIndex = 13;
+            this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
+            this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
+            this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.llDownloadTemplete);
+            this.panelControl1.Controls.Add(this.btnImportFromExcel);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelControl1.Location = new System.Drawing.Point(1296, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(96, 52);
+            this.panelControl1.TabIndex = 12;
             // 
             // llDownloadTemplete
             // 
@@ -86,7 +119,7 @@
             // btnImportFromExcel
             // 
             this.btnImportFromExcel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnImportFromExcel.Location = new System.Drawing.Point(2, 24);
+            this.btnImportFromExcel.Location = new System.Drawing.Point(2, 22);
             this.btnImportFromExcel.Name = "btnImportFromExcel";
             this.btnImportFromExcel.Size = new System.Drawing.Size(92, 28);
             this.btnImportFromExcel.TabIndex = 9;
@@ -108,13 +141,13 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 72);
+            this.gcGrid.Location = new System.Drawing.Point(3, 70);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
             this.gcGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemButtonEdit2});
-            this.gcGrid.Size = new System.Drawing.Size(1392, 589);
+            this.gcGrid.Size = new System.Drawing.Size(1392, 591);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -223,7 +256,7 @@
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "编辑", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject15, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "编辑", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -241,42 +274,9 @@
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "删除", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject16, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "删除", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.llDownloadTemplete);
-            this.panelControl1.Controls.Add(this.btnImportFromExcel);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl1.Location = new System.Drawing.Point(1296, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(96, 54);
-            this.panelControl1.TabIndex = 12;
-            // 
-            // srpSearch
-            // 
-            this.srpSearch.CheckListPanelWidth = 150;
-            this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.srpSearch.IsDisplayCatalogTypePanel = false;
-            this.srpSearch.IsDisplayCheckListPanel = false;
-            this.srpSearch.IsDisplayContractData = true;
-            this.srpSearch.IsDisplayKey1Panel = true;
-            this.srpSearch.IsDisplayKey2 = false;
-            this.srpSearch.IsDisplayKey2Panel = false;
-            this.srpSearch.IsDisplayKey3 = false;
-            this.srpSearch.IsDisplayKey3OR4Panel = false;
-            this.srpSearch.IsDisplayKey4 = false;
-            this.srpSearch.IsDisplayReporterData = true;
-            this.srpSearch.Key1FieldString = "专家姓名";
-            this.srpSearch.Location = new System.Drawing.Point(0, 0);
-            this.srpSearch.Name = "srpSearch";
-            this.srpSearch.Size = new System.Drawing.Size(1296, 60);
-            this.srpSearch.TabIndex = 13;
-            this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
-            this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
-            this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
             // 
             // ModuleController
             // 
@@ -286,13 +286,13 @@
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1398, 664);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
