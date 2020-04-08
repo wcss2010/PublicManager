@@ -45,11 +45,6 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
                List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                foreach (Subject sub in subList)
                {
-                   if ((proj.ProjectName == null || !proj.ProjectName.Contains(srpSearch.Key1EditControl.Text)) && (sub.SubjectName == null || !sub.SubjectName.Contains(srpSearch.Key1EditControl.Text)))
-                   {
-                       continue;
-                   }
-
                    List<object> cells = new List<object>();
                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
