@@ -398,5 +398,45 @@ namespace PublicManager.Modules
         {
             btnExportTo.PerformClick();
         }
+
+        /// <summary>
+        /// 判断指定名字的选项是否有在使用
+        /// </summary>
+        /// <param name="ruleNameKey"></param>
+        /// <returns></returns>
+        public bool isUsingRule(string ruleNameKey)
+        {
+            Dictionary<string, bool> boolDict = getRuleCheckedDict();
+
+            bool result = false;
+            foreach (KeyValuePair<string, bool> kvp in boolDict)
+            {
+                if (kvp.Key != null && kvp.Key.Contains(ruleNameKey) && kvp.Value)
+                {
+                    result = true;
+                    break;
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 获得搜索条件勾选数量
+        /// </summary>
+        /// <returns></returns>
+        public int getUsingRuleCount()
+        {
+            Dictionary<string, bool> boolDict = getRuleCheckedDict();
+
+            int trueCount = 0;
+            foreach (KeyValuePair<string, bool> kvp in boolDict)
+            {
+                if (kvp.Value)
+                {
+                    trueCount++;
+                }
+            }
+            return trueCount;
+        }
     }
 }
