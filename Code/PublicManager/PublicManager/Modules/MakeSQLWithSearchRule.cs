@@ -99,7 +99,10 @@ namespace PublicManager.Modules
             if (srp.IsDisplayKey2)
             {
                 //大单位可用
-                whereString += " and ProjectID in (select ProjectID from Subject where DutyUnitOrg = '" + (srp.Key2EditControl.SelectedItem != null && !srp.Key2EditControl.SelectedItem.ToString().Equals("全部") ? srp.Key2EditControl.SelectedItem.ToString() : "1=1") + "')";
+                if (srp.Key2EditControl.SelectedItem != null && !srp.Key2EditControl.SelectedItem.ToString().Equals("全部"))
+                {
+                    whereString += " and ProjectID in (select ProjectID from Subject where DutyUnitOrg = '" + srp.Key2EditControl.Text + "')";
+                }
             }
             #endregion
 
