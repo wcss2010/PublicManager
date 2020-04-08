@@ -328,6 +328,12 @@
     <Compile Include="Modules\Reporter\ReporterModuleController.Designer.cs">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\SearchRulePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\SearchRulePanel.Designer.cs">
+      <DependentUpon>SearchRulePanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Teacher\TeacherManager\Forms\AddOrUpdateTeacherCommentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -438,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Reporter\ReporterModuleController.resx">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SearchRulePanel.resx">
+      <DependentUpon>SearchRulePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Teacher\TeacherManager\Forms\AddOrUpdateTeacherCommentForm.resx">
       <DependentUpon>AddOrUpdateTeacherCommentForm.cs</DependentUpon>
