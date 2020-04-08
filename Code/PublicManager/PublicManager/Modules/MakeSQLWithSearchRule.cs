@@ -111,6 +111,10 @@ namespace PublicManager.Modules
                     whereString += " and ProjectID in (select ProjectID from Subject where DutyUnitOrg = '" + srp.Key2EditControl.Text + "')";
                     getDataIdList("Subject", "DutyUnitOrg = '" + srp.Key2EditControl.Text + "'", "SubjectID");
                 }
+                else
+                {
+                    getDataIdList("Subject", "1=1", "SubjectID");
+                }
             }
             #endregion
 
