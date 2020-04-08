@@ -236,6 +236,21 @@ namespace PublicManager.Modules
             }
         }
 
+        /// <summary>
+        /// 搜索关键字条件是否可编辑
+        /// </summary>
+        public bool IsEnabledCheckListPanel
+        {
+            get
+            {
+                return fplCheckList.Visible;
+            }
+            set
+            {
+                fplCheckList.Visible = value;
+            }
+        }
+
         public SearchRulePanel()
         {
             InitializeComponent();
