@@ -13,10 +13,6 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
 {
     public partial class ModuleController : BaseModuleController
     {
-        /// <summary>
-        /// CatalogID筛选条件
-        /// </summary>
-        string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
         private DEGridViewCellMergeAdapter cma;
 
         public ModuleController()
@@ -27,20 +23,29 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
             dgvDetail.OptionsView.AllowCellMerge = true;
             cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3" });
 
-            cbDisplayReporter.Checked = false;
+            srpSearch.IsDisplayReporterData = false;
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        public override void start()
+        {
+            base.start();
+
+            this.DisplayControl.Controls.Clear();
+            this.Dock = DockStyle.Fill;
+            this.DisplayControl.Controls.Add(this);
+        }
+
+        private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
             DataTable dt = getTempDataTable("row", 11);
 
-            List<Project> projList = ConnectionManager.Context.table("Project").where("(ProjectName like '%" + txtKey.Text + "%' or ProjectID in (select ProjectID from Subject where SubjectName like '%" + txtKey.Text + "%'))" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
+            List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
             foreach (Project proj in projList)
             {
                List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                foreach (Subject sub in subList)
                {
-                   if ((proj.ProjectName == null || !proj.ProjectName.Contains(txtKey.Text)) && (sub.SubjectName == null || !sub.SubjectName.Contains(txtKey.Text)))
+                   if ((proj.ProjectName == null || !proj.ProjectName.Contains(srpSearch.Key1EditControl.Text)) && (sub.SubjectName == null || !sub.SubjectName.Contains(srpSearch.Key1EditControl.Text)))
                    {
                        continue;
                    }
@@ -93,46 +98,14 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
             gcGrid.DataSource = dt;
         }
 
-        public override void start()
+        private void srpSearch_OnResetClick(object sender, EventArgs args)
         {
-            base.start();
-
-            this.DisplayControl.Controls.Clear();
-            this.Dock = DockStyle.Fill;
-            this.DisplayControl.Controls.Add(this);
+            srpSearch.search();
         }
 
-        private void cbDisplayReporter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbDisplayContract.Checked && cbDisplayReporter.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
-            }
-            else if (cbDisplayContract.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
-            }
-            else if (cbDisplayReporter.Checked)
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '建议书')";
-            }
-            else
-            {
-                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
-            }
-        }
-
-        private void btnExportToExcel_Click(object sender, EventArgs e)
+        private void srpSearch_OnExportToClick(object sender, EventArgs args)
         {
             exportToExcelWithDevExpress(dgvDetail);
-        }
-
-        private void txtKey_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '\r')
-            {
-                btnSearch.PerformClick();
-            }
         }
     }
 }

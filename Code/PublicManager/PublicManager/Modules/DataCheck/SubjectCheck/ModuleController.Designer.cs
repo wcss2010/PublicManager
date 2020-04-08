@@ -43,17 +43,11 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExportToExcel = new System.Windows.Forms.Button();
-            this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
-            this.cbDisplayContract = new System.Windows.Forms.CheckBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtKey = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
+            this.srpSearch = new PublicManager.Modules.SearchRulePanel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -70,10 +64,10 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 44);
+            this.gcGrid.Location = new System.Drawing.Point(3, 112);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1200, 642);
+            this.gcGrid.Size = new System.Drawing.Size(1200, 574);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -181,91 +175,35 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnExportToExcel);
-            this.panel1.Controls.Add(this.cbDisplayReporter);
-            this.panel1.Controls.Add(this.cbDisplayContract);
-            this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.txtKey);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.srpSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 26);
+            this.panel1.Size = new System.Drawing.Size(1200, 94);
             this.panel1.TabIndex = 2;
             // 
-            // btnExportToExcel
+            // srpSearch
             // 
-            this.btnExportToExcel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExportToExcel.Location = new System.Drawing.Point(1047, 0);
-            this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(101, 26);
-            this.btnExportToExcel.TabIndex = 8;
-            this.btnExportToExcel.Text = "导出到Excel";
-            this.btnExportToExcel.UseVisualStyleBackColor = true;
-            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
-            // 
-            // cbDisplayReporter
-            // 
-            this.cbDisplayReporter.AutoSize = true;
-            this.cbDisplayReporter.Checked = true;
-            this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(937, 0);
-            this.cbDisplayReporter.Name = "cbDisplayReporter";
-            this.cbDisplayReporter.Size = new System.Drawing.Size(110, 26);
-            this.cbDisplayReporter.TabIndex = 4;
-            this.cbDisplayReporter.Text = "显示建议书内容";
-            this.cbDisplayReporter.UseVisualStyleBackColor = true;
-            this.cbDisplayReporter.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
-            // 
-            // cbDisplayContract
-            // 
-            this.cbDisplayContract.AutoSize = true;
-            this.cbDisplayContract.Checked = true;
-            this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbDisplayContract.Location = new System.Drawing.Point(815, 0);
-            this.cbDisplayContract.Name = "cbDisplayContract";
-            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.cbDisplayContract.Size = new System.Drawing.Size(122, 26);
-            this.cbDisplayContract.TabIndex = 3;
-            this.cbDisplayContract.Text = "显示合同书内容";
-            this.cbDisplayContract.UseVisualStyleBackColor = true;
-            this.cbDisplayContract.CheckedChanged += new System.EventHandler(this.cbDisplayReporter_CheckedChanged);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSearch.Location = new System.Drawing.Point(728, 0);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(87, 26);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "搜索";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtKey
-            // 
-            this.txtKey.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtKey.Location = new System.Drawing.Point(156, 0);
-            this.txtKey.Name = "txtKey";
-            this.txtKey.Properties.NullValuePrompt = "请输入项目名称、课题名称！";
-            this.txtKey.Properties.NullValuePromptShowForEmptyValue = true;
-            this.txtKey.Properties.ShowNullValuePromptWhenFocused = true;
-            this.txtKey.Size = new System.Drawing.Size(572, 20);
-            this.txtKey.TabIndex = 1;
-            this.txtKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKey_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "搜索关键字：";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.srpSearch.CheckListPanelWidth = 150;
+            this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.srpSearch.IsDisplayCatalogTypePanel = true;
+            this.srpSearch.IsDisplayCheckListPanel = true;
+            this.srpSearch.IsDisplayContractData = true;
+            this.srpSearch.IsDisplayKey1Panel = true;
+            this.srpSearch.IsDisplayKey2 = false;
+            this.srpSearch.IsDisplayKey2Panel = false;
+            this.srpSearch.IsDisplayKey3 = false;
+            this.srpSearch.IsDisplayKey3OR4Panel = false;
+            this.srpSearch.IsDisplayKey4 = false;
+            this.srpSearch.IsDisplayReporterData = true;
+            this.srpSearch.Key1FieldString = "项目名称;课题名称";
+            this.srpSearch.Location = new System.Drawing.Point(0, 0);
+            this.srpSearch.Name = "srpSearch";
+            this.srpSearch.Size = new System.Drawing.Size(1200, 92);
+            this.srpSearch.TabIndex = 9;
+            this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
+            this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
+            this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
             // 
             // ModuleController
             // 
@@ -278,8 +216,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKey.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,12 +224,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.TextEdit txtKey;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.CheckBox cbDisplayContract;
-        private System.Windows.Forms.CheckBox cbDisplayReporter;
-        private System.Windows.Forms.Button btnExportToExcel;
         private DevExpress.XtraGrid.GridControl gcGrid;
         private DevExpress.XtraGrid.Views.Grid.GridView dgvDetail;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -307,5 +237,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private SearchRulePanel srpSearch;
     }
 }
