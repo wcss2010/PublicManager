@@ -81,6 +81,21 @@ namespace PublicManager.Modules
             }
         }
 
+        /// <summary>
+        /// 是否显示合同书建议书切换面板
+        /// </summary>
+        public bool IsShowCatalogTypePanel
+        {
+            get
+            {
+                return plCatalogType.Visible;
+            }
+            set
+            {
+                plCatalogType.Visible = value;
+            }
+        }
+
         public SearchRulePanel()
         {
             InitializeComponent();
@@ -151,15 +166,25 @@ namespace PublicManager.Modules
 
         private void cbDisplayContract_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbDisplayContract.Checked && cbDisplayReporter.Checked)
+            switchCatalogType(cbDisplayContract.Checked, cbDisplayReporter.Checked);
+        }
+
+        /// <summary>
+        /// 切换目录类型
+        /// </summary>
+        /// <param name="isContract"></param>
+        /// <param name="isReporter"></param>
+        public void switchCatalogType(bool isContract, bool isReporter)
+        {
+            if (isContract && isReporter)
             {
                 strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
             }
-            else if (cbDisplayContract.Checked)
+            else if (isContract)
             {
                 strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
             }
-            else if (cbDisplayReporter.Checked)
+            else if (isReporter)
             {
                 strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '建议书')";
             }
