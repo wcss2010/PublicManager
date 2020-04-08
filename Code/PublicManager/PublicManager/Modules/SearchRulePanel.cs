@@ -28,53 +28,61 @@ namespace PublicManager.Modules
         /// <summary>
         /// 搜索条件1标签
         /// </summary>
+        [Browsable(false)]
         public Label Key1Label { get { return lblKey1; } }
 
         /// <summary>
         /// 搜索条件1内容
         /// </summary>
+        [Browsable(false)]
         public TextEdit Key1EditControl { get { return txtKey1; } }
 
         /// <summary>
         /// 搜索条件2标签
         /// </summary>
+        [Browsable(false)]
         public CheckBox Key2Label { get { return lblKey2; } }
 
         /// <summary>
         /// 搜索条件2内容
         /// </summary>
+        [Browsable(false)]
         public System.Windows.Forms.ComboBox Key2EditControl { get { return txtKey2; } }
 
         /// <summary>
         /// 搜索条件3标签
         /// </summary>
+        [Browsable(false)]
         public CheckBox Key3Label { get { return lblKey3; } }
 
         /// <summary>
         /// 搜索条件3内容
         /// </summary>
+        [Browsable(false)]
         public System.Windows.Forms.DateTimePicker Key3EditControl { get { return txtKey3; } }
 
         /// <summary>
         /// 搜索条件4标签
         /// </summary>
+        [Browsable(false)]
         public CheckBox Key4Label { get { return lblKey4; } }
 
         /// <summary>
         /// 搜索条件4内容
         /// </summary>
+        [Browsable(false)]
         public System.Windows.Forms.DateTimePicker Key4EditControl { get { return txtKey4; } }
 
-        private bool isShowTimePanel = false;
+        private bool isDisplayTimePanel = false;
         /// <summary>
         /// 是否显示最下面时间那一行
         /// </summary>
-        public bool IsShowDateTimePanel
+        public bool IsDisplayDateTimePanel
         {
-            get { return isShowTimePanel; }
+            get { return isDisplayTimePanel; }
             set
             {
-                isShowTimePanel = value;
+                isDisplayTimePanel = value;
 
                 if (value)
                 {
@@ -115,6 +123,52 @@ namespace PublicManager.Modules
             set
             {
                 cbDisplayReporter.Checked = value;
+            }
+        }
+
+        private bool isDisplayKey2 = false;
+        /// <summary>
+        /// 是否显示搜索条件2内容
+        /// </summary>
+        protected bool IsDisplayKey2
+        {
+            get { return isDisplayKey2; }
+            set
+            {
+                isDisplayKey2 = value;
+
+                Key2Label.Visible = value;
+                Key2EditControl.Visible = value;
+            }
+        }
+
+        private bool isDisplayKey3 = false;
+        /// <summary>
+        /// 是否显示搜索条件3内容
+        /// </summary>
+        protected bool IsDisplayKey3
+        {
+            get { return isDisplayKey3; }
+            set
+            {
+                isDisplayKey3 = value;
+                
+                Key3Label.Visible = value;
+                Key3EditControl.Visible = value;
+            }
+        }
+
+        private bool isDisplayKey4 = false;
+        /// 是否显示搜索条件4内容
+        protected bool IsDisplayKey4
+        {
+            get { return isDisplayKey4; }
+            set
+            {
+                isDisplayKey4 = value;
+
+                Key4Label.Visible = value;
+                Key4EditControl.Visible = value;
             }
         }
 
@@ -264,7 +318,7 @@ namespace PublicManager.Modules
         /// </summary>
         /// <param name="isContract"></param>
         /// <param name="isReporter"></param>
-        public void switchCatalogType(bool isContract, bool isReporter)
+        protected void switchCatalogType(bool isContract, bool isReporter)
         {
             if (isContract && isReporter)
             {

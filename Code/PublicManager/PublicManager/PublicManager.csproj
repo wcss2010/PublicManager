@@ -180,6 +180,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\MakeSQLWithSearchRule.cs" />
     <Compile Include="Modules\BaseDBImporter.cs" />
     <Compile Include="Modules\BaseModuleController.cs">
       <SubType>UserControl</SubType>

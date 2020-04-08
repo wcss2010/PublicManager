@@ -172,10 +172,10 @@
             gridLevelNode1.RelationName = "SubjectView";
             this.gcGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gcGrid.Location = new System.Drawing.Point(0, 81);
+            this.gcGrid.Location = new System.Drawing.Point(0, 85);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1421, 231);
+            this.gcGrid.Size = new System.Drawing.Size(1421, 227);
             this.gcGrid.TabIndex = 5;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail,
@@ -520,19 +520,21 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1421, 81);
+            this.panel1.Size = new System.Drawing.Size(1421, 85);
             this.panel1.TabIndex = 3;
             // 
             // srpSearch
             // 
             this.srpSearch.CheckListPanelWidth = 85;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.srpSearch.IsShowCatalogTypePanel = true;
-            this.srpSearch.IsShowDateTimePanel = false;
+            this.srpSearch.IsDisplayContractData = true;
+            this.srpSearch.IsDisplayReporterData = false;
+            this.srpSearch.IsShowCatalogTypePanel = false;
+            this.srpSearch.IsDisplayDateTimePanel = false;
             this.srpSearch.Key1FieldString = "项目名称;计划批次";
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
-            this.srpSearch.Size = new System.Drawing.Size(1421, 81);
+            this.srpSearch.Size = new System.Drawing.Size(1421, 85);
             this.srpSearch.TabIndex = 9;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
