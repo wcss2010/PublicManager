@@ -519,7 +519,14 @@ namespace PublicManager.Modules
             {
                 if (DisplayGridControl != null)
                 {
-                    DisplayGridControl.MainView.ShowEditor();
+                    if (DisplayGridControl.MainView is DevExpress.XtraGrid.Views.Grid.GridView)
+                    {
+                        DevExpress.XtraGrid.Views.Grid.GridView gv = (DevExpress.XtraGrid.Views.Grid.GridView)DisplayGridControl.MainView;
+                        gv.OptionsFind.AllowFindPanel = false;
+                        gv.OptionsFind.ClearFindOnClose = true;
+                        gv.OptionsFind.FindNullPrompt = "请输入要搜索的关键字！";
+                        gv.ShowFindPanel();
+                    }
                 }
             }
         }

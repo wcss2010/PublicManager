@@ -80,6 +80,7 @@
             this.gridColumn7});
             this.dgvDetail.GridControl = this.gcGrid;
             this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.OptionsFind.FindNullPrompt = "";
             // 
             // gridColumn1
             // 
