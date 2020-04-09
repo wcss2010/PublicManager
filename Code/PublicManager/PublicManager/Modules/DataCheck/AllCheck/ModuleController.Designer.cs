@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            this.dgvSubjectPersons = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dgvSub = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -40,7 +40,6 @@
             this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcData = new DevExpress.XtraGrid.GridControl();
             this.dgvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,19 +73,18 @@
             this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSubjectPersons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvSubjectPersons
+            // dgvSub
             // 
-            this.dgvSubjectPersons.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.dgvSub.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn24,
             this.gridColumn25,
             this.gridColumn26,
@@ -96,11 +94,11 @@
             this.gridColumn40,
             this.gridColumn41,
             this.gridColumn42,
-            this.gridColumn43,
-            this.gridColumn44});
-            this.dgvSubjectPersons.GridControl = this.gcData;
-            this.dgvSubjectPersons.Name = "dgvSubjectPersons";
-            this.dgvSubjectPersons.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            this.gridColumn43});
+            this.dgvSub.GridControl = this.gcData;
+            this.dgvSub.Name = "dgvSub";
+            this.dgvSub.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            this.dgvSub.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn24
             // 
@@ -182,16 +180,10 @@
             this.gridColumn43.Visible = true;
             this.gridColumn43.VisibleIndex = 9;
             // 
-            // gridColumn44
-            // 
-            this.gridColumn44.Caption = "课题ID";
-            this.gridColumn44.FieldName = "row11";
-            this.gridColumn44.Name = "gridColumn44";
-            // 
             // gcData
             // 
             this.gcData.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.dgvSubjectPersons;
+            gridLevelNode1.LevelTemplate = this.dgvSub;
             gridLevelNode1.RelationName = "SubjectView";
             this.gcData.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
@@ -202,7 +194,7 @@
             this.gcData.TabIndex = 4;
             this.gcData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail,
-            this.dgvSubjectPersons});
+            this.dgvSub});
             // 
             // dgvDetail
             // 
@@ -238,7 +230,6 @@
             this.gridColumn37,
             this.gridColumn38,
             this.gridColumn39,
-            this.gridColumn22,
             this.gridColumn23});
             this.dgvDetail.GridControl = this.gcData;
             this.dgvDetail.Name = "dgvDetail";
@@ -495,16 +486,10 @@
             this.gridColumn39.Visible = true;
             this.gridColumn39.VisibleIndex = 30;
             // 
-            // gridColumn22
-            // 
-            this.gridColumn22.Caption = "项目ID";
-            this.gridColumn22.FieldName = "row32";
-            this.gridColumn22.Name = "gridColumn22";
-            // 
             // gridColumn23
             // 
-            this.gridColumn23.Caption = "课题ID";
-            this.gridColumn23.FieldName = "row33";
+            this.gridColumn23.Caption = "SubjectID";
+            this.gridColumn23.FieldName = "row32";
             this.gridColumn23.Name = "gridColumn23";
             // 
             // groupBox1
@@ -534,7 +519,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1206, 689);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSubjectPersons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSub)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -580,7 +565,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn39;
-        private DevExpress.XtraGrid.Views.Grid.GridView dgvSubjectPersons;
+        private DevExpress.XtraGrid.Views.Grid.GridView dgvSub;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
@@ -591,8 +576,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn42;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn44;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
     }
 }

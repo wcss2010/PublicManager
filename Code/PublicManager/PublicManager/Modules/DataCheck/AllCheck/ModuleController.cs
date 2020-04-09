@@ -16,21 +16,19 @@ namespace PublicManager.Modules.DataCheck.AllCheck
     public partial class ModuleController : BaseModuleController
     {
         private DEGridViewCellMergeAdapter cma;
-        private DataSet dsAll;
 
         public ModuleController()
         {
             InitializeComponent();
 
+            dgvDetail.OptionsDetail.EnableMasterViewMode = true;
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = true;
             dgvDetail.OptionsDetail.AllowExpandEmptyDetails = true;
             dgvDetail.OptionsDetail.ShowDetailTabs = false;
             cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row2", "row3", "row13" });
 
-            dgvSubjectPersons.OptionsBehavior.Editable = false;
-            dgvSubjectPersons.OptionsView.AllowCellMerge = true;
-            dgvSubjectPersons.OptionsView.ShowGroupPanel = false;
+            dgvSub.OptionsBehavior.Editable = false;
         }
 
         public override void start()
@@ -46,16 +44,14 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
         private void loadData()
         {
-            dsAll = new DataSet();
-            DataTable masterDt = getTempDataTable("row", 33);
+            DataSet dsAll = new DataSet();
+            DataTable masterDt = getTempDataTable("row", 32);
             DataTable detailDt = getTempDataTable("row", 11);
 
             List<Project> projList = ConnectionManager.Context.table("Project").select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                 #region 生成数据
-                List<object> cells = new List<object>();
-
                 if (proj != null && !string.IsNullOrEmpty(proj.ProjectID))
                 {
                     //项目类型
@@ -67,7 +63,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
                     foreach (Subject sub in subList)
                     {
                         #region 生成主表数据
-                        cells = new List<object>();
+                        List<object> cells = new List<object>();
 
                         //项目编号
                         cells.Add(proj.ProjectNumber);
@@ -196,11 +192,8 @@ namespace PublicManager.Modules.DataCheck.AllCheck
                         //备注
                         cells.Add(proj.Memo);
 
-                        //项目ID
-                        cells.Add(proj.ProjectID);
-
                         //课题ID
-                        cells.Add(sub.SubjectID);
+                        cells.Add(proj.ProjectID + "***" + sub.SubjectID);
 
                         masterDt.Rows.Add(cells.ToArray());
                         #endregion
@@ -211,34 +204,34 @@ namespace PublicManager.Modules.DataCheck.AllCheck
                             List<Person> perList = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "'").select("*").getList<Person>(new Person());
                             foreach (Person p in perList)
                             {
-                                cells = new List<object>();
+                                List<object> cellSubjectObj = new List<object>();
 
                                 //姓名
-                                cells.Add(p.PersonName);
+                                cellSubjectObj.Add(p.PersonName);
 
                                 //身份证
-                                cells.Add(p.PersonIDCard);
+                                cellSubjectObj.Add(p.PersonIDCard);
 
                                 //性别
-                                cells.Add(p.PersonSex);
+                                cellSubjectObj.Add(p.PersonSex);
 
                                 //工作单位
-                                cells.Add(p.WorkUnit);
+                                cellSubjectObj.Add(p.WorkUnit);
 
                                 //职务/职称
-                                cells.Add(p.PersonJob);
+                                cellSubjectObj.Add(p.PersonJob);
 
                                 //专业
-                                cells.Add(p.PersonSpecialty);
+                                cellSubjectObj.Add(p.PersonSpecialty);
 
                                 //座机
-                                cells.Add(p.Telephone);
+                                cellSubjectObj.Add(p.Telephone);
 
                                 //手机
-                                cells.Add(p.Mobilephone);
+                                cellSubjectObj.Add(p.Mobilephone);
 
                                 //任务分工
-                                cells.Add(p.TaskContent);
+                                cellSubjectObj.Add(p.TaskContent);
 
                                 //项目中职务
                                 //string roleStr = "未知";
@@ -260,12 +253,12 @@ namespace PublicManager.Modules.DataCheck.AllCheck
                                 {
                                     roleStr = p.JobInProject;
                                 }
-                                cells.Add(roleStr);
+                                cellSubjectObj.Add(roleStr);
                                 
                                 //课题ID
-                                cells.Add(sub.SubjectID);
+                                cellSubjectObj.Add(proj.ProjectID + "***" + sub.SubjectID);
 
-                                detailDt.Rows.Add(cells.ToArray());
+                                detailDt.Rows.Add(cellSubjectObj.ToArray());
                             }
                         }
                         #endregion
@@ -280,7 +273,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
             dsAll.Tables.Add(masterDt);
             dsAll.Tables.Add(detailDt);
 
-            DataColumn keyColumn = dsAll.Tables[masterDt.TableName].Columns["row33"];         //主键
+            DataColumn keyColumn = dsAll.Tables[masterDt.TableName].Columns["row32"];         //主键
             DataColumn foreignColumn = dsAll.Tables[detailDt.TableName].Columns["row11"];    //外键
             //
             //对于主从表，层次名至关重要，关系名必须和从表的层次名一致,
@@ -297,7 +290,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
             GridView view = sender as GridView;
             if (view != null)
             {
-                object objProjectID = view.GetRowCellValue(e.RowHandle, "row33");
+                object objProjectID = view.GetRowCellValue(e.RowHandle, "row32");
                 if (objProjectID != null)
                 {
                     string projectID = objProjectID.ToString();
