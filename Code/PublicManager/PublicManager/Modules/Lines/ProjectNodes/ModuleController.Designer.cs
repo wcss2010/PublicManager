@@ -292,11 +292,10 @@
             this.srpSearch.IsDisplayCheckListPanel = false;
             this.srpSearch.IsDisplayContractData = true;
             this.srpSearch.IsDisplayKey1Panel = true;
-            this.srpSearch.IsDisplayKey2 = false;
             this.srpSearch.IsDisplayKey2Panel = false;
-            this.srpSearch.IsDisplayKey3 = true;
+            this.srpSearch.IsDisplayKey3Panel = true;
             this.srpSearch.IsDisplayKey3OR4Panel = true;
-            this.srpSearch.IsDisplayKey4 = true;
+            this.srpSearch.IsDisplayKey4Panel = true;
             this.srpSearch.IsDisplayReporterData = false;
             this.srpSearch.Key1FieldString = "项目名称";
             this.srpSearch.Location = new System.Drawing.Point(3, 18);

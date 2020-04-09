@@ -531,11 +531,10 @@
             this.srpSearch.IsDisplayCheckListPanel = true;
             this.srpSearch.IsDisplayContractData = true;
             this.srpSearch.IsDisplayKey1Panel = true;
-            this.srpSearch.IsDisplayKey2 = false;
             this.srpSearch.IsDisplayKey2Panel = false;
-            this.srpSearch.IsDisplayKey3 = false;
+            this.srpSearch.IsDisplayKey3Panel = false;
             this.srpSearch.IsDisplayKey3OR4Panel = false;
-            this.srpSearch.IsDisplayKey4 = false;
+            this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = false;
             this.srpSearch.Key1FieldString = "项目名称;计划批次";
             this.srpSearch.Location = new System.Drawing.Point(0, 0);

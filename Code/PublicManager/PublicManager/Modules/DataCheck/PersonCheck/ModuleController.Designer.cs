@@ -209,11 +209,10 @@
             this.srpSearch.IsDisplayCheckListPanel = true;
             this.srpSearch.IsDisplayContractData = true;
             this.srpSearch.IsDisplayKey1Panel = true;
-            this.srpSearch.IsDisplayKey2 = false;
             this.srpSearch.IsDisplayKey2Panel = false;
-            this.srpSearch.IsDisplayKey3 = false;
+            this.srpSearch.IsDisplayKey3Panel = false;
             this.srpSearch.IsDisplayKey3OR4Panel = false;
-            this.srpSearch.IsDisplayKey4 = false;
+            this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = true;
             this.srpSearch.Key1FieldString = "项目名称;课题名称;人员名称;人员专业;人员任务分工";
             this.srpSearch.Location = new System.Drawing.Point(0, 0);

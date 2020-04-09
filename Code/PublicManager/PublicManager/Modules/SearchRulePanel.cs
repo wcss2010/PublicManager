@@ -14,7 +14,7 @@ namespace PublicManager.Modules
     public delegate void ResetClickDelegate(object sender, EventArgs args);
     public delegate void ExportToClickDelegate(object sender, EventArgs args);
 
-    public partial class SearchRulePanel : XtraUserControl
+    public partial class SearchRulePanel : UserControl
     {
         private string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
         /// <summary>
@@ -78,10 +78,10 @@ namespace PublicManager.Modules
         /// </summary>
         public bool IsDisplayKey3OR4Panel
         {
-            get { return plKey3Panel.Visible; }
+            get { return plKey3And4Panel.Visible; }
             set
             {
-                plKey3Panel.Visible = value;
+                plKey3And4Panel.Visible = value;
             }
         }
 
@@ -139,49 +139,27 @@ namespace PublicManager.Modules
             }
         }
 
-        private bool isDisplayKey2 = false;
         /// <summary>
-        /// 是否显示搜索条件2内容
+        /// 是否显示Key3的面板
         /// </summary>
-        public bool IsDisplayKey2
+        public bool IsDisplayKey3Panel
         {
-            get { return isDisplayKey2; }
+            get { return plKey3Panel.Visible; }
             set
             {
-                isDisplayKey2 = value;
-
-                Key2Label.Visible = value;
-                Key2EditControl.Visible = value;
+                plKey3Panel.Visible = value;
             }
         }
 
-        private bool isDisplayKey3 = false;
         /// <summary>
-        /// 是否显示搜索条件3内容
+        /// 是否显示Key4的面板
         /// </summary>
-        public bool IsDisplayKey3
+        public bool IsDisplayKey4Panel
         {
-            get { return isDisplayKey3; }
+            get { return plKey4Panel.Visible; }
             set
             {
-                isDisplayKey3 = value;
-                
-                Key3Label.Visible = value;
-                Key3EditControl.Visible = value;
-            }
-        }
-
-        private bool isDisplayKey4 = false;
-        /// 是否显示搜索条件4内容
-        public bool IsDisplayKey4
-        {
-            get { return isDisplayKey4; }
-            set
-            {
-                isDisplayKey4 = value;
-
-                Key4Label.Visible = value;
-                Key4EditControl.Visible = value;
+                plKey4Panel.Visible = value;
             }
         }
 
@@ -437,6 +415,39 @@ namespace PublicManager.Modules
                 }
             }
             return trueCount;
+        }
+
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            base.OnSizeChanged(e);
+
+            #region 设置宽度
+            if (IsDisplayKey1Panel && IsDisplayKey2Panel && IsDisplayKey3OR4Panel)
+            {
+                plKey1Panel.Width = plInputPanel.Width / 3;
+                plKey2Panel.Width = plInputPanel.Width / 3;
+                plKey3And4Panel.Width = plInputPanel.Width / 3;
+            }
+            else if (IsDisplayKey1Panel && IsDisplayKey2Panel)
+            {
+                plKey1Panel.Width = (plInputPanel.Width / 3) * 2;
+                plKey2Panel.Width = plInputPanel.Width - plKey1Panel.Width;
+            }
+            else if (IsDisplayKey1Panel && IsDisplayKey3OR4Panel)
+            {
+                plKey1Panel.Width = plInputPanel.Width / 3;
+                plKey3And4Panel.Width = plInputPanel.Width - plKey1Panel.Width;
+            }
+            else if (IsDisplayKey2Panel && IsDisplayKey3OR4Panel)
+            {
+                plKey2Panel.Width = plInputPanel.Width / 2;
+                plKey3And4Panel.Width = plInputPanel.Width / 2;
+            }
+            else
+            {
+                plKey1Panel.Width = plInputPanel.Width - 5;
+            }
+            #endregion
         }
     }
 }
