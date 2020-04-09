@@ -237,17 +237,27 @@ namespace PublicManager.Modules.DataCheck.AllCheck
                                 cells.Add(p.TaskContent);
 
                                 //项目中职务
+                                //string roleStr = "未知";
+                                //if (p.IsProjectMaster == "true")
+                                //{
+                                //    roleStr = "项目负责人兼" + sub.SubjectName + "的" + p.JobInProject;
+                                //}
+                                //else
+                                //{
+                                //    roleStr = sub.SubjectName + "的" + p.JobInProject;
+                                //}
+                                //cells.Add(roleStr);
                                 string roleStr = "未知";
                                 if (p.IsProjectMaster == "true")
                                 {
-                                    roleStr = "项目负责人兼" + sub.SubjectName + "的" + p.JobInProject;
+                                    roleStr = "项目负责人兼" + p.JobInProject;
                                 }
                                 else
                                 {
-                                    roleStr = sub.SubjectName + "的" + p.JobInProject;
+                                    roleStr = p.JobInProject;
                                 }
                                 cells.Add(roleStr);
-
+                                
                                 //课题ID
                                 cells.Add(sub.SubjectID);
 
@@ -283,7 +293,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
             GridView view = sender as GridView;
             if (view != null)
             {
-                object objProjectID = view.GetRowCellValue(e.RowHandle, "row15");
+                object objProjectID = view.GetRowCellValue(e.RowHandle, "row33");
                 if (objProjectID != null)
                 {
                     string projectID = objProjectID.ToString();
