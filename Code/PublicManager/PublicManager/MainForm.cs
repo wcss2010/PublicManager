@@ -252,7 +252,7 @@ namespace PublicManager
                 //显示模块
                 if (nbcLeftTree.ActiveGroup != null)
                 {
-                    showModule(nbcLeftTree.ActiveGroup.Caption + "xxxx" + hitInfo.Node.GetDisplayText(0), true);
+                    showModule(nbcLeftTree.ActiveGroup.Caption + "xxxx" + hitInfo.Node.GetDisplayText(0).Trim(), true);
                 }
             }
         }

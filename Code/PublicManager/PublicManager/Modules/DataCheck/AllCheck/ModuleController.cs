@@ -24,9 +24,13 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = true;
+            dgvDetail.OptionsDetail.AllowExpandEmptyDetails = true;
+            dgvDetail.OptionsDetail.ShowDetailTabs = false;
             cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row2", "row3", "row13" });
 
             dgvSubjectPersons.OptionsBehavior.Editable = false;
+            dgvSubjectPersons.OptionsView.AllowCellMerge = true;
+            dgvSubjectPersons.OptionsView.ShowGroupPanel = false;
         }
 
         public override void start()
