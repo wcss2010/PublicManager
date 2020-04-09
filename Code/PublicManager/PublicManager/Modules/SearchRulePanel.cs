@@ -304,6 +304,16 @@ namespace PublicManager.Modules
 
         public GridControl DisplayGridControl { get; set; }
 
+        private bool isHightlightHintWithSearchAfter = true;
+        /// <summary>
+        /// 点击搜索后是否高亮提示
+        /// </summary>
+        protected bool IsHightlightHintWithSearchAfter
+        {
+            get { return isHightlightHintWithSearchAfter; }
+            set { isHightlightHintWithSearchAfter = value; }
+        }
+
         public SearchRulePanel()
         {
             InitializeComponent();
@@ -341,6 +351,29 @@ namespace PublicManager.Modules
             if (OnSearchClick != null)
             {
                 OnSearchClick(this, new EventArgs());
+
+                //尝试高亮显示
+                if (string.IsNullOrEmpty(Key1EditControl.Text))
+                {
+                    return;
+                }
+                else
+                {
+                    if (DisplayGridControl != null)
+                    {
+                        if (IsHightlightHintWithSearchAfter)
+                        {
+                            if (DisplayGridControl.MainView is DevExpress.XtraGrid.Views.Grid.GridView)
+                            {
+                                try
+                                {
+                                    ((DevExpress.XtraGrid.Views.Grid.GridView)DisplayGridControl.MainView).FindFilterText = Key1EditControl.Text;
+                                }
+                                catch (Exception ex) { }
+                            }
+                        }
+                    }
+                }
             }
         }
 
