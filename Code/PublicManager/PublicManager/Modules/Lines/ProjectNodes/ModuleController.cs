@@ -26,11 +26,6 @@ namespace PublicManager.Modules.Lines.ProjectNodes
             cma = new DEGridViewCellMergeAdapter(gvDetail, new string[] { "row7" });
         }
 
-        public override DevExpress.XtraBars.Ribbon.RibbonPage[] getTopBarPages()
-        {
-            return new DevExpress.XtraBars.Ribbon.RibbonPage[] { rpMaster };
-        }
-
         public override void start()
         {
             base.start();
@@ -44,34 +39,6 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
         private void loadData()
         {
-        }
-
-        private void btnDownloadExcelA_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.FileName = string.Empty;
-            sfd.Filter = "*.xlsx|*.xlsx";
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    //复制模板文件
-                    File.Copy(Path.Combine(Application.StartupPath, Path.Combine("Templetes", "moneyImport.xlsx")), sfd.FileName);
-
-                    //弹出提示
-                    MessageBox.Show("Excel导出完成！" + sfd.FileName);
-
-                    //打开文件
-                    if (File.Exists(sfd.FileName))
-                    {
-                        Process.Start(sfd.FileName);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("对不起，Excel导出失败！Ex:" + ex.ToString());
-                }
-            }
         }
 
         private void gvDetail_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
@@ -408,6 +375,37 @@ namespace PublicManager.Modules.Lines.ProjectNodes
         private void srpSearch_OnExportToClick(object sender, EventArgs args)
         {
             exportToExcelWithDevExpress(gvDetail);
+        }
+
+        private void srpSearch_OnCustomButtonClick(object sender, CustomButtonEventArgs args)
+        {
+            if (args.ButtonName == "下载节点模板")
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.FileName = string.Empty;
+                sfd.Filter = "*.xlsx|*.xlsx";
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        //复制模板文件
+                        File.Copy(Path.Combine(Application.StartupPath, Path.Combine("Templetes", "moneyImport.xlsx")), sfd.FileName);
+
+                        //弹出提示
+                        MessageBox.Show("Excel导出完成！" + sfd.FileName);
+
+                        //打开文件
+                        if (File.Exists(sfd.FileName))
+                        {
+                            Process.Start(sfd.FileName);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("对不起，Excel导出失败！Ex:" + ex.ToString());
+                    }
+                }
+            }
         }
     }
 }

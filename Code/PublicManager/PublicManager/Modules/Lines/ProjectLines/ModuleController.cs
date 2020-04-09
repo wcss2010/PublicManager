@@ -43,25 +43,6 @@ namespace PublicManager.Modules.Lines.ProjectLines
 
         }
 
-        private void btnCheckProject_Click(object sender, EventArgs e)
-        {
-            int[] selecteds = dgvDetail.GetSelectedRows();
-            if (selecteds != null && selecteds.Length >= 1)
-            {
-                object objValue = dgvDetail.GetRowCellValue(selecteds[0], "row20");
-                if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
-                {
-                    string projectId = objValue.ToString();
-
-                    Project proj = ConnectionManager.Context.table("Project").where("ProjectID='" + projectId + "'").select("*").getItem<Project>(new Project());
-                    if (new CheckEditForm(proj).ShowDialog() == DialogResult.OK)
-                    {
-                        srpSearch.search();
-                    }
-                }
-            }
-        }
-
         private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
             DataTable dt = getTempDataTable("row", 23);
@@ -128,6 +109,28 @@ namespace PublicManager.Modules.Lines.ProjectLines
         private void srpSearch_OnExportToClick(object sender, EventArgs args)
         {
             exportToExcelWithDevExpress(dgvDetail);
+        }
+
+        private void srpSearch_OnCustomButtonClick(object sender, CustomButtonEventArgs args)
+        {
+            if (args.ButtonName == "编辑审核信息")
+            {
+                int[] selecteds = dgvDetail.GetSelectedRows();
+                if (selecteds != null && selecteds.Length >= 1)
+                {
+                    object objValue = dgvDetail.GetRowCellValue(selecteds[0], "row20");
+                    if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
+                    {
+                        string projectId = objValue.ToString();
+
+                        Project proj = ConnectionManager.Context.table("Project").where("ProjectID='" + projectId + "'").select("*").getItem<Project>(new Project());
+                        if (new CheckEditForm(proj).ShowDialog() == DialogResult.OK)
+                        {
+                            srpSearch.search();
+                        }
+                    }
+                }
+            }
         }
     }
 }

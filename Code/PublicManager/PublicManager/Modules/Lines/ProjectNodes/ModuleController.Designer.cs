@@ -44,32 +44,23 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.btnSetSourceDir = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSetDestDir = new DevExpress.XtraBars.BarButtonItem();
-            this.btnImportAll = new DevExpress.XtraBars.BarButtonItem();
-            this.btnImportWithSelected = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDownloadExcelA = new DevExpress.XtraBars.BarButtonItem();
-            this.rpMaster = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgImportA = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.srpSearch = new PublicManager.Modules.SearchRulePanel();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 103);
+            this.gcGrid.Location = new System.Drawing.Point(3, 92);
             this.gcGrid.MainView = this.gvDetail;
             this.gcGrid.Name = "gcGrid";
             this.gcGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.gcGrid.Size = new System.Drawing.Size(1246, 421);
+            this.gcGrid.Size = new System.Drawing.Size(1246, 555);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetail});
@@ -198,129 +189,54 @@
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
-            // rcTopBar
-            // 
-            this.rcTopBar.ExpandCollapseItem.Id = 0;
-            this.rcTopBar.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.rcTopBar.ExpandCollapseItem,
-            this.btnSetSourceDir,
-            this.btnSetDestDir,
-            this.btnImportAll,
-            this.btnImportWithSelected,
-            this.btnDownloadExcelA});
-            this.rcTopBar.Location = new System.Drawing.Point(0, 0);
-            this.rcTopBar.MaxItemId = 9;
-            this.rcTopBar.Name = "rcTopBar";
-            this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.rpMaster});
-            this.rcTopBar.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.rcTopBar.ShowCategoryInCaption = false;
-            this.rcTopBar.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
-            this.rcTopBar.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.False;
-            this.rcTopBar.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.rcTopBar.ShowQatLocationSelector = false;
-            this.rcTopBar.ShowToolbarCustomizeItem = false;
-            this.rcTopBar.Size = new System.Drawing.Size(1252, 123);
-            this.rcTopBar.Toolbar.ShowCustomizeItem = false;
-            this.rcTopBar.Visible = false;
-            // 
-            // btnSetSourceDir
-            // 
-            this.btnSetSourceDir.Caption = "设置主目录";
-            this.btnSetSourceDir.Id = 1;
-            this.btnSetSourceDir.LargeGlyph = global::PublicManager.Properties.Resources.folderA;
-            this.btnSetSourceDir.Name = "btnSetSourceDir";
-            // 
-            // btnSetDestDir
-            // 
-            this.btnSetDestDir.Caption = "设置解压目录";
-            this.btnSetDestDir.Id = 2;
-            this.btnSetDestDir.LargeGlyph = global::PublicManager.Properties.Resources.folderB;
-            this.btnSetDestDir.Name = "btnSetDestDir";
-            // 
-            // btnImportAll
-            // 
-            this.btnImportAll.Caption = "导入所有";
-            this.btnImportAll.Id = 3;
-            this.btnImportAll.LargeGlyph = global::PublicManager.Properties.Resources.importA;
-            this.btnImportAll.Name = "btnImportAll";
-            // 
-            // btnImportWithSelected
-            // 
-            this.btnImportWithSelected.Caption = "选择性导入";
-            this.btnImportWithSelected.Id = 4;
-            this.btnImportWithSelected.LargeGlyph = global::PublicManager.Properties.Resources.importB;
-            this.btnImportWithSelected.Name = "btnImportWithSelected";
-            // 
-            // btnDownloadExcelA
-            // 
-            this.btnDownloadExcelA.Caption = "下载项目与课题经费模板";
-            this.btnDownloadExcelA.Id = 5;
-            this.btnDownloadExcelA.LargeGlyph = global::PublicManager.Properties.Resources.printtoexcel;
-            this.btnDownloadExcelA.Name = "btnDownloadExcelA";
-            this.btnDownloadExcelA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDownloadExcelA_ItemClick);
-            // 
-            // rpMaster
-            // 
-            this.rpMaster.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgImportA});
-            this.rpMaster.Name = "rpMaster";
-            this.rpMaster.Text = "合同书";
-            // 
-            // rpgImportA
-            // 
-            this.rpgImportA.ItemLinks.Add(this.btnDownloadExcelA);
-            this.rpgImportA.Name = "rpgImportA";
-            this.rpgImportA.Text = "导入A";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.gcGrid);
             this.groupBox1.Controls.Add(this.srpSearch);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 123);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1252, 527);
+            this.groupBox1.Size = new System.Drawing.Size(1252, 650);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
             // srpSearch
             // 
-            this.srpSearch.DisplayGridControl = gcGrid;
+            this.srpSearch.CustomButtonsNames = "结果内容搜索;下载节点模板";
+            this.srpSearch.DisplayGridControl = this.gcGrid;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = false;
             this.srpSearch.IsDisplayCheckListPanel = false;
             this.srpSearch.IsDisplayContractData = true;
+            this.srpSearch.IsDisplayCustomButtonPanel = true;
             this.srpSearch.IsDisplayKey1Panel = true;
             this.srpSearch.IsDisplayKey2Panel = false;
-            this.srpSearch.IsDisplayKey3Panel = true;
             this.srpSearch.IsDisplayKey3OR4Panel = true;
+            this.srpSearch.IsDisplayKey3Panel = true;
             this.srpSearch.IsDisplayKey4Panel = true;
             this.srpSearch.IsDisplayReporterData = false;
             this.srpSearch.Key1FieldString = "项目名称";
             this.srpSearch.Location = new System.Drawing.Point(3, 18);
             this.srpSearch.Name = "srpSearch";
-            this.srpSearch.Size = new System.Drawing.Size(1246, 85);
+            this.srpSearch.Size = new System.Drawing.Size(1246, 74);
             this.srpSearch.TabIndex = 7;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
             this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
+            this.srpSearch.OnCustomButtonClick += new PublicManager.Modules.CustomButtonClickDelegate(this.srpSearch_OnCustomButtonClick);
             // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.rcTopBar);
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1252, 650);
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -334,14 +250,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraBars.Ribbon.RibbonControl rcTopBar;
-        private DevExpress.XtraBars.BarButtonItem btnSetSourceDir;
-        private DevExpress.XtraBars.BarButtonItem btnSetDestDir;
-        private DevExpress.XtraBars.BarButtonItem btnImportAll;
-        private DevExpress.XtraBars.BarButtonItem btnImportWithSelected;
-        private DevExpress.XtraBars.BarButtonItem btnDownloadExcelA;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rpMaster;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgImportA;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;

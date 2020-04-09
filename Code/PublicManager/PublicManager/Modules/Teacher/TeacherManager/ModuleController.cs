@@ -32,101 +32,6 @@ namespace PublicManager.Modules.Teacher.TeacherManager
             this.DisplayControl.Controls.Add(this);
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (new AddOrUpdateTeacherForm(null).ShowDialog() == DialogResult.OK)
-            {
-                srpSearch.search();
-            }
-        }
-
-        private void btnImportFromExcel_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Excel(2007-2013)|*.xlsx";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    DataSet ds = ExcelHelper.ExcelToDataSet(ofd.FileName, true);
-                    if (ds != null && ds.Tables.Count >= 1)
-                    {
-                        DataTable dt = ds.Tables[0];
-
-                        foreach (DataRow drr in dt.Rows)
-                        {
-                            //检查非空
-                            foreach (DataColumn dc in drr.Table.Columns)
-                            {
-                                if (drr[dc.ColumnName] == null || drr[dc.ColumnName].ToString() == string.Empty)
-                                {
-                                    throw new Exception("对不起，'" + dc.ColumnName + "'不能为空！");
-                                }
-                            }
-
-                            string strTag1 = drr["姓名"] != null ? drr["姓名"].ToString().Trim() : string.Empty;
-                            string strTag2 = drr["单位"] != null ? drr["单位"].ToString().Trim() : string.Empty;
-                            string strTag3 = drr["职务"] != null ? drr["职务"].ToString().Trim() : string.Empty;
-                            string strTag4 = drr["职称"] != null ? drr["职称"].ToString().Trim() : string.Empty;
-                            string strTag5 = drr["主要研究方向"] != null ? drr["主要研究方向"].ToString().Trim() : string.Empty;
-                            string strTag6 = drr["联系方式"] != null ? drr["联系方式"].ToString().Trim() : string.Empty;
-                            string strTag7 = drr["专家来源"] != null ? drr["专家来源"].ToString().Trim() : string.Empty;
-                            string strTag8 = drr["内部职务"] != null ? drr["内部职务"].ToString().Trim() : string.Empty;
-
-                            DB.Entitys.Teacher teacherObj = new DB.Entitys.Teacher();
-                            teacherObj.TeacherID = Guid.NewGuid().ToString();
-                            teacherObj.TName = strTag1;
-                            teacherObj.TUnit = strTag2;
-                            teacherObj.TJob = strTag3;
-                            teacherObj.TJobTopic = strTag4;
-                            teacherObj.TDirection = strTag5;
-                            teacherObj.TPhone = strTag6;
-                            teacherObj.TSource = strTag7;
-                            teacherObj.TInnerJob = strTag8;
-
-                            object objResult = ConnectionManager.Context.table("Teacher").where("TName='" + teacherObj.TName + "' and TPhone = '" + teacherObj.TPhone + "'").select("TeacherID").getValue();
-                            if (objResult == null || objResult.ToString().Equals(string.Empty))
-                            {
-                                teacherObj.copyTo(ConnectionManager.Context.table("Teacher")).insert();
-                            }
-                            else
-                            {
-                                teacherObj.TeacherID = objResult.ToString();
-                                teacherObj.copyTo(ConnectionManager.Context.table("Teacher")).where("TeacherID='" + teacherObj.TeacherID + "'").update();
-                            }
-                        }
-                    }
-                    srpSearch.search();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("对不起，导入失败！Ex:" + ex.ToString());
-                }
-            }
-        }
-
-        private void llDownloadTemplete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Templetes", "teacherList.xlsx"));
-
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Excel(2007-2013)|*.xlsx";
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    File.Copy(sourcePath, sfd.FileName, true);
-                    Process.Start(sfd.FileName);
-
-                    MessageBox.Show("下载完成！");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("下载失败！Ex:" + ex.ToString());
-                }
-            }
-        }
-
         private void dgvDetail_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             string teacherID = string.Empty;
@@ -280,6 +185,108 @@ namespace PublicManager.Modules.Teacher.TeacherManager
             catch (Exception ex)
             {
                 MessageBox.Show("导出失败！Ex:" + ex.ToString());
+            }
+        }
+
+        private void srpSearch_OnCustomButtonClick(object sender, CustomButtonEventArgs args)
+        {
+            switch (args.ButtonName)
+            {
+                case "下载导入模板":
+                    {
+                        string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Templetes", "teacherList.xlsx"));
+
+                        SaveFileDialog sfd = new SaveFileDialog();
+                        sfd.Filter = "Excel(2007-2013)|*.xlsx";
+                        if (sfd.ShowDialog() == DialogResult.OK)
+                        {
+                            try
+                            {
+                                File.Copy(sourcePath, sfd.FileName, true);
+                                Process.Start(sfd.FileName);
+
+                                MessageBox.Show("下载完成！");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("下载失败！Ex:" + ex.ToString());
+                            }
+                        }
+                    }
+                    break;
+                case "新增":
+                    {
+                        if (new AddOrUpdateTeacherForm(null).ShowDialog() == DialogResult.OK)
+                        {
+                            srpSearch.search();
+                        }
+                    }
+                    break;
+                case "从Excel导入":
+                    {
+                        OpenFileDialog ofd = new OpenFileDialog();
+                        ofd.Filter = "Excel(2007-2013)|*.xlsx";
+                        if (ofd.ShowDialog() == DialogResult.OK)
+                        {
+                            try
+                            {
+                                DataSet ds = ExcelHelper.ExcelToDataSet(ofd.FileName, true);
+                                if (ds != null && ds.Tables.Count >= 1)
+                                {
+                                    DataTable dt = ds.Tables[0];
+
+                                    foreach (DataRow drr in dt.Rows)
+                                    {
+                                        //检查非空
+                                        foreach (DataColumn dc in drr.Table.Columns)
+                                        {
+                                            if (drr[dc.ColumnName] == null || drr[dc.ColumnName].ToString() == string.Empty)
+                                            {
+                                                throw new Exception("对不起，'" + dc.ColumnName + "'不能为空！");
+                                            }
+                                        }
+
+                                        string strTag1 = drr["姓名"] != null ? drr["姓名"].ToString().Trim() : string.Empty;
+                                        string strTag2 = drr["单位"] != null ? drr["单位"].ToString().Trim() : string.Empty;
+                                        string strTag3 = drr["职务"] != null ? drr["职务"].ToString().Trim() : string.Empty;
+                                        string strTag4 = drr["职称"] != null ? drr["职称"].ToString().Trim() : string.Empty;
+                                        string strTag5 = drr["主要研究方向"] != null ? drr["主要研究方向"].ToString().Trim() : string.Empty;
+                                        string strTag6 = drr["联系方式"] != null ? drr["联系方式"].ToString().Trim() : string.Empty;
+                                        string strTag7 = drr["专家来源"] != null ? drr["专家来源"].ToString().Trim() : string.Empty;
+                                        string strTag8 = drr["内部职务"] != null ? drr["内部职务"].ToString().Trim() : string.Empty;
+
+                                        DB.Entitys.Teacher teacherObj = new DB.Entitys.Teacher();
+                                        teacherObj.TeacherID = Guid.NewGuid().ToString();
+                                        teacherObj.TName = strTag1;
+                                        teacherObj.TUnit = strTag2;
+                                        teacherObj.TJob = strTag3;
+                                        teacherObj.TJobTopic = strTag4;
+                                        teacherObj.TDirection = strTag5;
+                                        teacherObj.TPhone = strTag6;
+                                        teacherObj.TSource = strTag7;
+                                        teacherObj.TInnerJob = strTag8;
+
+                                        object objResult = ConnectionManager.Context.table("Teacher").where("TName='" + teacherObj.TName + "' and TPhone = '" + teacherObj.TPhone + "'").select("TeacherID").getValue();
+                                        if (objResult == null || objResult.ToString().Equals(string.Empty))
+                                        {
+                                            teacherObj.copyTo(ConnectionManager.Context.table("Teacher")).insert();
+                                        }
+                                        else
+                                        {
+                                            teacherObj.TeacherID = objResult.ToString();
+                                            teacherObj.copyTo(ConnectionManager.Context.table("Teacher")).where("TeacherID='" + teacherObj.TeacherID + "'").update();
+                                        }
+                                    }
+                                }
+                                srpSearch.search();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("对不起，导入失败！Ex:" + ex.ToString());
+                            }
+                        }
+                    }
+                    break;
             }
         }
     }

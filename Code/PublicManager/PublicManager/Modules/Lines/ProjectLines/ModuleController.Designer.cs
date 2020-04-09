@@ -30,10 +30,10 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.srpSearch = new PublicManager.Modules.SearchRulePanel();
-            this.btnCheckProject = new System.Windows.Forms.Button();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.dgvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,68 +55,58 @@
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.srpSearch);
-            this.panel1.Controls.Add(this.btnCheckProject);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1414, 53);
+            this.panel1.Size = new System.Drawing.Size(1414, 73);
             this.panel1.TabIndex = 2;
             // 
             // srpSearch
             // 
-            this.srpSearch.DisplayGridControl = gcGrid;
+            this.srpSearch.CustomButtonsNames = "结果内容搜索;编辑审核信息";
+            this.srpSearch.DisplayGridControl = this.gcGrid;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = false;
             this.srpSearch.IsDisplayCheckListPanel = false;
             this.srpSearch.IsDisplayContractData = true;
+            this.srpSearch.IsDisplayCustomButtonPanel = true;
             this.srpSearch.IsDisplayKey1Panel = true;
             this.srpSearch.IsDisplayKey2Panel = false;
-            this.srpSearch.IsDisplayKey3Panel = false;
             this.srpSearch.IsDisplayKey3OR4Panel = false;
+            this.srpSearch.IsDisplayKey3Panel = false;
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = true;
             this.srpSearch.Key1FieldString = "项目名称";
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
-            this.srpSearch.Size = new System.Drawing.Size(1349, 87);
+            this.srpSearch.Size = new System.Drawing.Size(1414, 73);
             this.srpSearch.TabIndex = 10;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
             this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
+            this.srpSearch.OnCustomButtonClick += new PublicManager.Modules.CustomButtonClickDelegate(this.srpSearch_OnCustomButtonClick);
             // 
-            // btnCheckProject
+            // gcGrid
             // 
-            this.btnCheckProject.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCheckProject.Location = new System.Drawing.Point(1349, 0);
-            this.btnCheckProject.Name = "btnCheckProject";
-            this.btnCheckProject.Size = new System.Drawing.Size(65, 53);
-            this.btnCheckProject.TabIndex = 9;
-            this.btnCheckProject.Text = "编辑审核信息";
-            this.btnCheckProject.UseVisualStyleBackColor = true;
-            this.btnCheckProject.Click += new System.EventHandler(this.btnCheckProject_Click);
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "类型";
-            this.gridColumn2.FieldName = "row2";
-            this.gridColumn2.Name = "gridColumn2";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "版本";
-            this.gridColumn1.FieldName = "row1";
-            this.gridColumn1.Name = "gridColumn1";
+            this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcGrid.Location = new System.Drawing.Point(3, 91);
+            this.gcGrid.MainView = this.dgvDetail;
+            this.gcGrid.Name = "gcGrid";
+            this.gcGrid.Size = new System.Drawing.Size(1414, 585);
+            this.gcGrid.TabIndex = 4;
+            this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgvDetail});
             // 
             // dgvDetail
             // 
@@ -146,6 +136,18 @@
             this.gridColumn20});
             this.dgvDetail.GridControl = this.gcGrid;
             this.dgvDetail.Name = "dgvDetail";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "版本";
+            this.gridColumn1.FieldName = "row1";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "类型";
+            this.gridColumn2.FieldName = "row2";
+            this.gridColumn2.Name = "gridColumn2";
             // 
             // gridColumn23
             // 
@@ -331,17 +333,6 @@
             this.gridColumn20.FieldName = "row20";
             this.gridColumn20.Name = "gridColumn20";
             // 
-            // gcGrid
-            // 
-            this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 71);
-            this.gcGrid.MainView = this.dgvDetail;
-            this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1414, 605);
-            this.gcGrid.TabIndex = 4;
-            this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dgvDetail});
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.gcGrid);
@@ -361,9 +352,10 @@
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1420, 679);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -394,7 +386,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
-        private System.Windows.Forms.Button btnCheckProject;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
