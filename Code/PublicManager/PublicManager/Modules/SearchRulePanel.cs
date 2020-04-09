@@ -348,6 +348,25 @@ namespace PublicManager.Modules
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            //清空搜索条件
+            if (DisplayGridControl != null)
+            {
+                if (IsHightlightHintWithSearchAfter)
+                {
+                    foreach (DevExpress.XtraGrid.Views.Base.BaseView bv in DisplayGridControl.ViewCollection)
+                    {
+                        if (bv is DevExpress.XtraGrid.Views.Grid.GridView)
+                        {
+                            try
+                            {
+                                ((DevExpress.XtraGrid.Views.Grid.GridView)bv).FindFilterText = string.Empty;
+                            }
+                            catch (Exception ex) { }
+                        }
+                    }
+                }
+            }
+
             if (OnSearchClick != null)
             {
                 OnSearchClick(this, new EventArgs());
@@ -363,13 +382,16 @@ namespace PublicManager.Modules
                     {
                         if (IsHightlightHintWithSearchAfter)
                         {
-                            if (DisplayGridControl.MainView is DevExpress.XtraGrid.Views.Grid.GridView)
+                            foreach (DevExpress.XtraGrid.Views.Base.BaseView bv in DisplayGridControl.ViewCollection)
                             {
-                                try
+                                if (bv is DevExpress.XtraGrid.Views.Grid.GridView)
                                 {
-                                    ((DevExpress.XtraGrid.Views.Grid.GridView)DisplayGridControl.MainView).FindFilterText = Key1EditControl.Text;
+                                    try
+                                    {
+                                        ((DevExpress.XtraGrid.Views.Grid.GridView)bv).FindFilterText = Key1EditControl.Text;
+                                    }
+                                    catch (Exception ex) { }
                                 }
-                                catch (Exception ex) { }
                             }
                         }
                     }
