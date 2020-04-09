@@ -45,7 +45,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                 Person masterPersonObj = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '' and IsProjectMaster = 'true'").select("*").getItem<Person>(new Person());
                 if (masterPersonObj != null && masterPersonObj.PersonID != null && masterPersonObj.PersonID.Length >= 1)
                 {
-                    if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("人员")) && MakeSQLWithSearchRule.isDisplayData(typeof(Person).Name, masterPersonObj.PersonID)) || (srpSearch.isUsingRule("人员") == false && (srpSearch.isUsingRule("课题") == true || srpSearch.isUsingRule("项目") == true)))
+                    if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("人员")) && MakeSQLWithSearchRule.isDisplayData(typeof(Person).Name, masterPersonObj.PersonID)) || srpSearch.isUsingRule("课题") == true || srpSearch.isUsingRule("项目") == true)
                     {
                         //存在仅为负责人的记录
                         List<object> cells = new List<object>();
@@ -72,12 +72,12 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                 List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                 foreach (Subject sub in subList)
                 {
-                    if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("课题")) && MakeSQLWithSearchRule.isDisplayData(typeof(Subject).Name, sub.SubjectID)) || (srpSearch.isUsingRule("课题") == false && srpSearch.isUsingRule("项目") == true) || srpSearch.isUsingRule("人员") == true)
+                    if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("课题")) && MakeSQLWithSearchRule.isDisplayData(typeof(Subject).Name, sub.SubjectID)) || srpSearch.isUsingRule("项目") == true || srpSearch.isUsingRule("人员") == true)
                     {
                         List<Person> perList = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '" + sub.SubjectID + "'").select("*").getList<Person>(new Person());
                         foreach (Person p in perList)
                         {
-                            if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("人员")) && MakeSQLWithSearchRule.isDisplayData(typeof(Person).Name, p.PersonID)) || (srpSearch.isUsingRule("人员") == false && (srpSearch.isUsingRule("课题") == true || srpSearch.isUsingRule("项目") == true)))
+                            if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("人员")) && MakeSQLWithSearchRule.isDisplayData(typeof(Person).Name, p.PersonID)) || srpSearch.isUsingRule("课题") == true || srpSearch.isUsingRule("项目") == true)
                             {
                                 List<object> cells = new List<object>();
                                 cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
