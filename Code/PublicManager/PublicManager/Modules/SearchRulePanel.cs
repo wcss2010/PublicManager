@@ -222,6 +222,8 @@ namespace PublicManager.Modules
         {
             SimpleButton buttonObj = (SimpleButton)sender;
 
+            processCustomButton(buttonObj);
+
             if (OnCustomButtonClick != null)
             {
                 CustomButtonEventArgs args = new CustomButtonEventArgs();
@@ -305,6 +307,8 @@ namespace PublicManager.Modules
         public SearchRulePanel()
         {
             InitializeComponent();
+
+            CustomButtonsNames = "结果内容搜索";
         }
 
         /// <summary>
@@ -507,6 +511,17 @@ namespace PublicManager.Modules
                 plKey1Panel.Width = plInputPanel.Width - 5;
             }
             #endregion
+        }
+
+        protected void processCustomButton(SimpleButton buttonObj)
+        {
+            if (buttonObj.Text == "结果内容搜索")
+            {
+                if (DisplayGridControl != null)
+                {
+                    DisplayGridControl.MainView.ShowEditor();
+                }
+            }
         }
     }
 }

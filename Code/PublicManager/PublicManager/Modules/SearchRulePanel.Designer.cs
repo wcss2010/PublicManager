@@ -299,7 +299,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 26);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(182, 27);
+            this.panelControl2.Size = new System.Drawing.Size(182, 20);
             this.panelControl2.TabIndex = 4;
             // 
             // btnReset
@@ -339,7 +339,7 @@
             this.plCatalogType.Dock = System.Windows.Forms.DockStyle.Top;
             this.plCatalogType.Location = new System.Drawing.Point(0, 0);
             this.plCatalogType.Name = "plCatalogType";
-            this.plCatalogType.Size = new System.Drawing.Size(182, 26);
+            this.plCatalogType.Size = new System.Drawing.Size(182, 20);
             this.plCatalogType.TabIndex = 2;
             // 
             // cbDisplayContract
