@@ -526,6 +526,8 @@ namespace PublicManager.Modules
                         gv.OptionsFind.ClearFindOnClose = true;
                         gv.OptionsFind.FindNullPrompt = "请输入要搜索的关键字！";
                         gv.ShowFindPanel();
+
+                        gv.FindFilterText = txtKey1.Text;
                     }
                 }
             }
