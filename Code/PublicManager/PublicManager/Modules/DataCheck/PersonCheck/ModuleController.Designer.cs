@@ -203,7 +203,7 @@
             // 
             // srpSearch
             // 
-            this.srpSearch.CheckListPanelWidth = 150;
+            this.srpSearch.DisplayGridControl = gcData;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = true;
             this.srpSearch.IsDisplayCheckListPanel = true;

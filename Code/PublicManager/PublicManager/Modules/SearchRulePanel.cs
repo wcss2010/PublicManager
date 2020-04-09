@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 
 namespace PublicManager.Modules
 {
@@ -216,18 +217,6 @@ namespace PublicManager.Modules
             }
         }
 
-        public int CheckListPanelWidth
-        {
-            get
-            {
-                return fplCheckList.Width;
-            }
-            set
-            {
-                fplCheckList.Width = value;
-            }
-        }
-
         /// <summary>
         /// 搜索关键字条件是否可编辑
         /// </summary>
@@ -242,6 +231,8 @@ namespace PublicManager.Modules
                 fplCheckList.Visible = value;
             }
         }
+
+        public GridControl DisplayGridControl { get; set; }
 
         public SearchRulePanel()
         {

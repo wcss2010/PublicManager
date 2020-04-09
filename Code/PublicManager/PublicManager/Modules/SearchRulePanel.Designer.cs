@@ -154,7 +154,6 @@
             this.txtKey4.Name = "txtKey4";
             this.txtKey4.Size = new System.Drawing.Size(140, 26);
             this.txtKey4.TabIndex = 7;
-            this.txtKey4.Visible = false;
             // 
             // lblKey4
             // 
@@ -167,7 +166,6 @@
             this.lblKey4.TabIndex = 6;
             this.lblKey4.Text = "合同书预计评估时间:";
             this.lblKey4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblKey4.Visible = false;
             // 
             // plKey3Panel
             // 
@@ -189,7 +187,6 @@
             this.txtKey3.Name = "txtKey3";
             this.txtKey3.Size = new System.Drawing.Size(135, 26);
             this.txtKey3.TabIndex = 6;
-            this.txtKey3.Visible = false;
             // 
             // lblKey3
             // 
@@ -202,7 +199,6 @@
             this.lblKey3.TabIndex = 5;
             this.lblKey3.Text = "节点评估时间:";
             this.lblKey3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblKey3.Visible = false;
             // 
             // plKey2Panel
             // 
@@ -225,7 +221,6 @@
             this.txtKey2.Name = "txtKey2";
             this.txtKey2.Size = new System.Drawing.Size(51, 24);
             this.txtKey2.TabIndex = 5;
-            this.txtKey2.Visible = false;
             // 
             // lblKey2
             // 
@@ -238,7 +233,6 @@
             this.lblKey2.TabIndex = 1;
             this.lblKey2.Text = "所属部门:";
             this.lblKey2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblKey2.Visible = false;
             // 
             // plKey1Panel
             // 
