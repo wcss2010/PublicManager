@@ -14,6 +14,12 @@ namespace PublicManager.Modules
     public delegate void SearchClickDelegate(object sender,EventArgs args);
     public delegate void ResetClickDelegate(object sender, EventArgs args);
     public delegate void ExportToClickDelegate(object sender, EventArgs args);
+    public delegate void CustomButtonClickDelegate(object sender,CustomButtonEventArgs args);
+
+    public class CustomButtonEventArgs : EventArgs
+    {
+        public string ButtonName { get; set; }
+    }
 
     public partial class SearchRulePanel : UserControl
     {
@@ -164,9 +170,71 @@ namespace PublicManager.Modules
             }
         }
 
+        /// <summary>
+        /// 显示自定义按钮对话框
+        /// </summary>
+        public bool IsDisplayCustomButtonPanel
+        {
+            get
+            {
+                return fplCustomButtons.Visible;
+            }
+            set
+            {
+                fplCustomButtons.Visible = value;
+            }
+        }
+
+        private string customButtonsNames = string.Empty;
+        /// <summary>
+        /// 自定义按钮列表，用";"分割
+        /// </summary>
+        public string CustomButtonsNames
+        {
+            get { return customButtonsNames; }
+            set
+            {
+                customButtonsNames = value;
+
+                if (string.IsNullOrEmpty(value))
+                {
+                    return;
+                }
+                else
+                {
+                    fplCustomButtons.Controls.Clear();
+                    string[] teams = value.Split(new string[] { ";" }, StringSplitOptions.None);
+                    foreach (string ss in teams)
+                    {
+                        SimpleButton bb = new SimpleButton();
+                        bb.Name = ss;
+                        bb.Text = ss;
+                        bb.AutoSize = true;
+                        bb.Click += bb_Click;
+
+                        fplCustomButtons.Controls.Add(bb);
+                    }
+                }
+            }
+        }
+
+        void bb_Click(object sender, EventArgs e)
+        {
+            SimpleButton buttonObj = (SimpleButton)sender;
+
+            if (OnCustomButtonClick != null)
+            {
+                CustomButtonEventArgs args = new CustomButtonEventArgs();
+                args.ButtonName = buttonObj.Name;
+
+                OnCustomButtonClick(this, args);
+            }
+        }
+
         public event SearchClickDelegate OnSearchClick;
         public event ResetClickDelegate OnResetClick;
         public event ExportToClickDelegate OnExportToClick;
+        public event CustomButtonClickDelegate OnCustomButtonClick;
 
         private string key1FieldString = string.Empty;
         /// <summary>

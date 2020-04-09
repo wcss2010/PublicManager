@@ -47,6 +47,7 @@
             this.txtKey1 = new DevExpress.XtraEditors.TextEdit();
             this.lblKey1 = new System.Windows.Forms.Label();
             this.panelControl4 = new System.Windows.Forms.Panel();
+            this.fplCustomButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.panelControl2 = new System.Windows.Forms.Panel();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.btnExportTo = new DevExpress.XtraEditors.SimpleButton();
@@ -76,7 +77,7 @@
             this.plRules.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plRules.Location = new System.Drawing.Point(0, 0);
             this.plRules.Name = "plRules";
-            this.plRules.Size = new System.Drawing.Size(891, 80);
+            this.plRules.Size = new System.Drawing.Size(891, 105);
             this.plRules.TabIndex = 0;
             this.plRules.Text = "搜索条件";
             // 
@@ -87,7 +88,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(2, 21);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(887, 57);
+            this.panelControl1.Size = new System.Drawing.Size(887, 82);
             this.panelControl1.TabIndex = 2;
             // 
             // panelControl3
@@ -97,7 +98,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(705, 57);
+            this.panelControl3.Size = new System.Drawing.Size(705, 82);
             this.panelControl3.TabIndex = 2;
             // 
             // fplCheckList
@@ -108,7 +109,7 @@
             this.fplCheckList.Location = new System.Drawing.Point(0, 25);
             this.fplCheckList.Name = "fplCheckList";
             this.fplCheckList.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
-            this.fplCheckList.Size = new System.Drawing.Size(705, 32);
+            this.fplCheckList.Size = new System.Drawing.Size(705, 57);
             this.fplCheckList.TabIndex = 0;
             // 
             // plInputPanel
@@ -272,13 +273,23 @@
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.fplCustomButtons);
             this.panelControl4.Controls.Add(this.panelControl2);
             this.panelControl4.Controls.Add(this.plCatalogType);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl4.Location = new System.Drawing.Point(705, 0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(182, 57);
+            this.panelControl4.Size = new System.Drawing.Size(182, 82);
             this.panelControl4.TabIndex = 2;
+            // 
+            // fplCustomButtons
+            // 
+            this.fplCustomButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fplCustomButtons.Location = new System.Drawing.Point(0, 53);
+            this.fplCustomButtons.Name = "fplCustomButtons";
+            this.fplCustomButtons.Size = new System.Drawing.Size(182, 29);
+            this.fplCustomButtons.TabIndex = 5;
+            this.fplCustomButtons.Visible = false;
             // 
             // panelControl2
             // 
@@ -366,7 +377,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.plRules);
             this.Name = "SearchRulePanel";
-            this.Size = new System.Drawing.Size(891, 80);
+            this.Size = new System.Drawing.Size(891, 105);
             ((System.ComponentModel.ISupportInitialize)(this.plRules)).EndInit();
             this.plRules.ResumeLayout(false);
             this.panelControl1.ResumeLayout(false);
@@ -418,5 +429,6 @@
         private System.Windows.Forms.Panel plKey4Panel;
         private System.Windows.Forms.DateTimePicker txtKey4;
         private System.Windows.Forms.CheckBox lblKey4;
+        private System.Windows.Forms.FlowLayoutPanel fplCustomButtons;
     }
 }
