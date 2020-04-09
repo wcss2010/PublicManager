@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.plTopGroup = new DevExpress.XtraEditors.GroupControl();
-            this.plContent = new DevExpress.XtraEditors.GroupControl();
-            this.gcGrid = new DevExpress.XtraGrid.GridControl();
-            this.dgvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.plTop = new DevExpress.XtraEditors.PanelControl();
             this.lblTag4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,14 +38,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblTag1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.plContent = new DevExpress.XtraEditors.GroupControl();
+            this.gcGrid = new DevExpress.XtraGrid.GridControl();
+            this.dgvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.plTopGroup)).BeginInit();
             this.plTopGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.plTop)).BeginInit();
+            this.plTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plContent)).BeginInit();
             this.plContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plTop)).BeginInit();
-            this.plTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // plTopGroup
@@ -61,32 +61,6 @@
             this.plTopGroup.TabIndex = 0;
             this.plTopGroup.Tag = "项目经费总体收支情况";
             this.plTopGroup.Text = "项目经费总体收支情况";
-            // 
-            // plContent
-            // 
-            this.plContent.Controls.Add(this.gcGrid);
-            this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(0, 52);
-            this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(1000, 515);
-            this.plContent.TabIndex = 1;
-            this.plContent.Text = "项目经费预算及支出情况";
-            // 
-            // gcGrid
-            // 
-            this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(2, 21);
-            this.gcGrid.MainView = this.dgvDetail;
-            this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(996, 492);
-            this.gcGrid.TabIndex = 5;
-            this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dgvDetail});
-            // 
-            // dgvDetail
-            // 
-            this.dgvDetail.GridControl = this.gcGrid;
-            this.dgvDetail.Name = "dgvDetail";
             // 
             // plTop
             // 
@@ -200,6 +174,33 @@
             this.label1.Text = "合同价款";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // plContent
+            // 
+            this.plContent.Controls.Add(this.gcGrid);
+            this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plContent.Location = new System.Drawing.Point(0, 52);
+            this.plContent.Name = "plContent";
+            this.plContent.Size = new System.Drawing.Size(1000, 515);
+            this.plContent.TabIndex = 1;
+            this.plContent.Text = "项目经费预算及支出情况";
+            // 
+            // gcGrid
+            // 
+            this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcGrid.Location = new System.Drawing.Point(2, 21);
+            this.gcGrid.MainView = this.dgvDetail;
+            this.gcGrid.Name = "gcGrid";
+            this.gcGrid.Size = new System.Drawing.Size(996, 492);
+            this.gcGrid.TabIndex = 5;
+            this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgvDetail});
+            // 
+            // dgvDetail
+            // 
+            this.dgvDetail.GridControl = this.gcGrid;
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            // 
             // MoneyLinePage2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -210,12 +211,12 @@
             this.Size = new System.Drawing.Size(1000, 567);
             ((System.ComponentModel.ISupportInitialize)(this.plTopGroup)).EndInit();
             this.plTopGroup.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.plTop)).EndInit();
+            this.plTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plContent)).EndInit();
             this.plContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plTop)).EndInit();
-            this.plTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

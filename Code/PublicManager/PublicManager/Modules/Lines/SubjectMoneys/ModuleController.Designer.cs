@@ -31,6 +31,7 @@
             this.plContent = new System.Windows.Forms.Panel();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.gvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,7 +42,6 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvProjectList = new PublicManager.Modules.TreeViewWithSearch();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.plContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).BeginInit();
@@ -57,7 +57,7 @@
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(0, 0);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(784, 557);
+            this.plContent.Size = new System.Drawing.Size(915, 650);
             this.plContent.TabIndex = 0;
             // 
             // gcGrid
@@ -66,7 +66,7 @@
             this.gcGrid.Location = new System.Drawing.Point(0, 0);
             this.gcGrid.MainView = this.gvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(784, 557);
+            this.gcGrid.Size = new System.Drawing.Size(915, 650);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetail});
@@ -85,6 +85,15 @@
             this.gridColumn8});
             this.gvDetail.GridControl = this.gcGrid;
             this.gvDetail.Name = "gvDetail";
+            this.gvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "节点名称";
+            this.gridColumn9.FieldName = "row9";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 0;
             // 
             // gridColumn1
             // 
@@ -163,8 +172,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.plContent);
-            this.splitContainer1.Size = new System.Drawing.Size(1073, 557);
-            this.splitContainer1.SplitterDistance = 285;
+            this.splitContainer1.Size = new System.Drawing.Size(1252, 650);
+            this.splitContainer1.SplitterDistance = 332;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 5;
             // 
             // tvProjectList
@@ -172,26 +182,18 @@
             this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
             this.tvProjectList.Location = new System.Drawing.Point(0, 0);
-            this.tvProjectList.Margin = new System.Windows.Forms.Padding(4);
+            this.tvProjectList.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tvProjectList.Name = "tvProjectList";
-            this.tvProjectList.Size = new System.Drawing.Size(285, 557);
+            this.tvProjectList.Size = new System.Drawing.Size(332, 650);
             this.tvProjectList.TabIndex = 1;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "节点名称";
-            this.gridColumn9.FieldName = "row9";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 0;
             // 
             // ModuleController
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
             this.Name = "ModuleController";
-            this.Size = new System.Drawing.Size(1073, 557);
+            this.Size = new System.Drawing.Size(1252, 650);
             this.plContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();

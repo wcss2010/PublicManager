@@ -92,6 +92,7 @@
             this.gridColumn13});
             this.dgvDetail.GridControl = this.gcData;
             this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             // 
             // gridColumn1
             // 

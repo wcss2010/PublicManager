@@ -107,6 +107,7 @@
             this.gridColumn19});
             this.dgvSub.GridControl = this.gcGrid;
             this.dgvSub.Name = "dgvSub";
+            this.dgvSub.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             this.dgvSub.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn15
@@ -217,6 +218,7 @@
             this.gridColumn32});
             this.dgvDetail.GridControl = this.gcGrid;
             this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             this.dgvDetail.MasterRowExpanded += new DevExpress.XtraGrid.Views.Grid.CustomMasterRowEventHandler(this.dgvDetail_MasterRowExpanded);
             // 
             // gridColumn20

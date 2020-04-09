@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gcData = new DevExpress.XtraGrid.GridControl();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.rbCurrentMonth = new System.Windows.Forms.RadioButton();
-            this.rbNextMonth = new System.Windows.Forms.RadioButton();
-            this.rbNodeSearch = new System.Windows.Forms.RadioButton();
             this.plSearchBar = new DevExpress.XtraEditors.PanelControl();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.txtEndTime = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtStartTime = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.rbNodeSearch = new System.Windows.Forms.RadioButton();
+            this.rbNextMonth = new System.Windows.Forms.RadioButton();
+            this.rbCurrentMonth = new System.Windows.Forms.RadioButton();
+            this.gvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcData = new DevExpress.XtraGrid.GridControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.plSearchBar)).BeginInit();
+            this.plSearchBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcData)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.plSearchBar)).BeginInit();
-            this.plSearchBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,119 +65,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 24);
             this.panel1.TabIndex = 2;
-            // 
-            // gvDetail
-            // 
-            this.gvDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4});
-            this.gvDetail.GridControl = this.gcData;
-            this.gvDetail.Name = "gvDetail";
-            // 
-            // gcData
-            // 
-            this.gcData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcData.Location = new System.Drawing.Point(3, 42);
-            this.gcData.MainView = this.gvDetail;
-            this.gcData.Name = "gcData";
-            this.gcData.Size = new System.Drawing.Size(1182, 535);
-            this.gcData.TabIndex = 3;
-            this.gcData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvDetail});
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.gcData);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1188, 580);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "项目名称";
-            this.gridColumn1.FieldName = "row1";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "节点";
-            this.gridColumn2.FieldName = "row2";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "节点时间";
-            this.gridColumn3.FieldName = "row3";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "经费是否拨付";
-            this.gridColumn4.FieldName = "row4";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.rbNodeSearch);
-            this.panelControl1.Controls.Add(this.rbNextMonth);
-            this.panelControl1.Controls.Add(this.rbCurrentMonth);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(311, 24);
-            this.panelControl1.TabIndex = 0;
-            // 
-            // rbCurrentMonth
-            // 
-            this.rbCurrentMonth.AutoSize = true;
-            this.rbCurrentMonth.Checked = true;
-            this.rbCurrentMonth.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rbCurrentMonth.Location = new System.Drawing.Point(2, 2);
-            this.rbCurrentMonth.Name = "rbCurrentMonth";
-            this.rbCurrentMonth.Size = new System.Drawing.Size(97, 20);
-            this.rbCurrentMonth.TabIndex = 0;
-            this.rbCurrentMonth.TabStop = true;
-            this.rbCurrentMonth.Text = "当月节点列表";
-            this.rbCurrentMonth.UseVisualStyleBackColor = true;
-            this.rbCurrentMonth.CheckedChanged += new System.EventHandler(this.rbCurrentMonth_CheckedChanged);
-            // 
-            // rbNextMonth
-            // 
-            this.rbNextMonth.AutoSize = true;
-            this.rbNextMonth.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rbNextMonth.Location = new System.Drawing.Point(99, 2);
-            this.rbNextMonth.Name = "rbNextMonth";
-            this.rbNextMonth.Size = new System.Drawing.Size(97, 20);
-            this.rbNextMonth.TabIndex = 1;
-            this.rbNextMonth.Text = "下月节点列表";
-            this.rbNextMonth.UseVisualStyleBackColor = true;
-            this.rbNextMonth.CheckedChanged += new System.EventHandler(this.rbCurrentMonth_CheckedChanged);
-            // 
-            // rbNodeSearch
-            // 
-            this.rbNodeSearch.AutoSize = true;
-            this.rbNodeSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rbNodeSearch.Location = new System.Drawing.Point(196, 2);
-            this.rbNodeSearch.Name = "rbNodeSearch";
-            this.rbNodeSearch.Size = new System.Drawing.Size(109, 20);
-            this.rbNodeSearch.TabIndex = 2;
-            this.rbNodeSearch.Text = "节点自定义查询";
-            this.rbNodeSearch.UseVisualStyleBackColor = true;
-            this.rbNodeSearch.CheckedChanged += new System.EventHandler(this.rbCurrentMonth_CheckedChanged);
             // 
             // plSearchBar
             // 
@@ -245,6 +132,120 @@
             this.label1.Text = "起始时间：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.rbNodeSearch);
+            this.panelControl1.Controls.Add(this.rbNextMonth);
+            this.panelControl1.Controls.Add(this.rbCurrentMonth);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(311, 24);
+            this.panelControl1.TabIndex = 0;
+            // 
+            // rbNodeSearch
+            // 
+            this.rbNodeSearch.AutoSize = true;
+            this.rbNodeSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbNodeSearch.Location = new System.Drawing.Point(196, 2);
+            this.rbNodeSearch.Name = "rbNodeSearch";
+            this.rbNodeSearch.Size = new System.Drawing.Size(109, 20);
+            this.rbNodeSearch.TabIndex = 2;
+            this.rbNodeSearch.Text = "节点自定义查询";
+            this.rbNodeSearch.UseVisualStyleBackColor = true;
+            this.rbNodeSearch.CheckedChanged += new System.EventHandler(this.rbCurrentMonth_CheckedChanged);
+            // 
+            // rbNextMonth
+            // 
+            this.rbNextMonth.AutoSize = true;
+            this.rbNextMonth.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbNextMonth.Location = new System.Drawing.Point(99, 2);
+            this.rbNextMonth.Name = "rbNextMonth";
+            this.rbNextMonth.Size = new System.Drawing.Size(97, 20);
+            this.rbNextMonth.TabIndex = 1;
+            this.rbNextMonth.Text = "下月节点列表";
+            this.rbNextMonth.UseVisualStyleBackColor = true;
+            this.rbNextMonth.CheckedChanged += new System.EventHandler(this.rbCurrentMonth_CheckedChanged);
+            // 
+            // rbCurrentMonth
+            // 
+            this.rbCurrentMonth.AutoSize = true;
+            this.rbCurrentMonth.Checked = true;
+            this.rbCurrentMonth.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbCurrentMonth.Location = new System.Drawing.Point(2, 2);
+            this.rbCurrentMonth.Name = "rbCurrentMonth";
+            this.rbCurrentMonth.Size = new System.Drawing.Size(97, 20);
+            this.rbCurrentMonth.TabIndex = 0;
+            this.rbCurrentMonth.TabStop = true;
+            this.rbCurrentMonth.Text = "当月节点列表";
+            this.rbCurrentMonth.UseVisualStyleBackColor = true;
+            this.rbCurrentMonth.CheckedChanged += new System.EventHandler(this.rbCurrentMonth_CheckedChanged);
+            // 
+            // gvDetail
+            // 
+            this.gvDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4});
+            this.gvDetail.GridControl = this.gcData;
+            this.gvDetail.Name = "gvDetail";
+            this.gvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "项目名称";
+            this.gridColumn1.FieldName = "row1";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "节点";
+            this.gridColumn2.FieldName = "row2";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "节点时间";
+            this.gridColumn3.FieldName = "row3";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "经费是否拨付";
+            this.gridColumn4.FieldName = "row4";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gcData
+            // 
+            this.gcData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcData.Location = new System.Drawing.Point(3, 42);
+            this.gcData.MainView = this.gvDetail;
+            this.gcData.Name = "gcData";
+            this.gcData.Size = new System.Drawing.Size(1182, 535);
+            this.gcData.TabIndex = 3;
+            this.gcData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDetail});
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.gcData);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1188, 580);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -253,14 +254,14 @@
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1188, 580);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcData)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.plSearchBar)).EndInit();
+            this.plSearchBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.plSearchBar)).EndInit();
-            this.plSearchBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcData)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
