@@ -47,6 +47,17 @@ namespace PublicManager.Modules.Contract.Forms
                     tn.Checked = true;
                 }
             }
+            else
+            {
+                foreach (TreeNode selected in tlTestA.Nodes)
+                {
+                    //读取目录名称中的项目编号
+                    string catalogNumber = selected.Text;
+
+                    //根据项目编号查询项目数量
+                    selected.Checked = !(ConnectionManager.Context.table("Catalog").where("catalognumber='" + catalogNumber + "'").select("count(*)").getValue<long>(0) >= 1);
+                }
+            }
         }
 
         public void getFileTree(string path)

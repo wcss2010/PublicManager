@@ -60,7 +60,7 @@
             this.rcTopBar.Name = "rcTopBar";
             this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpMaster});
-            this.rcTopBar.Size = new System.Drawing.Size(1009, 145);
+            this.rcTopBar.Size = new System.Drawing.Size(1177, 145);
             // 
             // btnSetSourceDir
             // 
@@ -88,7 +88,7 @@
             // 
             // btnImportWithSelected
             // 
-            this.btnImportWithSelected.Caption = "选择性导入";
+            this.btnImportWithSelected.Caption = "增量导入";
             this.btnImportWithSelected.Id = 4;
             this.btnImportWithSelected.LargeGlyph = global::PublicManager.Properties.Resources.importB;
             this.btnImportWithSelected.Name = "btnImportWithSelected";
@@ -147,11 +147,11 @@
             // 
             // ContractModuleController
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.rcTopBar);
             this.Name = "ContractModuleController";
-            this.Size = new System.Drawing.Size(1009, 146);
+            this.Size = new System.Drawing.Size(1177, 170);
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
