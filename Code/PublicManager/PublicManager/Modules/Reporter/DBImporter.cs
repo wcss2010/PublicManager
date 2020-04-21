@@ -51,6 +51,7 @@ namespace PublicManager.Modules.Reporter
                 proj.Keywords = getValueWithDefault<string>(diProject.get("Keywords"),string.Empty);
                 proj.Domains = getValueWithDefault<string>(diProject.get("Domain"),string.Empty);
                 proj.DutyUnit = localContext.table("Unit").where("ID='" + diProject.get("UnitID") + "'").select("UnitName").getValue<string>("未知");
+                proj.DutyNormalUnit = localContext.table("Unit").where("ID='" + diProject.get("UnitID") + "'").select("NormalName").getValue<string>("未知");
                 //proj.DutyUnitOrg = "未知";
                 proj.DutyUnitAddress = localContext.table("Unit").where("ID='" + diProject.get("UnitID") + "'").select("Address").getValue<string>("未知");
                 proj.ProjectNumber = string.Empty;
@@ -66,6 +67,7 @@ namespace PublicManager.Modules.Reporter
                     obj.CatalogID = proj.CatalogID;
                     obj.ProjectID = proj.ProjectID;
                     obj.SubjectName = getValueWithDefault<string>(di.get("Name"),string.Empty);
+                    obj.SecretLevel = getValueWithDefault<string>(di.get("SecretLevel"), string.Empty);
 
                     object objMoney = localContext.table("Task").where("Role='负责人' and Type = '课题' and ProjectID = '" + obj.SubjectID + "'").select("TotalMoney").getValue();
                     obj.TotalMoney = objMoney != null ? decimal.Parse(objMoney.ToString()) : 0;
@@ -76,7 +78,7 @@ namespace PublicManager.Modules.Reporter
 
                     obj.DutyUnit = localContext.table("Unit").where("ID='" + di.get("UnitID") + "'").select("UnitName").getValue<string>("未知");
                     //obj.DutyUnitOrg = "未知";
-                    obj.DutyUnitAddress = localContext.table("Unit").where("ID='" + di.get("UnitID") + "'").select("Address").getValue<string>("未知");
+                    //obj.DutyUnitAddress = localContext.table("Unit").where("ID='" + di.get("UnitID") + "'").select("Address").getValue<string>("未知");
 
                     obj.copyTo(ConnectionManager.Context.table("Subject")).insert();
                 }

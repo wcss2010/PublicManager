@@ -59,6 +59,7 @@ namespace PublicManager.Modules.Contract
                 }
                 catch (Exception ex) { }
                 proj.TotalTime = totalYear;
+                proj.DutyNormalUnit = string.Empty;
 
                 //导入1.3版之后版本新添加的字段
                 switch (catalogVersionStr)
@@ -75,6 +76,15 @@ namespace PublicManager.Modules.Contract
                         proj.DutyUnit = getValueWithDefault<string>(diProject.get("HeTongFuZeDanWei"), string.Empty);
                         proj.DutyUnitOrg = getValueWithDefault<string>(diProject.get("HeTongSuoShuBuMen"), string.Empty);
                         proj.DutyUnitAddress = getAddress(getValueWithDefault<string>(diProject.get("HeTongSuoShuDiDian"), string.Empty));
+                        break;
+                    case "v1.5":
+                        proj.Keywords = getValueWithDefault<string>(diProject.get("HeTongGuanJianZi"), string.Empty);
+                        proj.Domains = getValueWithDefault<string>(diProject.get("HeTongSuoShuLingYu"), string.Empty);
+                        proj.DutyUnit = getValueWithDefault<string>(diProject.get("HeTongFuZeDanWei"), string.Empty);
+                        proj.DutyUnitOrg = getValueWithDefault<string>(diProject.get("HeTongSuoShuBuMen"), string.Empty);
+                        proj.DutyUnitAddress = getAddress(getValueWithDefault<string>(diProject.get("HeTongSuoShuDiDian"), string.Empty));
+
+                        proj.DutyNormalUnit = getValueWithDefault<string>(diProject.get("HeTongFuZeDanWeiChangYongMingCheng"), string.Empty);
                         break;
                 }
 
@@ -93,6 +103,7 @@ namespace PublicManager.Modules.Contract
                     obj.WorkDest = getValueWithDefault<string>(di.get("KeTiYanJiuMuBiao"), string.Empty);
                     obj.WorkContent = getValueWithDefault<string>(di.get("KeTiYanJiuNeiRong"), string.Empty);
                     obj.WorkTask = getValueWithDefault<string>(di.get("KeTiCanJiaDanWeiFenGong"), string.Empty);
+                    obj.SecretLevel = "公开";
 
                     //导入1.3版之后版本新添加的字段
                     switch (catalogVersionStr)
@@ -125,6 +136,31 @@ namespace PublicManager.Modules.Contract
                                 sbWorkTask.Remove(sbWorkTask.Length - 1, 1);
                             }
                             obj.WorkTask = sbWorkTask.ToString();
+                            break;
+                        case "v1.5":
+                            obj.DutyUnit = getValueWithDefault<string>(di.get("KeTiFuZeDanWei"), string.Empty);
+                            obj.DutyUnitOrg = getValueWithDefault<string>(di.get("KeTiSuoShuBuMen"), string.Empty);
+                            obj.DutyUnitAddress = getAddress(getValueWithDefault<string>(di.get("KeTiSuoShuDiDian"), string.Empty));
+
+                            //处理参加单位分工
+                            sbWorkTask = new StringBuilder();
+                            items = localContext.table("RenWuBiao").where("KeTiBianHao='" + getValueWithDefault<string>(di.get("BianHao"), string.Empty) + "'").select("*").getDataList();
+                            if (items.getRowCount() >= 1)
+                            {
+                                sbWorkTask.Append("该课题由").Append(getValueWithDefault<string>(items.getRow(0).get("DanWeiMing"), string.Empty)).Append("单位负责，承担").Append(getValueWithDefault<string>(items.getRow(0).get("RenWuFenGong"), string.Empty)).Append("等任务；").AppendLine();
+                            }
+                            for (int kk = 1; kk < items.getRowCount(); kk++)
+                            {
+                                DataItem rwb = items.getRow(kk);
+                                sbWorkTask.Append(getValueWithDefault<string>(rwb.get("DanWeiMing"),string.Empty)).Append("单位参加，承担").Append(getValueWithDefault<string>(rwb.get("RenWuFenGong"), string.Empty)).Append("等任务；\n");
+                            }
+                            if (sbWorkTask.Length >= 1)
+                            {
+                                sbWorkTask.Remove(sbWorkTask.Length - 1, 1);
+                            }
+                            obj.WorkTask = sbWorkTask.ToString();
+
+                            obj.SecretLevel = getValueWithDefault<string>(di.get("KeTiBaoMiDengJi"), string.Empty);
                             break;
                     }
 
@@ -246,6 +282,9 @@ namespace PublicManager.Modules.Contract
                 }
                 #endregion
 
+                //节点字典(Key=名称,Value=记录ID)
+                Dictionary<string, string> nodeDict = new Dictionary<string, string>();
+
                 #region 写入拨付约定
                 DataList dlRules = localContext.table("BoFuBiao").select("*").getDataList();
                 foreach (DataItem diRule in dlRules.getRows())
@@ -253,7 +292,7 @@ namespace PublicManager.Modules.Contract
                     try
                     {
                         MoneySends ms = new MoneySends();
-                        ms.MSID = Guid.NewGuid().ToString();
+                        ms.MSID = diRule.get("BianHao") != null ? diRule.get("BianHao").ToString() : Guid.NewGuid().ToString();
                         ms.CatalogID = catalog.CatalogID;
                         ms.ProjectID = proj.ProjectID;
                         ms.SendRule = diRule.get("BoFuTiaoJian") != null ? diRule.get("BoFuTiaoJian").ToString() : string.Empty;
@@ -261,48 +300,78 @@ namespace PublicManager.Modules.Contract
                         ms.TotalMoney = decimal.Parse(diRule.get("JingFeiJinQian") != null ? diRule.get("JingFeiJinQian").ToString() : "0");
                         ms.MemoText = diRule.get("BeiZhu") != null ? diRule.get("BeiZhu").ToString() : string.Empty;
                         ms.copyTo(ConnectionManager.Context.table("MoneySends")).insert();
+
+                        if (string.IsNullOrEmpty(ms.SendRule))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            nodeDict[ms.SendRule] = ms.MSID;
+                        }
                     }
                     catch (Exception ex) { }
                 }
                 #endregion
 
-                #region 写入课题年度经费
-                dlSubjectMoneys = localContext.table("KeTiJingFeiNianDuBiao").select("*").getDataList();
+                #region 写入课题节点经费
+                dlSubjectMoneys = localContext.table("KeTiJieDianJingFeiBiao").select("*").getDataList();
                 foreach (DataItem di in dlSubjectMoneys.getRows())
                 {
                     string oldSubjectId = di.get("KeTiBianHao") != null ? di.get("KeTiBianHao").ToString() : string.Empty;
-                    string moduleName = di.get("NianDu") != null ? di.get("NianDu").ToString() : string.Empty;
+                    string oldNodeId = di.get("BoFuBianHao") != null ? di.get("BoFuBianHao").ToString() : string.Empty;
+
+                    string moduleName = "current";
                     string moduleValue = di.get("JingFei") != null ? di.get("JingFei").ToString() : string.Empty;
+
                     string oldSubjectName = localContext.table("KeTiBiao").where("BianHao='" + oldSubjectId + "'").select("KeTiMingCheng").getValue<string>(string.Empty);
                     string newSubjectID = ConnectionManager.Context.table("Subject").where("SubjectName='" + oldSubjectName + "'").select("SubjectID").getValue<string>(string.Empty);
 
-                    SubjectMoneys obj = new SubjectMoneys();
-                    obj.SMID = Guid.NewGuid().ToString();
-                    obj.CatalogID = catalog.CatalogID;
-                    obj.ProjectID = catalog.CatalogID;
-                    obj.SubjectID = newSubjectID;
-                    obj.SMName = moduleName;
-                    obj.SMValue = moduleValue;
-                    obj.copyTo(ConnectionManager.Context.table("SubjectMoneys")).insert();
+                    string oldNodeName = localContext.table("BoFuBiao").where("BianHao='" + oldNodeId + "'").select("BoFuTiaoJian").getValue<string>(string.Empty);
+                    string newNodeID = oldNodeId;
+                    if (nodeDict.ContainsKey(oldNodeName))
+                    {
+                        newNodeID = nodeDict[oldNodeName];
+
+                        SubjectMoneys obj = new SubjectMoneys();
+                        obj.SMID = Guid.NewGuid().ToString();
+                        obj.CatalogID = catalog.CatalogID;
+                        obj.ProjectID = catalog.CatalogID;
+                        obj.SubjectID = newSubjectID;
+                        obj.NodeID = newNodeID;
+                        obj.SMName = moduleName;
+                        obj.SMValue = moduleValue;
+                        obj.copyTo(ConnectionManager.Context.table("SubjectMoneys")).insert();
+                    }
                 }
                 #endregion
 
-                #region 写入单位年度经费
-                DataList dlUnitMoneys = localContext.table("DanWeiJingFeiNianDuBiao").select("*").getDataList();
+                #region 写入单位节点经费
+                DataList dlUnitMoneys = localContext.table("DanWeiJieDianJingFeiBiao").select("*").getDataList();
                 foreach (DataItem di in dlUnitMoneys.getRows())
                 {
                     string unitName = di.get("DanWeiMing") != null ? di.get("DanWeiMing").ToString() : string.Empty;
-                    string moduleName = di.get("NianDu") != null ? di.get("NianDu").ToString() : string.Empty;
+                    string oldNodeId = di.get("BoFuBianHao") != null ? di.get("BoFuBianHao").ToString() : string.Empty;
+
+                    string moduleName = "current";
                     string moduleValue = di.get("JingFei") != null ? di.get("JingFei").ToString() : string.Empty;
 
-                    UnitMoneys obj = new UnitMoneys();
-                    obj.UMID = Guid.NewGuid().ToString();
-                    obj.CatalogID = catalog.CatalogID;
-                    obj.ProjectID = catalog.CatalogID;
-                    obj.UnitName = unitName;
-                    obj.UMName = moduleName;
-                    obj.UMValue = moduleValue;
-                    obj.copyTo(ConnectionManager.Context.table("UnitMoneys")).insert();
+                    string oldNodeName = localContext.table("BoFuBiao").where("BianHao='" + oldNodeId + "'").select("BoFuTiaoJian").getValue<string>(string.Empty);
+                    string newNodeID = oldNodeId;
+                    if (nodeDict.ContainsKey(oldNodeName))
+                    {
+                        newNodeID = nodeDict[oldNodeName];
+
+                        UnitMoneys obj = new UnitMoneys();
+                        obj.UMID = Guid.NewGuid().ToString();
+                        obj.CatalogID = catalog.CatalogID;
+                        obj.ProjectID = catalog.CatalogID;
+                        obj.NodeID = newNodeID;
+                        obj.UnitName = unitName;
+                        obj.UMName = moduleName;
+                        obj.UMValue = moduleValue;
+                        obj.copyTo(ConnectionManager.Context.table("UnitMoneys")).insert();
+                    }
                 }
                 #endregion
 
