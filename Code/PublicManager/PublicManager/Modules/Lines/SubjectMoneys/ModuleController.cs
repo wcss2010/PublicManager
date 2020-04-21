@@ -54,7 +54,8 @@ namespace PublicManager.Modules.Lines.SubjectMoneys
                     indexxxx++;
 
                     TreeNode nodeSub = new TreeNode();
-                    nodeSub.Text = "节点" + indexxxx + "(" + mss.SendRule + ")";
+                    //nodeSub.Text = "节点" + indexxxx + "(" + mss.SendRule + ")";
+                    nodeSub.Text = mss.SendRule;
                     nodeSub.Tag = mss;
                     parentNode.Nodes.Add(nodeSub);
 
