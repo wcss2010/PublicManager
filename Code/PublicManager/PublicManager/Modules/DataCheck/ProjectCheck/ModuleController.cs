@@ -80,8 +80,8 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
         private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
             DataSet dsAll = new DataSet();
-            DataTable masterDt = getTempDataTable("row", 18);
-            DataTable detailDt = getTempDataTable("row", 8);
+            DataTable masterDt = getTempDataTable("row", 19);
+            DataTable detailDt = getTempDataTable("row", 9);
 
             List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
             foreach (Project proj in projList)
@@ -125,6 +125,8 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                     cells.Add(string.Empty);
                 }
 
+                cells.Add(proj.DutyNormalUnit);
+
                 masterDt.Rows.Add(cells.ToArray());
                 #endregion
 
@@ -162,6 +164,8 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                                 cells.Add(personObj.Telephone);
                                 cells.Add(personObj.Mobilephone);
                             }
+
+                            cells.Add(sub.SecretLevel);
 
                             detailDt.Rows.Add(cells.ToArray());
                         }

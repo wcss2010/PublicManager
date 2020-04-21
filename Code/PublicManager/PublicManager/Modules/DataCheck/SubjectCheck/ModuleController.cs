@@ -37,7 +37,7 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
 
         private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
-            DataTable dt = getTempDataTable("row", 11);
+            DataTable dt = getTempDataTable("row", 12);
 
             List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
             foreach (Project proj in projList)
@@ -70,7 +70,8 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
                        if (cells[1] != null && cells[1].ToString() == "合同书")
                        {
                            //合同书总经费
-                           cells.Add(ConnectionManager.Context.table("Dicts").where("CatalogID = '" + proj.CatalogID + "' and SubjectID ='" + sub.SubjectID + "' and DictType='SubjectMoney,SubjectMoneyInfo' and DictName = 'Money1'").select("DictValue").getValue<string>(""));
+                           //cells.Add(ConnectionManager.Context.table("Dicts").where("CatalogID = '" + proj.CatalogID + "' and SubjectID ='" + sub.SubjectID + "' and DictType='SubjectMoney,SubjectMoneyInfo' and DictName = 'Money1'").select("DictValue").getValue<string>(""));
+                           cells.Add(sub.TotalMoney);
                        }
                        else
                        {
@@ -88,6 +89,8 @@ namespace PublicManager.Modules.DataCheck.SubjectCheck
                            cells.Add(personObj.Telephone);
                            cells.Add(personObj.Mobilephone);
                        }
+
+                       cells.Add(sub.SecretLevel);
 
                        dt.Rows.Add(cells.ToArray());
                    }
