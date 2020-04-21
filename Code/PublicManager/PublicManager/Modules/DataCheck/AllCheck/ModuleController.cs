@@ -45,7 +45,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
         private void loadData()
         {
             DataSet dsAll = new DataSet();
-            DataTable masterDt = getTempDataTable("row", 32);
+            DataTable masterDt = getTempDataTable("row", 34);
             DataTable detailDt = getTempDataTable("row", 11);
 
             List<Project> projList = ConnectionManager.Context.table("Project").select("*").getList<Project>(new Project());
@@ -166,7 +166,8 @@ namespace PublicManager.Modules.DataCheck.AllCheck
                         if (catalogType != null && catalogType == "合同书")
                         {
                             //合同书总经费
-                            cells.Add(ConnectionManager.Context.table("Dicts").where("CatalogID = '" + proj.CatalogID + "' and SubjectID ='" + sub.SubjectID + "' and DictType='SubjectMoney,SubjectMoneyInfo' and DictName = 'Money1'").select("DictValue").getValue<string>(""));
+                            //cells.Add(ConnectionManager.Context.table("Dicts").where("CatalogID = '" + proj.CatalogID + "' and SubjectID ='" + sub.SubjectID + "' and DictType='SubjectMoney,SubjectMoneyInfo' and DictName = 'Money1'").select("DictValue").getValue<string>(""));
+                            cells.Add(sub.TotalMoney);
                         }
                         else
                         {
@@ -194,6 +195,10 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
                         //课题ID
                         cells.Add(proj.ProjectID + "***" + sub.SubjectID);
+
+                        cells.Add(proj.DutyNormalUnit);
+
+                        cells.Add(sub.SecretLevel);
 
                         masterDt.Rows.Add(cells.ToArray());
                         #endregion
