@@ -14,11 +14,15 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
 {
     public partial class ModuleController : BaseModuleController
     {
+        Dictionary<string, string> nodeColDict = new Dictionary<string, string>();
+
         private DEGridViewCellMergeAdapter cmaForSubject;
         private DEGridViewCellMergeAdapter cmaForUnit;
         public ModuleController()
         {
             InitializeComponent();
+
+            makeTableColumns();
 
             gvDetailForSubject.OptionsBehavior.Editable = false;
             gvDetailForSubject.OptionsView.AllowCellMerge = true;
@@ -27,6 +31,18 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
             gvDetailForUnit.OptionsBehavior.Editable = false;
             gvDetailForUnit.OptionsView.AllowCellMerge = true;
             cmaForUnit = new DEGridViewCellMergeAdapter(gvDetailForUnit, new string[] { "row1" });
+        }
+
+        private void makeTableColumns()
+        {
+            gvDetailForSubject.Columns.Clear();
+            gvDetailForUnit.Columns.Clear();
+
+            gvDetailForSubject.Columns.Add(getNewColumn("row1", "名称", 1));
+            gvDetailForSubject.Columns.Add(getNewColumn("row2", "合计", 2));
+
+            gvDetailForUnit.Columns.Add(getNewColumn("row1", "名称", 1));
+            gvDetailForUnit.Columns.Add(getNewColumn("row2", "合计", 2));
         }
 
         public override void start()
@@ -67,8 +83,8 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
 
         private void tvProjectList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            List<List<object>> objectListForSubject = new List<List<object>>();
-            List<List<object>> objectListForUnit = new List<List<object>>();
+            DataTable dtSubject = null;
+            DataTable dtUnit = null;
 
             //清理经费显示区域
             tpTag1.Controls.Clear();
@@ -77,6 +93,8 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
             {
                 //项目金额
                 Catalog catalogObj = (Catalog)e.Node.Tag;
+                tpTag1.PageVisible = true;
+                xtcData.SelectedTabPage = tpTag1;
 
                 #region 显示经费表
                 List<Dicts> projectDicts = ConnectionManager.Context.table("Dicts").where("CatalogID='" + catalogObj.CatalogID + "' and ProjectID='" + catalogObj.CatalogID + "' and (SubjectID is null or SubjectID= '')").select("*").getList<Dicts>(new Dicts());
@@ -85,33 +103,45 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
 
                 List<Subject> subjectList = ConnectionManager.Context.table("Subject").where("CatalogID='" + catalogObj.CatalogID + "'").select("*").getList<Subject>(new Subject());
 
+                //生成列
+                makeTableColumnsForCatalogID(catalogObj.CatalogID);
+                dtSubject = BaseModuleController.getTempDataTable("row", gvDetailForSubject.Columns.Count);
+                dtUnit = BaseModuleController.getTempDataTable("row", gvDetailForSubject.Columns.Count);
+
                 #region 组织课题经费数据
                 foreach (Subject sObj in subjectList)
                 {
                     List<SubjectMoneys> lxSubjects = ConnectionManager.Context.table("SubjectMoneys").where("CatalogID='" + catalogObj.CatalogID + "' and SubjectID='" + sObj.SubjectID + "'").orderBy("CatalogID,SubjectID,SMName").select("*").getList<SubjectMoneys>(new SubjectMoneys());
 
                     int totalValue = 0;
-                    List<object> cells = new List<object>();
-                    cells.Add(sObj.SubjectName);
+                    DataRow drr = dtSubject.NewRow();
+                    drr[nodeColDict["****名称"]] = sObj.SubjectName;
+
                     foreach (SubjectMoneys sms in lxSubjects)
                     {
+                        MoneySends mss = ConnectionManager.Context.table("MoneySends").where("MSID='" + sms.NodeID + "'").select("*").getItem<MoneySends>(new MoneySends());
+                        if (string.IsNullOrEmpty(mss.MSID))
+                        {
+                            continue;
+                        }
+
                         try
                         {
                             totalValue += int.Parse(sms.SMValue);
                         }
                         catch (Exception ex) { }
 
-                        cells.Add(sms.SMValue);
+                        if (nodeColDict.ContainsKey(mss.SendRule))
+                        {
+                            drr[nodeColDict[mss.SendRule]] = sms.SMValue;
+                        }
                     }
-                    for (int kk = 0; kk < 5 - lxSubjects.Count; kk++)
-                    {
-                        cells.Add("0");
-                    }
-                    cells.Add(totalValue.ToString());
-                    objectListForSubject.Add(cells);
+
+                    drr[nodeColDict["****合计"]] = totalValue.ToString();
+                    dtSubject.Rows.Add(drr);
                 }
                 #endregion
-                
+
                 #region 组织单位经费数据
                 List<string> unitList = new List<string>();
                 List<UnitMoneys> unitMoneysList = ConnectionManager.Context.table("UnitMoneys").where("CatalogID='" + catalogObj.CatalogID + "'").select("*").getList<UnitMoneys>(new UnitMoneys());
@@ -132,24 +162,31 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
                     List<UnitMoneys> lxUnits = ConnectionManager.Context.table("UnitMoneys").where("CatalogID='" + catalogObj.CatalogID + "' and UnitName='" + unitName + "'").orderBy("CatalogID,UnitName,UMName").select("*").getList<UnitMoneys>(new UnitMoneys());
 
                     int totalValue = 0;
-                    List<object> cells = new List<object>();
-                    cells.Add(unitName);
+                    DataRow drr = dtUnit.NewRow();
+                    drr[nodeColDict["****名称"]] = unitName;
+
                     foreach (UnitMoneys ums in lxUnits)
                     {
+                        MoneySends mss = ConnectionManager.Context.table("MoneySends").where("MSID='" + ums.NodeID + "'").select("*").getItem<MoneySends>(new MoneySends());
+                        if (string.IsNullOrEmpty(mss.MSID))
+                        {
+                            continue;
+                        }
+
                         try
                         {
                             totalValue += int.Parse(ums.UMValue);
                         }
                         catch (Exception ex) { }
 
-                        cells.Add(ums.UMValue);
+                        if (nodeColDict.ContainsKey(mss.SendRule))
+                        {
+                            drr[nodeColDict[mss.SendRule]] = ums.UMValue;
+                        }
                     }
-                    for (int kk = 0; kk < 5 - lxUnits.Count; kk++)
-                    {
-                        cells.Add("0");
-                    }
-                    cells.Add(totalValue.ToString());
-                    objectListForUnit.Add(cells);
+
+                    drr[nodeColDict["****合计"]] = totalValue.ToString();
+                    dtUnit.Rows.Add(drr);
                 }
                 #endregion
             }
@@ -157,33 +194,41 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
             {
                 //课题金额
                 Subject subectObj = (Subject)e.Node.Tag;
+                tpTag1.PageVisible = false;
 
-                #region 显示经费表
-                List<Dicts> subjectMoneyList = ConnectionManager.Context.table("Dicts").where("CatalogID='" + subectObj.CatalogID + "' and ProjectID='" + subectObj.ProjectID + "' and SubjectID='" + subectObj.SubjectID + "'").select("*").getList<Dicts>(new Dicts());
-                addMoneyTablePage(subectObj.CatalogID + "_" + subectObj.SubjectID, subectObj.SubjectName, subjectMoneyList);
-                #endregion
+                //生成列
+                makeTableColumnsForCatalogID(subectObj.CatalogID);
+                dtSubject = BaseModuleController.getTempDataTable("row", gvDetailForSubject.Columns.Count);
+                dtUnit = BaseModuleController.getTempDataTable("row", gvDetailForSubject.Columns.Count);
 
                 #region 组织课题经费数据
                 List<SubjectMoneys> lxSubjects = ConnectionManager.Context.table("SubjectMoneys").where("CatalogID='" + subectObj.CatalogID + "' and SubjectID='" + subectObj.SubjectID + "'").orderBy("CatalogID,SubjectID,SMName").select("*").getList<SubjectMoneys>(new SubjectMoneys());
                 int totalValue = 0;
-                List<object> cells = new List<object>();
-                cells.Add(subectObj.SubjectName);
+                DataRow drr = dtSubject.NewRow();
+                drr[nodeColDict["****名称"]] = subectObj.SubjectName;
+
                 foreach (SubjectMoneys sms in lxSubjects)
                 {
+                    MoneySends mss = ConnectionManager.Context.table("MoneySends").where("MSID='" + sms.NodeID + "'").select("*").getItem<MoneySends>(new MoneySends());
+                    if (string.IsNullOrEmpty(mss.MSID))
+                    {
+                        continue;
+                    }
+
                     try
                     {
                         totalValue += int.Parse(sms.SMValue);
                     }
                     catch (Exception ex) { }
 
-                    cells.Add(sms.SMValue);
+                    if (nodeColDict.ContainsKey(mss.SendRule))
+                    {
+                        drr[nodeColDict[mss.SendRule]] = sms.SMValue;
+                    }
                 }
-                for (int kk = 0; kk < 5 - lxSubjects.Count; kk++)
-                {
-                    cells.Add("0");
-                }
-                cells.Add(totalValue.ToString());
-                objectListForSubject.Add(cells);
+
+                drr[nodeColDict["****合计"]] = totalValue.ToString();
+                dtSubject.Rows.Add(drr);
                 #endregion
 
                 #region 组织单位经费数据
@@ -191,23 +236,37 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
                 #endregion
             }
 
-            #region 显示课题经费数据
-            DataTable dtTemp = BaseModuleController.getTempDataTable("row", 7);
-            foreach (List<object> lxItem in objectListForSubject)
-            {
-                dtTemp.Rows.Add(lxItem.ToArray());
-            }
-            gcGridForSubject.DataSource = dtTemp;
-            #endregion
+            gcGridForSubject.DataSource = dtSubject;
+            gcGridForUnit.DataSource = dtUnit;
+        }
 
-            #region 显示单位经费数据
-            DataTable dtTemp22 = BaseModuleController.getTempDataTable("row", 7);
-            foreach (List<object> lxItem in objectListForUnit)
+        private void makeTableColumnsForCatalogID(string catalogID)
+        {
+            gvDetailForSubject.Columns.Clear();
+            gvDetailForUnit.Columns.Clear();
+
+            int colIndex = 0;
+
+            colIndex++;
+            gvDetailForSubject.Columns.Add(getNewColumn("row" + colIndex, "名称", colIndex));
+            gvDetailForUnit.Columns.Add(getNewColumn("row" + colIndex, "名称", colIndex));
+            nodeColDict["****名称"] = "row" + colIndex;
+
+            List<MoneySends> list = ConnectionManager.Context.table("MoneySends").where("CatalogID='" + catalogID + "'").select("*").getList<MoneySends>(new MoneySends());
+            foreach (MoneySends ms in list)
             {
-                dtTemp22.Rows.Add(lxItem.ToArray());
+                colIndex++;
+
+                gvDetailForSubject.Columns.Add(getNewColumn("row" + colIndex, ms.SendRule, colIndex));
+                gvDetailForUnit.Columns.Add(getNewColumn("row" + colIndex, ms.SendRule, colIndex));
+
+                nodeColDict[ms.SendRule] = "row" + colIndex;
             }
-            gcGridForUnit.DataSource = dtTemp22;
-            #endregion
+
+            colIndex++;
+            gvDetailForSubject.Columns.Add(getNewColumn("row" + colIndex, "合计", colIndex));
+            gvDetailForUnit.Columns.Add(getNewColumn("row" + colIndex, "合计", colIndex));
+            nodeColDict["****合计"] = "row" + colIndex;
         }
 
         /// <summary>
@@ -227,6 +286,24 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
             mtc.Dock = DockStyle.Fill;
             tpTag1.Controls.Add(mtc);
             mtc.loadMoneys(moneyList);
+        }
+
+        /// <summary>
+        /// 生成新的列对象
+        /// </summary>
+        /// <param name="fieldName"></param>
+        /// <param name="displayName"></param>
+        /// <param name="displayIndex"></param>
+        /// <returns></returns>
+        public DevExpress.XtraGrid.Columns.GridColumn getNewColumn(string fieldName, string displayName, int displayIndex)
+        {
+            DevExpress.XtraGrid.Columns.GridColumn colTemp = new DevExpress.XtraGrid.Columns.GridColumn();
+            colTemp.Caption = displayName;
+            colTemp.FieldName = fieldName;
+            colTemp.Name = fieldName;
+            colTemp.Visible = true;
+            colTemp.VisibleIndex = displayIndex;
+            return colTemp;
         }
     }
 }
