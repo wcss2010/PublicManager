@@ -45,7 +45,7 @@ namespace PublicManager.Modules.Lines.ProjectLines
 
         private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
-            DataTable dt = getTempDataTable("row", 23);
+            DataTable dt = getTempDataTable("row", 24);
 
             List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
             foreach (Project proj in projList)
@@ -95,6 +95,8 @@ namespace PublicManager.Modules.Lines.ProjectLines
                 }
 
                 cells.Add(proj.ProjectRange);
+
+                cells.Add(proj.DutyNormalUnit);
 
                 dt.Rows.Add(cells.ToArray());
             }
