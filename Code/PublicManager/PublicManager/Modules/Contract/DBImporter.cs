@@ -329,7 +329,7 @@ namespace PublicManager.Modules.Contract
                 DataList dlUnitMoneys = localContext.table("DanWeiJieDianJingFeiBiao").select("*").getDataList();
                 foreach (DataItem di in dlUnitMoneys.getRows())
                 {
-                    string unitName = di.get("DanWeiMing") != null ? di.get("DanWeiMing").ToString() : string.Empty;
+                    string unitName = di.get("DanWeiMingCheng") != null ? di.get("DanWeiMingCheng").ToString() : string.Empty;
                     string oldNodeId = di.get("BoFuBianHao") != null ? di.get("BoFuBianHao").ToString() : string.Empty;
 
                     string moduleName = "current";
