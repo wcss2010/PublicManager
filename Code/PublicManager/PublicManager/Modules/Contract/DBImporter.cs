@@ -18,6 +18,8 @@ namespace PublicManager.Modules.Contract
         /// <returns></returns>
         protected override string importDB(string catalogNumber, string sourceFile, Noear.Weed.DbContext localContext)
         {
+            Dictionary<string, Subject> subjectDict = new Dictionary<string, Subject>();
+
             //数据库版本号
             string catalogVersionStr = "v1.1";
 
@@ -104,6 +106,7 @@ namespace PublicManager.Modules.Contract
                     obj.WorkContent = getValueWithDefault<string>(di.get("KeTiYanJiuNeiRong"), string.Empty);
                     obj.WorkTask = getValueWithDefault<string>(di.get("KeTiCanJiaDanWeiFenGong"), string.Empty);
                     obj.SecretLevel = "公开";
+                    obj.TotalMoney = 0;
 
                     //导入1.3版之后版本新添加的字段
                     switch (catalogVersionStr)
@@ -165,6 +168,8 @@ namespace PublicManager.Modules.Contract
                     }
 
                     obj.copyTo(ConnectionManager.Context.table("Subject")).insert();
+
+                    subjectDict[obj.SubjectID] = obj;
                 }
                 #endregion
 
@@ -321,6 +326,17 @@ namespace PublicManager.Modules.Contract
                         obj.SMName = moduleName;
                         obj.SMValue = moduleValue;
                         obj.copyTo(ConnectionManager.Context.table("SubjectMoneys")).insert();
+
+                        decimal nodeMoney = 0;
+                        try
+                        {
+                            nodeMoney = decimal.Parse(obj.SMValue);
+                        }
+                        catch (Exception ex) { }
+                        if (subjectDict.ContainsKey(obj.SubjectID))
+                        {
+                            subjectDict[obj.SubjectID].TotalMoney += nodeMoney;
+                        }
                     }
                 }
                 #endregion
@@ -354,6 +370,12 @@ namespace PublicManager.Modules.Contract
                 }
                 #endregion
 
+                #region 更新课题总经费
+                foreach (Subject subObj in subjectDict.Values)
+                {
+                    subObj.copyTo(ConnectionManager.Context.table("Subject").where("CatalogID = '" + subObj.CatalogID + "' and SubjectID = '" + subObj.SubjectID + "'")).update();
+                }
+                #endregion
                 return catalog.CatalogID;
             }
             else
