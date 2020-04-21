@@ -242,27 +242,6 @@ namespace PublicManager.Modules.Contract
                 }
                 #endregion
 
-                #region 写入课题金额数据
-                DataList dlSubjectMoneys = newSql(localContext, "select subjects.KeTiMingCheng as SubjectName,moneys.MingCheng as DictName,moneys.ShuJu as DictValue from KeTiYuSuanBiao moneys,KeTiBiao subjects where subjects.BianHao == moneys.KeTiBianHao").getDataList();
-                foreach (DataItem diSubjectMoneys in dlSubjectMoneys.getRows())
-                {
-                    string subjectName = diSubjectMoneys.get("SubjectName") != null ? diSubjectMoneys.get("SubjectName").ToString() : string.Empty;
-                    string dictName = diSubjectMoneys.get("DictName") != null ? diSubjectMoneys.get("DictName").ToString() : string.Empty;
-                    string dictValue = diSubjectMoneys.get("DictValue") != null ? diSubjectMoneys.get("DictValue").ToString() : string.Empty;
-
-                    //查找课题
-                    Subject subj = ConnectionManager.Context.table("Subject").where("SubjectName='" + subjectName + "'").select("*").getItem<Subject>(new Subject());
-
-                    if (string.IsNullOrEmpty(subj.SubjectID))
-                    {
-                        continue;
-                    }
-
-                    //添加数据
-                    addDict(catalog, proj, subj, "SubjectMoney,SubjectMoneyInfo", dictName, dictValue, string.Empty);
-                }
-                #endregion
-
                 #region 写入研究进度安排
                 DataList dlProgress = localContext.table("JinDuBiao").select("*").getDataList();
                 foreach (DataItem diProgress in dlProgress.getRows())
@@ -315,7 +294,7 @@ namespace PublicManager.Modules.Contract
                 #endregion
 
                 #region 写入课题节点经费
-                dlSubjectMoneys = localContext.table("KeTiJieDianJingFeiBiao").select("*").getDataList();
+                DataList dlSubjectMoneys = localContext.table("KeTiJieDianJingFeiBiao").select("*").getDataList();
                 foreach (DataItem di in dlSubjectMoneys.getRows())
                 {
                     string oldSubjectId = di.get("KeTiBianHao") != null ? di.get("KeTiBianHao").ToString() : string.Empty;
