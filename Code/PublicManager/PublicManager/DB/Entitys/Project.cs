@@ -23,6 +23,7 @@ namespace PublicManager.DB.Entitys
             query.set("Keywords", Keywords);
             query.set("Domains", Domains);
             query.set("DutyUnit", DutyUnit);
+            query.set("DutyNormalUnit", DutyNormalUnit);
             query.set("DutyUnitOrg", DutyUnitOrg);
             query.set("DutyUnitAddress", DutyUnitAddress);
             query.set("ProjectNumber", ProjectNumber);
@@ -47,6 +48,7 @@ namespace PublicManager.DB.Entitys
         public string Keywords { get; set; }
         public string Domains { get; set; }
         public string DutyUnit { get; set; }
+        public string DutyNormalUnit { get; set; }
         public string DutyUnitOrg { get; set; }
         public string DutyUnitAddress { get; set; }
         public string ProjectNumber { get; set; }
@@ -70,6 +72,7 @@ namespace PublicManager.DB.Entitys
             Keywords = source("Keywords").value<string>("");
             Domains = source("Domains").value<string>("");
             DutyUnit = source("DutyUnit").value<string>("");
+            DutyNormalUnit = source("DutyNormalUnit").value<string>("");
             DutyUnitOrg = source("DutyUnitOrg").value<string>("");
             DutyUnitAddress = source("DutyUnitAddress").value<string>("");
             ProjectNumber = source("ProjectNumber").value<string>("");

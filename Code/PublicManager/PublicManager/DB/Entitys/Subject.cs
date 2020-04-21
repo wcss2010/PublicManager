@@ -19,6 +19,7 @@ namespace PublicManager.DB.Entitys
             query.set("CatalogID", CatalogID);
             query.set("ProjectID", ProjectID);
             query.set("SubjectName", SubjectName);
+            query.set("SecretLevel", SecretLevel);
             query.set("TotalMoney", TotalMoney);
             query.set("WorkDest", WorkDest);
             query.set("WorkContent", WorkContent);
@@ -34,6 +35,7 @@ namespace PublicManager.DB.Entitys
         public string CatalogID { get; set; }
         public string ProjectID { get; set; }
         public string SubjectName { get; set; }
+        public string SecretLevel { get; set; }
         public decimal TotalMoney { get; set; }
         public string WorkDest { get; set; }
         public string WorkContent { get; set; }
@@ -44,10 +46,11 @@ namespace PublicManager.DB.Entitys
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
-            SubjectID = source("SubjectID").value<string>(Guid.NewGuid().ToString());
+            SubjectID = source("SubjectID").value<string>("");
             CatalogID = source("CatalogID").value<string>("");
             ProjectID = source("ProjectID").value<string>("");
             SubjectName = source("SubjectName").value<string>("");
+            SecretLevel = source("SecretLevel").value<string>("");
             TotalMoney = source("TotalMoney").value<decimal>(0);
             WorkDest = source("WorkDest").value<string>("");
             WorkContent = source("WorkContent").value<string>("");

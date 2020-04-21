@@ -18,6 +18,7 @@ namespace PublicManager.DB.Entitys
             query.set("UMID", UMID);
             query.set("CatalogID", CatalogID);
             query.set("ProjectID", ProjectID);
+            query.set("NodeID", NodeID);
             query.set("UnitName", UnitName);
             query.set("UMName", UMName);
             query.set("UMValue", UMValue);
@@ -28,6 +29,7 @@ namespace PublicManager.DB.Entitys
         public string UMID { get; set; }
         public string CatalogID { get; set; }
         public string ProjectID { get; set; }
+        public string NodeID { get; set; }
         public string UnitName { get; set; }
         public string UMName { get; set; }
         public string UMValue { get; set; }
@@ -37,6 +39,7 @@ namespace PublicManager.DB.Entitys
             UMID = source("UMID").value<string>("");
             CatalogID = source("CatalogID").value<string>("");
             ProjectID = source("ProjectID").value<string>("");
+            NodeID = source("NodeID").value<string>("");
             UnitName = source("UnitName").value<string>("");
             UMName = source("UMName").value<string>("");
             UMValue = source("UMValue").value<string>("");

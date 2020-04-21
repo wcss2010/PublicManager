@@ -19,6 +19,7 @@ namespace PublicManager.DB.Entitys
             query.set("CatalogID", CatalogID);
             query.set("ProjectID", ProjectID);
             query.set("SubjectID", SubjectID);
+            query.set("NodeID", NodeID);
             query.set("SMName", SMName);
             query.set("SMValue", SMValue);
 
@@ -29,6 +30,7 @@ namespace PublicManager.DB.Entitys
         public string CatalogID { get; set; }
         public string ProjectID { get; set; }
         public string SubjectID { get; set; }
+        public string NodeID { get; set; }
         public string SMName { get; set; }
         public string SMValue { get; set; }
 
@@ -38,6 +40,7 @@ namespace PublicManager.DB.Entitys
             CatalogID = source("CatalogID").value<string>("");
             ProjectID = source("ProjectID").value<string>("");
             SubjectID = source("SubjectID").value<string>("");
+            NodeID = source("NodeID").value<string>("");
             SMName = source("SMName").value<string>("");
             SMValue = source("SMValue").value<string>("");
         }
