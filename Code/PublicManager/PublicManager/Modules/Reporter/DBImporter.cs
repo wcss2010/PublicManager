@@ -86,7 +86,7 @@ namespace PublicManager.Modules.Reporter
 
                 #region 导入人员信息
                 //处理人员信息
-                DataList dlTask = localContext.table("Task").select("*").getDataList();
+                DataList dlTask = localContext.table("Task").orderBy("DisplayOrder").select("*").getDataList();
                 foreach (DataItem diTask in dlTask.getRows())
                 {
                     DataItem diPerson = localContext.table("Person").where("ID = '" + diTask.get("PersonID") + "'").select("*").getDataItem();

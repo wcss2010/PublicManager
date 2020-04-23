@@ -175,7 +175,7 @@ namespace PublicManager.Modules.Contract
 
                 #region 导入人员信息
                 //处理人员信息
-                DataList dlPerson = localContext.table("RenYuanBiao").select("*").getDataList();
+                DataList dlPerson = localContext.table("RenYuanBiao").orderBy("ZhuangTai").select("*").getDataList();
                 foreach (DataItem di in dlPerson.getRows())
                 {
                     Person obj = new Person();
@@ -248,7 +248,7 @@ namespace PublicManager.Modules.Contract
                 #endregion
 
                 #region 写入研究进度安排
-                DataList dlProgress = localContext.table("JinDuBiao").select("*").getDataList();
+                DataList dlProgress = localContext.table("JinDuBiao").orderBy("ZhuangTai,ModifyTime").select("*").getDataList();
                 foreach (DataItem diProgress in dlProgress.getRows())
                 {
                     try
@@ -270,7 +270,7 @@ namespace PublicManager.Modules.Contract
                 Dictionary<string, string> nodeDict = new Dictionary<string, string>();
 
                 #region 写入拨付约定
-                DataList dlRules = localContext.table("BoFuBiao").select("*").getDataList();
+                DataList dlRules = localContext.table("BoFuBiao").orderBy("ZhuangTai,ModifyTime").select("*").getDataList();
                 foreach (DataItem diRule in dlRules.getRows())
                 {
                     try
@@ -279,6 +279,7 @@ namespace PublicManager.Modules.Contract
                         ms.MSID = diRule.get("BianHao") != null ? diRule.get("BianHao").ToString() : Guid.NewGuid().ToString();
                         ms.CatalogID = catalog.CatalogID;
                         ms.ProjectID = proj.ProjectID;
+                        ms.NodeIndex = int.Parse(diRule.get("ZhuangTai") != null ? diRule.get("ZhuangTai").ToString() : "0");
                         ms.SendRule = diRule.get("BoFuTiaoJian") != null ? diRule.get("BoFuTiaoJian").ToString() : string.Empty;
                         ms.WillTime = DateTime.Parse(diRule.get("YuJiShiJian") != null ? diRule.get("YuJiShiJian").ToString() : DateTime.MinValue.ToString());
                         ms.TotalMoney = decimal.Parse(diRule.get("JingFeiJinQian") != null ? diRule.get("JingFeiJinQian").ToString() : "0");
@@ -299,7 +300,7 @@ namespace PublicManager.Modules.Contract
                 #endregion
 
                 #region 写入课题节点经费
-                DataList dlSubjectMoneys = localContext.table("KeTiJieDianJingFeiBiao").select("*").getDataList();
+                DataList dlSubjectMoneys = localContext.table("KeTiJieDianJingFeiBiao").orderBy("ZhuangTai,ModifyTime").select("*").getDataList();
                 foreach (DataItem di in dlSubjectMoneys.getRows())
                 {
                     string oldSubjectId = di.get("KeTiBianHao") != null ? di.get("KeTiBianHao").ToString() : string.Empty;
@@ -342,7 +343,7 @@ namespace PublicManager.Modules.Contract
                 #endregion
 
                 #region 写入单位节点经费
-                DataList dlUnitMoneys = localContext.table("DanWeiJieDianJingFeiBiao").select("*").getDataList();
+                DataList dlUnitMoneys = localContext.table("DanWeiJieDianJingFeiBiao").orderBy("ZhuangTai,ModifyTime").select("*").getDataList();
                 foreach (DataItem di in dlUnitMoneys.getRows())
                 {
                     string unitName = di.get("DanWeiMingCheng") != null ? di.get("DanWeiMingCheng").ToString() : string.Empty;
