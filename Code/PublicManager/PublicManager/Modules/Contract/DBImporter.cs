@@ -270,16 +270,19 @@ namespace PublicManager.Modules.Contract
                 Dictionary<string, string> nodeDict = new Dictionary<string, string>();
 
                 #region 写入拨付约定
+                int nodeIndexx = 0;
                 DataList dlRules = localContext.table("BoFuBiao").orderBy("ZhuangTai,ModifyTime").select("*").getDataList();
                 foreach (DataItem diRule in dlRules.getRows())
                 {
+                    nodeIndexx++;
+
                     try
                     {
                         MoneySends ms = new MoneySends();
                         ms.MSID = diRule.get("BianHao") != null ? diRule.get("BianHao").ToString() : Guid.NewGuid().ToString();
                         ms.CatalogID = catalog.CatalogID;
                         ms.ProjectID = proj.ProjectID;
-                        ms.NodeIndex = int.Parse(diRule.get("ZhuangTai") != null ? diRule.get("ZhuangTai").ToString() : "0");
+                        ms.NodeIndex = nodeIndexx;
                         ms.SendRule = diRule.get("BoFuTiaoJian") != null ? diRule.get("BoFuTiaoJian").ToString() : string.Empty;
                         ms.WillTime = DateTime.Parse(diRule.get("YuJiShiJian") != null ? diRule.get("YuJiShiJian").ToString() : DateTime.MinValue.ToString());
                         ms.TotalMoney = decimal.Parse(diRule.get("JingFeiJinQian") != null ? diRule.get("JingFeiJinQian").ToString() : "0");

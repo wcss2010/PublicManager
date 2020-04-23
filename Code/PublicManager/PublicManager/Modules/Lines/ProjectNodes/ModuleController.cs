@@ -332,7 +332,7 @@ namespace PublicManager.Modules.Lines.ProjectNodes
             List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
             foreach (Project proj in projList)
             {
-                List<MoneySends> subList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "')").select("*").getList<MoneySends>(new MoneySends());
+                List<MoneySends> subList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "')").orderBy("NodeIndex").select("*").getList<MoneySends>(new MoneySends());
                 int indexx = 0;
                 foreach (MoneySends mss in subList)
                 {
@@ -345,9 +345,8 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                         continue;
                     }
 
-                    indexx++;
                     List<object> cells = new List<object>();
-                    cells.Add(indexx.ToString());
+                    cells.Add(mss.NodeIndex);
                     cells.Add(mss.SendRule);
                     cells.Add(ExcelHelper.getDateTimeForString(mss.WillTime, "yyyy年MM月dd日", string.Empty));
                     cells.Add(mss.TotalMoney);
