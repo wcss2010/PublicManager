@@ -186,6 +186,12 @@
     <Compile Include="Modules\DataCheck\AllCheck\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\DataCheck\AllCheck\ModuleController2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\DataCheck\AllCheck\ModuleController2.Designer.cs">
+      <DependentUpon>ModuleController2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\MakeSQLWithSearchRule.cs" />
     <Compile Include="Modules\BaseDBImporter.cs" />
     <Compile Include="Modules\BaseModuleController.cs">
@@ -397,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataCheck\AllCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DataCheck\AllCheck\ModuleController2.resx">
+      <DependentUpon>ModuleController2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataExport\CustomReporter\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
