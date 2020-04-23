@@ -81,7 +81,7 @@
             // lblTag4
             // 
             this.lblTag4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTag4.Font = new System.Drawing.Font("宋体", 12F);
+            this.lblTag4.Font = new System.Drawing.Font("Tahoma", 9F);
             this.lblTag4.Location = new System.Drawing.Point(660, 2);
             this.lblTag4.Margin = new System.Windows.Forms.Padding(1);
             this.lblTag4.Name = "lblTag4";
@@ -93,7 +93,7 @@
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("宋体", 10F);
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label5.Location = new System.Drawing.Point(566, 2);
             this.label5.Margin = new System.Windows.Forms.Padding(1);
             this.label5.Name = "label5";
@@ -105,7 +105,7 @@
             // lblTag3
             // 
             this.lblTag3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTag3.Font = new System.Drawing.Font("宋体", 12F);
+            this.lblTag3.Font = new System.Drawing.Font("Tahoma", 9F);
             this.lblTag3.Location = new System.Drawing.Point(472, 2);
             this.lblTag3.Margin = new System.Windows.Forms.Padding(1);
             this.lblTag3.Name = "lblTag3";
@@ -117,7 +117,7 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("宋体", 10F);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label4.Location = new System.Drawing.Point(378, 2);
             this.label4.Margin = new System.Windows.Forms.Padding(1);
             this.label4.Name = "label4";
@@ -129,7 +129,7 @@
             // lblTag2
             // 
             this.lblTag2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTag2.Font = new System.Drawing.Font("宋体", 12F);
+            this.lblTag2.Font = new System.Drawing.Font("Tahoma", 9F);
             this.lblTag2.Location = new System.Drawing.Point(284, 2);
             this.lblTag2.Margin = new System.Windows.Forms.Padding(1);
             this.lblTag2.Name = "lblTag2";
@@ -141,7 +141,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("宋体", 10F);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label3.Location = new System.Drawing.Point(190, 2);
             this.label3.Margin = new System.Windows.Forms.Padding(1);
             this.label3.Name = "label3";
@@ -153,7 +153,7 @@
             // lblTag1
             // 
             this.lblTag1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTag1.Font = new System.Drawing.Font("宋体", 12F);
+            this.lblTag1.Font = new System.Drawing.Font("Tahoma", 9F);
             this.lblTag1.Location = new System.Drawing.Point(96, 2);
             this.lblTag1.Margin = new System.Windows.Forms.Padding(1);
             this.lblTag1.Name = "lblTag1";
@@ -165,7 +165,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("宋体", 10F);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label1.Location = new System.Drawing.Point(2, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(1);
             this.label1.Name = "label1";
