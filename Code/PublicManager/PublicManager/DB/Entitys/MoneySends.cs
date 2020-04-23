@@ -18,6 +18,7 @@ namespace PublicManager.DB.Entitys
             query.set("MSID", MSID);
             query.set("CatalogID", CatalogID);
             query.set("ProjectID", ProjectID);
+            query.set("NodeIndex", NodeIndex);
             query.set("SendRule", SendRule);
             query.set("WillTime", WillTime);
             query.set("TotalMoney", TotalMoney);
@@ -33,6 +34,7 @@ namespace PublicManager.DB.Entitys
         public string MSID { get; set; }
         public string CatalogID { get; set; }
         public string ProjectID { get; set; }
+        public int NodeIndex { get; set; }
         public string SendRule { get; set; }
         public DateTime WillTime { get; set; }
         public decimal TotalMoney { get; set; }
@@ -47,6 +49,7 @@ namespace PublicManager.DB.Entitys
             MSID = source("MSID").value<string>("");
             CatalogID = source("CatalogID").value<string>("");
             ProjectID = source("ProjectID").value<string>("");
+            NodeIndex = source("NodeIndex").value<int>(0);
             SendRule = source("SendRule").value<string>("");
             WillTime = source("WillTime").value<DateTime>(DateTime.Now);
             TotalMoney = source("TotalMoney").value<decimal>(0);
