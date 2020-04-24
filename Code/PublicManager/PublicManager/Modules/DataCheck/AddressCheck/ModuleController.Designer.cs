@@ -161,7 +161,7 @@
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = true;
             this.srpSearch.Key1FieldString = "课题负责单位;课题所属地点";
-            this.srpSearch.Key1PanelWidth = 624;
+            this.srpSearch.Key1PanelWidth = 560;
             this.srpSearch.Key2PanelWidth = 312;
             this.srpSearch.Key3OR4PanelWidth = 638;
             this.srpSearch.Key3PanelWidth = 310;
