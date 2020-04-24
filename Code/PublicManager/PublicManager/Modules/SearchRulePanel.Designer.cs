@@ -299,6 +299,7 @@
             this.fplCustomButtons.Location = new System.Drawing.Point(174, 0);
             this.fplCustomButtons.Margin = new System.Windows.Forms.Padding(0);
             this.fplCustomButtons.Name = "fplCustomButtons";
+            this.fplCustomButtons.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.fplCustomButtons.Size = new System.Drawing.Size(4, 22);
             this.fplCustomButtons.TabIndex = 5;
             this.fplCustomButtons.Visible = false;
