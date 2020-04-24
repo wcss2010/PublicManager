@@ -115,7 +115,7 @@ namespace PublicManager.Modules.Lines.ProjectLines
 
         private void srpSearch_OnCustomButtonClick(object sender, CustomButtonEventArgs args)
         {
-            if (args.ButtonName == "编辑审核信息")
+            if (args.ButtonName == "录入审核结果")
             {
                 int[] selecteds = dgvDetail.GetSelectedRows();
                 if (selecteds != null && selecteds.Length >= 1)

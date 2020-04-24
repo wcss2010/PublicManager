@@ -68,8 +68,8 @@ namespace PublicManager
             ModuleDict[nbcTestB.Caption + "xxxx" + "经费预算查询"] = new Modules.DataCheck.MoneyCheck.ModuleController();
             ModuleDict[nbcTestB.Caption + "xxxx" + "综合查询"] = new Modules.DataCheck.AllCheck.ModuleController2();
 
-            ModuleDict[nbcTestF.Caption + "xxxx" + "项目过程管理"] = new Modules.Lines.ProjectLines.ModuleController();
-            ModuleDict[nbcTestF.Caption + "xxxx" + "项目节点管理"] = new Modules.Lines.ProjectNodes.ModuleController();
+            ModuleDict[nbcTestF.Caption + "xxxx" + "审核信息录入"] = new Modules.Lines.ProjectLines.ModuleController();
+            ModuleDict[nbcTestF.Caption + "xxxx" + "节点评估管理"] = new Modules.Lines.ProjectNodes.ModuleController();
             ModuleDict[nbcTestF.Caption + "xxxx" + "经费过程管理"] = new Modules.Lines.MoneyLines.ModuleController();
             ModuleDict[nbcTestF.Caption + "xxxx" + "课题经费管理"] = new Modules.Lines.SubjectMoneys.ModuleController();
 

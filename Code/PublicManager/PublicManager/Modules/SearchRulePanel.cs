@@ -16,11 +16,6 @@ namespace PublicManager.Modules
     public delegate void ExportToClickDelegate(object sender, EventArgs args);
     public delegate void CustomButtonClickDelegate(object sender,CustomButtonEventArgs args);
 
-    public class CustomButtonEventArgs : EventArgs
-    {
-        public string ButtonName { get; set; }
-    }
-
     public partial class SearchRulePanel : UserControl
     {
         private string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
@@ -215,6 +210,21 @@ namespace PublicManager.Modules
                         fplCustomButtons.Controls.Add(bb);
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// 最左侧按钮栏的宽度
+        /// </summary>
+        public int LeftButtonPanelWidth
+        {
+            get
+            {
+                return plLeftButtonPanel.Width;
+            }
+            set
+            {
+                plLeftButtonPanel.Width = value;
             }
         }
 
@@ -587,5 +597,10 @@ namespace PublicManager.Modules
                 }
             }
         }
+    }
+
+    public class CustomButtonEventArgs : EventArgs
+    {
+        public string ButtonName { get; set; }
     }
 }

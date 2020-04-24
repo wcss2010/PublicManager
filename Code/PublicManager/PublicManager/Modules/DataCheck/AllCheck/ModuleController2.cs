@@ -21,7 +21,9 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = true;
-            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3" });
+            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3", "row5", "row7", "row9", "row11", "row13", "row14" });
+            //cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3", "row5", "row7", "row9", "row11" });
+            //dgvDetail.OptionsView.RowAutoHeight = true;
         }
 
         public override void start()
@@ -44,6 +46,14 @@ namespace PublicManager.Modules.DataCheck.AllCheck
             {
                 //项目类型
                 string catalogType = ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知");
+
+                //节点评估时间
+                StringBuilder nodeTimeString = new StringBuilder();
+                List<MoneySends> nodeList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "')").orderBy("NodeIndex").select("*").getList<MoneySends>(new MoneySends());
+                foreach (MoneySends mss in nodeList)
+                {
+                    nodeTimeString.Append(mss.NodeIndex).Append(":").Append(ExcelHelper.getDateTimeForString(mss.NodeWillTime, "yyyy年MM月dd日", string.Empty)).AppendLine();
+                }
 
                 List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                 foreach (Subject sub in subList)
@@ -105,13 +115,18 @@ namespace PublicManager.Modules.DataCheck.AllCheck
                     //合同审查等级
                     cells.Add(proj.ContactCheckLevelA);
 
-                    //节点评估时间
-                    cells.Add("");
+                    //节点评估时间                    
+                    cells.Add(nodeTimeString.ToString());
 
                     dt.Rows.Add(cells.ToArray());
                 }
             }
             gcGrid.DataSource = dt;
+        }
+
+        private void btnColSelect_Click(object sender, EventArgs e)
+        {
+            dgvDetail.ShowCustomization();
         }
     }
 }

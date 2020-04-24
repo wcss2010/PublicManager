@@ -46,11 +46,12 @@
             this.plKey1Panel = new System.Windows.Forms.Panel();
             this.txtKey1 = new DevExpress.XtraEditors.TextEdit();
             this.lblKey1 = new System.Windows.Forms.Label();
-            this.panelControl4 = new System.Windows.Forms.Panel();
+            this.plLeftButtonPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.fplCustomButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelControl2 = new System.Windows.Forms.Panel();
-            this.btnReset = new DevExpress.XtraEditors.SimpleButton();
+            this.plSearchOrResetOrExport = new System.Windows.Forms.Panel();
             this.btnExportTo = new DevExpress.XtraEditors.SimpleButton();
+            this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.plCatalogType = new System.Windows.Forms.Panel();
             this.cbDisplayContract = new System.Windows.Forms.CheckBox();
@@ -66,8 +67,9 @@
             this.plKey2Panel.SuspendLayout();
             this.plKey1Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey1.Properties)).BeginInit();
-            this.panelControl4.SuspendLayout();
-            this.panelControl2.SuspendLayout();
+            this.plLeftButtonPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.plSearchOrResetOrExport.SuspendLayout();
             this.plCatalogType.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,18 +79,18 @@
             this.plRules.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plRules.Location = new System.Drawing.Point(0, 0);
             this.plRules.Name = "plRules";
-            this.plRules.Size = new System.Drawing.Size(891, 105);
+            this.plRules.Size = new System.Drawing.Size(891, 75);
             this.plRules.TabIndex = 0;
             this.plRules.Text = "搜索条件";
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.panelControl3);
-            this.panelControl1.Controls.Add(this.panelControl4);
+            this.panelControl1.Controls.Add(this.plLeftButtonPanel);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(2, 21);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(887, 82);
+            this.panelControl1.Size = new System.Drawing.Size(887, 52);
             this.panelControl1.TabIndex = 2;
             // 
             // panelControl3
@@ -98,7 +100,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(705, 82);
+            this.panelControl3.Size = new System.Drawing.Size(570, 52);
             this.panelControl3.TabIndex = 2;
             // 
             // fplCheckList
@@ -109,7 +111,7 @@
             this.fplCheckList.Location = new System.Drawing.Point(0, 25);
             this.fplCheckList.Name = "fplCheckList";
             this.fplCheckList.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
-            this.fplCheckList.Size = new System.Drawing.Size(705, 57);
+            this.fplCheckList.Size = new System.Drawing.Size(570, 27);
             this.fplCheckList.TabIndex = 0;
             // 
             // plInputPanel
@@ -120,7 +122,7 @@
             this.plInputPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.plInputPanel.Location = new System.Drawing.Point(0, 0);
             this.plInputPanel.Name = "plInputPanel";
-            this.plInputPanel.Size = new System.Drawing.Size(705, 25);
+            this.plInputPanel.Size = new System.Drawing.Size(570, 25);
             this.plInputPanel.TabIndex = 3;
             // 
             // plKey3And4Panel
@@ -271,63 +273,75 @@
             this.lblKey1.Text = "搜索关键字:";
             this.lblKey1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panelControl4
+            // plLeftButtonPanel
             // 
-            this.panelControl4.Controls.Add(this.fplCustomButtons);
-            this.panelControl4.Controls.Add(this.panelControl2);
-            this.panelControl4.Controls.Add(this.plCatalogType);
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl4.Location = new System.Drawing.Point(705, 0);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(182, 82);
-            this.panelControl4.TabIndex = 2;
+            this.plLeftButtonPanel.Controls.Add(this.panel1);
+            this.plLeftButtonPanel.Controls.Add(this.plCatalogType);
+            this.plLeftButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.plLeftButtonPanel.Location = new System.Drawing.Point(570, 0);
+            this.plLeftButtonPanel.Name = "plLeftButtonPanel";
+            this.plLeftButtonPanel.Size = new System.Drawing.Size(317, 52);
+            this.plLeftButtonPanel.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.fplCustomButtons);
+            this.panel1.Controls.Add(this.plSearchOrResetOrExport);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 19);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(317, 22);
+            this.panel1.TabIndex = 6;
             // 
             // fplCustomButtons
             // 
             this.fplCustomButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fplCustomButtons.Location = new System.Drawing.Point(0, 53);
+            this.fplCustomButtons.Location = new System.Drawing.Point(174, 0);
+            this.fplCustomButtons.Margin = new System.Windows.Forms.Padding(0);
             this.fplCustomButtons.Name = "fplCustomButtons";
-            this.fplCustomButtons.Size = new System.Drawing.Size(182, 29);
+            this.fplCustomButtons.Size = new System.Drawing.Size(143, 22);
             this.fplCustomButtons.TabIndex = 5;
             this.fplCustomButtons.Visible = false;
             // 
-            // panelControl2
+            // plSearchOrResetOrExport
             // 
-            this.panelControl2.Controls.Add(this.btnReset);
-            this.panelControl2.Controls.Add(this.btnExportTo);
-            this.panelControl2.Controls.Add(this.btnSearch);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(0, 26);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(182, 20);
-            this.panelControl2.TabIndex = 4;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReset.Location = new System.Drawing.Point(56, 0);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(63, 27);
-            this.btnReset.TabIndex = 1;
-            this.btnReset.Text = "重置";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.plSearchOrResetOrExport.AutoSize = true;
+            this.plSearchOrResetOrExport.Controls.Add(this.btnExportTo);
+            this.plSearchOrResetOrExport.Controls.Add(this.btnReset);
+            this.plSearchOrResetOrExport.Controls.Add(this.btnSearch);
+            this.plSearchOrResetOrExport.Dock = System.Windows.Forms.DockStyle.Left;
+            this.plSearchOrResetOrExport.Location = new System.Drawing.Point(0, 0);
+            this.plSearchOrResetOrExport.Name = "plSearchOrResetOrExport";
+            this.plSearchOrResetOrExport.Padding = new System.Windows.Forms.Padding(3, 2, 0, 0);
+            this.plSearchOrResetOrExport.Size = new System.Drawing.Size(174, 22);
+            this.plSearchOrResetOrExport.TabIndex = 4;
             // 
             // btnExportTo
             // 
-            this.btnExportTo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExportTo.Location = new System.Drawing.Point(119, 0);
+            this.btnExportTo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExportTo.Location = new System.Drawing.Point(111, 2);
             this.btnExportTo.Name = "btnExportTo";
-            this.btnExportTo.Size = new System.Drawing.Size(63, 27);
+            this.btnExportTo.Size = new System.Drawing.Size(63, 20);
             this.btnExportTo.TabIndex = 0;
             this.btnExportTo.Text = "导出Excel";
             this.btnExportTo.Click += new System.EventHandler(this.btnExportTo_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnReset.Location = new System.Drawing.Point(59, 2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(52, 20);
+            this.btnReset.TabIndex = 1;
+            this.btnReset.Text = "重置";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // btnSearch
             // 
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSearch.Location = new System.Drawing.Point(0, 0);
+            this.btnSearch.Location = new System.Drawing.Point(3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(56, 27);
+            this.btnSearch.Size = new System.Drawing.Size(56, 20);
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "搜索";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -339,7 +353,7 @@
             this.plCatalogType.Dock = System.Windows.Forms.DockStyle.Top;
             this.plCatalogType.Location = new System.Drawing.Point(0, 0);
             this.plCatalogType.Name = "plCatalogType";
-            this.plCatalogType.Size = new System.Drawing.Size(182, 20);
+            this.plCatalogType.Size = new System.Drawing.Size(317, 19);
             this.plCatalogType.TabIndex = 2;
             // 
             // cbDisplayContract
@@ -348,10 +362,10 @@
             this.cbDisplayContract.Checked = true;
             this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cbDisplayContract.Location = new System.Drawing.Point(48, 0);
+            this.cbDisplayContract.Location = new System.Drawing.Point(183, 0);
             this.cbDisplayContract.Name = "cbDisplayContract";
             this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.cbDisplayContract.Size = new System.Drawing.Size(72, 26);
+            this.cbDisplayContract.Size = new System.Drawing.Size(72, 19);
             this.cbDisplayContract.TabIndex = 5;
             this.cbDisplayContract.Text = "已立项";
             this.cbDisplayContract.UseVisualStyleBackColor = true;
@@ -363,9 +377,9 @@
             this.cbDisplayReporter.Checked = true;
             this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(120, 0);
+            this.cbDisplayReporter.Location = new System.Drawing.Point(255, 0);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
-            this.cbDisplayReporter.Size = new System.Drawing.Size(62, 26);
+            this.cbDisplayReporter.Size = new System.Drawing.Size(62, 19);
             this.cbDisplayReporter.TabIndex = 6;
             this.cbDisplayReporter.Text = "未立项";
             this.cbDisplayReporter.UseVisualStyleBackColor = true;
@@ -377,7 +391,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.plRules);
             this.Name = "SearchRulePanel";
-            this.Size = new System.Drawing.Size(891, 105);
+            this.Size = new System.Drawing.Size(891, 75);
             ((System.ComponentModel.ISupportInitialize)(this.plRules)).EndInit();
             this.plRules.ResumeLayout(false);
             this.panelControl1.ResumeLayout(false);
@@ -393,8 +407,10 @@
             this.plKey1Panel.ResumeLayout(false);
             this.plKey1Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey1.Properties)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            this.panelControl2.ResumeLayout(false);
+            this.plLeftButtonPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.plSearchOrResetOrExport.ResumeLayout(false);
             this.plCatalogType.ResumeLayout(false);
             this.plCatalogType.PerformLayout();
             this.ResumeLayout(false);
@@ -408,7 +424,7 @@
         private System.Windows.Forms.Label lblKey1;
         private System.Windows.Forms.Panel plCatalogType;
         private DevExpress.XtraEditors.TextEdit txtKey1;
-        private System.Windows.Forms.Panel panelControl2;
+        private System.Windows.Forms.Panel plSearchOrResetOrExport;
         private DevExpress.XtraEditors.SimpleButton btnExportTo;
         private DevExpress.XtraEditors.SimpleButton btnSearch;
         private System.Windows.Forms.CheckBox cbDisplayReporter;
@@ -418,7 +434,7 @@
         private System.Windows.Forms.ComboBox txtKey2;
         private System.Windows.Forms.Panel panelControl1;
         private System.Windows.Forms.Panel panelControl3;
-        private System.Windows.Forms.Panel panelControl4;
+        private System.Windows.Forms.Panel plLeftButtonPanel;
         private System.Windows.Forms.Panel plKey3And4Panel;
         private System.Windows.Forms.Panel plKey2Panel;
         private System.Windows.Forms.Panel plKey1Panel;
@@ -430,5 +446,6 @@
         private System.Windows.Forms.DateTimePicker txtKey4;
         private System.Windows.Forms.CheckBox lblKey4;
         private System.Windows.Forms.FlowLayoutPanel fplCustomButtons;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.panel1 = new System.Windows.Forms.Panel();
             this.srpSearch = new PublicManager.Modules.SearchRulePanel();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
@@ -46,6 +47,7 @@
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,7 +58,6 @@
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -75,7 +76,7 @@
             // 
             // srpSearch
             // 
-            this.srpSearch.CustomButtonsNames = "结果内容搜索;编辑审核信息";
+            this.srpSearch.CustomButtonsNames = "结果内容搜索;录入审核结果";
             this.srpSearch.DisplayGridControl = this.gcGrid;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = false;
@@ -89,6 +90,7 @@
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = true;
             this.srpSearch.Key1FieldString = "项目名称";
+            this.srpSearch.LeftButtonPanelWidth = 400;
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
             this.srpSearch.Size = new System.Drawing.Size(1414, 73);
@@ -101,6 +103,9 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.gcGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gcGrid.Location = new System.Drawing.Point(3, 91);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
@@ -258,6 +263,14 @@
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 11;
             // 
+            // gridColumn24
+            // 
+            this.gridColumn24.Caption = "项目牵头单位常用名";
+            this.gridColumn24.FieldName = "row24";
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 12;
+            // 
             // gridColumn12
             // 
             this.gridColumn12.Caption = "牵头单位所属大单位";
@@ -346,14 +359,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1420, 679);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            // 
-            // gridColumn24
-            // 
-            this.gridColumn24.Caption = "项目牵头单位常用名";
-            this.gridColumn24.FieldName = "row24";
-            this.gridColumn24.Name = "gridColumn24";
-            this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 12;
             // 
             // ModuleController
             // 

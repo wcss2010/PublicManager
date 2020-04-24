@@ -409,9 +409,9 @@
             this.tlTestF.Name = "tlTestF";
             this.tlTestF.BeginUnboundLoad();
             this.tlTestF.AppendNode(new object[] {
-            "项目过程管理"}, -1);
+            "审核信息录入"}, -1);
             this.tlTestF.AppendNode(new object[] {
-            "项目节点管理"}, -1);
+            "节点评估管理"}, -1);
             this.tlTestF.AppendNode(new object[] {
             "经费过程管理"}, -1);
             this.tlTestF.AppendNode(new object[] {

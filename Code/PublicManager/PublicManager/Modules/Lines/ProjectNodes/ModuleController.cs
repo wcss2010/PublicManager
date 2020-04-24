@@ -347,7 +347,7 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
                     List<object> cells = new List<object>();
                     cells.Add(mss.NodeIndex);
-                    cells.Add("节点" + mss.NodeIndex + "--" + mss.SendRule);
+                    cells.Add(mss.SendRule);
                     cells.Add(ExcelHelper.getDateTimeForString(mss.WillTime, "yyyy年MM月dd日", string.Empty));
                     cells.Add(mss.TotalMoney);
                     cells.Add(mss.MemoText);
