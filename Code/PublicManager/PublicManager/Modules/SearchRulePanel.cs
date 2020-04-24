@@ -214,9 +214,9 @@ namespace PublicManager.Modules
         }
 
         /// <summary>
-        /// 最左侧按钮栏的宽度
+        /// 最右侧按钮栏的宽度
         /// </summary>
-        public int LeftButtonPanelWidth
+        public int RightButtonPanelWidth
         {
             get
             {
@@ -226,6 +226,30 @@ namespace PublicManager.Modules
             {
                 plLeftButtonPanel.Width = value;
             }
+        }
+
+        public int Key1PanelWidth
+        {
+            get { return plKey1Panel.Width; }
+            set { plKey1Panel.Width = value; }
+        }
+
+        public int Key2PanelWidth
+        {
+            get { return plKey2Panel.Width; }
+            set { plKey2Panel.Width = value; }
+        }
+
+        public int Key3PanelWidth
+        {
+            get { return plKey3Panel.Width; }
+            set { plKey3Panel.Width = value; }
+        }
+
+        public int Key4PanelWidth
+        {
+            get { return plKey4Panel.Width; }
+            set { plKey4Panel.Width = value; }
         }
 
         void bb_Click(object sender, EventArgs e)
