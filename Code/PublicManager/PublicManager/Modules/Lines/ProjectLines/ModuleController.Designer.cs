@@ -71,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1414, 73);
+            this.panel1.Size = new System.Drawing.Size(1414, 54);
             this.panel1.TabIndex = 2;
             // 
             // srpSearch
@@ -90,10 +90,15 @@
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = true;
             this.srpSearch.Key1FieldString = "项目名称";
-            this.srpSearch.RightButtonPanelWidth = 370;
+            this.srpSearch.Key1PanelWidth = 1060;
+            this.srpSearch.Key2PanelWidth = 296;
+            this.srpSearch.Key3OR4PanelWidth = 946;
+            this.srpSearch.Key3PanelWidth = 492;
+            this.srpSearch.Key4PanelWidth = 597;
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
-            this.srpSearch.Size = new System.Drawing.Size(1414, 73);
+            this.srpSearch.RightButtonPanelWidth = 345;
+            this.srpSearch.Size = new System.Drawing.Size(1414, 54);
             this.srpSearch.TabIndex = 10;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
@@ -106,10 +111,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gcGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gcGrid.Location = new System.Drawing.Point(3, 91);
+            this.gcGrid.Location = new System.Drawing.Point(3, 72);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1414, 585);
+            this.gcGrid.Size = new System.Drawing.Size(1414, 604);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});

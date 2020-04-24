@@ -79,7 +79,7 @@
             this.plRules.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plRules.Location = new System.Drawing.Point(0, 0);
             this.plRules.Name = "plRules";
-            this.plRules.Size = new System.Drawing.Size(891, 75);
+            this.plRules.Size = new System.Drawing.Size(1084, 75);
             this.plRules.TabIndex = 0;
             this.plRules.Text = "搜索条件";
             // 
@@ -90,7 +90,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(2, 21);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(887, 52);
+            this.panelControl1.Size = new System.Drawing.Size(1080, 52);
             this.panelControl1.TabIndex = 2;
             // 
             // panelControl3
@@ -100,7 +100,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(745, 52);
+            this.panelControl3.Size = new System.Drawing.Size(938, 52);
             this.panelControl3.TabIndex = 2;
             // 
             // fplCheckList
@@ -111,7 +111,7 @@
             this.fplCheckList.Location = new System.Drawing.Point(0, 25);
             this.fplCheckList.Name = "fplCheckList";
             this.fplCheckList.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
-            this.fplCheckList.Size = new System.Drawing.Size(745, 27);
+            this.fplCheckList.Size = new System.Drawing.Size(938, 27);
             this.fplCheckList.TabIndex = 0;
             // 
             // plInputPanel
@@ -122,29 +122,31 @@
             this.plInputPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.plInputPanel.Location = new System.Drawing.Point(0, 0);
             this.plInputPanel.Name = "plInputPanel";
-            this.plInputPanel.Size = new System.Drawing.Size(745, 25);
+            this.plInputPanel.Size = new System.Drawing.Size(938, 25);
             this.plInputPanel.TabIndex = 3;
             // 
             // plKey3And4Panel
             // 
+            this.plKey3And4Panel.AutoSize = true;
             this.plKey3And4Panel.Controls.Add(this.plKey4Panel);
             this.plKey3And4Panel.Controls.Add(this.plKey3Panel);
             this.plKey3And4Panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.plKey3And4Panel.Location = new System.Drawing.Point(387, 0);
             this.plKey3And4Panel.Name = "plKey3And4Panel";
             this.plKey3And4Panel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.plKey3And4Panel.Size = new System.Drawing.Size(596, 25);
+            this.plKey3And4Panel.Size = new System.Drawing.Size(547, 25);
             this.plKey3And4Panel.TabIndex = 2;
             this.plKey3And4Panel.Visible = false;
             // 
             // plKey4Panel
             // 
+            this.plKey4Panel.AutoSize = true;
             this.plKey4Panel.Controls.Add(this.txtKey4);
             this.plKey4Panel.Controls.Add(this.lblKey4);
             this.plKey4Panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.plKey4Panel.Location = new System.Drawing.Point(276, 0);
             this.plKey4Panel.Name = "plKey4Panel";
-            this.plKey4Panel.Size = new System.Drawing.Size(322, 25);
+            this.plKey4Panel.Size = new System.Drawing.Size(271, 25);
             this.plKey4Panel.TabIndex = 1;
             // 
             // txtKey4
@@ -153,7 +155,7 @@
             this.txtKey4.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtKey4.Font = new System.Drawing.Font("宋体", 12F);
             this.txtKey4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtKey4.Location = new System.Drawing.Point(179, 0);
+            this.txtKey4.Location = new System.Drawing.Point(131, 0);
             this.txtKey4.Name = "txtKey4";
             this.txtKey4.Size = new System.Drawing.Size(140, 26);
             this.txtKey4.TabIndex = 7;
@@ -165,13 +167,14 @@
             this.lblKey4.Font = new System.Drawing.Font("宋体", 12F);
             this.lblKey4.Location = new System.Drawing.Point(0, 0);
             this.lblKey4.Name = "lblKey4";
-            this.lblKey4.Size = new System.Drawing.Size(179, 25);
+            this.lblKey4.Size = new System.Drawing.Size(131, 25);
             this.lblKey4.TabIndex = 6;
-            this.lblKey4.Text = "合同书预计评估时间:";
+            this.lblKey4.Text = "预计评估时间:";
             this.lblKey4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // plKey3Panel
             // 
+            this.plKey3Panel.AutoSize = true;
             this.plKey3Panel.Controls.Add(this.txtKey3);
             this.plKey3Panel.Controls.Add(this.lblKey3);
             this.plKey3Panel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -278,7 +281,7 @@
             this.plLeftButtonPanel.Controls.Add(this.panel1);
             this.plLeftButtonPanel.Controls.Add(this.plCatalogType);
             this.plLeftButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.plLeftButtonPanel.Location = new System.Drawing.Point(745, 0);
+            this.plLeftButtonPanel.Location = new System.Drawing.Point(938, 0);
             this.plLeftButtonPanel.Name = "plLeftButtonPanel";
             this.plLeftButtonPanel.Size = new System.Drawing.Size(142, 52);
             this.plLeftButtonPanel.TabIndex = 2;
@@ -392,13 +395,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.plRules);
             this.Name = "SearchRulePanel";
-            this.Size = new System.Drawing.Size(891, 75);
+            this.Size = new System.Drawing.Size(1084, 75);
             ((System.ComponentModel.ISupportInitialize)(this.plRules)).EndInit();
             this.plRules.ResumeLayout(false);
             this.panelControl1.ResumeLayout(false);
             this.panelControl3.ResumeLayout(false);
             this.plInputPanel.ResumeLayout(false);
+            this.plInputPanel.PerformLayout();
             this.plKey3And4Panel.ResumeLayout(false);
+            this.plKey3And4Panel.PerformLayout();
             this.plKey4Panel.ResumeLayout(false);
             this.plKey4Panel.PerformLayout();
             this.plKey3Panel.ResumeLayout(false);

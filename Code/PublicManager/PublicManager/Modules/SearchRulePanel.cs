@@ -252,6 +252,12 @@ namespace PublicManager.Modules
             set { plKey4Panel.Width = value; }
         }
 
+        public int Key3OR4PanelWidth
+        {
+            get { return plKey3And4Panel.Width; }
+            set { plKey3And4Panel.Width = value; }
+        }
+
         void bb_Click(object sender, EventArgs e)
         {
             SimpleButton buttonObj = (SimpleButton)sender;

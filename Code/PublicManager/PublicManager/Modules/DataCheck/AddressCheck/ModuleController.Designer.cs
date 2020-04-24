@@ -60,10 +60,10 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 116);
+            this.gcGrid.Location = new System.Drawing.Point(3, 95);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1200, 570);
+            this.gcGrid.Size = new System.Drawing.Size(1200, 591);
             this.gcGrid.TabIndex = 3;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -142,7 +142,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 98);
+            this.panel1.Size = new System.Drawing.Size(1200, 77);
             this.panel1.TabIndex = 2;
             // 
             // srpSearch
@@ -161,9 +161,15 @@
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = true;
             this.srpSearch.Key1FieldString = "课题负责单位;课题所属地点";
+            this.srpSearch.Key1PanelWidth = 624;
+            this.srpSearch.Key2PanelWidth = 312;
+            this.srpSearch.Key3OR4PanelWidth = 638;
+            this.srpSearch.Key3PanelWidth = 310;
+            this.srpSearch.Key4PanelWidth = 316;
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
-            this.srpSearch.Size = new System.Drawing.Size(1200, 98);
+            this.srpSearch.RightButtonPanelWidth = 260;
+            this.srpSearch.Size = new System.Drawing.Size(1200, 77);
             this.srpSearch.TabIndex = 9;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
