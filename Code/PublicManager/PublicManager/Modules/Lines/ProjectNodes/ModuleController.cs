@@ -24,6 +24,10 @@ namespace PublicManager.Modules.Lines.ProjectNodes
             gvDetail.OptionsBehavior.Editable = false;
             gvDetail.OptionsView.AllowCellMerge = true;
             cma = new DEGridViewCellMergeAdapter(gvDetail, new string[] { "row7" });
+
+            srpSearch.RightButtonPanelWidth = 340;
+            srpSearch.Key3PanelWidth = 270;
+            srpSearch.Key4PanelWidth = 270;
         }
 
         public override void start()

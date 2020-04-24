@@ -205,6 +205,7 @@ namespace PublicManager.Modules
                         bb.Name = ss;
                         bb.Text = ss;
                         bb.AutoSize = true;
+                        bb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
                         bb.Click += bb_Click;
 
                         fplCustomButtons.Controls.Add(bb);
@@ -213,6 +214,13 @@ namespace PublicManager.Modules
             }
         }
 
+        private int _rightButtonPanelWidth = -1;
+        private int _key1PanelWidth = -1;
+        private int _key2PanelWidth = -1;
+        private int _key3PanelWidth = -1;
+        private int _key4PanelWidth = -1;
+        private int _key3OR4PanelWidth = -1;
+
         /// <summary>
         /// 最右侧按钮栏的宽度
         /// </summary>
@@ -220,42 +228,108 @@ namespace PublicManager.Modules
         {
             get
             {
-                return plLeftButtonPanel.Width;
+                if (_rightButtonPanelWidth == -1)
+                {
+                    _rightButtonPanelWidth = plLeftButtonPanel.Width;
+                }
+
+                return _rightButtonPanelWidth;
             }
             set
             {
+                _rightButtonPanelWidth = value;
                 plLeftButtonPanel.Width = value;
             }
         }
 
         public int Key1PanelWidth
         {
-            get { return plKey1Panel.Width; }
-            set { plKey1Panel.Width = value; }
+            get
+            {
+                if (_key1PanelWidth == -1)
+                {
+                    _key1PanelWidth = plLeftButtonPanel.Width;
+                }
+
+                return _key1PanelWidth;
+            }
+            set
+            {
+                _key1PanelWidth = value;
+                plKey1Panel.Width = value;
+            }
         }
 
         public int Key2PanelWidth
         {
-            get { return plKey2Panel.Width; }
-            set { plKey2Panel.Width = value; }
+            get
+            {
+                if (_key2PanelWidth == -1)
+                {
+                    _key2PanelWidth = plLeftButtonPanel.Width;
+                }
+
+                return _key2PanelWidth;
+            }
+            set
+            {
+                _key2PanelWidth = value;
+                plKey2Panel.Width = value;
+            }
         }
 
         public int Key3PanelWidth
         {
-            get { return plKey3Panel.Width; }
-            set { plKey3Panel.Width = value; }
+            get
+            {
+                if (_key3PanelWidth == -1)
+                {
+                    _key3PanelWidth = plLeftButtonPanel.Width;
+                }
+
+                return _key3PanelWidth;
+            }
+            set
+            {
+                _key3PanelWidth = value;
+                plKey3Panel.Width = value;
+            }
         }
 
         public int Key4PanelWidth
         {
-            get { return plKey4Panel.Width; }
-            set { plKey4Panel.Width = value; }
+            get
+            {
+                if (_key4PanelWidth == -1)
+                {
+                    _key4PanelWidth = plLeftButtonPanel.Width;
+                }
+
+                return _key4PanelWidth;
+            }
+            set
+            {
+                _key4PanelWidth = value;
+                plKey4Panel.Width = value;
+            }
         }
 
         public int Key3OR4PanelWidth
         {
-            get { return plKey3And4Panel.Width; }
-            set { plKey3And4Panel.Width = value; }
+            get
+            {
+                if (_key3OR4PanelWidth == -1)
+                {
+                    _key3OR4PanelWidth = plLeftButtonPanel.Width;
+                }
+
+                return _key3OR4PanelWidth;
+            }
+            set
+            {
+                _key3OR4PanelWidth = value;
+                plKey3And4Panel.Width = value;
+            }
         }
 
         void bb_Click(object sender, EventArgs e)

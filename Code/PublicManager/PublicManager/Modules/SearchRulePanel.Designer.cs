@@ -127,7 +127,6 @@
             // 
             // plKey3And4Panel
             // 
-            this.plKey3And4Panel.AutoSize = true;
             this.plKey3And4Panel.Controls.Add(this.plKey4Panel);
             this.plKey3And4Panel.Controls.Add(this.plKey3Panel);
             this.plKey3And4Panel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -140,7 +139,6 @@
             // 
             // plKey4Panel
             // 
-            this.plKey4Panel.AutoSize = true;
             this.plKey4Panel.Controls.Add(this.txtKey4);
             this.plKey4Panel.Controls.Add(this.lblKey4);
             this.plKey4Panel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -152,7 +150,7 @@
             // txtKey4
             // 
             this.txtKey4.CustomFormat = "yyyy年MM月dd日";
-            this.txtKey4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtKey4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtKey4.Font = new System.Drawing.Font("宋体", 12F);
             this.txtKey4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtKey4.Location = new System.Drawing.Point(131, 0);
@@ -174,7 +172,6 @@
             // 
             // plKey3Panel
             // 
-            this.plKey3Panel.AutoSize = true;
             this.plKey3Panel.Controls.Add(this.txtKey3);
             this.plKey3Panel.Controls.Add(this.lblKey3);
             this.plKey3Panel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -186,7 +183,7 @@
             // txtKey3
             // 
             this.txtKey3.CustomFormat = "yyyy年MM月dd日";
-            this.txtKey3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtKey3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtKey3.Font = new System.Drawing.Font("宋体", 12F);
             this.txtKey3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtKey3.Location = new System.Drawing.Point(131, 0);
@@ -293,7 +290,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 19);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(142, 22);
+            this.panel1.Size = new System.Drawing.Size(142, 24);
             this.panel1.TabIndex = 6;
             // 
             // fplCustomButtons
@@ -303,7 +300,7 @@
             this.fplCustomButtons.Margin = new System.Windows.Forms.Padding(0);
             this.fplCustomButtons.Name = "fplCustomButtons";
             this.fplCustomButtons.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.fplCustomButtons.Size = new System.Drawing.Size(5, 22);
+            this.fplCustomButtons.Size = new System.Drawing.Size(5, 24);
             this.fplCustomButtons.TabIndex = 5;
             this.fplCustomButtons.Visible = false;
             // 
@@ -317,7 +314,7 @@
             this.plSearchOrResetOrExport.Location = new System.Drawing.Point(0, 0);
             this.plSearchOrResetOrExport.Name = "plSearchOrResetOrExport";
             this.plSearchOrResetOrExport.Padding = new System.Windows.Forms.Padding(3, 3, 0, 1);
-            this.plSearchOrResetOrExport.Size = new System.Drawing.Size(137, 22);
+            this.plSearchOrResetOrExport.Size = new System.Drawing.Size(137, 24);
             this.plSearchOrResetOrExport.TabIndex = 4;
             // 
             // btnExportTo
@@ -325,7 +322,7 @@
             this.btnExportTo.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnExportTo.Location = new System.Drawing.Point(74, 3);
             this.btnExportTo.Name = "btnExportTo";
-            this.btnExportTo.Size = new System.Drawing.Size(63, 18);
+            this.btnExportTo.Size = new System.Drawing.Size(63, 20);
             this.btnExportTo.TabIndex = 0;
             this.btnExportTo.Text = "导出Excel";
             this.btnExportTo.Click += new System.EventHandler(this.btnExportTo_Click);
@@ -335,7 +332,7 @@
             this.btnReset.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnReset.Location = new System.Drawing.Point(38, 3);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(36, 18);
+            this.btnReset.Size = new System.Drawing.Size(36, 20);
             this.btnReset.TabIndex = 1;
             this.btnReset.Text = "重置";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -345,7 +342,7 @@
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSearch.Location = new System.Drawing.Point(3, 3);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(35, 18);
+            this.btnSearch.Size = new System.Drawing.Size(35, 20);
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "搜索";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -401,9 +398,7 @@
             this.panelControl1.ResumeLayout(false);
             this.panelControl3.ResumeLayout(false);
             this.plInputPanel.ResumeLayout(false);
-            this.plInputPanel.PerformLayout();
             this.plKey3And4Panel.ResumeLayout(false);
-            this.plKey3And4Panel.PerformLayout();
             this.plKey4Panel.ResumeLayout(false);
             this.plKey4Panel.PerformLayout();
             this.plKey3Panel.ResumeLayout(false);
