@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.panel1 = new System.Windows.Forms.Panel();
             this.srpSearch = new PublicManager.Modules.SearchRulePanel();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
@@ -108,9 +107,6 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
-            this.gcGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
             this.gcGrid.Location = new System.Drawing.Point(3, 72);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
@@ -323,7 +319,7 @@
             // 
             // gridColumn17
             // 
-            this.gridColumn17.Caption = "合同查查等级";
+            this.gridColumn17.Caption = "合同审查等级";
             this.gridColumn17.FieldName = "row17";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;

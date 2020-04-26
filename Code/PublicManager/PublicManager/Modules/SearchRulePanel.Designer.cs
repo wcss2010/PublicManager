@@ -108,10 +108,10 @@
             this.fplCheckList.AutoScroll = true;
             this.fplCheckList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fplCheckList.Font = new System.Drawing.Font("宋体", 10F);
-            this.fplCheckList.Location = new System.Drawing.Point(0, 25);
+            this.fplCheckList.Location = new System.Drawing.Point(0, 26);
             this.fplCheckList.Name = "fplCheckList";
             this.fplCheckList.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
-            this.fplCheckList.Size = new System.Drawing.Size(938, 27);
+            this.fplCheckList.Size = new System.Drawing.Size(938, 26);
             this.fplCheckList.TabIndex = 0;
             // 
             // plInputPanel
@@ -122,7 +122,7 @@
             this.plInputPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.plInputPanel.Location = new System.Drawing.Point(0, 0);
             this.plInputPanel.Name = "plInputPanel";
-            this.plInputPanel.Size = new System.Drawing.Size(938, 25);
+            this.plInputPanel.Size = new System.Drawing.Size(938, 26);
             this.plInputPanel.TabIndex = 3;
             // 
             // plKey3And4Panel
@@ -132,8 +132,8 @@
             this.plKey3And4Panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.plKey3And4Panel.Location = new System.Drawing.Point(387, 0);
             this.plKey3And4Panel.Name = "plKey3And4Panel";
-            this.plKey3And4Panel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.plKey3And4Panel.Size = new System.Drawing.Size(547, 25);
+            this.plKey3And4Panel.Padding = new System.Windows.Forms.Padding(10, 3, 0, 0);
+            this.plKey3And4Panel.Size = new System.Drawing.Size(547, 26);
             this.plKey3And4Panel.TabIndex = 2;
             this.plKey3And4Panel.Visible = false;
             // 
@@ -142,9 +142,9 @@
             this.plKey4Panel.Controls.Add(this.txtKey4);
             this.plKey4Panel.Controls.Add(this.lblKey4);
             this.plKey4Panel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.plKey4Panel.Location = new System.Drawing.Point(276, 0);
+            this.plKey4Panel.Location = new System.Drawing.Point(276, 3);
             this.plKey4Panel.Name = "plKey4Panel";
-            this.plKey4Panel.Size = new System.Drawing.Size(271, 25);
+            this.plKey4Panel.Size = new System.Drawing.Size(271, 23);
             this.plKey4Panel.TabIndex = 1;
             // 
             // txtKey4
@@ -165,7 +165,7 @@
             this.lblKey4.Font = new System.Drawing.Font("宋体", 12F);
             this.lblKey4.Location = new System.Drawing.Point(0, 0);
             this.lblKey4.Name = "lblKey4";
-            this.lblKey4.Size = new System.Drawing.Size(131, 25);
+            this.lblKey4.Size = new System.Drawing.Size(131, 23);
             this.lblKey4.TabIndex = 6;
             this.lblKey4.Text = "预计评估时间:";
             this.lblKey4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -175,9 +175,9 @@
             this.plKey3Panel.Controls.Add(this.txtKey3);
             this.plKey3Panel.Controls.Add(this.lblKey3);
             this.plKey3Panel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.plKey3Panel.Location = new System.Drawing.Point(10, 0);
+            this.plKey3Panel.Location = new System.Drawing.Point(10, 3);
             this.plKey3Panel.Name = "plKey3Panel";
-            this.plKey3Panel.Size = new System.Drawing.Size(266, 25);
+            this.plKey3Panel.Size = new System.Drawing.Size(266, 23);
             this.plKey3Panel.TabIndex = 0;
             // 
             // txtKey3
@@ -198,7 +198,7 @@
             this.lblKey3.Font = new System.Drawing.Font("宋体", 12F);
             this.lblKey3.Location = new System.Drawing.Point(0, 0);
             this.lblKey3.Name = "lblKey3";
-            this.lblKey3.Size = new System.Drawing.Size(131, 25);
+            this.lblKey3.Size = new System.Drawing.Size(131, 23);
             this.lblKey3.TabIndex = 5;
             this.lblKey3.Text = "节点评估时间:";
             this.lblKey3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -210,8 +210,8 @@
             this.plKey2Panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.plKey2Panel.Location = new System.Drawing.Point(227, 0);
             this.plKey2Panel.Name = "plKey2Panel";
-            this.plKey2Panel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.plKey2Panel.Size = new System.Drawing.Size(160, 25);
+            this.plKey2Panel.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
+            this.plKey2Panel.Size = new System.Drawing.Size(160, 26);
             this.plKey2Panel.TabIndex = 1;
             this.plKey2Panel.Visible = false;
             // 
@@ -220,9 +220,9 @@
             this.txtKey2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtKey2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtKey2.Font = new System.Drawing.Font("宋体", 12F);
-            this.txtKey2.Location = new System.Drawing.Point(109, 0);
+            this.txtKey2.Location = new System.Drawing.Point(102, 3);
             this.txtKey2.Name = "txtKey2";
-            this.txtKey2.Size = new System.Drawing.Size(51, 24);
+            this.txtKey2.Size = new System.Drawing.Size(58, 24);
             this.txtKey2.TabIndex = 5;
             // 
             // lblKey2
@@ -230,9 +230,9 @@
             this.lblKey2.AutoSize = true;
             this.lblKey2.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblKey2.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblKey2.Location = new System.Drawing.Point(10, 0);
+            this.lblKey2.Location = new System.Drawing.Point(3, 3);
             this.lblKey2.Name = "lblKey2";
-            this.lblKey2.Size = new System.Drawing.Size(99, 25);
+            this.lblKey2.Size = new System.Drawing.Size(99, 23);
             this.lblKey2.TabIndex = 1;
             this.lblKey2.Text = "所属部门:";
             this.lblKey2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -244,31 +244,31 @@
             this.plKey1Panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.plKey1Panel.Location = new System.Drawing.Point(0, 0);
             this.plKey1Panel.Name = "plKey1Panel";
-            this.plKey1Panel.Size = new System.Drawing.Size(227, 25);
+            this.plKey1Panel.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
+            this.plKey1Panel.Size = new System.Drawing.Size(227, 26);
             this.plKey1Panel.TabIndex = 0;
             // 
             // txtKey1
             // 
             this.txtKey1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtKey1.Location = new System.Drawing.Point(96, 0);
+            this.txtKey1.Location = new System.Drawing.Point(99, 3);
             this.txtKey1.Name = "txtKey1";
             this.txtKey1.Properties.Appearance.Font = new System.Drawing.Font("宋体", 12F);
             this.txtKey1.Properties.Appearance.Options.UseFont = true;
             this.txtKey1.Properties.NullValuePrompt = "请输入XXXXXX！";
             this.txtKey1.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtKey1.Properties.ShowNullValuePromptWhenFocused = true;
-            this.txtKey1.Size = new System.Drawing.Size(131, 22);
+            this.txtKey1.Size = new System.Drawing.Size(128, 22);
             this.txtKey1.TabIndex = 3;
             this.txtKey1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKey1_KeyDown);
             // 
             // lblKey1
             // 
-            this.lblKey1.AutoSize = true;
             this.lblKey1.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblKey1.Font = new System.Drawing.Font("宋体", 12F);
-            this.lblKey1.Location = new System.Drawing.Point(0, 0);
+            this.lblKey1.Location = new System.Drawing.Point(3, 3);
             this.lblKey1.Name = "lblKey1";
-            this.lblKey1.Size = new System.Drawing.Size(96, 16);
+            this.lblKey1.Size = new System.Drawing.Size(96, 23);
             this.lblKey1.TabIndex = 1;
             this.lblKey1.Text = "搜索关键字:";
             this.lblKey1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -406,7 +406,6 @@
             this.plKey2Panel.ResumeLayout(false);
             this.plKey2Panel.PerformLayout();
             this.plKey1Panel.ResumeLayout(false);
-            this.plKey1Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey1.Properties)).EndInit();
             this.plLeftButtonPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
