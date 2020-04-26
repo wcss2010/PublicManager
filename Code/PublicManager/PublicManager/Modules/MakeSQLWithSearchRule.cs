@@ -103,7 +103,7 @@ namespace PublicManager.Modules
             }
 
             //查询数据
-            return ConnectionManager.Context.table("Project").where(whereString + srp.CatalogIDFilterString).select("*").getList<Project>(new Project());
+            return ConnectionManager.Context.table("Project").where(whereString + srp.CatalogIDFilterString + " and IsNeedHide='0'").select("*").getList<Project>(new Project());
         }
 
         /// <summary>

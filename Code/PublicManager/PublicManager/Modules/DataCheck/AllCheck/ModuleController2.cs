@@ -41,7 +41,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
         {
             DataTable dt = getTempDataTable("row", 14);
 
-            List<Project> projList = ConnectionManager.Context.table("Project").select("*").getList<Project>(new Project());
+            List<Project> projList = ConnectionManager.Context.table("Project").where("IsNeedHide='0'").select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                 //项目类型
