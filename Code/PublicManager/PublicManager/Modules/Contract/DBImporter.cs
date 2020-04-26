@@ -51,6 +51,7 @@ namespace PublicManager.Modules.Contract
                 proj.SecretLevel = getValueWithDefault<string>(diProject.get("HeTongMiJi"), string.Empty);
                 proj.TotalMoney = diProject.get("HeTongJiaKuan") != null ? decimal.Parse(diProject.get("HeTongJiaKuan").ToString()) : 0;
                 proj.ProjectNumber = getValueWithDefault<string>(diProject.get("HeTongBianHao"), string.Empty);
+                proj.IsNeedHide = "0";
 
                 int totalYear = 0;
                 try

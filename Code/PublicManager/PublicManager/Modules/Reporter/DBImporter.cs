@@ -55,7 +55,8 @@ namespace PublicManager.Modules.Reporter
                 //proj.DutyUnitOrg = "未知";
                 proj.DutyUnitAddress = localContext.table("Unit").where("ID='" + diProject.get("UnitID") + "'").select("Address").getValue<string>("未知");
                 proj.ProjectNumber = string.Empty;
-                proj.TotalTime = diProject.getInt("TotalTime"); ;
+                proj.TotalTime = diProject.getInt("TotalTime");
+                proj.IsNeedHide = "0";
                 proj.copyTo(ConnectionManager.Context.table("Project")).insert();
                 
                 //处理课题列表
