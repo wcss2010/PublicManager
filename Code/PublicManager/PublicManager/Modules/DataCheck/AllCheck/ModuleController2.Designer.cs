@@ -157,7 +157,7 @@
             // 
             // gridColumn14
             // 
-            this.gridColumn14.Caption = "节点评估时间";
+            this.gridColumn14.Caption = "预计评估时间";
             this.gridColumn14.ColumnEdit = this.repositoryItemMemoEdit1;
             this.gridColumn14.FieldName = "row14";
             this.gridColumn14.Name = "gridColumn14";

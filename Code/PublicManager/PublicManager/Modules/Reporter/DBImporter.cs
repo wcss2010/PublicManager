@@ -57,6 +57,7 @@ namespace PublicManager.Modules.Reporter
                 proj.ProjectNumber = string.Empty;
                 proj.TotalTime = diProject.getInt("TotalTime");
                 proj.IsNeedHide = "0";
+                proj.ProjectNumber = catalogNumber;
                 proj.copyTo(ConnectionManager.Context.table("Project")).insert();
                 
                 //处理课题列表

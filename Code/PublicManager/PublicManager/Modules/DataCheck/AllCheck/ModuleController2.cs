@@ -52,7 +52,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
                 List<MoneySends> nodeList = ConnectionManager.Context.table("MoneySends").where("(CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "')").orderBy("NodeIndex").select("*").getList<MoneySends>(new MoneySends());
                 foreach (MoneySends mss in nodeList)
                 {
-                    nodeTimeString.Append(mss.NodeIndex).Append(":").Append(ExcelHelper.getDateTimeForString(mss.NodeWillTime, "yyyy年MM月dd日", string.Empty)).AppendLine();
+                    nodeTimeString.Append(mss.NodeIndex).Append(":").Append(ExcelHelper.getDateTimeForString(mss.WillTime, "yyyy年MM月dd日", string.Empty)).AppendLine();
                 }
 
                 List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
