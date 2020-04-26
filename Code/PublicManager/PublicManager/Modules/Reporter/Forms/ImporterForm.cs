@@ -344,7 +344,7 @@ namespace PublicManager.Modules.Reporter.Forms
                 string catalogNumber = selected.Text;
 
                 //根据项目编号查询项目数量
-                long projectCount = ConnectionManager.Context.table("Catalog").where("catalognumber='" + catalogNumber + "'").select("count(*)").getValue<long>(0);
+                long projectCount = ConnectionManager.Context.table("Catalog").where("catalognumber='" + catalogNumber + "' and catalogtype ='建议书'").select("count(*)").getValue<long>(0);
                 //判断这个项目是否被导入过
                 if (projectCount >= 1)
                 {
@@ -421,7 +421,7 @@ namespace PublicManager.Modules.Reporter.Forms
                 string catalogNumber = selected.Text;
 
                 //根据项目编号查询项目数量
-                long projectCount = ConnectionManager.Context.table("Catalog").where("catalognumber='" + catalogNumber + "'").select("count(*)").getValue<long>(0);
+                long projectCount = ConnectionManager.Context.table("Catalog").where("catalognumber='" + catalogNumber + "' and catalogtype ='建议书'").select("count(*)").getValue<long>(0);
                 //判断这个项目是否被导入过
                 if (projectCount >= 1)
                 {
