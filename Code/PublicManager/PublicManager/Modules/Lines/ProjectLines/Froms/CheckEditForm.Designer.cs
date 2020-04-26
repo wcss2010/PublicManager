@@ -390,7 +390,7 @@
             this.Ribbon = this.rcTopBar;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "编辑审核信息";
+            this.Text = "录入审核结果";
             ((System.ComponentModel.ISupportInitialize)(this.cbxItemA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxItemB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxItemC.Properties)).EndInit();

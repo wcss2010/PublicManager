@@ -20,6 +20,7 @@ namespace PublicManager.DB.Entitys
             query.set("CatalogName", CatalogName);
             query.set("CatalogType", CatalogType);
             query.set("CatalogVersion", CatalogVersion);
+            query.set("IsNeedHide", IsNeedHide);
 
             return query;
         }
@@ -29,14 +30,16 @@ namespace PublicManager.DB.Entitys
         public string CatalogName { get; set; }
         public string CatalogType { get; set; }
         public string CatalogVersion { get; set; }
+        public string IsNeedHide { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
-            CatalogID = source("CatalogID").value<string>(Guid.NewGuid().ToString());
+            CatalogID = source("CatalogID").value<string>("");
             CatalogNumber = source("CatalogNumber").value<string>("");
             CatalogName = source("CatalogName").value<string>("");
             CatalogType = source("CatalogType").value<string>("");
             CatalogVersion = source("CatalogVersion").value<string>("");
+            IsNeedHide = source("IsNeedHide").value<string>("");
         }
 
         public override Noear.Weed.IBinder clone()
