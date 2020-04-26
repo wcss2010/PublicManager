@@ -173,6 +173,27 @@ namespace PublicManager.Modules.Contract
                 }
                 #endregion
 
+                #region 判断是否需要隐藏建议书-proj.ProjectNumber
+                Catalog catalogReporter = ConnectionManager.Context.table("Catalog").where("CatalogNumber='" + proj.ProjectNumber + "' and CatalogType = '建议书'").select("*").getItem<Catalog>(new Catalog());
+                if (!string.IsNullOrEmpty(catalogReporter.CatalogID))
+                {
+                    catalogReporter.IsNeedHide = "1";
+                    catalogReporter.copyTo(ConnectionManager.Context.table("Catalog").where("CatalogNumber='" + proj.ProjectNumber + "' and CatalogType = '建议书'")).update();
+
+                    Project projReporter = ConnectionManager.Context.table("Project").where("CatalogID='" + catalogReporter.CatalogID + "'").select("*").getItem<Project>(new Project());
+                    if (!string.IsNullOrEmpty(projReporter.ProjectID))
+                    {
+                        projReporter.IsNeedHide = "1";
+                        projReporter.copyTo(ConnectionManager.Context.table("Project").where("CatalogID='" + catalogReporter.CatalogID + "'")).update();
+                    }
+                }
+                #endregion
+
+                #region 更新项目编号字段
+                catalog.CatalogNumber = proj.ProjectNumber;
+                catalog.copyTo(ConnectionManager.Context.table("Catalog").where("CatalogID='" + catalog.CatalogID + "'")).update();
+                #endregion
+
                 #region 导入人员信息
                 //处理人员信息
                 DataList dlPerson = localContext.table("RenYuanBiao").orderBy("ZhuangTai").select("*").getDataList();
