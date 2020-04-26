@@ -174,11 +174,22 @@ namespace PublicManager.Modules.Contract
                 #endregion
 
                 #region 判断是否需要隐藏建议书-proj.ProjectNumber
-                Catalog catalogReporter = ConnectionManager.Context.table("Catalog").where("CatalogNumber='" + proj.ProjectNumber + "' and CatalogType = '建议书'").select("*").getItem<Catalog>(new Catalog());
+                string contactNumber = string.Empty;
+
+                if (proj.ProjectNumber.EndsWith("-00"))
+                {
+                    contactNumber = proj.ProjectNumber.Replace("-00", string.Empty);
+                }
+                else
+                {
+                    contactNumber = proj.ProjectNumber;
+                }
+
+                Catalog catalogReporter = ConnectionManager.Context.table("Catalog").where("CatalogNumber like '%" + contactNumber + "%' and CatalogType = '建议书'").select("*").getItem<Catalog>(new Catalog());
                 if (!string.IsNullOrEmpty(catalogReporter.CatalogID))
                 {
                     catalogReporter.IsNeedHide = "1";
-                    catalogReporter.copyTo(ConnectionManager.Context.table("Catalog").where("CatalogNumber='" + proj.ProjectNumber + "' and CatalogType = '建议书'")).update();
+                    catalogReporter.copyTo(ConnectionManager.Context.table("Catalog").where("CatalogNumber like '%" + contactNumber + "%' and CatalogType = '建议书'")).update();
 
                     Project projReporter = ConnectionManager.Context.table("Project").where("CatalogID='" + catalogReporter.CatalogID + "'").select("*").getItem<Project>(new Project());
                     if (!string.IsNullOrEmpty(projReporter.ProjectID))
