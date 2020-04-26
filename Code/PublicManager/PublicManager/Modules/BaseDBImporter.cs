@@ -18,6 +18,15 @@ namespace PublicManager.Modules
             ConnectionManager.Context.table("Subject").where("CatalogID='" + catalogID + "'").delete();
             ConnectionManager.Context.table("Person").where("CatalogID='" + catalogID + "'").delete();
             ConnectionManager.Context.table("Dicts").where("CatalogID='" + catalogID + "'").delete();
+            ConnectionManager.Context.table("WorkSteps").where("CatalogID='" + catalogID + "'").delete();
+            ConnectionManager.Context.table("MoneySends").where("CatalogID='" + catalogID + "'").delete();
+            ConnectionManager.Context.table("SubjectMoneys").where("CatalogID='" + catalogID + "'").delete();
+            ConnectionManager.Context.table("UnitMoneys").where("CatalogID='" + catalogID + "'").delete();
+            ConnectionManager.Context.table("Contact_Table1").where("CatalogID='" + catalogID + "'").delete();
+            ConnectionManager.Context.table("Contact_Table2").where("CatalogID='" + catalogID + "'").delete();
+            ConnectionManager.Context.table("Contact_Table3").where("CatalogID='" + catalogID + "'").delete();
+            ConnectionManager.Context.table("Contact_Table4").where("CatalogID='" + catalogID + "'").delete();
+            ConnectionManager.Context.table("Contact_Table5").where("CatalogID='" + catalogID + "'").delete();
         }
 
         /// <summary>
@@ -84,10 +93,10 @@ namespace PublicManager.Modules
         /// <param name="catalogType"></param>
         /// <param name="catalogVersion"></param>
         /// <returns></returns>
-        protected Catalog updateAndClearCatalog(string catalogNumber,string catalogName,string catalogType,string catalogVersion)
+        protected Catalog updateAndClearCatalog(string catalogNumber, string catalogName, string catalogType, string catalogVersion, bool isHide)
         {
             //删除旧的Catalog
-            string catalogID = ConnectionManager.Context.table("Catalog").where("CatalogNumber='" + catalogNumber + "'").select("CatalogID").getValue<string>(string.Empty);
+            string catalogID = ConnectionManager.Context.table("Catalog").where("CatalogNumber='" + catalogNumber + "' and CatalogType = '" + catalogType + "'").select("CatalogID").getValue<string>(string.Empty);
             if (!string.IsNullOrEmpty(catalogID))
             {
                 deleteProject(catalogID);
@@ -100,6 +109,7 @@ namespace PublicManager.Modules
             catalog.CatalogName = catalogName;
             catalog.CatalogType = catalogType;
             catalog.CatalogVersion = catalogVersion;
+            catalog.IsNeedHide = isHide ? "1" : "0";
             catalog.copyTo(ConnectionManager.Context.table("Catalog")).insert();
 
             return catalog;
