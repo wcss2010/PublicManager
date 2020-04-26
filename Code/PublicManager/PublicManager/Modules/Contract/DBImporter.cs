@@ -39,7 +39,7 @@ namespace PublicManager.Modules.Contract
                 catch (Exception ex) { }
 
                 //更新Catalog
-                Catalog catalog = updateAndClearCatalog(catalogNumber, getValueWithDefault<string>(diProject.get("HeTongMingCheng"), string.Empty), "合同书", catalogVersionStr);
+                Catalog catalog = updateAndClearCatalog(catalogNumber, getValueWithDefault<string>(diProject.get("HeTongMingCheng"), string.Empty), "合同书", catalogVersionStr, false);
                 #endregion
 
                 #region 导入项目及课题信息
