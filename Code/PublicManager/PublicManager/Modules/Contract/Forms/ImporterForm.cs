@@ -232,7 +232,7 @@ namespace PublicManager.Modules.Contract.Forms
             //查找ZIP文件
             foreach (string sssss in subFiles)
             {
-                if (sssss.EndsWith(".zip"))
+                if (sssss.EndsWith(".zip") && sssss.Contains("合同"))
                 {
                     pkgZipFile = sssss;
                     break;
