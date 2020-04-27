@@ -265,7 +265,7 @@
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.Visible = true;
             this.gridColumn21.VisibleIndex = 4;
-            this.gridColumn21.Width = 463;
+            this.gridColumn21.Width = 489;
             // 
             // gridColumn7
             // 
@@ -274,7 +274,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 5;
-            this.gridColumn7.Width = 45;
+            this.gridColumn7.Width = 80;
             // 
             // gridColumn8
             // 
@@ -283,7 +283,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 6;
-            this.gridColumn8.Width = 45;
+            this.gridColumn8.Width = 70;
             // 
             // gridColumn9
             // 
@@ -299,7 +299,7 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 7;
-            this.gridColumn10.Width = 147;
+            this.gridColumn10.Width = 109;
             // 
             // gridColumn23
             // 
@@ -322,7 +322,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 8;
-            this.gridColumn11.Width = 277;
+            this.gridColumn11.Width = 229;
             // 
             // gridColumn26
             // 
