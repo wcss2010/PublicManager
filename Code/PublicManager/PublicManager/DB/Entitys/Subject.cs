@@ -25,6 +25,7 @@ namespace PublicManager.DB.Entitys
             query.set("WorkContent", WorkContent);
             query.set("WorkTask", WorkTask);
             query.set("DutyUnit", DutyUnit);
+            query.set("DutyNormalUnit", DutyNormalUnit);
             query.set("DutyUnitOrg", DutyUnitOrg);
             query.set("DutyUnitAddress", DutyUnitAddress);
 
@@ -41,6 +42,7 @@ namespace PublicManager.DB.Entitys
         public string WorkContent { get; set; }
         public string WorkTask { get; set; }
         public string DutyUnit { get; set; }
+        public string DutyNormalUnit { get; set; }
         public string DutyUnitOrg { get; set; }
         public string DutyUnitAddress { get; set; }
 
@@ -56,6 +58,7 @@ namespace PublicManager.DB.Entitys
             WorkContent = source("WorkContent").value<string>("");
             WorkTask = source("WorkTask").value<string>("");
             DutyUnit = source("DutyUnit").value<string>("");
+            DutyNormalUnit = source("DutyNormalUnit").value<string>("");
             DutyUnitOrg = source("DutyUnitOrg").value<string>("");
             DutyUnitAddress = source("DutyUnitAddress").value<string>("");
         }
