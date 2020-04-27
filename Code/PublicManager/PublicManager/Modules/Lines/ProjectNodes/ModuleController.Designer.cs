@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.gvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,10 +46,17 @@
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.srpSearch = new PublicManager.Modules.SearchRulePanel();
+            this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.htnDownloadTemplete = new DevExpress.XtraBars.BarButtonItem();
+            this.btnImportExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnImportExcelWithTeams = new DevExpress.XtraBars.BarButtonItem();
+            this.rpMaster = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rpbLoad = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             this.SuspendLayout();
             // 
             // gcGrid
@@ -60,7 +67,7 @@
             this.gcGrid.Name = "gcGrid";
             this.gcGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.gcGrid.Size = new System.Drawing.Size(1246, 572);
+            this.gcGrid.Size = new System.Drawing.Size(1246, 427);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetail});
@@ -186,7 +193,7 @@
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "从Excel导入数据", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "从Excel导入数据", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -195,15 +202,15 @@
             this.groupBox1.Controls.Add(this.gcGrid);
             this.groupBox1.Controls.Add(this.srpSearch);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(0, 145);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1252, 650);
+            this.groupBox1.Size = new System.Drawing.Size(1252, 505);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
             // srpSearch
             // 
-            this.srpSearch.CustomButtonsNames = "结果内容搜索;下载节点模板";
+            this.srpSearch.CustomButtonsNames = "结果内容搜索";
             this.srpSearch.DisplayGridControl = this.gcGrid;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = false;
@@ -232,18 +239,76 @@
             this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
             this.srpSearch.OnCustomButtonClick += new PublicManager.Modules.CustomButtonClickDelegate(this.srpSearch_OnCustomButtonClick);
             // 
+            // rcTopBar
+            // 
+            this.rcTopBar.ExpandCollapseItem.Id = 0;
+            this.rcTopBar.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.rcTopBar.ExpandCollapseItem,
+            this.htnDownloadTemplete,
+            this.btnImportExcel,
+            this.btnImportExcelWithTeams});
+            this.rcTopBar.Location = new System.Drawing.Point(0, 0);
+            this.rcTopBar.MaxItemId = 6;
+            this.rcTopBar.Name = "rcTopBar";
+            this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.rpMaster});
+            this.rcTopBar.Size = new System.Drawing.Size(1252, 145);
+            this.rcTopBar.Visible = false;
+            // 
+            // htnDownloadTemplete
+            // 
+            this.htnDownloadTemplete.Caption = "下载节点模板";
+            this.htnDownloadTemplete.Id = 2;
+            this.htnDownloadTemplete.LargeGlyph = global::PublicManager.Properties.Resources.printtoexcel;
+            this.htnDownloadTemplete.Name = "htnDownloadTemplete";
+            this.htnDownloadTemplete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.htnDownloadTemplete_ItemClick);
+            // 
+            // btnImportExcel
+            // 
+            this.btnImportExcel.Caption = "数据导入";
+            this.btnImportExcel.Id = 3;
+            this.btnImportExcel.LargeGlyph = global::PublicManager.Properties.Resources.importA;
+            this.btnImportExcel.Name = "btnImportExcel";
+            this.btnImportExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportExcel_ItemClick);
+            // 
+            // btnImportExcelWithTeams
+            // 
+            this.btnImportExcelWithTeams.Caption = "批量数据导入";
+            this.btnImportExcelWithTeams.Id = 4;
+            this.btnImportExcelWithTeams.LargeGlyph = global::PublicManager.Properties.Resources.importB;
+            this.btnImportExcelWithTeams.Name = "btnImportExcelWithTeams";
+            this.btnImportExcelWithTeams.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportExcelWithTeams_ItemClick);
+            // 
+            // rpMaster
+            // 
+            this.rpMaster.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rpbLoad});
+            this.rpMaster.Name = "rpMaster";
+            this.rpMaster.Text = "节点评估管理";
+            // 
+            // rpbLoad
+            // 
+            this.rpbLoad.ItemLinks.Add(this.htnDownloadTemplete);
+            this.rpbLoad.ItemLinks.Add(this.btnImportExcel);
+            this.rpbLoad.ItemLinks.Add(this.btnImportExcelWithTeams);
+            this.rpbLoad.Name = "rpbLoad";
+            this.rpbLoad.Text = "其它";
+            // 
             // ModuleController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.rcTopBar);
             this.Name = "ModuleController";
             this.Size = new System.Drawing.Size(1252, 650);
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -266,6 +331,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private SearchRulePanel srpSearch;
+        private DevExpress.XtraBars.Ribbon.RibbonControl rcTopBar;
+        private DevExpress.XtraBars.BarButtonItem htnDownloadTemplete;
+        private DevExpress.XtraBars.BarButtonItem btnImportExcel;
+        private DevExpress.XtraBars.BarButtonItem btnImportExcelWithTeams;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rpMaster;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpbLoad;
 
     }
 }
