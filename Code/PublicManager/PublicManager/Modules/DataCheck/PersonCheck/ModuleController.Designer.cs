@@ -99,12 +99,14 @@
             this.gridColumn1.Caption = "版本";
             this.gridColumn1.FieldName = "row1";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "类型";
             this.gridColumn2.FieldName = "row2";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridColumn3
             // 
@@ -151,6 +153,7 @@
             this.gridColumn8.Caption = "工作单位";
             this.gridColumn8.FieldName = "row8";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridColumn9
             // 
@@ -189,8 +192,6 @@
             this.gridColumn13.Caption = "项目中职务";
             this.gridColumn13.FieldName = "row13";
             this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 9;
             // 
             // panel1
             // 

@@ -139,8 +139,6 @@
             this.gridColumn10.Caption = "评估意见";
             this.gridColumn10.FieldName = "row9";
             this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 5;
             // 
             // gridColumn9
             // 
@@ -148,15 +146,13 @@
             this.gridColumn9.FieldName = "row10";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 6;
+            this.gridColumn9.VisibleIndex = 5;
             // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "评估专家";
             this.gridColumn8.FieldName = "row11";
             this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
             // 
             // gridColumn4
             // 
@@ -164,7 +160,7 @@
             this.gridColumn4.FieldName = "row4";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 8;
+            this.gridColumn4.VisibleIndex = 6;
             // 
             // gridColumn5
             // 
@@ -172,13 +168,14 @@
             this.gridColumn5.FieldName = "row5";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 9;
+            this.gridColumn5.VisibleIndex = 7;
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "gridColumn6";
             this.gridColumn6.FieldName = "row6";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridColumn12
             // 
@@ -186,8 +183,9 @@
             this.gridColumn12.ColumnEdit = this.repositoryItemButtonEdit1;
             this.gridColumn12.FieldName = "row12";
             this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.ShowInCustomizationForm = false;
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 10;
+            this.gridColumn12.VisibleIndex = 8;
             // 
             // repositoryItemButtonEdit1
             // 

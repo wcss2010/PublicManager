@@ -97,12 +97,14 @@
             this.gridColumn1.Caption = "版本";
             this.gridColumn1.FieldName = "row1";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "类型";
             this.gridColumn2.FieldName = "row2";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridColumn3
             // 
@@ -141,16 +143,12 @@
             this.gridColumn10.Caption = "课题负责人座机";
             this.gridColumn10.FieldName = "row10";
             this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 4;
             // 
             // gridColumn11
             // 
             this.gridColumn11.Caption = "课题负责人手机";
             this.gridColumn11.FieldName = "row11";
             this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 5;
             // 
             // gridColumn6
             // 
@@ -158,7 +156,7 @@
             this.gridColumn6.FieldName = "row6";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 6;
+            this.gridColumn6.VisibleIndex = 4;
             // 
             // gridColumn7
             // 
@@ -166,15 +164,13 @@
             this.gridColumn7.FieldName = "row7";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 7;
+            this.gridColumn7.VisibleIndex = 5;
             // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "单位地址";
             this.gridColumn8.FieldName = "row8";
             this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 8;
             // 
             // gridColumn9
             // 
@@ -182,7 +178,7 @@
             this.gridColumn9.FieldName = "row9";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 9;
+            this.gridColumn9.VisibleIndex = 6;
             // 
             // panel1
             // 
