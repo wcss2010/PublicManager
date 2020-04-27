@@ -25,9 +25,9 @@ namespace PublicManager.Modules.Lines.ProjectNodes
             gvDetail.OptionsView.AllowCellMerge = true;
             cma = new DEGridViewCellMergeAdapter(gvDetail, new string[] { "row7" });
 
-            srpSearch.RightButtonPanelWidth = 340;
-            srpSearch.Key3PanelWidth = 270;
-            srpSearch.Key4PanelWidth = 270;
+            srpSearch.RightButtonPanelWidth = 350;
+            srpSearch.Key3PanelWidth = 275;
+            srpSearch.Key4PanelWidth = 275;
         }
 
         public override DevExpress.XtraBars.Ribbon.RibbonPage[] getTopBarPages()
