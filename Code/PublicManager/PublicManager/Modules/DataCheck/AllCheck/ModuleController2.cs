@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using PublicManager.DB.Entitys;
 using PublicManager.DB;
+using System.IO;
+using System.Diagnostics;
 
 namespace PublicManager.Modules.DataCheck.AllCheck
 {
@@ -41,13 +43,16 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
         private void loadData()
         {
-            DataTable dt = getTempDataTable("row", 15);
+            DataTable dt = getTempDataTable("row", 16);
 
             List<Project> projList = ConnectionManager.Context.table("Project").where("IsNeedHide='0'" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                 //项目类型
                 string catalogType = ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知");
+
+                //路径
+                string decompressDir = ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogDecompressDir").getValue<string>("未知");
 
                 //节点评估时间
                 StringBuilder nodeTimeString = new StringBuilder();
@@ -123,6 +128,18 @@ namespace PublicManager.Modules.DataCheck.AllCheck
                     //项目牵头单位常用名
                     cells.Add(proj.DutyNormalUnit);
 
+                    //PDF路径
+                    if (catalogType == "合同书")
+                    {
+                        //合同书PDF
+                        cells.Add(Path.Combine(decompressDir, "合同书.pdf"));
+                    }
+                    else
+                    {
+                        //建议书PDF
+                        cells.Add(Path.Combine(decompressDir, "建议书.pdf"));
+                    }
+
                     dt.Rows.Add(cells.ToArray());
                 }
             }
@@ -167,7 +184,27 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
         private void btnOpenPDF_Click(object sender, EventArgs e)
         {
+            if (dgvDetail.GetSelectedRows() != null && dgvDetail.GetSelectedRows().Length == 1)
+            {
+                object objValue = dgvDetail.GetRowCellValue(dgvDetail.GetSelectedRows()[0], "row16");
+                if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
+                {
+                    string pdfFile = objValue.ToString();
 
+                    if (File.Exists(pdfFile))
+                    {
+                        try
+                        {
+                            Process.Start(pdfFile);
+                        }
+                        catch (Exception ex) { }
+                    }
+                    else
+                    {
+                        MessageBox.Show("对不起，当前项目不存在PDF文档！");
+                    }
+                }
+            }
         }
     }
 }

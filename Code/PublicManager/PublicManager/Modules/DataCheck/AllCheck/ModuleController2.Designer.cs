@@ -51,6 +51,7 @@
             this.cbDisplayContract = new System.Windows.Forms.CheckBox();
             this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
             this.btnOpenPDF = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -87,7 +88,8 @@
             this.gridColumn6,
             this.gridColumn8,
             this.gridColumn10,
-            this.gridColumn12});
+            this.gridColumn12,
+            this.gridColumn16});
             this.dgvDetail.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.dgvDetail.GridControl = this.gcGrid;
             this.dgvDetail.Name = "dgvDetail";
@@ -283,6 +285,13 @@
             this.btnOpenPDF.Text = "查看PDF文档";
             this.btnOpenPDF.Click += new System.EventHandler(this.btnOpenPDF_Click);
             // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "path";
+            this.gridColumn16.FieldName = "row16";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.OptionsColumn.ShowInCustomizationForm = false;
+            // 
             // ModuleController2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -327,5 +336,6 @@
         private System.Windows.Forms.CheckBox cbDisplayContract;
         private System.Windows.Forms.CheckBox cbDisplayReporter;
         private DevExpress.XtraEditors.SimpleButton btnOpenPDF;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
     }
 }
