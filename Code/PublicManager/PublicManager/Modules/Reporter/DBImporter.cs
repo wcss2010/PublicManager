@@ -86,6 +86,23 @@ namespace PublicManager.Modules.Reporter
                 }
                 #endregion
 
+                #region 判断是否需要隐藏建议书-proj.ProjectNumber
+                string contactNumber = proj.ProjectNumber;
+
+                Catalog catalogReporter = ConnectionManager.Context.table("Catalog").where("CatalogNumber like '%" + contactNumber + "%' and CatalogType = '合同书'").select("*").getItem<Catalog>(new Catalog());
+                if (!string.IsNullOrEmpty(catalogReporter.CatalogID))
+                {
+                    catalog.IsNeedHide = "1";
+                    catalog.copyTo(ConnectionManager.Context.table("Catalog").where("CatalogID='" + catalog.CatalogID + "'")).update();
+                                        
+                    if (!string.IsNullOrEmpty(proj.ProjectID))
+                    {
+                        proj.IsNeedHide = "1";
+                        proj.copyTo(ConnectionManager.Context.table("Project").where("CatalogID='" + catalog.CatalogID + "'")).update();
+                    }
+                }
+                #endregion
+
                 #region 导入人员信息
                 //处理人员信息
                 DataList dlTask = localContext.table("Task").orderBy("DisplayOrder").select("*").getDataList();
