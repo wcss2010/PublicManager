@@ -21,6 +21,8 @@ namespace PublicManager.DB.Entitys
             query.set("CatalogType", CatalogType);
             query.set("CatalogVersion", CatalogVersion);
             query.set("IsNeedHide", IsNeedHide);
+            query.set("CatalogZipFile", CatalogZipFile);
+            query.set("CatalogDecompressDir", CatalogDecompressDir);
 
             return query;
         }
@@ -31,6 +33,8 @@ namespace PublicManager.DB.Entitys
         public string CatalogType { get; set; }
         public string CatalogVersion { get; set; }
         public string IsNeedHide { get; set; }
+        public string CatalogZipFile { get; set; }
+        public string CatalogDecompressDir { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
@@ -40,6 +44,8 @@ namespace PublicManager.DB.Entitys
             CatalogType = source("CatalogType").value<string>("");
             CatalogVersion = source("CatalogVersion").value<string>("");
             IsNeedHide = source("IsNeedHide").value<string>("");
+            CatalogZipFile = source("CatalogZipFile").value<string>("");
+            CatalogDecompressDir = source("CatalogDecompressDir").value<string>("");
         }
 
         public override Noear.Weed.IBinder clone()

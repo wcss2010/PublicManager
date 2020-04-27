@@ -13,6 +13,8 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 {
     public partial class ModuleController2 : BaseModuleController
     {
+        private string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+
         private DEGridViewCellMergeAdapter cma;
 
         public ModuleController2()
@@ -41,7 +43,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
         {
             DataTable dt = getTempDataTable("row", 15);
 
-            List<Project> projList = ConnectionManager.Context.table("Project").where("IsNeedHide='0'").select("*").getList<Project>(new Project());
+            List<Project> projList = ConnectionManager.Context.table("Project").where("IsNeedHide='0'" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
             {
                 //项目类型
@@ -130,6 +132,42 @@ namespace PublicManager.Modules.DataCheck.AllCheck
         private void btnColSelect_Click(object sender, EventArgs e)
         {
             dgvDetail.ShowCustomization();
+        }
+
+        private void cbDisplayContract_CheckedChanged(object sender, EventArgs e)
+        {
+            switchCatalogType(cbDisplayContract.Checked, cbDisplayReporter.Checked);
+            loadData();
+        }
+
+        /// <summary>
+        /// 切换目录类型
+        /// </summary>
+        /// <param name="isContract"></param>
+        /// <param name="isReporter"></param>
+        protected void switchCatalogType(bool isContract, bool isReporter)
+        {
+            if (isContract && isReporter)
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+            }
+            else if (isContract)
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
+            }
+            else if (isReporter)
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '建议书')";
+            }
+            else
+            {
+                strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+            }
+        }
+
+        private void btnOpenPDF_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

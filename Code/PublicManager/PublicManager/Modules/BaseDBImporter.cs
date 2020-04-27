@@ -93,7 +93,7 @@ namespace PublicManager.Modules
         /// <param name="catalogType"></param>
         /// <param name="catalogVersion"></param>
         /// <returns></returns>
-        protected Catalog updateAndClearCatalog(string catalogNumber, string catalogName, string catalogType, string catalogVersion, bool isHide)
+        protected Catalog updateAndClearCatalog(string catalogNumber, string catalogName, string catalogType, string catalogVersion, bool isHide,string zipFile,string decompressDir)
         {
             //删除旧的Catalog
             string catalogID = ConnectionManager.Context.table("Catalog").where("CatalogNumber='" + catalogNumber + "' and CatalogType = '" + catalogType + "'").select("CatalogID").getValue<string>(string.Empty);
@@ -110,6 +110,8 @@ namespace PublicManager.Modules
             catalog.CatalogType = catalogType;
             catalog.CatalogVersion = catalogVersion;
             catalog.IsNeedHide = isHide ? "1" : "0";
+            catalog.CatalogZipFile = zipFile;
+            catalog.CatalogDecompressDir = decompressDir;
             catalog.copyTo(ConnectionManager.Context.table("Catalog")).insert();
 
             return catalog;

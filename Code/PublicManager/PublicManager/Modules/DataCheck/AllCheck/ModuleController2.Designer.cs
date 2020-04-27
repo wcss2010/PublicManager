@@ -35,6 +35,7 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,10 +47,14 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnColSelect = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.plCatalogType = new System.Windows.Forms.Panel();
+            this.cbDisplayContract = new System.Windows.Forms.CheckBox();
+            this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
+            this.btnOpenPDF = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+            this.plCatalogType.SuspendLayout();
             this.SuspendLayout();
             // 
             // gcGrid
@@ -134,6 +139,15 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Width = 133;
             // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "归一化单位";
+            this.gridColumn15.FieldName = "row15";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 4;
+            this.gridColumn15.Width = 93;
+            // 
             // gridColumn9
             // 
             this.gridColumn9.Caption = "项目牵头单位地址";
@@ -215,26 +229,66 @@
             // 
             // btnColSelect
             // 
-            this.btnColSelect.Location = new System.Drawing.Point(1056, 13);
+            this.btnColSelect.Location = new System.Drawing.Point(908, 11);
             this.btnColSelect.Name = "btnColSelect";
             this.btnColSelect.Size = new System.Drawing.Size(75, 23);
             this.btnColSelect.TabIndex = 6;
             this.btnColSelect.Text = "列选择器";
             this.btnColSelect.Click += new System.EventHandler(this.btnColSelect_Click);
             // 
-            // gridColumn15
+            // plCatalogType
             // 
-            this.gridColumn15.Caption = "归一化单位";
-            this.gridColumn15.FieldName = "row15";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 4;
-            this.gridColumn15.Width = 93;
+            this.plCatalogType.Controls.Add(this.cbDisplayContract);
+            this.plCatalogType.Controls.Add(this.cbDisplayReporter);
+            this.plCatalogType.Location = new System.Drawing.Point(989, 14);
+            this.plCatalogType.Name = "plCatalogType";
+            this.plCatalogType.Size = new System.Drawing.Size(142, 19);
+            this.plCatalogType.TabIndex = 7;
+            // 
+            // cbDisplayContract
+            // 
+            this.cbDisplayContract.AutoSize = true;
+            this.cbDisplayContract.Checked = true;
+            this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cbDisplayContract.Location = new System.Drawing.Point(8, 0);
+            this.cbDisplayContract.Name = "cbDisplayContract";
+            this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.cbDisplayContract.Size = new System.Drawing.Size(72, 19);
+            this.cbDisplayContract.TabIndex = 5;
+            this.cbDisplayContract.Text = "已立项";
+            this.cbDisplayContract.UseVisualStyleBackColor = true;
+            this.cbDisplayContract.CheckedChanged += new System.EventHandler(this.cbDisplayContract_CheckedChanged);
+            // 
+            // cbDisplayReporter
+            // 
+            this.cbDisplayReporter.AutoSize = true;
+            this.cbDisplayReporter.Checked = true;
+            this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cbDisplayReporter.Location = new System.Drawing.Point(80, 0);
+            this.cbDisplayReporter.Name = "cbDisplayReporter";
+            this.cbDisplayReporter.Size = new System.Drawing.Size(62, 19);
+            this.cbDisplayReporter.TabIndex = 6;
+            this.cbDisplayReporter.Text = "未立项";
+            this.cbDisplayReporter.UseVisualStyleBackColor = true;
+            this.cbDisplayReporter.CheckedChanged += new System.EventHandler(this.cbDisplayContract_CheckedChanged);
+            // 
+            // btnOpenPDF
+            // 
+            this.btnOpenPDF.Location = new System.Drawing.Point(819, 11);
+            this.btnOpenPDF.Name = "btnOpenPDF";
+            this.btnOpenPDF.Size = new System.Drawing.Size(83, 23);
+            this.btnOpenPDF.TabIndex = 8;
+            this.btnOpenPDF.Text = "查看PDF文档";
+            this.btnOpenPDF.Click += new System.EventHandler(this.btnOpenPDF_Click);
             // 
             // ModuleController2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnOpenPDF);
+            this.Controls.Add(this.plCatalogType);
             this.Controls.Add(this.btnColSelect);
             this.Controls.Add(this.gcGrid);
             this.Name = "ModuleController2";
@@ -242,6 +296,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+            this.plCatalogType.ResumeLayout(false);
+            this.plCatalogType.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -267,5 +323,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraEditors.SimpleButton btnColSelect;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private System.Windows.Forms.Panel plCatalogType;
+        private System.Windows.Forms.CheckBox cbDisplayContract;
+        private System.Windows.Forms.CheckBox cbDisplayReporter;
+        private DevExpress.XtraEditors.SimpleButton btnOpenPDF;
     }
 }
