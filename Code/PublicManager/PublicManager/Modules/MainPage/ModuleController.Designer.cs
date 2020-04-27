@@ -190,6 +190,7 @@
             this.gridColumn4});
             this.gvDetail.GridControl = this.gcData;
             this.gvDetail.Name = "gvDetail";
+            this.gvDetail.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             // 
             // gridColumn1

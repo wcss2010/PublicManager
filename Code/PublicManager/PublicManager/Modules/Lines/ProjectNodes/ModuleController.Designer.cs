@@ -89,6 +89,7 @@
             this.gridColumn12});
             this.gvDetail.GridControl = this.gcGrid;
             this.gvDetail.Name = "gvDetail";
+            this.gvDetail.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             this.gvDetail.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvDetail_RowCellClick);
             // 
@@ -184,8 +185,6 @@
             this.gridColumn12.FieldName = "row12";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.ShowInCustomizationForm = false;
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 8;
             // 
             // repositoryItemButtonEdit1
             // 

@@ -52,19 +52,19 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
         private void gvDetail_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            if (e.CellValue != null && e.CellValue.ToString() == "从Excel导入数据")
-            {
-                int[] selecteds = gvDetail.GetSelectedRows();
-                if (selecteds != null && selecteds.Length >= 1)
-                {
-                    object objValue = gvDetail.GetRowCellValue(selecteds[0], "row6");
-                    if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
-                    {
-                        string nodeId = objValue.ToString();
-                        nodeImport(nodeId);
-                    }
-                }
-            }
+            //if (e.CellValue != null && e.CellValue.ToString() == "从Excel导入数据")
+            //{
+            //    int[] selecteds = gvDetail.GetSelectedRows();
+            //    if (selecteds != null && selecteds.Length >= 1)
+            //    {
+            //        object objValue = gvDetail.GetRowCellValue(selecteds[0], "row6");
+            //        if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
+            //        {
+            //            string nodeId = objValue.ToString();
+            //            nodeImport(nodeId);
+            //        }
+            //    }
+            //}
         }
 
         private void nodeImport(string nodeId)

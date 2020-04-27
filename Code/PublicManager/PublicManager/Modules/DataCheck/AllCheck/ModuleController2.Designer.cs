@@ -85,6 +85,7 @@
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.OptionsFind.AlwaysVisible = true;
             this.dgvDetail.OptionsFind.FindNullPrompt = "请输入要搜索的关键字！";
+            this.dgvDetail.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.dgvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             // 
             // gridColumn1
