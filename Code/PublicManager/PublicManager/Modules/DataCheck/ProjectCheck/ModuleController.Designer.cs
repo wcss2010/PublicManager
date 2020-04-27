@@ -43,6 +43,7 @@
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,7 +63,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.srpSearch = new PublicManager.Modules.SearchRulePanel();
-            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -211,6 +211,15 @@
             this.gridColumn2.Caption = "类型";
             this.gridColumn2.FieldName = "row2";
             this.gridColumn2.Name = "gridColumn2";
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "项目领域/技术方向";
+            this.gridColumn28.FieldName = "row20";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 0;
+            this.gridColumn28.Width = 103;
             // 
             // gridColumn3
             // 
@@ -379,7 +388,7 @@
             // 
             // srpSearch
             // 
-            this.srpSearch.CustomButtonsNames = "结果内容搜索";
+            this.srpSearch.CustomButtonsNames = "结果内容搜索;列选择器";
             this.srpSearch.DisplayGridControl = this.gcGrid;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = true;
@@ -393,28 +402,20 @@
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = true;
             this.srpSearch.Key1FieldString = "项目名称;课题名称;项目关键词";
-            this.srpSearch.Key1PanelWidth = 1508;
+            this.srpSearch.Key1PanelWidth = 1400;
             this.srpSearch.Key2PanelWidth = 187;
             this.srpSearch.Key3OR4PanelWidth = 638;
             this.srpSearch.Key3PanelWidth = 310;
             this.srpSearch.Key4PanelWidth = 316;
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
-            this.srpSearch.RightButtonPanelWidth = 260;
+            this.srpSearch.RightButtonPanelWidth = 360;
             this.srpSearch.Size = new System.Drawing.Size(1777, 79);
             this.srpSearch.TabIndex = 9;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
             this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
-            // 
-            // gridColumn28
-            // 
-            this.gridColumn28.Caption = "项目领域/技术方向";
-            this.gridColumn28.FieldName = "row20";
-            this.gridColumn28.Name = "gridColumn28";
-            this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 0;
-            this.gridColumn28.Width = 103;
+            this.srpSearch.OnCustomButtonClick += new PublicManager.Modules.CustomButtonClickDelegate(this.srpSearch_OnCustomButtonClick);
             // 
             // ModuleController
             // 

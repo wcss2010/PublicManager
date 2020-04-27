@@ -133,6 +133,10 @@ namespace PublicManager.Modules.Lines.ProjectLines
                     }
                 }
             }
+            else if (args.ButtonName == "列选择器")
+            {
+                dgvDetail.ShowCustomization();
+            }
         }
     }
 }

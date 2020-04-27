@@ -123,5 +123,13 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
         {
             BaseModuleController.exportToExcelWithDevExpress(dgvDetail);
         }
+
+        private void srpSearch_OnCustomButtonClick(object sender, CustomButtonEventArgs args)
+        {
+            if (args.ButtonName == "列选择器")
+            {
+                dgvDetail.ShowCustomization();
+            }
+        }
     }
 }

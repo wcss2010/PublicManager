@@ -210,7 +210,7 @@
             // 
             // srpSearch
             // 
-            this.srpSearch.CustomButtonsNames = "结果内容搜索";
+            this.srpSearch.CustomButtonsNames = "结果内容搜索;列选择器";
             this.srpSearch.DisplayGridControl = this.gcGrid;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = false;

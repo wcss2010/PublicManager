@@ -196,7 +196,7 @@
             // 
             // srpSearch
             // 
-            this.srpSearch.CustomButtonsNames = "结果内容搜索";
+            this.srpSearch.CustomButtonsNames = "结果内容搜索;列选择器";
             this.srpSearch.DisplayGridControl = this.gcGrid;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = true;
@@ -210,19 +210,20 @@
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = true;
             this.srpSearch.Key1FieldString = "项目名称;课题名称";
-            this.srpSearch.Key1PanelWidth = 931;
+            this.srpSearch.Key1PanelWidth = 831;
             this.srpSearch.Key2PanelWidth = 187;
             this.srpSearch.Key3OR4PanelWidth = 638;
             this.srpSearch.Key3PanelWidth = 310;
             this.srpSearch.Key4PanelWidth = 316;
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
-            this.srpSearch.RightButtonPanelWidth = 260;
+            this.srpSearch.RightButtonPanelWidth = 360;
             this.srpSearch.Size = new System.Drawing.Size(1200, 77);
             this.srpSearch.TabIndex = 9;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
             this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
+            this.srpSearch.OnCustomButtonClick += new PublicManager.Modules.CustomButtonClickDelegate(this.srpSearch_OnCustomButtonClick);
             // 
             // ModuleController
             // 

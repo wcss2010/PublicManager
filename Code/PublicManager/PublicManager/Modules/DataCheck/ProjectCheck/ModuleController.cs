@@ -193,5 +193,13 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
             gcGrid.DataSource = dsAll.Tables[masterDt.TableName];
             #endregion
         }
+
+        private void srpSearch_OnCustomButtonClick(object sender, CustomButtonEventArgs args)
+        {
+            if (args.ButtonName == "列选择器")
+            {
+                dgvDetail.ShowCustomization();
+            }
+        }
     }
 }

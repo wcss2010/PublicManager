@@ -391,6 +391,10 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
         private void srpSearch_OnCustomButtonClick(object sender, CustomButtonEventArgs args)
         {
+            if (args.ButtonName == "列选择器")
+            {
+                gvDetail.ShowCustomization();
+            }
         }
 
         private void htnDownloadTemplete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

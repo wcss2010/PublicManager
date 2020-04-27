@@ -75,7 +75,7 @@
             // 
             // srpSearch
             // 
-            this.srpSearch.CustomButtonsNames = "结果内容搜索;录入审核结果";
+            this.srpSearch.CustomButtonsNames = "结果内容搜索;录入审核结果;列选择器";
             this.srpSearch.DisplayGridControl = this.gcGrid;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = false;
@@ -89,14 +89,14 @@
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = true;
             this.srpSearch.Key1FieldString = "项目名称";
-            this.srpSearch.Key1PanelWidth = 1060;
+            this.srpSearch.Key1PanelWidth = 960;
             this.srpSearch.Key2PanelWidth = 296;
             this.srpSearch.Key3OR4PanelWidth = 946;
             this.srpSearch.Key3PanelWidth = 492;
             this.srpSearch.Key4PanelWidth = 597;
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
-            this.srpSearch.RightButtonPanelWidth = 345;
+            this.srpSearch.RightButtonPanelWidth = 450;
             this.srpSearch.Size = new System.Drawing.Size(1414, 54);
             this.srpSearch.TabIndex = 10;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
