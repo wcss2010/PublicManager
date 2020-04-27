@@ -188,6 +188,7 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4});
+            this.gvDetail.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gvDetail.GridControl = this.gcData;
             this.gvDetail.Name = "gvDetail";
             this.gvDetail.OptionsSelection.EnableAppearanceFocusedCell = false;

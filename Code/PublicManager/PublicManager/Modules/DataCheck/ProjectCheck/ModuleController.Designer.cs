@@ -81,6 +81,7 @@
             this.gridColumn17,
             this.gridColumn18,
             this.gridColumn19});
+            this.dgvSub.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.dgvSub.GridControl = this.gcGrid;
             this.dgvSub.Name = "dgvSub";
             this.dgvSub.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -190,6 +191,7 @@
             this.gridColumn12,
             this.gridColumn13,
             this.gridColumn14});
+            this.dgvDetail.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.dgvDetail.GridControl = this.gcGrid;
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.OptionsSelection.EnableAppearanceFocusedCell = false;

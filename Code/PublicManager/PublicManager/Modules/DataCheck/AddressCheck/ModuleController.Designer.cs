@@ -78,10 +78,10 @@
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7});
+            this.dgvDetail.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.dgvDetail.GridControl = this.gcGrid;
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.OptionsFind.FindNullPrompt = "";
-            this.dgvDetail.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.dgvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             // 
             // gridColumn1

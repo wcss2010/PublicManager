@@ -69,6 +69,7 @@
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8});
+            this.gvDetail.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gvDetail.GridControl = this.gcGrid;
             this.gvDetail.Name = "gvDetail";
             this.gvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;

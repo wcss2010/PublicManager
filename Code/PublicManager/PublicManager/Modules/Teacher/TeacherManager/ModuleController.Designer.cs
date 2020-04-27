@@ -125,6 +125,7 @@
             this.gridColumn9,
             this.gridColumn10,
             this.gridColumn11});
+            this.dgvDetail.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.dgvDetail.GridControl = this.gcGrid;
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.OptionsSelection.MultiSelect = true;
