@@ -330,7 +330,7 @@
             // 
             // gridColumn26
             // 
-            this.gridColumn26.Caption = "项目牵头单位常用名";
+            this.gridColumn26.Caption = "归一化单位";
             this.gridColumn26.FieldName = "row19";
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.Width = 124;

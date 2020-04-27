@@ -254,7 +254,7 @@
             // 
             // gridColumn24
             // 
-            this.gridColumn24.Caption = "项目牵头单位常用名";
+            this.gridColumn24.Caption = "归一化单位";
             this.gridColumn24.FieldName = "row24";
             this.gridColumn24.Name = "gridColumn24";
             // 

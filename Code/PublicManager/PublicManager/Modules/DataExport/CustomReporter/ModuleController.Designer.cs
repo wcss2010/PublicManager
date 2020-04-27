@@ -398,7 +398,7 @@
             // 
             // gridColumn39
             // 
-            this.gridColumn39.Caption = "项目牵头单位常用名";
+            this.gridColumn39.Caption = "归一化单位";
             this.gridColumn39.FieldName = "row32";
             this.gridColumn39.Name = "gridColumn39";
             this.gridColumn39.Visible = true;
