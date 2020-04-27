@@ -39,7 +39,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
         private void loadData()
         {
-            DataTable dt = getTempDataTable("row", 14);
+            DataTable dt = getTempDataTable("row", 15);
 
             List<Project> projList = ConnectionManager.Context.table("Project").where("IsNeedHide='0'").select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
@@ -117,6 +117,9 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
                     //节点评估时间                    
                     cells.Add(nodeTimeString.ToString());
+
+                    //项目牵头单位常用名
+                    cells.Add(proj.DutyNormalUnit);
 
                     dt.Rows.Add(cells.ToArray());
                 }

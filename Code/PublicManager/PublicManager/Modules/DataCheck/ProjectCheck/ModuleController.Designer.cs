@@ -324,8 +324,6 @@
             this.gridColumn11.Caption = "项目牵头单位";
             this.gridColumn11.FieldName = "row11";
             this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 8;
             this.gridColumn11.Width = 229;
             // 
             // gridColumn26
@@ -333,6 +331,8 @@
             this.gridColumn26.Caption = "归一化单位";
             this.gridColumn26.FieldName = "row19";
             this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 8;
             this.gridColumn26.Width = 124;
             // 
             // gridColumn12
