@@ -55,7 +55,7 @@ namespace PublicManager.Modules.Contract.Forms
                     string catalogNumber = selected.Text;
 
                     //根据项目编号查询项目数量
-                    selected.Checked = !(ConnectionManager.Context.table("Catalog").where("catalognumber='" + catalogNumber + "'").select("count(*)").getValue<long>(0) >= 1);
+                    selected.Checked = !(ConnectionManager.Context.table("Catalog").where("CatalogNumber like '%" + catalogNumber + "%' and CatalogType = '合同书'").select("count(*)").getValue<long>(0) >= 1);
                 }
             }
         }
