@@ -229,7 +229,7 @@
             this.srpSearch.Key4PanelWidth = 275;
             this.srpSearch.Location = new System.Drawing.Point(3, 18);
             this.srpSearch.Name = "srpSearch";
-            this.srpSearch.RightButtonPanelWidth = 340;
+            this.srpSearch.RightButtonPanelWidth = 325;
             this.srpSearch.Size = new System.Drawing.Size(1246, 57);
             this.srpSearch.TabIndex = 7;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
