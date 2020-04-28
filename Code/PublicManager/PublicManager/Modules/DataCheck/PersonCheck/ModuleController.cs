@@ -131,5 +131,26 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                 dgvDetail.ShowCustomization();
             }
         }
+
+        private void dgvDetail_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            int[] rowIndexxx = dgvDetail.GetSelectedRows();
+            if (rowIndexxx != null && rowIndexxx.Length == 1)
+            {
+                //第一行  
+                if (e.RowHandle == rowIndexxx[0])
+                {
+                    e.Appearance.BackColor = Color.LightSkyBlue;
+                }
+                else
+                {
+                    e.Appearance.Reset();
+                }
+            }
+            else
+            {
+                e.Appearance.Reset();
+            }
+        }
     }
 }

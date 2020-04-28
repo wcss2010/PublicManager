@@ -123,6 +123,7 @@
             this.gvDetailForSubject.GridControl = this.gcGridForSubject;
             this.gvDetailForSubject.Name = "gvDetailForSubject";
             this.gvDetailForSubject.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            this.gvDetailForSubject.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvDetailForSubject_RowCellStyle);
             // 
             // tpTag3
             // 
@@ -147,6 +148,7 @@
             this.gvDetailForUnit.GridControl = this.gcGridForUnit;
             this.gvDetailForUnit.Name = "gvDetailForUnit";
             this.gvDetailForUnit.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            this.gvDetailForUnit.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvDetailForUnit_RowCellStyle);
             // 
             // ModuleController
             // 

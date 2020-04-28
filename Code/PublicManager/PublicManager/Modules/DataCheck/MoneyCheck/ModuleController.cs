@@ -305,5 +305,47 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
             colTemp.VisibleIndex = displayIndex;
             return colTemp;
         }
+
+        private void gvDetailForSubject_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            int[] rowIndexxx = gvDetailForSubject.GetSelectedRows();
+            if (rowIndexxx != null && rowIndexxx.Length == 1)
+            {
+                //第一行  
+                if (e.RowHandle == rowIndexxx[0])
+                {
+                    e.Appearance.BackColor = Color.LightSkyBlue;
+                }
+                else
+                {
+                    e.Appearance.Reset();
+                }
+            }
+            else
+            {
+                e.Appearance.Reset();
+            }
+        }
+
+        private void gvDetailForUnit_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            int[] rowIndexxx = gvDetailForUnit.GetSelectedRows();
+            if (rowIndexxx != null && rowIndexxx.Length == 1)
+            {
+                //第一行  
+                if (e.RowHandle == rowIndexxx[0])
+                {
+                    e.Appearance.BackColor = Color.LightSkyBlue;
+                }
+                else
+                {
+                    e.Appearance.Reset();
+                }
+            }
+            else
+            {
+                e.Appearance.Reset();
+            }
+        }
     }
 }

@@ -86,6 +86,7 @@
             this.gvDetail.GridControl = this.gcGrid;
             this.gvDetail.Name = "gvDetail";
             this.gvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            this.gvDetail.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvDetail_RowCellStyle);
             // 
             // gridColumn9
             // 
@@ -182,7 +183,7 @@
             this.tvProjectList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvProjectList.Font = new System.Drawing.Font("仿宋", 12F);
             this.tvProjectList.Location = new System.Drawing.Point(0, 0);
-            this.tvProjectList.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tvProjectList.Margin = new System.Windows.Forms.Padding(5);
             this.tvProjectList.Name = "tvProjectList";
             this.tvProjectList.Size = new System.Drawing.Size(332, 650);
             this.tvProjectList.TabIndex = 1;

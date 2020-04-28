@@ -46,12 +46,12 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnColSelect = new DevExpress.XtraEditors.SimpleButton();
             this.plCatalogType = new System.Windows.Forms.Panel();
             this.cbDisplayContract = new System.Windows.Forms.CheckBox();
             this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
             this.btnOpenPDF = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -97,6 +97,7 @@
             this.dgvDetail.OptionsFind.FindNullPrompt = "请输入要搜索的关键字！";
             this.dgvDetail.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.dgvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            this.dgvDetail.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.dgvDetail_RowCellStyle);
             // 
             // gridColumn1
             // 
@@ -229,6 +230,13 @@
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Width = 86;
             // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "path";
+            this.gridColumn16.FieldName = "row16";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.OptionsColumn.ShowInCustomizationForm = false;
+            // 
             // btnColSelect
             // 
             this.btnColSelect.Location = new System.Drawing.Point(908, 11);
@@ -284,13 +292,6 @@
             this.btnOpenPDF.TabIndex = 8;
             this.btnOpenPDF.Text = "查看PDF文档";
             this.btnOpenPDF.Click += new System.EventHandler(this.btnOpenPDF_Click);
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "path";
-            this.gridColumn16.FieldName = "row16";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // ModuleController2
             // 

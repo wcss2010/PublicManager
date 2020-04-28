@@ -90,5 +90,26 @@ namespace PublicManager.Modules.Contract
                 }
             }
         }
+
+        private void gvDetail_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            int[] rowIndexxx = gvDetail.GetSelectedRows();
+            if (rowIndexxx != null && rowIndexxx.Length == 1)
+            {
+                //第一行  
+                if (e.RowHandle == rowIndexxx[0])
+                {
+                    e.Appearance.BackColor = Color.LightSkyBlue;
+                }
+                else
+                {
+                    e.Appearance.Reset();
+                }
+            }
+            else
+            {
+                e.Appearance.Reset();
+            }
+        }
     }
 }
