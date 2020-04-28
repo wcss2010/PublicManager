@@ -186,10 +186,10 @@
             gridLevelNode1.RelationName = "SubjectView";
             this.gcGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gcGrid.Location = new System.Drawing.Point(0, 76);
+            this.gcGrid.Location = new System.Drawing.Point(0, 79);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1421, 236);
+            this.gcGrid.Size = new System.Drawing.Size(1421, 233);
             this.gcGrid.TabIndex = 5;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail,
@@ -547,7 +547,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1421, 76);
+            this.panel1.Size = new System.Drawing.Size(1421, 79);
             this.panel1.TabIndex = 3;
             // 
             // srpSearch
@@ -574,7 +574,7 @@
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
             this.srpSearch.RightButtonPanelWidth = 260;
-            this.srpSearch.Size = new System.Drawing.Size(1421, 76);
+            this.srpSearch.Size = new System.Drawing.Size(1421, 79);
             this.srpSearch.TabIndex = 9;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);

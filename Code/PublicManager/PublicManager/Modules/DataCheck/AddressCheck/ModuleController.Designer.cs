@@ -60,10 +60,10 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 95);
+            this.gcGrid.Location = new System.Drawing.Point(3, 98);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1200, 591);
+            this.gcGrid.Size = new System.Drawing.Size(1200, 588);
             this.gcGrid.TabIndex = 3;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -143,7 +143,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 77);
+            this.panel1.Size = new System.Drawing.Size(1200, 80);
             this.panel1.TabIndex = 2;
             // 
             // srpSearch
@@ -170,7 +170,7 @@
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
             this.srpSearch.RightButtonPanelWidth = 260;
-            this.srpSearch.Size = new System.Drawing.Size(1200, 77);
+            this.srpSearch.Size = new System.Drawing.Size(1200, 80);
             this.srpSearch.TabIndex = 9;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
