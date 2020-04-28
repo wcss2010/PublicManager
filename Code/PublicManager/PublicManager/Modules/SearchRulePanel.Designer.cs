@@ -167,7 +167,7 @@
             this.lblKey4.Name = "lblKey4";
             this.lblKey4.Size = new System.Drawing.Size(131, 23);
             this.lblKey4.TabIndex = 6;
-            this.lblKey4.Text = "预计评估时间:";
+            this.lblKey4.Text = "约定评估时间:";
             this.lblKey4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // plKey3Panel
@@ -200,7 +200,7 @@
             this.lblKey3.Name = "lblKey3";
             this.lblKey3.Size = new System.Drawing.Size(131, 23);
             this.lblKey3.TabIndex = 5;
-            this.lblKey3.Text = "节点评估时间:";
+            this.lblKey3.Text = "实际评估时间:";
             this.lblKey3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // plKey2Panel

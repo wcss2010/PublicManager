@@ -122,7 +122,7 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "合同书预计评估时间";
+            this.gridColumn3.Caption = "合同书约定评估时间";
             this.gridColumn3.FieldName = "row3";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
@@ -130,7 +130,7 @@
             // 
             // gridColumn11
             // 
-            this.gridColumn11.Caption = "节点评估时间";
+            this.gridColumn11.Caption = "节点实际评估时间";
             this.gridColumn11.FieldName = "row8";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
