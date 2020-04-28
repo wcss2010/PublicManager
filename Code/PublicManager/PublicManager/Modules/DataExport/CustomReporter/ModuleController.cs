@@ -48,7 +48,7 @@ namespace PublicManager.Modules.DataExport.CustomReporter
             //主表
             foreach (GridColumn gcc in dgvDetail.Columns)
             {
-                if (gcc.Visible)
+                if (gcc.Visible || gcc.OptionsColumn.ShowInCustomizationForm)
                 {
                     CheckBox cbb = new CheckBox();
                     cbb.Name = gcc.FieldName + "++" + gcc.Caption;
@@ -199,7 +199,7 @@ namespace PublicManager.Modules.DataExport.CustomReporter
         private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
             dsAll = new DataSet();
-            DataTable masterDt = getTempDataTable("row", 32);
+            DataTable masterDt = getTempDataTable("row", 33);
             DataTable detailDt = getTempDataTable("row", 9);
 
             List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
@@ -284,6 +284,8 @@ namespace PublicManager.Modules.DataExport.CustomReporter
                 }
 
                 cells.Add(proj.DutyNormalUnit);
+
+                cells.Add(proj.ProjectRange);
 
                 masterDt.Rows.Add(cells.ToArray());
                 #endregion
@@ -445,6 +447,14 @@ namespace PublicManager.Modules.DataExport.CustomReporter
 
                 //导出
                 ExcelHelper.ExportToExcel(dtt, "项目数据");
+            }
+        }
+
+        private void srpSearch_OnCustomButtonClick(object sender, CustomButtonEventArgs args)
+        {
+            if (args.ButtonName == "列选择器")
+            {
+                dgvDetail.ShowCustomization();
             }
         }
     }

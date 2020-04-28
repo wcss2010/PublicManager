@@ -81,6 +81,7 @@
             this.fplProject = new System.Windows.Forms.FlowLayoutPanel();
             this.plDetailHeader = new DevExpress.XtraEditors.GroupControl();
             this.fplSubject = new System.Windows.Forms.FlowLayoutPanel();
+            this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -201,6 +202,7 @@
             this.gridColumn20,
             this.gridColumn1,
             this.gridColumn2,
+            this.gridColumn41,
             this.gridColumn5,
             this.gridColumn3,
             this.gridColumn6,
@@ -242,18 +244,21 @@
             this.gridColumn20.Caption = "ProjectID";
             this.gridColumn20.FieldName = "row15";
             this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "版本";
             this.gridColumn1.FieldName = "row1";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "类型";
             this.gridColumn2.FieldName = "row2";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridColumn5
             // 
@@ -261,16 +266,16 @@
             this.gridColumn5.FieldName = "row5";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 0;
+            this.gridColumn5.VisibleIndex = 1;
             this.gridColumn5.Width = 50;
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "项目领域";
+            this.gridColumn3.Caption = "申报领域";
             this.gridColumn3.FieldName = "row3";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.VisibleIndex = 2;
             this.gridColumn3.Width = 50;
             // 
             // gridColumn6
@@ -279,7 +284,7 @@
             this.gridColumn6.FieldName = "row6";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.VisibleIndex = 3;
             this.gridColumn6.Width = 50;
             // 
             // gridColumn21
@@ -287,6 +292,7 @@
             this.gridColumn21.Caption = "项目关键词";
             this.gridColumn21.FieldName = "row16";
             this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridColumn7
             // 
@@ -294,7 +300,7 @@
             this.gridColumn7.FieldName = "row7";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 3;
+            this.gridColumn7.VisibleIndex = 4;
             this.gridColumn7.Width = 50;
             // 
             // gridColumn8
@@ -303,7 +309,7 @@
             this.gridColumn8.FieldName = "row8";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 4;
+            this.gridColumn8.VisibleIndex = 5;
             this.gridColumn8.Width = 50;
             // 
             // gridColumn37
@@ -312,7 +318,7 @@
             this.gridColumn37.FieldName = "row26";
             this.gridColumn37.Name = "gridColumn37";
             this.gridColumn37.Visible = true;
-            this.gridColumn37.VisibleIndex = 5;
+            this.gridColumn37.VisibleIndex = 6;
             this.gridColumn37.Width = 53;
             // 
             // gridColumn36
@@ -321,7 +327,7 @@
             this.gridColumn36.FieldName = "row27";
             this.gridColumn36.Name = "gridColumn36";
             this.gridColumn36.Visible = true;
-            this.gridColumn36.VisibleIndex = 6;
+            this.gridColumn36.VisibleIndex = 7;
             this.gridColumn36.Width = 53;
             // 
             // gridColumn35
@@ -330,7 +336,7 @@
             this.gridColumn35.FieldName = "row28";
             this.gridColumn35.Name = "gridColumn35";
             this.gridColumn35.Visible = true;
-            this.gridColumn35.VisibleIndex = 7;
+            this.gridColumn35.VisibleIndex = 8;
             this.gridColumn35.Width = 53;
             // 
             // gridColumn34
@@ -339,7 +345,7 @@
             this.gridColumn34.FieldName = "row29";
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 8;
+            this.gridColumn34.VisibleIndex = 9;
             this.gridColumn34.Width = 53;
             // 
             // gridColumn33
@@ -348,7 +354,7 @@
             this.gridColumn33.FieldName = "row30";
             this.gridColumn33.Name = "gridColumn33";
             this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 9;
+            this.gridColumn33.VisibleIndex = 10;
             this.gridColumn33.Width = 53;
             // 
             // gridColumn9
@@ -357,7 +363,7 @@
             this.gridColumn9.FieldName = "row9";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 10;
+            this.gridColumn9.VisibleIndex = 11;
             this.gridColumn9.Width = 50;
             // 
             // gridColumn38
@@ -366,7 +372,7 @@
             this.gridColumn38.FieldName = "row31";
             this.gridColumn38.Name = "gridColumn38";
             this.gridColumn38.Visible = true;
-            this.gridColumn38.VisibleIndex = 11;
+            this.gridColumn38.VisibleIndex = 12;
             this.gridColumn38.Width = 45;
             // 
             // gridColumn4
@@ -375,7 +381,7 @@
             this.gridColumn4.FieldName = "row4";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 12;
+            this.gridColumn4.VisibleIndex = 13;
             this.gridColumn4.Width = 50;
             // 
             // gridColumn10
@@ -384,7 +390,7 @@
             this.gridColumn10.FieldName = "row10";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 13;
+            this.gridColumn10.VisibleIndex = 14;
             this.gridColumn10.Width = 50;
             // 
             // gridColumn11
@@ -393,7 +399,7 @@
             this.gridColumn11.FieldName = "row11";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 14;
+            this.gridColumn11.VisibleIndex = 15;
             this.gridColumn11.Width = 88;
             // 
             // gridColumn39
@@ -402,7 +408,7 @@
             this.gridColumn39.FieldName = "row32";
             this.gridColumn39.Name = "gridColumn39";
             this.gridColumn39.Visible = true;
-            this.gridColumn39.VisibleIndex = 15;
+            this.gridColumn39.VisibleIndex = 16;
             this.gridColumn39.Width = 123;
             // 
             // gridColumn26
@@ -411,7 +417,7 @@
             this.gridColumn26.FieldName = "row19";
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 16;
+            this.gridColumn26.VisibleIndex = 17;
             this.gridColumn26.Width = 48;
             // 
             // gridColumn23
@@ -420,7 +426,7 @@
             this.gridColumn23.FieldName = "row17";
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 17;
+            this.gridColumn23.VisibleIndex = 18;
             this.gridColumn23.Width = 49;
             // 
             // gridColumn22
@@ -429,7 +435,7 @@
             this.gridColumn22.FieldName = "row18";
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 18;
+            this.gridColumn22.VisibleIndex = 19;
             this.gridColumn22.Width = 52;
             // 
             // gridColumn12
@@ -438,7 +444,7 @@
             this.gridColumn12.FieldName = "row12";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 19;
+            this.gridColumn12.VisibleIndex = 20;
             this.gridColumn12.Width = 38;
             // 
             // gridColumn13
@@ -447,7 +453,7 @@
             this.gridColumn13.FieldName = "row13";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 20;
+            this.gridColumn13.VisibleIndex = 21;
             this.gridColumn13.Width = 43;
             // 
             // gridColumn14
@@ -455,6 +461,7 @@
             this.gridColumn14.Caption = "研究内容与目标";
             this.gridColumn14.FieldName = "row14";
             this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridColumn27
             // 
@@ -462,7 +469,7 @@
             this.gridColumn27.FieldName = "row20";
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 21;
+            this.gridColumn27.VisibleIndex = 22;
             this.gridColumn27.Width = 38;
             // 
             // gridColumn28
@@ -471,7 +478,7 @@
             this.gridColumn28.FieldName = "row21";
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 22;
+            this.gridColumn28.VisibleIndex = 23;
             this.gridColumn28.Width = 40;
             // 
             // gridColumn29
@@ -480,7 +487,7 @@
             this.gridColumn29.FieldName = "row22";
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 23;
+            this.gridColumn29.VisibleIndex = 24;
             this.gridColumn29.Width = 41;
             // 
             // gridColumn30
@@ -489,7 +496,7 @@
             this.gridColumn30.FieldName = "row23";
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 24;
+            this.gridColumn30.VisibleIndex = 25;
             this.gridColumn30.Width = 34;
             // 
             // gridColumn31
@@ -498,7 +505,7 @@
             this.gridColumn31.FieldName = "row24";
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 25;
+            this.gridColumn31.VisibleIndex = 26;
             this.gridColumn31.Width = 40;
             // 
             // gridColumn32
@@ -507,7 +514,7 @@
             this.gridColumn32.FieldName = "row25";
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 26;
+            this.gridColumn32.VisibleIndex = 27;
             this.gridColumn32.Width = 59;
             // 
             // groupBox1
@@ -552,7 +559,7 @@
             // 
             // srpSearch
             // 
-            this.srpSearch.CustomButtonsNames = "结果内容搜索";
+            this.srpSearch.CustomButtonsNames = "结果内容搜索;列选择器";
             this.srpSearch.DisplayGridControl = this.gcGrid;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = false;
@@ -566,19 +573,20 @@
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = false;
             this.srpSearch.Key1FieldString = "项目名称;计划批次";
-            this.srpSearch.Key1PanelWidth = 1482;
+            this.srpSearch.Key1PanelWidth = 1422;
             this.srpSearch.Key2PanelWidth = 187;
             this.srpSearch.Key3OR4PanelWidth = 638;
             this.srpSearch.Key3PanelWidth = 310;
             this.srpSearch.Key4PanelWidth = 316;
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
-            this.srpSearch.RightButtonPanelWidth = 260;
+            this.srpSearch.RightButtonPanelWidth = 320;
             this.srpSearch.Size = new System.Drawing.Size(1421, 79);
             this.srpSearch.TabIndex = 9;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
             this.srpSearch.OnExportToClick += new PublicManager.Modules.ExportToClickDelegate(this.srpSearch_OnExportToClick);
+            this.srpSearch.OnCustomButtonClick += new PublicManager.Modules.CustomButtonClickDelegate(this.srpSearch_OnCustomButtonClick);
             // 
             // plOutputHeaderList
             // 
@@ -625,6 +633,14 @@
             this.fplSubject.Name = "fplSubject";
             this.fplSubject.Size = new System.Drawing.Size(847, 99);
             this.fplSubject.TabIndex = 0;
+            // 
+            // gridColumn41
+            // 
+            this.gridColumn41.Caption = "项目领域/技术方向";
+            this.gridColumn41.FieldName = "row33";
+            this.gridColumn41.Name = "gridColumn41";
+            this.gridColumn41.Visible = true;
+            this.gridColumn41.VisibleIndex = 0;
             // 
             // ModuleController
             // 
@@ -706,5 +722,6 @@
         private SearchRulePanel srpSearch;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn40;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn39;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
     }
 }
