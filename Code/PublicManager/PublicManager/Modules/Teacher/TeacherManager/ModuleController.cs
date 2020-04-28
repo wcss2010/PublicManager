@@ -14,6 +14,8 @@ namespace PublicManager.Modules.Teacher.TeacherManager
 {
     public partial class ModuleController : BaseModuleController
     {
+        private int currentRowHandle = 0;
+
         public ModuleController()
         {
             InitializeComponent();
@@ -292,23 +294,20 @@ namespace PublicManager.Modules.Teacher.TeacherManager
 
         private void dgvDetail_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            int[] rowIndexxx = dgvDetail.GetSelectedRows();
-            if (rowIndexxx != null && rowIndexxx.Length == 1)
+            if (e.RowHandle == currentRowHandle)
             {
-                //第一行  
-                if (e.RowHandle == rowIndexxx[0])
-                {
-                    e.Appearance.BackColor = Color.LightSkyBlue;
-                }
-                else
-                {
-                    e.Appearance.Reset();
-                }
+                e.Appearance.BackColor = Color.LightSkyBlue;
             }
             else
             {
                 e.Appearance.Reset();
             }
+        }
+
+        private void dgvDetail_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            currentRowHandle = e.RowHandle;
+            dgvDetail.RefreshData();
         }
     }
 }
