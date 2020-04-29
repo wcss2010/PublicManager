@@ -70,6 +70,15 @@ namespace PublicManager.Modules
                             case "项目关键词":
                                 sb.Append(" or ").Append("Keywords like '%" + srp.Key1EditControl.Text + "%'");
                                 break;
+                            case "项目牵头单位":
+                                sb.Append(" or ").Append("DutyUnit like '%" + srp.Key1EditControl.Text + "%'");
+                                break;
+                            case "项目所属地点":
+                                sb.Append(" or ").Append("DutyUnitAddress like '%" + srp.Key1EditControl.Text + "%'");
+                                break;
+                            case "项目归一化单位":
+                                sb.Append(" or ").Append("DutyNormalUnit like '%" + srp.Key1EditControl.Text + "%'");
+                                break;
                             case "课题名称":
                                 sb.Append(" or ").Append("ProjectID in (select ProjectID from Subject where SubjectName like '%" + srp.Key1EditControl.Text + "%')");
                                 getDataIdList("Subject", "SubjectName like '%" + srp.Key1EditControl.Text + "%'", "SubjectID");

@@ -422,7 +422,7 @@ namespace PublicManager.Modules
         /// <summary>
         /// 点击搜索后是否高亮提示
         /// </summary>
-        protected bool IsHightlightHintWithSearchAfter
+        public bool IsHightlightHintWithSearchAfter
         {
             get { return isHightlightHintWithSearchAfter; }
             set { isHightlightHintWithSearchAfter = value; }
