@@ -86,53 +86,58 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
             DataTable masterDt = getTempDataTable("row", 20);
             DataTable detailDt = getTempDataTable("row", 9);
 
+            List<object> cells = new List<object>();
+
             List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
             foreach (Project proj in projList)
             {
                 #region 主表数据
-                List<object> cells = new List<object>();
-                cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
-                cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
-                cells.Add(proj.Domains);
-                cells.Add(proj.TaskNumber);
-                cells.Add(proj.ProjectNumber);
-                cells.Add(proj.ProjectName);
-                cells.Add(proj.TotalMoney);
-                cells.Add(proj.TotalTime);
-                cells.Add(proj.SecretLevel);
-                //显示仅为项目负责人
-                Person masterPerson = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '' and IsProjectMaster = 'true'").select("*").getItem<Person>(new Person());
-                if (masterPerson != null && masterPerson.PersonID != null && masterPerson.PersonID.Length >= 1)
+                if (srpSearch.Key2EditControl.Text == "全部" || proj.DutyUnitOrg == srpSearch.Key2EditControl.Text)
                 {
-                    cells.Add(masterPerson.PersonName);
-                }
-                else
-                {
+                    cells = new List<object>();
+                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
+                    cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
+                    cells.Add(proj.Domains);
+                    cells.Add(proj.TaskNumber);
+                    cells.Add(proj.ProjectNumber);
+                    cells.Add(proj.ProjectName);
+                    cells.Add(proj.TotalMoney);
+                    cells.Add(proj.TotalTime);
+                    cells.Add(proj.SecretLevel);
+                    //显示仅为项目负责人
+                    Person masterPerson = ConnectionManager.Context.table("Person").where("CatalogID = '" + proj.CatalogID + "' and SubjectID = '' and IsProjectMaster = 'true'").select("*").getItem<Person>(new Person());
+                    if (masterPerson != null && masterPerson.PersonID != null && masterPerson.PersonID.Length >= 1)
+                    {
+                        cells.Add(masterPerson.PersonName);
+                    }
+                    else
+                    {
+                        cells.Add(string.Empty);
+                    }
+                    cells.Add(proj.DutyUnit);
+                    cells.Add(proj.DutyUnitOrg);
+                    cells.Add(proj.DutyUnitAddress);
                     cells.Add(string.Empty);
+                    cells.Add(proj.ProjectID);
+                    cells.Add(proj.Keywords);
+
+                    if (masterPerson != null && masterPerson.PersonID != null && masterPerson.PersonID.Length >= 1)
+                    {
+                        cells.Add(masterPerson.Telephone);
+                        cells.Add(masterPerson.Mobilephone);
+                    }
+                    else
+                    {
+                        cells.Add(string.Empty);
+                        cells.Add(string.Empty);
+                    }
+
+                    cells.Add(proj.DutyNormalUnit);
+
+                    cells.Add(proj.ProjectRange);
+
+                    masterDt.Rows.Add(cells.ToArray());
                 }
-                cells.Add(proj.DutyUnit);
-                cells.Add(proj.DutyUnitOrg);
-                cells.Add(proj.DutyUnitAddress);
-                cells.Add(string.Empty);
-                cells.Add(proj.ProjectID);
-                cells.Add(proj.Keywords);
-
-                if (masterPerson != null && masterPerson.PersonID != null && masterPerson.PersonID.Length >= 1)
-                {
-                    cells.Add(masterPerson.Telephone);
-                    cells.Add(masterPerson.Mobilephone);
-                }
-                else
-                {
-                    cells.Add(string.Empty);
-                    cells.Add(string.Empty);
-                }
-
-                cells.Add(proj.DutyNormalUnit);
-
-                cells.Add(proj.ProjectRange);
-
-                masterDt.Rows.Add(cells.ToArray());
                 #endregion
 
                 #region 生成从表数据
