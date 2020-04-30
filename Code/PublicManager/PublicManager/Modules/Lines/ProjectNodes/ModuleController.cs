@@ -67,9 +67,9 @@ namespace PublicManager.Modules.Lines.ProjectNodes
             //}
         }
 
-        private void nodeImport(string nodeId)
+        private void nodeImport(string catalogID,string nodeId)
         {
-            MoneySends mss = ConnectionManager.Context.table("MoneySends").where("MSID='" + nodeId + "'").select("*").getItem<MoneySends>(new MoneySends());
+            MoneySends mss = ConnectionManager.Context.table("MoneySends").where("MSID='" + nodeId + "' and CatalogID='" + catalogID + "'").select("*").getItem<MoneySends>(new MoneySends());
             if (mss != null && string.IsNullOrEmpty(mss.MSID))
             {
                 return;
@@ -155,7 +155,7 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                                         mss.WillContent = value7;
                                         mss.WillLevel = value8;
                                         mss.WillWorker = value9;
-                                        mss.copyTo(ConnectionManager.Context.table("MoneySends")).where("MSID='" + mss.MSID + "'").update();
+                                        mss.copyTo(ConnectionManager.Context.table("MoneySends")).where("MSID='" + nodeId + "' and CatalogID='" + catalogID + "'").update();
                                     }
                                     #endregion
                                     break;
@@ -340,7 +340,7 @@ namespace PublicManager.Modules.Lines.ProjectNodes
 
         private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
-            DataTable dt = getTempDataTable("row", 12);
+            DataTable dt = getTempDataTable("row", 13);
 
             List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
             foreach (Project proj in projList)
@@ -372,6 +372,8 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                     cells.Add(mss.WillWorker);
 
                     cells.Add("从Excel导入数据");
+
+                    cells.Add(mss.CatalogID);
 
                     dt.Rows.Add(cells.ToArray());
                 }
@@ -430,10 +432,12 @@ namespace PublicManager.Modules.Lines.ProjectNodes
             if (gvDetail.GetSelectedRows() != null && gvDetail.GetSelectedRows().Length == 1)
             {
                 object objValue = gvDetail.GetRowCellValue(gvDetail.GetSelectedRows()[0], "row6");
-                if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
+                object objValue2 = gvDetail.GetRowCellValue(gvDetail.GetSelectedRows()[0], "row13");
+                if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()) && objValue2 != null && !string.IsNullOrEmpty(objValue2.ToString()))
                 {
+                    string catalogID = objValue2.ToString();
                     string nodeId = objValue.ToString();
-                    nodeImport(nodeId);
+                    nodeImport(catalogID, nodeId);
                 }
             }
         }
