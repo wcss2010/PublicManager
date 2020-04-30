@@ -8,6 +8,13 @@ namespace PublicManager.Modules
     {
         private DevExpress.XtraGrid.Views.Grid.GridView myGridView;
         private List<string> mergeFieldNameList = new List<string>();
+        /// <summary>
+        /// 要合并的单元格
+        /// </summary>
+        public List<string> MergeFieldNameList
+        {
+            get { return mergeFieldNameList; }
+        }
 
         public DEGridViewCellMergeAdapter(DevExpress.XtraGrid.Views.Grid.GridView gv, string[] mergeColNames)
         {

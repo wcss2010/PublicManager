@@ -314,6 +314,11 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
                 //第一行  
                 if (e.RowHandle == rowIndexxx[0])
                 {
+                    if (cmaForSubject.MergeFieldNameList.Contains(e.Column.FieldName))
+                    {
+                        return;
+                    }
+
                     e.Appearance.BackColor = Color.LightSkyBlue;
                 }
                 else
@@ -335,6 +340,11 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
                 //第一行  
                 if (e.RowHandle == rowIndexxx[0])
                 {
+                    if (cmaForUnit.MergeFieldNameList.Contains(e.Column.FieldName))
+                    {
+                        return;
+                    }
+
                     e.Appearance.BackColor = Color.LightSkyBlue;
                 }
                 else

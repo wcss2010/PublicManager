@@ -451,6 +451,11 @@ namespace PublicManager.Modules.Lines.ProjectNodes
                 //第一行  
                 if (e.RowHandle == rowIndexxx[0])
                 {
+                    if (cma.MergeFieldNameList.Contains(e.Column.FieldName))
+                    {
+                        return;
+                    }
+
                     e.Appearance.BackColor = Color.LightSkyBlue;
                 }
                 else
