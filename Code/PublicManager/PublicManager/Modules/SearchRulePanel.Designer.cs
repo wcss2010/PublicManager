@@ -368,7 +368,7 @@
             this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.cbDisplayContract.Size = new System.Drawing.Size(72, 19);
             this.cbDisplayContract.TabIndex = 5;
-            this.cbDisplayContract.Text = "已立项";
+            this.cbDisplayContract.Text = "合同书";
             this.cbDisplayContract.UseVisualStyleBackColor = true;
             this.cbDisplayContract.CheckedChanged += new System.EventHandler(this.cbDisplayContract_CheckedChanged);
             // 
@@ -382,7 +382,7 @@
             this.cbDisplayReporter.Name = "cbDisplayReporter";
             this.cbDisplayReporter.Size = new System.Drawing.Size(62, 19);
             this.cbDisplayReporter.TabIndex = 6;
-            this.cbDisplayReporter.Text = "未立项";
+            this.cbDisplayReporter.Text = "建议书";
             this.cbDisplayReporter.UseVisualStyleBackColor = true;
             this.cbDisplayReporter.CheckedChanged += new System.EventHandler(this.cbDisplayContract_CheckedChanged);
             // 
