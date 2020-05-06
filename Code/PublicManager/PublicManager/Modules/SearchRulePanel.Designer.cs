@@ -54,8 +54,8 @@
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.plCatalogType = new System.Windows.Forms.Panel();
-            this.cbDisplayContract = new System.Windows.Forms.CheckBox();
-            this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
+            this.cbDisplayContract = new System.Windows.Forms.RadioButton();
+            this.cbDisplayReporter = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.plRules)).BeginInit();
             this.plRules.SuspendLayout();
             this.panelControl1.SuspendLayout();
@@ -360,8 +360,7 @@
             // cbDisplayContract
             // 
             this.cbDisplayContract.AutoSize = true;
-            this.cbDisplayContract.Checked = true;
-            this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDisplayContract.Checked = true;            
             this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Right;
             this.cbDisplayContract.Location = new System.Drawing.Point(8, 0);
             this.cbDisplayContract.Name = "cbDisplayContract";
@@ -375,8 +374,7 @@
             // cbDisplayReporter
             // 
             this.cbDisplayReporter.AutoSize = true;
-            this.cbDisplayReporter.Checked = true;
-            this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDisplayReporter.Checked = true;            
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Right;
             this.cbDisplayReporter.Location = new System.Drawing.Point(80, 0);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
@@ -427,8 +425,8 @@
         private System.Windows.Forms.Panel plSearchOrResetOrExport;
         private DevExpress.XtraEditors.SimpleButton btnExportTo;
         private DevExpress.XtraEditors.SimpleButton btnSearch;
-        private System.Windows.Forms.CheckBox cbDisplayReporter;
-        private System.Windows.Forms.CheckBox cbDisplayContract;
+        private System.Windows.Forms.RadioButton cbDisplayReporter;
+        private System.Windows.Forms.RadioButton cbDisplayContract;
         private DevExpress.XtraEditors.SimpleButton btnReset;
         private System.Windows.Forms.CheckBox lblKey2;
         private System.Windows.Forms.ComboBox txtKey2;

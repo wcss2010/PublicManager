@@ -49,8 +49,8 @@
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnColSelect = new DevExpress.XtraEditors.SimpleButton();
             this.plCatalogType = new System.Windows.Forms.Panel();
-            this.cbDisplayContract = new System.Windows.Forms.CheckBox();
-            this.cbDisplayReporter = new System.Windows.Forms.CheckBox();
+            this.cbDisplayContract = new System.Windows.Forms.RadioButton();
+            this.cbDisplayReporter = new System.Windows.Forms.RadioButton();
             this.btnOpenPDF = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -259,7 +259,6 @@
             // 
             this.cbDisplayContract.AutoSize = true;
             this.cbDisplayContract.Checked = true;
-            this.cbDisplayContract.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Right;
             this.cbDisplayContract.Location = new System.Drawing.Point(8, 0);
             this.cbDisplayContract.Name = "cbDisplayContract";
@@ -273,8 +272,7 @@
             // cbDisplayReporter
             // 
             this.cbDisplayReporter.AutoSize = true;
-            this.cbDisplayReporter.Checked = true;
-            this.cbDisplayReporter.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDisplayReporter.Checked = true;            
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Right;
             this.cbDisplayReporter.Location = new System.Drawing.Point(80, 0);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
@@ -334,8 +332,8 @@
         private DevExpress.XtraEditors.SimpleButton btnColSelect;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private System.Windows.Forms.Panel plCatalogType;
-        private System.Windows.Forms.CheckBox cbDisplayContract;
-        private System.Windows.Forms.CheckBox cbDisplayReporter;
+        private System.Windows.Forms.RadioButton cbDisplayContract;
+        private System.Windows.Forms.RadioButton cbDisplayReporter;
         private DevExpress.XtraEditors.SimpleButton btnOpenPDF;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
     }
