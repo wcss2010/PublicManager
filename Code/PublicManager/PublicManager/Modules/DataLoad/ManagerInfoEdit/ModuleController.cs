@@ -22,7 +22,7 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit
 
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = true;
-            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3", "row4", "row5", "row6", "row23" });
+            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3", "row4", "row23" });
 
             srpSearch.IsDisplayReporterData = false;
         }
@@ -162,6 +162,15 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit
             else
             {
                 e.Appearance.Reset();
+            }
+
+            if (e.Column.FieldName == "row24")
+            {
+                object unitObj = dgvDetail.GetRowCellValue(e.RowHandle, "row24");
+                if (unitObj != null && unitObj.ToString() == "未匹配")
+                {
+                    e.Appearance.BackColor = Color.Red;
+                }
             }
         }
     }

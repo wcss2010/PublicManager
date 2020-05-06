@@ -22,7 +22,7 @@ namespace PublicManager.Modules.Lines.ProjectLines
 
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = true;
-            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3", "row4", "row5", "row6", "row23" });
+            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3", "row4", "row23" });
 
             srpSearch.IsDisplayReporterData = false;
         }

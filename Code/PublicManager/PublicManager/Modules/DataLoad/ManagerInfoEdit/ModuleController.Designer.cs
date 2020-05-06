@@ -259,6 +259,8 @@
             this.gridColumn24.Caption = "归一化单位";
             this.gridColumn24.FieldName = "row24";
             this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 4;
             // 
             // gridColumn12
             // 
@@ -279,8 +281,6 @@
             this.gridColumn14.Caption = "立项选题评议";
             this.gridColumn14.FieldName = "row14";
             this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 4;
             this.gridColumn14.Width = 99;
             // 
             // gridColumn15
@@ -288,8 +288,6 @@
             this.gridColumn15.Caption = "立项审核";
             this.gridColumn15.FieldName = "row15";
             this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 5;
             this.gridColumn15.Width = 74;
             // 
             // gridColumn16
@@ -297,8 +295,6 @@
             this.gridColumn16.Caption = "立项复议";
             this.gridColumn16.FieldName = "row16";
             this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 6;
             this.gridColumn16.Width = 71;
             // 
             // gridColumn17
@@ -306,8 +302,6 @@
             this.gridColumn17.Caption = "合同审查等级";
             this.gridColumn17.FieldName = "row17";
             this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 7;
             this.gridColumn17.Width = 99;
             // 
             // gridColumn18
@@ -315,8 +309,6 @@
             this.gridColumn18.Caption = "合同审核等级";
             this.gridColumn18.FieldName = "row18";
             this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 8;
             this.gridColumn18.Width = 100;
             // 
             // gridColumn19
@@ -324,8 +316,6 @@
             this.gridColumn19.Caption = "备注";
             this.gridColumn19.FieldName = "row19";
             this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 9;
             this.gridColumn19.Width = 105;
             // 
             // gridColumn20
