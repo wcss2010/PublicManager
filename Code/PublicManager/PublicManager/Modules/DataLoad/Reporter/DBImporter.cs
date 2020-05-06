@@ -239,12 +239,19 @@ namespace PublicManager.Modules.Reporter
 
         private string getNormalNameWithDutyUnit(string dutyUnit)
         {
-            object objValue = ConnectionManager.Context.table("NormalUnitDict").where("DutyUnit='" + dutyUnit + "'").select("DutyNormalUnit").getValue();
-            if (objValue != null)
+            try
             {
-                return objValue.ToString();
+                object objValue = ConnectionManager.Context.table("NormalUnitDict").where("DutyUnit='" + dutyUnit + "'").select("DutyNormalUnit").getValue();
+                if (objValue != null)
+                {
+                    return objValue.ToString();
+                }
+                else
+                {
+                    return "未匹配";
+                }
             }
-            else
+            catch (Exception ex)
             {
                 return "未匹配";
             }

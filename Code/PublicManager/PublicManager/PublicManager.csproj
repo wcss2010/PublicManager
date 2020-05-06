@@ -193,11 +193,23 @@
     <Compile Include="Modules\DataCheck\AllCheck\ModuleController2.Designer.cs">
       <DependentUpon>ModuleController2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckEditForm.Designer.cs">
+      <DependentUpon>CheckEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\DataLoad\ManagerInfoEdit\ModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Modules\DataLoad\ManagerInfoEdit\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DataLoad\NormalUnitDict\Forms\AddOrUpdateNormalUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DataLoad\NormalUnitDict\Forms\AddOrUpdateNormalUnit.Designer.cs">
+      <DependentUpon>AddOrUpdateNormalUnit.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\DataLoad\NormalUnitDict\ModuleController.cs">
       <SubType>UserControl</SubType>
@@ -438,8 +450,14 @@
     <EmbeddedResource Include="Modules\DataCheck\AddressCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckEditForm.resx">
+      <DependentUpon>CheckEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataLoad\ManagerInfoEdit\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DataLoad\NormalUnitDict\Forms\AddOrUpdateNormalUnit.resx">
+      <DependentUpon>AddOrUpdateNormalUnit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataLoad\NormalUnitDict\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
@@ -531,6 +549,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Templetes\teacherList.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templetes\UnitImporter.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="汇总数据表.xlsx" />
