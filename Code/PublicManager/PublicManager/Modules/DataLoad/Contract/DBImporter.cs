@@ -335,84 +335,93 @@ namespace PublicManager.Modules.Contract
                 }
                 #endregion
 
-                #region 写入课题节点经费
-                DataList dlSubjectMoneys = localContext.table("KeTiJieDianJingFeiBiao").orderBy("ZhuangTai,ModifyTime").select("*").getDataList();
-                foreach (DataItem di in dlSubjectMoneys.getRows())
+                try
                 {
-                    string oldSubjectId = di.get("KeTiBianHao") != null ? di.get("KeTiBianHao").ToString() : string.Empty;
-                    string oldNodeId = di.get("BoFuBianHao") != null ? di.get("BoFuBianHao").ToString() : string.Empty;
+                    //尝试写入1.5中新加的课题节点经费和单位节点经费表
 
-                    string moduleName = "current";
-                    string moduleValue = di.get("JingFei") != null ? di.get("JingFei").ToString() : string.Empty;
-
-                    string oldSubjectName = localContext.table("KeTiBiao").where("BianHao='" + oldSubjectId + "'").select("KeTiMingCheng").getValue<string>(string.Empty);
-                    string newSubjectID = ConnectionManager.Context.table("Subject").where("SubjectName='" + oldSubjectName + "'").select("SubjectID").getValue<string>(string.Empty);
-
-                    string oldNodeName = localContext.table("BoFuBiao").where("BianHao='" + oldNodeId + "'").select("BoFuTiaoJian").getValue<string>(string.Empty);
-                    string newNodeID = oldNodeId;
-                    if (nodeDict.ContainsKey(oldNodeName))
+                    #region 写入课题节点经费
+                    DataList dlSubjectMoneys = localContext.table("KeTiJieDianJingFeiBiao").orderBy("ZhuangTai,ModifyTime").select("*").getDataList();
+                    foreach (DataItem di in dlSubjectMoneys.getRows())
                     {
-                        newNodeID = nodeDict[oldNodeName];
+                        string oldSubjectId = di.get("KeTiBianHao") != null ? di.get("KeTiBianHao").ToString() : string.Empty;
+                        string oldNodeId = di.get("BoFuBianHao") != null ? di.get("BoFuBianHao").ToString() : string.Empty;
 
-                        SubjectMoneys obj = new SubjectMoneys();
-                        obj.SMID = Guid.NewGuid().ToString();
-                        obj.CatalogID = catalog.CatalogID;
-                        obj.ProjectID = catalog.CatalogID;
-                        obj.SubjectID = newSubjectID;
-                        obj.NodeID = newNodeID;
-                        obj.SMName = moduleName;
-                        obj.SMValue = moduleValue;
-                        obj.copyTo(ConnectionManager.Context.table("SubjectMoneys")).insert();
+                        string moduleName = "current";
+                        string moduleValue = di.get("JingFei") != null ? di.get("JingFei").ToString() : string.Empty;
 
-                        decimal nodeMoney = 0;
-                        try
+                        string oldSubjectName = localContext.table("KeTiBiao").where("BianHao='" + oldSubjectId + "'").select("KeTiMingCheng").getValue<string>(string.Empty);
+                        string newSubjectID = ConnectionManager.Context.table("Subject").where("SubjectName='" + oldSubjectName + "'").select("SubjectID").getValue<string>(string.Empty);
+
+                        string oldNodeName = localContext.table("BoFuBiao").where("BianHao='" + oldNodeId + "'").select("BoFuTiaoJian").getValue<string>(string.Empty);
+                        string newNodeID = oldNodeId;
+                        if (nodeDict.ContainsKey(oldNodeName))
                         {
-                            nodeMoney = decimal.Parse(obj.SMValue);
-                        }
-                        catch (Exception ex) { }
-                        if (subjectDict.ContainsKey(obj.SubjectID))
-                        {
-                            subjectDict[obj.SubjectID].TotalMoney += nodeMoney;
+                            newNodeID = nodeDict[oldNodeName];
+
+                            SubjectMoneys obj = new SubjectMoneys();
+                            obj.SMID = Guid.NewGuid().ToString();
+                            obj.CatalogID = catalog.CatalogID;
+                            obj.ProjectID = catalog.CatalogID;
+                            obj.SubjectID = newSubjectID;
+                            obj.NodeID = newNodeID;
+                            obj.SMName = moduleName;
+                            obj.SMValue = moduleValue;
+                            obj.copyTo(ConnectionManager.Context.table("SubjectMoneys")).insert();
+
+                            decimal nodeMoney = 0;
+                            try
+                            {
+                                nodeMoney = decimal.Parse(obj.SMValue);
+                            }
+                            catch (Exception ex) { }
+                            if (subjectDict.ContainsKey(obj.SubjectID))
+                            {
+                                subjectDict[obj.SubjectID].TotalMoney += nodeMoney;
+                            }
                         }
                     }
-                }
-                #endregion
+                    #endregion
 
-                #region 写入单位节点经费
-                DataList dlUnitMoneys = localContext.table("DanWeiJieDianJingFeiBiao").orderBy("ZhuangTai,ModifyTime").select("*").getDataList();
-                foreach (DataItem di in dlUnitMoneys.getRows())
-                {
-                    string unitName = di.get("DanWeiMingCheng") != null ? di.get("DanWeiMingCheng").ToString() : string.Empty;
-                    string oldNodeId = di.get("BoFuBianHao") != null ? di.get("BoFuBianHao").ToString() : string.Empty;
-
-                    string moduleName = "current";
-                    string moduleValue = di.get("JingFei") != null ? di.get("JingFei").ToString() : string.Empty;
-
-                    string oldNodeName = localContext.table("BoFuBiao").where("BianHao='" + oldNodeId + "'").select("BoFuTiaoJian").getValue<string>(string.Empty);
-                    string newNodeID = oldNodeId;
-                    if (nodeDict.ContainsKey(oldNodeName))
+                    #region 写入单位节点经费
+                    DataList dlUnitMoneys = localContext.table("DanWeiJieDianJingFeiBiao").orderBy("ZhuangTai,ModifyTime").select("*").getDataList();
+                    foreach (DataItem di in dlUnitMoneys.getRows())
                     {
-                        newNodeID = nodeDict[oldNodeName];
+                        string unitName = di.get("DanWeiMingCheng") != null ? di.get("DanWeiMingCheng").ToString() : string.Empty;
+                        string oldNodeId = di.get("BoFuBianHao") != null ? di.get("BoFuBianHao").ToString() : string.Empty;
 
-                        UnitMoneys obj = new UnitMoneys();
-                        obj.UMID = Guid.NewGuid().ToString();
-                        obj.CatalogID = catalog.CatalogID;
-                        obj.ProjectID = catalog.CatalogID;
-                        obj.NodeID = newNodeID;
-                        obj.UnitName = unitName;
-                        obj.UMName = moduleName;
-                        obj.UMValue = moduleValue;
-                        obj.copyTo(ConnectionManager.Context.table("UnitMoneys")).insert();
+                        string moduleName = "current";
+                        string moduleValue = di.get("JingFei") != null ? di.get("JingFei").ToString() : string.Empty;
+
+                        string oldNodeName = localContext.table("BoFuBiao").where("BianHao='" + oldNodeId + "'").select("BoFuTiaoJian").getValue<string>(string.Empty);
+                        string newNodeID = oldNodeId;
+                        if (nodeDict.ContainsKey(oldNodeName))
+                        {
+                            newNodeID = nodeDict[oldNodeName];
+
+                            UnitMoneys obj = new UnitMoneys();
+                            obj.UMID = Guid.NewGuid().ToString();
+                            obj.CatalogID = catalog.CatalogID;
+                            obj.ProjectID = catalog.CatalogID;
+                            obj.NodeID = newNodeID;
+                            obj.UnitName = unitName;
+                            obj.UMName = moduleName;
+                            obj.UMValue = moduleValue;
+                            obj.copyTo(ConnectionManager.Context.table("UnitMoneys")).insert();
+                        }
                     }
-                }
-                #endregion
+                    #endregion
 
-                #region 更新课题总经费
-                foreach (Subject subObj in subjectDict.Values)
-                {
-                    subObj.copyTo(ConnectionManager.Context.table("Subject").where("CatalogID = '" + subObj.CatalogID + "' and SubjectID = '" + subObj.SubjectID + "'")).update();
+                    #region 更新课题总经费
+                    foreach (Subject subObj in subjectDict.Values)
+                    {
+                        subObj.copyTo(ConnectionManager.Context.table("Subject").where("CatalogID = '" + subObj.CatalogID + "' and SubjectID = '" + subObj.SubjectID + "'")).update();
+                    }
+                    #endregion
                 }
-                #endregion
+                catch (Exception ex)
+                {
+                    System.Console.WriteLine(ex.ToString());
+                }
 
                 #region 处理归一化单位列
                 proj.DutyNormalUnit = getNormalNameWithDutyUnit(proj.DutyUnit);
