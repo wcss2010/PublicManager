@@ -218,18 +218,18 @@ namespace PublicManager.Modules.Reporter
                 proj.DutyNormalUnit = getNormalNameWithDutyUnit(proj.DutyUnit);
                 proj.copyTo(ConnectionManager.Context.table("Project")).where("ProjectID='" + proj.ProjectID + "'").update();
 
-                List<Subject> subjectList22 = ConnectionManager.Context.table("Subject").where("ProjectID='" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
+                List<Subject> subjectList22 = ConnectionManager.Context.table("Subject").where("ProjectID='" + proj.ProjectID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                 foreach (Subject sub22 in subjectList22)
                 {
                     sub22.DutyNormalUnit = getNormalNameWithDutyUnit(sub22.DutyUnit);
-                    sub22.copyTo(ConnectionManager.Context.table("Subject")).where("SubjectID='" + sub22.SubjectID + "'").update();
+                    sub22.copyTo(ConnectionManager.Context.table("Subject")).where("SubjectID='" + sub22.SubjectID + "' and ProjectID = '" + proj.ProjectID + "'").update();
                 }
 
                 List<Person> personList22 = ConnectionManager.Context.table("Person").where("ProjectID='" + proj.ProjectID + "'").select("*").getList<Person>(new Person());
                 foreach (Person per22 in personList22)
                 {
                     per22.WorkNormalUnit = getNormalNameWithDutyUnit(per22.WorkUnit);
-                    per22.copyTo(ConnectionManager.Context.table("Person")).where("PersonID='" + per22.PersonID + "'").update();
+                    per22.copyTo(ConnectionManager.Context.table("Person")).where("PersonID='" + per22.PersonID + "' and ProjectID = '" + proj.ProjectID + "'").update();
                 }
                 #endregion
 
