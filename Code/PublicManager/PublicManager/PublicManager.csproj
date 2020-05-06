@@ -193,6 +193,18 @@
     <Compile Include="Modules\DataCheck\AllCheck\ModuleController2.Designer.cs">
       <DependentUpon>ModuleController2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\ModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\ModuleController.Designer.cs">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DataLoad\NormalUnitDict\ModuleController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\DataLoad\NormalUnitDict\ModuleController.Designer.cs">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\MakeSQLWithSearchRule.cs" />
     <Compile Include="Modules\BaseDBImporter.cs" />
     <Compile Include="Modules\BaseModuleController.cs">
@@ -424,6 +436,12 @@
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataCheck\AddressCheck\ModuleController.resx">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DataLoad\ManagerInfoEdit\ModuleController.resx">
+      <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DataLoad\NormalUnitDict\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Lines\MoneyLines\MoneyLinePage.resx">
