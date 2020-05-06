@@ -201,23 +201,23 @@
     <Compile Include="Modules\BaseModuleController.Designer.cs">
       <DependentUpon>BaseModuleController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Contract\ContractModuleController.cs">
+    <Compile Include="Modules\DataLoad\Contract\ContractModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Contract\ContractModuleController.Designer.cs">
+    <Compile Include="Modules\DataLoad\Contract\ContractModuleController.Designer.cs">
       <DependentUpon>ContractModuleController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Contract\DBImporter.cs" />
-    <Compile Include="Modules\Contract\Forms\ImporterForm.cs">
+    <Compile Include="Modules\DataLoad\Contract\DBImporter.cs" />
+    <Compile Include="Modules\DataLoad\Contract\Forms\ImporterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Contract\Forms\ImporterForm.Designer.cs">
+    <Compile Include="Modules\DataLoad\Contract\Forms\ImporterForm.Designer.cs">
       <DependentUpon>ImporterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Contract\MainView.cs">
+    <Compile Include="Modules\DataLoad\Contract\MainView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Contract\MainView.Designer.cs">
+    <Compile Include="Modules\DataLoad\Contract\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\DataExport\CustomReporter\ModuleController.cs">
@@ -323,23 +323,23 @@
     <Compile Include="Modules\MainMenuController.Designer.cs">
       <DependentUpon>MainMenuController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Reporter\DBImporter.cs" />
-    <Compile Include="Modules\Reporter\Forms\ImporterForm.cs">
+    <Compile Include="Modules\DataLoad\Reporter\DBImporter.cs" />
+    <Compile Include="Modules\DataLoad\Reporter\Forms\ImporterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Reporter\Forms\ImporterForm.Designer.cs">
+    <Compile Include="Modules\DataLoad\Reporter\Forms\ImporterForm.Designer.cs">
       <DependentUpon>ImporterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Reporter\MainView.cs">
+    <Compile Include="Modules\DataLoad\Reporter\MainView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Reporter\MainView.Designer.cs">
+    <Compile Include="Modules\DataLoad\Reporter\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Reporter\ReporterModuleController.cs">
+    <Compile Include="Modules\DataLoad\Reporter\ReporterModuleController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Reporter\ReporterModuleController.Designer.cs">
+    <Compile Include="Modules\DataLoad\Reporter\ReporterModuleController.Designer.cs">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\SearchRulePanel.cs">
@@ -393,13 +393,13 @@
     <EmbeddedResource Include="Modules\BaseModuleController.resx">
       <DependentUpon>BaseModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Contract\ContractModuleController.resx">
+    <EmbeddedResource Include="Modules\DataLoad\Contract\ContractModuleController.resx">
       <DependentUpon>ContractModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Contract\Forms\ImporterForm.resx">
+    <EmbeddedResource Include="Modules\DataLoad\Contract\Forms\ImporterForm.resx">
       <DependentUpon>ImporterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Contract\MainView.resx">
+    <EmbeddedResource Include="Modules\DataLoad\Contract\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataCheck\AllCheck\ModuleController.resx">
@@ -456,13 +456,13 @@
     <EmbeddedResource Include="Modules\MainMenuController.resx">
       <DependentUpon>MainMenuController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Reporter\Forms\ImporterForm.resx">
+    <EmbeddedResource Include="Modules\DataLoad\Reporter\Forms\ImporterForm.resx">
       <DependentUpon>ImporterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Reporter\MainView.resx">
+    <EmbeddedResource Include="Modules\DataLoad\Reporter\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Reporter\ReporterModuleController.resx">
+    <EmbeddedResource Include="Modules\DataLoad\Reporter\ReporterModuleController.resx">
       <DependentUpon>ReporterModuleController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\SearchRulePanel.resx">
