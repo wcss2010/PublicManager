@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using PublicManager.DB.Entitys;
 using PublicManager.DB;
-using PublicManager.Modules.Lines.ProjectLines.Froms;
+using PublicManager.Modules.DataLoad.ManagerInfoEdit.Froms;
 
 namespace PublicManager.Modules.DataLoad.ManagerInfoEdit
 {

@@ -28,18 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new DevExpress.XtraEditors.LabelControl();
-            this.label2 = new DevExpress.XtraEditors.LabelControl();
-            this.label3 = new DevExpress.XtraEditors.LabelControl();
-            this.label4 = new DevExpress.XtraEditors.LabelControl();
-            this.label5 = new DevExpress.XtraEditors.LabelControl();
-            this.label6 = new DevExpress.XtraEditors.LabelControl();
-            this.cbxItemA = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbxItemB = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbxItemC = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbxItemD = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbxItemE = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.txtMemo = new DevExpress.XtraEditors.TextEdit();
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -60,159 +48,15 @@
             this.txtProjectRange = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtNormalUnit = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxItemA.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxItemB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxItemC.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxItemD.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxItemE.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMemo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaskNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProjectRange.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNormalUnit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label1.Location = new System.Drawing.Point(92, 189);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "立项选题评议:";
-            // 
-            // label2
-            // 
-            this.label2.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label2.Location = new System.Drawing.Point(124, 241);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "立项审核:";
-            // 
-            // label3
-            // 
-            this.label3.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label3.Location = new System.Drawing.Point(124, 290);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "立项复议:";
-            // 
-            // label4
-            // 
-            this.label4.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label4.Location = new System.Drawing.Point(92, 342);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "合同审查等级:";
-            // 
-            // label5
-            // 
-            this.label5.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label5.Location = new System.Drawing.Point(92, 392);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "合同审核等级:";
-            // 
-            // label6
-            // 
-            this.label6.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.label6.Location = new System.Drawing.Point(156, 441);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "备注:";
-            // 
-            // cbxItemA
-            // 
-            this.cbxItemA.Location = new System.Drawing.Point(202, 187);
-            this.cbxItemA.Name = "cbxItemA";
-            this.cbxItemA.Properties.Appearance.Font = new System.Drawing.Font("宋体", 11F);
-            this.cbxItemA.Properties.Appearance.Options.UseFont = true;
-            this.cbxItemA.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxItemA.Properties.Items.AddRange(new object[] {
-            "通过",
-            "不通过"});
-            this.cbxItemA.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbxItemA.Size = new System.Drawing.Size(243, 22);
-            this.cbxItemA.TabIndex = 0;
-            // 
-            // cbxItemB
-            // 
-            this.cbxItemB.Location = new System.Drawing.Point(202, 239);
-            this.cbxItemB.Name = "cbxItemB";
-            this.cbxItemB.Properties.Appearance.Font = new System.Drawing.Font("宋体", 11F);
-            this.cbxItemB.Properties.Appearance.Options.UseFont = true;
-            this.cbxItemB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxItemB.Properties.Items.AddRange(new object[] {
-            "通过",
-            "不通过"});
-            this.cbxItemB.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbxItemB.Size = new System.Drawing.Size(243, 22);
-            this.cbxItemB.TabIndex = 1;
-            // 
-            // cbxItemC
-            // 
-            this.cbxItemC.Location = new System.Drawing.Point(203, 288);
-            this.cbxItemC.Name = "cbxItemC";
-            this.cbxItemC.Properties.Appearance.Font = new System.Drawing.Font("宋体", 11F);
-            this.cbxItemC.Properties.Appearance.Options.UseFont = true;
-            this.cbxItemC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxItemC.Properties.Items.AddRange(new object[] {
-            "通过",
-            "不通过"});
-            this.cbxItemC.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbxItemC.Size = new System.Drawing.Size(243, 22);
-            this.cbxItemC.TabIndex = 1;
-            // 
-            // cbxItemD
-            // 
-            this.cbxItemD.Location = new System.Drawing.Point(202, 340);
-            this.cbxItemD.Name = "cbxItemD";
-            this.cbxItemD.Properties.Appearance.Font = new System.Drawing.Font("宋体", 11F);
-            this.cbxItemD.Properties.Appearance.Options.UseFont = true;
-            this.cbxItemD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxItemD.Properties.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
-            this.cbxItemD.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbxItemD.Size = new System.Drawing.Size(243, 22);
-            this.cbxItemD.TabIndex = 1;
-            // 
-            // cbxItemE
-            // 
-            this.cbxItemE.Location = new System.Drawing.Point(202, 390);
-            this.cbxItemE.Name = "cbxItemE";
-            this.cbxItemE.Properties.Appearance.Font = new System.Drawing.Font("宋体", 11F);
-            this.cbxItemE.Properties.Appearance.Options.UseFont = true;
-            this.cbxItemE.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxItemE.Properties.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
-            this.cbxItemE.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbxItemE.Size = new System.Drawing.Size(243, 22);
-            this.cbxItemE.TabIndex = 1;
-            // 
-            // txtMemo
-            // 
-            this.txtMemo.Location = new System.Drawing.Point(202, 440);
-            this.txtMemo.Name = "txtMemo";
-            this.txtMemo.Size = new System.Drawing.Size(584, 20);
-            this.txtMemo.TabIndex = 5;
-            // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(237, 485);
+            this.btnOK.Location = new System.Drawing.Point(237, 180);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(107, 42);
             this.btnOK.TabIndex = 6;
@@ -221,7 +65,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(510, 485);
+            this.btnCancel.Location = new System.Drawing.Point(510, 180);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 42);
             this.btnCancel.TabIndex = 7;
@@ -382,12 +226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 539);
-            this.Controls.Add(this.cbxItemE);
-            this.Controls.Add(this.cbxItemD);
-            this.Controls.Add(this.cbxItemC);
-            this.Controls.Add(this.cbxItemB);
-            this.Controls.Add(this.cbxItemA);
+            this.ClientSize = new System.Drawing.Size(804, 237);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtNormalUnit);
@@ -396,13 +235,6 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtTaskNumber);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.txtMemo);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.rcTopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -411,13 +243,7 @@
             this.Ribbon = this.rcTopBar;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "录入审核结果";
-            ((System.ComponentModel.ISupportInitialize)(this.cbxItemA.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxItemB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxItemC.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxItemD.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxItemE.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMemo.Properties)).EndInit();
+            this.Text = "编辑管理员信息";
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaskNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProjectRange.Properties)).EndInit();
@@ -429,20 +255,8 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.LabelControl label1;
-        private DevExpress.XtraEditors.LabelControl label2;
-        private DevExpress.XtraEditors.LabelControl label3;
-        private DevExpress.XtraEditors.LabelControl label4;
-        private DevExpress.XtraEditors.LabelControl label5;
-        private DevExpress.XtraEditors.LabelControl label6;
-        private DevExpress.XtraEditors.TextEdit txtMemo;
         private DevExpress.XtraEditors.SimpleButton btnOK;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
-        private DevExpress.XtraEditors.ComboBoxEdit cbxItemA;
-        private DevExpress.XtraEditors.ComboBoxEdit cbxItemB;
-        private DevExpress.XtraEditors.ComboBoxEdit cbxItemC;
-        private DevExpress.XtraEditors.ComboBoxEdit cbxItemD;
-        private DevExpress.XtraEditors.ComboBoxEdit cbxItemE;
         private DevExpress.XtraBars.Ribbon.RibbonControl rcTopBar;
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
