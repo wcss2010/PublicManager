@@ -35,6 +35,11 @@ namespace PublicManager.Modules.DataLoad.NormalUnitDict
             this.loadData();
         }
 
+        public override DevExpress.XtraBars.Ribbon.RibbonPage[] getTopBarPages()
+        {
+            return new DevExpress.XtraBars.Ribbon.RibbonPage[] { rpMaster };
+        }
+
         private void loadData()
         {
             DataTable dt = getTempDataTable("row", 5);
