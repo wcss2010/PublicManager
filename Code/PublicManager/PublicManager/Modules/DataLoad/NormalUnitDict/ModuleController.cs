@@ -154,7 +154,7 @@ namespace PublicManager.Modules.DataLoad.NormalUnitDict
                 try
                 {
                     DataSet ds = ExcelHelper.ExcelToDataSet(sfd.FileName);
-                    if (ds != null && ds.Tables.Count >= 2)
+                    if (ds != null && ds.Tables.Count >= 1)
                     {
                         #region 清除数据
                         ConnectionManager.Context.table("NormalUnitDict").delete();
