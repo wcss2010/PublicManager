@@ -102,7 +102,7 @@ namespace PublicManager.Modules.Contract.Forms
                 if (tn.Checked)
                 {
                     //读取目录名称中的项目编号
-                    string projectNumber = tn.Text;
+                    string projectNumber = tn.Text + "-00";
 
                     //判断是否需要替换
                     if (replaceDict.ContainsKey(projectNumber))
@@ -160,7 +160,7 @@ namespace PublicManager.Modules.Contract.Forms
                                 MainForm.writeLog("开始导入__" + createFileName);
 
                                 //导入数据库
-                                new DBImporter().addOrReplaceProject(createFileName, Path.Combine(Path.Combine(decompressDir, createFileName), "static.db"));
+                                new DBImporter().addOrReplaceProject(createFileName + "-00", Path.Combine(Path.Combine(decompressDir, createFileName), "static.db"));
 
                                 //报告进度
                                 pf.reportProgress(progressVal, createFileName + "_结束导入");
@@ -319,7 +319,7 @@ namespace PublicManager.Modules.Contract.Forms
 
                 foreach (TreeNode selected in checkedList)
                 {
-                    if (selected.Text == kvp.Key)
+                    if (selected.Text + "-00" == kvp.Key)
                     {
                         needRemove = false;
                         break;
@@ -347,7 +347,7 @@ namespace PublicManager.Modules.Contract.Forms
                 //判断这个项目是否被导入过
                 if (projectCount >= 1)
                 {
-                    replaceDict[catalogNumber] = true;
+                    replaceDict[catalogNumber + "-00"] = true;
                 }
             }
 
@@ -396,7 +396,7 @@ namespace PublicManager.Modules.Contract.Forms
 
                 foreach (TreeNode selected in checkedList)
                 {
-                    if (selected.Text == kvp.Key)
+                    if (selected.Text + "-00" == kvp.Key)
                     {
                         needRemove = false;
                         break;
@@ -424,7 +424,7 @@ namespace PublicManager.Modules.Contract.Forms
                 //判断这个项目是否被导入过
                 if (projectCount >= 1)
                 {
-                    replaceDict[catalogNumber] = true;
+                    replaceDict[catalogNumber + "-00"] = true;
                 }
             }
 

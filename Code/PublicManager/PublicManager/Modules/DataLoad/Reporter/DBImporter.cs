@@ -204,8 +204,12 @@ namespace PublicManager.Modules.Reporter
 
                     foreach (DataItem di in dlMoneys.getRows())
                     {
-                        //添加字典
-                        addDict(catalog, proj, "Money,Info", nameDicts[getValueWithDefault<string>(di.get("Name"), string.Empty)], getValueWithDefault<string>(di.get("Value"), string.Empty), string.Empty);
+                        try
+                        {
+                            //添加字典
+                            addDict(catalog, proj, "Money,Info", nameDicts[getValueWithDefault<string>(di.get("Name"), string.Empty)], getValueWithDefault<string>(di.get("Value"), string.Empty), string.Empty);
+                        }
+                        catch (Exception ex) { }
                     }
                 }
                 #endregion
