@@ -163,6 +163,7 @@
     <Compile Include="DB\Entitys\Dicts.cs" />
     <Compile Include="DB\Entitys\IEntity.cs" />
     <Compile Include="DB\Entitys\MoneySends.cs" />
+    <Compile Include="DB\Entitys\NormalUnitDict.cs" />
     <Compile Include="DB\Entitys\Person.cs" />
     <Compile Include="DB\Entitys\Project.cs" />
     <Compile Include="DB\Entitys\Subject.cs" />

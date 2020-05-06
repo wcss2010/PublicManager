@@ -29,6 +29,7 @@ namespace PublicManager.DB.Entitys
             query.set("JobInProject", JobInProject);
             query.set("IsProjectMaster", IsProjectMaster);
             query.set("WorkUnit", WorkUnit);
+            query.set("WorkNormalUnit", WorkNormalUnit);
             query.set("Telephone", Telephone);
             query.set("Mobilephone", Mobilephone);
 
@@ -49,12 +50,13 @@ namespace PublicManager.DB.Entitys
         public string JobInProject { get; set; }
         public string IsProjectMaster { get; set; }
         public string WorkUnit { get; set; }
+        public string WorkNormalUnit { get; set; }
         public string Telephone { get; set; }
         public string Mobilephone { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
-            PersonID = source("PersonID").value<string>(Guid.NewGuid().ToString());
+            PersonID = source("PersonID").value<string>("");
             CatalogID = source("CatalogID").value<string>("");
             ProjectID = source("ProjectID").value<string>("");
             SubjectID = source("SubjectID").value<string>("");
@@ -68,6 +70,7 @@ namespace PublicManager.DB.Entitys
             JobInProject = source("JobInProject").value<string>("");
             IsProjectMaster = source("IsProjectMaster").value<string>("");
             WorkUnit = source("WorkUnit").value<string>("");
+            WorkNormalUnit = source("WorkNormalUnit").value<string>("");
             Telephone = source("Telephone").value<string>("");
             Mobilephone = source("Mobilephone").value<string>("");
         }
