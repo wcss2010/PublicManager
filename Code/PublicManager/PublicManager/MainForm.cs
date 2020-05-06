@@ -58,6 +58,8 @@ namespace PublicManager
         {
             ModuleDict[nbcTestA.Caption + "xxxx" + "合同书数据包导入"] = new ContractModuleController();
             ModuleDict[nbcTestA.Caption + "xxxx" + "建议书数据包导入"] = new ReporterModuleController();
+            ModuleDict[nbcTestA.Caption + "xxxx" + "归一化单位字典"] = new Modules.DataLoad.NormalUnitDict.ModuleController();
+            ModuleDict[nbcTestA.Caption + "xxxx" + "管理员信息完善"] = new Modules.DataLoad.ManagerInfoEdit.ModuleController();
 
             ModuleDict[nbcTestH.Caption + "xxxx" + "报表导出"] = new PublicManager.Modules.DataExport.CustomReporter.ModuleController();
 

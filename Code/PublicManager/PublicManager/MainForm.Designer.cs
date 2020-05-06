@@ -252,6 +252,10 @@
             "建议书数据包导入"}, -1);
             this.tlTestA.AppendNode(new object[] {
             "合同书数据包导入"}, -1);
+            this.tlTestA.AppendNode(new object[] {
+            "归一化单位字典"}, -1);
+            this.tlTestA.AppendNode(new object[] {
+            "管理员信息完善"}, -1);
             this.tlTestA.EndUnboundLoad();
             this.tlTestA.OptionsBehavior.Editable = false;
             this.tlTestA.OptionsView.ShowColumns = false;
