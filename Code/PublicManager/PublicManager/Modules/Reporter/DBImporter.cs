@@ -87,20 +87,20 @@ namespace PublicManager.Modules.Reporter
                 #endregion
 
                 #region 判断是否需要隐藏建议书-proj.ProjectNumber
-                string contactNumber = proj.ProjectNumber;
+                //string contactNumber = proj.ProjectNumber;
 
-                Catalog catalogReporter = ConnectionManager.Context.table("Catalog").where("CatalogNumber like '%" + contactNumber + "%' and CatalogType = '合同书'").select("*").getItem<Catalog>(new Catalog());
-                if (!string.IsNullOrEmpty(catalogReporter.CatalogID))
-                {
-                    catalog.IsNeedHide = "1";
-                    catalog.copyTo(ConnectionManager.Context.table("Catalog").where("CatalogID='" + catalog.CatalogID + "'")).update();
+                //Catalog catalogReporter = ConnectionManager.Context.table("Catalog").where("CatalogNumber like '%" + contactNumber + "%' and CatalogType = '合同书'").select("*").getItem<Catalog>(new Catalog());
+                //if (!string.IsNullOrEmpty(catalogReporter.CatalogID))
+                //{
+                //    catalog.IsNeedHide = "1";
+                //    catalog.copyTo(ConnectionManager.Context.table("Catalog").where("CatalogID='" + catalog.CatalogID + "'")).update();
                                         
-                    if (!string.IsNullOrEmpty(proj.ProjectID))
-                    {
-                        proj.IsNeedHide = "1";
-                        proj.copyTo(ConnectionManager.Context.table("Project").where("CatalogID='" + catalog.CatalogID + "'")).update();
-                    }
-                }
+                //    if (!string.IsNullOrEmpty(proj.ProjectID))
+                //    {
+                //        proj.IsNeedHide = "1";
+                //        proj.copyTo(ConnectionManager.Context.table("Project").where("CatalogID='" + catalog.CatalogID + "'")).update();
+                //    }
+                //}
                 #endregion
 
                 #region 导入人员信息
@@ -210,11 +210,43 @@ namespace PublicManager.Modules.Reporter
                 }
                 #endregion
 
+                #region 处理归一化单位列
+                proj.DutyNormalUnit = getNormalNameWithDutyUnit(proj.DutyUnit);
+                proj.copyTo(ConnectionManager.Context.table("Project")).where("ProjectID='" + proj.ProjectID + "'").update();
+
+                List<Subject> subjectList22 = ConnectionManager.Context.table("Subject").where("ProjectID='" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
+                foreach (Subject sub22 in subjectList22)
+                {
+                    sub22.DutyNormalUnit = getNormalNameWithDutyUnit(sub22.DutyUnit);
+                    sub22.copyTo(ConnectionManager.Context.table("Subject")).where("SubjectID='" + sub22.SubjectID + "'").update();
+                }
+
+                List<Person> personList22 = ConnectionManager.Context.table("Person").where("ProjectID='" + proj.ProjectID + "'").select("*").getList<Person>(new Person());
+                foreach (Person per22 in personList22)
+                {
+                    per22.WorkNormalUnit = getNormalNameWithDutyUnit(per22.WorkUnit);
+                    per22.copyTo(ConnectionManager.Context.table("Person")).where("PersonID='" + per22.PersonID + "'").update();
+                }
+                #endregion
+
                 return catalog.CatalogID;
             }
             else
             {
                 return string.Empty;
+            }
+        }
+
+        private string getNormalNameWithDutyUnit(string dutyUnit)
+        {
+            object objValue = ConnectionManager.Context.table("NormalUnitDict").where("DutyUnit='" + dutyUnit + "'").select("DutyNormalUnit").getValue();
+            if (objValue != null)
+            {
+                return objValue.ToString();
+            }
+            else
+            {
+                return "未匹配";
             }
         }
     }

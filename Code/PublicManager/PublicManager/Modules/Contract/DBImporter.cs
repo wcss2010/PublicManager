@@ -175,30 +175,30 @@ namespace PublicManager.Modules.Contract
                 #endregion
 
                 #region 判断是否需要隐藏建议书-proj.ProjectNumber
-                string contactNumber = string.Empty;
+                //string contactNumber = string.Empty;
 
-                if (proj.ProjectNumber.EndsWith("-00"))
-                {
-                    contactNumber = proj.ProjectNumber.Replace("-00", string.Empty);
-                }
-                else
-                {
-                    contactNumber = proj.ProjectNumber;
-                }
+                //if (proj.ProjectNumber.EndsWith("-00"))
+                //{
+                //    contactNumber = proj.ProjectNumber.Replace("-00", string.Empty);
+                //}
+                //else
+                //{
+                //    contactNumber = proj.ProjectNumber;
+                //}
 
-                Catalog catalogReporter = ConnectionManager.Context.table("Catalog").where("CatalogNumber like '%" + contactNumber + "%' and CatalogType = '建议书'").select("*").getItem<Catalog>(new Catalog());
-                if (!string.IsNullOrEmpty(catalogReporter.CatalogID))
-                {
-                    catalogReporter.IsNeedHide = "1";
-                    catalogReporter.copyTo(ConnectionManager.Context.table("Catalog").where("CatalogNumber like '%" + contactNumber + "%' and CatalogType = '建议书'")).update();
+                //Catalog catalogReporter = ConnectionManager.Context.table("Catalog").where("CatalogNumber like '%" + contactNumber + "%' and CatalogType = '建议书'").select("*").getItem<Catalog>(new Catalog());
+                //if (!string.IsNullOrEmpty(catalogReporter.CatalogID))
+                //{
+                //    catalogReporter.IsNeedHide = "1";
+                //    catalogReporter.copyTo(ConnectionManager.Context.table("Catalog").where("CatalogNumber like '%" + contactNumber + "%' and CatalogType = '建议书'")).update();
 
-                    Project projReporter = ConnectionManager.Context.table("Project").where("CatalogID='" + catalogReporter.CatalogID + "'").select("*").getItem<Project>(new Project());
-                    if (!string.IsNullOrEmpty(projReporter.ProjectID))
-                    {
-                        projReporter.IsNeedHide = "1";
-                        projReporter.copyTo(ConnectionManager.Context.table("Project").where("CatalogID='" + catalogReporter.CatalogID + "'")).update();
-                    }
-                }
+                //    Project projReporter = ConnectionManager.Context.table("Project").where("CatalogID='" + catalogReporter.CatalogID + "'").select("*").getItem<Project>(new Project());
+                //    if (!string.IsNullOrEmpty(projReporter.ProjectID))
+                //    {
+                //        projReporter.IsNeedHide = "1";
+                //        projReporter.copyTo(ConnectionManager.Context.table("Project").where("CatalogID='" + catalogReporter.CatalogID + "'")).update();
+                //    }
+                //}
                 #endregion
 
                 #region 更新项目编号字段
@@ -413,6 +413,26 @@ namespace PublicManager.Modules.Contract
                     subObj.copyTo(ConnectionManager.Context.table("Subject").where("CatalogID = '" + subObj.CatalogID + "' and SubjectID = '" + subObj.SubjectID + "'")).update();
                 }
                 #endregion
+
+                #region 处理归一化单位列
+                proj.DutyNormalUnit = getNormalNameWithDutyUnit(proj.DutyUnit);
+                proj.copyTo(ConnectionManager.Context.table("Project")).where("ProjectID='" + proj.ProjectID + "'").update();
+
+                List<Subject> subjectList22 = ConnectionManager.Context.table("Subject").where("ProjectID='" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
+                foreach (Subject sub22 in subjectList22)
+                {
+                    sub22.DutyNormalUnit = getNormalNameWithDutyUnit(sub22.DutyUnit);
+                    sub22.copyTo(ConnectionManager.Context.table("Subject")).where("SubjectID='" + sub22.SubjectID + "'").update();
+                }
+
+                List<Person> personList22 = ConnectionManager.Context.table("Person").where("ProjectID='" + proj.ProjectID + "'").select("*").getList<Person>(new Person());
+                foreach (Person per22 in personList22)
+                {
+                    per22.WorkNormalUnit = getNormalNameWithDutyUnit(per22.WorkUnit);
+                    per22.copyTo(ConnectionManager.Context.table("Person")).where("PersonID='" + per22.PersonID + "'").update();
+                }
+                #endregion
+
                 return catalog.CatalogID;
             }
             else
@@ -440,6 +460,19 @@ namespace PublicManager.Modules.Contract
                 }
             }
             return result;
+        }
+
+        private string getNormalNameWithDutyUnit(string dutyUnit)
+        {
+            object objValue = ConnectionManager.Context.table("NormalUnitDict").where("DutyUnit='" + dutyUnit + "'").select("DutyNormalUnit").getValue();
+            if (objValue != null)
+            {
+                return objValue.ToString();
+            }
+            else
+            {
+                return "未匹配";
+            }
         }
     }
 }
