@@ -94,14 +94,17 @@ namespace PublicManager.Modules
                             case "人员名称":
                                 sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where PersonName like '%" + srp.Key1EditControl.Text + "%')");
                                 getDataIdList("Person", "PersonName like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
+                                getDataIdList("Subject", "SubjectID in (select SubjectID from Person where " + ("PersonName like '%" + srp.Key1EditControl.Text + "%'") + ")", "SubjectID");
                                 break;
                             case "人员专业":
                                 sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where PersonSpecialty like '%" + srp.Key1EditControl.Text + "%')");
                                 getDataIdList("Person", "PersonSpecialty like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
+                                getDataIdList("Subject", "SubjectID in (select SubjectID from Person where " + ("PersonSpecialty like '%" + srp.Key1EditControl.Text + "%'") + ")", "SubjectID");
                                 break;
                             case "人员任务分工":
                                 sb.Append(" or ").Append("ProjectID in (select ProjectID from Person where TaskContent like '%" + srp.Key1EditControl.Text + "%')");
                                 getDataIdList("Person", "TaskContent like '%" + srp.Key1EditControl.Text + "%'", "PersonID");
+                                getDataIdList("Subject", "SubjectID in (select SubjectID from Person where " + ("TaskContent like '%" + srp.Key1EditControl.Text + "%'") + ")", "SubjectID");
                                 break;
                         }
                     }
