@@ -70,7 +70,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1414, 54);
+            this.panel1.Size = new System.Drawing.Size(1414, 75);
             this.panel1.TabIndex = 2;
             // 
             // srpSearch
@@ -78,7 +78,7 @@
             this.srpSearch.CustomButtonsNames = "结果内容搜索;管理员信息完善;列选择器";
             this.srpSearch.DisplayGridControl = this.gcGrid;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.srpSearch.IsDisplayCatalogTypePanel = false;
+            this.srpSearch.IsDisplayCatalogTypePanel = true;
             this.srpSearch.IsDisplayCheckListPanel = false;
             this.srpSearch.IsDisplayContractData = false;
             this.srpSearch.IsDisplayCustomButtonPanel = true;
@@ -98,7 +98,7 @@
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
             this.srpSearch.RightButtonPanelWidth = 450;
-            this.srpSearch.Size = new System.Drawing.Size(1414, 54);
+            this.srpSearch.Size = new System.Drawing.Size(1414, 75);
             this.srpSearch.TabIndex = 10;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
@@ -108,10 +108,10 @@
             // gcGrid
             // 
             this.gcGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcGrid.Location = new System.Drawing.Point(3, 72);
+            this.gcGrid.Location = new System.Drawing.Point(3, 93);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
-            this.gcGrid.Size = new System.Drawing.Size(1414, 604);
+            this.gcGrid.Size = new System.Drawing.Size(1414, 583);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
