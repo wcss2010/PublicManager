@@ -20,6 +20,11 @@ namespace PublicManager.Modules.DataLoad.NormalUnitDict.Forms
             InitializeComponent();
 
             this.DataObj = nuddd;
+
+            if (this.DataObj == null)
+            {
+                this.DataObj = new DB.Entitys.NormalUnitDict();
+            }
             txtUnitName.Text = DataObj.DutyUnit;
             txtNormalUnitName.Text = DataObj.DutyNormalUnit;
         }
@@ -33,7 +38,16 @@ namespace PublicManager.Modules.DataLoad.NormalUnitDict.Forms
         {
             DataObj.DutyUnit = txtUnitName.Text;
             DataObj.DutyNormalUnit = txtNormalUnitName.Text;
-            DataObj.copyTo(ConnectionManager.Context.table("NormalUnitDict")).where("DID='" + DataObj.DID + "'").update();
+
+            if (string.IsNullOrEmpty(this.DataObj.DID))
+            {
+                DataObj.DID = Guid.NewGuid().ToString();
+                DataObj.copyTo(ConnectionManager.Context.table("NormalUnitDict")).insert();
+            }
+            else
+            {
+                DataObj.copyTo(ConnectionManager.Context.table("NormalUnitDict")).where("DID='" + DataObj.DID + "'").update();
+            }
 
             DialogResult = System.Windows.Forms.DialogResult.OK;
         }

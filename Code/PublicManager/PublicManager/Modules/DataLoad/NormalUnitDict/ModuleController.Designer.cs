@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.dgvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,6 +45,7 @@
             this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnDownloadExcel = new DevExpress.XtraBars.BarButtonItem();
             this.btnLoadExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddNormalUnit = new DevExpress.XtraBars.BarButtonItem();
             this.rpMaster = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpbLoad = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
@@ -80,6 +82,7 @@
             // dgvDetail
             // 
             this.dgvDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn6,
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -93,14 +96,23 @@
             this.dgvDetail.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.dgvDetail_RowCellClick);
             this.dgvDetail.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.dgvDetail_RowCellStyle);
             // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "序号";
+            this.gridColumn6.FieldName = "row6";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 0;
+            this.gridColumn6.Width = 51;
+            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "单位法人名称";
             this.gridColumn1.FieldName = "row1";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 353;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 340;
             // 
             // gridColumn2
             // 
@@ -108,8 +120,8 @@
             this.gridColumn2.FieldName = "row2";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 944;
+            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 908;
             // 
             // gridColumn3
             // 
@@ -124,10 +136,11 @@
             this.gridColumn4.ColumnEdit = this.repositoryItemButtonEdit1;
             this.gridColumn4.FieldName = "row4";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.OptionsColumn.ShowInCustomizationForm = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
-            this.gridColumn4.Width = 49;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 46;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -142,10 +155,11 @@
             this.gridColumn5.ColumnEdit = this.repositoryItemButtonEdit2;
             this.gridColumn5.FieldName = "row5";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.OptionsColumn.ShowInCustomizationForm = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 50;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 51;
             // 
             // repositoryItemButtonEdit2
             // 
@@ -172,9 +186,10 @@
             this.rcTopBar.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.rcTopBar.ExpandCollapseItem,
             this.btnDownloadExcel,
-            this.btnLoadExcel});
+            this.btnLoadExcel,
+            this.btnAddNormalUnit});
             this.rcTopBar.Location = new System.Drawing.Point(3, 18);
-            this.rcTopBar.MaxItemId = 11;
+            this.rcTopBar.MaxItemId = 12;
             this.rcTopBar.Name = "rcTopBar";
             this.rcTopBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpMaster});
@@ -197,6 +212,14 @@
             this.btnLoadExcel.Name = "btnLoadExcel";
             this.btnLoadExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoadExcel_ItemClick);
             // 
+            // btnAddNormalUnit
+            // 
+            this.btnAddNormalUnit.Caption = "新增";
+            this.btnAddNormalUnit.Id = 11;
+            this.btnAddNormalUnit.LargeGlyph = global::PublicManager.Properties.Resources.BO_Task_Large;
+            this.btnAddNormalUnit.Name = "btnAddNormalUnit";
+            this.btnAddNormalUnit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddNormalUnit_ItemClick);
+            // 
             // rpMaster
             // 
             this.rpMaster.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -208,6 +231,7 @@
             // 
             this.rpbLoad.ItemLinks.Add(this.btnDownloadExcel);
             this.rpbLoad.ItemLinks.Add(this.btnLoadExcel);
+            this.rpbLoad.ItemLinks.Add(this.btnAddNormalUnit);
             this.rpbLoad.Name = "rpbLoad";
             this.rpbLoad.Text = "其它";
             // 
@@ -247,5 +271,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraBars.BarButtonItem btnAddNormalUnit;
     }
 }

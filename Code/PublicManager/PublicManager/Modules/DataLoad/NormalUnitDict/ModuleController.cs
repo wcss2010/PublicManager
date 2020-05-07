@@ -42,16 +42,20 @@ namespace PublicManager.Modules.DataLoad.NormalUnitDict
 
         private void loadData()
         {
-            DataTable dt = getTempDataTable("row", 5);
+            DataTable dt = getTempDataTable("row", 6);
             List<DB.Entitys.NormalUnitDict> normalList = ConnectionManager.Context.table("NormalUnitDict").select("*").getList<DB.Entitys.NormalUnitDict>(new DB.Entitys.NormalUnitDict());
+            int indexxx = 0;
             foreach (DB.Entitys.NormalUnitDict nud in normalList)
             {
+                indexxx++;
+
                 List<object> cells = new List<object>();
                 cells.Add(nud.DutyUnit);
                 cells.Add(nud.DutyNormalUnit);
                 cells.Add(nud.DID);
                 cells.Add("删除");
                 cells.Add("编辑");
+                cells.Add(indexxx.ToString());
 
                 dt.Rows.Add(cells.ToArray());
             }
@@ -191,6 +195,15 @@ namespace PublicManager.Modules.DataLoad.NormalUnitDict
                 {
                     MessageBox.Show("对不起，Excel导入失败！Ex:" + ex.ToString());
                 }
+            }
+        }
+
+        private void btnAddNormalUnit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddOrUpdateNormalUnit aunu = new AddOrUpdateNormalUnit(null);
+            if (aunu.ShowDialog() == DialogResult.OK)
+            {
+                loadData();
             }
         }
     }
