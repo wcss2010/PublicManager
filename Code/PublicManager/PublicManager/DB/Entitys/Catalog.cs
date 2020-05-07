@@ -23,6 +23,7 @@ namespace PublicManager.DB.Entitys
             query.set("IsNeedHide", IsNeedHide);
             query.set("CatalogZipFile", CatalogZipFile);
             query.set("CatalogDecompressDir", CatalogDecompressDir);
+            query.set("IsCheckUnitComplete", IsCheckUnitComplete);
 
             return query;
         }
@@ -35,6 +36,7 @@ namespace PublicManager.DB.Entitys
         public string IsNeedHide { get; set; }
         public string CatalogZipFile { get; set; }
         public string CatalogDecompressDir { get; set; }
+        public string IsCheckUnitComplete { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
@@ -46,6 +48,7 @@ namespace PublicManager.DB.Entitys
             IsNeedHide = source("IsNeedHide").value<string>("");
             CatalogZipFile = source("CatalogZipFile").value<string>("");
             CatalogDecompressDir = source("CatalogDecompressDir").value<string>("");
+            IsCheckUnitComplete = source("IsCheckUnitComplete").value<string>("");
         }
 
         public override Noear.Weed.IBinder clone()

@@ -37,6 +37,7 @@ namespace PublicManager.DB.Entitys
             query.set("ContactCheckLevelB", ContactCheckLevelB);
             query.set("Memo", Memo);
             query.set("IsNeedHide", IsNeedHide);
+            query.set("IsCheckUnitComplete", IsCheckUnitComplete);
 
             return query;
         }
@@ -63,6 +64,7 @@ namespace PublicManager.DB.Entitys
         public string ContactCheckLevelB { get; set; }
         public string Memo { get; set; }
         public string IsNeedHide { get; set; }
+        public string IsCheckUnitComplete { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
@@ -88,6 +90,7 @@ namespace PublicManager.DB.Entitys
             ContactCheckLevelB = source("ContactCheckLevelB").value<string>("");
             Memo = source("Memo").value<string>("");
             IsNeedHide = source("IsNeedHide").value<string>("");
+            IsCheckUnitComplete = source("IsCheckUnitComplete").value<string>("");
         }
 
         public override Noear.Weed.IBinder clone()
