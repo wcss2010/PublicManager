@@ -389,7 +389,7 @@
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = true;
             this.srpSearch.IsDisplayCheckListPanel = true;
-            this.srpSearch.IsDisplayContractData = true;
+            this.srpSearch.IsDisplayContractData = false;
             this.srpSearch.IsDisplayCustomButtonPanel = true;
             this.srpSearch.IsDisplayKey1Panel = true;
             this.srpSearch.IsDisplayKey2Panel = true;
@@ -397,7 +397,7 @@
             this.srpSearch.IsDisplayKey3Panel = false;
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = true;
-            this.srpSearch.IsHightlightHintWithSearchAfter = true;
+            this.srpSearch.IsHightlightHintWithSearchAfter = false;
             this.srpSearch.Key1FieldString = "课题负责单位;课题所属地点;项目牵头单位;项目所属地点;项目归一化单位";
             this.srpSearch.Key1PanelWidth = 560;
             this.srpSearch.Key2PanelWidth = 312;

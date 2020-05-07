@@ -542,6 +542,7 @@
             this.srpSearch.IsDisplayKey3Panel = false;
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = false;
+            this.srpSearch.IsHightlightHintWithSearchAfter = false;
             this.srpSearch.Key1FieldString = "项目名称;计划批次";
             this.srpSearch.Key1PanelWidth = 1422;
             this.srpSearch.Key2PanelWidth = 187;

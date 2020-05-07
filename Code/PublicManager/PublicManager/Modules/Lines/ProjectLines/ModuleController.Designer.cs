@@ -80,7 +80,7 @@
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = false;
             this.srpSearch.IsDisplayCheckListPanel = false;
-            this.srpSearch.IsDisplayContractData = true;
+            this.srpSearch.IsDisplayContractData = false;
             this.srpSearch.IsDisplayCustomButtonPanel = true;
             this.srpSearch.IsDisplayKey1Panel = true;
             this.srpSearch.IsDisplayKey2Panel = false;
@@ -88,6 +88,7 @@
             this.srpSearch.IsDisplayKey3Panel = false;
             this.srpSearch.IsDisplayKey4Panel = false;
             this.srpSearch.IsDisplayReporterData = true;
+            this.srpSearch.IsHightlightHintWithSearchAfter = false;
             this.srpSearch.Key1FieldString = "项目名称";
             this.srpSearch.Key1PanelWidth = 960;
             this.srpSearch.Key2PanelWidth = 296;
