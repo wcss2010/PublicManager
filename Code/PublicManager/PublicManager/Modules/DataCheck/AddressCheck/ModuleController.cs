@@ -100,7 +100,7 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
                     List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                     foreach (Subject sub in subList)
                     {
-                        if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("课题")) && MakeSQLWithSearchRule.isDisplayData(typeof(Subject).Name, sub.SubjectID)) || srpSearch.isUsingRule("项目") == true)
+                        if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("课题")) && MakeSQLWithSearchRule.isDisplayData(typeof(Subject).Name, sub.SubjectID)) || proj.DutyUnit.Contains(srpSearch.Key1EditControl.Text) || proj.DutyNormalUnit.Contains(srpSearch.Key1EditControl.Text) || proj.DutyUnitAddress.Contains(srpSearch.Key1EditControl.Text))
                         {
                             if (srpSearch.Key2EditControl.Text == "全部" || sub.DutyUnitOrg == srpSearch.Key2EditControl.Text)
                             {

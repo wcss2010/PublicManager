@@ -138,7 +138,7 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
                     List<Subject> subList = ConnectionManager.Context.table("Subject").where("CatalogID = '" + proj.CatalogID + "' and ProjectID = '" + proj.ProjectID + "'").select("*").getList<Subject>(new Subject());
                     foreach (Subject sub in subList)
                     {
-                        if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("课题")) && MakeSQLWithSearchRule.isDisplayData(typeof(Subject).Name, sub.SubjectID)) || srpSearch.isUsingRule("项目") == true)
+                        if (string.IsNullOrEmpty(srpSearch.Key1EditControl.Text) || ((srpSearch.getUsingRuleCount() == 0 || srpSearch.isUsingRule("课题")) && MakeSQLWithSearchRule.isDisplayData(typeof(Subject).Name, sub.SubjectID)) || proj.ProjectName.Contains(srpSearch.Key1EditControl.Text) || proj.Keywords.Contains(srpSearch.Key1EditControl.Text))
                         {
                             cells = new List<object>();
                             cells.Add(sub.SubjectName);
