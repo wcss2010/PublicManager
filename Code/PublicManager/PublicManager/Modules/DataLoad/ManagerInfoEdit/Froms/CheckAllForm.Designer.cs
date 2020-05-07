@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.rcTopBar = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
@@ -49,28 +47,23 @@
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
             this.gvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbSubjectItems = new System.Windows.Forms.RadioButton();
+            this.rbPersonItems = new System.Windows.Forms.RadioButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.txtProjectNormalUnit = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProjectNormalUnit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // rcTopBar
@@ -177,6 +170,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.txtProjectNormalUnit);
+            this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
@@ -214,6 +209,7 @@
             this.btnCancel.Size = new System.Drawing.Size(107, 42);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "取消";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -222,6 +218,7 @@
             this.btnOK.Size = new System.Drawing.Size(107, 42);
             this.btnOK.TabIndex = 8;
             this.btnOK.Text = "确定";
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // gcGrid
             // 
@@ -236,129 +233,64 @@
             // 
             // gvDetail
             // 
-            this.gvDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8});
             this.gvDetail.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gvDetail.GridControl = this.gcGrid;
             this.gvDetail.Name = "gvDetail";
             this.gvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            this.gvDetail.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvDetail_RowCellStyle);
             // 
-            // gridColumn1
+            // rbSubjectItems
             // 
-            this.gridColumn1.Caption = "序号";
-            this.gridColumn1.FieldName = "row1";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 42;
+            this.rbSubjectItems.AutoSize = true;
+            this.rbSubjectItems.Checked = true;
+            this.rbSubjectItems.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbSubjectItems.Location = new System.Drawing.Point(2, 7);
+            this.rbSubjectItems.Name = "rbSubjectItems";
+            this.rbSubjectItems.Size = new System.Drawing.Size(97, 23);
+            this.rbSubjectItems.TabIndex = 2;
+            this.rbSubjectItems.TabStop = true;
+            this.rbSubjectItems.Text = "显示课题数据";
+            this.rbSubjectItems.UseVisualStyleBackColor = true;
+            this.rbSubjectItems.CheckedChanged += new System.EventHandler(this.rbSubjectItems_CheckedChanged_1);
             // 
-            // gridColumn2
+            // rbPersonItems
             // 
-            this.gridColumn2.Caption = "版本";
-            this.gridColumn2.FieldName = "row2";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 43;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "项目编号";
-            this.gridColumn3.FieldName = "row3";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 93;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "项目名称";
-            this.gridColumn4.FieldName = "row4";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 531;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "申请人";
-            this.gridColumn5.FieldName = "row5";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 60;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "申请人单位";
-            this.gridColumn6.FieldName = "row6";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 186;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "ProjectId";
-            this.gridColumn7.FieldName = "row7";
-            this.gridColumn7.Name = "gridColumn7";
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "...";
-            repositoryItemButtonEdit1.AutoHeight = false;
-            repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "删除", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
-            repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.gridColumn8.ColumnEdit = repositoryItemButtonEdit1;
-            this.gridColumn8.FieldName = "row8";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
-            this.gridColumn8.Width = 41;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radioButton1.Location = new System.Drawing.Point(2, 7);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(96, 23);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radioButton2.Location = new System.Drawing.Point(98, 7);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(96, 23);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbPersonItems.AutoSize = true;
+            this.rbPersonItems.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbPersonItems.Location = new System.Drawing.Point(99, 7);
+            this.rbPersonItems.Name = "rbPersonItems";
+            this.rbPersonItems.Size = new System.Drawing.Size(97, 23);
+            this.rbPersonItems.TabIndex = 3;
+            this.rbPersonItems.Text = "显示人员数据";
+            this.rbPersonItems.UseVisualStyleBackColor = true;
+            this.rbPersonItems.CheckedChanged += new System.EventHandler(this.rbSubjectItems_CheckedChanged_1);
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.radioButton2);
-            this.panelControl1.Controls.Add(this.radioButton1);
+            this.panelControl1.Controls.Add(this.rbPersonItems);
+            this.panelControl1.Controls.Add(this.rbSubjectItems);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(7, 64);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panelControl1.Size = new System.Drawing.Size(1015, 32);
             this.panelControl1.TabIndex = 3;
+            // 
+            // txtProjectNormalUnit
+            // 
+            this.txtProjectNormalUnit.Location = new System.Drawing.Point(106, 28);
+            this.txtProjectNormalUnit.Name = "txtProjectNormalUnit";
+            this.txtProjectNormalUnit.Size = new System.Drawing.Size(895, 20);
+            this.txtProjectNormalUnit.TabIndex = 7;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("宋体", 12F);
+            this.labelControl1.Location = new System.Drawing.Point(12, 29);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(88, 16);
+            this.labelControl1.TabIndex = 6;
+            this.labelControl1.Text = "归一化单位:";
             // 
             // CheckAllForm
             // 
@@ -376,16 +308,18 @@
             this.Text = "修改未匹配项";
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProjectNormalUnit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,16 +346,10 @@
         private DevExpress.XtraEditors.SimpleButton btnOK;
         private DevExpress.XtraGrid.GridControl gcGrid;
         private DevExpress.XtraGrid.Views.Grid.GridView gvDetail;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbPersonItems;
+        private System.Windows.Forms.RadioButton rbSubjectItems;
+        private DevExpress.XtraEditors.TextEdit txtProjectNormalUnit;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
