@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
             this.srpSearch = new PublicManager.Modules.SearchRulePanel();
             this.gcGrid = new DevExpress.XtraGrid.GridControl();
@@ -56,10 +57,14 @@
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,6 +116,8 @@
             this.gcGrid.Location = new System.Drawing.Point(3, 93);
             this.gcGrid.MainView = this.dgvDetail;
             this.gcGrid.Name = "gcGrid";
+            this.gcGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEdit1});
             this.gcGrid.Size = new System.Drawing.Size(1414, 583);
             this.gcGrid.TabIndex = 4;
             this.gcGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -142,12 +149,15 @@
             this.gridColumn17,
             this.gridColumn18,
             this.gridColumn19,
-            this.gridColumn20});
+            this.gridColumn20,
+            this.gridColumn25,
+            this.gridColumn26});
             this.dgvDetail.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.dgvDetail.GridControl = this.gcGrid;
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.dgvDetail.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            this.dgvDetail.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.dgvDetail_RowCellClick);
             this.dgvDetail.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.dgvDetail_RowCellStyle);
             // 
             // gridColumn1
@@ -171,7 +181,7 @@
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.Visible = true;
             this.gridColumn23.VisibleIndex = 0;
-            this.gridColumn23.Width = 274;
+            this.gridColumn23.Width = 356;
             // 
             // gridColumn3
             // 
@@ -187,7 +197,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 1;
-            this.gridColumn4.Width = 165;
+            this.gridColumn4.Width = 214;
             // 
             // gridColumn5
             // 
@@ -196,7 +206,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
-            this.gridColumn5.Width = 156;
+            this.gridColumn5.Width = 202;
             // 
             // gridColumn6
             // 
@@ -205,7 +215,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
-            this.gridColumn6.Width = 253;
+            this.gridColumn6.Width = 279;
             // 
             // gridColumn7
             // 
@@ -261,6 +271,7 @@
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 4;
+            this.gridColumn24.Width = 203;
             // 
             // gridColumn12
             // 
@@ -325,6 +336,33 @@
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.OptionsColumn.ShowInCustomizationForm = false;
             // 
+            // gridColumn25
+            // 
+            this.gridColumn25.Caption = "是否通过匹配";
+            this.gridColumn25.FieldName = "row25";
+            this.gridColumn25.Name = "gridColumn25";
+            this.gridColumn25.Visible = true;
+            this.gridColumn25.VisibleIndex = 5;
+            this.gridColumn25.Width = 99;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "...";
+            this.gridColumn26.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.gridColumn26.FieldName = "row26";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 6;
+            this.gridColumn26.Width = 43;
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "修改", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.gcGrid);
@@ -346,6 +384,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -383,5 +422,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
         private SearchRulePanel srpSearch;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
     }
 }

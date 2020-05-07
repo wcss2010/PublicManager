@@ -45,7 +45,7 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit
 
         private void srpSearch_OnSearchClick(object sender, EventArgs args)
         {
-            DataTable dt = getTempDataTable("row", 24);
+            DataTable dt = getTempDataTable("row", 26);
 
             List<Project> projList = MakeSQLWithSearchRule.getProjectList(srpSearch);
             foreach (Project proj in projList)
@@ -97,6 +97,10 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit
                 cells.Add(proj.ProjectRange);
 
                 cells.Add(proj.DutyNormalUnit);
+
+                cells.Add(proj.IsCheckUnitComplete);
+
+                cells.Add("修改");
 
                 dt.Rows.Add(cells.ToArray());
             }
@@ -164,12 +168,31 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit
                 e.Appearance.Reset();
             }
 
-            if (e.Column.FieldName == "row24")
+            if (e.Column.FieldName == "row25")
             {
-                object unitObj = dgvDetail.GetRowCellValue(e.RowHandle, "row24");
-                if (unitObj != null && unitObj.ToString() == "未匹配")
+                object unitObj = dgvDetail.GetRowCellValue(e.RowHandle, "row25");
+                if (unitObj != null && unitObj.ToString() == "不通过")
                 {
                     e.Appearance.BackColor = Color.Red;
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.Green;
+                }
+            }
+        }
+
+        private void dgvDetail_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            object objValue = dgvDetail.GetRowCellValue(e.RowHandle, "row20");
+            if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
+            {
+                string projectId = objValue.ToString();
+
+                Project proj = ConnectionManager.Context.table("Project").where("ProjectID='" + projectId + "'").select("*").getItem<Project>(new Project());
+                if (new CheckAllForm(proj).ShowDialog() == DialogResult.OK)
+                {
+                    srpSearch.search();
                 }
             }
         }
