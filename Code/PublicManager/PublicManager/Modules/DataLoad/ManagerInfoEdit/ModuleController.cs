@@ -184,15 +184,18 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit
 
         private void dgvDetail_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            object objValue = dgvDetail.GetRowCellValue(e.RowHandle, "row20");
-            if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
+            if (e.Column.FieldName == "row26")
             {
-                string projectId = objValue.ToString();
-
-                Project proj = ConnectionManager.Context.table("Project").where("ProjectID='" + projectId + "'").select("*").getItem<Project>(new Project());
-                if (new CheckAllForm(proj).ShowDialog() == DialogResult.OK)
+                object objValue = dgvDetail.GetRowCellValue(e.RowHandle, "row20");
+                if (objValue != null && !string.IsNullOrEmpty(objValue.ToString()))
                 {
-                    srpSearch.search();
+                    string projectId = objValue.ToString();
+
+                    Project proj = ConnectionManager.Context.table("Project").where("ProjectID='" + projectId + "'").select("*").getItem<Project>(new Project());
+                    if (new CheckAllForm(proj).ShowDialog() == DialogResult.OK)
+                    {
+                        srpSearch.search();
+                    }
                 }
             }
         }

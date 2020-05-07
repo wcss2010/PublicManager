@@ -193,6 +193,12 @@
     <Compile Include="Modules\DataCheck\AllCheck\ModuleController2.Designer.cs">
       <DependentUpon>ModuleController2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckAllForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckAllForm.Designer.cs">
+      <DependentUpon>CheckAllForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -449,6 +455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataCheck\AddressCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckAllForm.resx">
+      <DependentUpon>CheckAllForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckEditForm.resx">
       <DependentUpon>CheckEditForm.cs</DependentUpon>

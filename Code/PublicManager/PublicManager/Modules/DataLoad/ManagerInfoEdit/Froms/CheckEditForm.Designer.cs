@@ -46,17 +46,14 @@
             this.txtTaskNumber = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtProjectRange = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtNormalUnit = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaskNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProjectRange.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNormalUnit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(102, 183);
+            this.btnOK.Location = new System.Drawing.Point(94, 137);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(107, 42);
             this.btnOK.TabIndex = 6;
@@ -65,7 +62,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(375, 183);
+            this.btnCancel.Location = new System.Drawing.Point(367, 137);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 42);
             this.btnCancel.TabIndex = 7;
@@ -177,7 +174,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(124, 141);
+            this.labelControl1.Location = new System.Drawing.Point(116, 95);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(72, 16);
             this.labelControl1.TabIndex = 0;
@@ -185,7 +182,7 @@
             // 
             // txtTaskNumber
             // 
-            this.txtTaskNumber.Location = new System.Drawing.Point(202, 140);
+            this.txtTaskNumber.Location = new System.Drawing.Point(194, 94);
             this.txtTaskNumber.Name = "txtTaskNumber";
             this.txtTaskNumber.Size = new System.Drawing.Size(367, 20);
             this.txtTaskNumber.TabIndex = 5;
@@ -193,7 +190,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(52, 94);
+            this.labelControl2.Location = new System.Drawing.Point(44, 48);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(144, 16);
             this.labelControl2.TabIndex = 0;
@@ -201,36 +198,18 @@
             // 
             // txtProjectRange
             // 
-            this.txtProjectRange.Location = new System.Drawing.Point(202, 93);
+            this.txtProjectRange.Location = new System.Drawing.Point(194, 47);
             this.txtProjectRange.Name = "txtProjectRange";
             this.txtProjectRange.Size = new System.Drawing.Size(367, 20);
             this.txtProjectRange.TabIndex = 5;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("宋体", 12F);
-            this.labelControl3.Location = new System.Drawing.Point(13, 44);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(184, 16);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "项目牵头单位归一化名称:";
-            // 
-            // txtNormalUnit
-            // 
-            this.txtNormalUnit.Location = new System.Drawing.Point(203, 43);
-            this.txtNormalUnit.Name = "txtNormalUnit";
-            this.txtNormalUnit.Size = new System.Drawing.Size(367, 20);
-            this.txtNormalUnit.TabIndex = 5;
             // 
             // CheckEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 237);
+            this.ClientSize = new System.Drawing.Size(587, 191);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.txtNormalUnit);
-            this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.txtProjectRange);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtTaskNumber);
@@ -247,7 +226,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaskNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProjectRange.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNormalUnit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,7 +251,5 @@
         private DevExpress.XtraEditors.TextEdit txtTaskNumber;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtProjectRange;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit txtNormalUnit;
     }
 }

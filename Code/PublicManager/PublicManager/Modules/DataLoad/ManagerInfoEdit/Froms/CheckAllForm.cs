@@ -15,14 +15,10 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit.Froms
     {
         private Project proj;
 
-        public CheckAllForm()
-        {
-            InitializeComponent();
-        }
-
         public CheckAllForm(Project proj)
         {
-            // TODO: Complete member initialization
+            InitializeComponent();
+
             this.proj = proj;
         }
     }

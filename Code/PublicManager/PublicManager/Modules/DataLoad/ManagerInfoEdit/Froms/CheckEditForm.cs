@@ -19,7 +19,7 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit.Froms
             InitializeComponent();
 
             projectObj = proj;
-            txtNormalUnit.Text = proj.DutyNormalUnit;
+            //txtNormalUnit.Text = proj.DutyNormalUnit;
             txtProjectRange.Text = proj.ProjectRange;
             txtTaskNumber.Text = proj.TaskNumber;
             //cbxItemA.Text = proj.OKQuestionMemo;
@@ -37,7 +37,7 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit.Froms
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            projectObj.DutyNormalUnit = txtNormalUnit.Text;
+            //projectObj.DutyNormalUnit = txtNormalUnit.Text;
             projectObj.ProjectRange = txtProjectRange.Text;
             projectObj.TaskNumber = txtTaskNumber.Text;
             //projectObj.OKQuestionMemo = cbxItemA.Text;

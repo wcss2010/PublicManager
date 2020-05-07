@@ -74,7 +74,7 @@
             this.rcTopBar.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.rcTopBar.ShowQatLocationSelector = false;
             this.rcTopBar.ShowToolbarCustomizeItem = false;
-            this.rcTopBar.Size = new System.Drawing.Size(737, 27);
+            this.rcTopBar.Size = new System.Drawing.Size(910, 27);
             this.rcTopBar.Toolbar.ShowCustomizeItem = false;
             // 
             // barCheckItem1
@@ -149,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 516);
+            this.ClientSize = new System.Drawing.Size(910, 554);
             this.Controls.Add(this.rcTopBar);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
