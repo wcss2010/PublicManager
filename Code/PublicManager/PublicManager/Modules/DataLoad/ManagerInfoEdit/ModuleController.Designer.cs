@@ -75,7 +75,7 @@
             // 
             // srpSearch
             // 
-            this.srpSearch.CustomButtonsNames = "结果内容搜索;编辑管理员信息;列选择器";
+            this.srpSearch.CustomButtonsNames = "结果内容搜索;管理员信息完善;列选择器";
             this.srpSearch.DisplayGridControl = this.gcGrid;
             this.srpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.srpSearch.IsDisplayCatalogTypePanel = false;

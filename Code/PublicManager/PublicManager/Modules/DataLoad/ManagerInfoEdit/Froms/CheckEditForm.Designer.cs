@@ -56,7 +56,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(237, 180);
+            this.btnOK.Location = new System.Drawing.Point(102, 183);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(107, 42);
             this.btnOK.TabIndex = 6;
@@ -65,7 +65,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(510, 180);
+            this.btnCancel.Location = new System.Drawing.Point(375, 183);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 42);
             this.btnCancel.TabIndex = 7;
@@ -103,7 +103,7 @@
             this.rcTopBar.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.rcTopBar.ShowQatLocationSelector = false;
             this.rcTopBar.ShowToolbarCustomizeItem = false;
-            this.rcTopBar.Size = new System.Drawing.Size(804, 27);
+            this.rcTopBar.Size = new System.Drawing.Size(587, 27);
             this.rcTopBar.Toolbar.ShowCustomizeItem = false;
             // 
             // barCheckItem1
@@ -187,7 +187,7 @@
             // 
             this.txtTaskNumber.Location = new System.Drawing.Point(202, 140);
             this.txtTaskNumber.Name = "txtTaskNumber";
-            this.txtTaskNumber.Size = new System.Drawing.Size(584, 20);
+            this.txtTaskNumber.Size = new System.Drawing.Size(367, 20);
             this.txtTaskNumber.TabIndex = 5;
             // 
             // labelControl2
@@ -203,7 +203,7 @@
             // 
             this.txtProjectRange.Location = new System.Drawing.Point(202, 93);
             this.txtProjectRange.Name = "txtProjectRange";
-            this.txtProjectRange.Size = new System.Drawing.Size(584, 20);
+            this.txtProjectRange.Size = new System.Drawing.Size(367, 20);
             this.txtProjectRange.TabIndex = 5;
             // 
             // labelControl3
@@ -219,14 +219,14 @@
             // 
             this.txtNormalUnit.Location = new System.Drawing.Point(203, 43);
             this.txtNormalUnit.Name = "txtNormalUnit";
-            this.txtNormalUnit.Size = new System.Drawing.Size(584, 20);
+            this.txtNormalUnit.Size = new System.Drawing.Size(367, 20);
             this.txtNormalUnit.TabIndex = 5;
             // 
             // CheckEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 237);
+            this.ClientSize = new System.Drawing.Size(587, 237);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtNormalUnit);
@@ -243,7 +243,7 @@
             this.Ribbon = this.rcTopBar;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "编辑管理员信息";
+            this.Text = "管理员信息完善";
             ((System.ComponentModel.ISupportInitialize)(this.rcTopBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaskNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProjectRange.Properties)).EndInit();

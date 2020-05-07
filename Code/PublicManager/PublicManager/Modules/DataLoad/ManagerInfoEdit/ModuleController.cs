@@ -115,7 +115,7 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit
 
         private void srpSearch_OnCustomButtonClick(object sender, CustomButtonEventArgs args)
         {
-            if (args.ButtonName == "编辑管理员信息")
+            if (args.ButtonName == "管理员信息完善")
             {
                 int[] selecteds = dgvDetail.GetSelectedRows();
                 if (selecteds != null && selecteds.Length >= 1)
