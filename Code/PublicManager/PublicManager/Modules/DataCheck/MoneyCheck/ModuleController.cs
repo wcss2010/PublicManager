@@ -65,7 +65,8 @@ namespace PublicManager.Modules.DataCheck.MoneyCheck
             foreach (Catalog catalog in catalogList)
             {
                 TreeNode parentNode = new TreeNode();
-                parentNode.Text = catalog.CatalogName + "(" + catalog.CatalogVersion + ")";
+                //parentNode.Text = catalog.CatalogName + "(" + catalog.CatalogVersion + ")";
+                parentNode.Text = catalog.CatalogName;
                 parentNode.Tag = catalog;
                 tvProjectList.ContentTreeView.Nodes.Add(parentNode);
 
