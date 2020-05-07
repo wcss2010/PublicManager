@@ -52,7 +52,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                         cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogVersion").getValue<string>("未知"));
                         cells.Add(ConnectionManager.Context.table("Catalog").where("CatalogID='" + proj.CatalogID + "'").select("CatalogType").getValue<string>("未知"));
                         cells.Add(proj.ProjectName);
-                        cells.Add("*****");
+                        cells.Add("-");
                         cells.Add(masterPersonObj.PersonName);
                         cells.Add(masterPersonObj.PersonIDCard);
                         cells.Add(masterPersonObj.PersonSex);
@@ -94,13 +94,21 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                                 cells.Add(p.TaskContent);
 
                                 string roleStr = "未知";
+                                //if (p.IsProjectMaster == "true")
+                                //{
+                                //    roleStr = "项目负责人兼" + sub.SubjectName + "的" + p.JobInProject;
+                                //}
+                                //else
+                                //{
+                                //    roleStr = sub.SubjectName + "的" + p.JobInProject;
+                                //}
                                 if (p.IsProjectMaster == "true")
                                 {
-                                    roleStr = "项目负责人兼" + sub.SubjectName + "的" + p.JobInProject;
+                                    roleStr = "项目负责人兼课题" + p.JobInProject;
                                 }
                                 else
                                 {
-                                    roleStr = sub.SubjectName + "的" + p.JobInProject;
+                                    roleStr = p.JobInProject;
                                 }
 
                                 cells.Add(roleStr);
