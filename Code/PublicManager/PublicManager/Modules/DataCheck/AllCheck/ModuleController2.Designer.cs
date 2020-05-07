@@ -260,10 +260,10 @@
             this.cbDisplayContract.AutoSize = true;
             this.cbDisplayContract.Checked = true;
             this.cbDisplayContract.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cbDisplayContract.Location = new System.Drawing.Point(8, 0);
+            this.cbDisplayContract.Location = new System.Drawing.Point(10, 0);
             this.cbDisplayContract.Name = "cbDisplayContract";
             this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.cbDisplayContract.Size = new System.Drawing.Size(72, 19);
+            this.cbDisplayContract.Size = new System.Drawing.Size(71, 19);
             this.cbDisplayContract.TabIndex = 5;
             this.cbDisplayContract.Text = "合同书";
             this.cbDisplayContract.UseVisualStyleBackColor = true;
@@ -272,11 +272,10 @@
             // cbDisplayReporter
             // 
             this.cbDisplayReporter.AutoSize = true;
-            this.cbDisplayReporter.Checked = true;            
             this.cbDisplayReporter.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cbDisplayReporter.Location = new System.Drawing.Point(80, 0);
+            this.cbDisplayReporter.Location = new System.Drawing.Point(81, 0);
             this.cbDisplayReporter.Name = "cbDisplayReporter";
-            this.cbDisplayReporter.Size = new System.Drawing.Size(62, 19);
+            this.cbDisplayReporter.Size = new System.Drawing.Size(61, 19);
             this.cbDisplayReporter.TabIndex = 6;
             this.cbDisplayReporter.Text = "建议书";
             this.cbDisplayReporter.UseVisualStyleBackColor = true;

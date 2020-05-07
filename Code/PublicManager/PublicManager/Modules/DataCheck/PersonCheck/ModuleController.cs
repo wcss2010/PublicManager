@@ -22,7 +22,7 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
             dgvDetail.OptionsView.AllowCellMerge = true;
             cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3" });
 
-            srpSearch.IsDisplayReporterData = false;
+            srpSearch.IsDisplayContractData = true;
         }
 
         public override void start()

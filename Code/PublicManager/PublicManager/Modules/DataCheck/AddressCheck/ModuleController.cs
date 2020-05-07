@@ -65,7 +65,8 @@ namespace PublicManager.Modules.DataCheck.AddressCheck
             dgvSub.OptionsView.ShowGroupPanel = false;
             cma2 = new DEGridViewCellMergeAdapter(dgvSub, new string[] { "row1" });
 
-            srpSearch.IsDisplayReporterData = false;
+            srpSearch.IsDisplayContractData = true;
+
             srpSearch.Key2Label.Checked = true;
             srpSearch.Key2Label.Enabled = false;
             srpSearch.IsHightlightHintWithSearchAfter = false;

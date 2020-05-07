@@ -28,6 +28,8 @@ namespace PublicManager.Modules.Lines.ProjectNodes
             srpSearch.RightButtonPanelWidth = 325;
             srpSearch.Key3PanelWidth = 275;
             srpSearch.Key4PanelWidth = 275;
+
+            srpSearch.IsDisplayContractData = true;
         }
 
         public override DevExpress.XtraBars.Ribbon.RibbonPage[] getTopBarPages()

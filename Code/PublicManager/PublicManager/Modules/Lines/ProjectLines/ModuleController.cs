@@ -24,7 +24,7 @@ namespace PublicManager.Modules.Lines.ProjectLines
             dgvDetail.OptionsView.AllowCellMerge = true;
             cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row3", "row4", "row23" });
 
-            srpSearch.IsDisplayReporterData = false;
+            srpSearch.IsDisplayContractData = true;
         }
 
         public override void start()

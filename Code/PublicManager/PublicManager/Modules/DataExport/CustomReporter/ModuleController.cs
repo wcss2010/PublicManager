@@ -40,6 +40,8 @@ namespace PublicManager.Modules.DataExport.CustomReporter
             dgvSub.OptionsView.ShowGroupPanel = false;
             cma2 = new DEGridViewCellMergeAdapter(dgvSub, new string[] { "row1" });
 
+            srpSearch.switchCatalogType(false, false);
+
             makeColumnList();
         }
 

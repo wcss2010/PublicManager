@@ -31,7 +31,7 @@ namespace PublicManager.Modules.DataCheck.ProjectCheck
             dgvSub.OptionsView.ShowGroupPanel = false;
             cma2 = new DEGridViewCellMergeAdapter(dgvSub, new string[] { "row1" });
 
-            srpSearch.IsDisplayReporterData = false;
+            srpSearch.IsDisplayContractData = true;
         }
 
         public override void start()

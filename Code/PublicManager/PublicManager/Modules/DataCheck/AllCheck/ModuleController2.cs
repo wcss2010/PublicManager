@@ -28,6 +28,8 @@ namespace PublicManager.Modules.DataCheck.AllCheck
             cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3", "row5", "row7", "row9", "row11", "row13", "row14" });
             //cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3", "row5", "row7", "row9", "row11" });
             //dgvDetail.OptionsView.RowAutoHeight = true;
+
+            switchCatalogType(true, false);
         }
 
         public override void start()

@@ -90,8 +90,6 @@
             this.gridColumn2.Caption = "版本";
             this.gridColumn2.FieldName = "row2";
             this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 41;
             // 
             // gridColumn3
@@ -100,7 +98,7 @@
             this.gridColumn3.FieldName = "row3";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 1;
             this.gridColumn3.Width = 92;
             // 
             // gridColumn4
@@ -109,7 +107,7 @@
             this.gridColumn4.FieldName = "row4";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 2;
             this.gridColumn4.Width = 594;
             // 
             // gridColumn5
@@ -118,7 +116,7 @@
             this.gridColumn5.FieldName = "row5";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 3;
             this.gridColumn5.Width = 64;
             // 
             // gridColumn6
@@ -128,7 +126,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.FixedWidth = true;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 4;
             this.gridColumn6.Width = 126;
             // 
             // gridColumn7
@@ -144,7 +142,7 @@
             this.gridColumn8.FieldName = "row8";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.VisibleIndex = 5;
             this.gridColumn8.Width = 40;
             // 
             // repositoryItemButtonEdit1

@@ -18,7 +18,7 @@ namespace PublicManager.Modules
 
     public partial class SearchRulePanel : UserControl
     {
-        private string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
+        private string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog where CatalogType = '合同书')";
         /// <summary>
         /// 目录表过滤条件
         /// </summary>
@@ -381,7 +381,7 @@ namespace PublicManager.Modules
                         fplCheckList.Controls.Add(ce);
                     }
 
-                    Key1EditControl.Properties.NullValuePrompt = "请输入" + value.Replace(";", "、") + "的关键字！";
+                    Key1EditControl.Properties.NullValuePrompt = "请输入" + value.Replace(";", "、") + "！";
                 }
             }
         }
@@ -433,6 +433,8 @@ namespace PublicManager.Modules
             InitializeComponent();
 
             CustomButtonsNames = "结果内容搜索";
+            IsDisplayContractData = true;
+            switchCatalogType(true, false);
         }
 
         /// <summary>
@@ -557,7 +559,7 @@ namespace PublicManager.Modules
         /// </summary>
         /// <param name="isContract"></param>
         /// <param name="isReporter"></param>
-        protected void switchCatalogType(bool isContract, bool isReporter)
+        public void switchCatalogType(bool isContract, bool isReporter)
         {
             if (isContract && isReporter)
             {
