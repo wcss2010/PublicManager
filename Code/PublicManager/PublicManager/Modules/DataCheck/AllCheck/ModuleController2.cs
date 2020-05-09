@@ -17,7 +17,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
     {
         private string strCatalogIDFilterString = " and CatalogID in (select CatalogID from Catalog)";
 
-        private DEGridViewCellMergeAdapter cma;
+        private DEGridViewCellMergeAdapterWithPT cma;
 
         public ModuleController2()
         {
@@ -25,7 +25,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = true;
-            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3", "row5", "row7", "row9", "row11", "row13", "row14", "row15" });
+            cma = new DEGridViewCellMergeAdapterWithPT(dgvDetail, new string[] { "row1", "row2", "row3", "row5", "row7", "row9", "row11", "row13", "row14", "row15" }, "row17");
             //cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3", "row5", "row7", "row9", "row11" });
             //dgvDetail.OptionsView.RowAutoHeight = true;
 
@@ -45,7 +45,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
         private void loadData()
         {
-            DataTable dt = getTempDataTable("row", 16);
+            DataTable dt = getTempDataTable("row", 17);
 
             List<Project> projList = ConnectionManager.Context.table("Project").where("IsNeedHide='0'" + strCatalogIDFilterString).select("*").getList<Project>(new Project());
             foreach (Project proj in projList)
@@ -141,6 +141,8 @@ namespace PublicManager.Modules.DataCheck.AllCheck
                         //建议书PDF
                         cells.Add(Path.Combine(decompressDir, "建议书.pdf"));
                     }
+
+                    cells.Add(proj.ProjectID);
 
                     dt.Rows.Add(cells.ToArray());
                 }

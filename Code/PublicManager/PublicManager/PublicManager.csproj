@@ -223,6 +223,7 @@
     <Compile Include="Modules\DataLoad\NormalUnitDict\ModuleController.Designer.cs">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\DEGridViewCellMergeAdapterWithPT.cs" />
     <Compile Include="Modules\MakeSQLWithSearchRule.cs" />
     <Compile Include="Modules\BaseDBImporter.cs" />
     <Compile Include="Modules\BaseModuleController.cs">
