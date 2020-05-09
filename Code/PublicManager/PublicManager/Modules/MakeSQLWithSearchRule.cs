@@ -42,22 +42,11 @@ namespace PublicManager.Modules
             {
                 #region 生成关键字条件
                 StringBuilder sb = new StringBuilder();
-                bool isIgnoreAll = true;
-
-                //检查是否需要忽略所有选项
-                foreach (KeyValuePair<string, bool> kvp in ruleDict)
-                {
-                    if (kvp.Value)
-                    {
-                        isIgnoreAll = false;
-                        break;
-                    }
-                }
 
                 sb.Append("(");
                 foreach (KeyValuePair<string, bool> kvp in ruleDict)
                 {
-                    if (kvp.Value || isIgnoreAll)
+                    if (kvp.Value)
                     {
                         switch (kvp.Key)
                         {
@@ -110,7 +99,16 @@ namespace PublicManager.Modules
                     }
                 }
                 sb.Append(")");
-                whereString = sb.ToString().Replace("( or ", "(");
+
+                if (sb.Length > 6)
+                {
+                    whereString = sb.ToString().Replace("( or ", "(");
+                }
+                else
+                {
+                    whereString = "(1=1)";
+                    srp.Key1EditControl.Text = string.Empty;
+                }
                 #endregion
             }
 
