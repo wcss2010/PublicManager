@@ -182,6 +182,12 @@ namespace PublicManager.Modules.Reporter.Forms
                     {
                         try
                         {
+                            //刷新综合查询
+                            if (MainForm.ModuleDict.ContainsKey(MainForm.allCheckKey))
+                            {
+                                ((PublicManager.Modules.DataCheck.AllCheck.ModuleController2)MainForm.ModuleDict[MainForm.allCheckKey]).reloadData();
+                            }
+
                             //刷新Catalog列表
                             mainView.updateCatalogs();
 

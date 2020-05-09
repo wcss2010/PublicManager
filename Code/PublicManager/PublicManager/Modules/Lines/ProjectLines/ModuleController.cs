@@ -128,6 +128,12 @@ namespace PublicManager.Modules.Lines.ProjectLines
                         Project proj = ConnectionManager.Context.table("Project").where("ProjectID='" + projectId + "'").select("*").getItem<Project>(new Project());
                         if (new CheckEditForm(proj).ShowDialog() == DialogResult.OK)
                         {
+                            //刷新综合查询
+                            if (MainForm.ModuleDict.ContainsKey(MainForm.allCheckKey))
+                            {
+                                ((PublicManager.Modules.DataCheck.AllCheck.ModuleController2)MainForm.ModuleDict[MainForm.allCheckKey]).reloadData();
+                            }
+
                             srpSearch.search();
                         }
                     }

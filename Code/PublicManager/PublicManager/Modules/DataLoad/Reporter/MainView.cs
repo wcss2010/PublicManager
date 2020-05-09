@@ -57,12 +57,6 @@ namespace PublicManager.Modules.Reporter
                 dt.Rows.Add(cells.ToArray());
             }
             gcGrid.DataSource = dt;
-
-            //刷新综合查询
-            if (MainForm.ModuleDict.ContainsKey(MainForm.allCheckKey))
-            {
-                ((PublicManager.Modules.DataCheck.AllCheck.ModuleController2)MainForm.ModuleDict[MainForm.allCheckKey]).reloadData();
-            }
         }
 
         private void gvDetail_RowCellClick(object sender, RowCellClickEventArgs e)
@@ -92,6 +86,12 @@ namespace PublicManager.Modules.Reporter
 
                         //刷新GridView
                         updateCatalogs();
+
+                        //刷新综合查询
+                        if (MainForm.ModuleDict.ContainsKey(MainForm.allCheckKey))
+                        {
+                            ((PublicManager.Modules.DataCheck.AllCheck.ModuleController2)MainForm.ModuleDict[MainForm.allCheckKey]).reloadData();
+                        }
                     }
                 }
             }
