@@ -12,9 +12,18 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit.Froms
 {
     public partial class ModifyManagerInfoWithSelectedForm : RibbonForm
     {
-        public ModifyManagerInfoWithSelectedForm()
+        private SearchRulePanel srpSearch;
+        public ModifyManagerInfoWithSelectedForm(SearchRulePanel srpPanel)
         {
             InitializeComponent();
+
+            this.srpSearch = srpPanel;
+            loadDate();
+        }
+
+        private void loadDate()
+        {
+            
         }
     }
 }

@@ -149,7 +149,7 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit
             }
             else if (args.ButtonName == "批量修改项目领域/技术方向或计划批次")
             {
-                ModifyManagerInfoWithSelectedForm xlcf = new ModifyManagerInfoWithSelectedForm();
+                ModifyManagerInfoWithSelectedForm xlcf = new ModifyManagerInfoWithSelectedForm(srpSearch);
                 if (xlcf.ShowDialog() == DialogResult.OK)
                 {
                     //刷新综合查询
