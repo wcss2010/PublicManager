@@ -1,6 +1,6 @@
 ﻿namespace PublicManager.Modules.DataLoad.ManagerInfoEdit.Froms
 {
-    partial class CheckEditForm
+    partial class ModifyManagerInfoForm
     {
         /// <summary>
         /// Required designer variable.

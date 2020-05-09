@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PublicManager.Modules.DataLoad.ManagerInfoEdit.Froms
 {
-    public partial class SelectedListCheckForm : RibbonForm
+    public partial class ModifyManagerInfoWithSelectedForm : RibbonForm
     {
-        public SelectedListCheckForm()
+        public ModifyManagerInfoWithSelectedForm()
         {
             InitializeComponent();
         }

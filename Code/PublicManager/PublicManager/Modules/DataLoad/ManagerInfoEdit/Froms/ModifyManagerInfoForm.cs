@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace PublicManager.Modules.DataLoad.ManagerInfoEdit.Froms
 {
-    public partial class CheckEditForm : RibbonForm
+    public partial class ModifyManagerInfoForm : RibbonForm
     {
         private Project projectObj;
-        public CheckEditForm(Project proj)
+        public ModifyManagerInfoForm(Project proj)
         {
             InitializeComponent();
 

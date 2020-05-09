@@ -193,17 +193,23 @@
     <Compile Include="Modules\DataCheck\AllCheck\ModuleController2.Designer.cs">
       <DependentUpon>ModuleController2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckAllForm.cs">
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\ModifyNormalUnitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckAllForm.Designer.cs">
-      <DependentUpon>CheckAllForm.cs</DependentUpon>
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\ModifyNormalUnitForm.Designer.cs">
+      <DependentUpon>ModifyNormalUnitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckEditForm.cs">
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\ModifyManagerInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckEditForm.Designer.cs">
-      <DependentUpon>CheckEditForm.cs</DependentUpon>
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\ModifyManagerInfoForm.Designer.cs">
+      <DependentUpon>ModifyManagerInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\ModifyManagerInfoWithSelectedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DataLoad\ManagerInfoEdit\Froms\ModifyManagerInfoWithSelectedForm.Designer.cs">
+      <DependentUpon>ModifyManagerInfoWithSelectedForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\DataLoad\ManagerInfoEdit\ModuleController.cs">
       <SubType>UserControl</SubType>
@@ -457,11 +463,14 @@
     <EmbeddedResource Include="Modules\DataCheck\AddressCheck\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckAllForm.resx">
-      <DependentUpon>CheckAllForm.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\DataLoad\ManagerInfoEdit\Froms\ModifyNormalUnitForm.resx">
+      <DependentUpon>ModifyNormalUnitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\DataLoad\ManagerInfoEdit\Froms\CheckEditForm.resx">
-      <DependentUpon>CheckEditForm.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\DataLoad\ManagerInfoEdit\Froms\ModifyManagerInfoForm.resx">
+      <DependentUpon>ModifyManagerInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DataLoad\ManagerInfoEdit\Froms\ModifyManagerInfoWithSelectedForm.resx">
+      <DependentUpon>ModifyManagerInfoWithSelectedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DataLoad\ManagerInfoEdit\ModuleController.resx">
       <DependentUpon>ModuleController.cs</DependentUpon>

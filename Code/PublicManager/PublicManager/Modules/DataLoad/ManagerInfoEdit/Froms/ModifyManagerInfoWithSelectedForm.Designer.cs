@@ -1,6 +1,6 @@
 ﻿namespace PublicManager.Modules.DataLoad.ManagerInfoEdit.Froms
 {
-    partial class SelectedListCheckForm
+    partial class ModifyManagerInfoWithSelectedForm
     {
         /// <summary>
         /// Required designer variable.

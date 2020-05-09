@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace PublicManager.Modules.DataLoad.ManagerInfoEdit.Froms
 {
-    public partial class CheckAllForm : RibbonForm
+    public partial class ModifyNormalUnitForm : RibbonForm
     {
         private Project proj;
         private DataTable dtSubject;
         private DataTable dtPerson;
 
-        public CheckAllForm(Project proj)
+        public ModifyNormalUnitForm(Project proj)
         {
             InitializeComponent();
 
