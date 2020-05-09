@@ -147,9 +147,23 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit
             {
                 dgvDetail.ShowCustomization();
             }
-            else if (args.ButtonName == "批量修改项目领域/技术方向或计划批次")
+            else if (args.ButtonName == "批量修改项目领域/技术方向")
             {
-                ModifyManagerInfoWithSelectedForm xlcf = new ModifyManagerInfoWithSelectedForm(srpSearch);
+                ModifyManagerInfoWithSelectedForm xlcf = new ModifyManagerInfoWithSelectedForm(srpSearch, "项目领域/技术方向:");
+                if (xlcf.ShowDialog() == DialogResult.OK)
+                {
+                    //刷新综合查询
+                    if (MainForm.ModuleDict.ContainsKey(MainForm.allCheckKey))
+                    {
+                        ((PublicManager.Modules.DataCheck.AllCheck.ModuleController2)MainForm.ModuleDict[MainForm.allCheckKey]).reloadData();
+                    }
+
+                    srpSearch.search();
+                }
+            }
+            else if (args.ButtonName == "批量修改计划批次")
+            {
+                ModifyManagerInfoWithSelectedForm xlcf = new ModifyManagerInfoWithSelectedForm(srpSearch, "计划批次:");
                 if (xlcf.ShowDialog() == DialogResult.OK)
                 {
                     //刷新综合查询

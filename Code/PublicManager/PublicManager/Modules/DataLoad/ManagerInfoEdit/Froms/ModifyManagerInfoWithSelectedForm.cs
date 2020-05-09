@@ -19,6 +19,7 @@ namespace PublicManager.Modules.DataLoad.ManagerInfoEdit.Froms
         {
             InitializeComponent();
 
+            this.Text = "批量修改" + labelText.Replace(":", string.Empty);
             this.lblTitle.Text = labelText;
             this.srpSearch = srpPanel;
             loadDate();
