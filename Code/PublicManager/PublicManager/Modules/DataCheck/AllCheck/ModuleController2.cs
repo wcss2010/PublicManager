@@ -25,7 +25,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
             dgvDetail.OptionsBehavior.Editable = false;
             dgvDetail.OptionsView.AllowCellMerge = true;
-            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3", "row5", "row7", "row9", "row11", "row13", "row14" });
+            cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3", "row5", "row7", "row9", "row11", "row13", "row14", "row15" });
             //cma = new DEGridViewCellMergeAdapter(dgvDetail, new string[] { "row1", "row2", "row3", "row5", "row7", "row9", "row11" });
             //dgvDetail.OptionsView.RowAutoHeight = true;
 
