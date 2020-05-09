@@ -34,6 +34,11 @@ namespace PublicManager
         /// </summary>
         private MainMenuController menuController = new MainMenuController();
 
+        /// <summary>
+        /// 综合查询关键词
+        /// </summary>
+        public static string allCheckKey = string.Empty;
+
         public MainForm()
         {
             InitializeComponent();
@@ -78,6 +83,8 @@ namespace PublicManager
             ModuleDict[nbcTestC.Caption + "xxxx" + "专家信息管理"] = new Modules.Teacher.TeacherManager.ModuleController();
 
             ModuleDict[nbcTestG.Caption + "xxxx" + "信息提醒"] = new PublicManager.Modules.MainPage.ModuleController();
+
+            allCheckKey = nbcTestB.Caption + "xxxx" + "综合查询";
         }
 
         /// <summary>

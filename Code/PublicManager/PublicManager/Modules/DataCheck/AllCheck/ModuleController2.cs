@@ -19,6 +19,8 @@ namespace PublicManager.Modules.DataCheck.AllCheck
 
         private DEGridViewCellMergeAdapterWithPT cma;
 
+        private bool isFirstLoad = true;
+
         public ModuleController2()
         {
             InitializeComponent();
@@ -40,10 +42,14 @@ namespace PublicManager.Modules.DataCheck.AllCheck
             this.Dock = DockStyle.Fill;
             this.DisplayControl.Controls.Add(this);
 
-            loadData();
+            if (isFirstLoad)
+            {
+                reloadData();
+                isFirstLoad = false;
+            }
         }
 
-        private void loadData()
+        public void reloadData()
         {
             DataTable dt = getTempDataTable("row", 17);
 
@@ -158,7 +164,7 @@ namespace PublicManager.Modules.DataCheck.AllCheck
         private void cbDisplayContract_CheckedChanged(object sender, EventArgs e)
         {
             switchCatalogType(cbDisplayContract.Checked, cbDisplayReporter.Checked);
-            loadData();
+            reloadData();
         }
 
         /// <summary>
