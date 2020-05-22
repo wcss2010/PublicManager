@@ -59,7 +59,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1794, 751);
+            this.groupBox1.Size = new System.Drawing.Size(1423, 751);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -69,7 +69,7 @@
             this.gcData.Location = new System.Drawing.Point(3, 106);
             this.gcData.MainView = this.dgvDetail;
             this.gcData.Name = "gcData";
-            this.gcData.Size = new System.Drawing.Size(1788, 642);
+            this.gcData.Size = new System.Drawing.Size(1417, 642);
             this.gcData.TabIndex = 3;
             this.gcData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDetail});
@@ -118,6 +118,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.Width = 379;
             // 
             // gridColumn4
             // 
@@ -126,6 +127,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.Width = 320;
             // 
             // gridColumn5
             // 
@@ -134,6 +136,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
+            this.gridColumn5.Width = 52;
             // 
             // gridColumn6
             // 
@@ -142,6 +145,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
+            this.gridColumn6.Width = 91;
             // 
             // gridColumn7
             // 
@@ -150,6 +154,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 4;
+            this.gridColumn7.Width = 43;
             // 
             // gridColumn8
             // 
@@ -165,6 +170,7 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 5;
+            this.gridColumn9.Width = 71;
             // 
             // gridColumn10
             // 
@@ -173,6 +179,7 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 6;
+            this.gridColumn10.Width = 54;
             // 
             // gridColumn11
             // 
@@ -181,6 +188,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 7;
+            this.gridColumn11.Width = 93;
             // 
             // gridColumn12
             // 
@@ -188,7 +196,8 @@
             this.gridColumn12.FieldName = "row12";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 8;
+            this.gridColumn12.VisibleIndex = 9;
+            this.gridColumn12.Width = 213;
             // 
             // gridColumn13
             // 
@@ -196,7 +205,8 @@
             this.gridColumn13.FieldName = "row13";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 9;
+            this.gridColumn13.VisibleIndex = 8;
+            this.gridColumn13.Width = 83;
             // 
             // panel1
             // 
@@ -205,7 +215,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1788, 88);
+            this.panel1.Size = new System.Drawing.Size(1417, 88);
             this.panel1.TabIndex = 2;
             // 
             // srpSearch
@@ -233,7 +243,7 @@
             this.srpSearch.Location = new System.Drawing.Point(0, 0);
             this.srpSearch.Name = "srpSearch";
             this.srpSearch.RightButtonPanelWidth = 360;
-            this.srpSearch.Size = new System.Drawing.Size(1788, 88);
+            this.srpSearch.Size = new System.Drawing.Size(1417, 88);
             this.srpSearch.TabIndex = 8;
             this.srpSearch.OnSearchClick += new PublicManager.Modules.SearchClickDelegate(this.srpSearch_OnSearchClick);
             this.srpSearch.OnResetClick += new PublicManager.Modules.ResetClickDelegate(this.srpSearch_OnResetClick);
@@ -246,7 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "ModuleController";
-            this.Size = new System.Drawing.Size(1794, 751);
+            this.Size = new System.Drawing.Size(1423, 751);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcData)).EndInit();

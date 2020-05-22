@@ -115,7 +115,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 130;
+            this.gridColumn2.Width = 70;
             // 
             // gridColumn3
             // 
@@ -124,7 +124,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 130;
+            this.gridColumn3.Width = 166;
             // 
             // gridColumn5
             // 
@@ -133,7 +133,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 72;
+            this.gridColumn5.Width = 73;
             // 
             // gridColumn7
             // 
@@ -149,7 +149,7 @@
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 4;
-            this.gridColumn15.Width = 93;
+            this.gridColumn15.Width = 96;
             // 
             // gridColumn9
             // 
@@ -172,7 +172,7 @@
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 6;
-            this.gridColumn13.Width = 115;
+            this.gridColumn13.Width = 93;
             // 
             // gridColumn14
             // 
@@ -183,7 +183,7 @@
             this.gridColumn14.OptionsColumn.ReadOnly = true;
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 5;
-            this.gridColumn14.Width = 142;
+            this.gridColumn14.Width = 95;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -196,7 +196,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 7;
-            this.gridColumn4.Width = 167;
+            this.gridColumn4.Width = 198;
             // 
             // gridColumn6
             // 
@@ -205,7 +205,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 8;
-            this.gridColumn6.Width = 91;
+            this.gridColumn6.Width = 79;
             // 
             // gridColumn8
             // 
@@ -214,7 +214,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 9;
-            this.gridColumn8.Width = 121;
+            this.gridColumn8.Width = 191;
             // 
             // gridColumn10
             // 
@@ -265,6 +265,7 @@
             this.cbDisplayContract.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.cbDisplayContract.Size = new System.Drawing.Size(71, 19);
             this.cbDisplayContract.TabIndex = 5;
+            this.cbDisplayContract.TabStop = true;
             this.cbDisplayContract.Text = "合同书";
             this.cbDisplayContract.UseVisualStyleBackColor = true;
             this.cbDisplayContract.CheckedChanged += new System.EventHandler(this.cbDisplayContract_CheckedChanged);
