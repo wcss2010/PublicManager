@@ -108,7 +108,14 @@ namespace PublicManager.Modules.DataCheck.PersonCheck
                                 }
                                 else
                                 {
-                                    roleStr = p.JobInProject;
+                                    if (p.JobInProject == "负责人")
+                                    {
+                                        roleStr = "课题负责人";
+                                    }
+                                    else
+                                    {
+                                        roleStr = p.JobInProject;
+                                    }
                                 }
 
                                 cells.Add(roleStr);

@@ -195,6 +195,8 @@
             this.gridColumn13.Caption = "项目中职务";
             this.gridColumn13.FieldName = "row13";
             this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 9;
             // 
             // panel1
             // 
