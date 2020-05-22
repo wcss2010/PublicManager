@@ -172,7 +172,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 5;
-            this.gridColumn7.Width = 175;
+            this.gridColumn7.Width = 182;
             // 
             // gridColumn8
             // 
@@ -187,7 +187,7 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 6;
-            this.gridColumn9.Width = 79;
+            this.gridColumn9.Width = 72;
             // 
             // panel1
             // 

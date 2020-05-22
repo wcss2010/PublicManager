@@ -145,7 +145,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
-            this.gridColumn6.Width = 91;
+            this.gridColumn6.Width = 126;
             // 
             // gridColumn7
             // 
@@ -154,7 +154,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 4;
-            this.gridColumn7.Width = 43;
+            this.gridColumn7.Width = 44;
             // 
             // gridColumn8
             // 
@@ -170,7 +170,7 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 5;
-            this.gridColumn9.Width = 71;
+            this.gridColumn9.Width = 68;
             // 
             // gridColumn10
             // 
@@ -179,7 +179,7 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 6;
-            this.gridColumn10.Width = 54;
+            this.gridColumn10.Width = 60;
             // 
             // gridColumn11
             // 
@@ -188,7 +188,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 7;
-            this.gridColumn11.Width = 93;
+            this.gridColumn11.Width = 86;
             // 
             // gridColumn12
             // 
@@ -197,7 +197,7 @@
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 9;
-            this.gridColumn12.Width = 213;
+            this.gridColumn12.Width = 191;
             // 
             // gridColumn13
             // 
@@ -206,7 +206,7 @@
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 8;
-            this.gridColumn13.Width = 83;
+            this.gridColumn13.Width = 73;
             // 
             // panel1
             // 

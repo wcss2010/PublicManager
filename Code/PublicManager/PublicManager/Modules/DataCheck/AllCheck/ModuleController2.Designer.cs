@@ -183,7 +183,7 @@
             this.gridColumn14.OptionsColumn.ReadOnly = true;
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 5;
-            this.gridColumn14.Width = 95;
+            this.gridColumn14.Width = 90;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -205,7 +205,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 8;
-            this.gridColumn6.Width = 79;
+            this.gridColumn6.Width = 74;
             // 
             // gridColumn8
             // 
@@ -214,7 +214,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 9;
-            this.gridColumn8.Width = 191;
+            this.gridColumn8.Width = 196;
             // 
             // gridColumn10
             // 
